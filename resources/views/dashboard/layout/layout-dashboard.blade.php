@@ -23,7 +23,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 250px;
+            width: 230px;
             z-index: 1000;
             transition: transform 0.3s ease;
             box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.1);
@@ -47,6 +47,11 @@
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
+        .sidebar a i {
+            margin-right: 10px;
+            /* เพิ่มระยะห่างระหว่างไอคอนกับข้อความ */
+        }
+
         .sidebar a:hover {
             background-color: #0044aa;
             transform: translateX(5px);
@@ -58,8 +63,8 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             position: fixed;
             top: 0;
-            left: 250px;
-            width: calc(100% - 250px);
+            left: 230px;
+            width: calc(100% - 230px);
             z-index: 1100;
             transition: left 0.3s ease, width 0.3s ease;
         }
@@ -92,7 +97,7 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
             min-height: 90vh;
             margin-top: 75px;
-            margin-left: 250px;
+            margin-left: 230px;
             transition: margin-left 0.3s ease;
         }
 
