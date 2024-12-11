@@ -17,11 +17,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $fillable = ['name', 'full_name', 'password', 'email', 'level'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -41,4 +37,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function userDetails()
+    {
+        return $this->hasOne(UserDetail::class, 'users_id');
+    }
+
+    public function grForms()
+    {
+        return $this->hasMany(GrForm::class, 'users_id');
+    }
+
+    public function grReplies()
+    {
+        return $this->hasMany(GrReply::class, 'users_id');
+    }
 }

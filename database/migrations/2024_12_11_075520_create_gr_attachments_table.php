@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('gr_attachments', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->string('full_name')->unique();
-            $table->string('password');
-            $table->string('email')->unique()->nullable();
-            $table->string('level')->nullable();
+            $table->foreignId('gr_forms_id')->constrained('gr_forms')->cascadeOnDelete();
+            $table->string('file_path');
+            $table->string('file_type');
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('gr_attachments');
     }
 };
