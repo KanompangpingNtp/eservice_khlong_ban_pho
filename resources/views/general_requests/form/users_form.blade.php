@@ -82,11 +82,17 @@
             <textarea class="form-control" id="request_details" name="request_details" rows="3"></textarea>
         </div>
 
-        <!-- แนบไฟล์ -->
+          <!-- แนบไฟล์ -->
         <div class="mb-3">
             <label for="attachments" class="form-label">แนบไฟล์</label>
             <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
             <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
+        </div>
+
+        <!-- แสดงรายการไฟล์ที่แนบ -->
+        <div id="file-list" class="mt-3">
+            <h5>ไฟล์ที่เลือก:</h5>
+            <div class="d-flex flex-wrap gap-3"></div>
         </div>
 
         <!-- ปุ่มบันทึก -->
@@ -95,5 +101,75 @@
         </div>
     </form>
 </div>
+
+<script>
+    const fileInput = document.getElementById('attachments');
+    const fileListContainer = document.querySelector('#file-list .d-flex');
+
+    // อัปเดตรายการไฟล์
+    fileInput.addEventListener('change', function () {
+        fileListContainer.innerHTML = ''; // เคลียร์รายการเก่า
+        Array.from(fileInput.files).forEach((file, index) => {
+            const fileWrapper = document.createElement('div');
+            fileWrapper.className = 'text-center';
+
+            // ตรวจสอบประเภทไฟล์
+            if (file.type.startsWith('image/')) {
+                // สร้างภาพตัวอย่างสำหรับไฟล์รูปภาพ
+                const imgPreview = document.createElement('img');
+                imgPreview.src = URL.createObjectURL(file);
+                imgPreview.alt = file.name;
+                imgPreview.style.width = '100px';
+                imgPreview.style.height = '100px';
+                imgPreview.style.objectFit = 'cover';
+                imgPreview.className = 'border rounded';
+
+                fileWrapper.appendChild(imgPreview);
+            } else if (file.type === 'application/pdf') {
+                // แสดงไอคอนแทนไฟล์ PDF
+                const pdfIcon = document.createElement('img');
+                pdfIcon.src = 'https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg'; // ไอคอน PDF
+                pdfIcon.alt = 'PDF File';
+                pdfIcon.style.width = '100px';
+                pdfIcon.style.height = '100px';
+                pdfIcon.className = 'border rounded';
+
+                fileWrapper.appendChild(pdfIcon);
+            } else {
+                // กรณีไฟล์อื่น ๆ แสดงชื่อไฟล์
+                const fileName = document.createElement('p');
+                fileName.textContent = file.name;
+                fileWrapper.appendChild(fileName);
+            }
+
+            // ปุ่มลบ
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'ลบ';
+            removeButton.className = 'btn btn-danger btn-sm mt-2';
+            removeButton.setAttribute('data-index', index);
+
+            removeButton.addEventListener('click', () => {
+                removeFile(index);
+            });
+
+            fileWrapper.appendChild(removeButton);
+            fileListContainer.appendChild(fileWrapper);
+        });
+    });
+
+    // ลบไฟล์ออกจากรายการ
+    function removeFile(index) {
+        const fileArray = Array.from(fileInput.files);
+        fileArray.splice(index, 1); // ลบไฟล์จากอาร์เรย์
+
+        // สร้าง FileList ใหม่
+        const dataTransfer = new DataTransfer();
+        fileArray.forEach(file => dataTransfer.items.add(file));
+        fileInput.files = dataTransfer.files;
+
+        // อัปเดตรายการใน UI
+        fileInput.dispatchEvent(new Event('change'));
+    }
+</script>
 
 @endsection
