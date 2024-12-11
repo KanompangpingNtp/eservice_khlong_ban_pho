@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\GrForm;
 use App\Models\GrAttachment;
 use Illuminate\Support\Facades\Storage;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\Auth;
 
 class AdminGeneralRequestsController extends Controller
 {
@@ -92,5 +94,29 @@ class AdminGeneralRequestsController extends Controller
         }
 
         return redirect()->back()->with('success', 'Updated successfully!');
+    }
+
+    public function exportPDF($id)
+    {
+        $form = GrForm::find($id); // ดึงข้อมูลฟอร์มพร้อมกับรายการที่ยืม
+
+        // สร้าง instance ของ DomPDF ผ่าน facade Pdf
+        $pdf = Pdf::loadView('admin.general_requests.export_pdf.export_pdf', compact('form'))
+                ->setPaper('A4', 'portrait');
+
+        // ส่งไฟล์ PDF ไปยังเบราว์เซอร์
+        return $pdf->stream('แบบคำขอร้องทั่วไป' . $form->id . '.pdf');
+    }
+
+    public function updateStatus($id)
+    {
+        $form = GrForm::findOrFail($id);
+
+        // อัปเดตสถานะ
+        $form->status = 2; // หรือค่าที่คุณต้องการ
+        $form->admin_name_verifier = Auth::user()->name; // เก็บ fullname ของผู้ล็อกอิน
+        $form->save();
+
+        return redirect()->back()->with('success', 'คุณได้กดรับแบบฟอร์มเรียบร้อยแล้ว');
     }
 }
