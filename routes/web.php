@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserGeneralRequestsController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminGeneralRequestsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,8 @@ Route::post('/form/create', [UserGeneralRequestsController::class, 'FormCreate']
 //auth
 Route::get('/login', [AuthController::class, 'LoginPage'])->name('LoginPage');
 Route::get('/register', [AuthController::class, 'RegisterPage'])->name('RegisterPage');
+
+//admin GeneralRequests
+Route::get('/TablePages', [AdminGeneralRequestsController::class, 'TablePages'])->name('TablePages');
+Route::get('/TablePages/ShowFormEdit/{id}', [AdminGeneralRequestsController::class, 'ShowFormEdit'])->name('ShowFormEdit');
+Route::put('/TablePages/ShowFormEdit/{id}/Update', [AdminGeneralRequestsController::class, 'FormEdit'])->name('FormEdit');

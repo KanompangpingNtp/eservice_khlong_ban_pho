@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('gr_forms', function (Blueprint $table) {
             $table->id();
             $table->foreignId('users_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->enum('status', [1, 2]);
             $table->date('date');
             $table->string('subject')->nullable();
             $table->string('salutation')->nullable();
