@@ -28,8 +28,10 @@ class UserGeneralRequestsController extends Controller
             'district' => 'nullable|string|max:100',
             'province' => 'nullable|string|max:100',
             'request_details' => 'nullable|string',
-            'attachments.*' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
+            'attachments.*' => 'nullable|file|mimes:jpg,jpeg,png,pdf',
         ]);
+
+        // dd($request);
 
         $grForm = GrForm::create([
             'users_id' => auth()->id(),
