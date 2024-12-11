@@ -27,8 +27,13 @@ Route::post('/form/create', [UserGeneralRequestsController::class, 'FormCreate']
 //auth
 Route::get('/login', [AuthController::class, 'LoginPage'])->name('LoginPage');
 Route::get('/register', [AuthController::class, 'RegisterPage'])->name('RegisterPage');
+Route::post('/register', [AuthController::class, 'Register'])->name('Register');
+Route::post('/login', [AuthController::class, 'Login'])->name('Login');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 //admin GeneralRequests
 Route::get('/TablePages', [AdminGeneralRequestsController::class, 'TablePages'])->name('TablePages');
 Route::get('/TablePages/ShowFormEdit/{id}', [AdminGeneralRequestsController::class, 'ShowFormEdit'])->name('ShowFormEdit');
 Route::put('/TablePages/ShowFormEdit/{id}/Update', [AdminGeneralRequestsController::class, 'FormEdit'])->name('FormEdit');
+Route::get('/TablePages/ExportPdf/{id}', [AdminGeneralRequestsController::class, 'exportPDF'])->name('exportPDF');
+Route::post('/TablePages/ExportPdf/{id}/UpdateStatus', [AdminGeneralRequestsController::class, 'updateStatus'])->name('updateStatus');
