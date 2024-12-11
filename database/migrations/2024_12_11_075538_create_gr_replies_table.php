@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('gr_forms_id')->constrained('gr_forms')->cascadeOnDelete();
             $table->foreignId('users_id')->constrained('users')->cascadeOnDelete();
             $table->text('reply_text');
-            $table->date('reply_date');
+            $table->date('reply_date')->useCurrent();
             $table->timestamps();
         });
     }

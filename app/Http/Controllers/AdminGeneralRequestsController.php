@@ -8,6 +8,7 @@ use App\Models\GrAttachment;
 use Illuminate\Support\Facades\Storage;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Auth;
+use App\Models\GrReply;
 
 class AdminGeneralRequestsController extends Controller
 {
@@ -108,13 +109,28 @@ class AdminGeneralRequestsController extends Controller
         return $pdf->stream('แบบคำขอร้องทั่วไป' . $form->id . '.pdf');
     }
 
+    public function AdminReply(Request $request, $formId)
+    {
+        $request->validate([
+            'message' => 'required|string|max:1000',
+        ]);
+
+        GrReply::create([
+            'gr_forms_id' => $formId,
+            'users_id' => auth()->id(),
+            'reply_text' => $request->message,
+            'reply_date' => now()->toDateString(),
+        ]);
+
+        return redirect()->back()->with('success', 'ตอบกลับสำเร็จแล้ว!');
+    }
+
     public function updateStatus($id)
     {
         $form = GrForm::findOrFail($id);
 
-        // อัปเดตสถานะ
-        $form->status = 2; // หรือค่าที่คุณต้องการ
-        $form->admin_name_verifier = Auth::user()->name; // เก็บ fullname ของผู้ล็อกอิน
+        $form->status = 2;
+        $form->admin_name_verifier = Auth::user()->name;
         $form->save();
 
         return redirect()->back()->with('success', 'คุณได้กดรับแบบฟอร์มเรียบร้อยแล้ว');

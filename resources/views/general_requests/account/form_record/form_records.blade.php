@@ -1,25 +1,12 @@
-@extends('dashboard.layout.layout-dashboard')
-@section('content')
-
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
-
-@if ($message = Session::get('success'))
-<script>
-    Swal.fire({
-        icon: 'success'
-        , title: '{{ $message }}'
-    , })
-
-</script>
-@endif
+@extends('dashboard.layout.users.layout_users')
+@section('user_content')
 
 <div class="container">
     <h2 class="text-center">คำร้องทั่วไป <br>
         <h3 class="text-center">ตารางแสดงข้อมูลฟอร์มที่ส่งเข้ามา</h3>
-    </h2>
-    <br>
+    </h2> <br>
 
-    <table class="table table-bordered table-striped" id="data_table">
+    <table class="table table-bordered table-striped">
         <thead class="text-center">
             <tr>
                 <th>วันที่ส่ง</th>
@@ -43,7 +30,7 @@
                     @endif
                 </td>
                 <td>
-                    <a href="{{ route('ShowFormEdit', $form->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
+                    <a href="{{ route('userShowFormEdit', $form->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
                     <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#submitModal-{{ $form->id }}">
                         <i class="bi bi-filetype-pdf"></i>
                     </button>
@@ -69,7 +56,7 @@
                 </div>
                 <div class="modal-body">
                     <span style="color: black;">preview</span>
-                    <a href="{{ route('exportPDF', $form->id) }}" class="btn btn-danger btn-sm" target="_blank">
+                    <a href="{{ route('exportUserPDF', $form->id) }}" class="btn btn-danger btn-sm" target="_blank">
                         <i class="bi bi-file-earmark-pdf"></i>
                     </a>
                     <br>
@@ -81,21 +68,15 @@
                     </span>
                     @endforeach
                 </div>
-                <div class="modal-footer d-flex justify-content-between">
-                    <span class="text-start" style="color: black;">รับฟอร์ม</span>
-                    <form action="{{ route('updateStatus', $form->id) }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-primary btn-sm" @if($form->status == 2) disabled @endif>
-                        กดรับแบบฟอร์ม
-                    </button>
-                    </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="modal fade" id="replyModal-{{ $form->id }}" tabindex="-1" aria-labelledby="replyModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="replyModalLabel">ตอบกลับฟอร์ม</h5>
@@ -129,7 +110,7 @@
                             @endforelse
                         </tbody>
                     </table>
-                    <form action="{{ route('AdminReply', $form->id) }}" method="POST">
+                    <form action="{{ route('userReply', $form->id) }}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="message" class="form-label">ข้อความตอบกลับ</label>
@@ -146,11 +127,6 @@
     </div>
     @endforeach
 
-<script src="{{asset('js/general_requests.js')}}"></script>
-
 </div>
 
 @endsection
-
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js" defer></script>
