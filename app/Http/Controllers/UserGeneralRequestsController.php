@@ -3,16 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\GrForm;
+use App\Models\GrAttachment;
 
 class UserGeneralRequestsController extends Controller
 {
     //
-    public function create()
+    public function UsersFormPage()
     {
-        return view('gr_forms.create');
+        return view('general_requests.form.users_form');
     }
 
-    public function store(Request $request)
+    public function FormCreate(Request $request)
     {
         $request->validate([
             'date' => 'required|date',
@@ -55,6 +57,6 @@ class UserGeneralRequestsController extends Controller
             }
         }
 
-        return redirect()->route('gr_forms.index')->with('success', 'Form created successfully!');
+        return redirect()->back()->with('success', 'Create!');
     }
 }
