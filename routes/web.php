@@ -16,9 +16,9 @@ use App\Http\Controllers\AdminGeneralRequestsController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/dashboardex', function () {
+    return view('dashboard.dashboardEx');
+});
 
 //users form
 Route::get('/', [UserGeneralRequestsController::class, 'UsersFormPage'])->name('UsersFormPage');

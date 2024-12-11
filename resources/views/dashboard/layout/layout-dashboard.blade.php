@@ -12,61 +12,65 @@
     <style>
         /* Body styles */
         body {
-            background-color: #f4f7fc;
+            background: linear-gradient(to bottom, #e3f2fd, #ffffff); /* ฟ้าสดใสกับขาวนุ่ม */
             font-family: 'Roboto', sans-serif;
+            min-height: 100vh;
+            color: #333; /* ข้อความสีเข้มเพื่อความชัดเจน */
         }
 
         /* Sidebar */
         .sidebar {
-            background: linear-gradient(180deg, #0069d9, #0056b3);
-            color: white;
+            background: linear-gradient(to bottom, #f2f9fd, #e3f2fd);
+            color: #0092ed; /* ฟ้าสว่าง */
             min-height: 100vh;
-            padding-top: 1.5rem;
+            padding-top: 2rem;
             position: fixed;
             top: 0;
             left: 0;
-            width: 230px;
-            z-index: 1000;
+            width: 250px;
+            z-index: 1200;
             transition: transform 0.3s ease;
-            box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 6px 0px 20px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ลึกขึ้น */
         }
 
         .sidebar h3 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             text-align: center;
             margin-bottom: 2rem;
+            color: #0c95df; /* ฟ้าสว่าง */
         }
 
         .sidebar a {
-            color: white;
+            color: #24b1fd;
             text-decoration: none;
-            padding: 12px 20px;
+            padding: 14px 22px;
             display: flex;
             align-items: center;
             font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            border-radius: 6px;
+            margin-bottom: 1rem;
+            border-radius: 8px;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
         .sidebar a i {
             margin-right: 10px;
-            /* เพิ่มระยะห่างระหว่างไอคอนกับข้อความ */
         }
 
         .sidebar a:hover {
-            background-color: #0044aa;
+            background-color: #7ecffb;
+            color: white;
             transform: translateX(5px);
         }
 
         /* Navbar */
         .navbar {
-            background: linear-gradient(90deg, #0056b3, #0069d9);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(to right, #f2f9fd, #e3f2fd);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             position: fixed;
             top: 0;
-            left: 230px;
-            width: calc(100% - 230px);
+            left: 250px;
+            width: calc(100% - 250px);
+            height: 60px;
             z-index: 1100;
             transition: left 0.3s ease, width 0.3s ease;
         }
@@ -77,35 +81,36 @@
         }
 
         .navbar .navbar-brand {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: bold;
             color: white;
         }
 
         .navbar .nav-link {
             color: white;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         .navbar .nav-link:hover {
-            color: #d4e3ff;
+            color: #b3e5fc;
         }
 
         /* Main Content */
         .main-content {
-            padding: 2.5rem;
+            padding: 3rem;
             background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* เงาที่ลึกขึ้น */
             min-height: 90vh;
             margin-top: 75px;
-            margin-left: 230px;
+            margin-left: 255px;
             transition: margin-left 0.3s ease;
         }
 
         .main-content h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 1.5rem;
+            color: #0288d1;
         }
 
         .main-content p {
@@ -114,15 +119,16 @@
         }
 
         .btn-primary {
-            background-color: #0056b3;
+            background-color: #0288d1;
             border: none;
             transition: background-color 0.3s ease;
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-size: 1.1rem;
+            border-radius: 8px;
         }
 
         .btn-primary:hover {
-            background-color: #004494;
+            background-color: #0277bd;
         }
 
         /* Responsive Styles */
@@ -152,7 +158,10 @@
     <div class="container-fluid d-flex">
         <!-- Sidebar -->
         <div id="sidebar" class="sidebar">
-            <h3>Dashboard</h3>
+            <h3>GM SKY</h3>
+            <button id="toggle-sidebars" class="btn btn-outline-light me-3 d-md-none">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fas fa-tachometer-alt"></i> Overview</a>
@@ -174,13 +183,13 @@
             <!-- Navbar -->
             <nav class="navbar navbar-expand-md navbar-dark">
                 <div class="container-fluid">
-                    <button id="toggle-sidebar" class="btn btn-outline-light me-3 d-md-none">
+                    <button id="toggle-sidebar" class="btn btn-outline-primary me-3 d-md-none">
                         <i class="fas fa-bars"></i>
                     </button>
 
                     <!-- Profile Dropdown -->
                     <div class="dropdown ms-auto">
-                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="profileDropdown"
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="profileDropdown"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Profile
                         </button>
@@ -202,11 +211,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const toggleSidebar = document.getElementById('toggle-sidebar');
+        const toggleSidebars = document.getElementById('toggle-sidebars');
         const sidebar = document.getElementById('sidebar');
         const navbar = document.querySelector('.navbar');
         const content = document.querySelector('.main-content');
 
         toggleSidebar.addEventListener('click', function() {
+            sidebar.classList.toggle('show');
+            navbar.classList.toggle('collapsed');
+            content.classList.toggle('collapsed');
+        });
+        toggleSidebars.addEventListener('click', function() {
             sidebar.classList.toggle('show');
             navbar.classList.toggle('collapsed');
             content.classList.toggle('collapsed');
