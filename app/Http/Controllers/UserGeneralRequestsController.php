@@ -28,11 +28,14 @@ class UserGeneralRequestsController extends Controller
             'district' => 'nullable|string|max:100',
             'province' => 'nullable|string|max:100',
             'request_details' => 'nullable|string',
-            'attachments.*' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
+            'attachments.*' => 'nullable|file|mimes:jpg,jpeg,png,pdf',
         ]);
+
+        // dd($request);
 
         $grForm = GrForm::create([
             'users_id' => auth()->id(),
+            'status' => 1,
             'date' => $request->date,
             'subject' => $request->subject,
             'salutation' => $request->salutation,
@@ -46,16 +49,22 @@ class UserGeneralRequestsController extends Controller
             'request_details' => $request->request_details,
         ]);
 
-        if ($request->hasFile('attachments')) {
-            foreach ($request->file('attachments') as $file) {
-                $filePath = $file->store('attachments', 'public');
-                GrAttachment::create([
-                    'gr_forms_id' => $grForm->id,
-                    'file_path' => $filePath,
-                    'file_type' => $file->getClientMimeType(),
-                ]);
+               // บันทึกไฟล์แนบ
+               if ($request->hasFile('attachments')) {
+                foreach ($request->file('attachments') as $file) {
+                    // สร้างชื่อไฟล์ที่ไม่ซ้ำกัน
+                    $filename = time() . '_' . $file->getClientOriginalName();
+
+                    // เก็บไฟล์ใน public/storage/attachments
+                    $path = $file->storeAs('attachments', $filename, 'public'); // ใช้ disk ที่ระบุเป็น 'public'
+
+                    GrAttachment::create([
+                        'gr_forms_id' => $grForm->id,
+                        'file_path' => $path,
+                        'file_type' => $file->getClientMimeType(),
+                    ]);
+                }
             }
-        }
 
         return redirect()->back()->with('success', 'Create!');
     }

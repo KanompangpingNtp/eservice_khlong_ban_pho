@@ -80,12 +80,12 @@
                 <textarea class="form-control" id="request_details" name="request_details" rows="3"></textarea>
             </div>
 
-            <!-- แนบไฟล์ -->
-            <div class="mb-3">
-                <label for="attachments" class="form-label">แนบไฟล์</label>
-                <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
-                <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
-            </div>
+          <!-- แนบไฟล์ -->
+          <div class="mb-3">
+            <label for="attachments" class="form-label">แนบไฟล์</label>
+            <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
+            <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
+        </div>
 
             <!-- แสดงรายการไฟล์ที่แนบ -->
             <div id="file-list" class="mt-3">
