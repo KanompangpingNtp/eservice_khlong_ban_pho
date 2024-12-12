@@ -31,8 +31,6 @@ Route::post('/register', [AuthController::class, 'Register'])->name('Register');
 Route::post('/login', [AuthController::class, 'Login'])->name('Login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-
-
 Route::middleware(['admin'])->group(function () {
     //admin GeneralRequests
     Route::get('/TablePages', [AdminGeneralRequestsController::class, 'TablePages'])->name('TablePages');
