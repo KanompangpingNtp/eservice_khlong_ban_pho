@@ -16,12 +16,12 @@ use App\Http\Controllers\AdminGeneralRequestsController;
 |
 */
 
-Route::get('/home', function () {
-    return view('home.first-page');
+Route::get('/', function () {
+    return view('home.index');
 });
 
 //users form
-Route::get('/', [UserGeneralRequestsController::class, 'UsersFormPage'])->name('UsersFormPage');
+Route::get('/GeneralRequests', [UserGeneralRequestsController::class, 'UsersFormPage'])->name('UsersFormPage');
 Route::post('/form/create', [UserGeneralRequestsController::class, 'FormCreate'])->name('FormCreate');
 
 //auth
@@ -30,8 +30,6 @@ Route::get('/register', [AuthController::class, 'RegisterPage'])->name('Register
 Route::post('/register', [AuthController::class, 'Register'])->name('Register');
 Route::post('/login', [AuthController::class, 'Login'])->name('Login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
-
 
 Route::middleware(['admin'])->group(function () {
     //admin GeneralRequests

@@ -57,4 +57,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(GrReply::class, 'users_id');
     }
+
+    public function eaPeople()
+    {
+        return $this->hasMany(EaPeople::class, 'users_id');
+    }
+
+    public function replies()
+    {
+        return $this->hasMany(EaReplies::class, 'users_id');
+    }
 }
