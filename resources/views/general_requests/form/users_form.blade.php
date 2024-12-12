@@ -10,7 +10,7 @@
     @endif
 
     <div class="container">
-        <h1 class="text-center">ฟอร์ม</h1>
+        <h2 class="text-center">ฟอร์มส่งคำร้องทั่วไป</h2>
 
         <form action="{{ route('FormCreate') }}" method="POST" enctype="multipart/form-data">
             @csrf
