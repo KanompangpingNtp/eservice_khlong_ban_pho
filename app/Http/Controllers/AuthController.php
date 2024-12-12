@@ -30,7 +30,7 @@ class AuthController extends Controller
             if (Auth::user()->level === 'admin') {
                 return redirect()->route('TablePages'); // สำหรับ admin เปลี่ยนเส้นทางไปยังหน้า dashboard
             } elseif (Auth::user()->level === 'user') {
-                return redirect()->route('UsersAccountFormPage'); // สำหรับ user เปลี่ยนเส้นทางไปยังหน้า users_form
+                return redirect()->route('ElderlyAllowanceUsersAccountFormPage'); // สำหรับ user เปลี่ยนเส้นทางไปยังหน้า users_form
             }
         }
 

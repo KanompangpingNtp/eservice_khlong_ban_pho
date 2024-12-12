@@ -1,5 +1,5 @@
-@extends('dashboard.layout.layout-dashboard')
-@section('content')
+@extends('dashboard.layout.users.layout_users')
+@section('user_content')
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
 
@@ -17,6 +17,12 @@
     <h2 class="text-center">แบบฟอร์มยืนยันสิทธิผู้สูงอายุ <br>
         <h3 class="text-center">ตารางแสดงข้อมูลฟอร์มที่ส่งเข้ามา</h3>
     </h2>
+    <br>
+    <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+        @csrf
+        <button type="submit" class="btn btn-danger">Logout</button>
+    </form>
+    <br>
     <br>
 
     <table class="table table-bordered table-striped" id="data_table">
@@ -43,7 +49,7 @@
                     @endif
                 </td>
                 <td>
-                    <a href="{{ route('ElderlyAllowanceShowEdit', $form->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
+                    <a href="{{ route('ElderlyAllowanceUserShowEdit', $form->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
                     <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#submitModal-{{ $form->id }}">
                         <i class="bi bi-filetype-pdf"></i>
                     </button>
@@ -69,7 +75,7 @@
                 </div>
                 <div class="modal-body">
                     <span style="color: black;">preview</span>
-                    <a href="{{ route('ElderlyAllowanceExportPDF', $form->id) }}" class="btn btn-danger btn-sm" target="_blank">
+                    <a href="{{ route('ElderlyAllowanceUserExportPDF', $form->id) }}" class="btn btn-danger btn-sm" target="_blank">
                         <i class="bi bi-file-earmark-pdf"></i>
                     </a>
                     <br>
@@ -81,14 +87,8 @@
                     </span>
                     @endforeach
                 </div>
-                <div class="modal-footer d-flex justify-content-between">
-                    <span class="text-start" style="color: black;">รับฟอร์ม</span>
-                    <form action="{{ route('ElderlyAllowanceUpdateStatus', $form->id) }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-primary btn-sm" @if($form->status == 2) disabled @endif>
-                        กดรับแบบฟอร์ม
-                    </button>
-                    </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -129,7 +129,7 @@
                             @endforelse
                         </tbody>
                     </table>
-                    <form action="{{ route('AdminReply', $form->id) }}" method="POST">
+                    <form action="{{ route('ElderlyAllowanceUserReply', $form->id) }}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="message" class="form-label">ข้อความตอบกลับ</label>
