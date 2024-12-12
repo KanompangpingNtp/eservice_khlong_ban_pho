@@ -16,12 +16,12 @@ use App\Http\Controllers\AdminGeneralRequestsController;
 |
 */
 
-Route::get('/home', function () {
-    return view('home.first-page');
+Route::get('/', function () {
+    return view('home.index');
 });
 
 //users form
-Route::get('/', [UserGeneralRequestsController::class, 'UsersFormPage'])->name('UsersFormPage');
+Route::get('/GeneralRequests', [UserGeneralRequestsController::class, 'UsersFormPage'])->name('UsersFormPage');
 Route::post('/form/create', [UserGeneralRequestsController::class, 'FormCreate'])->name('FormCreate');
 
 //auth
