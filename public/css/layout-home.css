@@ -34,20 +34,159 @@
 }
 
 .glass-box {
-  background: rgba(255, 255, 255, 0.1); /* สีพื้นหลังโปร่งแสง */
-  border-radius: 30px; /* มุมโค้ง */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  text-align: center; /* จัดข้อความให้กึ่งกลาง */
+  background: rgba(255, 255, 255, 0.2); /* สีพื้นหลังโปร่งแสง */
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px; /* มุมโค้ง */
+  box-shadow: 0 4px 13px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(1px); /* เอฟเฟกต์เบลอด้านหลัง */
   -webkit-backdrop-filter: blur(5px); /* รองรับ Safari */
   border: 1px solid rgba(255, 255, 255, 0.2); /* ขอบบางโปร่งใส */
+  width: fit-content; /* ขนาดกว้างตามเนื้อหา */
+  margin-left: auto; /* จัดให้ไปอยู่ขวาสุด */
+  margin-right: auto; /* จัดให้ไปอยู่ขวาสุด */
+}
+
+.glass-box img {
+  position: absolute; /* ตั้งรูปภาพให้ไปอยู่ในตำแหน่งที่ต้องการ */
+  top: -86px; /* ระยะห่างจากด้านบน */
+  left: -90px; /* ระยะห่างจากด้านซ้าย */
+  opacity: 0.7;
+  width: auto; /* กำหนดความกว้างอัตโนมัติ */
+  height: 20vh; /* ความสูงของรูปภาพ */
 }
 
 .highlighted-text {
-  font-size: 4rem; /* ปรับขนาดตัวอักษรใหญ่ */
+  font-size: 6.5rem; /* ขนาดตัวอักษร */
   font-weight: bold; /* ตัวหนา */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* เพิ่มเงา */
+  text-shadow: 2px 0px 3px rgba(0, 0, 0, 0.7); /* เงา */
+  line-height: 1; /* ลดระยะห่างระหว่างบรรทัดสำหรับตัวอักษรขนาดใหญ่ */
 }
 
-.line-compact {
-  line-height: 0.5; /* ปรับระยะห่างระหว่างบรรทัด */
+.compact-text {
+  line-height: 1; /* ลดระยะห่างระหว่างบรรทัดสำหรับข้อความปกติ */
+  margin-top: -18px; /* ลดระยะห่างที่เกิดจากตัวอักษรใหญ่ */
+}
+
+
+.text-glow-underline {
+  font-size: 2rem; /* ขนาดตัวอักษร */
+  margin-top: 3px;
+  color: white; /* สีตัวอักษร */
+  text-shadow: none; /* ปิดการเรืองแสงบนตัวอักษร */
+  display: inline-block; /* ให้ตัวอักษรอยู่ในบรรทัดเดียว */
+  position: relative;
+}
+
+.text-glow-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0; /* ลดระยะห่างระหว่างตัวอักษรและเส้นใต้ */
+  left: 0;
+  width: 100%; /* ให้เส้นใต้ยาวเท่ากับข้อความ */
+  height: 2px; /* ความหนาของเส้นใต้ */
+  background: white; /* สีของเส้น */
+  box-shadow:
+    0 0 5px rgba(255, 255, 255, 0.8), /* แสงเล็ก */
+    0 0 10px rgba(255, 255, 255, 0.6), /* แสงกลาง */
+    0 0 20px rgba(255, 255, 255, 0.4); /* แสงใหญ่ */
+}
+
+.glass-box-under {
+  position: relative;
+  text-align: center; /* จัดข้อความให้กึ่งกลาง */
+  background: rgba(255, 255, 255, 0.2); /* สีพื้นหลังโปร่งแสง */
+  padding: 7px;
+  border-radius: 20px; /* มุมโค้ง */
+  box-shadow: 0 4px 13px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(1px); /* เอฟเฟกต์เบลอด้านหลัง */
+  -webkit-backdrop-filter: blur(5px); /* รองรับ Safari */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* ขอบบางโปร่งใส */
+  width: fit-content; /* ขนาดกว้างตามเนื้อหา */
+  margin: auto; /* จัดให้ไปอยู่ขวาสุด */
+}
+
+.glass-box-under .arrow-down {
+  position: absolute; /* ตั้งรูปภาพให้ไปอยู่ในตำแหน่งที่ต้องการ */
+  top: -30px; /* ระยะห่างจากด้านบน */
+  left: -42px; /* ระยะห่างจากด้านซ้าย */
+  width: auto; /* กำหนดความกว้างอัตโนมัติ */
+  height: 10vh; /* ความสูงของรูปภาพ */
+}
+
+.glass-box-under .icon-btn {
+  width: auto; /* กำหนดความกว้างอัตโนมัติ */
+  height: 3.5vh; /* ความสูงของรูปภาพ */
+}
+
+.bg-top {
+  background-color: rgb(17, 104, 210); /* พื้นหลังสีฟ้า (สีน้ำเงิน) */
+  color: white; /* ตัวอักษรสีขาว */
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-top-left-radius: 18px; /* ขอบโค้งมุมซ้ายบน */
+  border-top-right-radius: 18px; /* ขอบโค้งมุมขวาบน */
+  box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.5); /* เงาด้านขวา */
+}
+
+.bg-under {
+  background-color: white; /* พื้นหลังสีขาว */
+  color: rgb(17, 104, 210); /* ตัวอักษรสีน้ำเงิน */
+  padding-bottom: 3px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom-left-radius: 18px; /* ขอบโค้งมุมซ้ายล่าง */
+  border-bottom-right-radius: 18px; /* ขอบโค้งมุมขวาล่าง */
+  box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.5); /* เงาด้านขวา */
+}
+
+
+.hight-light{
+  color: white; /* สีข้อความเป็นสีขาว */
+  text-shadow: 2px 2px 2px rgb(0, 81, 181), -2px -2px 2px rgb(0, 81, 181), 2px -2px 2px rgb(0, 81, 181), -2px 2px 2px rgb(0, 81, 181); /* สร้างขอบสีรอบข้อความ */
+}
+
+.glass-box-veryunder {
+  position: relative;
+  text-align: center; /* จัดข้อความให้กึ่งกลาง */
+  background: rgba(255, 255, 255, 0.2); /* สีพื้นหลังโปร่งแสง */
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 7px;
+  padding-right: 7px;
+  border-radius: 20px; /* มุมโค้ง */
+  box-shadow: 0 4px 13px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(1px); /* เอฟเฟกต์เบลอด้านหลัง */
+  -webkit-backdrop-filter: blur(5px); /* รองรับ Safari */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* ขอบบางโปร่งใส */
+  min-width: 90%;
+  margin: auto; /* จัดให้ไปอยู่ขวาสุด */
+}
+
+.glass-box-veryunder .arrow-down {
+  position: absolute; /* ตั้งรูปภาพให้ไปอยู่ในตำแหน่งที่ต้องการ */
+  top: -15px; /* ระยะห่างจากด้านบน */
+  left: -48px; /* ระยะห่างจากด้านซ้าย */
+  width: auto; /* กำหนดความกว้างอัตโนมัติ */
+  height: 9vh; /* ความสูงของรูปภาพ */
+}
+
+.glass-box-veryunder .icon-btn {
+  width: auto; /* กำหนดความกว้างอัตโนมัติ */
+  height: 3.5vh; /* ความสูงของรูปภาพ */
+}
+
+.bg-btn-veryunder {
+  background: linear-gradient(to bottom, rgb(17, 104, 210), rgb(0, 70, 140));
+  color: white; /* ตัวอักษรสีขาว */
+  padding: 3px;
+  border-radius: 20px; /* ขอบโค้งมุมซ้ายบน */
+  box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.5); /* เงาด้านขวา */
+}
+
+.img-shadow {
+  filter: drop-shadow(0 4px 15px rgba(255, 255, 255, 0.8)); /* เพิ่มเงาที่เหมาะสมตามสัดส่วนของรูปภาพ */
 }
