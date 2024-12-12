@@ -16,8 +16,8 @@ use App\Http\Controllers\AdminGeneralRequestsController;
 |
 */
 
-Route::get('/dashboardex', function () {
-    return view('dashboard.dashboardEx');
+Route::get('/home', function () {
+    return view('home.first-page');
 });
 
 //users form
