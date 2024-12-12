@@ -3,7 +3,7 @@
 @section('content')
     <div class="d-flex justify-content-center align-content-center column-gap-5">
         <div class="xxl-w-50 d-flex flex-column font-sarabun text-white px-5 pt-4">
-            <div class="fs-3 d-flex justify-content-end" style="margin-right: 4rem">One-Stop Service</div>
+            <div class="fs-3 d-flex justify-content-end" style="margin-right: 1rem">One-Stop Service</div>
             <div class="glass-box">
                 <img src="{{ asset('images/layouts-home/lightstar.png') }}" alt="lightstar">
                 <div class="fs-3 text-white px-2">
@@ -24,7 +24,7 @@
                     ยื่นคำร้องออนไลน์
                 </div>
             </div>
-            <div class="d-flex justify-content-around align-content-center">
+            <div class="d-flex justify-content-between align-content-center">
                 <div>
                     <p class="hight-light fs-2 font-sarabun-bold mb-0">คู่มือแนะนำการใช้งาน</p>
                     <div class="glass-box-veryunder w-100">
