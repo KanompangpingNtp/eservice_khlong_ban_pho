@@ -29,25 +29,26 @@
                         style="width: auto; height: 13vh; padding: 10px">
                 </div>
                 <div
-                    class="h-100 d-flex align-items-center justify-content-center fs-1 text-white px-2 pt-4 font-sarabun">
-                    องค์การบริหารส่วนตำบล คลองบ้านโพธิ์ <span class="fs-4 ps-3 pt-2 font-sarabun">(ตำบลคลองบ้านโพธิ์
-                        อำเภอบ้านโพธิ์ จังหวัดฉะเชิงเทรา)</span>
+                    class="h-100 d-flex flex-column flex-lg-row align-items-center justify-content-center fs-1 text-white px-2 pt-4 font-sarabun">
+                    องค์การบริหารส่วนตำบล คลองบ้านโพธิ์
+                    <div class="fs-3 ps-3 pt-1 font-sarabun">
+                        (ตำบลคลองบ้านโพธิ์ อำเภอบ้านโพธิ์ จังหวัดฉะเชิงเทรา)</div>
                 </div>
             </div>
         </header>
         {{-- ////////////////////// end-header ////////////////////// --}}
 
         {{-- ////////////////////// start-content ////////////////////// --}}
-        <div class="container my-2 p-0 border">
+        <div class="container my-2 p-0">
             @yield('content')
         </div>
         {{-- ////////////////////// end-content ////////////////////// --}}
 
         {{-- ////////////////////// start-footer ////////////////////// --}}
-        <footer id="footer" class="flex mt-auto"
-            style="background: linear-gradient(to top, rgb(1, 78, 172), rgba(0, 90, 200, 0.3));
-     height: 16vh;">
-            <div class="container d-flex align-items-center justify-content-around h-100 p-0 ">
+        <footer id="footer" class="flex py-3 mt-auto"
+            style="background: linear-gradient(to top, rgb(1, 78, 172), rgba(0, 90, 200, 0.3));">
+            <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-around h-100 p-0"
+                style="height: auto;">
                 <div class="h-100 d-flex align-items-center justify-content-center">
                     <img src="{{ asset('images/layouts-home/address.png') }}" alt="address"
                         style="width: auto; height: 10vh; padding: 10px;">
@@ -68,9 +69,9 @@
                         <span class="fs-4" style="letter-spacing: 2px;">0-3858-8246 | 08-3617-5869</span>
                     </div>
                 </div>
-
             </div>
         </footer>
+
         {{-- ////////////////////// end-footer ////////////////////// --}}
     </div>
 
