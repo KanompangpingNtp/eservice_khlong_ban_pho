@@ -56,7 +56,7 @@
             </div>
         </div>
         <div class="w-50 d-flex justify-content-center align-content-center p-5 d-none d-xxl-block">
-            <img src="{{ asset('images/layouts-home/24-hours.png') }}" alt="Right Image" class="img-shadow"
+            <img src="{{ asset('images/layouts-home/24-hours-new.png') }}" alt="Right Image" class="img-shadow"
                 style="width: auto; height: 55vh;">
         </div>
     </div>
