@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Dashboard</title>
+    <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -16,6 +16,10 @@
             font-family: 'Roboto', sans-serif;
             min-height: 100vh;
             color: #333; /* ข้อความสีเข้มเพื่อความชัดเจน */
+        }
+
+        h2 {
+            color: #0c95df;
         }
 
         /* Sidebar */
@@ -107,29 +111,6 @@
             transition: margin-left 0.3s ease;
         }
 
-        .main-content h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
-            color: #0288d1;
-        }
-
-        .main-content p {
-            font-size: 1.2rem;
-            color: #555;
-        }
-
-        .btn-primary {
-            background-color: #0288d1;
-            border: none;
-            transition: background-color 0.3s ease;
-            padding: 12px 24px;
-            font-size: 1.1rem;
-            border-radius: 8px;
-        }
-
-        .btn-primary:hover {
-            background-color: #0277bd;
-        }
 
         /* Responsive Styles */
         @media (max-width: 768px) {
