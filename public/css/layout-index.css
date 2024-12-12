@@ -1,0 +1,299 @@
+@font-face {
+  font-family: 'THSarabunNew';
+  src: url('/fonts/THSarabunNew.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'THSarabunNew';
+  src: url('/fonts/THSarabunNew-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+.min-h-screen{
+  min-height: 100vh;
+}
+
+.font-sarabun{
+  font-family: 'THSarabunNew', sans-serif;
+    font-size: 18px;
+}
+
+.font-sarabun-bold {
+  font-family: 'THSarabunNew', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.bg-btn {
+  background: linear-gradient(to bottom, rgb(0, 70, 140), rgb(17, 104, 210), rgb(0, 70, 140)); /* ไล่สีเข้ม-อ่อน-เข้ม */
+  color: white; /* ตัวอักษรสีขาว */
+  border-radius: 20px; /* ขอบโค้ง */
+  box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.834); /* เพิ่มเงาและเรืองแสงสีขาว */
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 12px rgba(255, 255, 255, 0.5); /* เพิ่มเอฟเฟกต์เรืองแสงให้ข้อความ */
+}
+
+.bg-btn2 {
+  background: linear-gradient(to bottom, rgb(0, 70, 140), rgb(17, 104, 210), rgb(0, 70, 140)); /* ไล่สีเข้ม-อ่อน-เข้ม */
+  color: white; /* ตัวอักษรสีขาว */
+  border-radius: 25px; /* ขอบโค้ง */
+  box-shadow: 6px 6px 20px rgba(255, 255, 255, 0.834); /* เพิ่มเงาและเรืองแสงสีขาว */
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 12px rgba(255, 255, 255, 0.5); /* เพิ่มเอฟเฟกต์เรืองแสงให้ข้อความ */
+  line-height: 1; /* ปรับระยะห่างระหว่างบรรทัด */
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+}
+
+/* ระแนงซ้าย */
+.half-border-left {
+  position: relative; /* กำหนดตำแหน่งสำหรับ pseudo-element */
+  padding: 20px 12px 12px 12px; /* ระยะห่างภายใน */
+  z-index: 0;
+}
+
+.half-border-left::before {
+  content: ''; /* สร้าง pseudo-element */
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 100%; /* ความสูงเท่ากับ div */
+  width: 50%; /* กว้างครึ่งหนึ่งของ div */
+  border: 4px solid #000000; /* เส้นขอบ */
+  border-right: none; /* ลบเส้นขอบขวา */
+  border-top-left-radius: 50px; /* มุมบนซ้าย */
+  border-bottom-left-radius: 50px; /* มุมล่างซ้าย */
+  box-shadow: -4px 0 10px rgba(255, 255, 255, 1), -5px 0 10px rgba(0, 0, 0, 0.6); /* เงาขอบขวาและเงาภายนอก */
+  z-index: -1; /* ให้อยู่ด้านหลังเนื้อหา */
+  box-sizing: border-box; /* รวม padding ในขนาด */
+}
+
+/* ระแนงขวา */
+.half-border-right {
+  position: relative; /* กำหนดตำแหน่งสำหรับ pseudo-element */
+  padding: 15px 14px 15px 12px; /* ระยะห่างภายใน */
+  z-index: 0;
+}
+
+.half-border-right::before {
+  content: ''; /* สร้าง pseudo-element */
+  position: absolute;
+  top: -2px;
+
+  right: 0;
+  height: 100%; /* ความสูงเท่ากับ div */
+  width: 50%; /* กว้างครึ่งหนึ่งของ div */
+  border: 4px solid #000000; /* เส้นขอบ */
+  border-left: none; /* ลบเส้นขอบซ้าย */
+  border-top-right-radius: 50px; /* มุมบนขวา */
+  border-bottom-right-radius: 50px; /* มุมล่างขวา */
+  box-shadow: 4px 0 10px rgba(255, 255, 255, 1), 5px 0 10px rgba(0, 0, 0, 0.6); /* เงาขอบขวาและเงาภายนอก */
+  z-index: -1; /* ให้อยู่ด้านหลังเนื้อหา */
+  box-sizing: border-box; /* รวม padding ในขนาด */
+}
+
+/* ปุ่มเท่ซ้าย */
+.buttom-cool-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 4rem;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  background-color: #ffffff; /* พื้นหลังสีขาว */
+  color: black; /* สีข้อความเป็นสีดำ */
+  position: relative;
+  transition: all 0.3s ease; /* การเปลี่ยนแปลงแบบนุ่มนวล */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* เงาปกติของปุ่ม */
+}
+
+.buttom-cool-left:hover {
+  color: black; /* เปลี่ยนสีข้อความ */
+  box-shadow: 0 0 15px 5px rgba(159, 255, 255, 0.7); /* เอฟเฟกต์เรืองแสง */
+}
+
+.buttom-cool-left:hover .circle{
+  transform: scale(1.1); /* ขยายขนาดรูปภาพ */
+}
+
+.buttom-cool-left:hover .squre{
+  box-shadow: 0 0 15px 5px rgba(159, 255, 255, 0.7); /* เอฟเฟกต์เรืองแสง */
+}
+.buttom-cool-left:hover .circle img {
+  filter: brightness(1.2) drop-shadow(0 0 10px rgba(159, 255, 255, 0.7)); /* เอฟเฟกต์เรืองแสงบนรูป */
+  transform: scale(1.1); /* ขยายขนาดรูปภาพ */
+}
+
+
+.buttom-cool-left .circle {
+  position: absolute;
+  top: -10px;
+  left: -3px;
+  width: 5rem;
+  height: 5rem;
+  background-color: #282936;
+  border-radius: 50%;
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.buttom-cool-left .squre {
+  position: absolute; /* ทำให้วงกลมอยู่ในตำแหน่ง absolute */
+  top: 12px; /* ให้วงกลมอยู่ด้านบนสุดของปุ่ม */
+  right: -14px; /* ให้วงกลมอยู่ทางซ้ายสุดของปุ่ม */
+  width: 6rem; /* ขนาดวงกลม */
+  height: 2.5rem; /* ขนาดวงกลม */
+  background-color: #282936; /* สีพื้นหลังของวงกลม */
+  border-radius: 30px; /* ทำให้เป็นวงกลม */
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.buttom-cool-left .circle img {
+  position: absolute;
+  top: 5px; /* เลื่อนรูปภาพลงมาจากขอบบน */
+  left: 15px; /* เลื่อนรูปภาพจากขอบซ้าย */
+  width: 4rem; /* ปรับขนาดรูปภาพ */
+  height: 4rem; /* ปรับขนาดรูปภาพ */
+  transition: all 0.3s ease;
+}
+
+/* ปุ่มเท่ขวา */
+.buttom-cool-right {
+  display: flex; /* ใช้ flexbox */
+  justify-content: center; /* จัดข้อความให้อยู่กลางในแนวนอน */
+  align-items: center; /* จัดข้อความให้อยู่กลางในแนวตั้ง */
+  width: 100%; /* ขยายความกว้างให้เต็มพื้นที่ */
+  min-height: 4rem; /* ความสูงอัตโนมัติ */
+  border: none;
+  border-radius: 30px; /* ขอบมุมโค้ง */
+  text-decoration: none; /* ลบเส้นใต้ */
+  background-color: #ffffff; /* พื้นหลังสีขาว */
+  color: black; /* สีข้อความเป็นสีดำ */
+  position: relative; /* ตั้งตำแหน่ง relative เพื่อให้วงกลมใช้ position absolute */
+  transition: all 0.3s ease; /* การเปลี่ยนแปลงแบบนุ่มนวล */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* เงาปกติของปุ่ม */
+}
+
+.buttom-cool-right:hover {
+  color: black; /* เปลี่ยนสีข้อความ */
+  box-shadow: 0 0 15px 5px rgba(159, 255, 255, 0.7); /* เอฟเฟกต์เรืองแสง */
+}
+
+.buttom-cool-right:hover .circle{
+  transform: scale(1.1); /* ขยายขนาดรูปภาพ */
+}
+
+.buttom-cool-right:hover .squre{
+  box-shadow: 0 0 15px 5px rgba(159, 255, 255, 0.7); /* เอฟเฟกต์เรืองแสง */
+}
+.buttom-cool-right:hover .circle img {
+  filter: brightness(1.2) drop-shadow(0 0 10px rgba(159, 255, 255, 0.7)); /* เอฟเฟกต์เรืองแสงบนรูป */
+  transform: scale(1.1); /* ขยายขนาดรูปภาพ */
+}
+
+
+.buttom-cool-right .circle {
+  position: absolute;
+  top: -10px;
+  right: -3px;
+  width: 5rem;
+  height: 5rem;
+  background-color: #282936;
+  border-radius: 50%;
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.buttom-cool-right .squre {
+  position: absolute; /* ทำให้วงกลมอยู่ในตำแหน่ง absolute */
+  top: 12px; /* ให้วงกลมอยู่ด้านบนสุดของปุ่ม */
+  left: -14px; /* ให้วงกลมอยู่ทางซ้ายสุดของปุ่ม */
+  width: 6rem; /* ขนาดวงกลม */
+  height: 2.5rem; /* ขนาดวงกลม */
+  background-color: #282936; /* สีพื้นหลังของวงกลม */
+  border-radius: 30px; /* ทำให้เป็นวงกลม */
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.buttom-cool-right .circle img {
+  position: absolute;
+  top: 6px; /* เลื่อนรูปภาพลงมาจากขอบบน */
+  left: 9px; /* เลื่อนรูปภาพจากขอบซ้าย */
+  width: 4rem; /* ปรับขนาดรูปภาพ */
+  height: 4rem; /* ปรับขนาดรูปภาพ */
+  transition: all 0.3s ease;
+}
+
+
+/* ระแนงซ้าย */
+.half-border-left-i {
+  position: relative; /* กำหนดตำแหน่งสำหรับ pseudo-element */
+  padding: 12px 12px 20px 12px; /* ระยะห่างภายใน */
+  z-index: 0;
+}
+
+.half-border-left-i::before {
+  content: ''; /* สร้าง pseudo-element */
+  position: absolute;
+  top: -6px;
+  left: 0;
+  height: 100%; /* ความสูงเท่ากับ div */
+  width: 50%; /* กว้างครึ่งหนึ่งของ div */
+  border: 4px solid #000000; /* เส้นขอบ */
+  border-right: none; /* ลบเส้นขอบขวา */
+  border-top-left-radius: 50px; /* มุมบนซ้าย */
+  border-bottom-left-radius: 50px; /* มุมล่างซ้าย */
+  box-shadow: -4px 0 10px rgba(255, 255, 255, 1), -5px 0 10px rgba(0, 0, 0, 0.6); /* เงาขอบขวาและเงาภายนอก */
+  z-index: -1; /* ให้อยู่ด้านหลังเนื้อหา */
+  box-sizing: border-box; /* รวม padding ในขนาด */
+}
+
+/* ระแนงขวา */
+.half-border-right-i {
+  position: relative; /* กำหนดตำแหน่งสำหรับ pseudo-element */
+  padding: 10px 14px 25px 12px; /* ระยะห่างภายใน */
+  z-index: 0;
+}
+
+.half-border-right-i::before {
+  content: ''; /* สร้าง pseudo-element */
+  position: absolute;
+  top: -10px;
+  right: 0;
+  height: 100%; /* ความสูงเท่ากับ div */
+  width: 50%; /* กว้างครึ่งหนึ่งของ div */
+  border: 4px solid #000000; /* เส้นขอบ */
+  border-left: none; /* ลบเส้นขอบซ้าย */
+  border-top-right-radius: 50px; /* มุมบนขวา */
+  border-bottom-right-radius: 50px; /* มุมล่างขวา */
+  box-shadow: 4px 0 10px rgba(255, 255, 255, 1), 5px 0 10px rgba(0, 0, 0, 0.6); /* เงาขอบขวาและเงาภายนอก */
+  z-index: -1; /* ให้อยู่ด้านหลังเนื้อหา */
+  box-sizing: border-box; /* รวม padding ในขนาด */
+}
+
+.half-border-left-ii {
+  position: relative; /* กำหนดตำแหน่งสำหรับ pseudo-element */
+  padding: 5px 12px 28px 12px; /* ระยะห่างภายใน */
+  z-index: 0;
+}
+
+.half-border-left-ii::before {
+  content: ''; /* สร้าง pseudo-element */
+  position: absolute;
+  top: -14px;
+  left: 0;
+  height: 100%; /* ความสูงเท่ากับ div */
+  width: 50%; /* กว้างครึ่งหนึ่งของ div */
+  border: 4px solid #000000; /* เส้นขอบ */
+  border-right: none; /* ลบเส้นขอบขวา */
+  border-top-left-radius: 50px; /* มุมบนซ้าย */
+  border-bottom-left-radius: 50px; /* มุมล่างซ้าย */
+  box-shadow: -4px 0 10px rgba(255, 255, 255, 1), -5px 0 10px rgba(0, 0, 0, 0.6); /* เงาขอบขวาและเงาภายนอก */
+  z-index: -1; /* ให้อยู่ด้านหลังเนื้อหา */
+  box-sizing: border-box; /* รวม padding ในขนาด */
+}

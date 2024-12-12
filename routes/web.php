@@ -19,7 +19,7 @@ use App\Http\Controllers\AdminElderlyAllowanceController;
 */
 
 Route::get('/', function () {
-    return view('home.first-page');
+    return view('home.index');
 });
 
 //users GeneralRequests

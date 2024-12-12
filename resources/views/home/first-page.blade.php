@@ -1,4 +1,5 @@
 @extends('home.layouts.layout-home')
+@section('title', 'First Page')
 
 @section('content')
     <div class="d-flex justify-content-center align-content-center column-gap-5">
