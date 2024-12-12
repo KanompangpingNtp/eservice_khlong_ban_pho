@@ -1,4 +1,53 @@
+@font-face {
+  font-family: 'THSarabunNew';
+  src: url('/fonts/THSarabunNew.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'THSarabunNew';
+  src: url('/fonts/THSarabunNew-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
 .min-h-screen{
   min-height: 100vh;
-  border: 5px solid red;
+}
+
+.font-sarabun{
+  font-family: 'THSarabunNew', sans-serif;
+    font-size: 18px;
+}
+
+.font-sarabun-bold {
+  font-family: 'THSarabunNew', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.text-e-service {
+  font-size: 86px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5); /* เงาสีดำ เบลอเล็กน้อย */
+}
+
+.glass-box {
+  background: rgba(255, 255, 255, 0.1); /* สีพื้นหลังโปร่งแสง */
+  border-radius: 30px; /* มุมโค้ง */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(1px); /* เอฟเฟกต์เบลอด้านหลัง */
+  -webkit-backdrop-filter: blur(5px); /* รองรับ Safari */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* ขอบบางโปร่งใส */
+}
+
+.highlighted-text {
+  font-size: 4rem; /* ปรับขนาดตัวอักษรใหญ่ */
+  font-weight: bold; /* ตัวหนา */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* เพิ่มเงา */
+}
+
+.line-compact {
+  line-height: 0.5; /* ปรับระยะห่างระหว่างบรรทัด */
 }
