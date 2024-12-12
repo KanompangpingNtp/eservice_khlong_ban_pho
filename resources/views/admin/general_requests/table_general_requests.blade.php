@@ -10,9 +10,7 @@
 
 </script>
 @endif
-
-<div class="container">
-    <h2 class="text-center">Table GR</h2>
+    <h2 class="text-center text-uppercase mb-4">TABLE GENERAL request</h2>
 
     <table class="table table-bordered table-striped">
         <thead class="text-center">
@@ -140,7 +138,5 @@
         </div>
     </div>
     @endforeach
-
-</div>
 
 @endsection
