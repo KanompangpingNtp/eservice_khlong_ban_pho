@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserGeneralRequestsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminGeneralRequestsController;
+use App\Http\Controllers\UserElderlyAllowanceController;
+use App\Http\Controllers\AdminElderlyAllowanceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +22,13 @@ Route::get('/', function () {
     return view('home.index');
 });
 
-//users form
+//users GeneralRequests
 Route::get('/GeneralRequests', [UserGeneralRequestsController::class, 'UsersFormPage'])->name('UsersFormPage');
 Route::post('/form/create', [UserGeneralRequestsController::class, 'FormCreate'])->name('FormCreate');
+
+//users elderly_allowance
+Route::get('/ElderlyAllowance', [UserElderlyAllowanceController::class, 'ElderlyAllowanceFormPage'])->name('ElderlyAllowanceFormPage');
+Route::post('/ElderlyAllowance/form/create', [UserElderlyAllowanceController::class, 'ElderlyAllowanceFormCreate'])->name('ElderlyAllowanceFormCreate');
 
 //auth
 Route::get('/login', [AuthController::class, 'LoginPage'])->name('LoginPage');
@@ -41,6 +47,10 @@ Route::middleware(['admin'])->group(function () {
     Route::post('/TablePages/AdminReply/{id}', [AdminGeneralRequestsController::class, 'AdminReply'])->name('AdminReply');
     Route::post('/TablePages/{id}/update-status', [AdminGeneralRequestsController::class, 'updateStatus'])->name('updateStatus');
     //end admin GeneralRequests
+
+    //elderly_allowance
+    Route::get('/TablePages/ElderlyAllowance', [AdminElderlyAllowanceController::class, 'TableElderlyAllowancePages'])->name('TableElderlyAllowancePages');
+
 });
 
 Route::middleware(['user'])->group(function () {

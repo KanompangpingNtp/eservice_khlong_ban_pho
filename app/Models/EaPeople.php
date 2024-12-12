@@ -61,4 +61,10 @@ class EaPeople extends Model
     {
         return $this->hasMany(EaReplies::class, 'ea_people_id');
     }
+
+
+    public function bankacoption()
+    {
+        return $this->hasMany(EaBankacOption::class, 'ea_people_id');
+    }
 }
