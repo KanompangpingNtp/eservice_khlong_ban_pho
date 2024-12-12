@@ -151,7 +151,7 @@
                     <a class="nav-link" href="{{route('TableElderlyAllowancePages')}}"><i class="fas fa-chart-bar"></i>แบบยืนยันสิทธิผู้สูงอายุ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-chart-line"></i> Analytics</a>
+                    <a class="nav-link" href="{{route('TableDisabilityPages')}}"><i class="fas fa-chart-line"></i> แบบคำขอลงทะเบียนรับเงินเบี้ยความพิการ</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fas fa-cog"></i> Settings</a>

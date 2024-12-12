@@ -67,4 +67,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(EaReplies::class, 'users_id');
     }
+
+    public function disabilityPeople()
+    {
+        return $this->hasMany(DisabilityPerson::class, 'users_id');
+    }
+
+    public function disabilityReplies()
+    {
+        return $this->hasMany(DisabilityReply::class, 'users_id');
+    }
 }

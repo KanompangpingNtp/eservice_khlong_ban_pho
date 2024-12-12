@@ -6,6 +6,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminGeneralRequestsController;
 use App\Http\Controllers\UserElderlyAllowanceController;
 use App\Http\Controllers\AdminElderlyAllowanceController;
+use App\Http\Controllers\UserDisabilityController;
+use App\Http\Controllers\AdminDisabilityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +21,7 @@ use App\Http\Controllers\AdminElderlyAllowanceController;
 */
 
 Route::get('/', function () {
-    return view('home.first-page');
+    return view('home.index');
 });
 
 //users GeneralRequests
@@ -29,6 +31,10 @@ Route::post('/form/create', [UserGeneralRequestsController::class, 'FormCreate']
 //users elderly_allowance
 Route::get('/ElderlyAllowance', [UserElderlyAllowanceController::class, 'ElderlyAllowanceFormPage'])->name('ElderlyAllowanceFormPage');
 Route::post('/ElderlyAllowance/form/create', [UserElderlyAllowanceController::class, 'ElderlyAllowanceFormCreate'])->name('ElderlyAllowanceFormCreate');
+
+//users disability
+Route::get('/Disability', [UserDisabilityController::class, 'DisabilityFormPage'])->name('DisabilityFormPage');
+Route::post('/Disability/form/create', [UserDisabilityController::class, 'DisabilityFormCreate'])->name('DisabilityFormCreate');
 
 //auth
 Route::get('/login', [AuthController::class, 'LoginPage'])->name('LoginPage');
@@ -53,6 +59,14 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/TablePages/ElderlyAllowance/ExportPdf/{id}', [AdminElderlyAllowanceController::class, 'ElderlyAllowanceExportPDF'])->name('ElderlyAllowanceExportPDF');
     Route::post('/TablePages/ElderlyAllowance/{id}/update-status', [AdminElderlyAllowanceController::class, 'ElderlyAllowanceUpdateStatus'])->name('ElderlyAllowanceUpdateStatus');
     Route::post('/TablePages/ElderlyAllowance/AdminReply/{id}', [AdminElderlyAllowanceController::class, 'ElderlyAllowanceAdminReply'])->name('ElderlyAllowanceAdminReply');
+
+    //admin disability
+    Route::get('/TablePages/Disability', [AdminDisabilityController::class, 'TableDisabilityPages'])->name('TableDisabilityPages');
+    Route::get('/TablePages/Disability/ShowFormEdit/{id}', [AdminDisabilityController::class, 'DisabilityShowEdit'])->name('DisabilityShowEdit');
+    Route::put('/TablePages/Disability/{id}/Update', [AdminDisabilityController::class, 'DisabilityFormUpdate'])->name('DisabilityFormUpdate');
+    Route::get('/TablePages/Disability/ExportPdf/{id}', [AdminDisabilityController::class, 'DisabilityExportPDF'])->name('DisabilityExportPDF');
+    Route::post('/TablePages/Disability/{id}/update-status', [AdminDisabilityController::class, 'DisabilityUpdateStatus'])->name('DisabilityUpdateStatus');
+    Route::post('/TablePages/Disability/AdminReply/{id}', [AdminDisabilityController::class, 'DisabilityReply'])->name('DisabilityReply');
 });
 
 Route::middleware(['user'])->group(function () {
@@ -71,4 +85,13 @@ Route::middleware(['user'])->group(function () {
     Route::put('/user/account/ElderlyAllowance/{id}/Update', [UserElderlyAllowanceController::class, 'ElderlyAllowanceFormUserUpdate'])->name('ElderlyAllowanceFormUserUpdate');
     Route::post('/user/account/ElderlyAllowance/{form}/reply', [UserElderlyAllowanceController::class, 'ElderlyAllowanceUserReply'])->name('ElderlyAllowanceUserReply');
     Route::get('/user/account/ElderlyAllowance/{id}/pdf', [UserElderlyAllowanceController::class, 'ElderlyAllowanceUserExportPDF'])->name('ElderlyAllowanceUserExportPDF');
+
+    //users disability
+    Route::get('/user/account/Disability', [UserDisabilityController::class, 'DisabilityUsersAccountFormPage'])->name('DisabilityUsersAccountFormPage');
+    Route::get('/user/account/Disability/record', [UserDisabilityController::class, 'TableDisabilityUsersPages'])->name('TableDisabilityUsersPages');
+    Route::get('/user/account/Disability/{id}/edit', [UserDisabilityController::class, 'DisabilityUserShowEdit'])->name('DisabilityUserShowEdit');
+    Route::put('/user/account/Disability/{id}/Update', [UserDisabilityController::class, 'DisabilityUserFormUpdate'])->name('DisabilityUserFormUpdate');
+    Route::get('/user/account/Disability/{id}/pdf', [UserDisabilityController::class, 'DisabilityUserExportPDF'])->name('DisabilityUserExportPDF');
+    Route::post('/user/account/Disability/{form}/reply', [UserDisabilityController::class, 'DisabilityUserReply'])->name('DisabilityUserReply');
+
 });
