@@ -22,6 +22,10 @@ use App\Http\Controllers\UserChildApplyController;
 */
 
 Route::get('/', function () {
+    return view('home.first-page');
+})->name('home.first-page');
+
+Route::get('/index', function () {
     return view('home.index');
 })->name('home.index');
 

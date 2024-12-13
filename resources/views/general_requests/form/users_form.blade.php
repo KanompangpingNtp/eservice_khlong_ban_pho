@@ -1,7 +1,8 @@
 @extends('dashboard.layout.users.layout_users')
+@section('title', 'ฟอร์มส่งคำร้องทั่วไป')
 @section('user_content')
     <div class="container">
-        <div class="text-center fs-1 mb-4">ฟอร์มส่งคำร้องทั่วไป</div>
+        <h3 class="text-center fs-1 mb-4">ฟอร์มส่งคำร้องทั่วไป</h3>
 
         <form action="{{ route('FormCreate') }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -82,11 +83,11 @@
                 </div>
             </div>
 
-
-
             <!-- ปุ่มบันทึก -->
             <div class="text-center w-full border">
-                <button type="submit" class="btn btn-primary w-100">บันทึก</button>
+                <button type="submit" class="btn btn-primary w-100 py-1"><i
+                        class="fa-solid fa-file-arrow-up me-2"></i></i>
+                    ส่งฟอร์มข้อมูล</button>
             </div>
         </form>
     </div>
