@@ -155,26 +155,26 @@
                 margin-left: 0;
             }
         }
+
     </style>
 </head>
 
 <body>
 
     <div class="container-fluid d-flex">
-        <!-- Sidebar -->
         <div id="sidebar" class="sidebar">
+            @if(Auth::check())
+            <!-- Sidebar -->
             <div class="d-flex justify-content-center align-content-center fs-1">
                 <div class="font-sarabun-bold fs-1">Dash board</div>
                 <button id="toggle-sidebars" class="btn btn-outline-secondary d-md-none ">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
-
             <!-- เมนูที่สามารถคลิกเพื่อเปิดตัวเลือกเพิ่มเติม -->
             <div class="nav-item">
-                <a class="nav-link fs-4 font-sarabun-bold" href="javascript:void(0)" data-bs-toggle="collapse"
-                    data-bs-target="#moreOptions1">
-                    <i class="fas fa-chart-line"></i> More
+                <a class="nav-link fs-4 font-sarabun-bold" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#moreOptions1">
+                    <i class="fas fa-chart-line"></i> คำร้องทั่วไป
                 </a>
                 <!-- ตัวเลือกที่จะแสดงเมื่อคลิก -->
                 <div id="moreOptions1" class="collapse">
@@ -184,13 +184,10 @@
                     <div class="nav-item">
                         <a class="nav-link" href="#">Option 2</a>
                     </div>
-                    <div class="nav-item">
-                        <a class="nav-link" href="#">Option 3</a>
-                    </div>
                 </div>
-                <a class="nav-link fs-4 font-sarabun-bold" href="javascript:void(0)" data-bs-toggle="collapse"
-                    data-bs-target="#moreOptions2">
-                    <i class="fas fa-cogs"></i> Options
+                <a class="nav-link fs-4 font-sarabun-bold" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#moreOptions2">
+                    <i class="fas fa-cogs"></i> แบบคำขอส่งทะเบียน
+                    รับเบี้ยความพิการ
                 </a>
                 <!-- ตัวเลือกที่จะแสดงเมื่อคลิก -->
                 <div id="moreOptions2" class="collapse">
@@ -200,12 +197,16 @@
                     <div class="nav-item">
                         <a class="nav-link" href="#">Option 2</a>
                     </div>
-                    <div class="nav-item">
-                        <a class="nav-link" href="#">Option 3</a>
-                    </div>
                 </div>
             </div>
 
+            @else
+
+            <div class="d-flex justify-content-center align-content-center fs-1">
+             <a href="{{ url('/') }}" class="btn btn-primary">กลับหน้าหลัก</a>
+            </div>
+
+            @endif
         </div>
 
         <!-- Main Content Area -->
@@ -219,25 +220,30 @@
 
                     <!-- Profile Dropdown -->
                     <div class="dropdown ms-auto">
-                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="profileDropdown"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             Profile
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-                            <li>
-                                <a class="dropdown-item" href="{{ route('LoginPage') }}">Login</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="{{ route('RegisterPage') }}">RegisterPage</a>
-                            </li>
+                            @if(Auth::check())
+                            <!-- แสดงเมื่อผู้ใช้ล็อกอิน -->
                             <li>
                                 <form action="{{ route('logout') }}" method="POST" style="display: inline;">
                                     @csrf
                                     <button class="dropdown-item" type="submit">Logout</button>
                                 </form>
                             </li>
+                            @else
+                            <!-- แสดงเมื่อผู้ใช้ยังไม่ได้ล็อกอิน -->
+                            <li>
+                                <a class="dropdown-item" href="{{ route('LoginPage') }}">Login</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('RegisterPage') }}">Register</a>
+                            </li>
+                            @endif
                         </ul>
                     </div>
+
                 </div>
             </nav>
 
@@ -266,6 +272,7 @@
             navbar.classList.toggle('collapsed');
             content.classList.toggle('collapsed');
         });
+
     </script>
 </body>
 

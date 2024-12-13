@@ -22,7 +22,7 @@ use App\Http\Controllers\AdminDisabilityController;
 
 Route::get('/', function () {
     return view('home.index');
-});
+})->name('home.index');
 
 //users GeneralRequests
 Route::get('/GeneralRequests', [UserGeneralRequestsController::class, 'UsersFormPage'])->name('UsersFormPage');
@@ -70,6 +70,10 @@ Route::middleware(['admin'])->group(function () {
 });
 
 Route::middleware(['user'])->group(function () {
+    Route::get('/users/account/index', function () {
+        return view('dashboard.layout.users.users_account_index');
+    })->name('users.account.index');
+
     //user GeneralRequests
     Route::get('/user/account', [UserGeneralRequestsController::class, 'UsersAccountFormPage'])->name('UsersAccountFormPage');
     Route::get('/user/account/record', [UserGeneralRequestsController::class, 'userRecordForm'])->name('userRecordForm');
