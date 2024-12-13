@@ -130,6 +130,12 @@
             transition: margin-left 0.3s ease;
         }
 
+        .main-content h3 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #004ddc;
+        }
+
         .main-content input {
             font-size: 23px;
             color: #2f2f2f;
@@ -220,8 +226,8 @@
     <div class="flex-grow-1">
         <!-- Navbar -->
         <nav class="navbar navbar-expand-md navbar-dark">
-            <div class="container-fluid">
-                <button id="toggle-sidebar" class="btn btn-outline-primary me-3 d-md-none">
+            <div class="d-flex column-gap-3 w-100">
+                <button id="toggle-sidebar" class="btn btn-outline-primary ms-3 d-md-none w-25">
                     เปิดเมนู
                 </button>
 

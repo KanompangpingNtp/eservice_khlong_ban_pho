@@ -1,7 +1,7 @@
 @extends('dashboard.layout.users.layout_users')
 @section('user_content')
     <div class="container">
-        <div class="text-center fs-1 mb-4">ฟอร์มส่งคำร้องทั่วไป</div>
+        <h3 class="text-center fs-1 mb-4">ฟอร์มส่งคำร้องทั่วไป</h3>
 
         <form action="{{ route('FormCreate') }}" method="POST" enctype="multipart/form-data">
             @csrf
