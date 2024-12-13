@@ -248,7 +248,7 @@
                         </ul>
                     </div>
                 @else
-                    <div class="d-flex justify-content-end column-gap-3 w-100">
+                    <div class="d-flex justify-content-end column-gap-3 w-100 me-3">
                         <button class="btn btn-outline-primary" href="{{ route('LoginPage') }}"><i
                                 class="fa-solid fa-lock-open"></i> เข้าสู่ระบบ</button>
                         <button class="btn btn-outline-primary" href="{{ route('RegisterPage') }}"><i
