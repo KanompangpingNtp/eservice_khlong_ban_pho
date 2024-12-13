@@ -41,70 +41,67 @@
 
         /* Body styles */
         body {
-            background: linear-gradient(to bottom, #f2f9fd, #e5e5e5);
+            background: linear-gradient(to bottom, rgb(247, 251, 255), rgb(222, 222, 222));
             font-family: 'THSarabunNew', sans-serif;
             min-height: 100vh;
-            color: #2f2f2f;
         }
 
         /* Sidebar */
         .sidebar {
-            background: linear-gradient(to bottom, #f2f9fd, #e5e5e5);
-            color: #2f2f2f;
+            background-color: #fefefe;
+            color: #004ddc;
             min-height: 100vh;
-            padding-top: 2rem;
+            padding-top: 0.5rem;
             position: fixed;
             top: 0;
             left: 0;
-            width: 250px;
+            width: 230px;
             z-index: 1200;
             transition: transform 0.3s ease;
             box-shadow: 6px 0px 20px rgba(0, 0, 0, 0.1);
         }
 
         .sidebar a {
-            color: #2f2f2f;
+            color: #004ddc;
             text-decoration: none;
             padding: 15px 3rem;
-            display: flex;
-            align-items: center;
-            font-size: 1.1rem;
             border-radius: 8px;
+            font-size: 28px;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
         .sidebar a i {
             margin-right: 10px;
+            font-size: 15px;
         }
 
         .sidebar a:hover {
-            background-color: #2f2f2f;
+            background-color: #004ddc;
             color: white;
             transform: translateX(5px);
         }
 
         /* Navbar */
         .navbar {
-            background: linear-gradient(to right, #f2f9fd, #e5e5e5);
+            background-color: #fefefe;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             position: fixed;
             top: 0;
-            left: 250px;
-            width: calc(100% - 250px);
+            left: 230px;
+            width: calc(100% - 230px);
             height: 60px;
+            font-size: 28px;
             z-index: 1100;
             transition: left 0.3s ease, width 0.3s ease;
+        }
+
+        .navbar button {
+            font-size: 20px;
         }
 
         .navbar.collapsed {
             left: 0;
             width: 100%;
-        }
-
-        .navbar .navbar-brand {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: white;
         }
 
         .navbar .nav-link {
@@ -119,12 +116,15 @@
         /* Main Content */
         .main-content {
             padding: 3rem;
-            background-color: rgba(255, 255, 255, 0.827);
+            background-color: rgba(255, 255, 255, 0.933);
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             min-height: 90vh;
+            width: auto;
             margin-top: 75px;
-            margin-left: 255px;
+            margin-bottom: 30px;
+            margin-left: 247px;
+            margin-right: 15px;
             font-size: 23px;
             color: #2f2f2f;
             transition: margin-left 0.3s ease;
@@ -137,6 +137,11 @@
 
         .main-content button {
             font-size: 23px;
+        }
+
+        .custom-border-bottom {
+            border-bottom: 3px solid #007bff;
+            /* เปลี่ยนความหนาและสีของเส้น */
         }
 
         /* Responsive Styles */
@@ -155,10 +160,9 @@
             }
 
             .main-content {
-                margin-left: 0;
+                margin-left: 15px;
             }
         }
-
     </style>
 </head>
 
@@ -166,95 +170,95 @@
 
     <div class="container-fluid d-flex">
         <div id="sidebar" class="sidebar">
-            @if(Auth::check())
+
             <!-- Sidebar -->
-            <div class="d-flex justify-content-center align-content-center fs-1">
-                <div class="font-sarabun-bold fs-1">Dash board</div>
-                <button id="toggle-sidebars" class="btn btn-outline-secondary d-md-none ">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-            <!-- เมนูที่สามารถคลิกเพื่อเปิดตัวเลือกเพิ่มเติม -->
-            <div class="nav-item">
-                <a class="nav-link fs-4 font-sarabun-bold" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#moreOptions1">
-                    <i class="fas fa-chart-line"></i> คำร้องทั่วไป
-                </a>
-                <!-- ตัวเลือกที่จะแสดงเมื่อคลิก -->
-                <div id="moreOptions1" class="collapse">
-                    <div class="nav-item">
-                        <a class="nav-link" href="#">Option 1</a>
-                    </div>
-                    <div class="nav-item">
-                        <a class="nav-link" href="#">Option 2</a>
-                    </div>
+            <div class="d-flex justify-content-center align-content-center custom-border-bottom mb-3 mx-3">
+                <div class=" font-sarabun-bold d-none d-md-block" style="font-size: 40px">เมนู
                 </div>
-                <a class="nav-link fs-4 font-sarabun-bold" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#moreOptions2">
-                    <i class="fas fa-cogs"></i> แบบคำขอส่งทะเบียน
-                    รับเบี้ยความพิการ
+                <a id="toggle-sidebars" class="font-sarabun-bold d-md-none my-2" style="font-size: 40px">
+                    ปิดเมนู
                 </a>
-                <!-- ตัวเลือกที่จะแสดงเมื่อคลิก -->
-                <div id="moreOptions2" class="collapse">
-                    <div class="nav-item">
-                        <a class="nav-link" href="#">Option 1</a>
-                    </div>
-                    <div class="nav-item">
-                        <a class="nav-link" href="#">Option 2</a>
-                    </div>
-                </div>
             </div>
-
-            @else
-
-            <div class="d-flex justify-content-center align-content-center fs-1">
-             <a href="{{ url('/') }}" class="btn btn-primary">กลับหน้าหลัก</a>
-            </div>
-
+            @if (Auth::check())
+                <!-- เมนูที่สามารถคลิกเพื่อเปิดตัวเลือกเพิ่มเติม -->
+                <div class="nav-item">
+                    <a class="nav-link font-sarabun-bold" href="javascript:void(0)" data-bs-toggle="collapse"
+                        data-bs-target="#moreOptions1">
+                        <i class="fas fa-chart-line"></i> คำร้องทั่วไป
+                    </a>
+                    <!-- ตัวเลือกที่จะแสดงเมื่อคลิก -->
+                    <div id="moreOptions1" class="collapse">
+                        <div class="nav-item">
+                            <a class="nav-link" href="#">Option 1</a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link" href="#">Option 2</a>
+                        </div>
+                    </div>
+                    <a class="nav-link font-sarabun-bold" href="javascript:void(0)" data-bs-toggle="collapse"
+                        data-bs-target="#moreOptions2">
+                        <i class="fas fa-cogs"></i> แบบคำขอส่งทะเบียน
+                        รับเบี้ยความพิการ
+                    </a>
+                    <!-- ตัวเลือกที่จะแสดงเมื่อคลิก -->
+                    <div id="moreOptions2" class="collapse">
+                        <div class="nav-item">
+                            <a class="nav-link" href="#">Option 1</a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link" href="#">Option 2</a>
+                        </div>
+                    </div>
+                @else
+                    <a href="{{ url('/') }}" class="nav-link font-sarabun-bold"><i
+                            class="fa-solid fa-house"></i>กลับหน้าหลัก</a>
             @endif
         </div>
+    </div>
 
-        <!-- Main Content Area -->
-        <div class="flex-grow-1">
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-md navbar-dark">
-                <div class="container-fluid">
-                    <button id="toggle-sidebar" class="btn btn-outline-secondary me-3 d-md-none">
-                        <i class="fas fa-bars"></i>
-                    </button>
+    <!-- Main Content Area -->
+    <div class="flex-grow-1">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container-fluid">
+                <button id="toggle-sidebar" class="btn btn-outline-primary me-3 d-md-none">
+                    เปิดเมนู
+                </button>
 
-                    <!-- Profile Dropdown -->
+                @if (Auth::check())
                     <div class="dropdown ms-auto">
-                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            Profile
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="profileDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-user"></i> {{ Auth::user()->name }} <!-- แสดงชื่อผู้ใช้งาน -->
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-                            @if(Auth::check())
                             <!-- แสดงเมื่อผู้ใช้ล็อกอิน -->
                             <li>
                                 <form action="{{ route('logout') }}" method="POST" style="display: inline;">
                                     @csrf
-                                    <button class="dropdown-item" type="submit">Logout</button>
+                                    <button class="dropdown-item fs-3" type="submit">ออกจากระบบ</button>
                                 </form>
                             </li>
-                            @else
-                            <!-- แสดงเมื่อผู้ใช้ยังไม่ได้ล็อกอิน -->
-                            <li>
-                                <a class="dropdown-item" href="{{ route('LoginPage') }}">Login</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="{{ route('RegisterPage') }}">Register</a>
-                            </li>
-                            @endif
                         </ul>
                     </div>
+                @else
+                    <div class="d-flex justify-content-end column-gap-3 w-100">
+                        <button class="btn btn-outline-primary" href="{{ route('LoginPage') }}"><i
+                                class="fa-solid fa-lock-open"></i> เข้าสู่ระบบ</button>
+                        <button class="btn btn-outline-primary" href="{{ route('RegisterPage') }}"><i
+                                class="fa-solid fa-user"></i> สมัครใช้งาน</button>
+                    </div>
+                @endif
 
-                </div>
-            </nav>
 
-            <!-- Dashboard Content -->
-            <div class="main-content">
-                @yield('user_content')
             </div>
+        </nav>
+
+        <!-- Dashboard Content -->
+        <div class="main-content">
+            @yield('user_content')
         </div>
+    </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -275,7 +279,6 @@
             navbar.classList.toggle('collapsed');
             content.classList.toggle('collapsed');
         });
-
     </script>
 </body>
 
