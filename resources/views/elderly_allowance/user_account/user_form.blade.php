@@ -169,7 +169,7 @@
             <hr>
 
 
-            <h3 class="form-label"> ข้อมูลทั่วไป : สถานภาพการรับสวัสดิการภาครัฐ</h3>
+            <h3> ข้อมูลทั่วไป : สถานภาพการรับสวัสดิการภาครัฐ</h3>
             <div class="form-check">
                 <input type="checkbox" name="welfare_type[]" id="welfare_type_aid" value="option1"
                     class="form-check-input">
