@@ -1,121 +1,133 @@
 @extends('dashboard.layout.users.layout_users')
+@section('title', 'แก้ไขฟอร์มส่งคำร้องทั่วไป')
 @section('user_content')
-    @if ($message = Session::get('success'))
-        <script>
-            Swal.fire({
-                icon: 'success',
-                title: '{{ $message }}',
-            })
-        </script>
-    @endif
-
     <div class="container">
-        <h3 class="text-center">แก้ไขฟอร์ม</h3>
+        <h3 class="text-center">แก้ไขฟอร์มส่งคำร้องทั่วไป</h3>
 
         <form action="{{ route('updateUserForm', $form->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
-            <div class="mb-3">
-                <label for="date" class="form-label">วันที่</label>
-                <input type="date" class="form-control" id="date" name="date"
-                    value="{{ old('date', $form->date) }}" required>
+            <!-- Row 1: วันที่ และ เรื่อง -->
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <label for="date" class="form-label">วันที่</label>
+                    <input type="date" class="form-control" id="date" name="date"
+                        value="{{ old('date', $form->date) }}" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="subject" class="form-label">เรื่อง</label>
+                    <input type="text" class="form-control" id="subject" name="subject"
+                        value="{{ old('subject', $form->subject) }}" maxlength="255">
+                </div>
             </div>
 
-            <div class="mb-3">
-                <label for="subject" class="form-label">หัวข้อ</label>
-                <input type="text" class="form-control" id="subject" name="subject"
-                    value="{{ old('subject', $form->subject) }}" maxlength="255">
+            <!-- Row 2: คำนำหน้า และ ชื่อ -->
+            <div class="row g-3 mb-3">
+                <div class="col-md-3">
+                    <label for="salutation" class="form-label">คำนำหน้า<span class="text-danger">*</span></label>
+                    <select class="form-select" id="salutation" name="salutation">
+                        <option value="" selected disabled>เลือกคำนำหน้า</option>
+                        <option value="นาย" {{ old('salutation', $form->salutation ?? '') == 'นาย' ? 'selected' : '' }}>
+                            นาย</option>
+                        <option value="นาง" {{ old('salutation', $form->salutation ?? '') == 'นาง' ? 'selected' : '' }}>
+                            นาง</option>
+                        <option value="นางสาว"
+                            {{ old('salutation', $form->salutation ?? '') == 'นางสาว' ? 'selected' : '' }}>นางสาว</option>
+                    </select>
+                </div>
+                <div class="col-md-9">
+                    <label for="name" class="form-label">ชื่อ</label>
+                    <input type="text" class="form-control" id="name" name="name"
+                        value="{{ old('name', $form->name) }}" maxlength="255">
+                </div>
             </div>
 
-            <div class="mb-3">
-                <label for="salutation" class="form-label">คำนำหน้า<span class="text-danger">*</span></label>
-                <select class="form-select" id="salutation" name="salutation">
-                    <option value="" selected disabled>เลือกคำนำหน้า</option>
-                    <option value="นาย" {{ old('salutation', $form->salutation ?? '') == 'นาย' ? 'selected' : '' }}>นาย
-                    </option>
-                    <option value="นาง" {{ old('salutation', $form->salutation ?? '') == 'นาง' ? 'selected' : '' }}>นาง
-                    </option>
-                    <option value="นางสาว" {{ old('salutation', $form->salutation ?? '') == 'นางสาว' ? 'selected' : '' }}>
-                        นางสาว</option>
-                </select>
+            <!-- Row 3: อายุ และ บ้านเลขที่ -->
+            <div class="row g-3 mb-3">
+                <div class="col-md-3">
+                    <label for="age" class="form-label">อายุ</label>
+                    <input type="number" class="form-control" id="age" name="age"
+                        value="{{ old('age', $form->age) }}">
+                </div>
+                <div class="col-md-9">
+                    <label for="house_number" class="form-label">บ้านเลขที่</label>
+                    <input type="text" class="form-control" id="house_number" name="house_number"
+                        value="{{ old('house_number', $form->house_number) }}" maxlength="50">
+                </div>
             </div>
 
-            <div class="mb-3">
-                <label for="name" class="form-label">ชื่อ</label>
-                <input type="text" class="form-control" id="name" name="name"
-                    value="{{ old('name', $form->name) }}" maxlength="255">
+            <!-- Row 4: หมู่บ้าน, ตำบล, อำเภอ -->
+            <div class="row g-3 mb-3">
+                <div class="col-md-4">
+                    <label for="village" class="form-label">หมู่บ้าน</label>
+                    <input type="text" class="form-control" id="village" name="village"
+                        value="{{ old('village', $form->village) }}" maxlength="100">
+                </div>
+                <div class="col-md-4">
+                    <label for="subdistrict" class="form-label">ตำบล</label>
+                    <input type="text" class="form-control" id="subdistrict" name="subdistrict"
+                        value="{{ old('subdistrict', $form->subdistrict) }}" maxlength="100">
+                </div>
+                <div class="col-md-4">
+                    <label for="district" class="form-label">อำเภอ</label>
+                    <input type="text" class="form-control" id="district" name="district"
+                        value="{{ old('district', $form->district) }}" maxlength="100">
+                </div>
             </div>
 
-            <div class="mb-3">
-                <label for="age" class="form-label">อายุ</label>
-                <input type="number" class="form-control" id="age" name="age"
-                    value="{{ old('age', $form->age) }}">
-            </div>
-
-            <div class="mb-3">
-                <label for="house_number" class="form-label">บ้านเลขที่</label>
-                <input type="text" class="form-control" id="house_number" name="house_number"
-                    value="{{ old('house_number', $form->house_number) }}" maxlength="50">
-            </div>
-
-            <div class="mb-3">
-                <label for="village" class="form-label">หมู่บ้าน</label>
-                <input type="text" class="form-control" id="village" name="village"
-                    value="{{ old('village', $form->village) }}" maxlength="100">
-            </div>
-
-            <div class="mb-3">
-                <label for="subdistrict" class="form-label">ตำบล</label>
-                <input type="text" class="form-control" id="subdistrict" name="subdistrict"
-                    value="{{ old('subdistrict', $form->subdistrict) }}" maxlength="100">
-            </div>
-
-            <div class="mb-3">
-                <label for="district" class="form-label">อำเภอ</label>
-                <input type="text" class="form-control" id="district" name="district"
-                    value="{{ old('district', $form->district) }}" maxlength="100">
-            </div>
-
+            <!-- Row 5: จังหวัด -->
             <div class="mb-3">
                 <label for="province" class="form-label">จังหวัด</label>
                 <input type="text" class="form-control" id="province" name="province"
                     value="{{ old('province', $form->province) }}" maxlength="100">
             </div>
 
+            <!-- Row 6: รายละเอียดคำขอ -->
             <div class="mb-3">
                 <label for="request_details" class="form-label">รายละเอียดคำขอ</label>
                 <textarea class="form-control" id="request_details" name="request_details" rows="3">{{ old('request_details', $form->request_details) }}</textarea>
             </div>
 
+
             <div class="mb-3">
                 <label class="form-label">ไฟล์แนบปัจจุบัน</label>
-                <ul>
+                <div class="list-group">
                     @foreach ($form->grAttachments as $attachment)
-                        <li>
-                            <a href="{{ asset('storage/' . $attachment->file_path) }}"
-                                target="_blank">{{ basename($attachment->file_path) }}</a>
-                            <input type="checkbox" name="delete_attachments[]" value="{{ $attachment->id }}"> ลบไฟล์นี้
-                        </li>
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <a href="{{ asset('storage/' . $attachment->file_path) }}" target="_blank"
+                                class="text-truncate" style="max-width: 80%;">
+                                {{ basename($attachment->file_path) }}
+                            </a>
+                            <div class="form-check">
+                                <input type="checkbox" name="delete_attachments[]" value="{{ $attachment->id }}"
+                                    class="form-check-input">
+                                <label class="form-check-label"
+                                    for="delete_attachments_{{ $attachment->id }}">ลบไฟล์นี้</label>
+                            </div>
+                        </div>
                     @endforeach
-                </ul>
+                </div>
             </div>
 
+
+            <!-- Row 7: แนบไฟล์ -->
             <div class="mb-3">
-                <label for="attachments" class="form-label">เพิ่มไฟล์แนบใหม่</label>
+                <label for="attachments" class="form-label">แนบไฟล์</label>
                 <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
                 <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
-            </div>
-
-            <!-- แสดงรายการไฟล์ที่แนบ -->
-            <div id="file-list" class="mt-3">
-                <h5>ไฟล์ที่เลือก:</h5>
-                <div class="d-flex flex-wrap gap-3"></div>
+                <!-- แสดงรายการไฟล์ที่แนบ -->
+                <div id="file-list" class="mt-1">
+                    {{-- <label>ไฟล์ที่เลือก:</label> --}}
+                    <div class="d-flex flex-wrap gap-3"></div>
+                </div>
             </div>
 
             <!-- ปุ่มบันทึก -->
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary">บันทึกการเปลี่ยนแปลง</button>
+            <div class="text-center w-full border">
+                <button type="submit" class="btn btn-primary w-100 py-1"><i
+                        class="fa-solid fa-file-arrow-up me-2"></i></i>
+                    แก้ไขฟอร์มข้อมูล</button>
             </div>
         </form>
     </div>
