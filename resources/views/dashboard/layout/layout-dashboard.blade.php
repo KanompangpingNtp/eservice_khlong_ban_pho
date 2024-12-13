@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>@yield('title', 'Default Title')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -12,10 +12,12 @@
     <style>
         /* Body styles */
         body {
-            background: linear-gradient(to bottom, #e3f2fd, #ffffff); /* ฟ้าสดใสกับขาวนุ่ม */
+            background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+            /* ฟ้าสดใสกับขาวนุ่ม */
             font-family: 'Roboto', sans-serif;
             min-height: 100vh;
-            color: #333; /* ข้อความสีเข้มเพื่อความชัดเจน */
+            color: #333;
+            /* ข้อความสีเข้มเพื่อความชัดเจน */
         }
 
         h2 {
@@ -25,7 +27,8 @@
         /* Sidebar */
         .sidebar {
             background: linear-gradient(to bottom, #f2f9fd, #e3f2fd);
-            color: #0092ed; /* ฟ้าสว่าง */
+            color: #0092ed;
+            /* ฟ้าสว่าง */
             min-height: 100vh;
             padding-top: 2rem;
             position: fixed;
@@ -34,14 +37,16 @@
             width: 250px;
             z-index: 1200;
             transition: transform 0.3s ease;
-            box-shadow: 6px 0px 20px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ลึกขึ้น */
+            box-shadow: 6px 0px 20px rgba(0, 0, 0, 0.1);
+            /* เพิ่มเงาให้ลึกขึ้น */
         }
 
         .sidebar h3 {
             font-size: 2rem;
             text-align: center;
             margin-bottom: 2rem;
-            color: #0c95df; /* ฟ้าสว่าง */
+            color: #0c95df;
+            /* ฟ้าสว่าง */
         }
 
         .sidebar a {
@@ -104,7 +109,8 @@
             padding: 3rem;
             background-color: white;
             border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* เงาที่ลึกขึ้น */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            /* เงาที่ลึกขึ้น */
             min-height: 90vh;
             margin-top: 75px;
             margin-left: 255px;
@@ -145,13 +151,16 @@
             </button>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('TablePages')}}"><i class="fas fa-tachometer-alt"></i>คำร้องทั่วไป</a>
+                    <a class="nav-link" href="{{ route('TablePages') }}"><i
+                            class="fas fa-tachometer-alt"></i>คำร้องทั่วไป</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('TableElderlyAllowancePages')}}"><i class="fas fa-chart-bar"></i>แบบยืนยันสิทธิผู้สูงอายุ</a>
+                    <a class="nav-link" href="{{ route('TableElderlyAllowancePages') }}"><i
+                            class="fas fa-chart-bar"></i>แบบยืนยันสิทธิผู้สูงอายุ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('TableDisabilityPages')}}"><i class="fas fa-chart-line"></i> แบบคำขอลงทะเบียนรับเงินเบี้ยความพิการ</a>
+                    <a class="nav-link" href="{{ route('TableDisabilityPages') }}"><i class="fas fa-chart-line"></i>
+                        แบบคำขอลงทะเบียนรับเงินเบี้ยความพิการ</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fas fa-cog"></i> Settings</a>
