@@ -8,6 +8,7 @@ use App\Http\Controllers\UserElderlyAllowanceController;
 use App\Http\Controllers\AdminElderlyAllowanceController;
 use App\Http\Controllers\UserDisabilityController;
 use App\Http\Controllers\AdminDisabilityController;
+use App\Http\Controllers\UserChildApplyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,10 @@ Route::post('/ElderlyAllowance/form/create', [UserElderlyAllowanceController::cl
 //users disability
 Route::get('/Disability', [UserDisabilityController::class, 'DisabilityFormPage'])->name('DisabilityFormPage');
 Route::post('/Disability/form/create', [UserDisabilityController::class, 'DisabilityFormCreate'])->name('DisabilityFormCreate');
+
+//User ChildApply
+Route::get('/ChildApply', [UserChildApplyController::class, 'ChildApplyPage'])->name('ChildApplyPage');
+Route::post('/ChildApply/form/create', [UserChildApplyController::class, 'ChildApplyFormCreate'])->name('ChildApplyFormCreate');
 
 //auth
 Route::get('/login', [AuthController::class, 'LoginPage'])->name('LoginPage');

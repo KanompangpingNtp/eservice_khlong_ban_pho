@@ -164,6 +164,16 @@
 
 <body>
 
+    @if ($message = Session::get('success'))
+    <script>
+        Swal.fire({
+            icon: 'success'
+            , title: '{{ $message }}'
+        , })
+
+    </script>
+    @endif
+
     <div class="container-fluid d-flex">
         <div id="sidebar" class="sidebar">
             @if(Auth::check())
@@ -206,7 +216,7 @@
             @else
 
             <div class="d-flex justify-content-center align-content-center fs-1">
-             <a href="{{ url('/') }}" class="btn btn-primary">กลับหน้าหลัก</a>
+                <a href="{{ url('/') }}" class="btn btn-primary">กลับหน้าหลัก</a>
             </div>
 
             @endif
