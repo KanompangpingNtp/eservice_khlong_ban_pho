@@ -1,104 +1,96 @@
 @extends('dashboard.layout.users.layout_users')
 @section('user_content')
-    @if ($message = Session::get('success'))
-        <script>
-            Swal.fire({
-                icon: 'success',
-                title: '{{ $message }}',
-            })
-        </script>
-    @endif
-
     <div class="container">
-        <h2 class="text-center">ฟอร์มส่งคำร้องทั่วไป</h2>
+        <div class="text-center fs-1 mb-4">ฟอร์มส่งคำร้องทั่วไป</div>
 
         <form action="{{ route('FormCreate') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <!-- วันที่ -->
-            <div class="mb-3">
-                <label for="date" class="form-label">วันที่</label>
-                <input type="date" class="form-control" id="date" name="date" required>
+
+            <!-- Row 1: วันที่ และ เรื่อง -->
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <label for="date" class="form-label">วันที่</label>
+                    <input type="date" class="form-control" id="date" name="date" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="subject" class="form-label">เรื่อง</label>
+                    <input type="text" class="form-control" id="subject" name="subject" maxlength="255">
+                </div>
             </div>
 
-            <!-- หัวข้อ -->
-            <div class="mb-3">
-                <label for="subject" class="form-label">เรื่อง</label>
-                <input type="text" class="form-control" id="subject" name="subject" maxlength="255">
+            <!-- Row 2: คำนำหน้า และ ชื่อ -->
+            <div class="row g-3 mb-3">
+                <div class="col-md-3">
+                    <label for="salutation" class="form-label">คำนำหน้า</label>
+                    <input type="text" class="form-control" id="salutation" name="salutation" maxlength="50">
+                </div>
+                <div class="col-md-9">
+                    <label for="name" class="form-label">ชื่อ</label>
+                    <input type="text" class="form-control" id="name" name="name" maxlength="255">
+                </div>
             </div>
 
-            <!-- คำนำหน้า -->
-            <div class="mb-3">
-                <label for="salutation" class="form-label">คำนำหน้า</label>
-                <input type="text" class="form-control" id="salutation" name="salutation" maxlength="50">
+            <!-- Row 3: อายุ และ บ้านเลขที่ -->
+            <div class="row g-3 mb-3">
+                <div class="col-md-3">
+                    <label for="age" class="form-label">อายุ</label>
+                    <input type="number" class="form-control" id="age" name="age">
+                </div>
+                <div class="col-md-9">
+                    <label for="house_number" class="form-label">บ้านเลขที่</label>
+                    <input type="text" class="form-control" id="house_number" name="house_number" maxlength="50">
+                </div>
             </div>
 
-            <!-- ชื่อ -->
-            <div class="mb-3">
-                <label for="name" class="form-label">ชื่อ</label>
-                <input type="text" class="form-control" id="name" name="name" maxlength="255">
+            <!-- Row 4: หมู่บ้าน, ตำบล, อำเภอ -->
+            <div class="row g-3 mb-3">
+                <div class="col-md-4">
+                    <label for="village" class="form-label">หมู่บ้าน</label>
+                    <input type="text" class="form-control" id="village" name="village" maxlength="100">
+                </div>
+                <div class="col-md-4">
+                    <label for="subdistrict" class="form-label">ตำบล</label>
+                    <input type="text" class="form-control" id="subdistrict" name="subdistrict" maxlength="100">
+                </div>
+                <div class="col-md-4">
+                    <label for="district" class="form-label">อำเภอ</label>
+                    <input type="text" class="form-control" id="district" name="district" maxlength="100">
+                </div>
             </div>
 
-            <!-- อายุ -->
-            <div class="mb-3">
-                <label for="age" class="form-label">อายุ</label>
-                <input type="number" class="form-control" id="age" name="age">
-            </div>
-
-            <!-- บ้านเลขที่ -->
-            <div class="mb-3">
-                <label for="house_number" class="form-label">บ้านเลขที่</label>
-                <input type="text" class="form-control" id="house_number" name="house_number" maxlength="50">
-            </div>
-
-            <!-- หมู่บ้าน -->
-            <div class="mb-3">
-                <label for="village" class="form-label">หมู่บ้าน</label>
-                <input type="text" class="form-control" id="village" name="village" maxlength="100">
-            </div>
-
-            <!-- ตำบล -->
-            <div class="mb-3">
-                <label for="subdistrict" class="form-label">ตำบล</label>
-                <input type="text" class="form-control" id="subdistrict" name="subdistrict" maxlength="100">
-            </div>
-
-            <!-- อำเภอ -->
-            <div class="mb-3">
-                <label for="district" class="form-label">อำเภอ</label>
-                <input type="text" class="form-control" id="district" name="district" maxlength="100">
-            </div>
-
-            <!-- จังหวัด -->
+            <!-- Row 5: จังหวัด -->
             <div class="mb-3">
                 <label for="province" class="form-label">จังหวัด</label>
                 <input type="text" class="form-control" id="province" name="province" maxlength="100">
             </div>
 
-            <!-- รายละเอียดคำขอ -->
+            <!-- Row 6: รายละเอียดคำขอ -->
             <div class="mb-3">
                 <label for="request_details" class="form-label">รายละเอียดคำขอ</label>
                 <textarea class="form-control" id="request_details" name="request_details" rows="3"></textarea>
             </div>
 
-          <!-- แนบไฟล์ -->
-          <div class="mb-3">
-            <label for="attachments" class="form-label">แนบไฟล์</label>
-            <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
-            <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
-        </div>
-
-            <!-- แสดงรายการไฟล์ที่แนบ -->
-            <div id="file-list" class="mt-3">
-                <h5>ไฟล์ที่เลือก:</h5>
-                <div class="d-flex flex-wrap gap-3"></div>
+            <!-- Row 7: แนบไฟล์ -->
+            <div class="mb-3">
+                <label for="attachments" class="form-label">แนบไฟล์</label>
+                <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
+                <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
+                <!-- แสดงรายการไฟล์ที่แนบ -->
+                <div id="file-list" class="mt-1">
+                    {{-- <label>ไฟล์ที่เลือก:</label> --}}
+                    <div class="d-flex flex-wrap gap-3"></div>
+                </div>
             </div>
 
+
+
             <!-- ปุ่มบันทึก -->
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary">บันทึก</button>
+            <div class="text-center w-full border">
+                <button type="submit" class="btn btn-primary w-100">บันทึก</button>
             </div>
         </form>
     </div>
+
 
     <script>
         const fileInput = document.getElementById('attachments');

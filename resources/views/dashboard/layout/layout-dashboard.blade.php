@@ -139,6 +139,14 @@
         }
     </style>
 </head>
+@if ($message = Session::get('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: '{{ $message }}',
+        })
+    </script>
+@endif
 
 <body>
 

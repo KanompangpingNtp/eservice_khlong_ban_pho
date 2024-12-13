@@ -44,7 +44,7 @@
             background: linear-gradient(to bottom, #f2f9fd, #e5e5e5);
             font-family: 'THSarabunNew', sans-serif;
             min-height: 100vh;
-            color: #333;
+            color: #2f2f2f;
         }
 
         /* Sidebar */
@@ -119,13 +119,24 @@
         /* Main Content */
         .main-content {
             padding: 3rem;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.827);
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             min-height: 90vh;
             margin-top: 75px;
             margin-left: 255px;
+            font-size: 23px;
+            color: #2f2f2f;
             transition: margin-left 0.3s ease;
+        }
+
+        .main-content input {
+            font-size: 23px;
+            color: #2f2f2f;
+        }
+
+        .main-content button {
+            font-size: 23px;
         }
 
         /* Responsive Styles */
