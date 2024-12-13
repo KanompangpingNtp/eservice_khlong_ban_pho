@@ -89,7 +89,7 @@
                     </a>
                 </div>
                 <div class="half-border-right">
-                    <a href="" class="buttom-cool-right fs-4 font-sarabun text-end" style="line-height: 1.2;">
+                    <a href="{{route('ChildApplyPage')}}" class="buttom-cool-right fs-4 font-sarabun text-end" style="line-height: 1.2;">
                         <span class="circle">
                             <img src="{{ asset('images/layout-index/cv.png') }}" alt="Icon" />
                         </span>

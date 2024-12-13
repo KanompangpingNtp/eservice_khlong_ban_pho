@@ -179,6 +179,16 @@
 
 <body>
 
+    @if ($message = Session::get('success'))
+    <script>
+        Swal.fire({
+            icon: 'success'
+            , title: '{{ $message }}'
+        , })
+
+    </script>
+    @endif
+
     <div class="container-fluid d-flex">
         <div id="sidebar" class="sidebar">
 
