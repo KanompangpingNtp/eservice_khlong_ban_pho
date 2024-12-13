@@ -12,6 +12,7 @@
 <body>
     <div class="container">
         <a href="{{route('LoginPage')}}">login</a><br><a href="{{route('RegisterPage')}}">register</a>
+
         <br>
         @yield('user_content')
         <br>
