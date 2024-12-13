@@ -25,6 +25,16 @@ class ChildInformation extends Model
 
     public function caregiverInformation()
     {
-        return $this->hasOne(CaregiverInformation::class);
+        return $this->hasMany(CaregiverInformation::class,'child_information_id');
+    }
+
+    public function attachments()
+    {
+        return $this->hasMany(ChildAttachment::class, 'child_information_id');
+    }
+
+    public function replies()
+    {
+        return $this->hasMany(ChildReply::class, 'child_information_id');
     }
 }

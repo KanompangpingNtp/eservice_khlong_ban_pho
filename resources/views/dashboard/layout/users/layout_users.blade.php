@@ -174,6 +174,7 @@
                 margin-left: 15px;
             }
         }
+
     </style>
 </head>
 
@@ -201,38 +202,49 @@
                 </a>
             </div>
             @if (Auth::check())
-                <!-- เมนูที่สามารถคลิกเพื่อเปิดตัวเลือกเพิ่มเติม -->
-                <div class="nav-item">
-                    <a class="nav-link font-sarabun-bold" href="javascript:void(0)" data-bs-toggle="collapse"
-                        data-bs-target="#moreOptions1">
-                        <i class="fas fa-chart-line"></i> คำร้องทั่วไป
-                    </a>
-                    <!-- ตัวเลือกที่จะแสดงเมื่อคลิก -->
-                    <div id="moreOptions1" class="collapse">
-                        <div class="nav-item">
-                            <a class="nav-link" href="#">Option 1</a>
-                        </div>
-                        <div class="nav-item">
-                            <a class="nav-link" href="#">Option 2</a>
-                        </div>
+            <!-- เมนูที่สามารถคลิกเพื่อเปิดตัวเลือกเพิ่มเติม -->
+            <div class="nav-item">
+                <a class="nav-link font-sarabun-bold" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#moreOptions1">
+                    <i class="fas fa-chart-line"></i> คำร้องทั่วไป
+                </a>
+                <!-- ตัวเลือกที่จะแสดงเมื่อคลิก -->
+                <div id="moreOptions1" class="collapse">
+                    <div class="nav-item">
+                        <a class="nav-link" href="#">Option 1</a>
                     </div>
-                    <a class="nav-link font-sarabun-bold" href="javascript:void(0)" data-bs-toggle="collapse"
-                        data-bs-target="#moreOptions2">
-                        <i class="fas fa-cogs"></i> แบบคำขอส่งทะเบียน
-                        รับเบี้ยความพิการ
-                    </a>
-                    <!-- ตัวเลือกที่จะแสดงเมื่อคลิก -->
-                    <div id="moreOptions2" class="collapse">
-                        <div class="nav-item">
-                            <a class="nav-link" href="#">Option 1</a>
-                        </div>
-                        <div class="nav-item">
-                            <a class="nav-link" href="#">Option 2</a>
-                        </div>
+                    <div class="nav-item">
+                        <a class="nav-link" href="#">Option 2</a>
                     </div>
-                @else
-                    <a href="{{ url('/') }}" class="nav-link font-sarabun-bold"><i
-                            class="fa-solid fa-house"></i>กลับหน้าหลัก</a>
+                </div>
+                <a class="nav-link font-sarabun-bold" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#moreOptions2">
+                    <i class="fas fa-cogs"></i> แบบคำขอส่งทะเบียน
+                    รับเบี้ยความพิการ
+                </a>
+                <!-- ตัวเลือกที่จะแสดงเมื่อคลิก -->
+                <div id="moreOptions2" class="collapse">
+                    <div class="nav-item">
+                        <a class="nav-link" href="#">Option 1</a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link" href="#">Option 2</a>
+                    </div>
+                </div>
+                <a class="nav-link font-sarabun-bold" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#moreOptions3">
+                    <i class="fas fa-cogs"></i> แบบฟอร์มใบสมัครเรียนศูนย์พัฒนาเด็กเล็ก
+                </a>
+                <!-- ตัวเลือกที่จะแสดงเมื่อคลิก -->
+                <div id="moreOptions3" class="collapse">
+                    <div class="nav-item">
+                        <a class="nav-link" href="{{route('ChildApplyFormPage')}}">ฟอร์ม ใบสมัคร</a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link" href="{{route('TableChildApplyUsersPages')}}">แสดงประวัติการส่งฟอร์ม</a>
+                    </div>
+                </div>
+            </div>
+
+            @else
+                <a href="{{ url('/') }}" class="nav-link font-sarabun-bold"><i class="fa-solid fa-house"></i>กลับหน้าหลัก</a>
             @endif
         </div>
     </div>
@@ -247,28 +259,25 @@
                 </button>
 
                 @if (Auth::check())
-                    <div class="dropdown ms-auto">
-                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="profileDropdown"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-user"></i> {{ Auth::user()->name }} <!-- แสดงชื่อผู้ใช้งาน -->
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-                            <!-- แสดงเมื่อผู้ใช้ล็อกอิน -->
-                            <li>
-                                <form action="{{ route('logout') }}" method="POST" style="display: inline;">
-                                    @csrf
-                                    <button class="dropdown-item fs-3" type="submit">ออกจากระบบ</button>
-                                </form>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="dropdown ms-auto">
+                    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-user"></i> {{ Auth::user()->name }} <!-- แสดงชื่อผู้ใช้งาน -->
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        <!-- แสดงเมื่อผู้ใช้ล็อกอิน -->
+                        <li>
+                            <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                                @csrf
+                                <button class="dropdown-item fs-3" type="submit">ออกจากระบบ</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
                 @else
-                    <div class="d-flex justify-content-end column-gap-3 w-100 me-3">
-                        <button class="btn btn-outline-primary" href="{{ route('LoginPage') }}"><i
-                                class="fa-solid fa-lock-open"></i> เข้าสู่ระบบ</button>
-                        <button class="btn btn-outline-primary" href="{{ route('RegisterPage') }}"><i
-                                class="fa-solid fa-user"></i> สมัครใช้งาน</button>
-                    </div>
+                <div class="d-flex justify-content-end column-gap-3 w-100 me-3">
+                    <a class="btn btn-outline-primary" href="{{ route('LoginPage') }}"><i class="fa-solid fa-lock-open"></i> เข้าสู่ระบบ</a>
+                    <a class="btn btn-outline-primary" href="{{ route('RegisterPage') }}"><i class="fa-solid fa-user"></i> สมัครใช้งาน</a>
+                </div>
                 @endif
 
 
@@ -300,6 +309,7 @@
             navbar.classList.toggle('collapsed');
             content.classList.toggle('collapsed');
         });
+
     </script>
 </body>
 

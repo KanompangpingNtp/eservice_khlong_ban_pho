@@ -422,8 +422,10 @@
         <p>เกิดวันที่ <span class="birth_day">{{ $birthday_day }}</span> เดือน <span class="birth_day">{{ $birthday_month }}</span> ปี <span class="birth_day">{{ $birthday_year }}</span> อายุ<span class="age">{{$form->age}}</span>ปี สัญชาติ<span class="nationality">{{$form->nationality}}</span>มีชื่ออยู่ในสําเนา </p>
         <p>ทะเบียนบ้านเลขท <span class="house_number">{{$form->house_number}}</span>หมู่ที่/ชุมชน<span class="village">{{$form->village}}</span>ตรอก/ซอย<span class="alley">{{$form->alley}}</span>ถนน<span class="road">{{$form->road}}</span></p>
         <p>ตําบล/แขวง <span class="subdistrict">{{$form->subdistrict}}</span>อําเภอ/เขต <span class="district">{{$form->district}}</span>จังหวัด<span class="province">{{$form->province}}</span></p>
-        <p>รหัสไปรษณีย<span class="postal_code">{{$form->postal_code}}</span>โทรศัพท์<span class="phone_number">{{$form->phone_number}}</span></p>
-        <p>หมายเลขบัตรประจำตัวประชาชนของผู้สูงอายุที่ยื่นคำขอ <span class="citizen_id">{{$formatted_id}}</span></p>
+        <p>รหัสไปรษณีย์ <span class="house_number">{{$form->postal_code}}</span> เบอร์โทร</p>
+
+        {{-- <p>รหัสไปรษณีย<span class="postal_code">{{$form->postal_code}}</span>โทรศัพท์<span class="phone_number">{{$form->phone_number}}</span></p>
+        <p>หมายเลขบัตรประจำตัวประชาชนของผู้สูงอายุที่ยื่นคำขอ <span class="citizen_id">{{$formatted_id}}</span></p> --}}
     </div>
 
     {{--
