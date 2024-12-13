@@ -62,21 +62,13 @@
             box-shadow: 6px 0px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .sidebar h3 {
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #2f2f2f;
-        }
-
         .sidebar a {
             color: #2f2f2f;
             text-decoration: none;
-            padding: 14px 22px;
+            padding: 15px 3rem;
             display: flex;
             align-items: center;
             font-size: 1.1rem;
-            margin-bottom: 1rem;
             border-radius: 8px;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
