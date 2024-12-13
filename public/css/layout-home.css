@@ -135,11 +135,20 @@
 .bg-under {
   background-color: white; /* พื้นหลังสีขาว */
   color: rgb(17, 104, 210); /* ตัวอักษรสีน้ำเงิน */
-  padding-bottom: 3px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   padding-left: 20px;
   padding-right: 20px;
+  text-decoration: none;
   border-bottom-left-radius: 18px; /* ขอบโค้งมุมซ้ายล่าง */
   border-bottom-right-radius: 18px; /* ขอบโค้งมุมขวาล่าง */
+  box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.5); /* เงาด้านขวา */
+  transition: all 0.3s ease;
+}
+
+.bg-under:hover {
+  color: rgb(255, 255, 255); /* คงสีตัวอักษรเดิม */
+  background-color: rgb(17, 104, 210);
   box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.5); /* เงาด้านขวา */
 }
 

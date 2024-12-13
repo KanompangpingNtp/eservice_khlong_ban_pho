@@ -20,10 +20,11 @@
                 <div class="bg-top">
                     บริการยื่นคำร้องออนไลน์รูปแบบใหม่
                 </div>
-                <div class="bg-under fs-3 font-sarabun-bold d-flex justify-content-center align-content-center">
+                <a href="{{ route('home.index') }}"
+                    class="bg-under fs-3 font-sarabun-bold d-flex justify-content-center align-content-center">
                     <img src="{{ asset('images/layouts-home/icon-btn.png') }}" alt="icon-btn" class="icon-btn pt-2 pe-2">
                     ยื่นคำร้องออนไลน์
-                </div>
+                </a>
             </div>
             <div class="d-flex justify-content-between align-content-center">
                 <div>
