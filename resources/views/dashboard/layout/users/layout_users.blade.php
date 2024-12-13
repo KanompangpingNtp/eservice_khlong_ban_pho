@@ -141,6 +141,11 @@
             color: #2f2f2f;
         }
 
+        .main-content select {
+            font-size: 23px;
+            color: #2f2f2f;
+        }
+
         .main-content button {
             font-size: 23px;
         }

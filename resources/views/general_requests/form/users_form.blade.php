@@ -1,4 +1,5 @@
 @extends('dashboard.layout.users.layout_users')
+@section('title', 'ฟอร์มส่งคำร้องทั่วไป')
 @section('user_content')
     <div class="container">
         <h3 class="text-center fs-1 mb-4">ฟอร์มส่งคำร้องทั่วไป</h3>
