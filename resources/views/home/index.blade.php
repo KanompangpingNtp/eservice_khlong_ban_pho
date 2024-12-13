@@ -99,7 +99,7 @@
                     </a>
                 </div>
                 <div class="half-border-left-i">
-                    <a href="{{ route('UsersFormPage') }}" class="buttom-cool-left fs-3 font-sarabun text-center"
+                    <a href="{{ route('ElderlyAllowanceFormPage') }}" class="buttom-cool-left fs-3 font-sarabun text-center"
                         style="line-height: 1.2;">
                         <span class="circle">
                             <img src="{{ asset('images/layout-index/old-people.png') }}" alt="Icon" />
@@ -109,7 +109,7 @@
                     </a>
                 </div>
                 <div class="half-border-right-i">
-                    <a href="" class="buttom-cool-right font-sarabun fs-4 text-end" style="line-height: 1.2;">
+                    <a href="{{route('DisabilityFormPage')}}" class="buttom-cool-right font-sarabun fs-4 text-end" style="line-height: 1.2;">
                         <span class="circle">
                             <img src="{{ asset('images/layout-index/disabled.png') }}" alt="Icon" />
                         </span>
