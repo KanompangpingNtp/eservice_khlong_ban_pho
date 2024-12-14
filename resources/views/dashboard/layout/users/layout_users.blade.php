@@ -82,6 +82,7 @@
             padding: 15px 25px;
             border-radius: 8px;
             font-size: 25px;
+            margin-bottom: 2px;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
