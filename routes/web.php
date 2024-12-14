@@ -10,6 +10,7 @@ use App\Http\Controllers\UserDisabilityController;
 use App\Http\Controllers\AdminDisabilityController;
 use App\Http\Controllers\UserChildApplyController;
 use App\Http\Controllers\AdminChildApplyController;
+use App\Http\Controllers\UserReceiveAssistanceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,10 @@ Route::post('/Disability/form/create', [UserDisabilityController::class, 'Disabi
 //User ChildApply
 Route::get('/ChildApply', [UserChildApplyController::class, 'ChildApplyPage'])->name('ChildApplyPage');
 Route::post('/ChildApply/form/create', [UserChildApplyController::class, 'ChildApplyFormCreate'])->name('ChildApplyFormCreate');
+
+//user ReceiveAssistance
+Route::get('/ReceiveAssistance', [UserReceiveAssistanceController::class, 'ReceiveAssistanceFormPage'])->name('ReceiveAssistanceFormPage');
+Route::post('/ReceiveAssistance/form/create', [UserReceiveAssistanceController::class, 'ReceiveAssistanceFormCreate'])->name('ReceiveAssistanceFormCreate');
 
 //auth
 Route::get('/login', [AuthController::class, 'LoginPage'])->name('LoginPage');

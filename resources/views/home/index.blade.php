@@ -119,7 +119,7 @@
                     </a>
                 </div>
                 <div class="half-border-left-ii">
-                    <a href="{{ route('UsersFormPage') }}" class="buttom-cool-left fs-4 font-sarabun text-center"
+                    <a href="{{ route('ReceiveAssistanceFormPage') }}" class="buttom-cool-left fs-4 font-sarabun text-center"
                         style="line-height: 1.2;">
                         <span class="circle">
                             <img src="{{ asset('images/layout-index/money.png') }}" alt="Icon" />

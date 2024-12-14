@@ -37,9 +37,6 @@
         body {
             font-family: 'sarabun', sans-serif;
             font-size: 16px;
-            margin-left: 100px;
-            margin-right: 20px;
-            line-height: 5px;
         }
     </style>
     <title>PDF Report</title>

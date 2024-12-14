@@ -13,7 +13,7 @@ class AssistPerson extends Model
         'users_id', 'written_at', 'write_the_date', 'learn', 'salutation',
         'first_name', 'last_name', 'birth_day', 'age', 'nationality', 'village',
         'alley', 'road', 'subdistrict', 'district', 'province', 'postal_code',
-        'phone_number', 'citizen_id'
+        'phone_number', 'citizen_id','status','admin_name_verifier'
     ];
 
     /**
