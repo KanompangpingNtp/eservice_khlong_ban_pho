@@ -10,7 +10,10 @@ class AssistReply extends Model
     use HasFactory;
 
     protected $fillable = [
-        'users_id', 'assist_person_id', 'reply_text', 'reply_date'
+        'users_id',
+        'assist_people_id',
+        'reply_text',
+        'reply_date'
     ];
 
     /**
@@ -26,6 +29,6 @@ class AssistReply extends Model
      */
     public function assistPerson()
     {
-        return $this->belongsTo(AssistPerson::class);
+        return $this->belongsTo(AssistPerson::class, 'assist_people_id');
     }
 }

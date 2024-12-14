@@ -1,5 +1,5 @@
-@extends('dashboard.layout.layout-dashboard')
-@section('content')
+@extends('dashboard.layout.users.layout_users')
+@section('user_content')
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
 
@@ -14,8 +14,7 @@
 @endif
 
 <div class="container">
-    <h2 class="text-center">ใบสมัคร <br>
-        <h2 class="text-center">ศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์</h2>
+    <h2 class="text-center">แบบคำขอรับเงินสงเคราะห์ <br>
         <h3 class="text-center">ตารางแสดงข้อมูลฟอร์มที่ส่งเข้ามา</h3>
     </h2>
     <br>
@@ -44,7 +43,7 @@
                     @endif
                 </td>
                 <td>
-                    {{-- <a href="{{ route('ChildApplyUsersShowFormEdit', $form->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a> --}}
+                    <a href="{{ route('ReceiveAssistanceUsersShowFormEdit', $form->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
                     <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#submitModal-{{ $form->id }}">
                         <i class="bi bi-filetype-pdf"></i>
                     </button>
@@ -70,26 +69,20 @@
                 </div>
                 <div class="modal-body">
                     <span style="color: black;">preview</span>
-                    <a href="{{ route('ChildApplyAdminExportPDF', $form->id) }}" class="btn btn-danger btn-sm" target="_blank">
+                    <a href="{{ route('ReceiveAssistanceUserExportPDF', $form->id) }}" class="btn btn-danger btn-sm" target="_blank">
                         <i class="bi bi-file-earmark-pdf"></i>
                     </a>
                     <br>
                     <br>
                     <span style="color: black;">ไฟล์แนบ </span>
-                    @foreach($form->attachments as $attachment)
+                    @foreach($form->assistAttachments as $attachment)
                     <span class="d-inline me-2">
                         <a href="{{ asset('storage/' . $attachment->file_path) }}" target="_blank">{{ basename($attachment->file_path) }}</a>
                     </span>
                     @endforeach
                 </div>
-                <div class="modal-footer d-flex justify-content-between">
-                    <span class="text-start" style="color: black;">รับฟอร์ม</span>
-                    <form action="{{ route('ChildApplyUpdateStatus', $form->id) }}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-primary btn-sm" @if($form->status == 2) disabled @endif>
-                            กดรับแบบฟอร์ม
-                        </button>
-                    </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -114,7 +107,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse($form->replies as $reply)
+                            @forelse($form->assistReplies as $reply)
                             <tr class="text-center">
                                 <td>{{ $reply->user->name ?? 'Unknown User' }}</td>
                                 <td>
@@ -130,7 +123,7 @@
                             @endforelse
                         </tbody>
                     </table>
-                    <form action="{{ route('ChildApplyAdminReply', $form->id) }}" method="POST">
+                    <form action="{{ route('ReceiveAssistanceUserReply', $form->id) }}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="message" class="form-label">ข้อความตอบกลับ</label>

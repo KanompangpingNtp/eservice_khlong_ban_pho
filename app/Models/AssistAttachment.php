@@ -10,7 +10,9 @@ class AssistAttachment extends Model
     use HasFactory;
 
     protected $fillable = [
-        'assist_person_id', 'file_path', 'file_type'
+        'assist_people_id',
+        'file_path',
+        'file_type'
     ];
 
     /**
@@ -18,6 +20,6 @@ class AssistAttachment extends Model
      */
     public function assistPerson()
     {
-        return $this->belongsTo(AssistPerson::class);
+        return $this->belongsTo(AssistPerson::class, 'assist_people_id');
     }
 }

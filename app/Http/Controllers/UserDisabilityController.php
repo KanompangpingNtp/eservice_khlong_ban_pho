@@ -333,7 +333,7 @@ class UserDisabilityController extends Controller
         $pdf = Pdf::loadView('disability.user_account.export_pdf.export_pdf', compact('form'))
             ->setPaper('A4', 'portrait');
 
-        return $pdf->stream('แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอาย' . $form->id . '.pdf');
+        return $pdf->stream('คำขอลงทะเบียนรับเงินเบี้ยความพิการ' . $form->id . '.pdf');
     }
 
     public function DisabilityUserReply(Request $request, $formId)

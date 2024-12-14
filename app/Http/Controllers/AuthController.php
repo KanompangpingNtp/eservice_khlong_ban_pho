@@ -31,6 +31,7 @@ class AuthController extends Controller
                 return redirect()->route('TablePages'); // สำหรับ admin เปลี่ยนเส้นทางไปยังหน้า dashboard
             } elseif (Auth::user()->level === 'user') {
                 return redirect()->route('users.account.index');
+                // return redirect()->back()->with('success', 'เข้าสู่ระบบสำเร็จ');
             }
         }
 

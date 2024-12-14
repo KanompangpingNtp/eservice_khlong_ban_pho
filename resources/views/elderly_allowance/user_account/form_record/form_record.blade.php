@@ -146,7 +146,7 @@
     </div>
     @endforeach
 
-<script src="{{asset('js/general_requests.js')}}"></script>
+    <script src="{{asset('js/general_requests.js')}}"></script>
 
 </div>
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\ChildInformation;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\ChildReply;
+use Illuminate\Support\Facades\Auth;
 
 class AdminChildApplyController extends Controller
 {
@@ -44,4 +45,14 @@ class AdminChildApplyController extends Controller
         return redirect()->back()->with('success', 'ตอบกลับสำเร็จแล้ว!');
     }
 
+    public function ChildApplyUpdateStatus($id)
+    {
+        $form = ChildInformation::findOrFail($id);
+
+        $form->status = 2;
+        $form->admin_name_verifier = Auth::user()->name;
+        $form->save();
+
+        return redirect()->back()->with('success', 'คุณได้กดรับแบบฟอร์มเรียบร้อยแล้ว');
+    }
 }

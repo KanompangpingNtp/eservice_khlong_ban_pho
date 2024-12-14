@@ -10,10 +10,27 @@ class AssistPerson extends Model
     use HasFactory;
 
     protected $fillable = [
-        'users_id', 'written_at', 'write_the_date', 'learn', 'salutation',
-        'first_name', 'last_name', 'birth_day', 'age', 'nationality', 'village',
-        'alley', 'road', 'subdistrict', 'district', 'province', 'postal_code',
-        'phone_number', 'citizen_id','status','admin_name_verifier'
+        'users_id',
+        'written_at',
+        'write_the_date',
+        'learn',
+        'salutation',
+        'first_name',
+        'last_name',
+        'birth_day',
+        'age',
+        'nationality',
+        'village',
+        'alley',
+        'road',
+        'subdistrict',
+        'district',
+        'province',
+        'postal_code',
+        'phone_number',
+        'citizen_id',
+        'status',
+        'admin_name_verifier'
     ];
 
     /**
@@ -29,7 +46,7 @@ class AssistPerson extends Model
      */
     public function assistImpartings()
     {
-        return $this->hasMany(AssistImparting::class);
+        return $this->hasMany(AssistImparting::class, 'assist_people_id');
     }
 
     /**
@@ -37,7 +54,7 @@ class AssistPerson extends Model
      */
     public function assistAttachments()
     {
-        return $this->hasMany(AssistAttachment::class);
+        return $this->hasMany(AssistAttachment::class, 'assist_people_id');
     }
 
     /**
@@ -45,6 +62,6 @@ class AssistPerson extends Model
      */
     public function assistReplies()
     {
-        return $this->hasMany(AssistReply::class);
+        return $this->hasMany(AssistReply::class, 'assist_people_id');
     }
 }
