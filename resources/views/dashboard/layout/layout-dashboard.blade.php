@@ -166,6 +166,10 @@
                     <a class="nav-link" href="{{route('TableChildApplyAdminPages')}}"><i
                             class="fas fa-chart-bar"></i>แบบฟอร์มใบสมัครเรียนศูนย์พัฒนาเด็กเล็ก</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('TableReceiveAssistanceAdminPages')}}"><i
+                            class="fas fa-chart-bar"></i>แบบคำขอรับเงินสงเคราะห์</a>
+                </li>
             </ul>
         </div>
 
