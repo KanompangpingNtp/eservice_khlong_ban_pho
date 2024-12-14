@@ -1,9 +1,9 @@
 @extends('dashboard.layout.users.layout_users')
 @section('user_content')
 
-<h2 class="text-center"> แบบคำขอรับการสงเคราะห์ </h2>
+<h2 class="text-center"> แบบคำขอรับเงินสงเคราะห์ </h2>
 
-<form action="{{ route('ReceiveAssistanceFormCreate') }}" method="POST">
+<form action="{{ route('ReceiveAssistanceFormCreate') }}" method="POST" enctype="multipart/form-data">
     @csrf
 
     <div class="mb-3">
@@ -288,13 +288,13 @@
 
     <div>
         <div class="form-group">
-            <label for="contact_person">ชื่อผู้ติดต่อ</label>
-            <input type="text" class="form-control" id="contact_person" name="contact_person" placeholder="กรุณาระบุชื่อผู้ติดต่อ">
+            <label for="contact_person">บุคคลที่สามารถติดต่อได</label>
+            <input type="text" class="form-control" id="contact_person" name="contact_person">
         </div>
 
         <div class="form-group">
-            <label for="contact_address_number">หมายเลขที่อยู่</label>
-            <input type="text" class="form-control" id="contact_address_number" name="contact_address_number" placeholder="กรุณาระบุหมายเลขที่อยู่">
+            <label for="contact_address_number">สถานที่ติดต่อเลขที่</label>
+            <input type="text" class="form-control" id="contact_address_number" name="contact_address_number">
         </div>
 
         <div class="form-group">
@@ -333,17 +333,17 @@
         </div>
 
         <div class="form-group">
-            <label for="contact_telephone">หมายเลขโทรศัพท์</label>
+            <label for="contact_telephone">โทรศัพท์</label>
             <input type="text" class="form-control" id="contact_telephone" name="contact_telephone" placeholder="กรุณาระบุหมายเลขโทรศัพท์">
         </div>
 
         <div class="form-group">
-            <label for="contact_fax">หมายเลขแฟกซ์</label>
+            <label for="contact_fax">โทรสาร</label>
             <input type="text" class="form-control" id="contact_fax" name="contact_fax" placeholder="กรุณาระบุหมายเลขแฟกซ์">
         </div>
 
         <div class="form-group">
-            <label for="contact_relevant_as">ผู้เกี่ยวข้องในฐานะ</label>
+            <label for="contact_relevant_as">เกี่ยวข้องเป็น</label>
             <input type="text" class="form-control" id="contact_relevant_as" name="contact_relevant_as" placeholder="กรุณาระบุผู้เกี่ยวข้องในฐานะ">
         </div>
 
@@ -351,7 +351,24 @@
 
     <br>
 
-    <button type="submit" class="btn btn-primary">บันทึกข้อมูล</button>
+    <div>
+        <h3 for="attachments" class="form-label">แนบไฟล์</h3>
+        <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
+        <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
+        <!-- แสดงรายการไฟล์ที่แนบ -->
+        <div id="file-list" class="mt-1">
+            <div class="d-flex flex-wrap gap-3"></div>
+        </div>
+    </div>
+
+    <div class="text-center w-full border">
+        <button type="submit" class="btn btn-primary w-100 py-1"><i
+                class="fa-solid fa-file-arrow-up me-2"></i></i>
+            ส่งฟอร์มข้อมูล</button>
+    </div>
+
 </form>
+
+<script src="{{ asset('js/multipart_files.js') }}"></script>
 
 @endsection

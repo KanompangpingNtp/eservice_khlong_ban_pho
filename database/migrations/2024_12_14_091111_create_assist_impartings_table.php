@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('assist_people_id')->constrained('assist_people')->onDelete('cascade');
             $table->string('accommodation')->nullable();
-            $table->string('accommodation_detail')->nullable();
+            $table->string('accommodation_belongs_to')->nullable();
+            $table->string('accommodation_relevant_as')->nullable();
             $table->string('away_from_home')->nullable();
             $table->string('away_from_home_option')->nullable();
             $table->string('away_from_home_option_dueto')->nullable();
@@ -29,6 +30,7 @@ return new class extends Migration
             $table->string('residence_stay_alone_dueto')->nullable();
             $table->string('residence_stay_alone_dueto_detail')->nullable();
             $table->string('residence_living_with')->nullable();
+            $table->string('residence_living_with_detail')->nullable();
             $table->string('residence_living_with_quantity')->nullable();
             $table->string('residence_living_with_working')->nullable();
             $table->string('residence_living_with_total_income')->nullable();

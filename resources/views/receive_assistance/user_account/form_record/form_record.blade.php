@@ -14,15 +14,9 @@
 @endif
 
 <div class="container">
-    <h2 class="text-center">แบบฟอร์มยืนยันสิทธิผู้สูงอายุ <br>
+    <h2 class="text-center">แบบคำขอรับเงินสงเคราะห์ <br>
         <h3 class="text-center">ตารางแสดงข้อมูลฟอร์มที่ส่งเข้ามา</h3>
     </h2>
-    <br>
-    <form action="{{ route('logout') }}" method="POST" style="display: inline;">
-        @csrf
-        <button type="submit" class="btn btn-danger">Logout</button>
-    </form>
-    <br>
     <br>
 
     <table class="table table-bordered table-striped" id="data_table">
@@ -49,7 +43,7 @@
                     @endif
                 </td>
                 <td>
-                    <a href="{{ route('ElderlyAllowanceUserShowEdit', $form->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
+                    <a href="{{ route('ReceiveAssistanceUsersShowFormEdit', $form->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
                     <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#submitModal-{{ $form->id }}">
                         <i class="bi bi-filetype-pdf"></i>
                     </button>
@@ -75,13 +69,13 @@
                 </div>
                 <div class="modal-body">
                     <span style="color: black;">preview</span>
-                    <a href="{{ route('ElderlyAllowanceUserExportPDF', $form->id) }}" class="btn btn-danger btn-sm" target="_blank">
+                    <a href="{{ route('ReceiveAssistanceUserExportPDF', $form->id) }}" class="btn btn-danger btn-sm" target="_blank">
                         <i class="bi bi-file-earmark-pdf"></i>
                     </a>
                     <br>
                     <br>
                     <span style="color: black;">ไฟล์แนบ </span>
-                    @foreach($form->attachments as $attachment)
+                    @foreach($form->assistAttachments as $attachment)
                     <span class="d-inline me-2">
                         <a href="{{ asset('storage/' . $attachment->file_path) }}" target="_blank">{{ basename($attachment->file_path) }}</a>
                     </span>
@@ -113,7 +107,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse($form->replies as $reply)
+                            @forelse($form->assistReplies as $reply)
                             <tr class="text-center">
                                 <td>{{ $reply->user->name ?? 'Unknown User' }}</td>
                                 <td>
@@ -129,7 +123,7 @@
                             @endforelse
                         </tbody>
                     </table>
-                    <form action="{{ route('ElderlyAllowanceUserReply', $form->id) }}" method="POST">
+                    <form action="{{ route('ReceiveAssistanceUserReply', $form->id) }}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="message" class="form-label">ข้อความตอบกลับ</label>

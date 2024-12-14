@@ -126,4 +126,12 @@ Route::middleware(['user'])->group(function () {
     Route::put('/user/account/ChildApply/{id}/Update', [UserChildApplyController::class, 'updateChildInformation'])->name('updateChildInformation');
     Route::get('/user/account/ChildApply/{id}/pdf', [UserChildApplyController::class, 'ChildApplyUserExportPDF'])->name('ChildApplyUserExportPDF');
     Route::post('/user/account/ChildApply/{form}/reply', [UserChildApplyController::class, 'ChildApplyUserReply'])->name('ChildApplyUserReply');
+
+    Route::get('/user/account/ReceiveAssistance', [UserReceiveAssistanceController::class, 'ReceiveAssistanceUserFormPage'])->name('ReceiveAssistanceUserFormPage');
+    Route::get('/user/account/ReceiveAssistance/record', [UserReceiveAssistanceController::class, 'TableReceiveAssistanceUsersPages'])->name('TableReceiveAssistanceUsersPages');
+    Route::post('/user/account/ReceiveAssistance/{form}/reply', [UserReceiveAssistanceController::class, 'ReceiveAssistanceUserReply'])->name('ReceiveAssistanceUserReply');
+    Route::get('/user/account/ReceiveAssistance/{id}/pdf', [UserReceiveAssistanceController::class, 'ReceiveAssistanceUserExportPDF'])->name('ReceiveAssistanceUserExportPDF');
+    Route::get('/user/account/ReceiveAssistance/{id}/edit', [UserReceiveAssistanceController::class, 'ReceiveAssistanceUsersShowFormEdit'])->name('ReceiveAssistanceUsersShowFormEdit');
+    Route::put('/user/account/ReceiveAssistance/{id}/Update', [UserReceiveAssistanceController::class, 'updateReceiveAssistance'])->name('updateReceiveAssistance');
+
 });

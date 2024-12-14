@@ -10,7 +10,7 @@ class AssistImparting extends Model
     use HasFactory;
 
     protected $fillable = [
-        'assist_person_id', 'accommodation', 'accommodation_detail', 'away_from_home',
+        'assist_people_id', 'accommodation', 'accommodation_belongs_to','accommodation_relevant_as' ,'away_from_home',
         'away_from_home_option', 'away_from_home_option_dueto', 'away_from_community',
         'away_from_community_option', 'away_from_community_option_dueto', 'stay_away_from_agency',
         'stay_away_from_agency_option', 'stay_away_from_agency_option_dueto', 'residence',
@@ -19,7 +19,7 @@ class AssistImparting extends Model
         'residence_living_with_non_workers', 'total_income', 'source_of_income', 'used_for_expenses',
         'contact_person', 'contact_address_number', 'contact_road', 'contact_alley', 'contact_village',
         'contact_subdistrict', 'contact_district', 'contact_province', 'contact_postal_code', 'contact_telephone',
-        'contact_fax', 'contact_relevant_as'
+        'contact_fax', 'contact_relevant_as','residence_living_with_detail'
     ];
 
     /**
@@ -27,6 +27,6 @@ class AssistImparting extends Model
      */
     public function assistPerson()
     {
-        return $this->belongsTo(AssistPerson::class);
+        return $this->belongsTo(AssistPerson::class, 'assist_people_id');
     }
 }
