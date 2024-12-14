@@ -92,4 +92,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(ChildRegistration::class, 'users_id');
     }
+
+    public function childReplies()
+    {
+        return $this->hasMany(ChildReply::class, 'users_id');
+    }
 }

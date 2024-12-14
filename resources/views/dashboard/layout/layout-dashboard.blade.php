@@ -139,14 +139,6 @@
         }
     </style>
 </head>
-@if ($message = Session::get('success'))
-    <script>
-        Swal.fire({
-            icon: 'success',
-            title: '{{ $message }}',
-        })
-    </script>
-@endif
 
 <body>
 
@@ -171,7 +163,8 @@
                         แบบคำขอลงทะเบียนรับเงินเบี้ยความพิการ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-cog"></i> Settings</a>
+                    <a class="nav-link" href="{{route('TableChildApplyAdminPages')}}"><i
+                            class="fas fa-chart-bar"></i>แบบฟอร์มใบสมัครเรียนศูนย์พัฒนาเด็กเล็ก</a>
                 </li>
             </ul>
         </div>

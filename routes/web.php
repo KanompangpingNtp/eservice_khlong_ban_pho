@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminElderlyAllowanceController;
 use App\Http\Controllers\UserDisabilityController;
 use App\Http\Controllers\AdminDisabilityController;
 use App\Http\Controllers\UserChildApplyController;
+use App\Http\Controllers\AdminChildApplyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,6 +77,12 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/TablePages/Disability/ExportPdf/{id}', [AdminDisabilityController::class, 'DisabilityExportPDF'])->name('DisabilityExportPDF');
     Route::post('/TablePages/Disability/{id}/update-status', [AdminDisabilityController::class, 'DisabilityUpdateStatus'])->name('DisabilityUpdateStatus');
     Route::post('/TablePages/Disability/AdminReply/{id}', [AdminDisabilityController::class, 'DisabilityReply'])->name('DisabilityReply');
+
+
+    Route::get('/TablePages/ChildApply', [AdminChildApplyController::class, 'TableChildApplyAdminPages'])->name('TableChildApplyAdminPages');
+    Route::get('/TablePages/ChildApply/ExportPdf/{id}', [AdminChildApplyController::class, 'ChildApplyAdminExportPDF'])->name('ChildApplyAdminExportPDF');
+    Route::post('/TablePages/ChildApply/AdminReply/{id}', [AdminChildApplyController::class, 'ChildApplyAdminReply'])->name('ChildApplyAdminReply');
+
 });
 
 Route::middleware(['user'])->group(function () {

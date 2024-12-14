@@ -14,7 +14,8 @@ class ChildReply extends Model
         'surrender_the_child_id',
         'child_registration_id',
         'reply_text',
-        'reply_date'
+        'reply_date',
+        'users_id'
     ];
 
     public function childInformation()
@@ -30,5 +31,10 @@ class ChildReply extends Model
     public function childRegistration()
     {
         return $this->belongsTo(ChildRegistration::class, 'child_registration_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'users_id');
     }
 }
