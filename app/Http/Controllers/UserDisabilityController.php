@@ -330,7 +330,7 @@ class UserDisabilityController extends Controller
     {
         $form = DisabilityPerson::with('disabilityTraders', 'disabilityOptions', 'disabilityBankAccounts')->find($id);
 
-        $pdf = Pdf::loadView('admin.disability.export_pdf.export_pdf', compact('form'))
+        $pdf = Pdf::loadView('disability.user_account.export_pdf.export_pdf', compact('form'))
             ->setPaper('A4', 'portrait');
 
         return $pdf->stream('แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอาย' . $form->id . '.pdf');
