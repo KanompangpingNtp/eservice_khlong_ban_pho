@@ -1,7 +1,7 @@
 @extends('dashboard.layout.users.layout_users')
 @section('user_content')
 
-<h2 class="text-center"> แบบคำขอรับเงินสงเคราะห์ </h2>
+<h2 class="text-center"> แบบคำขอรับการสงเคราะห์ </h2>
 
 <form action="{{ route('ReceiveAssistanceFormCreate') }}" method="POST" enctype="multipart/form-data">
     @csrf
@@ -223,7 +223,8 @@
     <div>
         <label>3.ที่พักอาศัย</label><br>
         <div class="form-group">
-            <input type="radio" id="residence" name="residence" value="yes">อยู่เพียงลำพัง
+            <input type="checkbox" id="residence" name="residence" value="yes">
+            <label for="residence">อยู่เพียงลำพัง</label>
         </div>
 
         <div class="form-group">
@@ -239,9 +240,11 @@
         <br>
 
         <div class="form-group">
-            <input type="radio" id="residence_living_with" name="residence_living_with" value="yes">อาศัยอยู่กับ
+            <input type="checkbox" id="residence_living_with" name="residence_living_with" value="yes">
+            <label for="residence_living_with">อาศัยอยู่กับ</label>
             <input type="text" id="residence_living_with_detail" name="residence_living_with_detail">
         </div>
+
 
         <div class="form-group">
             <label for="residence_living_with_quantity">จำนวนคนที่อาศัยอยู่ด้วย</label>
@@ -288,13 +291,13 @@
 
     <div>
         <div class="form-group">
-            <label for="contact_person">บุคคลที่สามารถติดต่อได</label>
-            <input type="text" class="form-control" id="contact_person" name="contact_person">
+            <label for="contact_person">ชื่อผู้ติดต่อ</label>
+            <input type="text" class="form-control" id="contact_person" name="contact_person" placeholder="กรุณาระบุชื่อผู้ติดต่อ">
         </div>
 
         <div class="form-group">
-            <label for="contact_address_number">สถานที่ติดต่อเลขที่</label>
-            <input type="text" class="form-control" id="contact_address_number" name="contact_address_number">
+            <label for="contact_address_number">หมายเลขที่อยู่</label>
+            <input type="text" class="form-control" id="contact_address_number" name="contact_address_number" placeholder="กรุณาระบุหมายเลขที่อยู่">
         </div>
 
         <div class="form-group">
@@ -333,17 +336,17 @@
         </div>
 
         <div class="form-group">
-            <label for="contact_telephone">โทรศัพท์</label>
+            <label for="contact_telephone">หมายเลขโทรศัพท์</label>
             <input type="text" class="form-control" id="contact_telephone" name="contact_telephone" placeholder="กรุณาระบุหมายเลขโทรศัพท์">
         </div>
 
         <div class="form-group">
-            <label for="contact_fax">โทรสาร</label>
+            <label for="contact_fax">หมายเลขแฟกซ์</label>
             <input type="text" class="form-control" id="contact_fax" name="contact_fax" placeholder="กรุณาระบุหมายเลขแฟกซ์">
         </div>
 
         <div class="form-group">
-            <label for="contact_relevant_as">เกี่ยวข้องเป็น</label>
+            <label for="contact_relevant_as">ผู้เกี่ยวข้องในฐานะ</label>
             <input type="text" class="form-control" id="contact_relevant_as" name="contact_relevant_as" placeholder="กรุณาระบุผู้เกี่ยวข้องในฐานะ">
         </div>
 
@@ -366,7 +369,6 @@
                 class="fa-solid fa-file-arrow-up me-2"></i></i>
             ส่งฟอร์มข้อมูล</button>
     </div>
-
 </form>
 
 <script src="{{ asset('js/multipart_files.js') }}"></script>

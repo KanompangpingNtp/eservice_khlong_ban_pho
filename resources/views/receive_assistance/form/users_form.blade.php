@@ -3,7 +3,7 @@
 
 <h2 class="text-center"> แบบคำขอรับการสงเคราะห์ </h2>
 
-<form action="{{ route('ReceiveAssistanceFormCreate') }}" method="POST">
+<form action="{{ route('ReceiveAssistanceFormCreate') }}" method="POST" enctype="multipart/form-data">
     @csrf
 
     <div class="mb-3">
@@ -223,7 +223,8 @@
     <div>
         <label>3.ที่พักอาศัย</label><br>
         <div class="form-group">
-            <input type="radio" id="residence" name="residence" value="yes">อยู่เพียงลำพัง
+            <input type="checkbox" id="residence" name="residence" value="yes">
+            <label for="residence">อยู่เพียงลำพัง</label>
         </div>
 
         <div class="form-group">
@@ -239,9 +240,11 @@
         <br>
 
         <div class="form-group">
-            <input type="radio" id="residence_living_with" name="residence_living_with" value="yes">อาศัยอยู่กับ
+            <input type="checkbox" id="residence_living_with" name="residence_living_with" value="yes">
+            <label for="residence_living_with">อาศัยอยู่กับ</label>
             <input type="text" id="residence_living_with_detail" name="residence_living_with_detail">
         </div>
+
 
         <div class="form-group">
             <label for="residence_living_with_quantity">จำนวนคนที่อาศัยอยู่ด้วย</label>
@@ -351,7 +354,23 @@
 
     <br>
 
-    <button type="submit" class="btn btn-primary">บันทึกข้อมูล</button>
+    <div>
+        <h3 for="attachments" class="form-label">แนบไฟล์</h3>
+        <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
+        <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
+        <!-- แสดงรายการไฟล์ที่แนบ -->
+        <div id="file-list" class="mt-1">
+            <div class="d-flex flex-wrap gap-3"></div>
+        </div>
+    </div>
+
+    <div class="text-center w-full border">
+        <button type="submit" class="btn btn-primary w-100 py-1"><i
+                class="fa-solid fa-file-arrow-up me-2"></i></i>
+            ส่งฟอร์มข้อมูล</button>
+    </div>
 </form>
+
+<script src="{{ asset('js/multipart_files.js') }}"></script>
 
 @endsection
