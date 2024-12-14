@@ -210,10 +210,10 @@
                 <!-- ตัวเลือกที่จะแสดงเมื่อคลิก -->
                 <div id="moreOptions1" class="collapse">
                     <div class="nav-item">
-                        <a class="nav-link" href="#">Option 1</a>
+                        <a class="nav-link" href="{{route('UsersAccountFormPage')}}">ฟอร์มส่งข้อมูล</a>
                     </div>
                     <div class="nav-item">
-                        <a class="nav-link" href="#">Option 2</a>
+                        <a class="nav-link" href="{{route('userRecordForm')}}">แสดงประวัติการส่งฟอร์ม</a>
                     </div>
                 </div>
                 <a class="nav-link font-sarabun-bold" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#moreOptions2">
@@ -223,10 +223,10 @@
                 <!-- ตัวเลือกที่จะแสดงเมื่อคลิก -->
                 <div id="moreOptions2" class="collapse">
                     <div class="nav-item">
-                        <a class="nav-link" href="#">Option 1</a>
+                        <a class="nav-link" href="{{route('DisabilityUsersAccountFormPage')}}">ฟอร์มส่งข้อมูล</a>
                     </div>
                     <div class="nav-item">
-                        <a class="nav-link" href="#">Option 2</a>
+                        <a class="nav-link" href="{{route('TableDisabilityUsersPages')}}">แสดงประวัติการส่งฟอร์ม</a>
                     </div>
                 </div>
                 <a class="nav-link font-sarabun-bold" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#moreOptions3">
@@ -239,6 +239,18 @@
                     </div>
                     <div class="nav-item">
                         <a class="nav-link" href="{{route('TableChildApplyUsersPages')}}">แสดงประวัติการส่งฟอร์ม</a>
+                    </div>
+                </div>
+                <a class="nav-link font-sarabun-bold" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#moreOptions4">
+                    <i class="fas fa-chart-line"></i>  แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอายุ
+                </a>
+                <!-- ตัวเลือกที่จะแสดงเมื่อคลิก -->
+                <div id="moreOptions4" class="collapse">
+                    <div class="nav-item">
+                        <a class="nav-link" href="{{route('ElderlyAllowanceUsersAccountFormPage')}}">ฟอร์มส่งข้อมูล</a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link" href="{{route('TableElderlyAllowanceUsersPages')}}">แสดงประวัติการส่งฟอร์ม</a>
                     </div>
                 </div>
             </div>
