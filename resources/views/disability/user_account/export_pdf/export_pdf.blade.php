@@ -41,10 +41,10 @@
             margin-right: 20px;
             line-height: 5px;
         }
-
     </style>
     <title>PDF Report</title>
 </head>
+
 <body>
     <h1> แบบคำขอลงทะเบียนรับเงินเบี้ยความพิการ</h1>
 </body>
