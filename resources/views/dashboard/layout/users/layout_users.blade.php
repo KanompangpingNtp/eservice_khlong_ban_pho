@@ -55,6 +55,8 @@
             max-height: 100vh;
             /* จำกัดความสูงสูงสุดเท่ากับหน้าจอ */
             padding-top: 0.5rem;
+            padding-left: 5px;
+            padding-right: 7px;
             position: fixed;
             /* ทำให้ sidebar ติดกับด้านซ้ายของหน้าจอ */
             top: 0;
@@ -69,7 +71,7 @@
             /* ซ่อนแถบเลื่อนแนวนอน */
             scrollbar-width: thin;
             /* (สำหรับเบราว์เซอร์ที่รองรับ) กำหนดความกว้างของ scrollbar */
-            scrollbar-color: #004ddc #fefefe;
+            scrollbar-color: #b3e5fc #fefefe;
             /* สีของ scrollbar */
         }
 
@@ -91,13 +93,13 @@
         .sidebar a:hover {
             background-color: #004ddc;
             color: white;
-            transform: translateX(5px);
+            transform: translateX(3px);
         }
 
         .sidebar .hover-active {
             background-color: #004ddc;
             color: white;
-            transform: translateX(5px);
+            transform: translateX(3px);
             margin-bottom: 5px;
         }
 
@@ -239,7 +241,7 @@
                         </div>
                         <div class="nav-item">
                             <a class="nav-link" href="{{ route('userRecordForm') }}"><i
-                                    class="fa-solid fa-caret-right"></i> แสดงประวัติการส่งฟอร์ม</a>
+                                    class="fa-solid fa-caret-right"></i> ประวัติการส่งฟอร์ม</a>
                         </div>
                     </div>
                     <a class="nav-link font-sarabun-bold toggle-collapse" href="javascript:void(0)"
@@ -254,7 +256,7 @@
                         </div>
                         <div class="nav-item">
                             <a class="nav-link" href="{{ route('TableDisabilityUsersPages') }}"><i
-                                    class="fa-solid fa-caret-right"></i> แสดงประวัติการส่งฟอร์ม</a>
+                                    class="fa-solid fa-caret-right"></i> ประวัติการส่งฟอร์ม</a>
                         </div>
                     </div>
                     <a class="nav-link font-sarabun-bold toggle-collapse" href="javascript:void(0)"
@@ -269,7 +271,7 @@
                         </div>
                         <div class="nav-item">
                             <a class="nav-link" href="{{ route('TableChildApplyUsersPages') }}"><i
-                                    class="fa-solid fa-caret-right"></i> แสดงประวัติการส่งฟอร์ม</a>
+                                    class="fa-solid fa-caret-right"></i> ประวัติการส่งฟอร์ม</a>
                         </div>
                     </div>
                     <a class="nav-link font-sarabun-bold toggle-collapse" href="javascript:void(0)"
@@ -284,7 +286,7 @@
                         </div>
                         <div class="nav-item">
                             <a class="nav-link" href="{{ route('TableElderlyAllowanceUsersPages') }}"><i
-                                    class="fa-solid fa-caret-right"></i> แสดงประวัติการส่งฟอร์ม</a>
+                                    class="fa-solid fa-caret-right"></i> ประวัติการส่งฟอร์ม</a>
                         </div>
                     </div>
                 </div>
