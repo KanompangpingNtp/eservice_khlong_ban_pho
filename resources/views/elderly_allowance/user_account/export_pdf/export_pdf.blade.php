@@ -372,37 +372,47 @@
             padding-right: 10px;
             color: blue;
         }
-
     </style>
     <title>PDF Report</title>
 </head>
+
 <body>
 
     @php
-    use Carbon\Carbon;
-    $date = Carbon::parse($form->written_date);
-    $day = $date->day;
-    $month = $date->locale('th')->translatedFormat('F'); // เดือนเป็นภาษาไทย
-    $year = $date->year + 543; // เปลี่ยน ค.ศ. เป็น พ.ศ.
+        use Carbon\Carbon;
+        $date = Carbon::parse($form->written_date);
+        $day = $date->day;
+        $month = $date->locale('th')->translatedFormat('F'); // เดือนเป็นภาษาไทย
+        $year = $date->year + 543; // เปลี่ยน ค.ศ. เป็น พ.ศ.
 
-    $birthday = Carbon::parse($form->birth_day);
-    $birthday_day = $birthday->day;
-    $birthday_month = $birthday->locale('th')->translatedFormat('F'); // เดือนเป็นภาษาไทย
-    $birthday_year = $birthday->year + 543; // เปลี่ยน ค.ศ. เป็น พ.ศ.
+        $birthday = Carbon::parse($form->birth_day);
+        $birthday_day = $birthday->day;
+        $birthday_month = $birthday->locale('th')->translatedFormat('F'); // เดือนเป็นภาษาไทย
+        $birthday_year = $birthday->year + 543; // เปลี่ยน ค.ศ. เป็น พ.ศ.
 
-    $citizen_id = $form->citizen_id;
-    $formatted_id = substr($citizen_id, 0, 1) . '-' .
-    substr($citizen_id, 1, 4) . '-' .
-    substr($citizen_id, 5, 5) . '-' .
-    substr($citizen_id, 10, 2) . '-' .
-    substr($citizen_id, 12, 1);
+        $citizen_id = $form->citizen_id;
+        $formatted_id =
+            substr($citizen_id, 0, 1) .
+            '-' .
+            substr($citizen_id, 1, 4) .
+            '-' .
+            substr($citizen_id, 5, 5) .
+            '-' .
+            substr($citizen_id, 10, 2) .
+            '-' .
+            substr($citizen_id, 12, 1);
 
-    $traders_citizen_id = $form->traders->first()->citizen_id;
-    $traders_formatted_id = substr($traders_citizen_id, 0, 1) . '-' .
-    substr($traders_citizen_id, 1, 4) . '-' .
-    substr($traders_citizen_id, 5, 5) . '-' .
-    substr($traders_citizen_id, 10, 2) . '-' .
-    substr($traders_citizen_id, 12, 1);
+        $traders_citizen_id = $form->traders->first()->citizen_id;
+        $traders_formatted_id =
+            substr($traders_citizen_id, 0, 1) .
+            '-' .
+            substr($traders_citizen_id, 1, 4) .
+            '-' .
+            substr($traders_citizen_id, 5, 5) .
+            '-' .
+            substr($traders_citizen_id, 10, 2) .
+            '-' .
+            substr($traders_citizen_id, 12, 1);
 
     @endphp
 
@@ -410,20 +420,34 @@
         <p class="right">ทะเบียนเลขที่ .........................../ 2568</p>
         <h3>แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอาย</h3>
         <p style="margin-left: 40px;">เฉพาะกรณีผู้สูงอายุมอบอำนาจให้บุคคลอื่นมายื่นคำขอยืนยันสิทธิแทน</p>
-        <p>ผู้ยื่นคำขอฯ แทนตามหนังสือมอบอำนาจ เกี่ยวข้องเป็น <span class="fullname">{{$form->traders->first()->trade_condition}}</span>กับผู้สูงอายุที่ขอยืนยันสิทธิ</p>
-        <p>กับผู้สูงอายุที่ขอขึ้นทะเบียน ชื่อ-นามสกุล <span class="fullname">{{$form->traders->first()->elderly_name}}</span>เลขประจำตัวประชาชนผู้รับมอบอำนาจ</p>
-        <p><span class="citizen_id">{{ $traders_formatted_id }}</span> ที่อยู่ <span class="address">{{$form->traders->first()->address}}</span></p>
-        <p>โทรศัพท์ <span class="phone">{{$form->traders->first()->phone_number}}</span></p>
+        <p>ผู้ยื่นคำขอฯ แทนตามหนังสือมอบอำนาจ เกี่ยวข้องเป็น <span
+                class="fullname">{{ $form->traders->first()->trade_condition }}</span>กับผู้สูงอายุที่ขอยืนยันสิทธิ</p>
+        <p>กับผู้สูงอายุที่ขอขึ้นทะเบียน ชื่อ-นามสกุล <span
+                class="fullname">{{ $form->traders->first()->elderly_name }}</span>เลขประจำตัวประชาชนผู้รับมอบอำนาจ</p>
+        <p><span class="citizen_id">{{ $traders_formatted_id }}</span> ที่อยู่ <span
+                class="address">{{ $form->traders->first()->address }}</span></p>
+        <p>โทรศัพท์ <span class="phone">{{ $form->traders->first()->phone_number }}</span></p>
 
-        <p class="right">เขียนที่ <span class="written_at">{{$form->written_at}}</span></p>
-        <p class="right">วัน<span class="day">{{ $day }}</span>เดือน<span class="month">{{ $month }}</span>พ.ศ. <span class="year">{{ $year }}</span></p>
+        <p class="right">เขียนที่ <span class="written_at">{{ $form->written_at }}</span></p>
+        <p class="right">วัน<span class="day">{{ $day }}</span>เดือน<span
+                class="month">{{ $month }}</span>พ.ศ. <span class="year">{{ $year }}</span></p>
 
-        <p style="margin-left: 55px;">ด้วยข้าพเจ้า ชื่อ <span class="first_name">{{$form->salutation}}{{$form->first_name}}</span>นามสกุล<span class="last_name">{{$form->last_name}} </span></p>
-        <p>เกิดวันที่ <span class="birth_day">{{ $birthday_day }}</span> เดือน <span class="birth_day">{{ $birthday_month }}</span> ปี <span class="birth_day">{{ $birthday_year }}</span> อายุ<span class="age">{{$form->age}}</span>ปี สัญชาติ<span class="nationality">{{$form->nationality}}</span>มีชื่ออยู่ในสําเนา </p>
-        <p>ทะเบียนบ้านเลขท <span class="house_number">{{$form->house_number}}</span>หมู่ที่/ชุมชน<span class="village">{{$form->village}}</span>ตรอก/ซอย<span class="alley">{{$form->alley}}</span>ถนน<span class="road">{{$form->road}}</span></p>
-        <p>ตําบล/แขวง <span class="subdistrict">{{$form->subdistrict}}</span>อําเภอ/เขต <span class="district">{{$form->district}}</span>จังหวัด<span class="province">{{$form->province}}</span></p>
-        <p>รหัสไปรษณีย<span class="postal_code">{{$form->postal_code}}</span>โทรศัพท์<span class="phone_number">{{$form->phone_number}}</span></p>
-        <p>หมายเลขบัตรประจำตัวประชาชนของผู้สูงอายุที่ยื่นคำขอ <span class="citizen_id">{{$formatted_id}}</span></p>
+        <p style="margin-left: 55px;">ด้วยข้าพเจ้า ชื่อ <span
+                class="first_name">{{ $form->salutation }}{{ $form->first_name }}</span>นามสกุล<span
+                class="last_name">{{ $form->last_name }} </span></p>
+        <p>เกิดวันที่ <span class="birth_day">{{ $birthday_day }}</span> เดือน <span
+                class="birth_day">{{ $birthday_month }}</span> ปี <span class="birth_day">{{ $birthday_year }}</span>
+            อายุ<span class="age">{{ $form->age }}</span>ปี สัญชาติ<span
+                class="nationality">{{ $form->nationality }}</span>มีชื่ออยู่ในสําเนา </p>
+        <p>ทะเบียนบ้านเลขท <span class="house_number">{{ $form->house_number }}</span>หมู่ที่/ชุมชน<span
+                class="village">{{ $form->village }}</span>ตรอก/ซอย<span
+                class="alley">{{ $form->alley }}</span>ถนน<span class="road">{{ $form->road }}</span></p>
+        <p>ตําบล/แขวง <span class="subdistrict">{{ $form->subdistrict }}</span>อําเภอ/เขต <span
+                class="district">{{ $form->district }}</span>จังหวัด<span
+                class="province">{{ $form->province }}</span></p>
+        <p>รหัสไปรษณีย<span class="postal_code">{{ $form->postal_code }}</span>โทรศัพท์<span
+                class="phone_number">{{ $form->phone_number }}</span></p>
+        <p>หมายเลขบัตรประจำตัวประชาชนของผู้สูงอายุที่ยื่นคำขอ <span class="citizen_id">{{ $formatted_id }}</span></p>
     </div>
 
     {{--
@@ -467,57 +491,57 @@
     <p>ผู้ยื่นคําขอ <span class="citizen_id">{{$formatted_id}}</span></p>
 
     <p> สถานะภาพ&nbsp;
-        @if(in_array('single', explode(',', $trader->persons->first()->marital_status)))
+        @if (in_array('single', explode(',', $trader->persons->first()->marital_status)))
         <input type="checkbox" checked disabled> โสด
         @else
         <input type="checkbox" disabled> โสด
         @endif
         &nbsp;
-        @if(in_array('married', explode(',', $trader->persons->first()->marital_status)))
+        @if (in_array('married', explode(',', $trader->persons->first()->marital_status)))
         <input type="checkbox" checked disabled> แต่งงาน
         @else
         <input type="checkbox" disabled> แต่งงาน
         @endif
         &nbsp;
-        @if(in_array('widowed', explode(',', $trader->persons->first()->marital_status)))
+        @if (in_array('widowed', explode(',', $trader->persons->first()->marital_status)))
         <input type="checkbox" checked disabled> หม้าย
         @else
         <input type="checkbox" disabled> หม้าย
         @endif
         &nbsp;
-        @if(in_array('divorced', explode(',', $trader->persons->first()->marital_status)))
+        @if (in_array('divorced', explode(',', $trader->persons->first()->marital_status)))
         <input type="checkbox" checked disabled> หย่าร้าง
         @else
         <input type="checkbox" disabled> หย่าร้าง
         @endif
         &nbsp;
-        @if(in_array('separated', explode(',', $trader->persons->first()->marital_status)))
+        @if (in_array('separated', explode(',', $trader->persons->first()->marital_status)))
         <input type="checkbox" checked disabled> แยกกันอยู่
         @else
         <input type="checkbox" disabled> แยกกันอยู่
         @endif
         &nbsp;
-        @if(in_array('other', explode(',', $trader->persons->first()->marital_status)))
+        @if (in_array('other', explode(',', $trader->persons->first()->marital_status)))
         <input type="checkbox" checked disabled> อื่นๆ
         @else
         <input type="checkbox" disabled> อื่นๆ
         @endif
     </p>
 
-    <p> @if(in_array('option1', explode(',', $trader->personsOptions->first()->welfare_type)))
+    <p> @if (in_array('option1', explode(',', $trader->personsOptions->first()->welfare_type)))
         <input type="checkbox" checked disabled> ได้รับการสงเคราะห์เบี้ยยังชีพผู้ป่วยเอดส์
         @else
         <input type="checkbox" disabled> ได้รับการสงเคราะห์เบี้ยยังชีพผู้ป่วยเอดส์
         @endif
         &nbsp;
-        @if(in_array('option2', explode(',', $trader->personsOptions->first()->welfare_type)))
+        @if (in_array('option2', explode(',', $trader->personsOptions->first()->welfare_type)))
         <input type="checkbox" checked disabled> ได้รับการสงเคราะห์เบี้ยความพิการ
         @else
         <input type="checkbox" disabled> ได้รับการสงเคราะห์เบี้ยความพิการ
         @endif
         &nbsp;
         <br>
-        @if(in_array('option3', explode(',', $trader->personsOptions->first()->welfare_type)))
+        @if (in_array('option3', explode(',', $trader->personsOptions->first()->welfare_type)))
         <input type="checkbox" checked disabled> ย้ายภูมิลําเนาเข้ามาอยู่ใหม
         @else
         <input type="checkbox" disabled> ย้ายภูมิลําเนาเข้ามาอยู่ใหม
@@ -525,7 +549,7 @@
         &nbsp;
         อื่นๆ
         <span class="welfare_other_types">
-            @if(!empty($trader->personsOptions->first()->welfare_other_types))
+            @if (!empty($trader->personsOptions->first()->welfare_other_types))
             {{ $trader->personsOptions->first()->welfare_other_types }}
             @else
             .......................................................
@@ -535,13 +559,13 @@
 
     <p style="margin-left: 55px;">มีความประสงค์ขอรับเงินเบี้ยยังชีพผู้สูงอายุ ประจําปีงบประมาณ พ.ศ. โดยวิธีดังต่อไปนี้ (เลือก 1 วิธี) </p>
     <p>
-        @if(in_array('option1', explode(',', $trader->personsOptions->first()->request_for_money_type)))
+        @if (in_array('option1', explode(',', $trader->personsOptions->first()->request_for_money_type)))
         <input type="checkbox" checked disabled> รับเงินสดด้วยตนเอง
         @else
         <input type="checkbox" disabled> รับเงินสดด้วยตนเอง
         @endif
         &nbsp;
-        @if(in_array('option2', explode(',', $trader->personsOptions->first()->request_for_money_type)))
+        @if (in_array('option2', explode(',', $trader->personsOptions->first()->request_for_money_type)))
         <input type="checkbox" checked disabled> รับเงินสดโดยบุคคลที่ได้รับมอบอํานาจจากผู้มีสิทธิ
         @else
         <input type="checkbox" disabled> รับเงินสดโดยบุคคลที่ได้รับมอบอํานาจจากผู้มีสิทธิ
@@ -549,13 +573,13 @@
         &nbsp;
 
         <br>
-        @if(in_array('option3', explode(',', $trader->personsOptions->first()->request_for_money_type)))
+        @if (in_array('option3', explode(',', $trader->personsOptions->first()->request_for_money_type)))
         <input type="checkbox" checked disabled> โอนเงินเข้าบัญชีเงินฝากธนาคารในนามผู้มีสิทธิ
         @else
         <input type="checkbox" disabled> โอนเงินเข้าบัญชีเงินฝากธนาคารในนามผู้มีสิทธิ
         @endif
         &nbsp;
-        @if(in_array('option4', explode(',', $trader->personsOptions->first()->request_for_money_type)))
+        @if (in_array('option4', explode(',', $trader->personsOptions->first()->request_for_money_type)))
         <input type="checkbox" checked disabled> โอนเงินเข้าบัญชีเงินฝากธนาคารในนามผู้มีสิทธิ
         @else
         <input type="checkbox" disabled> โอนเงินเข้าบัญชีเงินฝากธนาคารในนามผู้มีสิทธิ
@@ -564,13 +588,13 @@
 
     <p style="margin-top: 30px;">พร้อมแนบเอกสารดังนี้</p>
     <p>
-        @if(in_array('option1', explode(',', $trader->personsOptions->first()->document_type)))
+        @if (in_array('option1', explode(',', $trader->personsOptions->first()->document_type)))
         <input type="checkbox" checked disabled> สําเนาบัตรประจําตัวประชาชน หรือสําเนาบัตรอื่น ที่ออกโดยหน่วยงานของรัฐที่มีรูปถ่าย
         @else
         <input type="checkbox" disabled> สําเนาบัตรประจําตัวประชาชน หรือสําเนาบัตรอื่น ที่ออกโดยหน่วยงานของรัฐที่มีรูปถ่าย
         @endif
         &nbsp;
-        @if(in_array('option2', explode(',', $trader->personsOptions->first()->document_type)))
+        @if (in_array('option2', explode(',', $trader->personsOptions->first()->document_type)))
         <input type="checkbox" checked disabled> สําเนาทะเบียนบ้าน
         @else
         <input type="checkbox" disabled> สําเนาทะเบียนบ้าน
@@ -578,14 +602,14 @@
         &nbsp;
 
         <br>
-        @if(in_array('option3', explode(',', $trader->personsOptions->first()->document_type)))
+        @if (in_array('option3', explode(',', $trader->personsOptions->first()->document_type)))
         <input type="checkbox" checked disabled> สําเนาสมุดบัญชีเงินฝากธนาคาร ( ในกรณีผู้ขอรับเบี้ยยังชีพผู้สูงอายุประสงค์ขอรับเงินเบี้ยยังชีพผู้สูงอายุผ่านธนาคาร )
         @else
         <input type="checkbox" disabled> สําเนาสมุดบัญชีเงินฝากธนาคาร ( ในกรณีผู้ขอรับเบี้ยยังชีพผู้สูงอายุประสงค์ขอรับเงินเบี้ยยังชีพผู้สูงอายุผ่านธนาคาร )
         @endif
         &nbsp;
         <br>
-        @if(in_array('option4', explode(',', $trader->personsOptions->first()->document_type)))
+        @if (in_array('option4', explode(',', $trader->personsOptions->first()->document_type)))
         <input type="checkbox" checked disabled> หนังสือมอบอํานาจพร้อมสําเนาบัตรประจําตัวประชาชนของผู้มอบอํานาจและผู้รับมอบอํานาจ
         @else
         <input type="checkbox" disabled> หนังสือมอบอํานาจพร้อมสําเนาบัตรประจําตัวประชาชนของผู้มอบอํานาจและผู้รับมอบอํานาจ
