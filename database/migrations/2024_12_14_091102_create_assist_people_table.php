@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('assist_people', function (Blueprint $table) {
             $table->id();
-            // $table->foreignId('users_id')->constrained('users')->cascadeOnDelete();
             $table->foreignId('users_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->enum('status', ['1', '2']);
+            $table->string('admin_name_verifier')->nullable();
             $table->string('written_at')->nullable();
             $table->string('write_the_date')->nullable();
             $table->string('learn')->nullable();
