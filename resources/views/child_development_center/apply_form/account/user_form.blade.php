@@ -222,7 +222,7 @@
             <!-- Caretaker Income -->
             <div class="row mb-3">
                 <div class="col-md-12">
-                    <label for="caretaker_income" class="form-label">ผู้ดูแลอุปการะเด็กตามข้อ ๑.
+                    <label for="caretaker_income" class="form-label">ผู้ดูแลอุปการะเด็ก
                         มีรายได้ในครอบครัวต่อเดือน</label>
                     <input type="text" class="form-control" id="caretaker_income" name="caretaker_income" required>
                 </div>

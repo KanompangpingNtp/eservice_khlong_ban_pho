@@ -61,6 +61,7 @@
                         value="{{ old('citizen_id', $form->citizen_id) }}" required>
                 </div>
             </div>
+            <hr>
             <!-- Address Information -->
             <h3>ที่อยู่ตามสำเนาทะเบียนบ้าน</h3>
             <div class="row">
@@ -98,7 +99,7 @@
                         value="{{ old('regis_province', $form->regis_province) }}" required>
                 </div>
             </div>
-
+            <hr>
             <!-- Current Address Information -->
             <h3>ที่อยู่อาศัยจริงในปัจจุบัน</h3>
             <div class="row">
@@ -145,176 +146,237 @@
                 </div>
             </div>
 
-            <div>
-                <label for="current_phone_number">เบอร์โทรศัพท์</label>
-                <input type="text" name="current_phone_number" id="current_phone_number"
-                    value="{{ old('current_phone_number', $form->current_phone_number) }}" required>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="current_phone_number" class="form-label">เบอร์โทรศัพท์</label>
+                    <input type="text" class="form-control" name="current_phone_number" id="current_phone_number"
+                        value="{{ old('current_phone_number', $form->current_phone_number) }}" required>
+                </div>
+            </div>
+            {{-- ลืมโว้ยยย --}}
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="number_of_siblings" class="form-label">มีพี่น้องร่วมบิดา - มารดาเดียวกันจำนวน.</label>
+                    <input type="number" name="number_of_siblings" class="form-control" id="number_of_siblings"
+                        value="{{ old('number_of_siblings', $form->number_of_siblings) }}" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="congenital_disease" class="form-label">โรคประจำตัว</label>
+                    <input type="text" class="form-control" name="congenital_disease" id="congenital_disease"
+                        value="{{ old('congenital_disease', $form->congenital_disease) }}" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="blood_group" class="form-label">หมู่โลหิต</label>
+                    <input type="text" class="form-control" name="blood_group" id="blood_group"
+                        value="{{ old('blood_group', $form->blood_group) }}" required>
+                </div>
             </div>
 
-            <div>
-                <label for="number_of_siblings">มีพี่น้องร่วมบิดา - มารดาเดียวกันจำนวน.</label>
-                <input type="number" name="number_of_siblings" id="number_of_siblings"
-                    value="{{ old('number_of_siblings', $form->number_of_siblings) }}" required>
+            <hr>
+
+            <!-- Parents Information -->
+            <h3>ข้อมูลผู้ปกครอง</h3>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="father_name" class="form-label">บิดาชื่อ</label>
+                    <input type="text" class="form-control" name="father_name" id="father_name"
+                        value="{{ old('father_name', $form->caregiverInformation->first()->father_name ?? '') }}"
+                        required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="father_occupation" class="form-label">อาชีพ</label>
+                    <input type="text" class="form-control" name="father_occupation" id="father_occupation"
+                        value="{{ old('father_occupation', $form->caregiverInformation->first()->father_occupation ?? '') }}"
+                        required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="edu_qual_father" class="form-label">วุฒิการศึกษา</label>
+                    <input type="text" class="form-control" name="edu_qual_father" id="edu_qual_father"
+                        value="{{ old('edu_qual_father', $form->caregiverInformation->first()->edu_qual_father ?? '') }}"
+                        required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="mother_name" class="form-label">มารดาชื่อ</label>
+                    <input type="text" class="form-control" name="mother_name" id="mother_name"
+                        value="{{ old('mother_name', $form->caregiverInformation->first()->mother_name ?? '') }}"
+                        required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="mother_occupation" class="form-label">อาชีพ </label>
+                    <input type="text" id="mother_occupation" class="form-control" name="mother_occupation"
+                        value="{{ old('mother_occupation', $form->caregiverInformation->first()->mother_occupation ?? '') }}"required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="edu_qual_mother" class="form-label">วุฒิการศึกษา</label>
+                    <input type="text" id="edu_qual_mother" class="form-control" name="edu_qual_mother"
+                        value="{{ old('edu_qual_mother', $form->caregiverInformation->first()->edu_qual_mother ?? '') }}"
+                        required>
+                </div>
+                <hr>
+
+                <!-- Care Options -->
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <h3 class="form-label">ปัจจุบันเด็กอยู่ในความดูแลอุปการะ/รับผิดชอบของ</h3>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="care_option_father" name="care_option"
+                                value="father"
+                                {{ old('care_option', $form->caregiverInformation->first()->care_option ?? '') == 'father' ? 'checked' : '' }}
+                                required>
+                            <label class="form-check-label" for="care_option_father">บิดา</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="care_option_mother" name="care_option"
+                                value="mother"
+                                {{ old('care_option', $form->caregiverInformation->first()->care_option ?? '') == 'mother' ? 'checked' : '' }}
+                                required>
+                            <label class="form-check-label" for="care_option_mother">มารดา</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="care_option_fatherAdmother"
+                                name="care_option" value="fatherAdmother"
+                                {{ old('care_option', $form->caregiverInformation->first()->care_option ?? '') == 'fatherAdmother' ? 'checked' : '' }}
+                                required>
+                            <label class="form-check-label" for="care_option_fatherAdmother">ทั้งบิดา -
+                                มารดาร่วมกัน</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="care_option_other" name="care_option"
+                                value="Other"
+                                {{ old('care_option', $form->caregiverInformation->first()->care_option ?? '') == 'Other' ? 'checked' : '' }}
+                                required>
+                            <label class="form-check-label" for="care_option_other">อื่น ๆ</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3" id="otherCareOptionDiv"
+                    style="display: {{ old('care_option', $form->caregiverInformation->first()->care_option ?? '') == 'Other' || old('care_option_other', $form->caregiverInformation->first()->care_option_other ?? '') ? 'block' : 'none' }}">
+                    <label for="care_option_other_text" class="form-label">(โปรดระบุความเกี่ยวข้อง)</label>
+                    <input type="text" id="care_option_other_text" class="form-control" name="care_option_other"
+                        value="{{ old('care_option_other', $form->caregiverInformation->first()->care_option_other ?? '') }}"
+                        required>
+                </div>
+
+                <hr>
+                {{-- ลืมโว้ยยย --}}
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <h3 class="form-label">ปัจจุบันเด็กอยู่ในความดูแลอุปการะ/รับผิดชอบของ</h3>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="care_option_father" name="care_option"
+                                value="father" required>
+                            <label class="form-check-label" for="care_option_father">บิดา</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="care_option_mother" name="care_option"
+                                value="mother" required>
+                            <label class="form-check-label" for="care_option_mother">มารดา</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="care_option_fatherAdmother"
+                                name="care_option" value="fatherAdmother" required>
+                            <label class="form-check-label" for="care_option_fatherAdmother">ทั้งบิดา -
+                                มารดาร่วมกัน</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="care_option_other" name="care_option"
+                                value="Other" required>
+                            <label class="form-check-label" for="care_option_other">อื่น ๆ</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Caretaker Income -->
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <label for="caretaker_income" class="form-label">ผู้ดูแลอุปการะเด็กตามข้อ
+                            มีรายได้ในครอบครัวต่อเดือน</label>
+                        <input type="text" class="form-control" id="caretaker_income" name="caretaker_income"
+                            value="{{ old('caretaker_income', $form->caregiverInformation->first()->caretaker_income ?? '') }}"
+                            required>
+                    </div>
+                </div>
+
+                <!-- Applicant's Information -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="applicants_name" class="form-label">ผู้นำเด็กมาสมัครชื่อ</label>
+                        <input type="text" class="form-control" id="applicants_name" name="applicants_name"
+                            value="{{ old('applicants_name', $form->caregiverInformation->first()->applicants_name ?? '') }}"
+                            required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="applicants_relevant" class="form-label">เกี่ยวข้องเป็น</label>
+                        <input type="text" class="form-control" id="applicants_relevant" name="applicants_relevant"
+                            value="{{ old('applicants_relevant', $form->caregiverInformation->first()->applicants_relevant ?? '') }}"
+                            required>
+                    </div>
+                </div>
+
+                <!-- Child Carrier Information -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="child_carrier_name" class="form-label">ผู้ที่จะรับส่งเด็กชื่อ - สกุล</label>
+                        <input type="text" class="form-control" id="child_carrier_name" name="child_carrier_name"
+                            value="{{ old('child_carrier_name', $form->caregiverInformation->first()->child_carrier_name ?? '') }}"
+                            required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="child_carrier_relevant" class="form-label">โดยเกี่ยวข้องเป็น</label>
+                        <input type="text" class="form-control" id="child_carrier_relevant"
+                            name="child_carrier_relevant"
+                            value="{{ old('child_carrier_relevant', $form->caregiverInformation->first()->child_carrier_relevant ?? '') }}"
+                            required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <label for="child_carrier_phone" class="form-label">เบอร์โทรศัพท์ติดต่อ</label>
+                        <input type="text" class="form-control" id="child_carrier_phone" name="child_carrier_phone"
+                            value="{{ old('child_carrier_phone', $form->caregiverInformation->first()->child_carrier_phone ?? '') }}"
+                            required>
+                    </div>
+                </div>
+                <hr>
+                <div class="mb-3">
+                    <label class="form-label">ไฟล์แนบปัจจุบัน</label>
+                    <div class="list-group">
+                        @foreach ($form->disabilityAttachments as $attachment)
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="{{ asset('storage/' . $attachment->file_path) }}" target="_blank"
+                                    class="text-truncate" style="max-width: 80%;">
+                                    {{ basename($attachment->file_path) }}
+                                </a>
+                                <div class="form-check">
+                                    <input type="checkbox" name="delete_attachments[]" value="{{ $attachment->id }}"
+                                        class="form-check-input">
+                                    <label class="form-check-label"
+                                        for="delete_attachments_{{ $attachment->id }}">ลบไฟล์นี้</label>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <!-- แนบไฟล์ -->
+                <div>
+                    <h3 for="attachments" class="form-label">แนบไฟล์</h3>
+                    <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
+                    <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
+                    <!-- แสดงรายการไฟล์ที่แนบ -->
+                    <div id="file-list" class="mt-1">
+                        <div class="d-flex flex-wrap gap-3"></div>
+                    </div>
+                </div>
+
             </div>
 
-            <div>
-                <label for="congenital_disease">โรคประจำตัว</label>
-                <input type="text" name="congenital_disease" id="congenital_disease"
-                    value="{{ old('congenital_disease', $form->congenital_disease) }}" required>
+            <div class="text-center w-full border">
+                <button type="submit" class="btn btn-primary w-100 py-1"><i
+                        class="fa-solid fa-file-arrow-up me-2"></i></i>
+                    ส่งฟอร์มข้อมูล</button>
             </div>
-
-            <div>
-                <label for="blood_group">หมู่โลหิต</label>
-                <input type="text" name="blood_group" id="blood_group"
-                    value="{{ old('blood_group', $form->blood_group) }}" required>
-            </div>
-
-            <!-- Father's Information -->
-            <div>
-                <label for="father_name">บิดาชื่อ </label>
-                <input type="text" id="father_name" name="father_name"
-                    value="{{ old('father_name', $form->caregiverInformation->first()->father_name ?? '') }}" required>
-            </div>
-
-            <div>
-                <label for="father_occupation">อาชีพ </label>
-                <input type="text" id="father_occupation" name="father_occupation"
-                    value="{{ old('father_occupation', $form->caregiverInformation->first()->father_occupation ?? '') }}"
-                    required>
-            </div>
-
-            <div>
-                <label for="edu_qual_father">วุฒิการศึกษา</label>
-                <input type="text" id="edu_qual_father" name="edu_qual_father"
-                    value="{{ old('edu_qual_father', $form->caregiverInformation->first()->edu_qual_father ?? '') }}"
-                    required>
-            </div>
-
-            <!-- Mother's Information -->
-            <div>
-                <label for="mother_name">มารดาชื่อ</label>
-                <input type="text" id="mother_name" name="mother_name"
-                    value="{{ old('mother_name', $form->caregiverInformation->first()->mother_name ?? '') }}" required>
-            </div>
-
-            <div>
-                <label for="mother_occupation">อาชีพ </label>
-                <input type="text" id="mother_occupation" name="mother_occupation"
-                    value="{{ old('mother_occupation', $form->caregiverInformation->first()->mother_occupation ?? '') }}"
-                    required>
-            </div>
-
-            <div>
-                <label for="edu_qual_mother">วุฒิการศึกษา</label>
-                <input type="text" id="edu_qual_mother" name="edu_qual_mother"
-                    value="{{ old('edu_qual_mother', $form->caregiverInformation->first()->edu_qual_mother ?? '') }}"
-                    required>
-            </div>
-
-            <!-- Care Options -->
-            <div>
-                <label>ปัจจุบันเด็กอยู่ในความดูแลอุปการะ/รับผิดชอบของ</label><br>
-                <input type="radio" id="care_option_father" name="care_option" value="father"
-                    {{ old('care_option', $form->caregiverInformation->first()->care_option ?? '') == 'father' ? 'checked' : '' }}
-                    required>
-                <label for="care_option_father">บิดา</label><br>
-
-                <input type="radio" id="care_option_mother" name="care_option" value="mother"
-                    {{ old('care_option', $form->caregiverInformation->first()->care_option ?? '') == 'mother' ? 'checked' : '' }}
-                    required>
-                <label for="care_option_mother">มารดา</label><br>
-
-                <input type="radio" id="care_option_fatherAdmother" name="care_option" value="fatherAdmother"
-                    {{ old('care_option', $form->caregiverInformation->first()->care_option ?? '') == 'fatherAdmother' ? 'checked' : '' }}
-                    required>
-                <label for="care_option_fatherAdmother">ทั้งบิดา - มารดาร่วมกัน</label><br>
-
-                <input type="radio" id="care_option_other" name="care_option" value="Other"
-                    {{ old('care_option', $form->caregiverInformation->first()->care_option ?? '') == 'Other' ? 'checked' : '' }}
-                    required>
-                <label for="care_option_other">อื่น ๆ </label>
-            </div>
-
-            <div id="otherCareOptionDiv"
-                style="display: {{ old('care_option', $form->caregiverInformation->first()->care_option ?? '') == 'Other' || old('care_option_other', $form->caregiverInformation->first()->care_option_other ?? '') ? 'block' : 'none' }}">
-                <label for="care_option_other_text">(โปรดระบุความเกี่ยวข้อง)</label>
-                <input type="text" id="care_option_other_text" name="care_option_other"
-                    value="{{ old('care_option_other', $form->caregiverInformation->first()->care_option_other ?? '') }}">
-            </div>
-
-            <!-- Caretaker Income -->
-            <div>
-                <label for="caretaker_income">ผู้ดูแลอุปการะเด็กตามข้อ ๑. มีรายได้ในครอบครัวต่อเดือน</label>
-                <input type="text" id="caretaker_income" name="caretaker_income"
-                    value="{{ old('caretaker_income', $form->caregiverInformation->first()->caretaker_income ?? '') }}"
-                    required>
-            </div>
-
-            <!-- Applicant's Information -->
-            <div>
-                <label for="applicants_name">ผู้นำเด็กมาสมัครชื่อ </label>
-                <input type="text" id="applicants_name" name="applicants_name"
-                    value="{{ old('applicants_name', $form->caregiverInformation->first()->applicants_name ?? '') }}"
-                    required>
-            </div>
-
-            <div>
-                <label for="applicants_relevant">เกี่ยวข้องเป็น</label>
-                <input type="text" id="applicants_relevant" name="applicants_relevant"
-                    value="{{ old('applicants_relevant', $form->caregiverInformation->first()->applicants_relevant ?? '') }}"
-                    required>
-            </div>
-
-            <!-- Child Carrier Information -->
-            <div>
-                <label for="child_carrier_name">ผู้ที่จะรับส่งเด็กชื่อ - สกุล</label>
-                <input type="text" id="child_carrier_name" name="child_carrier_name"
-                    value="{{ old('child_carrier_name', $form->caregiverInformation->first()->child_carrier_name ?? '') }}"
-                    required>
-            </div>
-
-            <div>
-                <label for="child_carrier_relevant">โดยเกี่ยวข้องเป็น</label>
-                <input type="text" id="child_carrier_relevant" name="child_carrier_relevant"
-                    value="{{ old('child_carrier_relevant', $form->caregiverInformation->first()->child_carrier_relevant ?? '') }}"
-                    required>
-            </div>
-
-            <div>
-                <label for="child_carrier_phone">เบอร์โทรศัพท์ติดต่อ</label>
-                <input type="text" id="child_carrier_phone" name="child_carrier_phone"
-                    value="{{ old('child_carrier_phone', $form->caregiverInformation->first()->child_carrier_phone ?? '') }}"
-                    required>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">ไฟล์แนบปัจจุบัน</label>
-                <ul>
-                    @foreach ($form->attachments as $attachment)
-                        <li>
-                            <a href="{{ asset('storage/' . $attachment->file_path) }}"
-                                target="_blank">{{ basename($attachment->file_path) }}</a>
-                            <input type="checkbox" name="delete_attachments[]" value="{{ $attachment->id }}"> ลบไฟล์นี้
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-
-            <div class="mb-3">
-                <label for="attachments" class="form-label">เพิ่มไฟล์แนบใหม่</label>
-                <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
-                <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
-            </div>
-
-            <!-- แสดงรายการไฟล์ที่แนบ -->
-            <div id="file-list" class="mt-3">
-                <h5>ไฟล์ที่เลือก:</h5>
-                <div class="d-flex flex-wrap gap-3"></div>
-            </div>
-
-        </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
     <script src="{{ asset('js/multipart_files.js') }}"></script>
