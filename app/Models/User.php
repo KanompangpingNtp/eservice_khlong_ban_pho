@@ -97,4 +97,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(ChildReply::class, 'users_id');
     }
+
+    public function assistPersons()
+    {
+        return $this->hasMany(AssistPerson::class);
+    }
 }
