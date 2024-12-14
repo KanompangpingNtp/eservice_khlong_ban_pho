@@ -127,6 +127,22 @@
                         required>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="number_of_siblings" class="form-label">มีพี่น้องร่วมบิดา - มารดาเดียวกันจำนวน.</label>
+                    <input type="number" name="number_of_siblings" class="form-control" id="number_of_siblings" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="congenital_disease" class="form-label">โรคประจำตัว</label>
+                    <input type="text" class="form-control" name="congenital_disease" id="congenital_disease" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="blood_group" class="form-label">หมู่โลหิต</label>
+                    <input type="text" class="form-control" name="blood_group" id="blood_group" required>
+                </div>
+            </div>
+
             <hr>
             <!-- Parents Information -->
             <h3>ข้อมูลผู้ปกครอง</h3>
@@ -188,36 +204,10 @@
             <div class="col-md-6 mb-3" id="otherCareOptionDiv" style="display: none;">
                 <label for="care_option_other_text" class="form-label">(โปรดระบุความเกี่ยวข้อง)</label>
                 <input type="text" id="care_option_other_text" class="form-control" name="care_option_other"
-                    required>
+                    >
             </div>
 
             <hr>
-
-            <div class="row">
-                <div class="col-md-12 mb-3">
-                    <h3 class="form-label">ปัจจุบันเด็กอยู่ในความดูแลอุปการะ/รับผิดชอบของ</h3>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" id="care_option_father" name="care_option"
-                            value="father" required>
-                        <label class="form-check-label" for="care_option_father">บิดา</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" id="care_option_mother" name="care_option"
-                            value="mother" required>
-                        <label class="form-check-label" for="care_option_mother">มารดา</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" id="care_option_fatherAdmother"
-                            name="care_option" value="fatherAdmother" required>
-                        <label class="form-check-label" for="care_option_fatherAdmother">ทั้งบิดา - มารดาร่วมกัน</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" id="care_option_other" name="care_option"
-                            value="Other" required>
-                        <label class="form-check-label" for="care_option_other">อื่น ๆ</label>
-                    </div>
-                </div>
-            </div>
 
             <!-- Caretaker Income -->
             <div class="row mb-3">

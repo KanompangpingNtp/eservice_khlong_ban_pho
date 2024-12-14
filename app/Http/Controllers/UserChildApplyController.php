@@ -152,7 +152,7 @@ class UserChildApplyController extends Controller
 
     public function ChildApplyUsersShowFormEdit($id)
     {
-        $form = ChildInformation::with('caregiverInformation')->findOrFail($id);
+        $form = ChildInformation::with('caregiverInformation','attachments')->findOrFail($id);
 
         return view('child_development_center.apply_form.account.edit.edit_form', compact('form'));
     }

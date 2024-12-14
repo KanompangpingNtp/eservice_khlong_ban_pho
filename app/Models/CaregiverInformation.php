@@ -19,4 +19,6 @@ class CaregiverInformation extends Model
     {
         return $this->belongsTo(ChildInformation::class, 'child_information_id');
     }
+
+
 }

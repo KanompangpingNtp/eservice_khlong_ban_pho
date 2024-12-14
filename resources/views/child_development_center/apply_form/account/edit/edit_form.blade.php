@@ -254,38 +254,10 @@
                     style="display: {{ old('care_option', $form->caregiverInformation->first()->care_option ?? '') == 'Other' || old('care_option_other', $form->caregiverInformation->first()->care_option_other ?? '') ? 'block' : 'none' }}">
                     <label for="care_option_other_text" class="form-label">(โปรดระบุความเกี่ยวข้อง)</label>
                     <input type="text" id="care_option_other_text" class="form-control" name="care_option_other"
-                        value="{{ old('care_option_other', $form->caregiverInformation->first()->care_option_other ?? '') }}"
-                        required>
+                        value="{{ old('care_option_other', $form->caregiverInformation->first()->care_option_other ?? '') }}">
                 </div>
 
                 <hr>
-                {{-- ลืมโว้ยยย --}}
-                <div class="row">
-                    <div class="col-md-12 mb-3">
-                        <h3 class="form-label">ปัจจุบันเด็กอยู่ในความดูแลอุปการะ/รับผิดชอบของ</h3>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" id="care_option_father" name="care_option"
-                                value="father" required>
-                            <label class="form-check-label" for="care_option_father">บิดา</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" id="care_option_mother" name="care_option"
-                                value="mother" required>
-                            <label class="form-check-label" for="care_option_mother">มารดา</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" id="care_option_fatherAdmother"
-                                name="care_option" value="fatherAdmother" required>
-                            <label class="form-check-label" for="care_option_fatherAdmother">ทั้งบิดา -
-                                มารดาร่วมกัน</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" id="care_option_other" name="care_option"
-                                value="Other" required>
-                            <label class="form-check-label" for="care_option_other">อื่น ๆ</label>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Caretaker Income -->
                 <div class="row mb-3">
@@ -342,7 +314,7 @@
                 <div class="mb-3">
                     <label class="form-label">ไฟล์แนบปัจจุบัน</label>
                     <div class="list-group">
-                        @foreach ($form->disabilityAttachments as $attachment)
+                        @foreach ($form->attachments as $attachment)
                             <div class="list-group-item d-flex justify-content-between align-items-center">
                                 <a href="{{ asset('storage/' . $attachment->file_path) }}" target="_blank"
                                     class="text-truncate" style="max-width: 80%;">
