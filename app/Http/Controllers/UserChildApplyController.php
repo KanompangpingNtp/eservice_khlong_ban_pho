@@ -285,7 +285,7 @@ class UserChildApplyController extends Controller
         $pdf = Pdf::loadView('child_development_center.apply_form.account.export_pdf.export_pdf', compact('form'))
             ->setPaper('A4', 'portrait');
 
-        return $pdf->stream('แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอาย' . $form->id . '.pdf');
+        return $pdf->stream('ศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์' . $form->id . '.pdf');
 
     }
 
