@@ -161,7 +161,7 @@ class UserElderlyAllowanceController extends Controller
 
     public function ElderlyAllowanceFormUserUpdate(Request $request, $id)
     {
-         $request->validate([
+        $request->validate([
             'written_at' => 'required|string',
             'written_date' => 'required|date',
             'salutation' => 'required|string',
@@ -338,14 +338,56 @@ class UserElderlyAllowanceController extends Controller
         return redirect()->back()->with('success', 'ตอบกลับสำเร็จแล้ว!');
     }
 
+    // public function ElderlyAllowanceUserExportPDF($id)
+    // {
+    //     $form = EaPeople::with('traders', 'personsOptions', 'bankacoption')->find($id);
+
+    //     $pdf = Pdf::loadView('elderly_allowance.user_account.export_pdf.export_pdf', compact('form'))
+    //         ->setPaper('A4', 'portrait');
+
+    //     return $pdf->stream('แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอายุ' . $form->id . '.pdf');
+    // }
+
+    // public function ElderlyAllowanceUserExportPDF($id)
+    // {
+    //     $form = EaPeople::with('traders', 'personsOptions', 'bankacoption')->find($id);
+
+    //     if ($form->personsOptions->first() && $form->personsOptions->first()->welfare_type) {
+    //         $welfareType = $form->personsOptions->first()->welfare_type;
+    //         if (is_string($welfareType)) {
+    //             $form->personsOptions->first()->welfare_type = json_decode($welfareType, true);
+    //         }
+    //     }
+
+    //     $pdf = Pdf::loadView('elderly_allowance.user_account.export_pdf.export_pdf', compact('form'))
+    //         ->setPaper('A4', 'portrait');
+
+    //     return $pdf->stream('แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอายุ' . $form->id . '.pdf');
+    // }
     public function ElderlyAllowanceUserExportPDF($id)
     {
+        // ดึงข้อมูลแบบเต็มจากฐานข้อมูล
         $form = EaPeople::with('traders', 'personsOptions', 'bankacoption')->find($id);
 
-        $pdf = Pdf::loadView('elderly_allowance.user_account.export_pdf.export_pdf', compact('form'))
+        // ตรวจสอบและแปลง welfare_type หากเป็น string ให้แปลงเป็นอาร์เรย์
+        if ($form->personsOptions->first() && $form->personsOptions->first()->welfare_type) {
+            $welfareType = $form->personsOptions->first()->welfare_type;
+            if (is_string($welfareType)) {
+                $form->personsOptions->first()->welfare_type = json_decode($welfareType, true);
+            }
+        }
+
+        // ตรวจสอบและแปลง document_type หากเป็น string ให้แปลงเป็นอาร์เรย์
+        $documentType = $form->personsOptions->first()->document_type ?? [];
+        if (is_string($documentType)) {
+            $documentType = json_decode($documentType, true);
+        }
+
+        // กำหนดข้อมูลที่ใช้ใน View
+        $pdf = Pdf::loadView('elderly_allowance.user_account.export_pdf.export_pdf', compact('form', 'documentType'))
             ->setPaper('A4', 'portrait');
 
+        // ส่งไฟล์ PDF กลับไปให้ผู้ใช้งาน
         return $pdf->stream('แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอายุ' . $form->id . '.pdf');
     }
-
 }

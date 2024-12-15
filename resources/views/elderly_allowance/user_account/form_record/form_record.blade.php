@@ -4,10 +4,21 @@
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
 
-    <div class="container">
-        <h3 class="text-center">แบบฟอร์มยืนยันสิทธิผู้สูงอายุ <br>
-            <h2 class="text-center">ตารางแสดงข้อมูลฟอร์มที่ส่งเข้ามา
-        </h3>
+@if ($message = Session::get('success'))
+<script>
+    Swal.fire({
+        icon: 'success'
+        , title: '{{ $message }}'
+    , })
+
+</script>
+@endif
+
+<div class="container">
+    <h2 class="text-center">แบบฟอร์มยืนยันสิทธิผู้สูงอายุ <br>
+        <h3 class="text-center">ตารางแสดงข้อมูลฟอร์มที่ส่งเข้ามา</h3>
+    </h2>
+    <br>
 
         <table class="table table-bordered table-striped" id="data_table">
             <thead class="text-center">
