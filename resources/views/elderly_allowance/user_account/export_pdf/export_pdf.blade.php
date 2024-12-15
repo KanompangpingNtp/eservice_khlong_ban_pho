@@ -410,12 +410,12 @@
                 <div style="float: right; width: 50%;">
                     <span>(ลงชื่อ)</span>
                     <span class="dotted-line"
-                        style="width: 50%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"">
+                        style="width: 50%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
                     </span>
                     <div style="margin-left: 40px;">
                         <span>(</span>
                         <span class="dotted-line"
-                            style="width: 50%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"">
+                            style="width: 50%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
                         </span>
                         <span>)</span>
                     </div>
