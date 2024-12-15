@@ -1,4 +1,5 @@
 @extends('dashboard.layout.users.layout_users')
+@section('title', 'ข้อมูลผู้ขอรับการสงเคราะห์')
 @section('user_content')
     <h3 class="text-center"> แบบคำขอรับการสงเคราะห์ </h3>
 
@@ -339,7 +340,7 @@
 
             <hr>
 
-            <div>
+            <div class="my-2">
                 <h3> 4. รายได้ – รายจ่าย</h3>
                 <div class="form-group">
                     <label for="total_income">รายได้รวม</label>
@@ -360,9 +361,12 @@
                 </div>
             </div>
 
+            <hr>
+
 
             <div class="row my-3">
                 <div class="col-12 col-sm-6 col-md-4 form-group">
+                    <h3>5. ข้อมูลการติดต่อ</h3>
                     <label for="contact_person">ชื่อผู้ติดต่อ</label>
                     <input type="text" class="form-control" id="contact_person" name="contact_person"
                         placeholder="กรุณาระบุชื่อผู้ติดต่อ">

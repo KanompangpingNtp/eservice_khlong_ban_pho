@@ -54,7 +54,7 @@
                         style="width: auto; height: 10vh; padding: 10px;">
                     <div class="h-100 d-flex flex-column align-items-start justify-content-center font-sarabun">
                         <div class="font-sarabun text-white fs-4 ps-1">
-                            องค์การบริหารส่วนตำบล คลองบ้านโพธิ์
+                            องค์การบริหารส่วนตำบล คลองบ้านโพธิ์ © บริษัท GM SKY สงวนสิทธิ์
                         </div>
                         <div class="font-sarabun text-white fs-5">
                             40/3 หมู่ที่3 ตำบลคลองบ้านโพธิ์ อำเภอบ้านโพธิ์ จังหวัดฉะเชิงเทรา 24140

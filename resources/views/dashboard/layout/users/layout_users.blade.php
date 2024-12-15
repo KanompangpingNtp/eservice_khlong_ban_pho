@@ -202,20 +202,18 @@
                 margin-left: 15px;
             }
         }
-
     </style>
 </head>
 
 <body>
 
     @if ($message = Session::get('success'))
-    <script>
-        Swal.fire({
-            icon: 'success'
-            , title: '{{ $message }}'
-        , })
-
-    </script>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: '{{ $message }}',
+            })
+        </script>
     @endif
 
     <div class="container-fluid d-flex">
@@ -230,69 +228,85 @@
                 </a>
             </div>
             @if (Auth::check())
-            <!-- เมนูที่สามารถคลิกเพื่อเปิดตัวเลือกเพิ่มเติม -->
-            <div class="nav-item">
-                <a class="nav-link font-sarabun-bold toggle-collapse" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#moreOptions1">
-                    คำร้องทั่วไป
-                </a>
-                <!-- ตัวเลือกที่จะแสดงเมื่อคลิก -->
-                <div id="moreOptions1" class="collapse bg-option-nav mx-2">
-                    <div class="nav-item">
-                        <a class="nav-link" href="{{ route('UsersAccountFormPage') }}"><i class="fa-solid fa-caret-right"></i> ฟอร์มส่งข้อมูล</a>
+                <!-- เมนูที่สามารถคลิกเพื่อเปิดตัวเลือกเพิ่มเติม -->
+                <div class="nav-item">
+                    <a class="nav-link font-sarabun-bold toggle-collapse" href="javascript:void(0)"
+                        data-bs-toggle="collapse" data-bs-target="#moreOptions1">
+                        คำร้องทั่วไป
+                    </a>
+                    <!-- ตัวเลือกที่จะแสดงเมื่อคลิก -->
+                    <div id="moreOptions1" class="collapse bg-option-nav mx-2">
+                        <div class="nav-item">
+                            <a class="nav-link" href="{{ route('UsersAccountFormPage') }}"><i
+                                    class="fa-solid fa-caret-right"></i> ฟอร์มส่งข้อมูล</a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link" href="{{ route('userRecordForm') }}"><i
+                                    class="fa-solid fa-caret-right"></i> ประวัติการส่งฟอร์ม</a>
+                        </div>
                     </div>
-                    <div class="nav-item">
-                        <a class="nav-link" href="{{ route('userRecordForm') }}"><i class="fa-solid fa-caret-right"></i> ประวัติการส่งฟอร์ม</a>
+                    <a class="nav-link font-sarabun-bold toggle-collapse" href="javascript:void(0)"
+                        data-bs-toggle="collapse" data-bs-target="#moreOptions2">
+                        แบบคำขอส่งทะเบียนรับเบี้ยความพิการ
+                    </a>
+                    <!-- ตัวเลือกที่จะแสดงเมื่อคลิก -->
+                    <div id="moreOptions2" class="collapse bg-option-nav mx-2">
+                        <div class="nav-item">
+                            <a class="nav-link" href="{{ route('DisabilityUsersAccountFormPage') }}"><i
+                                    class="fa-solid fa-caret-right"></i> ฟอร์มส่งข้อมูล</a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link" href="{{ route('TableDisabilityUsersPages') }}"><i
+                                    class="fa-solid fa-caret-right"></i> ประวัติการส่งฟอร์ม</a>
+                        </div>
+                    </div>
+                    <a class="nav-link font-sarabun-bold toggle-collapse" href="javascript:void(0)"
+                        data-bs-toggle="collapse" data-bs-target="#moreOptions3">
+                        แบบฟอร์มใบสมัครเรียนศูนย์พัฒนาเด็กเล็ก
+                    </a>
+                    <!-- ตัวเลือกที่จะแสดงเมื่อคลิก -->
+                    <div id="moreOptions3" class="collapse bg-option-nav mx-2">
+                        <div class="nav-item">
+                            <a class="nav-link" href="{{ route('ChildApplyFormPage') }}"><i
+                                    class="fa-solid fa-caret-right"></i> ฟอร์ม ใบสมัคร</a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link" href="{{ route('TableChildApplyUsersPages') }}"><i
+                                    class="fa-solid fa-caret-right"></i> ประวัติการส่งฟอร์ม</a>
+                        </div>
+                    </div>
+                    <a class="nav-link font-sarabun-bold toggle-collapse" href="javascript:void(0)"
+                        data-bs-toggle="collapse" data-bs-target="#moreOptions4">
+                        แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอายุ
+                    </a>
+                    <div id="moreOptions4" class="collapse bg-option-nav mx-2">
+                        <div class="nav-item">
+                            <a class="nav-link" href="{{ route('ElderlyAllowanceUsersAccountFormPage') }}"><i
+                                    class="fa-solid fa-caret-right"></i> ฟอร์มส่งข้อมูล</a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link" href="{{ route('TableElderlyAllowanceUsersPages') }}"><i
+                                    class="fa-solid fa-caret-right"></i> ประวัติการส่งฟอร์ม</a>
+                        </div>
+                    </div>
+                    <a class="nav-link font-sarabun-bold toggle-collapse" href="javascript:void(0)"
+                        data-bs-toggle="collapse" data-bs-target="#moreOptions5">
+                        แบบคำขอรับเงินสงเคราะห์
+                    </a>
+                    <div id="moreOptions5" class="collapse bg-option-nav mx-2">
+                        <div class="nav-item">
+                            <a class="nav-link" href="{{ route('ReceiveAssistanceUserFormPage') }}"><i
+                                    class="fa-solid fa-caret-right"></i> ฟอร์มส่งข้อมูล</a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link" href="{{ route('TableReceiveAssistanceUsersPages') }}"><i
+                                    class="fa-solid fa-caret-right"></i> ประวัติการส่งฟอร์ม</a>
+                        </div>
                     </div>
                 </div>
-                <a class="nav-link font-sarabun-bold toggle-collapse" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#moreOptions2">
-                    แบบคำขอส่งทะเบียนรับเบี้ยความพิการ
-                </a>
-                <!-- ตัวเลือกที่จะแสดงเมื่อคลิก -->
-                <div id="moreOptions2" class="collapse bg-option-nav mx-2">
-                    <div class="nav-item">
-                        <a class="nav-link" href="{{ route('DisabilityUsersAccountFormPage') }}"><i class="fa-solid fa-caret-right"></i> ฟอร์มส่งข้อมูล</a>
-                    </div>
-                    <div class="nav-item">
-                        <a class="nav-link" href="{{ route('TableDisabilityUsersPages') }}"><i class="fa-solid fa-caret-right"></i> ประวัติการส่งฟอร์ม</a>
-                    </div>
-                </div>
-                <a class="nav-link font-sarabun-bold toggle-collapse" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#moreOptions3">
-                    แบบฟอร์มใบสมัครเรียนศูนย์พัฒนาเด็กเล็ก
-                </a>
-                <!-- ตัวเลือกที่จะแสดงเมื่อคลิก -->
-                <div id="moreOptions3" class="collapse bg-option-nav mx-2">
-                    <div class="nav-item">
-                        <a class="nav-link" href="{{ route('ChildApplyFormPage') }}"><i class="fa-solid fa-caret-right"></i> ฟอร์ม ใบสมัคร</a>
-                    </div>
-                    <div class="nav-item">
-                        <a class="nav-link" href="{{ route('TableChildApplyUsersPages') }}"><i class="fa-solid fa-caret-right"></i> ประวัติการส่งฟอร์ม</a>
-                    </div>
-                </div>
-                <a class="nav-link font-sarabun-bold toggle-collapse" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#moreOptions4">
-                    แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอายุ
-                </a>
-                <div id="moreOptions4" class="collapse bg-option-nav mx-2">
-                    <div class="nav-item">
-                        <a class="nav-link" href="{{ route('ElderlyAllowanceUsersAccountFormPage') }}"><i class="fa-solid fa-caret-right"></i> ฟอร์มส่งข้อมูล</a>
-                    </div>
-                    <div class="nav-item">
-                        <a class="nav-link" href="{{ route('TableElderlyAllowanceUsersPages') }}"><i class="fa-solid fa-caret-right"></i> ประวัติการส่งฟอร์ม</a>
-                    </div>
-                </div>
-                <a class="nav-link font-sarabun-bold toggle-collapse" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#moreOptions5">
-                    แบบคำขอรับเงินสงเคราะห์
-                </a>
-                <div id="moreOptions5" class="collapse bg-option-nav mx-2">
-                    <div class="nav-item">
-                        <a class="nav-link" href="{{route('ReceiveAssistanceUserFormPage')}}"><i class="fa-solid fa-caret-right"></i> ฟอร์มส่งข้อมูล</a>
-                    </div>
-                    <div class="nav-item">
-                        <a class="nav-link" href="{{route('TableReceiveAssistanceUsersPages')}}"><i class="fa-solid fa-caret-right"></i> ประวัติการส่งฟอร์ม</a>
-                    </div>
-                </div>
-            </div>
             @else
-            <a href="{{ url('/') }}" class="nav-link font-sarabun-bold"><i class="fa-solid fa-house"></i>กลับหน้าหลัก</a>
+                <a href="{{ url('/') }}" class="nav-link font-sarabun-bold"><i
+                        class="fa-solid fa-house"></i>กลับหน้าหลัก</a>
             @endif
         </div>
     </div>
@@ -301,36 +315,46 @@
     <div class="flex-grow-1">
         <!-- Navbar -->
         <nav class="navbar navbar-expand-md navbar-dark">
-            <div class="d-flex column-gap-3 w-100">
-                <button id="toggle-sidebar" class="btn btn-outline-primary ms-3 d-md-none w-25">
+            <div class="d-flex align-items-center w-100">
+                <!-- ปุ่มเปิดเมนู -->
+                <button id="toggle-sidebar" class="btn btn-outline-primary ms-3 d-md-none">
                     เปิดเมนู
                 </button>
 
+                <!-- ข้อความตรงกลาง -->
+                <span class="text-secondary mx-auto" href="#">
+                    © บริษัท GM SKY สงวนสิทธิ์
+                </span>
+
+                <!-- ส่วนขวา -->
                 @if (Auth::check())
-                <div class="dropdown ms-auto">
-                    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa-solid fa-user"></i> {{ Auth::user()->name }} <!-- แสดงชื่อผู้ใช้งาน -->
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-                        <!-- แสดงเมื่อผู้ใช้ล็อกอิน -->
-                        <li>
-                            <form action="{{ route('logout') }}" method="POST" style="display: inline;">
-                                @csrf
-                                <button class="dropdown-item fs-3" type="submit">ออกจากระบบ</button>
-                            </form>
-                        </li>
-                    </ul>
-                </div>
+                    <div class="dropdown ms-auto">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="profileDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-user"></i> {{ Auth::user()->name }}
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                            <li>
+                                <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                                    @csrf
+                                    <button class="dropdown-item fs-3" type="submit">ออกจากระบบ</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
                 @else
-                <div class="d-flex justify-content-end column-gap-3 w-100 me-3">
-                    <a class="btn btn-outline-primary" href="{{ route('LoginPage') }}"><i class="fa-solid fa-lock-open"></i> เข้าสู่ระบบ</a>
-                    <a class="btn btn-outline-primary" href="{{ route('RegisterPage') }}"><i class="fa-solid fa-user"></i> สมัครใช้งาน</a>
-                </div>
+                    <div class="d-flex justify-content-end column-gap-3 me-3">
+                        <a class="btn btn-outline-primary" href="{{ route('LoginPage') }}">
+                            <i class="fa-solid fa-lock-open"></i> เข้าสู่ระบบ
+                        </a>
+                        <a class="btn btn-outline-primary" href="{{ route('RegisterPage') }}">
+                            <i class="fa-solid fa-user"></i> สมัครใช้งาน
+                        </a>
+                    </div>
                 @endif
-
-
             </div>
         </nav>
+
 
         <!-- Dashboard Content -->
         <div class="main-content">
@@ -357,7 +381,6 @@
             navbar.classList.toggle('collapsed');
             content.classList.toggle('collapsed');
         });
-
     </script>
 
     <script>
@@ -384,7 +407,6 @@
                 });
             });
         });
-
     </script>
 </body>
 

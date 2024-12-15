@@ -1,9 +1,9 @@
 @extends('dashboard.layout.users.layout_users')
 @section('user_content')
     <div class="container">
-        <h2 class="text-center">คำร้องทั่วไป <br>
-            <h3 class="text-center">ตารางแสดงข้อมูลฟอร์มที่ส่งเข้ามา</h3>
-        </h2> <br>
+        <h3 class="text-center">คำร้องทั่วไป <br>
+            <h2 class="text-center">ตารางแสดงข้อมูลฟอร์มที่ส่งเข้ามา</h2>
+        </h3> <br>
 
         <table class="table table-bordered table-striped">
             <thead class="text-center">
