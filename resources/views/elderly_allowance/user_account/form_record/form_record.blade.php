@@ -18,12 +18,6 @@
         <h3 class="text-center">ตารางแสดงข้อมูลฟอร์มที่ส่งเข้ามา</h3>
     </h2>
     <br>
-    <form action="{{ route('logout') }}" method="POST" style="display: inline;">
-        @csrf
-        <button type="submit" class="btn btn-danger">Logout</button>
-    </form>
-    <br>
-    <br>
 
     <table class="table table-bordered table-striped" id="data_table">
         <thead class="text-center">
