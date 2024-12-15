@@ -195,11 +195,22 @@ class AdminDisabilityController extends Controller
     {
         $form = DisabilityPerson::with('disabilityTraders', 'disabilityOptions', 'disabilityBankAccounts')->find($id);
 
-        $pdf = Pdf::loadView('admin.disability.export_pdf.export_pdf', compact('form'))
+        if ($form->disabilityOptions->first() && $form->disabilityOptions->first()->welfare_type) {
+            $welfareType = $form->disabilityOptions->first()->welfare_type;
+            if (is_string($welfareType)) {
+                $form->disabilityOptions->first()->welfare_type = json_decode($welfareType, true);
+            }
+        }
+
+        $documentType = $form->disabilityOptions->first()->document_type ?? [];
+        if (is_string($documentType)) {
+            $documentType = json_decode($documentType, true);
+        }
+
+        $pdf = Pdf::loadView('admin.disability.export_pdf.export_pdf', compact('form', 'documentType'))
             ->setPaper('A4', 'portrait');
 
-        return $pdf->stream('แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอาย' . $form->id . '.pdf');
-
+        return $pdf->stream('แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอายุ' . $form->id . '.pdf');
     }
 
     public function DisabilityUpdateStatus($id)

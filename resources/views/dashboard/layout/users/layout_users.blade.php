@@ -228,8 +228,12 @@
                 </a>
             </div>
             @if (Auth::check())
+
                 <!-- เมนูที่สามารถคลิกเพื่อเปิดตัวเลือกเพิ่มเติม -->
                 <div class="nav-item">
+                    <a class="nav-link font-sarabun-bold toggle-collapse" href="{{route('users.account.index')}}">
+                       หน้าหลัก
+                    </a>
                     <a class="nav-link font-sarabun-bold toggle-collapse" href="javascript:void(0)"
                         data-bs-toggle="collapse" data-bs-target="#moreOptions1">
                         คำร้องทั่วไป

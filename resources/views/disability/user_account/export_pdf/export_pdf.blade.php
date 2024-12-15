@@ -111,28 +111,28 @@
 
     $citizen_id = $form->disabilityTraders->first()->citizen_id;
     $tradersformatted_id =
-        substr($citizen_id, 0, 1) .
-        '-' .
-        substr($citizen_id, 1, 4) .
-        '-' .
-        substr($citizen_id, 5, 5) .
-        '-' .
-        substr($citizen_id, 10, 2) .
-        '-' .
-        substr($citizen_id, 12, 1);
+    substr($citizen_id, 0, 1) .
+    '-' .
+    substr($citizen_id, 1, 4) .
+    '-' .
+    substr($citizen_id, 5, 5) .
+    '-' .
+    substr($citizen_id, 10, 2) .
+    '-' .
+    substr($citizen_id, 12, 1);
 
     $citizen_c_id = $form->citizen_id;
     $formatted_id =
-        substr($citizen_c_id, 0, 1) .
-        '-' .
-        substr($citizen_c_id, 1, 4) .
-        '-' .
-        substr($citizen_c_id, 5, 5) .
-        '-' .
-        substr($citizen_c_id, 10, 2) .
-        '-' .
-        substr($citizen_c_id, 12, 1);
-@endphp
+    substr($citizen_c_id, 0, 1) .
+    '-' .
+    substr($citizen_c_id, 1, 4) .
+    '-' .
+    substr($citizen_c_id, 5, 5) .
+    '-' .
+    substr($citizen_c_id, 10, 2) .
+    '-' .
+    substr($citizen_c_id, 12, 1);
+    @endphp
 
     <div class="regis_number">ทะเบียนเลขที่ .........................../ 2568</div>
     <div class="title_doc">แบบคำขอลงทะเบียนรับเงินเบี้ยความพิการ</div>
@@ -478,7 +478,7 @@
 
             <div id="right" style="float: right; width: 49%;  height: 46%; padding-left: 9px; border-left: 2px solid black;">
                 <div>ความเห็นคณะกรรมการตรวจสอบคุณสมบัติ</div>
-                <div style="margin-top: 10px;">เรียน นายก เทศมนตรี/อบต.<span class="dotted-line" style="width: 100%; text-align: center; margin-top: 20px; border-bottom: 2px dotted black; ">  </span></div>
+                <div style="margin-top: 10px;">เรียน นายก เทศมนตรี/อบต.<span class="dotted-line" style="width: 100%; text-align: center; margin-top: 20px; border-bottom: 2px dotted black; "> </span></div>
                 <div style="text-align: center; margin-top: 10px;">คณะกรรมการตรวจสอบคุณสมบัติได้ตรวจสอบแล้ว</div>
                 <div style="text-align: left; margin-top: 10px;">มีความเห็นดังนี้</div>
                 <div class="box_text" style="text-align:left; margin-top: 10px;">
@@ -489,24 +489,24 @@
                 </div>
                 <div style=" width: 100%; margin-top: 10px;">
                     <span>กรรมการ (ลงชื่อ)</span>
-                    <span class="dotted-line" style="width: 60%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">  </span>
+                    <span class="dotted-line" style="width: 60%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"> </span>
                     <div style="margin-left: 90px;">
                         <span>(</span>
-                        <span class="dotted-line" style="width: 80%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">  </span>
+                        <span class="dotted-line" style="width: 80%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"> </span>
                         <span>)</span>
                     </div>
                     <span>กรรมการ (ลงชื่อ)</span>
-                    <span class="dotted-line" style="width: 60%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">  </span>
+                    <span class="dotted-line" style="width: 60%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"> </span>
                     <div style="margin-left: 90px;">
                         <span>(</span>
-                        <span class="dotted-line" style="width: 80%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">  </span>
+                        <span class="dotted-line" style="width: 80%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"> </span>
                         <span>)</span>
                     </div>
                     <span>กรรมการ (ลงชื่อ)</span>
-                    <span class="dotted-line" style="width: 60%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">  </span>
+                    <span class="dotted-line" style="width: 60%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"> </span>
                     <div style="margin-left: 90px;">
                         <span>(</span>
-                        <span class="dotted-line" style="width: 80%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">  </span>
+                        <span class="dotted-line" style="width: 80%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"> </span>
                         <span>)</span>
                     </div>
                 </div>
@@ -519,27 +519,27 @@
                 คำสั่ง
             </div>
             <div style="text-align: center;">รับลงทะเบียน ไม่รับลงทะเบียน อื่น ๆ</div>
-            <span class="dotted-line" style="width: 100%; text-align: center; margin-top:15px; border-bottom: 2px dotted black; margin-top:20px;">  </span>
+            <span class="dotted-line" style="width: 100%; text-align: center; margin-top:15px; border-bottom: 2px dotted black; margin-top:20px;"> </span>
             <div style=" width: 100%; text-align:center; margin-bottom:20px; margin-top:20px">
                 <span>(ลงชื่อ)</span>
-                <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black;">  </span>
+                <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black;"> </span>
                 <div style="margin-left: 40px;">
                     <span>(</span>
-                    <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black;">  </span>
+                    <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black;"> </span>
                     <span>)</span>
                 </div>
                 <span>นายก เทศมนตรี/นายก อบต.</span>
-                <span class="dotted-line" style="width: 30%; text-align: center; border-bottom: 2px dotted black;">  </span>
+                <span class="dotted-line" style="width: 30%; text-align: center; border-bottom: 2px dotted black;"> </span>
                 <div style="margin-left: 40px;">
                     <span>(</span>
-                    <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black;">  </span>
+                    <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black;"> </span>
                     <span>)</span>
                 </div>
                 <span>วัน/เดือน/ปี</span>
-                <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black;">  </span>
+                <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black;"> </span>
                 <div style="margin-left: 40px;">
                     <span>(</span>
-                    <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black;">  </span>
+                    <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black;"> </span>
                     <span>)</span>
                 </div>
             </div>

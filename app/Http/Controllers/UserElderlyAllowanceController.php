@@ -338,32 +338,6 @@ class UserElderlyAllowanceController extends Controller
         return redirect()->back()->with('success', 'ตอบกลับสำเร็จแล้ว!');
     }
 
-    // public function ElderlyAllowanceUserExportPDF($id)
-    // {
-    //     $form = EaPeople::with('traders', 'personsOptions', 'bankacoption')->find($id);
-
-    //     $pdf = Pdf::loadView('elderly_allowance.user_account.export_pdf.export_pdf', compact('form'))
-    //         ->setPaper('A4', 'portrait');
-
-    //     return $pdf->stream('แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอายุ' . $form->id . '.pdf');
-    // }
-
-    // public function ElderlyAllowanceUserExportPDF($id)
-    // {
-    //     $form = EaPeople::with('traders', 'personsOptions', 'bankacoption')->find($id);
-
-    //     if ($form->personsOptions->first() && $form->personsOptions->first()->welfare_type) {
-    //         $welfareType = $form->personsOptions->first()->welfare_type;
-    //         if (is_string($welfareType)) {
-    //             $form->personsOptions->first()->welfare_type = json_decode($welfareType, true);
-    //         }
-    //     }
-
-    //     $pdf = Pdf::loadView('elderly_allowance.user_account.export_pdf.export_pdf', compact('form'))
-    //         ->setPaper('A4', 'portrait');
-
-    //     return $pdf->stream('แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอายุ' . $form->id . '.pdf');
-    // }
     public function ElderlyAllowanceUserExportPDF($id)
     {
         $form = EaPeople::with('traders', 'personsOptions', 'bankacoption')->find($id);
