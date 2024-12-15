@@ -10,11 +10,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
+        @font-face {
+            font-family: 'THSarabunNew';
+            src: url('/fonts/THSarabunNew.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'THSarabunNew';
+            src: url('/fonts/THSarabunNew-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
         /* Body styles */
         body {
             background: linear-gradient(to bottom, #e3f2fd, #ffffff);
             /* ฟ้าสดใสกับขาวนุ่ม */
-            font-family: 'Roboto', sans-serif;
+            font-family: 'THSarabunNew', sans-serif;
             min-height: 100vh;
             color: #333;
             /* ข้อความสีเข้มเพื่อความชัดเจน */
@@ -52,12 +66,13 @@
         .sidebar a {
             color: #24b1fd;
             text-decoration: none;
-            padding: 14px 22px;
             display: flex;
             align-items: center;
             font-size: 1.1rem;
             margin-bottom: 1rem;
+            padding: 15px 25px;
             border-radius: 8px;
+            font-size: 25px;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
@@ -80,8 +95,13 @@
             left: 250px;
             width: calc(100% - 250px);
             height: 60px;
+            font-size: 28px;
             z-index: 1100;
             transition: left 0.3s ease, width 0.3s ease;
+        }
+
+        .navbar button {
+            font-size: 20px;
         }
 
         .navbar.collapsed {
@@ -110,13 +130,18 @@
             background-color: white;
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            /* เงาที่ลึกขึ้น */
+            font-size: 25px;
             min-height: 90vh;
             margin-top: 75px;
             margin-left: 255px;
             transition: margin-left 0.3s ease;
         }
 
+        .main-content h3 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #b3e5fc;
+        }
 
         /* Responsive Styles */
         @media (max-width: 768px) {
@@ -139,6 +164,14 @@
         }
     </style>
 </head>
+@if ($message = Session::get('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: '{{ $message }}',
+        })
+    </script>
+@endif
 
 <body>
 
@@ -151,24 +184,22 @@
             </button>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('TablePages') }}"><i
-                            class="fas fa-tachometer-alt"></i>คำร้องทั่วไป</a>
+                    <a class="nav-link" href="{{ route('TablePages') }}">คำร้องทั่วไป</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('TableElderlyAllowancePages') }}"><i
-                            class="fas fa-chart-bar"></i>แบบยืนยันสิทธิผู้สูงอายุ</a>
+                    <a class="nav-link" href="{{ route('TableElderlyAllowancePages') }}">แบบยืนยันสิทธิผู้สูงอายุ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('TableDisabilityPages') }}"><i class="fas fa-chart-line"></i>
+                    <a class="nav-link" href="{{ route('TableDisabilityPages') }}">
                         แบบคำขอลงทะเบียนรับเงินเบี้ยความพิการ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('TableChildApplyAdminPages')}}"><i
-                            class="fas fa-chart-bar"></i>แบบฟอร์มใบสมัครเรียนศูนย์พัฒนาเด็กเล็ก</a>
+                    <a class="nav-link"
+                        href="{{ route('TableChildApplyAdminPages') }}">แบบฟอร์มใบสมัครเรียนศูนย์พัฒนาเด็กเล็ก</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('TableReceiveAssistanceAdminPages')}}"><i
-                            class="fas fa-chart-bar"></i>แบบคำขอรับเงินสงเคราะห์</a>
+                    <a class="nav-link"
+                        href="{{ route('TableReceiveAssistanceAdminPages') }}">แบบคำขอรับเงินสงเคราะห์</a>
                 </li>
             </ul>
         </div>
@@ -186,14 +217,13 @@
                     <div class="dropdown ms-auto">
                         <button class="btn btn-outline-primary dropdown-toggle" type="button" id="profileDropdown"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            Profile
+                            <i class="fa-solid fa-user me-2"></i>{{ Auth::user()->name }}
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-                            <li><a class="dropdown-item" href="#">View Profile</a></li>
                             <li>
                                 <form action="{{ route('logout') }}" method="POST" style="display: inline;">
                                     @csrf
-                                    <button type="submit" class="dropdown-item">Logout</button>
+                                    <button type="submit" class="dropdown-item">ออกจากระบบ</button>
                                 </form>
                             </li>
 
