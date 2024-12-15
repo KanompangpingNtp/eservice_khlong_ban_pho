@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>PDF Report</title>
 
     <style>
         @font-face {
@@ -14,35 +14,292 @@
         }
 
         @font-face {
-            font-family: 'sarabun';
+            font-family: 'sarabun-bold';
             font-style: normal;
             font-weight: bold;
-            src: url("{{ public_path('fonts/THSarabunNew Bold.ttf') }}") format('truetype');
-        }
-
-        @font-face {
-            font-family: 'sarabun';
-            font-style: italic;
-            font-weight: normal;
-            src: url("{{ public_path('fonts/THSarabunNew Italic.ttf') }}") format('truetype');
-        }
-
-        @font-face {
-            font-family: 'sarabun';
-            font-style: italic;
-            font-weight: bold;
-            src: url("{{ public_path('fonts/THSarabunNew BoldItalic.ttf') }}") format('truetype');
+            src: url("{{ public_path('fonts/THSarabunNew-Bold.ttf') }}") format('truetype');
         }
 
         body {
-            font-family: 'sarabun', sans-serif;
-            font-size: 16px;
+            font-family: 'sarabun', 'sarabun-bold', sans-serif;
+            font-size: 20px;
+            margin: 0;
+            padding: 0;
+            line-height: 1;
         }
 
+        .regis_number {
+            text-align: right;
+            margin-right: 8px;
+        }
+
+        .title_doc {
+            font-family: 'sarabun-bold', sans-serif;
+            /* ใช้ฟอนต์ sarabun-bold */
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .box_text {
+            border: 1px solid rgb(255, 255, 255);
+            text-align: center;
+        }
+
+        .box_text span {
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
+        }
+
+        .box_text input[type="checkbox"] {
+            width: 17px;
+            /* ปรับขนาด checkbox ให้พอดีกับข้อความ */
+            height: 17px;
+            /* ปรับความสูงให้พอดีกับข้อความ */
+            margin-right: 5px;
+            margin-left: 5px;
+            /* เว้นระยะห่างระหว่าง checkbox และข้อความ */
+        }
+
+        .box_text_border {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border: 2px solid black;
+            text-align: center;
+        }
+
+        .box_text_border span {
+            display: inline-flex;
+            align-items: center;
+            line-height: 0.3;
+        }
+
+        .box_text_border input[type="checkbox"] {
+            width: 17px;
+            /* ปรับขนาด checkbox ให้พอดีกับข้อความ */
+            height: 17px;
+            /* ปรับความสูงให้พอดีกับข้อความ */
+            margin-right: 5px;
+            margin-left: 5px;
+            /* เว้นระยะห่างระหว่าง checkbox และข้อความ */
+        }
+
+        .dotted-line {
+            margin-left: 2px;
+            color: blue;
+            border-bottom: 2px dotted blue;
+            word-wrap: break-word;
+            /* ห่อข้อความที่ยาวเกิน */
+            overflow-wrap: break-word;
+            /* รองรับ browser อื่น */
+        }
     </style>
-    <title>PDF Report</title>
 </head>
+
 <body>
-    <h3>ศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์ User </h3> <br>
+    <div class="title_doc" style="text-align:center;">
+        <div>
+            ใบสมัคร
+        </div>
+        ศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์
+    </div>
+    <div class="regis_number" style="margin-top:2rem;">เขียนที่ ศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์
+    </div>
+    <div class="box_text" style="text-align: right;">
+        <span>วันที่</span>
+        <span class="dotted-line" style="width: 10%; text-align: center;"> data </span>
+        <span>เดือน</span>
+        <span class="dotted-line" style="width: 20%; text-align: center;"> data </span>
+        <span>พ.ศ.</span>
+        <span class="dotted-line" style="width: 15%; text-align: center;"> data </span>
+    </div>
+    <div class="title_doc" style="text-align: left; display: inline-block; border-bottom: 2px solid black;">
+        ข้อมูลเด็ก
+    </div>
+    <div class="box_text" style="text-align: left; margin-top: 5px;">
+        <span>๑. เด็กชื่อ - สกุล</span>
+        <span class="dotted-line" style="width: 38%; text-align: center;"> data </span>
+        <span>เชื้อชาติ</span>
+        <span class="dotted-line" style="width: 17%; text-align: center;"> data </span>
+        <span>สัญชาติ</span>
+        <span class="dotted-line" style="width: 17%; text-align: center;"> data </span>
+    </div>
+    <div class="box_text" style="text-align: left; margin-top: 5px;">
+        <span>๒. เกิดวันที่</span>
+        <span class="dotted-line" style="width: 10%; text-align: center;"> data </span>
+        <span>เดือน</span>
+        <span class="dotted-line" style="width: 19%; text-align: center;"> data </span>
+        <span>พ.ศ.</span>
+        <span class="dotted-line" style="width: 19%; text-align: center;"> data </span>
+        <span>อายุ</span>
+        <span class="dotted-line" style="width: 10%; text-align: center;"> data </span>
+        <span>ปี</span>
+        <span class="dotted-line" style="width: 10%; text-align: center;"> data </span>
+        <span>เดือน</span>
+    </div>
+    <div class="box_text" style="text-align: left;">
+        <span>(นับถึงวันที่ 16 พฤษภาคม ๒๕.........) เลขประจำตัวประชาชน</span>
+        <span class="dotted-line" style="width: 53%; text-align: center;"> data </span>
+    </div>
+    <div class="box_text" style="text-align: left; margin-top: 5px;">
+        <span>๓. ที่อยู่ตามสำเนาทะเบียนบ้าน บ้านเลขที่</span>
+        <span class="dotted-line" style="width: 19%; text-align: center;"> data </span>
+        <span>หมู่ที่</span>
+        <span class="dotted-line" style="width: 19%; text-align: center;"> data </span>
+        <span>ถนน</span>
+        <span class="dotted-line" style="width: 19%; text-align: center;"> data </span>
+    </div>
+    <div class="box_text" style="text-align: left;">
+        <span>ตำบล</span>
+        <span class="dotted-line" style="width: 27%; text-align: center;"> data </span>
+        <span>อำเภอ</span>
+        <span class="dotted-line" style="width: 27%; text-align: center;"> data </span>
+        <span>จังหวัด</span>
+        <span class="dotted-line" style="width: 27%; text-align: center;"> data </span>
+    </div>
+    <div class="box_text" style="text-align: left; margin-top: 5px;">
+        <span>๔. ที่อยู่อาศัยจริงในปัจจุบัน บ้านเลขที่</span>
+        <span class="dotted-line" style="width: 22%; text-align: center;"> data </span>
+        <span>หมู่ที่</span>
+        <span class="dotted-line" style="width: 19%; text-align: center;"> data </span>
+        <span>ถนน</span>
+        <span class="dotted-line" style="width: 19%; text-align: center;"> data </span>
+    </div>
+    <div class="box_text" style="text-align: left; ">
+        <span>ตำบล</span>
+        <span class="dotted-line" style="width: 27%; text-align: center;"> data </span>
+        <span>อำเภอ</span>
+        <span class="dotted-line" style="width: 27%; text-align: center;"> data </span>
+        <span>จังหวัด</span>
+        <span class="dotted-line" style="width: 27%; text-align: center;"> data </span>
+    </div>
+    <div class="box_text" style="text-align: left; ">
+        <span>เบอร์โทรศัพท์</span>
+        <span class="dotted-line" style="width: 88%; text-align: center;"> data </span>
+    </div>
+    <div class="box_text" style="text-align: left;">
+        <span>มีพี่น้องร่วมบิดา - มารดาเดียวกันจำนวน</span>
+        <span class="dotted-line" style="width: 26%; text-align: center;"> data </span>
+        <span>คน เป็นบุตรลำดับที่</span>
+        <span class="dotted-line" style="width: 26%; text-align: center;"> data </span>
+    </div>
+    <div class="box_text" style="text-align: left; margin-top: 5px;">
+        <span>๕. โรคประจำตัว</span>
+        <span class="dotted-line" style="width: 50%; text-align: center;"> data </span>
+        <span>หมู่โลหิต</span>
+        <span class="dotted-line" style="width: 28%; text-align: center;"> data </span>
+    </div>
+    <div class="title_doc" style="text-align: left; display: inline-block; border-bottom: 2px solid black;">
+        ข้อมูลบิดา - มารดา หรือผู้อุปการะ
+    </div>
+    <div class="box_text" style="text-align: left; margin-top: 5px;">
+        <span>๑. บิดาชื่อ - สกุล</span>
+        <span class="dotted-line" style="width: 35%; text-align: center;"> data </span>
+        <span>อาชีพ</span>
+        <span class="dotted-line" style="width: 17%; text-align: center;"> data </span>
+        <span>วุฒิการศึกษา</span>
+        <span class="dotted-line" style="width: 17%; text-align: center;"> data </span>
+    </div>
+    <div class="box_text" style="text-align: left;">
+        <span> มารดาชื่อ - สกุล</span>
+        <span class="dotted-line" style="width: 35%; text-align: center;"> data </span>
+        <span>อาชีพ</span>
+        <span class="dotted-line" style="width: 17%; text-align: center;"> data </span>
+        <span>วุฒิการศึกษา</span>
+        <span class="dotted-line" style="width: 17%; text-align: center;"> data </span>
+    </div>
+    <div class="box_text" style="text-align: left; margin-top: 5px;">
+        <span> ๒. ปัจจุบันเด็กอยู่ในความดูแลอุปการะ/รับผิดชอบของ</span>
+        <div style="text-align:left; margin-left:20px;">
+            <span> ๒.๑</span>
+            <span style="margin-left: 10px;"><input type="checkbox"> บิดา</span>
+            <span style="margin-left: 80px;"><input type="checkbox"> มารดา</span>
+            <span style="margin-left: 80px;"><input type="checkbox"> ทั้งบิดา - มารดาร่วมกัน</span>
+        </div>
+        <div style="text-align:left; margin-left:20px;">
+            <span> ๒.๒</span>
+            <span style="margin-left: 10px;"><input type="checkbox"> ญาติ (โปรดระบุความเกี่ยวข้อง)</span>
+            <span class="dotted-line" style="width: 65%; text-align: center;"> data </span>
+        </div>
+        <div style="text-align:left; margin-left:20px;">
+            <span> ๒.๓</span>
+            <span style="margin-left: 10px;"><input type="checkbox"> อื่น ๆ (โปรดระบุความเกี่ยวข้อง)</span>
+            <span class="dotted-line" style="width: 64%; text-align: center;"> data </span>
+        </div>
+    </div>
+    <div class="box_text" style="text-align: left; margin-top: 5px;">
+        <span> ๓. ผู้ดูแลอุปการะเด็กตามข้อ ๑. มีรายได้ในครอบครัวต่อเดือน</span>
+        <span class="dotted-line" style="width: 49%; text-align: center;"> data </span>
+        <span>บาท</span>
+    </div>
+    <div class="box_text" style="text-align: left; margin-top: 5px;">
+        <span> ๔. ผู้นำเด็กมาสมัครชื่อ - สกุล</span>
+        <span class="dotted-line" style="width: 39%; text-align: center;"> data </span>
+        <span>เกี่ยวข้องเป็น</span>
+        <span class="dotted-line" style="width: 20%; text-align: center;"> data </span>
+        <span>ของเด็ก</span>
+    </div>
+    <div class="box_text" style="text-align: left; margin-top: 5px;">
+        <span> ๕. ผู้ที่จะรับส่งเด็กชื่อ - สกุล</span>
+        <span class="dotted-line" style="width:78%; text-align: center;"> data </span>
+        <div>
+            <span> โดยเกี่ยวข้องเป็น</span>
+            <span class="dotted-line" style="width:35%; text-align: center;"> data </span>
+            <span> เบอร์โทรศัพท์ติดต่อ</span>
+            <span class="dotted-line" style="width:35%; text-align: center;"> data </span>
+        </div>
+    </div>
+
+    {{-- new page --}}
+    <div style="page-break-before: always;"></div>
+
+    <div style="text-align: center">
+        - 2 -
+    </div>
+    <div class="title_doc"
+        style="text-align: left; display: inline-block; border-bottom: 2px solid black; margin-top:5rem;">
+        คำรับรอง
+    </div>
+    <div class="box_text" style="text-align: left; margin-top: 5px; ">
+        <div style="margin-left: 2rem;"> ๑. ข้าพเจ้าขอรับรองว่า
+            ได้อ่านประกาศรับสมัครของศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบล
+            คลองบ้านโพธิ์เข้าใจแล้วเด็ก </div>
+        <span> ที่นำมาสมัครมีคุณสมบัติถูกต้องตรงตามประกาศ และหลักฐานที่ใช้สมัครใน
+            วันนี้เป็นหลักฐานที่ถูกต้องจริง</span>
+    </div>
+    <div class="box_text" style="text-align: left; margin-top: 5px; ">
+        <div style="margin-left: 2rem;"> ๒.
+            ข้าพเจ้ามีสิทธิถูกต้องในการที่จะให้เด็กสมัครเข้ารับการศึกษาเลี้ยงดูในศูนย์พัฒนาเด็กเล็กขององค์การบริหารส่วนตำบล
+        </div>
+        <span>คลองบ้านโพธิ์</span>
+    </div>
+    <div class="box_text" style="text-align: left; margin-top: 5px; ">
+        <div style="margin-left: 2rem;"> ๓. ข้าพเจ้ายินดีปฏิบัติตามระเบียบ
+            ข้อกำหนดขององค์การบริหารส่วนตำบลคลองบ้านโพธิ์ และยินดี
+            ปฏิบัติคำแนะนำเกี่ยวกับ
+        </div>
+        <span>การพัฒนาความพร้อมที่ศูนย์พัฒนาเด็กเล็กฯ กำหนด</span>
+    </div>
+    <div class="box_text" style="text-align: right; margin-top:8rem;">
+        <span>ลงชื่อ</span>
+        <span class="dotted-line" style="width: 35%; text-align: center;"> data </span>
+        <span>ผู้รับสมัคร</span>
+        <div style="margin-right: 55px;">
+            <span>(</span>
+            <span class="dotted-line" style="width: 35%; text-align: center;"> data </span>
+            <span>)</span>
+        </div>
+    </div>
+    <div class="box_text" style="text-align: right; margin-top:5rem;">
+        <span>ลงชื่อ</span>
+        <span class="dotted-line" style="width: 35%; text-align: center;"> data </span>
+        <span>ผู้รับสมัคร</span>
+        <div style="margin-right: 75px;">
+            <span style="text-align: start;">( นางสาวประทุมรัตน์ ศักดิ์ประดิษฐ์ )</span>
+            <div style="margin-right: 90px;">ครู</div>
+        </div>
+    </div>
+
 </body>
+
 </html>
