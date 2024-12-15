@@ -84,7 +84,8 @@
 
         .dotted-line {
             margin-left: 2px;
-            border-bottom: 2px dotted black;
+            color: blue;
+            border-bottom: 2px dotted blue;
             word-wrap: break-word;
             /* ห่อข้อความที่ยาวเกิน */
             overflow-wrap: break-word;
@@ -142,7 +143,7 @@
         <span>เดือน</span><span class="dotted-line" style="width: 15%; text-align: center;"> data
         </span><span>พ.ศ.</span><span class="dotted-line" style="width: 10%; text-align: center;"> data
         </span><span>อายุ</span><span class="dotted-line" style="width: 10%; text-align: center;"> data
-        </span><span>ปี</span> <span>สัญชาต</span><span class="dotted-line" style="width: 15%; text-align: center;">
+        </span><span>ปี</span> <span>สัญชาติ</span><span class="dotted-line" style="width: 15%; text-align: center;">
             data
         </span><span>มีชื่ออยู่ในสำเนา</span>
     </div>
@@ -354,7 +355,7 @@
         <div style="border-bottom:2px solid black;">
             <div id="left" style="float: left; width: 49%; ">
                 <div>ความเห็นเจ้าหน้าที่ผู้รับลงทะเบียน</div>
-                <div>เรียน คณะกรรมการตรวจสอบคุณสมบัต</div>
+                <div>เรียน คณะกรรมการตรวจสอบคุณสมบัติ</div>
                 <div style="text-align:center;">ได้ตรวจสอบคุณสมบัติของ นาย /นาง /นางสาว</div>
                 <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 10px;"> data </span>
                 <div>หมายเลขบัตรประจำตัวประชาชน</div>
@@ -425,10 +426,8 @@
             <div>
                 คำสั่ง
             </div>
-            <div style="text-align: center;">รับลงทะเบียน ไม่รับลงทะเบียน อื่น ๆ<span class="dotted-line"
-                    style="width: 48%; text-align: center;">
-                    data </span></div>
-            <span class="dotted-line" style="width: 100%; text-align: center; margin-top:10px;"> data </span>
+            <div style="text-align: center;">รับลงทะเบียน ไม่รับลงทะเบียน อื่น ๆ</div>
+            <span class="dotted-line" style="width: 100%; text-align: center; margin-top:15px;"> data </span>
             <div style=" width: 100%; text-align:center; margin-bottom:20px; margin-top:20px">
                 <span>(ลงชื่อ)</span>
                 <span class="dotted-line" style="width: 40%; text-align: center;"> data </span>
@@ -470,7 +469,7 @@
     </div>
 
     <div class="box_text" style="margin-top: 5rem;">
-        <span>ยื่นแบบคำขอลงทะเบียนเมื่อวันท</span><span class="dotted-line" style="width: 20%; text-align: center;">
+        <span>ยื่นแบบคำขอลงทะเบียนเมื่อวันที่</span><span class="dotted-line" style="width: 20%; text-align: center;">
             data
         </span>
         <span>เดือน</span><span class="dotted-line" style="width: 25%; text-align: center;"> data
