@@ -129,7 +129,7 @@ Route::middleware(['user'])->group(function () {
     //users ChildApply
     Route::get('/user/account/ChildApply', [UserChildApplyController::class, 'ChildApplyFormPage'])->name('ChildApplyFormPage');
     Route::get('/user/account/ChildApply/record', [UserChildApplyController::class, 'TableChildApplyUsersPages'])->name('TableChildApplyUsersPages');
-    Route::get('/user/account/ChildApply/{id}/edit', [UserChildApplyController::class, 'ChildApplyUsersShowFormEdit'])->name('ChildApplyUsersShowFormEdit');
+    Route::get('/user/account/ChildApply/{id}/Edit', [UserChildApplyController::class, 'ChildApplyUsersShowFormEdit'])->name('ChildApplyUsersShowFormEdit');
     Route::put('/user/account/ChildApply/{id}/Update', [UserChildApplyController::class, 'updateChildInformation'])->name('updateChildInformation');
     Route::get('/user/account/ChildApply/{id}/pdf', [UserChildApplyController::class, 'ChildApplyUserExportPDF'])->name('ChildApplyUserExportPDF');
     Route::post('/user/account/ChildApply/{form}/reply', [UserChildApplyController::class, 'ChildApplyUserReply'])->name('ChildApplyUserReply');

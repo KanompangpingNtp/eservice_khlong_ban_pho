@@ -111,6 +111,8 @@ class UserGeneralRequestsController extends Controller
                 ->setPaper('A4', 'portrait');
 
         return $pdf->stream('แบบคำขอร้องทั่วไป' . $form->id . '.pdf');
+
+
     }
 
     public function userShowFormEdit($id)

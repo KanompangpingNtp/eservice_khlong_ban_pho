@@ -291,13 +291,15 @@
     @endphp
 
     <div class="container">
-        <h1>คำร้องทั่วไป</h1>
+        <br>
+        <br>
+        <p style="text-align: center; font-size:20px;">คำร้องทั่วไป</p>
 
-        <p class="right">เขียนที่ องค์การบริหารส่วนตำบลทับพริก</p>
+        <p class="right">เขียนที่ องค์การบริหารส่วนตำบลคลองบ้านโพธิ์</p>
         <p class="right">วันที่<span class="day">{{ $thaiDay }}</span>เดือน<span class="month">{{ $thaiMonth }}</span>ปี<span class="year">{{ $thaiYear }}</span></p>
 
-        <p><b>เรื่อง</b><span class="submission_name">{{ $form->subject }}</span></p>
-        <p><b>เรียน</b> นายกองค์การบริหารส่วนตำบลทับพริก </p>
+        <p>เรื่อง<span class="submission_name">{{ $form->subject }}</span></p>
+        <p>เรียน นายกองค์การบริหารส่วนตำบลคลองบ้านโพธิ์ </p>
 
         <p style="margin-left: 55px;">ข้าพเจ้า <span class="fullname">{{ $form->salutation }}{{ $form->name }}</span> อายุ <span class="age">{{ $form->age }}</span>ปี อยู่บ้านเลขที่<span class="house_no">{{ $form->house_number}}</span></p>
         <p>หมู่ที่<span class="village_no">{{ $form->village }}</span>ตำบล<span class="sub_district">{{ $form->subdistrict }}</span>อำเภอ<span class="district">{{ $form->district }}</span>จังหวัด<span class="province">{{ $form->province }}</span></p>
