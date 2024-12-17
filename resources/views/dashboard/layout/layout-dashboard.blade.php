@@ -162,19 +162,19 @@
                 margin-left: 0;
             }
         }
+
     </style>
 </head>
-@if ($message = Session::get('success'))
-<script>
-    Swal.fire({
-        icon: 'success'
-        , title: '{{ $message }}'
-    , })
-
-</script>
-@endif
-
 <body>
+    @if ($message = Session::get('success'))
+    <script>
+        Swal.fire({
+            icon: 'success'
+            , title: '{{ $message }}'
+        , })
+
+    </script>
+    @endif
 
     <div class="container-fluid d-flex">
         <!-- Sidebar -->
@@ -195,16 +195,16 @@
                         แบบคำขอลงทะเบียนรับเงินเบี้ยความพิการ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"
-                        href="{{ route('TableChildApplyAdminPages') }}">แบบฟอร์มใบสมัครเรียนศูนย์พัฒนาเด็กเล็ก</a>
+                    <a class="nav-link" href="{{ route('TableChildApplyAdminPages') }}">แบบฟอร์มใบสมัครเรียนศูนย์พัฒนาเด็กเล็ก</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"
-                        href="{{ route('TableReceiveAssistanceAdminPages') }}">แบบคำขอรับเงินสงเคราะห์</a>
+                    <a class="nav-link" href="{{ route('TableReceiveAssistanceAdminPages') }}">แบบคำขอรับเงินสงเคราะห์</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"
-                        href="{{ route('TableTradeRegistryAdminPages') }}">คำร้องทะเบียนพาณิชย์</a>
+                    <a class="nav-link" href="{{ route('TableTradeRegistryAdminPages') }}">คำร้องทะเบียนพาณิชย์</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('TableCertificationAdminPages') }}">คำขอรับรองสิ่งปลูกสร้างอาคาร</a>
                 </li>
             </ul>
         </div>
@@ -220,8 +220,7 @@
 
                     <!-- Profile Dropdown -->
                     <div class="dropdown ms-auto">
-                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="profileDropdown"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-user me-2"></i>{{ Auth::user()->name }}
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
@@ -262,6 +261,7 @@
             navbar.classList.toggle('collapsed');
             content.classList.toggle('collapsed');
         });
+
     </script>
 </body>
 

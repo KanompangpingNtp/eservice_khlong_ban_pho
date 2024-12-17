@@ -15,6 +15,7 @@ use App\Http\Controllers\AdminReceiveAssistanceController;
 use App\Http\Controllers\UserTradeRegistryController;
 use App\Http\Controllers\AdminTradeRegistryController;
 use App\Http\Controllers\UserCertificationController;
+use App\Http\Controllers\AdminCertificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -107,12 +108,17 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/TablePages/ReceiveAssistance/ExportPdf/{id}', [AdminReceiveAssistanceController::class, 'ReceiveAssistanceAdminExportPDF'])->name('ReceiveAssistanceAdminExportPDF');
     Route::post('/TablePages/ReceiveAssistance/{id}/update-status', [AdminReceiveAssistanceController::class, 'ReceiveAssistanceUpdateStatus'])->name('ReceiveAssistanceUpdateStatus');
 
-     //admin TradeRegistry
-     Route::get('/TablePages/TradeRegistry', [AdminTradeRegistryController::class, 'TableTradeRegistryAdminPages'])->name('TableTradeRegistryAdminPages');
-     Route::post('/TablePages/TradeRegistry/AdminReply/{id}', [AdminTradeRegistryController::class, 'TradeRegistryUpdateStatus'])->name('TradeRegistryUpdateStatus');
-     Route::post('/TablePages/TradeRegistry/{id}/update-status', [AdminTradeRegistryController::class, 'TradeRegistryAdminReply'])->name('TradeRegistryAdminReply');
-     Route::get('/TablePages/TradeRegistry/ExportPdf/{id}', [AdminTradeRegistryController::class, 'TradeRegistryAdminExportPDF'])->name('TradeRegistryAdminExportPDF');
+    //admin TradeRegistry
+    Route::get('/TablePages/TradeRegistry', [AdminTradeRegistryController::class, 'TableTradeRegistryAdminPages'])->name('TableTradeRegistryAdminPages');
+    Route::post('/TablePages/TradeRegistry/AdminReply/{id}', [AdminTradeRegistryController::class, 'TradeRegistryUpdateStatus'])->name('TradeRegistryUpdateStatus');
+    Route::post('/TablePages/TradeRegistry/{id}/update-status', [AdminTradeRegistryController::class, 'TradeRegistryAdminReply'])->name('TradeRegistryAdminReply');
+    Route::get('/TablePages/TradeRegistry/ExportPdf/{id}', [AdminTradeRegistryController::class, 'TradeRegistryAdminExportPDF'])->name('TradeRegistryAdminExportPDF');
 
+    //admin Certification
+    Route::get('/TablePages/Certification', [AdminCertificationController::class, 'TableCertificationAdminPages'])->name('TableCertificationAdminPages');
+    Route::get('/TablePages/Certification/ExportPdf/{id}', [AdminCertificationController::class, 'CertificationAdminExportPDF'])->name('CertificationAdminExportPDF');
+    Route::post('/TablePages/Certification/AdminReply/{id}', [AdminCertificationController::class, 'CertificationAdminReply'])->name('CertificationAdminReply');
+    Route::post('/TablePages/Certification/{id}/update-status', [AdminCertificationController::class, 'CertificationUpdateStatus'])->name('CertificationUpdateStatus');
 });
 
 Route::middleware(['user'])->group(function () {
