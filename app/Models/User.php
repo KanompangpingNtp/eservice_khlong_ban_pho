@@ -117,4 +117,19 @@ class User extends Authenticatable
     {
         return $this->hasMany(TradeRegistryReply::class, 'users_id');
     }
+
+    public function buildBuildings()
+    {
+        return $this->hasMany(BuildBuilding::class, 'users_id');
+    }
+
+    public function buildBuildingFiles()
+    {
+        return $this->hasManyThrough(BuildBuildingFile::class, 'users_id');
+    }
+
+    public function buildBuildingReplies()
+    {
+        return $this->hasMany(BuildBuildingReply::class, 'users_id');
+    }
 }
