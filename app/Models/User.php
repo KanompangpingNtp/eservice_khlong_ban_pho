@@ -100,6 +100,21 @@ class User extends Authenticatable
 
     public function assistPersons()
     {
-        return $this->hasMany(AssistPerson::class);
+        return $this->hasMany(AssistPerson::class, 'users_id');
+    }
+
+    public function tradeRegistries()
+    {
+        return $this->hasMany(TradeRegistry::class, 'users_id');
+    }
+
+    public function tradeRegistryFlie()
+    {
+        return $this->hasMany(TradeRegistryFile::class, 'users_id');
+    }
+
+    public function tradeRegistryReplies()
+    {
+        return $this->hasMany(TradeRegistryReply::class, 'users_id');
     }
 }

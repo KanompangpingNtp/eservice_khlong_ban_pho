@@ -33,7 +33,7 @@
                     </a>
                 </div>
                 <div class="half-border-right">
-                    <a href="" class="buttom-cool-right fs-2 font-sarabun">
+                    <a href="{{route('TradeRegistryFormPage')}}" class="buttom-cool-right fs-2 font-sarabun">
                         <span class="circle">
                             <img src="{{ asset('images/layout-index/procurement.png') }}" alt="Icon" />
                         </span>

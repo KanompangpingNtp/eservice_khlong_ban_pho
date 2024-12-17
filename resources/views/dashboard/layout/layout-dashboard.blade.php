@@ -165,12 +165,13 @@
     </style>
 </head>
 @if ($message = Session::get('success'))
-    <script>
-        Swal.fire({
-            icon: 'success',
-            title: '{{ $message }}',
-        })
-    </script>
+<script>
+    Swal.fire({
+        icon: 'success'
+        , title: '{{ $message }}'
+    , })
+
+</script>
 @endif
 
 <body>
@@ -200,6 +201,10 @@
                 <li class="nav-item">
                     <a class="nav-link"
                         href="{{ route('TableReceiveAssistanceAdminPages') }}">แบบคำขอรับเงินสงเคราะห์</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="{{ route('TableTradeRegistryAdminPages') }}">คำร้องทะเบียนพาณิชย์</a>
                 </li>
             </ul>
         </div>

@@ -12,6 +12,8 @@ use App\Http\Controllers\UserChildApplyController;
 use App\Http\Controllers\AdminChildApplyController;
 use App\Http\Controllers\UserReceiveAssistanceController;
 use App\Http\Controllers\AdminReceiveAssistanceController;
+use App\Http\Controllers\UserTradeRegistryController;
+use App\Http\Controllers\AdminTradeRegistryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +53,10 @@ Route::post('/ChildApply/form/create', [UserChildApplyController::class, 'ChildA
 //user ReceiveAssistance
 Route::get('/ReceiveAssistance', [UserReceiveAssistanceController::class, 'ReceiveAssistanceFormPage'])->name('ReceiveAssistanceFormPage');
 Route::post('/ReceiveAssistance/form/create', [UserReceiveAssistanceController::class, 'ReceiveAssistanceFormCreate'])->name('ReceiveAssistanceFormCreate');
+
+//users TradeRegistry
+Route::get('/TradeRegistry', [UserTradeRegistryController::class, 'TradeRegistryFormPage'])->name('TradeRegistryFormPage');
+Route::post('/TradeRegistry', [UserTradeRegistryController::class, 'TradeRegistryFormCreate'])->name('TradeRegistryFormCreate');
 
 //auth
 Route::get('/login', [AuthController::class, 'LoginPage'])->name('LoginPage');
@@ -95,6 +101,13 @@ Route::middleware(['admin'])->group(function () {
     Route::post('/TablePages/ReceiveAssistance/AdminReply/{id}', [AdminReceiveAssistanceController::class, 'ReceiveAssistanceAdminReply'])->name('ReceiveAssistanceAdminReply');
     Route::get('/TablePages/ReceiveAssistance/ExportPdf/{id}', [AdminReceiveAssistanceController::class, 'ReceiveAssistanceAdminExportPDF'])->name('ReceiveAssistanceAdminExportPDF');
     Route::post('/TablePages/ReceiveAssistance/{id}/update-status', [AdminReceiveAssistanceController::class, 'ReceiveAssistanceUpdateStatus'])->name('ReceiveAssistanceUpdateStatus');
+
+     //admin TradeRegistry
+     Route::get('/TablePages/TradeRegistry', [AdminTradeRegistryController::class, 'TableTradeRegistryAdminPages'])->name('TableTradeRegistryAdminPages');
+     Route::post('/TablePages/TradeRegistry/AdminReply/{id}', [AdminTradeRegistryController::class, 'TradeRegistryUpdateStatus'])->name('TradeRegistryUpdateStatus');
+     Route::post('/TablePages/TradeRegistry/{id}/update-status', [AdminTradeRegistryController::class, 'TradeRegistryAdminReply'])->name('TradeRegistryAdminReply');
+     Route::get('/TablePages/TradeRegistry/ExportPdf/{id}', [AdminTradeRegistryController::class, 'TradeRegistryAdminExportPDF'])->name('TradeRegistryAdminExportPDF');
+
 });
 
 Route::middleware(['user'])->group(function () {
@@ -142,4 +155,12 @@ Route::middleware(['user'])->group(function () {
     Route::get('/user/account/ReceiveAssistance/{id}/pdf', [UserReceiveAssistanceController::class, 'ReceiveAssistanceUserExportPDF'])->name('ReceiveAssistanceUserExportPDF');
     Route::get('/user/account/ReceiveAssistance/{id}/edit', [UserReceiveAssistanceController::class, 'ReceiveAssistanceUsersShowFormEdit'])->name('ReceiveAssistanceUsersShowFormEdit');
     Route::put('/user/account/ReceiveAssistance/{id}/Update', [UserReceiveAssistanceController::class, 'updateReceiveAssistance'])->name('updateReceiveAssistance');
+
+    Route::get('/user/account/TradeRegistry', [UserTradeRegistryController::class, 'TradeRegistryUserFormPage'])->name('TradeRegistryUserFormPage');
+    Route::get('/user/account/TradeRegistry/record', [UserTradeRegistryController::class, 'TableTradeRegistryUsersPages'])->name('TableTradeRegistryUsersPages');
+    Route::get('/user/account/TradeRegistry/{id}/edit', [UserTradeRegistryController::class, 'TradeRegistryShowFormEdit'])->name('TradeRegistryShowFormEdit');
+    Route::put('/user/account/TradeRegistry/{id}/Update', [UserTradeRegistryController::class, 'TradeRegistryUserFormUpdate'])->name('TradeRegistryUserFormUpdate');
+    Route::get('/user/account/TradeRegistry/{id}/pdf', [UserTradeRegistryController::class, 'TradeRegistryUserExportPDF'])->name('TradeRegistryUserExportPDF');
+    Route::post('/user/account/TradeRegistry/{form}/reply', [UserTradeRegistryController::class, 'TradeRegistryUserReply'])->name('TradeRegistryUserReply');
+
 });
