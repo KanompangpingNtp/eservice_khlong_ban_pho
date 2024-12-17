@@ -14,6 +14,7 @@ use App\Http\Controllers\UserReceiveAssistanceController;
 use App\Http\Controllers\AdminReceiveAssistanceController;
 use App\Http\Controllers\UserTradeRegistryController;
 use App\Http\Controllers\AdminTradeRegistryController;
+use App\Http\Controllers\UserCertificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,7 +57,11 @@ Route::post('/ReceiveAssistance/form/create', [UserReceiveAssistanceController::
 
 //users TradeRegistry
 Route::get('/TradeRegistry', [UserTradeRegistryController::class, 'TradeRegistryFormPage'])->name('TradeRegistryFormPage');
-Route::post('/TradeRegistry', [UserTradeRegistryController::class, 'TradeRegistryFormCreate'])->name('TradeRegistryFormCreate');
+Route::post('/TradeRegistry/form/create', [UserTradeRegistryController::class, 'TradeRegistryFormCreate'])->name('TradeRegistryFormCreate');
+
+//users Certification
+Route::get('/Certification', [UserCertificationController::class, 'UserCertificationFormPage'])->name('UserCertificationFormPage');
+Route::post('/Certification/form/create', [UserCertificationController::class, 'CertificationFormCreate'])->name('CertificationFormCreate');
 
 //auth
 Route::get('/login', [AuthController::class, 'LoginPage'])->name('LoginPage');
@@ -156,6 +161,7 @@ Route::middleware(['user'])->group(function () {
     Route::get('/user/account/ReceiveAssistance/{id}/edit', [UserReceiveAssistanceController::class, 'ReceiveAssistanceUsersShowFormEdit'])->name('ReceiveAssistanceUsersShowFormEdit');
     Route::put('/user/account/ReceiveAssistance/{id}/Update', [UserReceiveAssistanceController::class, 'updateReceiveAssistance'])->name('updateReceiveAssistance');
 
+    //users TradeRegistry
     Route::get('/user/account/TradeRegistry', [UserTradeRegistryController::class, 'TradeRegistryUserFormPage'])->name('TradeRegistryUserFormPage');
     Route::get('/user/account/TradeRegistry/record', [UserTradeRegistryController::class, 'TableTradeRegistryUsersPages'])->name('TableTradeRegistryUsersPages');
     Route::get('/user/account/TradeRegistry/{id}/edit', [UserTradeRegistryController::class, 'TradeRegistryShowFormEdit'])->name('TradeRegistryShowFormEdit');
@@ -163,4 +169,11 @@ Route::middleware(['user'])->group(function () {
     Route::get('/user/account/TradeRegistry/{id}/pdf', [UserTradeRegistryController::class, 'TradeRegistryUserExportPDF'])->name('TradeRegistryUserExportPDF');
     Route::post('/user/account/TradeRegistry/{form}/reply', [UserTradeRegistryController::class, 'TradeRegistryUserReply'])->name('TradeRegistryUserReply');
 
+    //users Certification
+    Route::get('/user/account/Certification', [UserCertificationController::class, 'CertificationUserFormPage'])->name('CertificationUserFormPage');
+    Route::get('/user/account/Certification/record', [UserCertificationController::class, 'TableCertificationUsersPages'])->name('TableCertificationUsersPages');
+    Route::get('/user/account/Certification/{id}/edit', [UserCertificationController::class, 'CertificationShowFormEdit'])->name('CertificationShowFormEdit');
+    Route::put('/user/account/Certification/{id}/Update', [UserCertificationController::class, 'CertificationUserFormUpdate'])->name('CertificationUserFormUpdate');
+    Route::get('/user/account/Certification/{id}/pdf', [UserCertificationController::class, 'CertificationUserExportPDF'])->name('CertificationUserExportPDF');
+    Route::post('/user/account/Certification/{form}/reply', [UserCertificationController::class, 'CertificationUserReply'])->name('CertificationUserReply');
 });
