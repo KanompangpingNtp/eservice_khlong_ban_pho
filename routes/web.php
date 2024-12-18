@@ -19,6 +19,7 @@ use App\Http\Controllers\AdminCertificationController;
 use App\Http\Controllers\UserLicenseController;
 use App\Http\Controllers\AdminLicenseController;
 use App\Http\Controllers\UserBusinessDocController;
+use App\Http\Controllers\AdminBusinessDocController;
 
 /*
 |--------------------------------------------------------------------------
@@ -137,6 +138,11 @@ Route::middleware(['admin'])->group(function () {
     Route::post('/TablePages/License/AdminReply/{id}', [AdminLicenseController::class, 'LicenseAdminReply'])->name('LicenseAdminReply');
     Route::post('/TablePages/License/{id}/update-status', [AdminLicenseController::class, 'LicenseUpdateStatus'])->name('LicenseUpdateStatus');
 
+    //admin BusinessDoc
+    Route::get('/TablePages/BusinessDoc', [AdminBusinessDocController::class, 'TableBusinessDocAdminPages'])->name('TableBusinessDocAdminPages');
+    Route::get('/TablePages/BusinessDoc/ExportPdf/{id}', [AdminBusinessDocController::class, 'BusinessDocAdminExportPDF'])->name('BusinessDocAdminExportPDF');
+    Route::post('/TablePages/BusinessDoc/AdminReply/{id}', [AdminBusinessDocController::class, 'BusinessDocAdminReply'])->name('BusinessDocAdminReply');
+    Route::post('/TablePages/BusinessDoc/{id}/update-status', [AdminBusinessDocController::class, 'BusinessDocUpdateStatus'])->name('BusinessDocUpdateStatus');
 
 });
 
@@ -209,9 +215,12 @@ Route::middleware(['user'])->group(function () {
     Route::post('/user/account/License/{form}/reply', [UserLicenseController::class, 'LicenseUserReply'])->name('LicenseUserReply');
     Route::put('/user/account/License/{id}/Update', [UserLicenseController::class, 'TradeRegistryUserFormUpdate'])->name('TradeRegistryUserFormUpdate');
 
-    //users License
+    //users BusinessDoc
     Route::get('/user/account/BusinessDoc', [UserBusinessDocController::class, 'BusinessDocUsersAccountFormPage'])->name('BusinessDocUsersAccountFormPage');
     Route::get('/user/account/BusinessDoc/record', [UserBusinessDocController::class, 'TableBusinessDocUsersPages'])->name('TableBusinessDocUsersPages');
     Route::get('/user/account/BusinessDoc/{id}/pdf', [UserBusinessDocController::class, 'BusinessDocUserExportPDF'])->name('BusinessDocUserExportPDF');
+    Route::post('/user/account/BusinessDoc/{form}/reply', [UserBusinessDocController::class, 'BusinessDocUserReply'])->name('BusinessDocUserReply');
+    Route::get('/user/account/BusinessDoc/{id}/edit', [UserBusinessDocController::class, 'BusinessDocShowFormEdit'])->name('BusinessDocShowFormEdit');
+    Route::put('/user/account/BusinessDoc/{id}/Update', [UserBusinessDocController::class, 'BusinessDocUserFormUpdate'])->name('BusinessDocUserFormUpdate');
 
 });

@@ -209,6 +209,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('TableLicenseAdminPages') }}">แบบคำขอรับใบอนุญาต</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('TableBusinessDocAdminPages') }}">คำร้องขอจดทะเบียนพาณิชย์อิเล็กทรอนิกส์</a>
+                </li>
             </ul>
         </div>
 

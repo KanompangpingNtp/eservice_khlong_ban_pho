@@ -42,8 +42,8 @@
                 <!-- ปุ่มล็อคอินและสมัครสมาชิก -->
                 <div
                     class="d-flex flex-column flex-lg-row align-items-center gap-2 gap-lg-3 pt-4 font-sarabun fs-5 fs-lg-3">
-                    <button class="bg-btn-auth px-3 pt-1 px-lg-5 py-lg-2">เข้าสู่ระบบ</button>
-                    <button class="bg-btn-auth px-3 pt-1 px-lg-5 py-lg-2">สมัครสมาชิก</button>
+                    <a href="{{route('LoginPage')}}" class="bg-btn-auth px-3 pt-1 px-lg-5 py-lg-2">เข้าสู่ระบบ</a>
+                    <a href="{{route('RegisterPage')}}" class="bg-btn-auth px-3 pt-1 px-lg-5 py-lg-2">สมัครสมาชิก</a>
                 </div>
             </div>
 
