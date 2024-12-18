@@ -1,4 +1,5 @@
 @extends('dashboard.layout.users.layout_users')
+@section('title', 'E-Service')
 @section('user_content')
     <style>
         /* Custom CSS for icons and hover effects */
@@ -34,10 +35,10 @@
 
     <div class="d-flex flex-column align-items-center justify-content-center py-3">
         <!-- Welcome Section -->
-        <div class="text-center mb-5">
+        {{-- <div class="text-center mb-5">
             <h1 class="section-heading ">ยินดีต้อนรับเข้าสู่ระบบ E-Service</h1>
             <p class="lead fs-4 text-muted">จัดการข้อมูลและบริการต่าง ๆ ได้อย่างง่ายดาย</p>
-        </div>
+        </div> --}}
 
         <!-- Quick Actions Section -->
         <div class="container">
@@ -121,6 +122,88 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Action Card 6 -->
+                <div class="col">
+                    <div class="card shadow-lg h-100 border-0">
+                        <div class="card-body text-center">
+                            <div class="icon mb-3 text-primary">
+                                <img src="{{ asset('images/layout-index/procurement.png') }}" alt="image"
+                                    class="img-fluid" style="max-width: 80px;">
+                            </div>
+                            <h5 class="card-title">คำร้องทะเบียนพาณิชย์</h5>
+                            <p class="card-text text-muted">ดำเนินการคำร้องทะเบียนพาณิชย์</p>
+                            <a href="{{ route('TradeRegistryUserFormPage') }}"
+                                class="btn btn-primary fs-4 w-100">กรอกข้อมูลเอกสาร</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Card 7 -->
+                <div class="col">
+                    <div class="card shadow-lg h-100 border-0">
+                        <div class="card-body text-center">
+                            <div class="icon mb-3 text-success">
+                                <img src="{{ asset('images/layout-index/hook.png') }}" alt="image" class="img-fluid"
+                                    style="max-width: 80px;">
+                            </div>
+                            <h5 class="card-title">คำขอรับรองสิ่งปลูกสร้างอาคาร</h5>
+                            <p class="card-text text-muted">ดำเนินการคำขอรับรองสิ่งปลูกสร้างอาคาร</p>
+                            <a href="{{ route('CertificationUserFormPage') }}"
+                                class="btn btn-success fs-4 w-100">กรอกข้อมูลเอกสาร</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Card 8 -->
+                <div class="col">
+                    <div class="card shadow-lg h-100 border-0">
+                        <div class="card-body text-center">
+                            <div class="icon mb-3 text-warning">
+                                <img src="{{ asset('images/layout-index/earth.png') }}" alt="image" class="img-fluid"
+                                    style="max-width: 80px;">
+                            </div>
+                            <h5 class="card-title">แบบคำขอรับใบอนุญาต</h5>
+                            <p class="card-text text-muted">ดำเนินการคำขอรับใบอนุญาต</p>
+                            <a href="{{ route('LicenseUserFormPage') }}"
+                                class="btn btn-warning fs-4 w-100">กรอกข้อมูลเอกสาร</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Card 9 -->
+                <div class="col">
+                    <div class="card shadow-lg h-100 border-0">
+                        <div class="card-body text-center">
+                            <div class="icon mb-3 text-info">
+                                <img src="{{ asset('images/layout-index/online-shopping.png') }}" alt="image"
+                                    class="img-fluid" style="max-width: 80px;">
+                            </div>
+                            <h5 class="card-title">แบบคำร้องขอจดทะเบียนพาณิชย์อิเล็กทรอนิกส์</h5>
+                            <p class="card-text text-muted">ดำเนินการคำร้องขอจดทะเบียนพาณิชย์อิเล็กทรอนิกส์</p>
+                            <a href="{{ route('BusinessDocUsersAccountFormPage') }}"
+                                class="btn btn-info fs-4 w-100">กรอกข้อมูลเอกสาร</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Card 10 -->
+                <div class="col">
+                    <div class="card shadow-lg h-100 border-0">
+                        <div class="card-body text-center">
+                            <div class="icon mb-3 text-danger">
+                                <img src="{{ asset('images/layout-index/brick-wall.png') }}" alt="image"
+                                    class="img-fluid" style="max-width: 80px;">
+                            </div>
+                            <h5 class="card-title">คำขออนุญาตก่อสร้างอาคารดัดแปลงอาคารหรือรื้อถอนอาคาร</h5>
+                            <p class="card-text text-muted">ดำเนินการคำขออนุญาตก่อสร้างอาคารดัดแปลงอาคารหรือรื้อถอนอาคาร
+                            </p>
+                            <a href="{{ route('BuildingChangeUserFormPage') }}"
+                                class="btn btn-danger fs-4 w-100">กรอกข้อมูลเอกสาร</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
