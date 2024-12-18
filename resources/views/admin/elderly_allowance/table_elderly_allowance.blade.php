@@ -37,9 +37,9 @@
                 <td>{{ $form->admin_name_verifier}}</td>
                 <td>
                     @if($form->status == 1)
-                    <p> - </p>
+                        <p> - </p>
                     @elseif($form->status == 2)
-                    <p style="font-size: 20px; color:blue;"><i class="bi bi-check-circle"></i></p>
+                        <p style="font-size: 20px; color:blue;"><i class="bi bi-check-circle"></i></p>
                     @endif
                 </td>
                 <td>
