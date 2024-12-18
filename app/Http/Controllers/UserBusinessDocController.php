@@ -114,7 +114,44 @@ class UserBusinessDocController extends Controller
     {
         $form = BusinessDoc::find($id);
 
-        $pdf = Pdf::loadView('business_registration_documents.user_account.export_pdf.export_pdf', compact('form'))
+        // แปลงข้อมูล types_of_business จาก JSON
+        $typesOfBusiness = json_decode($form->types_of_business ?? '[]', true);
+
+        // แปลงข้อมูล group_of_websites จาก JSON
+        $selectedWebsites = old('group_of_websites', $form->group_of_websites ?? []);
+        $selectedWebsites = is_array($selectedWebsites)
+            ? $selectedWebsites
+            : (is_string($selectedWebsites) ? json_decode($selectedWebsites, true) : []);
+
+        // แปลงข้อมูล order_products_used จาก JSON
+        $orderProductsUsed = json_decode($form->order_products_used ?? '[]', true);
+        $selectedProducts = old('order_products_used', $orderProductsUsed);
+        $selectedProducts = is_array($selectedProducts)
+            ? $selectedProducts
+            : (is_string($selectedProducts) ? json_decode($selectedProducts, true) : []);
+
+        // แปลงข้อมูล payment_method จาก JSON
+        $paymentMethods = json_decode($form->payment_method ?? '[]', true);
+        $selectedPaymentMethods = old('payment_method', $paymentMethods);
+        $selectedPaymentMethods = is_array($selectedPaymentMethods)
+            ? $selectedPaymentMethods
+            : (is_string($selectedPaymentMethods) ? json_decode($selectedPaymentMethods, true) : []);
+
+        // แปลงข้อมูล shipping_method จาก JSON
+        $shippingMethods = json_decode($form->shipping_method ?? '[]', true);
+        $selectedShippingMethods = old('shipping_method', $shippingMethods);
+        $selectedShippingMethods = is_array($selectedShippingMethods)
+            ? $selectedShippingMethods
+            : (is_string($selectedShippingMethods) ? json_decode($selectedShippingMethods, true) : []);
+
+        $pdf = Pdf::loadView('business_registration_documents.user_account.export_pdf.export_pdf', compact(
+            'form',
+            'typesOfBusiness',
+            'selectedWebsites',
+            'selectedProducts',
+            'selectedPaymentMethods',
+            'selectedShippingMethods'
+        ))
             ->setPaper('A4', 'portrait');
 
         return $pdf->stream('คำร้องทะเบียนพาณิชย์' . $form->id . '.pdf');
@@ -263,5 +300,4 @@ class UserBusinessDocController extends Controller
 
         return redirect()->back()->with('success', 'Updated successfully!');
     }
-
 }

@@ -83,10 +83,20 @@
             padding: 5px 0;
             /* เพิ่มพื้นที่ด้านบนและล่างให้กับ footer */
         }
+
     </style>
 </head>
 
 <body>
+
+    @php
+    use Carbon\Carbon;
+    $date = Carbon::parse($form->write_the_date);
+    $day = $date->day;
+    $month = $date->locale('th')->translatedFormat('F');
+    $year = $date->year + 543;
+    @endphp
+
     <div class="regis_number">หน้า 1 จาก 2
     </div>
     <div class="title_doc" style="text-align:center;">
@@ -100,15 +110,15 @@
     </div>
     <div class="box_text" style="text-align: right;">
         <span>วันที่</span>
-        <span class="dotted-line" style="width: 5%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 5%; text-align: center;">{{$day}}</span>
         <span>เดือน</span>
-        <span class="dotted-line" style="width: 15%; text-align: center;"> data</span>
+        <span class="dotted-line" style="width: 15%; text-align: center;"> {{$month}}</span>
         <span>พ.ศ.</span>
-        <span class="dotted-line" style="width: 10%; text-align: center;"> data</span>
+        <span class="dotted-line" style="width: 10%; text-align: center;"> {{$year}}</span>
     </div>
     <div class="box_text" style="text-align: left;">
         <span style="margin-right:20px;">เรื่อง</span>
-        <span class="dotted-line" style="width: 20%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 20%; text-align: center;">{{$form->subject}}</span>
     </div>
     <div class="box_text" style="text-align: left;">
         <span style="margin-right:20px;">เรียน</span>
@@ -116,100 +126,100 @@
     </div>
     <div class="box_text" style="text-align: left; margin-left:5rem;">
         <span>ข้าพเจ้า</span>
-        <span class="dotted-line" style="width: 30%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 30%; text-align: center;">{{$form->salutation}}{{$form->full_name}}</span>
         <span>ตั้งบ้านเรือนอยู่เลขที่</span>
-        <span class="dotted-line" style="width: 18%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 18%; text-align: center;">{{$form->house_number}}</span>
         <span>หมู่ที่</span>
-        <span class="dotted-line" style="width: 19%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 19%; text-align: center;">{{$form->village}}</span>
     </div>
     <div class="box_text" style="text-align: left;">
         <span>ถนน</span>
-        <span class="dotted-line" style="width: 25%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 25%; text-align: center;">{{$form->alley}}</span>
         <span>ตรอก/ซอย</span>
-        <span class="dotted-line" style="width: 25%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 25%; text-align: center;">{{$form->road}}</span>
         <span>แขวง/ตำบล</span>
-        <span class="dotted-line" style="width: 25%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 25%; text-align: center;">{{$form->subdistrict}}</span>
         <span>เขต/อำเภอ</span>
-        <span class="dotted-line" style="width: 30%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 30%; text-align: center;">{{$form->district}}</span>
         <span>จังหวัด</span>
-        <span class="dotted-line" style="width: 30%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 30%; text-align: center;">{{$form->province}}</span>
     </div>
     <div class="box_text" style="text-align: left; margin-left:5rem;">
         <span>มีความประสงค์</span>
-        <span class="dotted-line" style="width: 86%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 86%; text-align: center;">{{$form->have_intention}}</span>
     </div>
     <div class="box_text" style="text-align: left;">
         <span>เพื่อ</span>
-        <span class="dotted-line" style="width: 96%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 96%; text-align: center;">{{$form->have_to}}</span>
         <span>ในโฉนดที่ดิน เลขที่</span>
-        <span class="dotted-line" style="width: 24.5%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 24.5%; text-align: center;">{{$form->land_title_number}}</span>
         <span>เล่มที่</span>
-        <span class="dotted-line" style="width: 25%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 25%; text-align: center;">{{$form->volume}}</span>
         <span>หน้า</span>
-        <span class="dotted-line" style="width: 25%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 25%; text-align: center;">{{$form->page}}</span>
     </div>
     <div class="box_text" style="text-align: left;">
         <span>อยู่ในเขตหมู่ที่</span>
-        <span class="dotted-line" style="width: 5%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 5%; text-align: center;">{{$form->village_area}}</span>
         <span>แขวง/ตำบล</span>
-        <span class="dotted-line" style="width: 18%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 18%; text-align: center;">{{$form->subdistrict_area}}</span>
         <span>เขต/อำเภอ</span>
-        <span class="dotted-line" style="width: 19%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 19%; text-align: center;">{{$form->district_area}}</span>
         <span>จังหวัด</span>
-        <span class="dotted-line" style="width: 19%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 19%; text-align: center;">{{$form->province_area}}</span>
     </div>
     <div class="box_text" style="text-align: left; margin-left:5rem;">
         <span>โดยยื่นเอกสารหลักฐานถูกต้องครบถ้วนตามแนบมาท้ายพร้อมนี้</span>
     </div>
     <div class="box_text" style="text-align: right; margin-top:1rem;">
         <span>(ลงชื่อ)</span>
-        <span class="dotted-line" style="width: 35%; text-align: center;"> data</span>
+        <span class="dotted-line" style="width: 35%; text-align: center;"> {{$form->full_name}} </span>
         <span>ผู้ขอรับรอง</span>
         <div style="margin-right: 55px;">
             <span>(</span>
-            <span class="dotted-line" style="width: 35%; text-align: center;"> data </span>
+            <span class="dotted-line" style="width: 35%; text-align: center;"> {{$form->salutation}}{{$form->full_name}} </span>
             <span>)</span>
         </div>
     </div>
     <div class="box_text" style="text-align: left;">
         <span>ความเห็นเจ้าหน้าที่</span>
-        <span class="dotted-line" style="width: 77%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 77%; text-align: center; border-bottom: 2px dotted black;"> </span>
     </div>
     <div class="box_text" style="text-align: right; margin-top:1rem;">
         <span>(ลงชื่อ)</span>
-        <span class="dotted-line" style="width: 35%; text-align: center;"> data</span>
+        <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black;"> </span>
         <span>ผู้ตรวจสอบ</span>
         <div style="margin-right: 55px;">
-            <span>(</span>
-            <span class="dotted-line" style="width: 35%; text-align: center;"> นายจิระชัย บุญสิงห์ </span>
-            <span>)</span>
+            <span></span>
+            <span style="width: 35%; text-align: center; "> นายจิระชัย บุญสิงห์ </span>
+            <span></span>
         </div>
         <div style="margin-right: 63px;">
-            <span style="width: 35%; text-align: center;">ผู้อำนวยการกองช่าง</span>
+            <span style="width: 35%; text-align: center; ">ผู้อำนวยการกองช่าง</span>
         </div>
     </div>
     <div class="box_text" style="text-align: left;">
         <span>ความเห็นเจ้าหน้าที่</span>
-        <span class="dotted-line" style="width: 77%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 77%; text-align: center; border-bottom: 2px dotted black;""> </span>
     </div>
-    <div class="box_text" style="text-align: right; margin-top:1rem;">
-        <span>(ลงชื่อ) ว่าที่ร้อยตรี</span>
-        <span class="dotted-line" style="width: 35%; text-align: center;"> data</span>
+    <div class=" box_text" style="text-align: right; margin-top:1rem;">
+            <span>(ลงชื่อ) ว่าที่ร้อยตรี</span>
+            <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black;""> </span>
         <span>ผู้ตรวจสอบ</span>
-        <div style="margin-right: 63px;">
-            <span style="width: 35%; text-align: center;">(กิติ์ไกรสีห์ เขียวหวาน)</span>
-        </div>
-        <div style="margin-right: 63px;">
-            <span style="width: 35%; text-align: center;">ปลัดองค์การบริหารส่วนตำบลถ้ำ</span>
-        </div>
+        <div style=" margin-right: 63px;">
+                <span style="width: 35%; text-align: center;">(กิติ์ไกรสีห์ เขียวหวาน)</span>
+    </div>
+    <div style="margin-right: 63px;">
+        <span style="width: 35%; text-align: center;">ปลัดองค์การบริหารส่วนตำบลถ้ำ</span>
+    </div>
     </div>
     <div class="box_text" style="text-align: left;">
         <span>ความเห็นเจ้าหน้าที่</span>
-        <span class="dotted-line" style="width: 77%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 77%; text-align: center; border-bottom: 2px dotted black;"></span>
     </div>
     <div class="box_text" style="text-align: right; margin-top:1rem;">
         <span>(ลงชื่อ)</span>
-        <span class="dotted-line" style="width: 35%; text-align: center;"> data</span>
+        <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black;"> </span>
         <span>ผู้ตรวจสอบ</span>
         <div style="margin-right: 63px;">
             <span style="width: 35%; text-align: center;">(นายสมควร วิศุภกาญจน์)</span>
