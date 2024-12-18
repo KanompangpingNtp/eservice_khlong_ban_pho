@@ -2,7 +2,6 @@
 @section('title', 'แก้ไข คำขอรับใบอนุญาต')
 @section('user_content')
 
-    <a href="{{ route('TableBusinessDocUsersPages') }}" class="btn btn-primary">กลับ</a>
     <h3 class="text-center">แก้ไข คำร้องขอจดทะเบียนพาณิชย์อิเล็กทรอนิกส์ </h3>
 
     <form action="{{ route('BusinessDocUserFormUpdate', $form->id) }}" method="POST" enctype="multipart/form-data">
@@ -81,8 +80,8 @@
                 <label class="form-check-label" for="option6">การแพทย์และสุขภาพ</label>
             </div>
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="option7" name="group_of_websites[]"
-                    value="option7" {{ in_array('option7', $selectedWebsites) ? 'checked' : '' }}>
+                <input type="checkbox" class="form-check-input" id="option7" name="group_of_websites[]" value="option7"
+                    {{ in_array('option7', $selectedWebsites) ? 'checked' : '' }}>
                 <label class="form-check-label" for="option7">ท่องเที่ยว/จองตั๋ว/จองโรงแรม/เช่ารถ</label>
             </div>
             <div class="form-check">
