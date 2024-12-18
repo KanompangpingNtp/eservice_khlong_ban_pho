@@ -32,7 +32,6 @@
                     @endif
                 </td>
                 <td>
-                    {{-- <a href="{{ route('LicenseShowFormEdit', $form->id) }}" class="btn btn-warning btn-sm text-white" style="font-size:21px; padding-top:5px; padding-bottom:5px;"><i class="bi bi-pencil-square"></i></a> --}}
                     <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#submitModal-{{ $form->id }}">
                         <i class="bi bi-filetype-pdf"></i>
                     </button>
