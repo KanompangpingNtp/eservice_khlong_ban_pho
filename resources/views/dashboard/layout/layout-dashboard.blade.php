@@ -206,6 +206,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('TableCertificationAdminPages') }}">คำขอรับรองสิ่งปลูกสร้างอาคาร</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('TableLicenseAdminPages') }}">แบบคำขอรับใบอนุญาต</a>
+                </li>
             </ul>
         </div>
 

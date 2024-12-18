@@ -17,6 +17,7 @@ use App\Http\Controllers\AdminTradeRegistryController;
 use App\Http\Controllers\UserCertificationController;
 use App\Http\Controllers\AdminCertificationController;
 use App\Http\Controllers\UserLicenseController;
+use App\Http\Controllers\AdminLicenseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -124,6 +125,14 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/TablePages/Certification/ExportPdf/{id}', [AdminCertificationController::class, 'CertificationAdminExportPDF'])->name('CertificationAdminExportPDF');
     Route::post('/TablePages/Certification/AdminReply/{id}', [AdminCertificationController::class, 'CertificationAdminReply'])->name('CertificationAdminReply');
     Route::post('/TablePages/Certification/{id}/update-status', [AdminCertificationController::class, 'CertificationUpdateStatus'])->name('CertificationUpdateStatus');
+
+    //admin License
+    Route::get('/TablePages/License', [AdminLicenseController::class, 'TableLicenseAdminPages'])->name('TableLicenseAdminPages');
+    Route::get('/TablePages/License/ExportPdf/{id}', [AdminLicenseController::class, 'LicenseAdminExportPDF'])->name('LicenseAdminExportPDF');
+    Route::post('/TablePages/License/AdminReply/{id}', [AdminLicenseController::class, 'LicenseAdminReply'])->name('LicenseAdminReply');
+    Route::post('/TablePages/License/{id}/update-status', [AdminLicenseController::class, 'LicenseUpdateStatus'])->name('LicenseUpdateStatus');
+
+
 });
 
 Route::middleware(['user'])->group(function () {
