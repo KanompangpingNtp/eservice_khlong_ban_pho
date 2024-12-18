@@ -282,6 +282,23 @@
   z-index: 0;
 }
 
+.bg-btn-auth {
+  background: linear-gradient(to bottom, rgb(17, 104, 210), rgb(0, 70, 140));
+  color: white; /* ตัวอักษรสีขาว */
+  border:2px solid white;
+  border-radius: 20px; /* ขอบโค้งมุม */
+  box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.5); /* เงาด้านขวา */
+  transition: all 0.3s ease; /* เพิ่ม transition สำหรับการเปลี่ยนแปลงที่สวยงาม */
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+  cursor: pointer; /* ให้เป็นปุ่มที่คลิกได้ */
+}
+
+.bg-btn-auth:hover {
+  background: linear-gradient(to top, rgb(17, 104, 210), rgb(0, 70, 140)); /* เปลี่ยนทิศทาง gradient เมื่อ hover */
+  transform: scale(1.05); /* ขยายปุ่มเมื่อ hover */
+  box-shadow: 4px 0px 20px rgba(255, 255, 255, 0.7); /* เพิ่มความเข้มของเงาเมื่อ hover */
+}
+
 .half-border-left-ii::before {
   content: ''; /* สร้าง pseudo-element */
   position: absolute;
