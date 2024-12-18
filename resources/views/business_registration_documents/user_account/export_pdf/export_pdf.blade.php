@@ -21,18 +21,468 @@
         }
 
         body {
-            font-family: 'sarabun', 'sarabun-bold', sans-serif;
+            font-family: 'sarabun', sans-serif;
             font-size: 20px;
             margin: 0;
             padding: 0;
             line-height: 1;
         }
 
+        .font-sarabun {
+            font-family: 'sarabun', sans-serif;
+            font-size: 20px;
+        }
+
+        .font-sarabun-bold {
+            font-family: 'sarabun-bold', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .title_doc {
+            font-family: 'sarabun-bold', sans-serif;
+            /* ใช้ฟอนต์ sarabun-bold */
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .regis_number {
+            text-align: right;
+            margin-right: 8px;
+        }
+
+        .box_text {
+            text-align: center;
+        }
+
+        .box_text span {
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
+        }
+
+        .box_text input[type="checkbox"] {
+            width: 17px;
+            /* ปรับขนาด checkbox ให้พอดีกับข้อความ */
+            height: 17px;
+            /* ปรับความสูงให้พอดีกับข้อความ */
+            margin-right: 5px;
+            margin-left: 5px;
+            /* เว้นระยะห่างระหว่าง checkbox และข้อความ */
+        }
+
+        .dotted-line {
+            margin-left: 2px;
+            color: blue;
+            border-bottom: 2px dotted blue;
+            word-wrap: break-word;
+            /* ห่อข้อความที่ยาวเกิน */
+            overflow-wrap: break-word;
+            /* รองรับ browser อื่น */
+        }
+
+        .footer {
+            position: absolute;
+            /* ทำให้ footer ยึดที่ด้านล่าง */
+            bottom: -50px;
+            /* ตั้งให้ footer อยู่ที่ด้านล่างสุดของหน้ากระดาษ */
+            width: 100%;
+            /* ให้ footer กว้างเต็มหน้ากระดาษ */
+            text-align: start;
+            /* จัดข้อความให้ตรงกลาง */
+            padding: 5px 0;
+            /* เพิ่มพื้นที่ด้านบนและล่างให้กับ footer */
+        }
+
+        .checkbox-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+
+        .checkbox-item label {
+            flex: 1;
+        }
     </style>
 </head>
 
 <body>
-    <p>คำร้องขอจดทะเบียนพาณิชย์อิเล็กทรอนิกส์ id = {{$form->id}}</p>
+    <div class="regis_number">หน้า 1 จาก 2
+    </div>
+    <div class="regis_number">เทศบาลเมืองต้นแบบ ๔.๐
+    </div>
+
+    <div class="box_text" style="border: 2px solid black; position: relative;">
+        <!-- ข้อความขวาบน -->
+        <div style="position: absolute; top: -1; right: 1; padding: 5px; font-size: 15px;">
+            * 1 คำขอ : 1 เว็บไซต์
+        </div>
+        <!-- เนื้อหาหลัก -->
+        <div class="title_doc" style="text-align: center;">
+            เอกสารประกอบการจดทะเบียนพาณิชย์อิเล็กทรอนิกส์
+        </div>
+        <div style="margin-top: 1rem;">
+            ชื่อผู้ประกอบพาณิชย์กิจ
+            <span class="dotted-line" style="width: 30%; text-align: center; line-height: 1;">data</span>
+            ทะเบียนเลขที่
+            <span class="dotted-line" style="width: 20%; text-align: center; line-height: 1;">data</span>
+        </div>
+    </div>
+    <div class="box_text font-sarabun-bold" style="text-align: left; ">
+        <span>***เฉพาะข้อ 1-ข้อ 4 กรุณาระบุข้อความภาษาอังกฤษ***</span>
+    </div>
+    <table style="width: 100%; border-collapse: collapse; text-align: left;">
+        <!-- หัวข้อหลัก -->
+        <thead>
+            <tr>
+                <th style="border: 1px solid black; padding: 1px;" colspan="2">
+                    รายละเอียดเกี่ยวกับเว็บไซต์
+                </th>
+            </tr>
+        </thead>
+        <!-- เนื้อหาในตาราง -->
+        <tbody>
+            <tr>
+                <!-- ข้อมูลในหัวข้อด้านซ้าย -->
+                <td style="border: 1px solid black; padding: 1px; width: 40%;">1. ชื่อผู้ประกอบการ
+                    (Owner Name)</td>
+                <!-- ข้อมูลในหัวข้อด้านขวา -->
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">data</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; width: 40%;">2. ชื่อที่ใช้ในการประกอบพาณิชย์กิจ
+                    (Company Name) </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">data</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; width: 40%;">3. ที่อยู่ตามใบทะเบียนพาณิชย์
+                    (Address)</td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">data</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; width: 40%;">4. ชื่อเว็บไซต์ (Website)</td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">data</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%; ">5.
+                    โปรดเลือกหมวดหมู่ของเว็บไซต์
+                    (Type Of Business)</td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    <ul class="checkbox-list">
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item1">
+                            <label for="item1">คอมพิวเตอร์ อุปกรณ์ไอที
+                                และซอฟแวร์</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item2">
+                            <label for="item2">จดโดเมน/ออกแบบเว็บไซต์</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item3">
+                            <label for="item3">บันเทิง และนันทนาการ</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item4">
+                            <label for="item4">เกมส์/ของเล่น/ของขวัญ/เบ็ดเตล็ด</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item5">
+                            <label for="item5">เครื่องมือเครื่องใช้อุตสาหกรรม</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item6">
+                            <label for="item6">การแพทย์และสุขภาพ</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item7">
+                            <label for="item7">ท่องเที่ยว/จองตั๋ว/จองโรงแรม/เช่ารถ</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item8">
+                            <label for="item8">ออกแบบตกแต่งอาคารและสถานที่</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item9">
+                            <label for="item9">การศึกษา</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item10">
+                            <label for="item10">การเงิน กฎหมาย บัญชี และให้คปรึกษาอื่นๆ </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item10">
+                            <label for="item10">ยานยนต์และอะไหล่</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item11">
+                            <label for="item11">เครื่องมือสื่อสาร/กล้อง
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item12">
+                            <label for="item12">แฟชั่น/เครื่องแต่งกาย/เครื่องประดับ
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item13">
+                            <label for="item13">อาหารและเครื่องดื่ม
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item14">
+                            <label for="item14">ศิลปะและวัฒนธรรม
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item15">
+                            <label for="item15">บริการให้เช่าอุปกรณ์ เครื่องมือ และเครื่องยนต์
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item16">
+                            <label for="item16">เครื่องอุปโภค/บริโภคประจำวัน
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item17">
+                            <label for="item17">ข่าว/สื่อ/โฆษณา
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item18">
+                            <label for="item18">เฟอร์นิเจอร์และอุปกรณ์ตกแต่ง
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item19">
+                            <label for="item19">อุปกรณ์กีฬา/สันทนาการ
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item20">
+                            <label for="item20">วัสดุก่อสร้าง/เครื่องมือ/อุปกรณ์ก่อสร้าง
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item21">
+                            <label for="item21">ธุรกิจอื่น
+                            </label>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">6.
+                    ชนิดแห่งพาณิชย์กิจ
+                    (ระบุข้อความเพิ่มเติมจากข้อ 5 ว่า
+                    เว็บไซต์ของท่านดำเนินธุรกิจซื้อขาย
+                    สินค้าหรือบริการใด)
+                </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    <ul class="checkbox-list">
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item1">
+                            <label for="item1">ขายปลีกสินค้า</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item2">
+                            <label for="item2">ขายส่งสินค้า</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item3">
+                            <label for="item3">บริการ</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item4">
+                            <label for="item4">บริการอินเทอร์เน็ต (Internet Service Provider : ISP)
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item5">
+                            <label for="item5">ให้เช่าพื้นที่ของเครื่องคอมพิวเตอร์แม่ข่าย (Web Hosting)</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item6">
+                            <label for="item6">บริการตลาดกลางในการซื้อขายสินค้าหรือบริการ
+                                (E-Marketplace)
+                            </label>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">7.
+                    ระบบสั่งจองสั่งซื้อสินค้าที่ใช้
+                </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    <ul class="checkbox-list">
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item1">
+                            <label for="item1">ระบบตะกร้า</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item2">
+                            <label for="item2">ระบบกรอกฟอร์ม</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item3">
+                            <label for="item3">e-Mail</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item4">
+                            <label for="item4">โทรศัพท์
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item5">
+                            <label for="item5">โทรสาร</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item6">
+                            <label for="item6">อื่น ๆ (โปรดระบุ สินค้าทุกอย่างที่คุณต้องการ )
+                            </label>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">8. วิธีการชระเงิน
+                </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    <ul class="checkbox-list">
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item1">
+                            <label for="item1">ชำระเงินแบบออฟไลน์(โอนเงินผ่านธนาคาร ชำระเงินทางไปรษณีย์
+                                ชำระเงินกับพนักงาน เป็นต้น)
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item2">
+                            <label for="item2">ชำระเงินออนไลน์ ผ่านบัตรเครดิต
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item3">
+                            <label for="item3">ชำระเงินออนไลน์ ผ่านระบบ e-Banking</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item4">
+                            <label for="item4">ชำระเงินออนไลน์ ผ่านตัวกลางชำระเงิน เช่น PayPal, PaySbuy เป็นต้น
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item5">
+                            <label for="item5">อื่นๆ (โปรดระบุ จ่ายเงินสดกับเจ้าของร้าน )</label>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">9. วิธีการส่งสินค้า
+                </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    <ul class="checkbox-list">
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item1">
+                            <label for="item1">บริษัทขนส่ง
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item2">
+                            <label for="item2">พนักงานส่งสินค้า
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item3">
+                            <label for="item3">ไปรษณีย์</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item4">
+                            <label for="item4">e-Mail
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item5">
+                            <label for="item5">Download</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item5">
+                            <label for="item5">อื่นๆ (โปรดระบุ ที่ร้านมีบริการส่งเอง )
+                            </label>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">10. จำนวนเงินทุน
+                    (ที่ใช่ในการทพาณิชย์อิเล็กทรอนิกส์)
+                </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    1,000,000
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">11. หมายเลขโทรศัพท์
+                    (Telephone)
+                </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    096-3852741
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">12. หมายเลขโทรสาร
+                    (Fax)
+                </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    ไม่มีโทรสาร
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">13. e-Mail
+                    (ที่ใช้ในการขอรับ Source Code)
+
+                </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    email
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">14. ชื่อผู้จัดการ
+                </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    นายยุทธพิพัทธิ์ นามสกุล
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">15.
+                    สำนักงานที่จดทะเบียน
+                </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    ทศบาลตบลตัวอย่าง 4.0
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="footer font-sarabun-bold">
+        <p>เทศบลเมืองต้นแบบ ๔.๐ www.eservice-default.go.th date&time</p>
+    </div>
+
+
+
+
+
+
 </body>
 
 
