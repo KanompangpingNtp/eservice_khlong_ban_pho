@@ -1,4 +1,5 @@
 @extends('dashboard.layout.users.layout_users')
+@section('title', 'ตารางแสดงข้อมูลฟอร์มที่ส่งเข้ามา')
 @section('user_content')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
 
@@ -6,7 +7,6 @@
         <h3 class="text-center">คำร้องขอจดทะเบียนพาณิชย์อิเล็กทรอนิกส์ <br>
             <h2 class="text-center">ตารางแสดงข้อมูลฟอร์มที่ส่งเข้ามา</h2>
         </h3>
-        <br>
 
         <table class="table table-bordered table-striped" id="data_table">
             <thead class="text-center">
