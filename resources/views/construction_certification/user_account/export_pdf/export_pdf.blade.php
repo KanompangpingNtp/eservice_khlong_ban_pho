@@ -36,6 +36,7 @@
         .font-sarabun-bold {
             font-family: 'sarabun-bold', sans-serif;
             font-size: 20px;
+            font-weight: bold;
         }
 
         .title_doc {
@@ -68,6 +69,19 @@
             /* ห่อข้อความที่ยาวเกิน */
             overflow-wrap: break-word;
             /* รองรับ browser อื่น */
+        }
+
+        .footer {
+            position: absolute;
+            /* ทำให้ footer ยึดที่ด้านล่าง */
+            bottom: -50px;
+            /* ตั้งให้ footer อยู่ที่ด้านล่างสุดของหน้ากระดาษ */
+            width: 100%;
+            /* ให้ footer กว้างเต็มหน้ากระดาษ */
+            text-align: start;
+            /* จัดข้อความให้ตรงกลาง */
+            padding: 5px 0;
+            /* เพิ่มพื้นที่ด้านบนและล่างให้กับ footer */
         }
     </style>
 </head>
@@ -207,6 +221,9 @@
             <span style="width: 35%; text-align: center;">นายกองค์การบริหารส่วนตำบลถ้ำ</span>
         </div>
     </div>
+    <div class="footer font-sarabun-bold">
+        <p>องค์กรบริหรส่วนตบลถ www.eservice.tam.go.th date&time</p>
+    </div>
 
     {{-- new page --}}
     <div style="page-break-before: always;"></div>
@@ -251,6 +268,9 @@
                 <td style="text-align: right;">จำนวน ๑ ชุด</td>
             </tr>
         </table>
+    </div>
+    <div class="footer font-sarabun-bold">
+        <p>องค์กรบริหรส่วนตบลถ www.eservice.tam.go.th date&time</p>
     </div>
 
 </body>
