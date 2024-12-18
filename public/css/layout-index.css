@@ -291,6 +291,7 @@
   transition: all 0.3s ease; /* เพิ่ม transition สำหรับการเปลี่ยนแปลงที่สวยงาม */
   text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
   cursor: pointer; /* ให้เป็นปุ่มที่คลิกได้ */
+  text-decoration: none;
 }
 
 .bg-btn-auth:hover {
