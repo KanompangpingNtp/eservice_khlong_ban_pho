@@ -35,7 +35,7 @@
         }
 
         h2 {
-            color: #0c95df;
+            color: #1390d3;
         }
 
         /* Sidebar */
@@ -163,6 +163,35 @@
             }
         }
 
+        #sidebar {
+            max-height: 100vh;
+            /* ใช้ความสูงเต็มหน้าจอ */
+            overflow-y: auto;
+            /* เปิดการเลื่อนแนวตั้ง */
+            background-color: #343a40;
+            /* สีพื้นหลัง */
+            color: #fff;
+            /* สีตัวอักษร */
+            padding: 15px;
+            border-right: 1px solid #ddd;
+            /* เพิ่มเส้นขอบด้านขวา */
+        }
+
+        #sidebar h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .nav-link {
+            color: #fff;
+            /* สีลิงก์ */
+        }
+
+        .nav-link:hover {
+            color: #ffc107;
+            /* สีลิงก์เมื่อ hover */
+        }
+
     </style>
 </head>
 <body>
@@ -178,6 +207,45 @@
 
     <div class="container-fluid d-flex">
         <!-- Sidebar -->
+        {{-- <div id="sidebar" class="sidebar">
+            <h3>GM SKY</h3>
+            <button id="toggle-sidebars" class="btn btn-outline-light me-3 d-md-none">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('TablePages') }}">คำร้องทั่วไป</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('TableElderlyAllowancePages') }}">แบบยืนยันสิทธิผู้สูงอายุ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('TableDisabilityPages') }}">
+                        แบบคำขอลงทะเบียนรับเงินเบี้ยความพิการ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('TableChildApplyAdminPages') }}">แบบฟอร์มใบสมัครเรียนศูนย์พัฒนาเด็กเล็ก</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('TableReceiveAssistanceAdminPages') }}">แบบคำขอรับเงินสงเคราะห์</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('TableTradeRegistryAdminPages') }}">คำร้องทะเบียนพาณิชย์</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('TableCertificationAdminPages') }}">คำขอรับรองสิ่งปลูกสร้างอาคาร</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('TableBuildingChangeAdminPages') }}">คำขออนุญาตก่อสร้างอาคารดัดแปลงอาคารหรือรื้อถอนอาคาร</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('TableLicenseAdminPages') }}">แบบคำขอรับใบอนุญาต</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('TableBusinessDocAdminPages') }}">คำร้องขอจดทะเบียนพาณิชย์อิเล็กทรอนิกส์</a>
+                </li>
+            </ul>
+        </div> --}}
         <div id="sidebar" class="sidebar">
             <h3>GM SKY</h3>
             <button id="toggle-sidebars" class="btn btn-outline-light me-3 d-md-none">
@@ -217,6 +285,7 @@
                 </li>
             </ul>
         </div>
+
 
         <!-- Main Content Area -->
         <div class="flex-grow-1">

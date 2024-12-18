@@ -1,6 +1,6 @@
 @extends('dashboard.layout.users.layout_users')
 @section('title', 'ตารางแสดงข้อมูลฟอร์มที่ส่งเข้ามา')
-@section('คำร้องขอจดทะเบียนพาณิชย์อิเล็กทรอนิกส์')
+@section('user_content')
     <h3 class="text-center"> คำร้องขอจดทะเบียนพาณิชย์อิเล็กทรอนิกส์ </h3>
 
     <form action="{{ route('BusinessDocFormCreate') }}" method="POST" enctype="multipart/form-data">
