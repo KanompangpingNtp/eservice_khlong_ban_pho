@@ -18,6 +18,7 @@ use App\Http\Controllers\UserCertificationController;
 use App\Http\Controllers\AdminCertificationController;
 use App\Http\Controllers\UserLicenseController;
 use App\Http\Controllers\AdminLicenseController;
+use App\Http\Controllers\UserBusinessDocController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,6 +70,10 @@ Route::post('/Certification/form/create', [UserCertificationController::class, '
 //users License
 Route::get('/License', [UserLicenseController::class, 'UserLicenseFormPage'])->name('UserLicenseFormPage');
 Route::post('/License/form/create', [UserLicenseController::class, 'LicenseFormCreate'])->name('LicenseFormCreate');
+
+//users BusinessDoc
+Route::get('/BusinessDoc', [UserBusinessDocController::class, 'BusinessDocFormPage'])->name('BusinessDocFormPage');
+Route::post('/BusinessDoc/form/create', [UserBusinessDocController::class, 'BusinessDocFormCreate'])->name('BusinessDocFormCreate');
 
 //auth
 Route::get('/login', [AuthController::class, 'LoginPage'])->name('LoginPage');
@@ -203,5 +208,10 @@ Route::middleware(['user'])->group(function () {
     Route::get('/user/account/License/{id}/pdf', [UserLicenseController::class, 'LicenseUserExportPDF'])->name('LicenseUserExportPDF');
     Route::post('/user/account/License/{form}/reply', [UserLicenseController::class, 'LicenseUserReply'])->name('LicenseUserReply');
     Route::put('/user/account/License/{id}/Update', [UserLicenseController::class, 'TradeRegistryUserFormUpdate'])->name('TradeRegistryUserFormUpdate');
+
+    //users License
+    Route::get('/user/account/BusinessDoc', [UserBusinessDocController::class, 'BusinessDocUsersAccountFormPage'])->name('BusinessDocUsersAccountFormPage');
+    Route::get('/user/account/BusinessDoc/record', [UserBusinessDocController::class, 'TableBusinessDocUsersPages'])->name('TableBusinessDocUsersPages');
+    Route::get('/user/account/BusinessDoc/{id}/pdf', [UserBusinessDocController::class, 'BusinessDocUserExportPDF'])->name('BusinessDocUserExportPDF');
 
 });

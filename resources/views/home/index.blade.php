@@ -42,7 +42,7 @@
                     </a>
                 </div>
                 <div class="half-border-left-i">
-                    <a href="{{ route('UsersFormPage') }}" class="buttom-cool-left fs-4 font-sarabun text-start"
+                    <a href="{{ route('BusinessDocFormPage') }}" class="buttom-cool-left fs-4 font-sarabun text-start"
                         style="line-height: 1.2;">
                         <span class="circle">
                             <img src="{{ asset('images/layout-index/online-shopping.png') }}" alt="Icon" />

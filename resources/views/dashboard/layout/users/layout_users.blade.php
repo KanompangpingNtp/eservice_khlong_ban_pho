@@ -327,6 +327,17 @@
                         <a class="nav-link" href="{{route('TableLicenseUsersPages')}}"><i class="fa-solid fa-caret-right"></i> ประวัติการส่งฟอร์ม</a>
                     </div>
                 </div>
+                <a class="nav-link font-sarabun-bold toggle-collapse" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#moreOptions9">
+                    คำร้องขอจดทะเบียนพาณิชย์อิเล็กทรอนิกส์
+                </a>
+                <div id="moreOptions9" class="collapse bg-option-nav mx-2">
+                    <div class="nav-item">
+                        <a class="nav-link" href="{{route('BusinessDocUsersAccountFormPage')}}"><i class="fa-solid fa-caret-right"></i> ฟอร์มส่งข้อมูล</a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link" href="{{route('TableBusinessDocUsersPages')}}"><i class="fa-solid fa-caret-right"></i> ประวัติการส่งฟอร์ม</a>
+                    </div>
+                </div>
             </div>
             @else
                 <a href="{{ url('/') }}" class="nav-link font-sarabun-bold"><i class="fa-solid fa-house"></i>กลับหน้าหลัก</a>
