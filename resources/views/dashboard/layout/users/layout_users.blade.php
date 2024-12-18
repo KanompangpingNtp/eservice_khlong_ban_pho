@@ -338,6 +338,17 @@
                         <a class="nav-link" href="{{route('TableBusinessDocUsersPages')}}"><i class="fa-solid fa-caret-right"></i> ประวัติการส่งฟอร์ม</a>
                     </div>
                 </div>
+                <a class="nav-link font-sarabun-bold toggle-collapse" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#moreOptions10">
+                    คำขออนุญาตก่อสร้างอาคารดัดแปลงอาคารหรือรื้อถอนอาคาร
+                </a>
+                <div id="moreOptions10" class="collapse bg-option-nav mx-2">
+                    <div class="nav-item">
+                        <a class="nav-link" href="{{route('BuildingChangeUserFormPage')}}"><i class="fa-solid fa-caret-right"></i> ฟอร์มส่งข้อมูล</a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link" href="{{route('BuildingChangeUsersPages')}}"><i class="fa-solid fa-caret-right"></i> ประวัติการส่งฟอร์ม</a>
+                    </div>
+                </div>
             </div>
             @else
                 <a href="{{ url('/') }}" class="nav-link font-sarabun-bold"><i class="fa-solid fa-house"></i>กลับหน้าหลัก</a>

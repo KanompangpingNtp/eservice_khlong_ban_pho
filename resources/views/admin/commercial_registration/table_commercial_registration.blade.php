@@ -82,7 +82,7 @@
                 </div>
                 <div class="modal-footer d-flex justify-content-between">
                     <span class="text-start" style="color: black;">รับฟอร์ม</span>
-                    <form action="{{ route('TradeRegistryUpdateStatus', $form->id) }}" method="POST">
+                    <form action="{{ route('BuildingChangeUpdateStatus', $form->id) }}" method="POST">
                     @csrf
                     <button type="submit" class="btn btn-primary btn-sm" @if($form->status == 2) disabled @endif>
                         กดรับแบบฟอร์ม

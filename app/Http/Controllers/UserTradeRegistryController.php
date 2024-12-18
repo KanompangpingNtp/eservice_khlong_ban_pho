@@ -86,7 +86,6 @@ class UserTradeRegistryController extends Controller
         return redirect()->back()->with('success', 'Create Successfully!');
     }
 
-
     public function TradeRegistryUserFormPage()
     {
         $user = User::with('userDetails')->find(Auth::id());

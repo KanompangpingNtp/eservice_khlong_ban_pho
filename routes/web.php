@@ -20,6 +20,8 @@ use App\Http\Controllers\UserLicenseController;
 use App\Http\Controllers\AdminLicenseController;
 use App\Http\Controllers\UserBusinessDocController;
 use App\Http\Controllers\AdminBusinessDocController;
+use App\Http\Controllers\UserBuildingChangeController;
+use App\Http\Controllers\AdminBuildingChangeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,6 +77,10 @@ Route::post('/License/form/create', [UserLicenseController::class, 'LicenseFormC
 //users BusinessDoc
 Route::get('/BusinessDoc', [UserBusinessDocController::class, 'BusinessDocFormPage'])->name('BusinessDocFormPage');
 Route::post('/BusinessDoc/form/create', [UserBusinessDocController::class, 'BusinessDocFormCreate'])->name('BusinessDocFormCreate');
+
+//users BuildingChange
+Route::get('/BuildingChange', [UserBuildingChangeController::class, 'BuildingChangeFormPage'])->name('BuildingChangeFormPage');
+Route::post('/BuildingChange/form/create', [UserBuildingChangeController::class, 'BuildingChangeFormCreate'])->name('BuildingChangeFormCreate');
 
 //auth
 Route::get('/login', [AuthController::class, 'LoginPage'])->name('LoginPage');
@@ -144,6 +150,11 @@ Route::middleware(['admin'])->group(function () {
     Route::post('/TablePages/BusinessDoc/AdminReply/{id}', [AdminBusinessDocController::class, 'BusinessDocAdminReply'])->name('BusinessDocAdminReply');
     Route::post('/TablePages/BusinessDoc/{id}/update-status', [AdminBusinessDocController::class, 'BusinessDocUpdateStatus'])->name('BusinessDocUpdateStatus');
 
+    //admin BuildingChange
+    Route::get('/TablePages/BuildingChange', [AdminBuildingChangeController::class, 'TableBuildingChangeAdminPages'])->name('TableBuildingChangeAdminPages');
+    Route::get('/TablePages/BuildingChange/ExportPdf/{id}', [AdminBuildingChangeController::class, 'BuildingChangeAdminExportPDF'])->name('BuildingChangeAdminExportPDF');
+    Route::post('/TablePages/BuildingChange/AdminReply/{id}', [AdminBuildingChangeController::class, 'BuildingChangeAdminReply'])->name('BuildingChangeAdminReply');
+    Route::post('/TablePages/BuildingChange/{id}/update-status', [AdminBuildingChangeController::class, 'BuildingChangeUpdateStatus'])->name('BuildingChangeUpdateStatus');
 });
 
 Route::middleware(['user'])->group(function () {
@@ -223,4 +234,11 @@ Route::middleware(['user'])->group(function () {
     Route::get('/user/account/BusinessDoc/{id}/edit', [UserBusinessDocController::class, 'BusinessDocShowFormEdit'])->name('BusinessDocShowFormEdit');
     Route::put('/user/account/BusinessDoc/{id}/Update', [UserBusinessDocController::class, 'BusinessDocUserFormUpdate'])->name('BusinessDocUserFormUpdate');
 
+    //users BuildingChange
+    Route::get('/user/account/BuildingChange', [UserBuildingChangeController::class, 'BuildingChangeUserFormPage'])->name('BuildingChangeUserFormPage');
+    Route::get('/user/account/BuildingChange/record', [UserBuildingChangeController::class, 'BuildingChangeUsersPages'])->name('BuildingChangeUsersPages');
+    Route::get('/user/account/BuildingChange/{id}/pdf', [UserBuildingChangeController::class, 'BuildingChangeUserExportPDF'])->name('BuildingChangeUserExportPDF');
+    Route::post('/user/account/BuildingChange/{form}/reply', [UserBuildingChangeController::class, 'BuildingChangeUserReply'])->name('BuildingChangeUserReply');
+    Route::get('/user/account/BuildingChange/{id}/edit', [UserBuildingChangeController::class, 'BuildingChangeShowFormEdit'])->name('BuildingChangeShowFormEdit');
+    Route::put('/user/account/BuildingChange/{id}/Update', [UserBuildingChangeController::class, 'BuildingChangeUserFormUpdate'])->name('BuildingChangeUserFormUpdate');
 });

@@ -152,4 +152,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(BusinessDocsReply::class, 'users_id');
     }
+
+    public function buildingChanges()
+    {
+        return $this->hasMany(BuildingChange::class, 'users_id');
+    }
+
+    public function buildingChangeReplies()
+    {
+        return $this->hasMany(BuildingChangeReply::class, 'users_id');
+    }
 }
