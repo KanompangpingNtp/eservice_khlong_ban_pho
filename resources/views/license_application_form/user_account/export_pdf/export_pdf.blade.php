@@ -97,6 +97,15 @@
 </head>
 
 <body>
+
+    @php
+    use Carbon\Carbon;
+    $date = Carbon::parse($form->write_the_date);
+    $day = $date->day;
+    $month = $date->locale('th')->translatedFormat('F');
+    $year = $date->year + 543;
+    @endphp
+
     <div class="regis_number">หน้า 1 จาก 3
     </div>
     <div class="regis_number">เทศบาลเมืองต้นแบบ ๔.๐
@@ -107,120 +116,120 @@
 
     <div class="box_text" style="text-align: right; margin-top:2rem;">
         <span>เขียนที่</span>
-        <span class="dotted-line" style="width: 25%; text-align: center; line-height: 1;">data</span>
+        <span class="dotted-line" style="width: 25%; text-align: center; line-height: 1;">{{$form->written_at}}</span>
     </div>
     <div class="box_text" style="text-align: right; margin-right:8rem; margin-top:1rem;">
         <span>วันที่</span>
-        <span class="dotted-line" style="width: 5%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 5%; text-align: center;">{{$day}}</span>
         <span>เดือน</span>
-        <span class="dotted-line" style="width: 15%; text-align: center;"> data</span>
+        <span class="dotted-line" style="width: 15%; text-align: center;"> {{$month}}</span>
         <span>พ.ศ.</span>
-        <span class="dotted-line" style="width: 10%; text-align: center;"> data</span>
+        <span class="dotted-line" style="width: 10%; text-align: center;"> {{$year}}</span>
     </div>
     <div class="box_text" style="text-align: left; margin-left:5rem;">
         <span>ข้าพเจ้า</span>
-        <span class="dotted-line" style="width: 52%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 52%; text-align: center;">{{$form->salutation}}{{$form->full_name}}</span>
         <span>อายุ</span>
-        <span class="dotted-line" style="width: 10%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 10%; text-align: center;">{{$form->age}}</span>
         <span>ปี สัญชาติ</span>
-        <span class="dotted-line" style="width: 15%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 15%; text-align: center;">{{$form->nationality}}</span>
     </div>
     <div class="box_text" style="text-align: left;">
         <span>อยู่บ้านเลขที่</span>
-        <span class="dotted-line" style="width: 11%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 11%; text-align: center;">{{$form->house_number}}</span>
         <span>หมู่ที่</span>
-        <span class="dotted-line" style="width: 10%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 10%; text-align: center;">{{$form->village}}</span>
         <span>ตรอก/ซอย</span>
-        <span class="dotted-line" style="width: 24%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 24%; text-align: center;">{{$form->alley}}</span>
         <span>ถนน</span>
-        <span class="dotted-line" style="width: 24%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 24%; text-align: center;">{{$form->road}}</span>
     </div>
     <div class="box_text" style="text-align: left;">
         <span>แขวง/ตำบล</span>
-        <span class="dotted-line" style="width: 25%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 25%; text-align: center;">{{$form->subdistrict}}</span>
         <span>เขต/อำเภอ</span>
-        <span class="dotted-line" style="width: 24%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 24%; text-align: center;">{{$form->district}}</span>
         <span>จังหวัด</span>
-        <span class="dotted-line" style="width: 24.4%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 24.4%; text-align: center;">{{$form->province}}</span>
     </div>
     <div class="box_text" style="text-align: left;">
         <span>หมายเลขโทรศัพท์</span>
-        <span class="dotted-line" style="width: 70%; text-align: center;">data</span>
+        <span class="dotted-line" style="width: 70%; text-align: center;">{{$form->phone_number}}</span>
     </div>
 
     <div class="box_text" style="text-align: left; margin-top:1rem; margin-left:5rem;">
         <span>ขอยื่นคำขอรับใบอนุญาตประกอบกิจการ</span>
     </div>
     <div class="box_text" style="text-align: left; margin-left: 5rem;">
-        <span><input type="checkbox"> สถานที่จัดจำหน่ายอาหารหรือสะสมอาหาร ประเภท</span>
-        <span class="dotted-line" style="width: 50%; text-align: center;">data
+        <span><input type="checkbox" {{$form->food_distribution == 'yes' ? 'checked' : ''}}> สถานที่จัดจำหน่ายอาหารหรือสะสมอาหาร ประเภท</span>
+        <span class="dotted-line" style="width: 50%; text-align: center;">{{$form->food_distribution_type}}
         </span>
         <div>
             <span> โดยมีพื้นที่ประกอบการ</span>
-            <span class="dotted-line" style="width: 50%; text-align: center;">data
+            <span class="dotted-line" style="width: 50%; text-align: center;">{{$form->food_distribution_area}}
             </span>
             <span>ตารางเมตร</span>
         </div>
     </div>
 
     <div class="box_text" style="text-align: left; margin-left: 5rem; margin-top:1rem;">
-        <span><input type="checkbox"> กิจการที่เป็นอันตรายต่อสุขภาพ ประเภท</span>
-        <span class="dotted-line" style="width: 60%; text-align: center;">data
+        <span><input type="checkbox" {{$form->it_dangerous == 'yes' ? 'checked' : ''}}> กิจการที่เป็นอันตรายต่อสุขภาพ ประเภท</span>
+        <span class="dotted-line" style="width: 60%; text-align: center;">{{$form->it_dangerous_type}}
         </span>
         <div>
             <span> มีคนงาน</span>
-            <span class="dotted-line" style="width: 30%; text-align: center;">data
+            <span class="dotted-line" style="width: 30%; text-align: center;">{{$form->it_there_are_workers}}
             </span>
             <span>คน</span>
             <span> ใช้เครื่องจักรขนาด</span>
-            <span class="dotted-line" style="width: 30%; text-align: center;">data
+            <span class="dotted-line" style="width: 30%; text-align: center;">{{$form->it_use_machinery_size}}
             </span>
             <span>แรงม้า</span>
         </div>
     </div>
 
     <div class="box_text" style="text-align: left; margin-left: 5rem; margin-top:1rem;">
-        <span><input type="checkbox"> กิจการตลาด ที่มีการจำหน่าย </span>
-        <span class="dotted-line" style="width: 39%; text-align: center;">data
+        <span><input type="checkbox" {{$form->on_sale == 'yes' ? 'checked' : ''}}> กิจการตลาด ที่มีการจำหน่าย </span>
+        <span class="dotted-line" style="width: 39%; text-align: center;">{{$form->on_sale_detail}}
         </span><span> (เป็นประจ/เป็นครั้งคราว/ตามวันนัด)
         </span>
     </div>
 
     <div class="box_text" style="text-align: left; margin-left: 5rem; margin-top:1rem;">
-        <span><input type="checkbox"> กิจการจำหน่ายสินค้าในที่/ทางสาธารณสุข จำหน่ายสินค้าประเภท </span>
-        <span class="dotted-line" style="width: 100%; text-align: center;">data
-        </span><span>ณ บริเวณ</span><span class="dotted-line" style="width: 41%; text-align: center;">data
-        </span><span>โดยวิธีการ</span><span class="dotted-line" style="width: 41%; text-align: center;">data
+        <span><input type="checkbox" {{$form->public_health_products == 'yes' ? 'checked' : ''}}> กิจการจำหน่ายสินค้าในที่/ทางสาธารณสุข จำหน่ายสินค้าประเภท </span>
+        <span class="dotted-line" style="width: 100%; text-align: center;">{{$form->public_health_products_detail}}
+        </span><span>ณ บริเวณ</span><span class="dotted-line" style="width: 41%; text-align: center;">{{$form->public_health_products_area}}
+        </span><span>โดยวิธีการ</span><span class="dotted-line" style="width: 41%; text-align: center;">{{$form->public_health_products_way}}
         </span>
     </div>
 
     <div class="box_text" style="text-align: left; margin-left: 5rem; margin-top:1rem;">
-        <span><input type="checkbox"> กิจการรับทำการเก็บ ขนหรือกจัดสิ่งปฏิกูลมูลฝอยโดยทำเป็นธุรกิจ ประเภท</span>
+        <span><input type="checkbox" {{$form->collection_service_business == 'yes' ? 'checked' : ''}}> กิจการรับทำการเก็บ ขนหรือกจัดสิ่งปฏิกูลมูลฝอยโดยทำเป็นธุรกิจ ประเภท</span>
         <div style="text-align: left; margin-left: 2rem; ">
             <span><input type="checkbox"> เก็บขนสิ่งปฏิกูลโดยมีแหล่งกำจัดที่</span><span class="dotted-line"
-                style="width: 64%; text-align: center;">data
+                style="width: 64%; text-align: center;">{{$form->waste_collection}}
             </span>
         </div>
         <div style="text-align: left; margin-left: 2rem; ">
-            <span><input type="checkbox"> เก็บขนและกำจัดสิ่งปฏิกูล โดยมีระบบกำจัดอยู่ที่ </span><span
-                class="dotted-line" style="width: 52%; text-align: center;">data
+            <span><input type="checkbox" {{$form->collect_and_dispose_waste == 'yes' ? 'checked' : ''}}> เก็บขนและกำจัดสิ่งปฏิกูล โดยมีระบบกำจัดอยู่ที่ </span><span
+                class="dotted-line" style="width: 52%; text-align: center;">{{$form->collect_and_dispose_detail}}
             </span>
         </div>
         <div style="text-align: left; margin-left: 2rem; ">
-            <span><input type="checkbox"> เก็บขนมูลฝอย โดยมีแหล่งกำจัดที่</span><span class="dotted-line"
-                style="width: 64%; text-align: center;">data
+            <span><input type="checkbox" {{$form->garbage_collection == 'yes' ? 'checked' : ''}}> เก็บขนมูลฝอย โดยมีแหล่งกำจัดที่</span><span class="dotted-line"
+                style="width: 64%; text-align: center;">{{$form->garbage_collection_detail}}
             </span>
         </div>
         <div style="text-align: left; margin-left: 2rem; ">
-            <span><input type="checkbox"> เก็บขนและกำจัดมูลฝอย โดยมีแหล่งกำจัดที่ </span><span class="dotted-line"
-                style="width: 56%; text-align: center;">data
+            <span><input type="checkbox" {{$form->collect_and_dispose_of_waste == 'yes' ? 'checked' : ''}}> เก็บขนและกำจัดมูลฝอย โดยมีแหล่งกำจัดที่ </span><span class="dotted-line"
+                style="width: 56%; text-align: center;">{{$form->collect_and_dispose_of_waste_detail}}
             </span>
         </div>
     </div>
 
     <div class="box_text" style="text-align: left; margin-left: 5rem; margin-top:1rem;">
         <span> ต่อ ( เจ้าพนักงานท้องถิ่น ) </span>
-        <span class="dotted-line" style="width: 45%; text-align: center;">data
+        <span class="dotted-line" style="width: 45%; text-align: center;">{{$form->local_officials}}
         </span><span>พร้อมคำขอนี้ ข้าพเจ้าได้แนบหลักฐาน</span>
         <div>
             และเอกสารมาด้วย ดังนี้คือ
@@ -239,7 +248,7 @@
 
     <div class="box_text" style="text-align: left; margin-left: 5rem; margin-top:1rem;">
         <span> 1) สำเนาบัตรประจำตัว</span>
-        <span class="dotted-line" style="width: 20%; text-align: center;">data
+        <span class="dotted-line" style="width: 20%; text-align: center;">{{$form->copy_of_ID_card}}
         </span><span>(ประชาชน/ข้าราชการ/พนักงานรัฐวิสาหกิจ)
         </span>
         <div>
@@ -251,20 +260,20 @@
             </span>
             <div style="margin-left: 20px; ">
                 <span>3.1</span>
-                <span class="dotted-line" style="width: 80%; text-align: center; line-height: 1;">data</span>
+                <span class="dotted-line" style="width: 80%; text-align: center; line-height: 1;">{{$form->evidence_of_permission_detail_1}}</span>
             </div>
             <div style="margin-left: 20px; ">
                 <span>3.2</span>
-                <span class="dotted-line" style="width: 80%; text-align: center; line-height: 1;">data</span>
+                <span class="dotted-line" style="width: 80%; text-align: center; line-height: 1;">{{$form->evidence_of_permission_detail_2}}</span>
             </div>
         </div>
         <div>
             <span> 4) </span>
-            <span class="dotted-line" style="width: 82%; text-align: center; line-height: 1;">data</span>
+            <span class="dotted-line" style="width: 82%; text-align: center; line-height: 1;">{{$form->detail_1}}</span>
         </div>
         <div>
             <span> 5) </span>
-            <span class="dotted-line" style="width: 82%; text-align: center; line-height: 1;">data</span>
+            <span class="dotted-line" style="width: 82%; text-align: center; line-height: 1;">{{$form->detail_2}}</span>
         </div>
     </div>
 
@@ -282,11 +291,11 @@
 
     <div class="box_text" style="text-align: right; margin-top:6rem;">
         <span>(ลงชื่อ)</span>
-        <span class="dotted-line" style="width: 35%; text-align: center;"> data</span>
+        <span class="dotted-line" style="width: 35%; text-align: center;"> {{$form->full_name}}</span>
         <span>ผู้ขอรับใบอณุญาต</span>
         <div style="margin-right: 110px;">
             <span>(</span>
-            <span class="dotted-line" style="width: 35%; text-align: center;"> data </span>
+            <span class="dotted-line" style="width: 35%; text-align: center;"> {{$form->salutation}}{{$form->full_name}} </span>
             <span>)</span>
         </div>
     </div>
