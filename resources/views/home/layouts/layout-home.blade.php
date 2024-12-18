@@ -23,18 +23,30 @@
         <header id="header" class="flex"
             style="background: linear-gradient(to bottom, rgb(1, 78, 172), rgba(0, 90, 200, 0.3));
      height: 16vh;">
-            <div class="container d-flex align-items-center justify-content-center h-100 p-0">
-                <div class="h-100 d-flex align-items-center justify-content-end">
+            <div class="container d-flex align-items-center justify-content-around h-100 p-0 ">
+                <!-- Logo และข้อความ -->
+                <div class="d-flex align-items-center">
+                    <!-- Logo -->
                     <img src="{{ asset('images/layouts-home/Logo.png') }}" alt="Logo"
-                        style="width: auto; height: 13vh; padding: 10px">
+                        style="width: auto; height: 13vh; padding: 10px" class="d-none d-lg-block">
+                    <!-- ข้อความตรงกลาง -->
+                    <div
+                        class="d-flex flex-column align-items-start justify-content-center fs-1 text-white px-2 pt-4 font-sarabun">
+                        องค์การบริหารส่วนตำบล คลองบ้านโพธิ์
+                        <div class="fs-3 pt-1 font-sarabun">
+                            (ตำบลคลองบ้านโพธิ์ อำเภอบ้านโพธิ์ จังหวัดฉะเชิงเทรา)
+                        </div>
+                    </div>
                 </div>
+
+                <!-- ปุ่มล็อคอินและสมัครสมาชิก -->
                 <div
-                    class="h-100 d-flex flex-column flex-lg-row align-items-center justify-content-center fs-1 text-white px-2 pt-4 font-sarabun">
-                    องค์การบริหารส่วนตำบล คลองบ้านโพธิ์
-                    <div class="fs-3 ps-3 pt-1 font-sarabun">
-                        (ตำบลคลองบ้านโพธิ์ อำเภอบ้านโพธิ์ จังหวัดฉะเชิงเทรา)</div>
+                    class="d-flex flex-column flex-lg-row align-items-center gap-2 gap-lg-3 pt-4 font-sarabun fs-5 fs-lg-3">
+                    <button class="bg-btn-auth px-3 pt-1 px-lg-5 py-lg-2">เข้าสู่ระบบ</button>
+                    <button class="bg-btn-auth px-3 pt-1 px-lg-5 py-lg-2">สมัครสมาชิก</button>
                 </div>
             </div>
+
         </header>
         {{-- ////////////////////// end-header ////////////////////// --}}
 
