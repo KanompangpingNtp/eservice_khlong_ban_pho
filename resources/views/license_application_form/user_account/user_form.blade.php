@@ -1,4 +1,5 @@
 @extends('dashboard.layout.users.layout_users')
+@section('title', 'แบบคำขอรับใบอนุญาต')
 @section('user_content')
     <h3 class="text-center"> แบบคำขอรับใบอนุญาต </h3>
 
@@ -139,26 +140,30 @@
             <label for="public_health_products"> กิจการจำหน่ายสินค้าในที่/ทางสาธารณสุข จำาหน่ายสินค้าประเภท</label>
             <input type="checkbox" name="public_health_products" id="public_health_products" value="yes">
 
-            <input type="text" name="public_health_products_detail" id="public_health_products_detail" class="form-control">
+            <input type="text" name="public_health_products_detail" id="public_health_products_detail"
+                class="form-control">
         </div>
 
         <!-- Public Health Products Area -->
         <div class="form-group">
             <label for="public_health_products_area">ณ บริเวณ</label>
-            <input type="text" name="public_health_products_area" id="public_health_products_area" class="form-control">
+            <input type="text" name="public_health_products_area" id="public_health_products_area"
+                class="form-control">
         </div>
 
         <!-- Public Health Products Way -->
         <div class="form-group">
             <label for="public_health_products_way">โดยวิธีการ</label>
-            <input type="text" name="public_health_products_way" id="public_health_products_way" class="form-control">
+            <input type="text" name="public_health_products_way" id="public_health_products_way"
+                class="form-control">
         </div>
 
         <br>
 
         <!-- Collection Service Business -->
         <div class="form-group">
-            <label for="collection_service_business">กิจการรับทำาการเก็บ ขนหรือกำาจัดสิ่งปฏิกูลมูลฝอยโดยทำาเป็นธุรกิจ ประเภท</label>
+            <label for="collection_service_business">กิจการรับทำาการเก็บ ขนหรือกำาจัดสิ่งปฏิกูลมูลฝอยโดยทำาเป็นธุรกิจ
+                ประเภท</label>
             <input type="checkbox" name="collection_service_business" id="collection_service_business" value="yes">
         </div>
 
@@ -173,7 +178,8 @@
         <div class="form-group">
             <label for="collect_and_dispose_waste"> เก็บขนและกำจัดสิ่งปฏิกูล โดยมีระบบกำาจัดอยู่ที่</label>
             <input type="checkbox" name="collect_and_dispose_waste" id="collect_and_dispose_waste" value="yes">
-            <input type="text" name="collect_and_dispose_detail" id="collect_and_dispose_detail" class="form-control">
+            <input type="text" name="collect_and_dispose_detail" id="collect_and_dispose_detail"
+                class="form-control">
         </div>
 
         <!-- Garbage Collection -->
@@ -187,7 +193,8 @@
         <div class="form-group">
             <label for="collect_and_dispose_of_waste">เก็บขนและกำาจัดมูลฝอย โดยมีแหล่งกำาจัดที่</label>
             <input type="checkbox" name="collect_and_dispose_of_waste" id="collect_and_dispose_of_waste" value="yes">
-            <input type="text" name="collect_and_dispose_of_waste_detail" id="collect_and_dispose_of_waste_detail" class="form-control">
+            <input type="text" name="collect_and_dispose_of_waste_detail" id="collect_and_dispose_of_waste_detail"
+                class="form-control">
         </div>
 
         <!-- Local Officials -->
@@ -211,13 +218,15 @@
         <!-- Evidence of Permission Detail 1 -->
         <div class="form-group">
             <label for="evidence_of_permission_detail_1">3.1</label>
-            <input type="text" name="evidence_of_permission_detail_1" id="evidence_of_permission_detail_1" class="form-control">
+            <input type="text" name="evidence_of_permission_detail_1" id="evidence_of_permission_detail_1"
+                class="form-control">
         </div>
 
         <!-- Evidence of Permission Detail 2 -->
         <div class="form-group">
             <label for="evidence_of_permission_detail_2">3.2</label>
-            <input type="text" name="evidence_of_permission_detail_2" id="evidence_of_permission_detail_2" class="form-control">
+            <input type="text" name="evidence_of_permission_detail_2" id="evidence_of_permission_detail_2"
+                class="form-control">
         </div>
 
         <!-- Detail 1 -->
@@ -245,8 +254,7 @@
         </div>
 
         <div class="text-center w-full border">
-            <button type="submit" class="btn btn-primary w-100 py-1"><i
-                    class="fa-solid fa-file-arrow-up me-2"></i></i>
+            <button type="submit" class="btn btn-primary w-100 py-1"><i class="fa-solid fa-file-arrow-up me-2"></i></i>
                 ส่งฟอร์มข้อมูล</button>
         </div>
     </form>
