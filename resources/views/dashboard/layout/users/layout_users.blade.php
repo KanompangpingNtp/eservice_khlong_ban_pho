@@ -316,9 +316,20 @@
                         <a class="nav-link" href="{{route('TableCertificationUsersPages')}}"><i class="fa-solid fa-caret-right"></i> ประวัติการส่งฟอร์ม</a>
                     </div>
                 </div>
+                <a class="nav-link font-sarabun-bold toggle-collapse" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#moreOptions8">
+                    แบบคำขอรับใบอนุญาต
+                </a>
+                <div id="moreOptions8" class="collapse bg-option-nav mx-2">
+                    <div class="nav-item">
+                        <a class="nav-link" href="{{route('LicenseUserFormPage')}}"><i class="fa-solid fa-caret-right"></i> ฟอร์มส่งข้อมูล</a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link" href="{{route('TableLicenseUsersPages')}}"><i class="fa-solid fa-caret-right"></i> ประวัติการส่งฟอร์ม</a>
+                    </div>
+                </div>
             </div>
             @else
-            <a href="{{ url('/') }}" class="nav-link font-sarabun-bold"><i class="fa-solid fa-house"></i>กลับหน้าหลัก</a>
+                <a href="{{ url('/') }}" class="nav-link font-sarabun-bold"><i class="fa-solid fa-house"></i>กลับหน้าหลัก</a>
             @endif
         </div>
     </div>

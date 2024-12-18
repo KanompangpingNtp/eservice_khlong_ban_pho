@@ -16,6 +16,7 @@ use App\Http\Controllers\UserTradeRegistryController;
 use App\Http\Controllers\AdminTradeRegistryController;
 use App\Http\Controllers\UserCertificationController;
 use App\Http\Controllers\AdminCertificationController;
+use App\Http\Controllers\UserLicenseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +64,10 @@ Route::post('/TradeRegistry/form/create', [UserTradeRegistryController::class, '
 //users Certification
 Route::get('/Certification', [UserCertificationController::class, 'UserCertificationFormPage'])->name('UserCertificationFormPage');
 Route::post('/Certification/form/create', [UserCertificationController::class, 'CertificationFormCreate'])->name('CertificationFormCreate');
+
+//users License
+Route::get('/License', [UserLicenseController::class, 'UserLicenseFormPage'])->name('UserLicenseFormPage');
+Route::post('/License/form/create', [UserLicenseController::class, 'LicenseFormCreate'])->name('LicenseFormCreate');
 
 //auth
 Route::get('/login', [AuthController::class, 'LoginPage'])->name('LoginPage');
@@ -153,7 +158,6 @@ Route::middleware(['user'])->group(function () {
     //users ChildApply
     Route::get('/user/account/ChildApply', [UserChildApplyController::class, 'ChildApplyFormPage'])->name('ChildApplyFormPage');
     Route::get('/user/account/ChildApply/record', [UserChildApplyController::class, 'TableChildApplyUsersPages'])->name('TableChildApplyUsersPages');
-    // Route::get('/user/account/ChildApply/{id}/Edit', [UserChildApplyController::class, 'ChildApplyUsersShowFormEdit'])->name('ChildApplyUsersShowFormEdit');
     Route::get('/user/account/ChildApply/{id}/edit', [UserChildApplyController::class, 'ChildApplyUserShowFormEdit'])->name('ChildApplyUserShowFormEdit');
     Route::put('/user/account/ChildApply/{id}/Update', [UserChildApplyController::class, 'updateChildInformation'])->name('updateChildInformation');
     Route::get('/user/account/ChildApply/{id}/pdf', [UserChildApplyController::class, 'ChildApplyUserExportPDF'])->name('ChildApplyUserExportPDF');
@@ -182,4 +186,13 @@ Route::middleware(['user'])->group(function () {
     Route::put('/user/account/Certification/{id}/Update', [UserCertificationController::class, 'CertificationUserFormUpdate'])->name('CertificationUserFormUpdate');
     Route::get('/user/account/Certification/{id}/pdf', [UserCertificationController::class, 'CertificationUserExportPDF'])->name('CertificationUserExportPDF');
     Route::post('/user/account/Certification/{form}/reply', [UserCertificationController::class, 'CertificationUserReply'])->name('CertificationUserReply');
+
+    //users License
+    Route::get('/user/account/License', [UserLicenseController::class, 'LicenseUserFormPage'])->name('LicenseUserFormPage');
+    Route::get('/user/account/License/record', [UserLicenseController::class, 'TableLicenseUsersPages'])->name('TableLicenseUsersPages');
+    Route::get('/user/account/License/{id}/edit', [UserLicenseController::class, 'LicenseShowFormEdit'])->name('LicenseShowFormEdit');
+    Route::get('/user/account/License/{id}/pdf', [UserLicenseController::class, 'LicenseUserExportPDF'])->name('LicenseUserExportPDF');
+    Route::post('/user/account/License/{form}/reply', [UserLicenseController::class, 'LicenseUserReply'])->name('LicenseUserReply');
+    Route::put('/user/account/License/{id}/Update', [UserLicenseController::class, 'TradeRegistryUserFormUpdate'])->name('TradeRegistryUserFormUpdate');
+
 });

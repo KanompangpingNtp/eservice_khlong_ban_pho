@@ -53,7 +53,7 @@
                     </a>
                 </div>
                 <div class="half-border-right-i">
-                    <a href="" class="buttom-cool-right fs-2 font-sarabun fs-4 text-end pe-3"
+                    <a href="{{route('UserLicenseFormPage')}}" class="buttom-cool-right fs-2 font-sarabun fs-4 text-end pe-3"
                         style="line-height: 1.2;">
                         <span class="circle">
                             <img src="{{ asset('images/layout-index/earth.png') }}" alt="Icon" />

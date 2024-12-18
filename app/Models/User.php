@@ -132,4 +132,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(BuildBuildingReply::class, 'users_id');
     }
+
+    public function bizHazLicense()
+    {
+        return $this->hasMany(BizHazLicense::class, 'users_id');
+    }
+
+    public function bizHazLicenseReply()
+    {
+        return $this->hasMany(BizHazLicenseReply::class, 'users_id');
+    }
 }
