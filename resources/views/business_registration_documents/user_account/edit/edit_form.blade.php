@@ -1,281 +1,364 @@
 @extends('dashboard.layout.users.layout_users')
 @section('user_content')
-<a href="{{route('TableLicenseUsersPages')}}" class="btn btn-primary">กลับ</a>
-    <h3 class="text-center">แก้ไข คำขอรับใบอนุญาต </h3>
 
-    <form action="{{ route('TradeRegistryUserFormUpdate', $form->id) }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        @method('PUT')
+<a href="{{route('TableBusinessDocUsersPages')}}" class="btn btn-primary">กลับ</a>
+<h3 class="text-center">แก้ไข คำร้องขอจดทะเบียนพาณิชย์อิเล็กทรอนิกส์ </h3>
 
-        <!-- Written At -->
-        <div class="form-group">
-            <label for="written_at">เขียนที่</label>
-            <input type="text" name="written_at" id="written_at" class="form-control" value="{{ old('written_at', $form->written_at) }}">
+<form action="{{ route('BusinessDocUserFormUpdate', $form->id) }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    @method('PUT')
+
+    <div class="form-group">
+        <label for="business_operator_name"> ชื่อผู้ประกอบพาณิชย์กิจ</label>
+        <input type="text" class="form-control" id="business_operator_name" name="business_operator_name" required value="{{ old('business_operator_name', $form->business_operator_name) }}">
+    </div>
+
+    <div class="form-group">
+        <label for="registration_number">ทะเบียนเลขที่</label>
+        <input type="text" class="form-control" id="registration_number" name="registration_number" required value="{{ old('registration_number', $form->registration_number) }}">
+    </div>
+
+    <div class="form-group">
+        <label for="owner_name">ชื่อผู้ประกอบการ</label>
+        <input type="text" class="form-control" id="owner_name" name="owner_name" required value="{{ old('owner_name', $form->owner_name) }}">
+    </div>
+
+    <div class="form-group">
+        <label for="company_name">ชื่อที่ใช้ในการประกอบพาณิชย์กิจ</label>
+        <input type="text" class="form-control" id="company_name" name="company_name" required value="{{ old('company_name', $form->company_name) }}">
+    </div>
+
+    <div class="form-group">
+        <label for="address">ที่อยู่ตามใบทะเบียนพาณิชย์</label>
+        <input type="text" class="form-control" id="address" name="address" required value="{{ old('address', $form->address) }}">
+    </div>
+
+    <div class="form-group">
+        <label for="website"> ชื่อเว็บไซต์</label>
+        <input type="text" class="form-control" id="website" name="website" value="{{ old('website', $form->website)}}">
+    </div>
+
+    <br>
+
+    <div class="form-group">
+        <label for="group_of_websites">โปรดเลือกหมวดหมู่ของเว็บไซต์</label><br>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option1" name="group_of_websites[]" value="option1" {{ in_array('option1', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option1">คอมพิวเตอร์ อุปกรณ์ไอที และซอฟแวร์</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option2" name="group_of_websites[]" value="option2" {{ in_array('option2', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option2">จดโดเมน/ออกแบบเว็บไซต</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option3" name="group_of_websites[]" value="option3" {{ in_array('option3', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option3">บันเทิง และนันทนาการ</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option4" name="group_of_websites[]" value="option4" {{ in_array('option4', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option4">เกมส์/ของเล่น/ของขวัญ/เบ็ดเตล็ด</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option5" name="group_of_websites[]" value="option5" {{ in_array('option5', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option5">เครื่องมือเครื่องใช้อุตสาหกรรม</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option6" name="group_of_websites[]" value="option6" {{ in_array('option6', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option6">การแพทย์และสุขภาพ</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option7" name="group_of_websites[]" value="option7" {{ in_array('option7', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option7">ท่องเที่ยว/จองตั๋ว/จองโรงแรม/เช่ารถ</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option8" name="group_of_websites[]" value="option8" {{ in_array('option8', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option8">ออกแบบตกแต่งอาคารและสถานที่</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option9" name="group_of_websites[]" value="option9" {{ in_array('option9', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option9">การศึกษา</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option10" name="group_of_websites[]" value="option10" {{ in_array('option10', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option10">การเงิน กฎหมาย บัญชี และให้คำาปรึกษาอื่นๆ</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option11" name="group_of_websites[]" value="option11" {{ in_array('option11', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option11">ยานยนต์และอะไหล่</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option12" name="group_of_websites[]" value="option12" {{ in_array('option12', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option12">เครื่องมือสื่อสาร/กล้อง</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option13" name="group_of_websites[]" value="option13" {{ in_array('option13', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option13">แฟชั่น/เครื่องแต่งกาย/เครื่องประดับ</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option14" name="group_of_websites[]" value="option14" {{ in_array('option14', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option14">อาหารและเครื่องดื่ม</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option15" name="group_of_websites[]" value="option15" {{ in_array('option15', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option15">ศิลปะและวัฒนธรรม</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option16" name="group_of_websites[]" value="option16" {{ in_array('option16', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option16">บริการให้เช่าอุปกรณ์ เครื่องมือ และเครื่องยนต</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option17" name="group_of_websites[]" value="option17" {{ in_array('option17', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option17">เครื่องอุปโภค/บริโภคประจำาวัน</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option18" name="group_of_websites[]" value="option18" {{ in_array('option18', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option18">ข่าว/สื่อ/โฆษณา</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option19" name="group_of_websites[]" value="option19" {{ in_array('option19', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option19">เฟอร์นิเจอร์และอุปกรณ์ตกแต่ง</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option20" name="group_of_websites[]" value="option20" {{ in_array('option20', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option20">อุปกรณ์กีฬา/สันทนาการ</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option21" name="group_of_websites[]" value="option21" {{ in_array('option21', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option21">วัสดุก่อสร้าง/เครื่องมือ/อุปกรณ์ก่อสร้าง</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option22" name="group_of_websites[]" value="option22" {{ in_array('option22', $selectedWebsites) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option22">ธุรกิจอื่น</label>
         </div>
 
-        <!-- Write The Date -->
-        <div class="form-group">
-            <label for="write_the_date">เขียนวันที่</label>
-            <input type="date" name="write_the_date" id="write_the_date" class="form-control" value="{{ old('write_the_date', $form->write_the_date) }}">
+    </div>
+
+    <br>
+
+    <div class="form-group">
+        <label for="types_of_business">ชนิดแห่งพาณิชย์กิจ
+            (ระบุข้อความเพิ่มเติมจากข้อ 5 ว่า เว็บไซต์ของท่านดำเนินธุรกิจซื้อขาย สินค้าหรือบริการใด)
+        </label>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option1" name="types_of_business[]" value="option1" {{ in_array('option1', $typesOfBusiness) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option1">ขายปลีกสินค้า สินค้าทุกอย่างที่คุณต้องการ</label>
         </div>
 
-        <!-- Salutation -->
-        <div class="form-group">
-            <label for="salutation">คำนำหน้า</label>
-            <input type="text" name="salutation" id="salutation" class="form-control" value="{{ old('salutation', $form->salutation) }}">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option2" name="types_of_business[]" value="option2" {{ in_array('option2', $typesOfBusiness) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option2">บริการ สินค้าทุกอย่างที่คุณต้องการ</label>
         </div>
 
-        <!-- Full Name -->
-        <div class="form-group">
-            <label for="full_name">ข้าพเจ้า</label>
-            <input type="text" name="full_name" id="full_name" class="form-control" required value="{{ old('full_name', $form->full_name) }}">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option3" name="types_of_business[]" value="option3" {{ in_array('option3', $typesOfBusiness) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option3">บริการ สินค้าทุกอย่างที่คุณต้องการ</label>
         </div>
 
-        <!-- Age -->
-        <div class="form-group">
-            <label for="age">อายุ</label>
-            <input type="number" name="age" id="age" class="form-control" value="{{ old('age', $form->age) }}">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option4" name="types_of_business[]" value="option4" {{ in_array('option4', $typesOfBusiness) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option4">บริการอินเทอร์เน็ต (Internet Service Provider : ISP)</label>
         </div>
 
-        <div class="form-group">
-            <label for="nationality">สัญชาติ</label>
-            <input type="text" name="nationality" id="nationality" class="form-control" value="{{ old('age', $form->nationality) }}">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option5" name="types_of_business[]" value="option5" {{ in_array('option5', $typesOfBusiness) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option5">ให้เช่าพื้นที่ของเครื่องคอมพิวเตอร์แม่ข่าย (Web Hosting)</label>
         </div>
 
-        <!-- House Number -->
-        <div class="form-group">
-            <label for="house_number">อยู่บ้านเลขที่</label>
-            <input type="text" name="house_number" id="house_number" class="form-control" value="{{ old('house_number', $form->house_number) }}">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option6" name="types_of_business[]" value="option6" {{ in_array('option6', $typesOfBusiness) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option6">บริการตลาดกลางในการซื้อขายสินค้าหรือบริการ (E-Marketplace)</label>
         </div>
+    </div>
 
-        <!-- Village -->
-        <div class="form-group">
-            <label for="village">หมู่ที่</label>
-            <input type="text" name="village" id="village" class="form-control" value="{{ old('village', $form->village) }}">
+    <br>
+
+    <div class="form-group">
+        <label>ระบบสั่งจองสั่งซื้อสินค้าที่ใช้</label>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option1" name="order_products_used[]" value="option1"
+                {{ in_array('option1', old('order_products_used', $selectedProducts)) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option1">ระบบตะกร้า</label>
         </div>
-
-        <!-- Alley -->
-        <div class="form-group">
-            <label for="alley">ตรอก/ซอย</label>
-            <input type="text" name="alley" id="alley" class="form-control" value="{{ old('alley', $form->alley) }}">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option2" name="order_products_used[]" value="option2"
+                {{ in_array('option2', old('order_products_used', $selectedProducts)) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option2">ระบบกรอกฟอร์ม</label>
         </div>
-
-        <!-- Road -->
-        <div class="form-group">
-            <label for="road">ถนน</label>
-            <input type="text" name="road" id="road" class="form-control" value="{{ old('road', $form->road) }}">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option3" name="order_products_used[]" value="option3"
+                {{ in_array('option3', old('order_products_used', $selectedProducts)) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option3">e-Mail</label>
         </div>
-
-        <!-- Subdistrict -->
-        <div class="form-group">
-            <label for="subdistrict">แขวง/ตำบล</label>
-            <input type="text" name="subdistrict" id="subdistrict" class="form-control" value="{{ old('subdistrict', $form->subdistrict) }}">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option4" name="order_products_used[]" value="option4"
+                {{ in_array('option4', old('order_products_used', $selectedProducts)) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option4">โทรศัพท์</label>
         </div>
-
-        <!-- District -->
-        <div class="form-group">
-            <label for="district">เขต/อำเภอ</label>
-            <input type="text" name="district" id="district" class="form-control" value="{{ old('district', $form->district) }}">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option5" name="order_products_used[]" value="option5"
+                {{ in_array('option5', old('order_products_used', $selectedProducts)) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option5">โทรสาร</label>
         </div>
-
-        <!-- Province -->
-        <div class="form-group">
-            <label for="province">จังหวัด</label>
-            <input type="text" name="province" id="province" class="form-control" value="{{ old('province', $form->province) }}">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option6" name="order_products_used[]" value="option6"
+                {{ in_array('option6', old('order_products_used', $selectedProducts)) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option6">อื่น ๆ</label>
+            <input type="text" class="form-control" id="order_products_used_detail" name="order_products_used_detail"
+                value="{{ old('order_products_used_detail', $form->order_products_used_detail ?? '') }}"
+                placeholder="เมื่อเลือก อื่นๆ โปรดระบุ สินค้าทุกอย่างที่คุณต้องการ">
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="phone_number">เบอร์โทรศัพท์</label>
-            <input type="text" name="phone_number" id="phone_number" class="form-control" value="{{ old('phone_number', $form->phone_number) }}">
+    <br>
+
+    <div class="form-group">
+        <label>วิธีการชำระเงิน</label>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option1" name="payment_method[]" value="option1"
+                {{ in_array('option1', old('payment_method', $selectedPaymentMethods)) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option1">ชำระเงินแบบออฟไลน</label>
         </div>
-
-        <br>
-
-        <!-- Food Distribution -->
-        <div class="form-group">
-            <label for="food_distribution">ขอยื่นคำขอรับใบอนุญาตประกอบกิจการ</label>
-            <input type="checkbox" name="food_distribution" id="food_distribution" value="yes" {{ old('food_distribution', $form->food_distribution ?? '') == 'yes' ? 'checked' : '' }}>
-            <input type="text" name="food_distribution_type" id="food_distribution_type" class="form-control" value="{{ old('food_distribution_type', $form->food_distribution_type) }}">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option2" name="payment_method[]" value="option2"
+                {{ in_array('option2', old('payment_method', $selectedPaymentMethods)) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option2">ชำระเงินออนไลน์ ผ่านบัตรเครดิต</label>
         </div>
-
-        <!-- Food Distribution Area -->
-        <div class="form-group">
-            <label for="food_distribution_area">โดยมีพื้นที่ประกอบการ</label>
-            <input type="text" name="food_distribution_area" id="food_distribution_area" class="form-control" value="{{ old('food_distribution_area', $form->food_distribution_area) }}">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option3" name="payment_method[]" value="option3"
+                {{ in_array('option3', old('payment_method', $selectedPaymentMethods)) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option3">ชำระเงินออนไลน์ ผ่านระบบ e-Banking</label>
         </div>
-
-        <br>
-
-        <!-- IT Dangerous -->
-        <div class="form-group">
-            <label for="it_dangerous">กิจการที่เป็นอันตรายต่อสุขภาพ ประเภท</label>
-            <input type="checkbox" name="it_dangerous" id="it_dangerous" value="yes" {{ old('it_dangerous', $form->it_dangerous ?? '') == 'yes' ? 'checked' : '' }}>
-            <input type="text" name="it_dangerous_type" id="it_dangerous_type" class="form-control" value="{{ old('it_dangerous_type', $form->it_dangerous_type) }}">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option4" name="payment_method[]" value="option4"
+                {{ in_array('option4', old('payment_method', $selectedPaymentMethods)) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option4">ชำระเงินออนไลน์ ผ่านตัวกลางชำระเงิน เช่น PayPal, PaySbuy เป็นต้น</label>
         </div>
-
-        <!-- IT There Are Workers -->
-        <div class="form-group">
-            <label for="it_there_are_workers">มีคนงาน</label>
-            <input type="number" name="it_there_are_workers" id="it_there_are_workers" class="form-control" value="{{ old('it_there_are_workers', $form->it_there_are_workers) }}">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option5" name="payment_method[]" value="option5"
+                {{ in_array('option5', old('payment_method', $selectedPaymentMethods)) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option5">อื่นๆ</label>
+            <input type="text" class="form-control" id="payment_method_detail" name="payment_method_detail"
+                value="{{ old('payment_method_detail', $form->payment_method_detail ?? '') }}"
+                placeholder="เมื่อเลือก อื่นๆ โปรดระบุ จ่ายเงินสดกับเจ้าของร้าน">
         </div>
+    </div>
 
-        <!-- IT Use Machinery Size -->
-        <div class="form-group">
-            <label for="it_use_machinery_size"> ใช้เครื่องจักรขนาด</label>
-            <input type="text" name="it_use_machinery_size" id="it_use_machinery_size" class="form-control" value="{{ old('it_use_machinery_size', $form->it_use_machinery_size) }}">
+    <br>
+
+    <div class="form-group">
+        <label>วิธีการส่งสินค้า</label>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option1" name="shipping_method[]" value="option1"
+                {{ in_array('option1', old('shipping_method', $selectedShippingMethods)) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option1">บริษัทขนส่ง</label>
         </div>
-
-        <br>
-
-        <!-- On Sale -->
-        <div class="form-group">
-            <label for="on_sale">กิจการตลาด ที่มีการจำาหน่าย</label>
-            <input type="checkbox" name="on_sale" id="on_sale" value="yes" {{ old('on_sale', $form->on_sale ?? '') == 'yes' ? 'checked' : '' }}>
-            <input type="text" name="on_sale_detail" id="on_sale_detail" class="form-control" value="{{ old('on_sale_detail', $form->on_sale_detail) }}">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option2" name="shipping_method[]" value="option2"
+                {{ in_array('option2', old('shipping_method', $selectedShippingMethods)) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option2">ไปรษณีย์</label>
         </div>
-
-        <br>
-
-        <!-- Public Health Products -->
-        <div class="form-group">
-            <label for="public_health_products"> กิจการจำหน่ายสินค้าในที่/ทางสาธารณสุข จำาหน่ายสินค้าประเภท</label>
-            <input type="checkbox" name="public_health_products" id="public_health_products" value="yes" {{ old('public_health_products', $form->public_health_products ?? '') == 'yes' ? 'checked' : '' }}>
-
-            <input type="text" name="public_health_products_detail" id="public_health_products_detail" class="form-control" value="{{ old('public_health_products_detail', $form->public_health_products_detail) }}">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option3" name="shipping_method[]" value="option3"
+                {{ in_array('option3', old('shipping_method', $selectedShippingMethods)) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option3">พนักงานส่งสินค้า</label>
         </div>
-
-        <!-- Public Health Products Area -->
-        <div class="form-group">
-            <label for="public_health_products_area">ณ บริเวณ</label>
-            <input type="text" name="public_health_products_area" id="public_health_products_area" class="form-control" value="{{ old('public_health_products_area', $form->public_health_products_area)}}">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option4" name="shipping_method[]" value="option4"
+                {{ in_array('option4', old('shipping_method', $selectedShippingMethods)) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option4">Download</label>
         </div>
-
-        <!-- Public Health Products Way -->
-        <div class="form-group">
-            <label for="public_health_products_way">โดยวิธีการ</label>
-            <input type="text" name="public_health_products_way" id="public_health_products_way" class="form-control" value="{{ old('public_health_products_way', $form->public_health_products_way)}}">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option5" name="shipping_method[]" value="option5"
+                {{ in_array('option5', old('shipping_method', $selectedShippingMethods)) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option5">e-Mail</label>
         </div>
-
-        <br>
-
-        <!-- Collection Service Business -->
-        <div class="form-group">
-            <label for="collection_service_business">กิจการรับทำาการเก็บ ขนหรือกำาจัดสิ่งปฏิกูลมูลฝอยโดยทำาเป็นธุรกิจ ประเภท</label>
-            <input type="checkbox" name="collection_service_business" id="collection_service_business" value="yes" {{ old('collection_service_business', $form->collection_service_business ?? '') == 'yes' ? 'checked' : '' }}>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="option6" name="shipping_method[]" value="option6"
+                {{ in_array('option6', old('shipping_method', $selectedShippingMethods)) ? 'checked' : '' }}>
+            <label class="form-check-label" for="option6">อื่นๆ</label>
+            <input type="text" class="form-control" id="shipping_method_detail" name="shipping_method_detail"
+                value="{{ old('shipping_method_detail', $form->shipping_method_detail ?? '') }}"
+                placeholder="เมื่อเลือก อื่นๆ โปรดระบุ ที่ร้านมีบริการส่งเอง">
         </div>
+    </div>
 
-        <!-- Waste Collection -->
-        <div class="form-group">
-            <label for="waste_collection">เก็บขนสิ่งปฏิกูลโดยมีแหล่งกำาจัดที่</label>
-            <input type="checkbox" name="waste_collection" id="waste_collection" value="yes">
-            <input type="text" name="waste_collection_detail" id="waste_collection_detail" class="form-control" value="{{ old('waste_collection_detail', $form->waste_collection_detail)}}">
-        </div>
+    <br>
 
-        <!-- Collect and Dispose Waste -->
-        <div class="form-group">
-            <label for="collect_and_dispose_waste"> เก็บขนและกำจัดสิ่งปฏิกูล โดยมีระบบกำาจัดอยู่ที่</label>
-            <input type="checkbox" name="collect_and_dispose_waste" id="collect_and_dispose_waste" value="yes" {{ old('collect_and_dispose_waste', $form->collect_and_dispose_waste ?? '') == 'yes' ? 'checked' : '' }}>
-            <input type="text" name="collect_and_dispose_detail" id="collect_and_dispose_detail" class="form-control" value="{{ old('collect_and_dispose_detail', $form->collect_and_dispose_detail)}}">
-        </div>
+    <div class="form-group">
+        <label for="capital_amount"> จำานวนเงินทุน (ที่ใช่ในการทำาพาณิชย์อิเล็กทรอนิกส์)</label>
+        <input type="text" class="form-control" id="capital_amount" name="capital_amount" value="{{ old('capital_amount', $form->capital_amount)}}">
+    </div>
 
-        <!-- Garbage Collection -->
-        <div class="form-group">
-            <label for="garbage_collection">เก็บขนมูลฝอย โดยมีแหล่งกำาจัดที่</label>
-            <input type="checkbox" name="garbage_collection" id="garbage_collection" value="yes" {{ old('garbage_collection', $form->garbage_collection ?? '') == 'yes' ? 'checked' : '' }}>
-            <input type="text" name="garbage_collection_detail" id="garbage_collection_detail" class="form-control" value="{{ old('garbage_collection_detail', $form->garbage_collection_detail)}}">
-        </div>
+    <div class="form-group">
+        <label for="telephone_number"> หมายเลขโทรศัพท์</label>
+        <input type="text" class="form-control" id="telephone_number" name="telephone_number" required value="{{ old('telephone_number', $form->telephone_number)}}">
+    </div>
 
-        <!-- Collect and Dispose of Waste -->
-        <div class="form-group">
-            <label for="collect_and_dispose_of_waste">เก็บขนและกำาจัดมูลฝอย โดยมีแหล่งกำาจัดที่</label>
-            <input type="checkbox" name="collect_and_dispose_of_waste" id="collect_and_dispose_of_waste" value="yes" {{ old('collect_and_dispose_of_waste', $form->collect_and_dispose_of_waste ?? '') == 'yes' ? 'checked' : '' }}>
-            <input type="text" name="collect_and_dispose_of_waste_detail" id="collect_and_dispose_of_waste_detail" class="form-control" value="{{ old('collect_and_dispose_of_waste_detail', $form->collect_and_dispose_of_waste_detail)}}">
-        </div>
+    <div class="form-group">
+        <label for="fax_number"> หมายเลขโทรสาร</label>
+        <input type="text" class="form-control" id="fax_number" name="fax_number" value="{{ old('fax_number', $form->fax_number)}}">
+    </div>
 
-        <!-- Local Officials -->
-        <div class="form-group">
-            <label for="local_officials">ต่อ ( เจ้าพนักงานท้องถิ่น )</label>
-            <input type="text" name="local_officials" id="local_officials" class="form-control" value="{{ old('local_officials', $form->local_officials)}}">
-        </div>
+    <div class="form-group">
+        <label for="e_mail"> e-Mail (ที่ใช้ในการขอรับ Source Code)</label>
+        <input type="text" class="form-control" id="e_mail" name="e_mail" required value="{{ old('e_mail', $form->e_mail)}}">
+    </div>
 
-        <!-- Copy of ID Card -->
-        <div class="form-group">
-            <label for="copy_of_ID_card">สำเนาบัตรประจำาตัว</label>
-            <input type="text" name="copy_of_ID_card" id="copy_of_ID_card" class="form-control" value="{{ old('copy_of_ID_card', $form->copy_of_ID_card)}}">
-        </div>
+    <div class="form-group">
+        <label for="manager_name">ชื่อผู้จัดการ</label>
+        <input type="text" class="form-control" id="manager_name" name="manager_name" required value="{{ old('manager_name', $form->manager_name)}}">
+    </div>
 
-        <!-- Evidence of Permission -->
-        <div class="form-group">
-            <label for="evidence_of_permission">หลักฐานการอนุญาตตามกฎหมายอื่นที่เกี่ยวข้อง คือ</label>
-            <input type="text" name="evidence_of_permission" id="evidence_of_permission" class="form-control" value="{{ old('evidence_of_permission', $form->evidence_of_permission)}}">
-        </div>
+    <div class="form-group">
+        <label for="registered_office"> สำานักงานที่จดทะเบียน</label>
+        <input type="text" class="form-control" id="registered_office" name="registered_office" required value="{{ old('registered_office', $form->registered_office)}}">
+    </div>
 
-        <!-- Evidence of Permission Detail 1 -->
-        <div class="form-group">
-            <label for="evidence_of_permission_detail_1">3.1</label>
-            <input type="text" name="evidence_of_permission_detail_1" id="evidence_of_permission_detail_1" class="form-control" value="{{ old('evidence_of_permission_detail_1', $form->evidence_of_permission_detail_1)}}">
-        </div>
+    <br>
 
-        <!-- Evidence of Permission Detail 2 -->
-        <div class="form-group">
-            <label for="evidence_of_permission_detail_2">3.2</label>
-            <input type="text" name="evidence_of_permission_detail_2" id="evidence_of_permission_detail_2" class="form-control" value="{{ old('evidence_of_permission_detail_2', $form->evidence_of_permission_detail_2)}}">
-        </div>
-
-        <!-- Detail 1 -->
-        <div class="form-group">
-            <label for="detail_1">4</label>
-            <input type="text" name="detail_1" id="detail_1" class="form-control" value="{{ old('detail_1', $form->detail_1)}}">
-        </div>
-
-        <!-- Detail 2 -->
-        <div class="form-group">
-            <label for="detail_2">5</label>
-            <input type="text" name="detail_2" id="detail_2" class="form-control" value="{{ old('detail_2', $form->detail_2)}}">
-        </div>
-
-        <br>
-
-        <div class="mb-3">
-            <h3>ไฟล์แนบปัจจุบัน</h3>
-            <div class="list-group">
-                @foreach ($form->files as $attachment)
-                    <div class="list-group-item d-flex flex-wrap justify-content-between align-items-center">
-                        <a href="{{ asset('storage/' . $attachment->file_path) }}" target="_blank"
-                            class="text-truncate me-3" style="max-width: calc(100% - 100px);">
-                            {{ basename($attachment->file_path) }}
-                        </a>
-                        <div class="form-check">
-                            <input type="checkbox" name="delete_attachments[]" value="{{ $attachment->id }}"
-                                class="form-check-input" id="delete_attachments_{{ $attachment->id }}">
-                            <label class="form-check-label" for="delete_attachments_{{ $attachment->id }}">
-                                ลบไฟล์นี้
-                            </label>
-                        </div>
-                    </div>
-                @endforeach
+    <div class="mb-3">
+        <h3>ไฟล์แนบปัจจุบัน</h3>
+        <div class="list-group">
+            @foreach ($form->files as $attachment)
+            <div class="list-group-item d-flex flex-wrap justify-content-between align-items-center">
+                <a href="{{ asset('storage/' . $attachment->file_path) }}" target="_blank" class="text-truncate me-3" style="max-width: calc(100% - 100px);">
+                    {{ basename($attachment->file_path) }}
+                </a>
+                <div class="form-check">
+                    <input type="checkbox" name="delete_attachments[]" value="{{ $attachment->id }}" class="form-check-input" id="delete_attachments_{{ $attachment->id }}">
+                    <label class="form-check-label" for="delete_attachments_{{ $attachment->id }}">
+                        ลบไฟล์นี้
+                    </label>
+                </div>
             </div>
+            @endforeach
         </div>
+    </div>
 
-        <hr>
+    <hr>
 
-        <div>
-            <h3>เพิ่มแนบไฟล์</h3>
-            <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
-            <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
-            <!-- แสดงรายการไฟล์ที่แนบ -->
-            <div id="file-list" class="mt-1">
-                <div class="d-flex flex-wrap gap-3"></div>
-            </div>
+    <div>
+        <h3>เพิ่มแนบไฟล์</h3>
+        <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
+        <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
+        <!-- แสดงรายการไฟล์ที่แนบ -->
+        <div id="file-list" class="mt-1">
+            <div class="d-flex flex-wrap gap-3"></div>
         </div>
+    </div>
 
-        <div class="text-center w-full border">
-            <button type="submit" class="btn btn-primary w-100 py-1"><i
-                    class="fa-solid fa-file-arrow-up me-2"></i></i>
-                ส่งฟอร์มข้อมูล</button>
-        </div>
-    </form>
+    <div class="text-center w-full border">
+        <button type="submit" class="btn btn-primary w-100 py-1"><i class="fa-solid fa-file-arrow-up me-2"></i></i>
+            ส่งฟอร์มข้อมูล</button>
+    </div>
+</form>
 
-    <script src="{{ asset('js/multipart_files.js') }}"></script>
+
+<script src="{{ asset('js/multipart_files.js') }}"></script>
 
 @endsection

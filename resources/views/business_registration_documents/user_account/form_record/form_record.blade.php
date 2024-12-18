@@ -32,7 +32,7 @@
                             @endif
                         </td>
                         <td>
-                            <a href="{{ route('LicenseShowFormEdit', $form->id) }}"
+                            <a href="{{ route('BusinessDocShowFormEdit', $form->id) }}"
                                 class="btn btn-warning btn-sm text-white"
                                 style="font-size:21px; padding-top:5px; padding-bottom:5px;"><i
                                     class="bi bi-pencil-square"></i></a>
@@ -123,7 +123,7 @@
                                     @endforelse
                                 </tbody>
                             </table>
-                            <form action="{{ route('LicenseUserReply', $form->id) }}" method="POST">
+                            <form action="{{ route('BusinessDocUserReply', $form->id) }}" method="POST">
                                 @csrf
                                 <div class="mb-3">
                                     <label for="message" class="form-label">ข้อความตอบกลับ</label>
