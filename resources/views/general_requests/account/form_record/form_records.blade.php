@@ -1,12 +1,14 @@
 @extends('dashboard.layout.users.layout_users')
 @section('user_content')
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+
     <div class="container">
         <h3 class="text-center">คำร้องทั่วไป <br>
             <h2 class="text-center">ตารางแสดงข้อมูลฟอร์มที่ส่งเข้ามา</h2>
         </h3> <br>
 
-        <table class="table table-bordered table-striped">
-            <thead class="text-center">
+        <table class="table table-bordered table-striped" id="data_table">
+            <thead class="text-center" >
                 <tr>
                     <th>วันที่ส่ง</th>
                     <th>ชื่อผู้ส่งฟอร์ม</th>
@@ -18,7 +20,7 @@
             <tbody class="text-center">
                 @foreach ($forms as $form)
                     <tr>
-                        <td>{{ $form->created_at->format('d/m/Y') }}</td>
+                        <td class="date-column">{{ $form->created_at->format('Y-m-d') }}</td>
                         <td>{{ $form->user ? $form->user->name : 'ผู้ใช้งานทั่วไป' }}</td>
                         <td>{{ $form->admin_name_verifier }}</td>
                         <td>
@@ -136,4 +138,8 @@
         @endforeach
 
     </div>
+    <script src="{{ asset('js/general_requests.js') }}"></script>
 @endsection
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js" defer></script>

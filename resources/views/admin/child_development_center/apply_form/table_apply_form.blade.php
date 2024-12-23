@@ -33,7 +33,7 @@
         <tbody class="text-center">
             @foreach($forms as $form)
             <tr>
-                <td>{{ $form->created_at->format('d/m/Y') }}</td>
+                <td class="date-column">{{ $form->created_at->format('Y-m-d') }}</td>
                 <td>{{ $form->user ? $form->user->name : 'ผู้ใช้งานทั่วไป' }}</td>
                 <td>{{ $form->admin_name_verifier}}</td>
                 <td>
