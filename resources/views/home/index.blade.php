@@ -33,7 +33,7 @@
                     </a>
                 </div>
                 <div class="half-border-right">
-                    <a href="{{route('TradeRegistryFormPage')}}" class="buttom-cool-right fs-2 font-sarabun">
+                    <a href="{{ route('TradeRegistryFormPage') }}" class="buttom-cool-right fs-2 font-sarabun">
                         <span class="circle">
                             <img src="{{ asset('images/layout-index/procurement.png') }}" alt="Icon" />
                         </span>
@@ -53,8 +53,8 @@
                     </a>
                 </div>
                 <div class="half-border-right-i">
-                    <a href="{{route('UserLicenseFormPage')}}" class="buttom-cool-right fs-2 font-sarabun fs-4 text-end pe-3"
-                        style="line-height: 1.2;">
+                    <a href="{{ route('UserLicenseFormPage') }}"
+                        class="buttom-cool-right fs-2 font-sarabun fs-4 text-end pe-3" style="line-height: 1.2;">
                         <span class="circle">
                             <img src="{{ asset('images/layout-index/earth.png') }}" alt="Icon" />
                         </span>
@@ -64,8 +64,8 @@
                     </a>
                 </div>
                 <div class="half-border-left-ii">
-                    <a href="{{ route('UserCertificationFormPage') }}" class="buttom-cool-left fs-4 font-sarabun text-center"
-                        style="line-height: 1.2;">
+                    <a href="{{ route('UserCertificationFormPage') }}"
+                        class="buttom-cool-left fs-4 font-sarabun text-center" style="line-height: 1.2;">
                         <span class="circle">
                             <img src="{{ asset('images/layout-index/hook.png') }}" alt="Icon" />
                         </span>
@@ -89,7 +89,8 @@
                     </a>
                 </div>
                 <div class="half-border-right">
-                    <a href="{{route('ChildApplyPage')}}" class="buttom-cool-right fs-4 font-sarabun text-end" style="line-height: 1.2;">
+                    <a href="{{ route('ChildApplyPage') }}" class="buttom-cool-right fs-4 font-sarabun text-end"
+                        style="line-height: 1.2;">
                         <span class="circle">
                             <img src="{{ asset('images/layout-index/cv.png') }}" alt="Icon" />
                         </span>
@@ -99,8 +100,8 @@
                     </a>
                 </div>
                 <div class="half-border-left-i">
-                    <a href="{{ route('ElderlyAllowanceFormPage') }}" class="buttom-cool-left fs-3 font-sarabun text-center"
-                        style="line-height: 1.2;">
+                    <a href="{{ route('ElderlyAllowanceFormPage') }}"
+                        class="buttom-cool-left fs-3 font-sarabun text-center" style="line-height: 1.2;">
                         <span class="circle">
                             <img src="{{ asset('images/layout-index/old-people.png') }}" alt="Icon" />
                         </span>
@@ -109,7 +110,8 @@
                     </a>
                 </div>
                 <div class="half-border-right-i">
-                    <a href="{{route('DisabilityFormPage')}}" class="buttom-cool-right font-sarabun fs-4 text-end" style="line-height: 1.2;">
+                    <a href="{{ route('DisabilityFormPage') }}" class="buttom-cool-right font-sarabun fs-4 text-end"
+                        style="line-height: 1.2;">
                         <span class="circle">
                             <img src="{{ asset('images/layout-index/disabled.png') }}" alt="Icon" />
                         </span>
@@ -119,13 +121,13 @@
                     </a>
                 </div>
                 <div class="half-border-left-ii">
-                    <a href="{{ route('ReceiveAssistanceFormPage') }}" class="buttom-cool-left fs-4 font-sarabun text-center"
-                        style="line-height: 1.2;">
+                    <a href="{{ route('ReceiveAssistanceFormPage') }}"
+                        class="buttom-cool-left fs-4 font-sarabun text-start" style="line-height: 1.2;">
                         <span class="circle">
                             <img src="{{ asset('images/layout-index/money.png') }}" alt="Icon" />
                         </span>
                         <span class="squre"></span>
-                        แบบคำขอรับเงินสงเคราะห์(ผู้ป่วยเอดส์)
+                        แบบคำขอรับเงินสงเคราะห์<br>(ผู้ป่วยเอดส์)
                     </a>
                 </div>
             </div>
