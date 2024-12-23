@@ -38,7 +38,7 @@
                             <img src="{{ asset('images/layout-index/procurement.png') }}" alt="Icon" />
                         </span>
                         <span class="squre"></span>
-                        คำร้องทะเบียนพิชย์
+                        คำร้องทะเบียนพาณิชย์
                     </a>
                 </div>
                 <div class="half-border-left-i">
@@ -59,7 +59,7 @@
                             <img src="{{ asset('images/layout-index/earth.png') }}" alt="Icon" />
                         </span>
                         <span class="squre"></span>
-                        แบบคำขอรับใบอณุญาต <br class="d-block d-sm-none d-lg-block">
+                        แบบคำขอรับใบอนุญาต <br class="d-block d-sm-none d-lg-block">
                         (กองสาธารณสุขและสิ่งแวดล้อม)
                     </a>
                 </div>
@@ -114,7 +114,7 @@
                             <img src="{{ asset('images/layout-index/disabled.png') }}" alt="Icon" />
                         </span>
                         <span class="squre"></span>
-                        แบบคำขอส่งทะเบียน<br class="d-block d-sm-none d-lg-block">
+                        แบบคำขอลงทะเบียน<br class="d-block d-sm-none d-lg-block">
                         รับเบี้ยความพิการ
                     </a>
                 </div>
@@ -125,7 +125,7 @@
                             <img src="{{ asset('images/layout-index/money.png') }}" alt="Icon" />
                         </span>
                         <span class="squre"></span>
-                        แบบคำขอรับเงินสงเคราะห์
+                        แบบคำขอรับเงินสงเคราะห์(ผู้ป่วยเอดส์)
                     </a>
                 </div>
             </div>
