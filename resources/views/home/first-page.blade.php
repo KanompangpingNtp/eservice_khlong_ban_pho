@@ -1,5 +1,5 @@
 @extends('home.layouts.layout-home')
-@section('title', 'First Page')
+@section('title', 'องค์การบริหารส่วนตำบล คลองบ้านโพธิ์')
 
 @section('content')
     <div class="d-flex justify-content-center align-content-center column-gap-5">
