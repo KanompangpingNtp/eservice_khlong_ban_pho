@@ -143,7 +143,7 @@
 
     <div class="regis_number">หน้า 1 จาก 3
     </div>
-    <div class="regis_number">เทศบาลเมืองต้นแบบ ๔.๐
+    <div class="regis_number">องค์การบริหารส่วนตำบลคลองบ้านโพธิ์
     </div>
     <div class="container">
         <div class="box-2 font-sarabun-bold" style="font-size: 23px;">
@@ -280,7 +280,7 @@
         <span class="dotted-line" style="width: 30%; text-align: center;">{{$form->it_the_land_of}}</span>
     </div>
     <div class="footer font-sarabun-bold">
-        <p>เทศบาลเมืองต้นแบบ ๔.๐ www.eservice-default.go.th date&time</p>
+        <p>องค์การบริหารส่วนตำบลคลองบ้านโพธิ์ https://public.es.demo.gmskysmartcity.com/</p>
     </div>
     {{-- new page --}}
     <div style="page-break-before: always;"></div>
@@ -417,7 +417,7 @@
         </div>
     </div>
     <div class="footer font-sarabun-bold">
-        <p>เทศบาลเมืองต้นแบบ ๔.๐ www.eservice-default.go.th date&time</p>
+        <p>องค์การบริหารส่วนตำบลคลองบ้านโพธิ์ https://public.es.demo.gmskysmartcity.com/</p>
     </div>
     {{-- new page --}}
     <div style="page-break-before: always;"></div>
@@ -482,7 +482,7 @@
         <span class="dotted-line" style="width: 10%; text-align: center; border-bottom: 2px dotted black;"> </span>
     </div>
     <div class="footer font-sarabun-bold">
-        <p>เทศบาลเมืองต้นแบบ ๔.๐ www.eservice-default.go.th date&time</p>
+        <p>องค์การบริหารส่วนตำบลคลองบ้านโพธิ์ https://public.es.demo.gmskysmartcity.com/</p>
     </div>
 </body>
 

@@ -97,7 +97,7 @@
 
     <div class="regis_number">หน้า 1 จาก 1
     </div>
-    <div class="regis_number">เทศบาลเมืองต้นแบบ ๔.๐
+    <div class="regis_number">องค์การบริหารส่วนตำบลคลองบ้านโพธิ์
     </div>
     <div class="title_doc" style="text-align:center;">
         คำร้องทะเบียนพาณิชย์
@@ -115,11 +115,11 @@
                         style="width: 15%; text-align: center; line-height: 1; margin-left:10px; border-bottom: 2px dotted black;"> </span>/<span
                         class="dotted-line" style="width: 15%; text-align: center; line-height: 1; border-bottom: 2px dotted black;"> </span>/<span
                         class="dotted-line" style="width: 15%; text-align: center; line-height: 1; border-bottom: 2px dotted black;"> </span></td>
-                <td style="text-align: right;">อําเภอ อําเภอตัวอย่าง ๔.๐</td>
+                <td style="text-align: right;">องค์การบริหารส่วนตำบลคลองบ้านโพธิ์</td>
             </tr>
             <tr>
                 <td style="text-align: left;">เรื่อง คําร้องทะเบียนพาณิชย์ </td>
-                <td style="text-align: right;">จังหวัด กรุงเทพมหานคร</td>
+                <td style="text-align: right;">จังหวัด ฉะเชิงเทรา</td>
             </tr>
         </table>
     </div>
@@ -196,7 +196,7 @@
         <span>ให้ลงลายมือชื่อผู้ยื่นคําร้องและผู้เขียนข้างท้ายคําร้องด้วย</span>
     </div>
     <div class="footer font-sarabun-bold">
-        <p>เทศบลเมืองต้นแบบ ๔.๐ www.eservice-default.go.th date&time</p>
+        <p>องค์การบริหารส่วนตำบลคลองบ้านโพธิ์ https://public.es.demo.gmskysmartcity.com/</p>
     </div>
 
 </body>

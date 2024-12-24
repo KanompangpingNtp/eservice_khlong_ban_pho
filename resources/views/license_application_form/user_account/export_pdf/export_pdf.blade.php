@@ -108,7 +108,7 @@
 
     <div class="regis_number">หน้า 1 จาก 3
     </div>
-    <div class="regis_number">เทศบาลเมืองต้นแบบ ๔.๐
+    <div class="regis_number">องค์การบริหารส่วนตำบลคลองบ้านโพธิ์
     </div>
     <div class="title_doc" style="text-align:center;">
         แบบคำขอรับใบอนุญาต
@@ -237,13 +237,13 @@
     </div>
 
     <div class="footer font-sarabun-bold">
-        <p>เทศบลเมืองต้นแบบ ๔.๐ www.eservice-default.go.th date&time</p>
+        <p>องค์การบริหารส่วนตำบลคลองบ้านโพธิ์ https://public.es.demo.gmskysmartcity.com/</p>
     </div>
     {{-- new page --}}
     <div style="page-break-before: always;"></div>
     <div class="regis_number">หน้า 2 จาก 3
     </div>
-    <div class="regis_number">เทศบาลเมืองต้นแบบ ๔.๐
+    <div class="regis_number">องค์การบริหารส่วนตำบลคลองบ้านโพธิ์
     </div>
 
     <div class="box_text" style="text-align: left; margin-left: 5rem; margin-top:1rem;">
@@ -301,14 +301,14 @@
     </div>
 
     <div class="footer font-sarabun-bold">
-        <p>เทศบลเมืองต้นแบบ ๔.๐ www.eservice-default.go.th date&time</p>
+        <p>องค์การบริหารส่วนตำบลคลองบ้านโพธิ์ https://public.es.demo.gmskysmartcity.com/</p>
     </div>
 
     {{-- new page --}}
     <div style="page-break-before: always;"></div>
     <div class="regis_number">หน้า 3 จาก 3
     </div>
-    <div class="regis_number">เทศบาลเมืองต้นแบบ ๔.๐
+    <div class="regis_number">องค์การบริหารส่วนตำบลคลองบ้านโพธิ์
     </div>
 
     <div class="box_text" style=" margin-top:2rem;">
@@ -319,38 +319,38 @@
     </div>
     <div class="box_text" style="text-align: left; margin-top:1rem;">
         <span style="color:black; margin-left:5rem;"><input type="checkbox">เห็นสมควรอนุญาต
-            และควรกำหนดเงื่อนไขดังนี้</span><span class="dotted-line" style="width: 49%; text-align: center;"> data
+            และควรกำหนดเงื่อนไขดังนี้</span><span class="dotted-line" style="width: 49%; text-align: center; border-bottom: 2px dotted black;">
         </span>
-        <span class="dotted-line" style="width: 100%; text-align: center;"> data </span>
-        <span class="dotted-line" style="width: 100%; text-align: center;"> data </span>
+        <span class="dotted-line" style="width: 100%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">  </span>
+        <span class="dotted-line" style="width: 100%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">  </span>
     </div>
     <div class="box_text" style="text-align: left; margin-top:1rem;">
         <span style="color:black; margin-left:5rem;"><input type="checkbox">เห็นสมควรไม่อนุญาต เพราะ</span><span
-            class="dotted-line" style="width: 63%; text-align: center;"> data
+            class="dotted-line" style="width: 63%; text-align: center; border-bottom: 2px dotted black;">
         </span>
-        <span class="dotted-line" style="width: 100%; text-align: center;"> data </span>
-        <span class="dotted-line" style="width: 100%; text-align: center;"> data </span>
+        <span class="dotted-line" style="width: 100%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">  </span>
+        <span class="dotted-line" style="width: 100%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">  </span>
     </div>
 
     <div class="box_text" style="text-align: right; margin-top:4rem;">
         <span>(ลงชื่อ)</span>
-        <span class="dotted-line" style="width: 35%; text-align: center;"> data</span>
+        <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black;"> </span>
         <span>เจ้าพนักงานสาธารณสุข</span>
         <div style="margin-right: 8rem;">
             <span>(</span>
-            <span class="dotted-line" style="width: 40%; text-align: center;"> data </span>
+            <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">  </span>
             <span>)</span>
         </div>
     </div>
     <div class="box_text" style="text-align: right;">
         <span>ตำแหน่ง</span>
-        <span class="dotted-line" style="width: 35%; text-align: center; margin-right: 7.5rem;"> data</span>
+        <span class="dotted-line" style="width: 35%; text-align: center; margin-right: 7.5rem; border-bottom: 2px dotted black; margin-top:20px;"> </span>
     </div>
     <div class="box_text" style="text-align: right;">
         <span>วันที่</span>
-        <span class="dotted-line" style="width: 10%; text-align: center; "> data</span> /<span class="dotted-line"
-            style="width: 12%; text-align: center;"> data</span>/<span class="dotted-line"
-            style="width: 12%; text-align: center; margin-right: 7rem;"> data</span>
+        <span class="dotted-line" style="width: 10%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"> </span> /<span class="dotted-line"
+            style="width: 12%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"> </span>/<span class="dotted-line"
+            style="width: 12%; text-align: center; margin-right: 7rem; border-bottom: 2px dotted black; margin-top:20px;"> </span>
     </div>
 
     <div class="box_text font-sarabun-bold"
@@ -364,26 +364,26 @@
         </div>
         <div class="box_text" style="text-align: right; margin-top:4rem;">
             <span>(ลงชื่อ)</span>
-            <span class="dotted-line" style="width: 35%; text-align: center;"> data</span>
+            <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black;"> </span>
             <span>เจ้าพนักงานท้องถิ่น</span>
             <div style="margin-right: 6rem;">
                 <span>(</span>
-                <span class="dotted-line" style="width: 40%; text-align: center;"> data </span>
+                <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">  </span>
                 <span>)</span>
             </div>
         </div>
         <div class="box_text" style="text-align: right;">
             <span>ตำแหน่ง</span>
-            <span class="dotted-line" style="width: 25%; text-align: center; "> data</span>
+            <span class="dotted-line" style="width: 25%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"> </span>
             <span>วันที่</span>
-            <span class="dotted-line" style="width: 10%; text-align: center; "> data</span> /<span
-                class="dotted-line" style="width: 10%; text-align: center;"> data</span>/<span class="dotted-line"
-                style="width: 10%; text-align: center;"> data</span>
+            <span class="dotted-line" style="width: 10%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"> </span> /<span
+                class="dotted-line" style="width: 10%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"> </span>/<span class="dotted-line"
+                style="width: 10%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"> </span>
         </div>
     </div>
 
     <div class="footer font-sarabun-bold">
-        <p>เทศบลเมืองต้นแบบ ๔.๐ www.eservice-default.go.th date&time</p>
+        <p>องค์การบริหารส่วนตำบลคลองบ้านโพธิ์ https://public.es.demo.gmskysmartcity.com/</p>
     </div>
 </body>
 
