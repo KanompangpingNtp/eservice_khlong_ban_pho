@@ -561,10 +561,10 @@
 
     <div class="box_text" style="margin-top: 5rem;">
         <span>ยื่นแบบคำขอลงทะเบียนเมื่อวันที่</span><span class="dotted-line" style="width: 20%; text-align: center;">
-            data
+            {{$day}}
         </span>
-        <span>เดือน</span><span class="dotted-line" style="width: 25%; text-align: center;"> data
-        </span><span>พ.ศ.</span><span class="dotted-line" style="width: 20%; text-align: center;"> data
+        <span>เดือน</span><span class="dotted-line" style="width: 25%; text-align: center;"> {{$month}}
+        </span><span>พ.ศ.</span><span class="dotted-line" style="width: 20%; text-align: center;"> {{$year}}
     </div>
     <div class="box_text" style="margin-left: 3rem;">
         <span>การลงทะเบียนครั้งนี้ เพื่อขอรับเงินเบี้ยความพิการ ประจำปีงบประมาณ พ.ศ.</span><span class="dotted-line" style="width: 25%; text-align: center; border-bottom: 2px dotted black;">

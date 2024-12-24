@@ -113,13 +113,14 @@
         .checkbox-item label {
             flex: 1;
         }
+
     </style>
 </head>
 
 <body>
     <div class="regis_number">หน้า 1 จาก 2
     </div>
-    <div class="regis_number">เทศบาลเมืองต้นแบบ ๔.๐
+    <div class="regis_number">องค์การบริหารส่วนตำบลคลองบ้านโพธิ์
     </div>
 
     <div class="box_text" style="border: 2px solid black; position: relative;">
@@ -475,13 +476,8 @@
         </tbody>
     </table>
     <div class="footer font-sarabun-bold">
-        <p>เทศบลเมืองต้นแบบ ๔.๐ www.eservice-default.go.th date&time</p>
+        <p>องค์การบริหารส่วนตำบลคลองบ้านโพธิ์ https://public.es.demo.gmskysmartcity.com/</p>
     </div>
-
-
-
-
-
 
 </body>
 
