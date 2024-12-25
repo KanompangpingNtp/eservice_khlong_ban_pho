@@ -16,7 +16,6 @@ use App\Models\BuildingChange;
 
 class EntryNotificationController extends Controller
 {
-    //
     public function AdminEntryNotification()
     {
         $GeneralRequests = GrForm::where('status', 1)->count();
