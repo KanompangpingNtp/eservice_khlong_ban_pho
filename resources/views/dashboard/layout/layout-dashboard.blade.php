@@ -246,12 +246,16 @@
                 </li>
             </ul>
         </div> --}}
+
         <div id="sidebar" class="sidebar">
-            <h3>GM SKY</h3>
+            <h3>สำหรับแอดมิน</h3>
             <button id="toggle-sidebars" class="btn btn-outline-light me-3 d-md-none">
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('AdminEntryNotification')}}">แจ้งเตือนฟอร์ม</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('TablePages') }}">คำร้องทั่วไป</a>
                 </li>
@@ -285,7 +289,6 @@
                 </li>
             </ul>
         </div>
-
 
         <!-- Main Content Area -->
         <div class="flex-grow-1">

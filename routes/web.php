@@ -22,6 +22,7 @@ use App\Http\Controllers\UserBusinessDocController;
 use App\Http\Controllers\AdminBusinessDocController;
 use App\Http\Controllers\UserBuildingChangeController;
 use App\Http\Controllers\AdminBuildingChangeController;
+use App\Http\Controllers\EntryNotificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -90,6 +91,8 @@ Route::post('/login', [AuthController::class, 'Login'])->name('Login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware(['admin'])->group(function () {
+    Route::get('/AdminEntryNotification', [EntryNotificationController::class, 'AdminEntryNotification'])->name('AdminEntryNotification');
+
     //admin GeneralRequests
     Route::get('/TablePages', [AdminGeneralRequestsController::class, 'TablePages'])->name('TablePages');
     Route::get('/TablePages/ShowFormEdit/{id}', [AdminGeneralRequestsController::class, 'ShowFormEdit'])->name('ShowFormEdit');
