@@ -50,7 +50,8 @@
                             <div class="icon mb-3 text-primary">
                                 {{-- <p class="font-sarabun-bold" style="font-size: 55px;">{{ $GeneralRequests }}</p> --}}
 
-                                <p class="font-sarabun-bold" style="font-size: 55px;">{{ $GeneralRequests ? $GeneralRequests. ' ฟอร์ม' : 'ไม่มีฟอร์มที่ถูกส่งเข้ามา' }}</p>
+                                <p class="font-sarabun-bold" style="font-size: 55px;">
+                                    {{ $GeneralRequests ? $GeneralRequests . ' ฟอร์ม' : ' 0 ฟอร์ม' }}</p>
                             </div>
                             <h5 class="card-title">คำร้องทั่วไป</h5>
                             <a href="{{ route('TablePages') }}" class="btn btn-primary fs-4 w-100">เช็คคำร้อง</a>
@@ -64,11 +65,11 @@
                         <div class="card-body text-center">
                             <div class="icon mb-3 text-success">
                                 {{-- <p class="font-sarabun-bold" style="font-size: 55px;">{{$Disability}}</p> --}}
-                                <p class="font-sarabun-bold" style="font-size: 55px;">{{ $Disability ? $Disability . ' ฟอร์ม' : 'ไม่มีฟอร์มที่ถูกส่งเข้ามา' }}</p>
+                                <p class="font-sarabun-bold" style="font-size: 55px;">
+                                    {{ $Disability ? $Disability . ' ฟอร์ม' : ' 0 ฟอร์ม' }}</p>
                             </div>
                             <h5 class="card-title">แบบคำขอส่งทะเบียนรับเบี้ยความพิการ</h5>
-                            <a href="{{ route('TableDisabilityPages') }}"
-                                class="btn btn-success fs-4 w-100">เช็คคำร้อง</a>
+                            <a href="{{ route('TableDisabilityPages') }}" class="btn btn-success fs-4 w-100">เช็คคำร้อง</a>
                         </div>
                     </div>
                 </div>
@@ -79,10 +80,12 @@
                         <div class="card-body text-center">
                             <div class="icon mb-3 text-warning">
                                 {{-- <p class="font-sarabun-bold" style="font-size: 55px;">{{$ChildApply}}</p> --}}
-                                <p class="font-sarabun-bold" style="font-size: 55px;">{{ $ChildApply ? $ChildApply. ' ฟอร์ม' : 'ไม่มีฟอร์มที่ถูกส่งเข้ามา' }}</p>
+                                <p class="font-sarabun-bold" style="font-size: 55px;">
+                                    {{ $ChildApply ? $ChildApply . ' ฟอร์ม' : ' 0 ฟอร์ม' }}</p>
                             </div>
                             <h5 class="card-title">แบบฟอร์มใบสมัครเรียนศูนย์พัฒนาเด็กเล็ก</h5>
-                            <a href="{{ route('TableChildApplyAdminPages') }}" class="btn btn-warning fs-4 w-100">เช็คคำร้อง</a>
+                            <a href="{{ route('TableChildApplyAdminPages') }}"
+                                class="btn btn-warning fs-4 w-100">เช็คคำร้อง</a>
                         </div>
                     </div>
                 </div>
@@ -93,7 +96,8 @@
                         <div class="card-body text-center">
                             <div class="icon mb-3 text-info">
                                 {{-- <p class="font-sarabun-bold" style="font-size: 55px;">{{$ElderlyAllowance}}</p> --}}
-                                <p class="font-sarabun-bold" style="font-size: 55px;">{{ $ElderlyAllowance ? $ElderlyAllowance. ' ฟอร์ม' : 'ไม่มีฟอร์มที่ถูกส่งเข้ามา' }}</p>
+                                <p class="font-sarabun-bold" style="font-size: 55px;">
+                                    {{ $ElderlyAllowance ? $ElderlyAllowance . ' ฟอร์ม' : ' 0 ฟอร์ม' }}</p>
                             </div>
                             <h5 class="card-title">แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอายุ</h5>
                             <a href="{{ route('TableElderlyAllowancePages') }}"
@@ -108,7 +112,9 @@
                         <div class="card-body text-center">
                             <div class="icon mb-3 text-danger">
                                 {{-- <p class="font-sarabun-bold" style="font-size: 55px;"> {{$ReceiveAssistance}}</p> --}}
-                                <p class="font-sarabun-bold" style="font-size: 55px;">{{ $ReceiveAssistance ? $ReceiveAssistance. ' ฟอร์ม' : 'ไม่มีฟอร์มที่ถูกส่งเข้ามา' }}</p>
+                                <p class="font-sarabun-bold" style="font-size: 55px;">
+                                    {{ $ReceiveAssistance ? $ReceiveAssistance . ' ฟอร์ม' : ' 0 ฟอร์ม' }}
+                                </p>
                             </div>
                             <h5 class="card-title">แบบคำขอรับเงินสงเคราะห์</h5>
                             <a href="{{ route('TableReceiveAssistanceAdminPages') }}"
@@ -123,7 +129,8 @@
                         <div class="card-body text-center">
                             <div class="icon mb-3 text-primary">
                                 {{-- <p class="font-sarabun-bold" style="font-size: 55px;">{{$TradeRegistry}}</p> --}}
-                                <p class="font-sarabun-bold" style="font-size: 55px;">{{ $TradeRegistry ? $TradeRegistry. ' ฟอร์ม' : 'ไม่มีฟอร์มที่ถูกส่งเข้ามา' }}</p>
+                                <p class="font-sarabun-bold" style="font-size: 55px;">
+                                    {{ $TradeRegistry ? $TradeRegistry . ' ฟอร์ม' : ' 0 ฟอร์ม' }}</p>
                             </div>
                             <h5 class="card-title">คำร้องทะเบียนพาณิชย์</h5>
                             <a href="{{ route('TableTradeRegistryAdminPages') }}"
@@ -138,7 +145,8 @@
                         <div class="card-body text-center">
                             <div class="icon mb-3 text-success">
                                 {{-- <p class="font-sarabun-bold" style="font-size: 55px;">{{$Certification}}</p> --}}
-                                <p class="font-sarabun-bold" style="font-size: 55px;">{{ $Certification ? $Certification. ' ฟอร์ม' : 'ไม่มีฟอร์มที่ถูกส่งเข้ามา' }}</p>
+                                <p class="font-sarabun-bold" style="font-size: 55px;">
+                                    {{ $Certification ? $Certification . ' ฟอร์ม' : ' 0 ฟอร์ม' }}</p>
                             </div>
                             <h5 class="card-title">คำขอรับรองสิ่งปลูกสร้างอาคาร</h5>
                             <a href="{{ route('TableCertificationAdminPages') }}"
@@ -153,10 +161,12 @@
                         <div class="card-body text-center">
                             <div class="icon mb-3 text-warning">
                                 {{-- <p class="font-sarabun-bold" style="font-size: 55px;">{{$License}}</p> --}}
-                                <p class="font-sarabun-bold" style="font-size: 55px;">{{ $License ? $License. ' ฟอร์ม' : 'ไม่มีฟอร์มที่ถูกส่งเข้ามา' }}</p>
+                                <p class="font-sarabun-bold" style="font-size: 55px;">
+                                    {{ $License ? $License . ' ฟอร์ม' : ' 0 ฟอร์ม' }}</p>
                             </div>
                             <h5 class="card-title">แบบคำขอรับใบอนุญาต</h5>
-                            <a href="{{ route('TableLicenseAdminPages') }}" class="btn btn-warning fs-4 w-100">เช็คคำร้อง</a>
+                            <a href="{{ route('TableLicenseAdminPages') }}"
+                                class="btn btn-warning fs-4 w-100">เช็คคำร้อง</a>
                         </div>
                     </div>
                 </div>
@@ -167,7 +177,8 @@
                         <div class="card-body text-center">
                             <div class="icon mb-3 text-info">
                                 {{-- <p class="font-sarabun-bold" style="font-size: 55px;"> {{$BusinessDoc}}</p> --}}
-                                <p class="font-sarabun-bold" style="font-size: 55px;">{{ $BusinessDoc ? $BusinessDoc. ' ฟอร์ม' : 'ไม่มีฟอร์มที่ถูกส่งเข้ามา' }}</p>
+                                <p class="font-sarabun-bold" style="font-size: 55px;">
+                                    {{ $BusinessDoc ? $BusinessDoc . ' ฟอร์ม' : ' 0 ฟอร์ม' }}</p>
                             </div>
                             <h5 class="card-title">แบบคำร้องขอจดทะเบียนพาณิชย์อิเล็กทรอนิกส์</h5>
                             <a href="{{ route('TableBusinessDocAdminPages') }}"
@@ -182,7 +193,8 @@
                         <div class="card-body text-center">
                             <div class="icon mb-3 text-danger">
                                 {{-- <p class="font-sarabun-bold" style="font-size: 55px;">{{$BuildingChange}}</p> --}}
-                                <p class="font-sarabun-bold" style="font-size: 55px;">{{ $BuildingChange ? $BuildingChange. ' ฟอร์ม' : 'ไม่มีฟอร์มที่ถูกส่งเข้ามา' }}</p>
+                                <p class="font-sarabun-bold" style="font-size: 55px;">
+                                    {{ $BuildingChange ? $BuildingChange . ' ฟอร์ม' : ' 0 ฟอร์ม' }}</p>
                             </div>
                             <h5 class="card-title">คำขออนุญาตก่อสร้างอาคารดัดแปลงอาคารหรือรื้อถอนอาคาร</h5>
                             <a href="{{ route('TableBuildingChangeAdminPages') }}"
