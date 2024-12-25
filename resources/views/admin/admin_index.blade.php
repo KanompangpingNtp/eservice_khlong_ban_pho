@@ -191,4 +191,9 @@
             </div>
         </div>
     </div>
+    <script>
+        setInterval(function() {
+            window.location.reload();
+        }, 300000); // 300000 มิลลิวินาที = 5 นาที
+    </script>
 @endsection
