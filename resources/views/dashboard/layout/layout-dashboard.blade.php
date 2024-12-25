@@ -163,18 +163,32 @@
             }
         }
 
-        #sidebar {
+        .sidebar {
+            background-color: #fefefe;
+            color: #004ddc;
+            min-height: 100vh;
+            /* ความสูงขั้นต่ำของ sidebar */
             max-height: 100vh;
-            /* ใช้ความสูงเต็มหน้าจอ */
+            /* จำกัดความสูงสูงสุดเท่ากับหน้าจอ */
+            padding-top: 0.5rem;
+            padding-left: 5px;
+            padding-right: 7px;
+            position: fixed;
+            /* ทำให้ sidebar ติดกับด้านซ้ายของหน้าจอ */
+            top: 0;
+            left: 0;
+            width: 250px;
+            z-index: 1200;
+            transition: transform 0.3s ease;
+            box-shadow: 6px 0px 20px rgba(0, 0, 0, 0.1);
             overflow-y: auto;
-            /* เปิดการเลื่อนแนวตั้ง */
-            background-color: #343a40;
-            /* สีพื้นหลัง */
-            color: #fff;
-            /* สีตัวอักษร */
-            padding: 15px;
-            border-right: 1px solid #ddd;
-            /* เพิ่มเส้นขอบด้านขวา */
+            /* เพิ่มแถบเลื่อนในแนวตั้งเมื่อเนื้อหาเกิน */
+            overflow-x: hidden;
+            /* ซ่อนแถบเลื่อนแนวนอน */
+            scrollbar-width: thin;
+            /* (สำหรับเบราว์เซอร์ที่รองรับ) กำหนดความกว้างของ scrollbar */
+            scrollbar-color: #b3e5fc #fefefe;
+            /* สีของ scrollbar */
         }
 
         #sidebar h3 {
@@ -191,18 +205,17 @@
             color: #ffc107;
             /* สีลิงก์เมื่อ hover */
         }
-
     </style>
 </head>
+
 <body>
     @if ($message = Session::get('success'))
-    <script>
-        Swal.fire({
-            icon: 'success'
-            , title: '{{ $message }}'
-        , })
-
-    </script>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: '{{ $message }}',
+            })
+        </script>
     @endif
 
     <div class="container-fluid d-flex">
@@ -254,7 +267,7 @@
             </button>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('AdminEntryNotification')}}">แจ้งเตือนฟอร์ม</a>
+                    <a class="nav-link" href="{{ route('AdminEntryNotification') }}">แจ้งเตือนฟอร์ม</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('TablePages') }}">คำร้องทั่วไป</a>
@@ -267,25 +280,30 @@
                         แบบคำขอลงทะเบียนรับเงินเบี้ยความพิการ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('TableChildApplyAdminPages') }}">แบบฟอร์มใบสมัครเรียนศูนย์พัฒนาเด็กเล็ก</a>
+                    <a class="nav-link"
+                        href="{{ route('TableChildApplyAdminPages') }}">แบบฟอร์มใบสมัครเรียนศูนย์พัฒนาเด็กเล็ก</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('TableReceiveAssistanceAdminPages') }}">แบบคำขอรับเงินสงเคราะห์</a>
+                    <a class="nav-link"
+                        href="{{ route('TableReceiveAssistanceAdminPages') }}">แบบคำขอรับเงินสงเคราะห์</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('TableTradeRegistryAdminPages') }}">คำร้องทะเบียนพาณิชย์</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('TableCertificationAdminPages') }}">คำขอรับรองสิ่งปลูกสร้างอาคาร</a>
+                    <a class="nav-link"
+                        href="{{ route('TableCertificationAdminPages') }}">คำขอรับรองสิ่งปลูกสร้างอาคาร</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('TableBuildingChangeAdminPages') }}">คำขออนุญาตก่อสร้างอาคารดัดแปลงอาคารหรือรื้อถอนอาคาร</a>
+                    <a class="nav-link"
+                        href="{{ route('TableBuildingChangeAdminPages') }}">คำขออนุญาตก่อสร้างอาคารดัดแปลงอาคารหรือรื้อถอนอาคาร</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('TableLicenseAdminPages') }}">แบบคำขอรับใบอนุญาต</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('TableBusinessDocAdminPages') }}">คำร้องขอจดทะเบียนพาณิชย์อิเล็กทรอนิกส์</a>
+                    <a class="nav-link"
+                        href="{{ route('TableBusinessDocAdminPages') }}">คำร้องขอจดทะเบียนพาณิชย์อิเล็กทรอนิกส์</a>
                 </li>
             </ul>
         </div>
@@ -301,7 +319,8 @@
 
                     <!-- Profile Dropdown -->
                     <div class="dropdown ms-auto">
-                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="profileDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-user me-2"></i>{{ Auth::user()->name }}
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
@@ -342,7 +361,6 @@
             navbar.classList.toggle('collapsed');
             content.classList.toggle('collapsed');
         });
-
     </script>
 </body>
 
