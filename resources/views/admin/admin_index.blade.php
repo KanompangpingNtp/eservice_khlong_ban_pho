@@ -48,10 +48,10 @@
                     <div class="card shadow-lg h-100 border-0">
                         <div class="card-body text-center">
                             <div class="icon mb-3 text-primary">
-                                <p class="font-sarabun-bold" style="font-size: 55px;"> 0</p>
+                                <p class="font-sarabun-bold" style="font-size: 55px;">{{ $GeneralRequests }}</p>
                             </div>
                             <h5 class="card-title">คำร้องทั่วไป</h5>
-                            <a href="{{ route('UsersAccountFormPage') }}" class="btn btn-primary fs-4 w-100">เช็คคำร้อง</a>
+                            <a href="{{ route('TablePages') }}" class="btn btn-primary fs-4 w-100">เช็คคำร้อง</a>
                         </div>
                     </div>
                 </div>
@@ -61,11 +61,11 @@
                     <div class="card shadow-lg h-100 border-0">
                         <div class="card-body text-center">
                             <div class="icon mb-3 text-success">
-                                <p class="font-sarabun-bold" style="font-size: 55px;"> 0</p>
+                                <p class="font-sarabun-bold" style="font-size: 55px;">{{$Disability}}</p>
 
                             </div>
                             <h5 class="card-title">แบบคำขอส่งทะเบียนรับเบี้ยความพิการ</h5>
-                            <a href="{{ route('DisabilityUsersAccountFormPage') }}"
+                            <a href="{{ route('TableDisabilityPages') }}"
                                 class="btn btn-success fs-4 w-100">เช็คคำร้อง</a>
                         </div>
                     </div>
@@ -76,11 +76,11 @@
                     <div class="card shadow-lg h-100 border-0">
                         <div class="card-body text-center">
                             <div class="icon mb-3 text-warning">
-                                <p class="font-sarabun-bold" style="font-size: 55px;"> 0</p>
+                                <p class="font-sarabun-bold" style="font-size: 55px;">{{$ChildApply}}</p>
 
                             </div>
                             <h5 class="card-title">แบบฟอร์มใบสมัครเรียนศูนย์พัฒนาเด็กเล็ก</h5>
-                            <a href="{{ route('ChildApplyFormPage') }}" class="btn btn-warning fs-4 w-100">เช็คคำร้อง</a>
+                            <a href="{{ route('TableChildApplyAdminPages') }}" class="btn btn-warning fs-4 w-100">เช็คคำร้อง</a>
                         </div>
                     </div>
                 </div>
@@ -90,11 +90,11 @@
                     <div class="card shadow-lg h-100 border-0">
                         <div class="card-body text-center">
                             <div class="icon mb-3 text-info">
-                                <p class="font-sarabun-bold" style="font-size: 55px;"> 0</p>
+                                <p class="font-sarabun-bold" style="font-size: 55px;">{{$ElderlyAllowance}}</p>
 
                             </div>
                             <h5 class="card-title">แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอายุ</h5>
-                            <a href="{{ route('ElderlyAllowanceUsersAccountFormPage') }}"
+                            <a href="{{ route('TableElderlyAllowancePages') }}"
                                 class="btn btn-info fs-4 w-100">เช็คคำร้อง</a>
                         </div>
                     </div>
@@ -105,11 +105,11 @@
                     <div class="card shadow-lg h-100 border-0">
                         <div class="card-body text-center">
                             <div class="icon mb-3 text-danger">
-                                <p class="font-sarabun-bold" style="font-size: 55px;"> 0</p>
+                                <p class="font-sarabun-bold" style="font-size: 55px;"> {{$ReceiveAssistance}}</p>
 
                             </div>
                             <h5 class="card-title">แบบคำขอรับเงินสงเคราะห์</h5>
-                            <a href="{{ route('ReceiveAssistanceUserFormPage') }}"
+                            <a href="{{ route('TableReceiveAssistanceAdminPages') }}"
                                 class="btn btn-danger fs-4 w-100">เช็คคำร้อง</a>
                         </div>
                     </div>
@@ -120,11 +120,11 @@
                     <div class="card shadow-lg h-100 border-0">
                         <div class="card-body text-center">
                             <div class="icon mb-3 text-primary">
-                                <p class="font-sarabun-bold" style="font-size: 55px;"> 0</p>
+                                <p class="font-sarabun-bold" style="font-size: 55px;">{{$TradeRegistry}}</p>
 
                             </div>
                             <h5 class="card-title">คำร้องทะเบียนพาณิชย์</h5>
-                            <a href="{{ route('TradeRegistryUserFormPage') }}"
+                            <a href="{{ route('TableTradeRegistryAdminPages') }}"
                                 class="btn btn-primary fs-4 w-100">เช็คคำร้อง</a>
                         </div>
                     </div>
@@ -135,11 +135,11 @@
                     <div class="card shadow-lg h-100 border-0">
                         <div class="card-body text-center">
                             <div class="icon mb-3 text-success">
-                                <p class="font-sarabun-bold" style="font-size: 55px;"> 0</p>
+                                <p class="font-sarabun-bold" style="font-size: 55px;">{{$Certification}}</p>
 
                             </div>
                             <h5 class="card-title">คำขอรับรองสิ่งปลูกสร้างอาคาร</h5>
-                            <a href="{{ route('CertificationUserFormPage') }}"
+                            <a href="{{ route('TableCertificationAdminPages') }}"
                                 class="btn btn-success fs-4 w-100">เช็คคำร้อง</a>
                         </div>
                     </div>
@@ -150,11 +150,11 @@
                     <div class="card shadow-lg h-100 border-0">
                         <div class="card-body text-center">
                             <div class="icon mb-3 text-warning">
-                                <p class="font-sarabun-bold" style="font-size: 55px;"> 0</p>
+                                <p class="font-sarabun-bold" style="font-size: 55px;">{{$License}}</p>
 
                             </div>
                             <h5 class="card-title">แบบคำขอรับใบอนุญาต</h5>
-                            <a href="{{ route('LicenseUserFormPage') }}" class="btn btn-warning fs-4 w-100">เช็คคำร้อง</a>
+                            <a href="{{ route('TableLicenseAdminPages') }}" class="btn btn-warning fs-4 w-100">เช็คคำร้อง</a>
                         </div>
                     </div>
                 </div>
@@ -164,11 +164,11 @@
                     <div class="card shadow-lg h-100 border-0">
                         <div class="card-body text-center">
                             <div class="icon mb-3 text-info">
-                                <p class="font-sarabun-bold" style="font-size: 55px;"> 0</p>
+                                <p class="font-sarabun-bold" style="font-size: 55px;"> {{$BusinessDoc}}</p>
 
                             </div>
                             <h5 class="card-title">แบบคำร้องขอจดทะเบียนพาณิชย์อิเล็กทรอนิกส์</h5>
-                            <a href="{{ route('BusinessDocUsersAccountFormPage') }}"
+                            <a href="{{ route('TableBusinessDocAdminPages') }}"
                                 class="btn btn-info fs-4 w-100">เช็คคำร้อง</a>
                         </div>
                     </div>
@@ -179,10 +179,10 @@
                     <div class="card shadow-lg h-100 border-0">
                         <div class="card-body text-center">
                             <div class="icon mb-3 text-danger">
-                                <p class="font-sarabun-bold" style="font-size: 55px;"> 0</p>
+                                <p class="font-sarabun-bold" style="font-size: 55px;">{{$BuildingChange}}</p>
                             </div>
                             <h5 class="card-title">คำขออนุญาตก่อสร้างอาคารดัดแปลงอาคารหรือรื้อถอนอาคาร</h5>
-                            <a href="{{ route('BuildingChangeUserFormPage') }}"
+                            <a href="{{ route('TableBuildingChangeAdminPages') }}"
                                 class="btn btn-danger fs-4 w-100">เช็คคำร้อง</a>
                         </div>
                     </div>
