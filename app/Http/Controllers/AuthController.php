@@ -26,12 +26,10 @@ class AuthController extends Controller
         if (Auth::attempt($request->only('email', 'password'))) {
             $request->session()->regenerate();
 
-            // ตรวจสอบ level ของผู้ใช้
             if (Auth::user()->level === 'admin') {
-                return redirect()->route('TablePages'); // สำหรับ admin เปลี่ยนเส้นทางไปยังหน้า dashboard
+                return redirect()->route('AdminEntryNotification');
             } elseif (Auth::user()->level === 'user') {
                 return redirect()->route('users.account.index');
-                // return redirect()->back()->with('success', 'เข้าสู่ระบบสำเร็จ');
             }
         }
 
