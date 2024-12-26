@@ -7,7 +7,7 @@
             @csrf
 
             <!-- Trade Information -->
-            <h3>ข้อมูลผู้รับมอบอำนาจ</h3>
+            {{-- <h3>ข้อมูลผู้รับมอบอำนาจ</h3>
             <div class="row mb-3">
                 <div class="col-12 col-md-6">
                     <label for="trade_condition">เกี่ยวข้องเป็น:</label>
@@ -38,7 +38,7 @@
                 </div>
             </div>
 
-            <hr>
+            <hr> --}}
 
             <!-- Personal Information -->
             <h3>ข้อมูลผู้สูงอายุ</h3>

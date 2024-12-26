@@ -49,11 +49,11 @@ class UserElderlyAllowanceController extends Controller
             'marital_status' => 'required|in:single,married,widowed,divorced,separated,other',
             'monthly_income' => 'nullable|string',
             'occupation' => 'nullable|string',
-            'trade_condition' => 'required|string',
-            'elderly_name' => 'required|string',
-            'trader_citizen_id' => 'required|string',
-            'trader_address' => 'required|string',
-            'trader_phone_number' => 'required|string',
+            // 'trade_condition' => 'required|string',
+            // 'elderly_name' => 'required|string',
+            // 'trader_citizen_id' => 'required|string',
+            // 'trader_address' => 'required|string',
+            // 'trader_phone_number' => 'required|string',
 
             'welfare_type' => 'nullable|array',
             'welfare_type.*' => 'string|in:option1,option2,option3,option4',
@@ -99,14 +99,14 @@ class UserElderlyAllowanceController extends Controller
             'occupation' => $request->occupation,
         ]);
 
-        $eaTraders = EaTraders::create([
-            'ea_people_id' => $eaPeople->id,
-            'trade_condition' => $request->trade_condition,
-            'elderly_name' => $request->elderly_name,
-            'citizen_id' => $request->trader_citizen_id,
-            'address' => $request->trader_address,
-            'phone_number' => $request->trader_phone_number,
-        ]);
+        // $eaTraders = EaTraders::create([
+        //     'ea_people_id' => $eaPeople->id,
+        //     'trade_condition' => $request->trade_condition,
+        //     'elderly_name' => $request->elderly_name,
+        //     'citizen_id' => $request->trader_citizen_id,
+        //     'address' => $request->trader_address,
+        //     'phone_number' => $request->trader_phone_number,
+        // ]);
 
         $eaPersonsOptions = EaPersonsOptions::create([
             'ea_people_id' => $eaPeople->id,
@@ -183,11 +183,11 @@ class UserElderlyAllowanceController extends Controller
             'marital_status' => 'required|in:single,married,widowed,divorced,separated,other',
             'monthly_income' => 'nullable|string',
             'occupation' => 'nullable|string',
-            'trade_condition' => 'required|string',
-            'elderly_name' => 'required|string',
-            'trader_citizen_id' => 'required|string',
-            'trader_address' => 'required|string',
-            'trader_phone_number' => 'required|string',
+            // 'trade_condition' => 'required|string',
+            // 'elderly_name' => 'required|string',
+            // 'trader_citizen_id' => 'required|string',
+            // 'trader_address' => 'required|string',
+            // 'trader_phone_number' => 'required|string',
 
             'welfare_type' => 'nullable|array',
             'welfare_type.*' => 'string|in:option1,option2,option3,option4',
@@ -231,14 +231,14 @@ class UserElderlyAllowanceController extends Controller
             'occupation' => $request->occupation,
         ]);
 
-        $eaTraders = EaTraders::where('ea_people_id', $id)->firstOrFail();
-        $eaTraders->update([
-            'trade_condition' => $request->trade_condition,
-            'elderly_name' => $request->elderly_name,
-            'citizen_id' => $request->trader_citizen_id,
-            'address' => $request->trader_address,
-            'phone_number' => $request->trader_phone_number,
-        ]);
+        // $eaTraders = EaTraders::where('ea_people_id', $id)->firstOrFail();
+        // $eaTraders->update([
+        //     'trade_condition' => $request->trade_condition,
+        //     'elderly_name' => $request->elderly_name,
+        //     'citizen_id' => $request->trader_citizen_id,
+        //     'address' => $request->trader_address,
+        //     'phone_number' => $request->trader_phone_number,
+        // ]);
 
         $eaPersonsOptions = EaPersonsOptions::where('ea_people_id', $id)->firstOrFail();
         $welfareOtherTypes = in_array('option4', $request->welfare_type ?? []) ? $request->welfare_other_types : null;

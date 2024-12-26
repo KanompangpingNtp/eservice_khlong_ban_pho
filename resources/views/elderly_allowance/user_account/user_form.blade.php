@@ -6,7 +6,7 @@
         <form action="{{ route('ElderlyAllowanceFormCreate') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
-            <!-- Trade Information -->
+            {{-- <!-- Trade Information -->
             <h3>ข้อมูลผู้รับมอบอำนาจ</h3>
             <div class="row mb-3">
                 <div class="col-12 col-md-6">
@@ -36,9 +36,9 @@
                     <label for="trader_address">ที่อยู่:</label>
                     <textarea id="trader_address" name="trader_address" class="form-control" required></textarea>
                 </div>
-            </div>
+            </div> --}}
 
-            <hr>
+            {{-- <hr> --}}
 
             <!-- Personal Information -->
             <h3>ข้อมูลผู้สูงอายุ</h3>

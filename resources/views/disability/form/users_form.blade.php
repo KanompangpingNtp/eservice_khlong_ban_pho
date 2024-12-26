@@ -7,7 +7,7 @@
             @csrf
 
             <!-- Trade Information -->
-            <h3>ข้อมูลมอบอำนาจหรือผู้ดูแลคนพิการ</h3>
+            {{-- <h3>ข้อมูลมอบอำนาจหรือผู้ดูแลคนพิการ</h3>
             <div class="row mb-3 w-100">
                 <label class="col-12 col-xl-3 col-form-label">ขอขึ้นทะเบียน โดยเป็น:</label>
                 <div class="col-12 col-xl-9">
@@ -69,7 +69,7 @@
                 </div>
             </div>
 
-            <hr>
+            <hr> --}}
 
             <!-- Personal Information -->
             <div class="my-4">

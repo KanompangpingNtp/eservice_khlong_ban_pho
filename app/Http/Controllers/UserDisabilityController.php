@@ -47,10 +47,10 @@ class UserDisabilityController extends Controller
             'marital_status' => 'required|in:single,married,widowed,divorced,separated,other',
             'monthly_income' => 'nullable|string',
             'occupation' => 'nullable|string',
-            'elderly_name' => 'required|string',
-            'trader_citizen_id' => 'required|string',
-            'trader_address' => 'required|string',
-            'trader_phone_number' => 'required|string',
+            // 'elderly_name' => 'required|string',
+            // 'trader_citizen_id' => 'required|string',
+            // 'trader_address' => 'required|string',
+            // 'trader_phone_number' => 'required|string',
             'welfare_type' => 'nullable|array',
             'welfare_type.*' => 'string|in:option1,option2,option3,option4',
             'welfare_other_types' => 'nullable|string|required_if:welfare_type.*,ย้ายภูมิลําเนาเข้ามาอยู่ใหม่',
@@ -64,7 +64,7 @@ class UserDisabilityController extends Controller
             'attachments.*' => 'nullable|file|mimes:jpg,jpeg,png,pdf',
 
             'type_of_disability' => 'string|in:option1,option2,option3,option4,option5,option6,option7',
-            'trade_condition' => 'required|string|in:option1,option2,option3,option4,option5',
+            // 'trade_condition' => 'required|string|in:option1,option2,option3,option4,option5',
         ]);
 
         // dd( $request);
@@ -98,14 +98,14 @@ class UserDisabilityController extends Controller
         ]);
 
         // Save data to DisabilityTrader table
-        $eaTraders = DisabilityTrader::create([
-            'disability_people_id' => $eaPeople->id,
-            'trade_condition' => $request->trade_condition,
-            'elderly_name' => $request->elderly_name,
-            'citizen_id' => $request->trader_citizen_id,
-            'address' => $request->trader_address,
-            'phone_number' => $request->trader_phone_number,
-        ]);
+        // $eaTraders = DisabilityTrader::create([
+        //     'disability_people_id' => $eaPeople->id,
+        //     'trade_condition' => $request->trade_condition,
+        //     'elderly_name' => $request->elderly_name,
+        //     'citizen_id' => $request->trader_citizen_id,
+        //     'address' => $request->trader_address,
+        //     'phone_number' => $request->trader_phone_number,
+        // ]);
 
         // Save data to DisabilityOptions table
         $eaPersonsOptions = DisabilityOption::create([

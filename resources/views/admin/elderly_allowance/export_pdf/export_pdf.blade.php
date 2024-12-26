@@ -111,17 +111,17 @@
         $birthday_month = $birthday->locale('th')->translatedFormat('F');
         $birthday_year = $birthday->year + 543;
 
-        $citizen_id = $form->traders->first()->citizen_id;
-        $tradersformatted_id =
-            substr($citizen_id, 0, 1) .
-            '-' .
-            substr($citizen_id, 1, 4) .
-            '-' .
-            substr($citizen_id, 5, 5) .
-            '-' .
-            substr($citizen_id, 10, 2) .
-            '-' .
-            substr($citizen_id, 12, 1);
+        // $citizen_id = $form->traders->first()->citizen_id;
+        // $tradersformatted_id =
+        //     substr($citizen_id, 0, 1) .
+        //     '-' .
+        //     substr($citizen_id, 1, 4) .
+        //     '-' .
+        //     substr($citizen_id, 5, 5) .
+        //     '-' .
+        //     substr($citizen_id, 10, 2) .
+        //     '-' .
+        //     substr($citizen_id, 12, 1);
 
         $citizen_c_id = $form->citizen_id;
         $formatted_id =
@@ -144,24 +144,23 @@
         <div>
             <span>ผู้ยื่นคำขอฯ แทนตามหนังสือมอบอำนาจ เกี่ยวข้องเป็น</span>
             <span class="dotted-line"
-                style="width: 37%; text-align:center;">{{ $form->traders->first()->trade_condition }}</span>
+                style="width: 37%; text-align:center; border-bottom: 2px dotted black;"></span>
             <span>กับผู้สูงอายุที่ขอยืนยันสิทธิ</span>
         </div>
         <div>
             <span>ชื่อ – สกุล (ผู้รับมอบอำนาจ/ผู้ดูแลคนพิการ ) </span>
             <span class="dotted-line"
-                style="width: 64%; text-align:center;">{{ $form->traders->first()->elderly_name }}</span>
+                style="width: 64%; text-align:center; border-bottom: 2px dotted black;"></span>
         </div>
         <div>
-            <span>เลขประจำตัวประชาชน</span><span class="dotted-line" style="width: 33%; text-align:center;">
-                {{ $tradersformatted_id }}
+            <span>เลขประจำตัวประชาชน</span><span class="dotted-line" style="width: 33%; text-align:center; border-bottom: 2px dotted black;">
+
             </span>
-            <span>โทรศัพท์</span><span class="dotted-line" style="width: 41%; text-align:center;">
-                {{ $form->traders->first()->phone_number }} </span>
+            <span>โทรศัพท์</span><span class="dotted-line" style="width: 41%; text-align:center; border-bottom: 2px dotted black;">
+                 </span>
         </div>
         <div>
-            <span>ที่อยู่</span><span class="dotted-line" style="width: 96%; text-align:left;">
-                {{ $form->traders->first()->address }} </span>
+            <span>ที่อยู่</span><span class="dotted-line" style="width: 96%; text-align:left; border-bottom: 2px dotted black;"></span>
         </div>
     </div>
     <div class="box_text" style="text-align: left;"><span>ข้อมูลผู้สูงอายุ</span>
@@ -395,12 +394,12 @@
                 <!-- ฝั่งซ้าย -->
                 <div style="float: left; width: 50%;">
                     <span>(ลงชื่อ)</span>
-                    <span class="dotted-line" style="width: 50%; text-align: center;">
-                        {{ $form->traders->first()->elderly_name }} </span>
+                    <span class="dotted-line" style="width: 50%; text-align: center; border-bottom: 2px dotted black;">
+                         </span>
                     <div style="margin-left: 40px;">
                         <span>(</span>
-                        <span class="dotted-line" style="width: 50%; text-align: center;">
-                            {{ $form->traders->first()->elderly_name }} </span>
+                        <span class="dotted-line" style="width: 50%; text-align: center; border-bottom: 2px dotted black;">
+                             </span>
                         <span>)</span>
                     </div>
                     <div style="margin-left: 40px;">
@@ -410,12 +409,12 @@
                 <div style="float: right; width: 50%;">
                     <span>(ลงชื่อ)</span>
                     <span class="dotted-line"
-                        style="width: 50%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"">
+                        style="width: 50%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
                     </span>
                     <div style="margin-left: 40px;">
                         <span>(</span>
                         <span class="dotted-line"
-                            style="width: 50%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"">
+                            style="width: 50%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
                         </span>
                         <span>)</span>
                     </div>
@@ -609,12 +608,12 @@
 
         <div class="box_text" style="margin-top: 3rem;">
             <span>ยื่นแบบคำขอลงทะเบียนเมื่อวันที่</span><span class="dotted-line"
-                style="width: 20%; text-align: center;">
-                {{ $day }}
+                style="width: 20%; text-align: center; border-bottom: 2px dotted black;">
+
             </span>
-            <span>เดือน</span><span class="dotted-line" style="width: 25%; text-align: center;"> {{ $month }}
-            </span><span>พ.ศ.</span><span class="dotted-line" style="width: 20%; text-align: center;">
-                {{ $year }}
+            <span>เดือน</span><span class="dotted-line" style="width: 25%; text-align: center; border-bottom: 2px dotted black;">
+            </span><span>พ.ศ.</span><span class="dotted-line" style="width: 20%; text-align: center; border-bottom: 2px dotted black;">
+
         </div>
         <div class="box_text" style="margin-left: 3rem;">
             <span>การยืนยันสิทธิครั้งนี้
