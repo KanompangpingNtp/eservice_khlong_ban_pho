@@ -49,8 +49,11 @@
                             class="bg-btn-veryunder fs-3 font-sarabun-bold d-flex align-content-center justify-content-center pt-1 px-3">
                             <img src="{{ asset('images/layouts-home/icon-btnveryunder.png') }}" alt="icon-btn"
                                 class="icon-btn pt-2 pe-2">
-                            <div class="w-100">
+                            {{-- <div class="w-100">
                                 คลิก
+                            </div> --}}
+                            <div class="w-100">
+                                <a href="{{asset('video/VD_0.mp4')}}" style="text-decoration: none; color:white;">คลิก</a>
                             </div>
                         </div>
                     </div>
