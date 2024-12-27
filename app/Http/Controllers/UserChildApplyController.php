@@ -131,7 +131,7 @@ class UserChildApplyController extends Controller
             }
         }
 
-        return redirect()->back()->with('success', 'Create!');
+        return redirect()->back()->with('success', 'ฟอร์มถูกส่งเรียบร้อยแล้ว');
     }
 
     public function ChildApplyFormPage()

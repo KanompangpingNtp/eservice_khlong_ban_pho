@@ -109,17 +109,17 @@
     $birthday_month = $birthday->locale('th')->translatedFormat('F');
     $birthday_year = $birthday->year + 543;
 
-    $citizen_id = $form->disabilityTraders->first()->citizen_id;
-    $tradersformatted_id =
-    substr($citizen_id, 0, 1) .
-    '-' .
-    substr($citizen_id, 1, 4) .
-    '-' .
-    substr($citizen_id, 5, 5) .
-    '-' .
-    substr($citizen_id, 10, 2) .
-    '-' .
-    substr($citizen_id, 12, 1);
+    // $citizen_id = $form->disabilityTraders->first()->citizen_id;
+    // $tradersformatted_id =
+    // substr($citizen_id, 0, 1) .
+    // '-' .
+    // substr($citizen_id, 1, 4) .
+    // '-' .
+    // substr($citizen_id, 5, 5) .
+    // '-' .
+    // substr($citizen_id, 10, 2) .
+    // '-' .
+    // substr($citizen_id, 12, 1);
 
     $citizen_c_id = $form->citizen_id;
     $formatted_id =
@@ -141,22 +141,22 @@
         <span>ผู้ยื่นคำขอฯแทนตามหนังสือมอบอำนาจเกี่ยวข้องกับคนพิการ</span>
         <div style="text-align:left; margin-left:11px;">
             <span>ที่ขอขึ้นทะเบียน โดยเป็น</span>
-            <span><input type="checkbox" {{ $form->disabilityTraders->first()->trade_condition == 'option1' ? 'checked' : '' }}> บิดา-มารดา</span>
-            <span><input type="checkbox" {{ $form->disabilityTraders->first()->trade_condition == 'option2' ? 'checked' : '' }}> บุตร</span>
-            <span><input type="checkbox" {{ $form->disabilityTraders->first()->trade_condition == 'option3' ? 'checked' : '' }}> สามี-ภรรยา</span>
-            <span><input type="checkbox" {{ $form->disabilityTraders->first()->trade_condition == 'option4' ? 'checked' : '' }}> พี่น้อง</span>
-            <span><input type="checkbox" {{ $form->disabilityTraders->first()->trade_condition == 'option5' ? 'checked' : '' }}> ผู้ดูแลคนพิการตามระเบียบฯ</span>
+            <span><input type="checkbox"> บิดา-มารดา</span>
+            <span><input type="checkbox"> บุตร</span>
+            <span><input type="checkbox"> สามี-ภรรยา</span>
+            <span><input type="checkbox"> พี่น้อง</span>
+            <span><input type="checkbox"> ผู้ดูแลคนพิการตามระเบียบฯ</span>
         </div>
         <div>
             <span>ชื่อ – สกุล (ผู้รับมอบอำนาจ/ผู้ดูแลคนพิการ ) </span>
-            <span class="dotted-line" style="width: 61%;"> {{ $form->disabilityTraders->first()->elderly_name }} </span>
+            <span class="dotted-line" style="width: 61%; border-bottom: 2px dotted black;">  </span>
         </div>
         <div>
-            <span>เลขประจำตัวประชาชน</span><span class="dotted-line" style="width: 30%;"> {{ $tradersformatted_id }} </span>
-            <span>โทรศัพท์</span><span class="dotted-line" style="width: 40%;"> {{ $form->disabilityTraders->first()->phone_number }} </span>
+            <span>เลขประจำตัวประชาชน</span><span class="dotted-line" style="width: 30%; border-bottom: 2px dotted black;">  </span>
+            <span>โทรศัพท์</span><span class="dotted-line" style="width: 40%; border-bottom: 2px dotted black;"> </span>
         </div>
         <div>
-            <span>ที่อยู่</span><span class="dotted-line" style="width: 93%;"> {{ $form->disabilityTraders->first()->address }} </span>
+            <span>ที่อยู่</span><span class="dotted-line" style="width: 93%; border-bottom: 2px dotted black;"> </span>
         </div>
     </div>
     <div class="box_text" style="text-align: right;"><span>เขียนที่</span>
@@ -285,13 +285,13 @@
         <span>อาชีพ</span><span class="dotted-line" style="width: 42%; text-align: center;"> {{ $form->occupation }}
         </span>
     </div>
-    <div class="box_text" style=" margin-left:7px;">
+    {{-- <div class="box_text" style=" margin-left:7px;">
         <span>บุคคลอ้างอิงที่สามารถติดต่อได</span><span class="dotted-line" style="width: 41%; text-align: center;">
-            data
+
         </span>
-        <span>โทรศัพท์</span><span class="dotted-line" style="width: 28%; text-align: center;"> data
+        <span>โทรศัพท์</span><span class="dotted-line" style="width: 28%; text-align: center;">
         </span>
-    </div>
+    </div> --}}
 
     <div class="box_text" style="text-align:left; margin-left:8px; line-height: 12px; margin-top: 5px;">
         <span style="line-height: 10px;">ข้อมูลทั่วไป : สถานภาพการรับสวัสดิการภาครัฐ</span>
@@ -435,7 +435,7 @@
                 </div>
             </div>
         </div>
-        <div style="clear: both;"></div> <!-- ใช้ clear เพื่อยกเลิกการ float -->
+        <div style="clear: both;"></div>
     </div>
 
     {{-- new page --}}
@@ -453,7 +453,7 @@
                 <div style="text-align:center;">ได้ตรวจสอบคุณสมบัติของ {{ $form->salutation }}</div>
                 <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 10px;"> {{ $form->first_name }}&nbsp;{{ $form->last_name }} </span>
                 <div>หมายเลขบัตรประจำตัวประชาชน</div>
-                <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 10px;"> {{ $form->citizen_id }} </span>
+                <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 10px;"> {{ $formatted_id }} </span>
                 <div class="box_text" style="text-align:left; margin-top: 10px;">
                     <div style="width: 100%;">
                         <span style="width: 100%; "><input type="checkbox"> เป็นผู้มีคุณสมบัติครบถ้วน</span>
@@ -560,11 +560,11 @@
     </div>
 
     <div class="box_text" style="margin-top: 5rem;">
-        <span>ยื่นแบบคำขอลงทะเบียนเมื่อวันที่</span><span class="dotted-line" style="width: 20%; text-align: center;">
-            {{$day}}
+        <span>ยื่นแบบคำขอลงทะเบียนเมื่อวันที่</span><span class="dotted-line" style="width: 20%; text-align: center; border-bottom: 2px dotted black;">
+
         </span>
-        <span>เดือน</span><span class="dotted-line" style="width: 25%; text-align: center;"> {{$month}}
-        </span><span>พ.ศ.</span><span class="dotted-line" style="width: 20%; text-align: center;"> {{$year}}
+        <span>เดือน</span><span class="dotted-line" style="width: 25%; text-align: center; border-bottom: 2px dotted black;">
+        </span><span>พ.ศ.</span><span class="dotted-line" style="width: 20%; text-align: center; border-bottom: 2px dotted black;">
     </div>
     <div class="box_text" style="margin-left: 3rem;">
         <span>การลงทะเบียนครั้งนี้ เพื่อขอรับเงินเบี้ยความพิการ ประจำปีงบประมาณ พ.ศ.</span><span class="dotted-line" style="width: 25%; text-align: center; border-bottom: 2px dotted black;">

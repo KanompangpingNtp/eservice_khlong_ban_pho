@@ -131,7 +131,7 @@ class UserLicenseController extends Controller
             }
         }
 
-        return redirect()->back()->with('success', 'Create Successfully!');
+        return redirect()->back()->with('success', 'ฟอร์มถูกส่งเรียบร้อยแล้ว');
     }
 
     public function LicenseUserFormPage()
