@@ -59,7 +59,7 @@
                             <img src="{{ asset('images/layout-index/earth.png') }}" alt="Icon" />
                         </span>
                         <span class="squre"></span>
-                        แบบคำขอรับใบอนุญาต <br class="d-block d-sm-none d-lg-block">
+                        แบบคำขอรับใบอนุญาต <br class="d-block d-md-none d-lg-block">
                         (กองสาธารณสุขและสิ่งแวดล้อม)
                     </a>
                 </div>
@@ -78,14 +78,14 @@
 
             <div class="d-flex flex-column justify-content-center align-content-center w-100 w-lg-50 px-4">
                 <div class="half-border-left">
-                    <a href="{{ route('BuildingChangeFormPage') }}" class="buttom-cool-left fs-4 font-sarabun text-start"
+                    <a href="{{ route('BuildingChangeFormPage') }}" class="buttom-cool-left fs-4 font-sarabun text-start ps-5"
                         style="line-height: 1.2;">
                         <span class="circle">
                             <img src="{{ asset('images/layout-index/brick-wall.png') }}" alt="Icon" />
                         </span>
                         <span class="squre"></span>
-                        แบบคำร้องขอหนังสือรับรอง <br class="d-block d-sm-none d-lg-block">
-                        สิ่งปลูกสร้าง
+                        ขออนุญาตก่อสร้างอาคารดัดแปลง<br class="d-block d-md-none d-lg-block">
+                        อาคารหรือรื้อถอนอาคาร
                     </a>
                 </div>
                 <div class="half-border-right">
