@@ -30,7 +30,7 @@
                 </select>
             </div>
             <div class="col-md-9">
-                <label for="name" class="form-label">ชื่อ</label>
+                <label for="name" class="form-label">ชื่อ - นามสกุล</label>
                 <input type="text" class="form-control" id="name" name="name" maxlength="255">
             </div>
         </div>
@@ -38,7 +38,7 @@
         <!-- Row 3: อายุ และ บ้านเลขที่ -->
         <div class="row g-3 mb-3">
             <div class="col-md-3">
-                <label for="age" class="form-label">อายุ</label>
+                <label for="age" class="form-label">อายุ (ปี)</label>
                 <input type="number" class="form-control" id="age" name="age">
             </div>
             <div class="col-md-9">

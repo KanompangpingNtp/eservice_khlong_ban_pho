@@ -14,7 +14,7 @@
     <br>
 
     <div>
-        <label for="full_name"> ชื่อ</label>
+        <label for="full_name"> ชื่อ-นามสกุล </label>
         <input type="text" name="full_name" id="full_name" class="form-control">
     </div>
 

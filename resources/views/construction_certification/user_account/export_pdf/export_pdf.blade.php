@@ -118,7 +118,7 @@
     </div>
     <div class="box_text" style="text-align: left;">
         <span style="margin-right:20px;">เรื่อง</span>
-        <span class="dotted-line" style="width: 20%; text-align: center;">{{$form->subject}}</span>
+        <span class="dotted-line" style="width: 40%; text-align: lrft;">{{$form->subject}}</span>
     </div>
     <div class="box_text" style="text-align: left;">
         <span style="margin-right:20px;">เรียน</span>

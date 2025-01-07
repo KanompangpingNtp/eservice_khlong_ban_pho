@@ -32,7 +32,7 @@
                 </select>
             </div>
             <div class="col-md-9">
-                <label for="full_name" class="form-label">ชื่อเต็ม</label>
+                <label for="full_name" class="form-label">ชื่อ-นามสกุล </label>
                 <input type="text" name="full_name" id="full_name" class="form-control" maxlength="255">
             </div>
         </div>

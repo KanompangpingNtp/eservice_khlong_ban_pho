@@ -31,13 +31,13 @@
 
         <!-- Full Name -->
         <div class="form-group">
-            <label for="full_name">ข้าพเจ้า</label>
+            <label for="full_name">ชื่อ-นามสกุล </label>
             <input type="text" name="full_name" id="full_name" class="form-control" required>
         </div>
 
         <!-- Age -->
         <div class="form-group">
-            <label for="age">อายุ</label>
+            <label for="age">อายุ (ปี)</label>
             <input type="number" name="age" id="age" class="form-control">
         </div>
 
