@@ -23,8 +23,13 @@
                     <form action="{{ route('Register') }}" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <label for="salutation" class="form-label">คำนำหน้า</label>
-                            <input type="text" class="form-control" id="salutation" name="salutation" placeholder="คำนำหน้า">
+                            <label for="salutation" class="form-label">ชื่อนำหน้า</label>
+                            <select class="form-select" id="salutation" name="salutation">
+                                <option value="" selected disabled>เลือกคำนำหน้า</option>
+                                <option value="นาย">นาย</option>
+                                <option value="นาง">นาง</option>
+                                <option value="นางสาว">นางสาว</option>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="name" class="form-label">ชื่อบัญชี<span class="text-danger">*</span></label>
@@ -35,7 +40,7 @@
                             <input type="email" class="form-control" id="email" name="email" placeholder="อีเมล" required>
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label">รหัสผ่าน<span class="text-danger">*</span></label>
+                            <label for="password" class="form-label">รหัสผ่าน (ใส่ชื่อหรือตัวเลข ไม่ต่ำกว่า 9 ตัว)<span class="text-danger">*</span></label>
                             <input type="password" class="form-control" id="password" name="password" placeholder="รหัสผ่าน" required>
                         </div>
                         <div class="mb-3">
@@ -48,7 +53,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="phone" class="form-label">เบอร์โทรศัพท์</label>
-                            <input type="text" class="form-control" id="phone" name="phone" placeholder="เบอร์โทรศัพท์">
+                            <input type="number" class="form-control" id="phone" name="phone" placeholder="เบอร์โทรศัพท์">
                         </div>
                         <div class="mb-3">
                             <label for="house_number" class="form-label">บ้านเลขที่</label>
@@ -56,7 +61,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="village" class="form-label">หมู่บ้าน</label>
-                            <input type="text" class="form-control" id="village" name="village" placeholder="หมู่บ้าน">
+                            <input type="number" class="form-control" id="village" name="village" placeholder="หมู่บ้าน">
                         </div>
                         <div class="mb-3">
                             <label for="subdistrict" class="form-label">ตำบล</label>
@@ -79,6 +84,8 @@
                     <small>มีบัญชีแล้ว? <a href="{{ route('LoginPage') }}">เข้าสู่ระบบ</a></small>
                 </div>
             </div>
+            <br>
+            <br>
         </div>
     </div>
 </div>
