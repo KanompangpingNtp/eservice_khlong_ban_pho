@@ -21,9 +21,18 @@
 
             <!-- Row 2: คำนำหน้า และ ชื่อ -->
             <div class="row g-3 mb-3">
-                <div class="col-md-3">
+                {{-- <div class="col-md-3">
                     <label for="salutation" class="form-label">คำนำหน้า</label>
                     <input type="text" class="form-control" id="salutation" name="salutation" maxlength="50">
+                </div> --}}
+                <div class="col-md-3">
+                    <label for="salutation" class="form-label">คำนำหน้า</label>
+                    <select class="form-select" id="salutation" name="salutation">
+                        <option value="" selected disabled>เลือกคำนำหน้า</option>
+                        <option value="นาย">นาย</option>
+                        <option value="นาง">นาง</option>
+                        <option value="นางสาว">นางสาว</option>
+                    </select>
                 </div>
                 <div class="col-md-9">
                     <label for="name" class="form-label">ชื่อ</label>

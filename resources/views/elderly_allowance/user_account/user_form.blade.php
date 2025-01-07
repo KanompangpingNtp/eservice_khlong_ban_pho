@@ -54,9 +54,18 @@
             </div>
 
             <div class="row mb-3">
-                <div class="col-12 col-md-6">
+                {{-- <div class="col-12 col-md-6">
                     <label for="salutation">คำนำหน้า:</label>
                     <input type="text" id="salutation" name="salutation" class="form-control" required>
+                </div> --}}
+                <div class="col-12 col-md-6">
+                    <label for="salutation">คำนำหน้า :</label>
+                    <select class="form-select" id="salutation" name="salutation">
+                        <option value="" selected disabled>เลือกคำนำหน้า</option>
+                        <option value="นาย">นาย</option>
+                        <option value="นาง">นาง</option>
+                        <option value="นางสาว">นางสาว</option>
+                    </select>
                 </div>
                 <div class="col-12 col-md-6">
                     <label for="first_name">ขื่่อ:</label>

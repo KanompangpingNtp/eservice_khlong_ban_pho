@@ -7,7 +7,7 @@
         <div class="container">
             <h3 class="text-center">ใบสมัคร <br></h3>
             <h3 class="text-center">ศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์</h3>
-            <!-- Row for form title -->
+
             <h3>ข้อมูลเด็กเล็ก</h3>
             <!-- Child Information -->
             <div class="row">

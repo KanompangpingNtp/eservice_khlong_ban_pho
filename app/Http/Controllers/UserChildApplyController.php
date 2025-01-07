@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\ChildReply;
+use App\Models\SurrenderTheChild;
+use App\Models\ChildRegistration;
 
 class UserChildApplyController extends Controller
 {
@@ -64,15 +66,88 @@ class UserChildApplyController extends Controller
             'father_occupation' => 'required|string|max:255',
             'mother_occupation' => 'required|string|max:255',
 
-            'attachments.*' => 'nullable|file|mimes:jpg,jpeg,png,pdf',
+            // 'attachments.*' => 'nullable|file|mimes:jpg,jpeg,png,pdf',
+
+            //Validation Rules for surrender_the_child
+            'surrender_salutation' => 'required|string|max:255',
+            'surrender_full_name' => 'required|string|max:255',
+            'surrender_age' => 'required|integer|min:1|max:120',
+            'surrender_occupation' => 'required|string|max:255',
+            'surrender_income' => 'required|string|max:255',
+            'surrender_village' => 'required|string|max:255',
+            'surrender_alley_road' => 'required|string|max:255',
+            'surrender_subdistrict' => 'required|string|max:255',
+            'surrender_district' => 'required|string|max:255',
+            'surrender_province' => 'required|string|max:255',
+            'surrender_phone_number' => 'required|string|max:255',
+            'surrender_childs_name' => 'required|string|max:255',
+            'surrender_contact_location' => 'required|string|max:255',
+            'surrender_contact_phone' => 'required|string|max:255',
+            'surrender_child_recipient' => 'required|string|max:255',
+            'child_recipient_relevant' => 'required|string|max:255',
+            'child_recipient_related' => 'required|string|max:255',
+            'child_recipient_phone' => 'required|string|max:255',
+
+            //ChildRegistration
+            'child_name' => 'required|string|max:255',
+            'child_nickname' => 'required|string|max:255',
+            'registration_citizen_id' => 'required|string',
+            'registration_birthday' => 'required|date|date_format:Y-m-d',
+            'birth_province' => 'required|string|max:255',
+            'registration_ethnicity' => 'required|string|max:255',
+            'registration_nationality' => 'required|string|max:255',
+            'religion' => 'required|string|max:255',
+            'house_number' => 'required|string|max:50',
+            'village' => 'required|string|max:50',
+            'alley_road' => 'required|string|max:255',
+            'subdistrict' => 'required|string|max:255',
+            'district' => 'required|string|max:255',
+            'province' => 'required|string|max:255',
+
+            'health_option' => 'required|in:option_1,option_2',
+            'health_option_detail' => 'required_if:health_option,option_2|string|max:255',
+            'registration_blood_group' => 'required|in:option_1,option_2,option_3,option_4',
+            'registration_congenital_disease' => 'required|string|max:255',
+            'edited_by' => 'required|string|max:255',
+            'drug_allergy' => 'required|string|max:255',
+            'drug_allergy_detail' => 'required|string|max:255',
+            'accident_history' => 'required|string|max:255',
+            'accident_history_when_age' => 'required|integer|min:0',
+            'ge_immunity' => 'required|in:option_1,option_2,option_3,option_4,option_5,option_6,option_7,option_8',
+            'ge_immunity_detail' => 'required_if:ge_immunity,option_8|string|max:255',
+            'specially_about' => 'required|string|max:255',
+            'the_eldest_son' => 'required|string|max:255',
+            'registration_number_of_siblings' => 'required|integer|min:0',
+            'elder_brother' => 'required|integer|min:0',
+            'younger_brother' => 'required|integer|min:0',
+            'elder_sister' => 'required|integer|min:0',
+            'younger_sister' => 'required|integer|min:0',
+
+            'fathers_name' => 'required|string|max:255',
+            'fathers_age' => 'required|integer|min:0',
+            'fathers_occupation' => 'required|string|max:255',
+            'fathers_workplace' => 'required|string|max:255',
+            'fathers_phone' => 'required|string|max:255',
+            'registration_mother_name' => 'required|string|max:255',
+            'mother_age' => 'required|integer|min:0',
+            'registration_mother_occupation' => 'required|string|max:255',
+            'mother_workplace' => 'required|string|max:255',
+            'mother_phone' => 'required|string|max:255',
+            'marital_status' => 'required|in:option_1,option_2,option_3,option_4',
+            'parent_name' => 'required|string|max:255',
+            'parent_age' => 'required|integer|min:0',
+            'parent_relevant_as' => 'required|string|max:255',
+            'parent_occupation' => 'required|string|max:255',
+            'parent_workplace' => 'required|string|max:255',
+            'parent_phone' => 'required|string|max:255',
         ]);
 
-        // dd($request);
+        dd($request);
 
         // Prepare data for insertion
         $ChildInformation = ChildInformation::create([
             'users_id' => auth()->id(),
-            'status' => '1', // Default status value
+            'status' => '1',
             'admin_name_verifier' => null,
             'full_name' => $request->full_name,
             'ethnicity' => $request->ethnicity,
@@ -118,18 +193,95 @@ class UserChildApplyController extends Controller
             'mother_occupation' => $request->mother_occupation
         ]);
 
-        if ($request->hasFile('attachments')) {
-            foreach ($request->file('attachments') as $file) {
-                $filename = time() . '_' . $file->getClientOriginalName();
-                $path = $file->storeAs('attachments', $filename, 'public');
+        $SurrenderTheChild = SurrenderTheChild::create([
+            'child_information_id' => $ChildInformation->id,
+            'salutation' => $request->surrender_salutation,
+            'full_name' => $request->surrender_full_name,
+            'age' => $request->surrender_age,
+            'occupation' => $request->surrender_occupation,
+            'income' => $request->surrender_income,
+            'village' => $request->surrender_village,
+            'alley_road' => $request->surrender_alley_road,
+            'subdistrict' => $request->surrender_subdistrict,
+            'district' => $request->surrender_district,
+            'province' => $request->surrender_province,
+            'phone_number' => $request->surrender_phone_number,
+            'childs_name' => $request->surrender_childs_name,
+            'contact_location' => $request->surrender_contact_location,
+            'contact_phone' => $request->surrender_contact_phone,
+            'child_recipient' => $request->surrender_child_recipient,
+            'child_recipient_relevant' => $request->child_recipient_relevant,
+            'child_recipient_phone' => $request->child_recipient_phone,
+            'child_recipient_related' => $request->child_recipient_related,
+        ]);
 
-                ChildAttachment::create([
-                    'child_information_id' => $ChildInformation->id,
-                    'file_path' => $path,
-                    'file_type' => $file->getClientMimeType(),
-                ]);
-            }
-        }
+        $ChildRegistration = ChildRegistration::create([
+            'child_information_id' => $ChildInformation->id,
+            'child_name' => $request->child_name,
+            'child_nickname' => $request->child_nickname,
+            'citizen_id' => $request->registration_citizen_id,
+            'birthday' => $request->registration_birthday,
+            'birth_province' => $request->birth_province,
+            'ethnicity' => $request->registration_ethnicity,
+            'nationality' => $request->registration_nationality,
+            'religion' => $request->religion,
+            'house_number' => $request->house_number,
+            'village' => $request->village,
+            'alley_road' => $request->alley_road,
+            'subdistrict' => $request->subdistrict,
+            'district' => $request->district,
+            'province' => $request->province,
+
+            'health_option' => $request->health_option,
+            'health_option_detail' => $request->health_option_detail,
+            'blood_group' => $request->registration_blood_group,
+            'congenital_disease' => $request->congenital_disease,
+            'edited_by' => $request->edited_by,
+            'drug_allergy' => $request->drug_allergy,
+            'drug_allergy_detail' => $request->drug_allergy_detail,
+            'accident_history' => $request->accident_history,
+            'accident_history_when_age' => $request->accident_history_when_age,
+            'ge_immunity' => $request->ge_immunity,
+            'ge_immunity_detail' => $request->ge_immunity_detail,
+            'specially_about' => $request->specially_about,
+            'the_eldest_son' => $request->the_eldest_son,
+            'number_of_siblings ' => $request->registration_number_of_siblings,
+            'elder_brother' => $request->elder_brother,
+            'younger_brother' => $request->younger_brother,
+            'elder_sister' => $request->elder_sister,
+            'younger_sister' => $request->younger_sister,
+
+            'fathers_name' => $request->fathers_name,
+            'fathers_age' => $request->fathers_age,
+            'fathers_occupation' => $request->fathers_occupation,
+            'fathers_workplace' => $request->fathers_workplace,
+            'fathers_phone' => $request->fathers_phone,
+            'mother_name' => $request->registration_mother_name,
+            'mother_age' => $request->mother_age,
+            'mother_occupation' => $request->registration_mother_occupation,
+            'mother_workplace' => $request->mother_workplace,
+            'mother_phone' => $request->mother_phone,
+            'marital_status' => $request->marital_status,
+            'parent_name' => $request->parent_name,
+            'parent_age' => $request->parent_age,
+            'parent_relevant_as' => $request->parent_relevant_as,
+            'parent_occupation' => $request->parent_occupation,
+            'parent_workplace' => $request->parent_workplace,
+            'parent_phone' => $request->parent_phone,
+        ]);
+
+        // if ($request->hasFile('attachments')) {
+        //     foreach ($request->file('attachments') as $file) {
+        //         $filename = time() . '_' . $file->getClientOriginalName();
+        //         $path = $file->storeAs('attachments', $filename, 'public');
+
+        //         ChildAttachment::create([
+        //             'child_information_id' => $ChildInformation->id,
+        //             'file_path' => $path,
+        //             'file_type' => $file->getClientMimeType(),
+        //         ]);
+        //     }
+        // }
 
         return redirect()->back()->with('success', 'ฟอร์มถูกส่งเรียบร้อยแล้ว');
     }
@@ -152,7 +304,7 @@ class UserChildApplyController extends Controller
 
     public function ChildApplyUserShowFormEdit($id)
     {
-        $form = ChildInformation::with('caregiverInformation','attachments')->findOrFail($id);
+        $form = ChildInformation::with('caregiverInformation', 'attachments')->findOrFail($id);
 
         return view('child_development_center.apply_form.account.edit.edit_form', compact('form'));
     }
@@ -275,7 +427,6 @@ class UserChildApplyController extends Controller
         }
 
         return redirect()->back()->with('success', 'Update!');
-
     }
 
     public function ChildApplyUserExportPDF($id)
@@ -286,7 +437,6 @@ class UserChildApplyController extends Controller
             ->setPaper('A4', 'portrait');
 
         return $pdf->stream('ศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์' . $form->id . '.pdf');
-
     }
 
     public function ChildApplyUserReply(Request $request, $formId)

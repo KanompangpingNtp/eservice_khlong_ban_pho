@@ -10,7 +10,7 @@ class ChildRegistration extends Model
     use HasFactory;
 
     protected $fillable = [
-        'users_id', 'status', 'admin_name_verifier', 'child_name', 'child_nickname', 'citizen_id',
+        'child_information_id', 'child_name', 'child_nickname', 'citizen_id',
         'birthday', 'birth_province', 'ethnicity', 'nationality', 'religion', 'house_number', 'village',
         'alley_road', 'subdistrict', 'district', 'province', 'health_option', 'health_option_detail',
         'blood_group', 'congenital_disease', 'edited_by', 'drug_allergy', 'drug_allergy_detail',

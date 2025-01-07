@@ -18,9 +18,18 @@
         </div>
 
         <!-- Salutation -->
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label for="salutation">คำนำหน้า</label>
             <input type="text" name="salutation" id="salutation" class="form-control">
+        </div> --}}
+        <div class="form-group">
+            <label for="salutation">ชื่อนำหน้า</label>
+            <select class="form-select" id="salutation" name="salutation">
+                <option value="" selected disabled>เลือกคำนำหน้า</option>
+                <option value="นาย">นาย</option>
+                <option value="นาง">นาง</option>
+                <option value="นางสาว">นางสาว</option>
+            </select>
         </div>
 
         <!-- Full Name -->

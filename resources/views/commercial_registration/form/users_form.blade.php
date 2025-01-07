@@ -25,9 +25,18 @@
                 <label for="written_at" class="form-label">เขียนที่</label>
                 <input type="text" name="written_at" id="written_at" class="form-control">
             </div>
-            <div class="col-md-3 mb-3">
+            {{-- <div class="col-md-3 mb-3">
                 <label for="salutation" class="form-label">ชื่อนำหน้า</label>
                 <input type="text" name="salutation" id="salutation" class="form-control">
+            </div> --}}
+            <div class="col-md-3 mb-3">
+                <label for="salutation" class="form-label">ชื่อนำหน้า</label>
+                <select class="form-select" id="salutation" name="salutation">
+                    <option value="" selected disabled>เลือกคำนำหน้า</option>
+                    <option value="นาย">นาย</option>
+                    <option value="นาง">นาง</option>
+                    <option value="นางสาว">นางสาว</option>
+                </select>
             </div>
             <div class="col-md-3 mb-3">
                 <label for="full_name" class="form-label">ชื่อ-นามสกุล <span class="text-danger">*</span></label>

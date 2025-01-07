@@ -89,10 +89,22 @@
                     </div>
                 </div>
 
-                <div class="row mb-3">
+                {{-- <div class="row mb-3">
                     <label for="salutation" class="col-sm-3 col-form-label">คำนำหน้า:</label>
                     <div class="col-sm-9">
                         <input type="text" id="salutation" name="salutation" class="form-control" required>
+                    </div>
+                </div> --}}
+
+                <div class="row mb-3">
+                    <label for="salutation" class="col-sm-3 col-form-label">คำนำหน้า:</label>
+                    <div class="col-sm-9">
+                        <select class="form-select" id="salutation" name="salutation">
+                            <option value="" selected disabled>เลือกคำนำหน้า</option>
+                            <option value="นาย">นาย</option>
+                            <option value="นาง">นาง</option>
+                            <option value="นางสาว">นางสาว</option>
+                        </select>
                     </div>
                 </div>
 

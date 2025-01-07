@@ -5,72 +5,6 @@
         <h3 class="text-center">แบบคำขอลงทะเบียนรับเงินเบี้ยความพิการ</h3>
         <form action="{{ route('DisabilityFormCreate') }}" method="POST" enctype="multipart/form-data">
             @csrf
-
-            <!-- Trade Information -->
-            {{-- <h3>ข้อมูลมอบอำนาจหรือผู้ดูแลคนพิการ</h3>
-            <div class="row mb-3 w-100">
-                <label class="col-12 col-xl-3 col-form-label">ขอขึ้นทะเบียน โดยเป็น:</label>
-                <div class="col-12 col-xl-9">
-                    <div class="d-flex flex-column flex-xl-row">
-                        <div class="form-check me-xl-4">
-                            <input class="form-check-input" type="radio" id="trade_condition_option1"
-                                name="trade_condition" value="option1" required>
-                            <label class="form-check-label" for="trade_condition_option1">บิดา - มารดา</label>
-                        </div>
-                        <div class="form-check me-xl-4">
-                            <input class="form-check-input" type="radio" id="trade_condition_option2"
-                                name="trade_condition" value="option2">
-                            <label class="form-check-label" for="trade_condition_option2">บุตร</label>
-                        </div>
-                        <div class="form-check me-xl-4">
-                            <input class="form-check-input" type="radio" id="trade_condition_option3"
-                                name="trade_condition" value="option3">
-                            <label class="form-check-label" for="trade_condition_option3">สามี - ภรรยา</label>
-                        </div>
-                        <div class="form-check me-xl-4">
-                            <input class="form-check-input" type="radio" id="trade_condition_option4"
-                                name="trade_condition" value="option4">
-                            <label class="form-check-label" for="trade_condition_option4">พี่น้อง</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" id="trade_condition_option5"
-                                name="trade_condition" value="option5">
-                            <label class="form-check-label" for="trade_condition_option5">ผู้ดูแลคนพิการตามระเบียบฯ</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <label for="elderly_name" class="col-sm-3 col-form-label">ชื่อผู้มอบอำนาจ:</label>
-                <div class="col-sm-9">
-                    <input type="text" id="elderly_name" name="elderly_name" class="form-control" required>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <label for="trader_citizen_id" class="col-sm-3 col-form-label">เลขบัตรประชาชน:</label>
-                <div class="col-sm-9">
-                    <input type="text" id="trader_citizen_id" name="trader_citizen_id" class="form-control" required>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <label for="trader_phone_number" class="col-sm-3 col-form-label">โทรศัพท์:</label>
-                <div class="col-sm-9">
-                    <input type="text" id="trader_phone_number" name="trader_phone_number" class="form-control" required>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <label for="trader_address" class="col-sm-3 col-form-label">ที่อยู่:</label>
-                <div class="col-sm-9">
-                    <textarea id="trader_address" name="trader_address" class="form-control" rows="3" required></textarea>
-                </div>
-            </div>
-
-            <hr> --}}
-
             <!-- Personal Information -->
             <div class="my-4">
                 <h3>ข้อมูลผู้พิการ</h3>
@@ -92,9 +26,15 @@
                 <div class="row mb-3">
                     <label for="salutation" class="col-sm-3 col-form-label">คำนำหน้า:</label>
                     <div class="col-sm-9">
-                        <input type="text" id="salutation" name="salutation" class="form-control" required>
+                        <select class="form-select" id="salutation" name="salutation">
+                            <option value="" selected disabled>เลือกคำนำหน้า</option>
+                            <option value="นาย">นาย</option>
+                            <option value="นาง">นาง</option>
+                            <option value="นางสาว">นางสาว</option>
+                        </select>
                     </div>
                 </div>
+
 
                 <div class="row mb-3">
                     <label for="first_name" class="col-sm-3 col-form-label">ชื่อ:</label>

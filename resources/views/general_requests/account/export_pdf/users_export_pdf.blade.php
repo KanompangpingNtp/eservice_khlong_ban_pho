@@ -292,7 +292,6 @@
 
     <div class="container">
         <br>
-        <br>
         <p style="text-align: center; font-size:20px;">คำร้องทั่วไป</p>
 
         <p class="right">เขียนที่ องค์การบริหารส่วนตำบลคลองบ้านโพธิ์</p>

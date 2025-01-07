@@ -54,19 +54,19 @@ class UserGeneralRequestsController extends Controller
             'request_details' => $request->request_details,
         ]);
 
-               if ($request->hasFile('attachments')) {
-                foreach ($request->file('attachments') as $file) {
-                    $filename = time() . '_' . $file->getClientOriginalName();
+        if ($request->hasFile('attachments')) {
+            foreach ($request->file('attachments') as $file) {
+                $filename = time() . '_' . $file->getClientOriginalName();
 
-                    $path = $file->storeAs('attachments', $filename, 'public'); // ใช้ disk ที่ระบุเป็น 'public'
+                $path = $file->storeAs('attachments', $filename, 'public'); // ใช้ disk ที่ระบุเป็น 'public'
 
-                    GrAttachment::create([
-                        'gr_forms_id' => $grForm->id,
-                        'file_path' => $path,
-                        'file_type' => $file->getClientMimeType(),
-                    ]);
-                }
+                GrAttachment::create([
+                    'gr_forms_id' => $grForm->id,
+                    'file_path' => $path,
+                    'file_type' => $file->getClientMimeType(),
+                ]);
             }
+        }
 
         return redirect()->back()->with('success', 'ฟอร์มถูกส่งเรียบร้อยแล้ว');
     }
@@ -111,7 +111,6 @@ class UserGeneralRequestsController extends Controller
                 ->setPaper('A4', 'portrait');
 
         return $pdf->stream('แบบคำขอร้องทั่วไป' . $form->id . '.pdf');
-
 
     }
 

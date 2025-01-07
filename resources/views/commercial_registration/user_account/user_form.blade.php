@@ -26,7 +26,12 @@
             </div>
             <div class="col-md-3 mb-3">
                 <label for="salutation" class="form-label">ชื่อนำหน้า</label>
-                <input type="text" name="salutation" id="salutation" class="form-control">
+                <select class="form-select" id="salutation" name="salutation">
+                    <option value="" selected disabled>เลือกคำนำหน้า</option>
+                    <option value="นาย">นาย</option>
+                    <option value="นาง">นาง</option>
+                    <option value="นางสาว">นางสาว</option>
+                </select>
             </div>
             <div class="col-md-3 mb-3">
                 <label for="full_name" class="form-label">ชื่อ-นามสกุล <span class="text-danger">*</span></label>
