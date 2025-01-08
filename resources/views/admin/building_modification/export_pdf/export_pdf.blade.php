@@ -28,37 +28,6 @@
             line-height: 1;
         }
 
-        .container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            /* กำหนดความสูงของพื้นที่ตามขนาดหน้าจอ */
-        }
-
-        .box {
-            border: 2px solid black;
-            margin-top: 1rem;
-            position: absolute;
-            right: 0;
-            width: auto;
-            text-align: center;
-            height: 130px;
-            width: 230px;
-            /* กำหนดความสูงของกล่อง */
-        }
-
-        .box-2 {
-            margin-top: 1rem;
-            position: absolute;
-            top: 30;
-            left: 45;
-            width: auto;
-            text-align: center;
-            height: 100px;
-            font-size: 23px;
-            text-decoration: underline;
-        }
-
         .font-sarabun {
             font-family: 'sarabun', sans-serif;
             font-size: 20px;
@@ -124,366 +93,393 @@
             padding: 5px 0;
             /* เพิ่มพื้นที่ด้านบนและล่างให้กับ footer */
         }
+
+        .checkbox-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+
+        .checkbox-item label {
+            flex: 1;
+        }
+
     </style>
 </head>
 
 <body>
-    @php
-    use Carbon\Carbon;
-    $date = Carbon::parse($form->created_at);
-    $day = $date->day;
-    $month = $date->locale('th')->translatedFormat('F');
-    $year = $date->year + 543;
+    <div class="regis_number">หน้า 1 จาก 2
+    </div>
+    <div class="regis_number">องค์การบริหารส่วนตำบลคลองบ้านโพธิ์
+    </div>
 
-    $registered = Carbon::parse($form->registered);
-    $registered_day = $registered->day;
-    $registered_month = $registered->locale('th')->translatedFormat('F');
-    $registered_year = $registered->year + 543;
-    @endphp
+    <div class="box_text" style="border: 2px solid black; position: relative;">
+        <!-- ข้อความขวาบน -->
+        <div style="position: absolute; top: -1; right: 1; padding: 5px; font-size: 15px;">
+            * 1 คำขอ : 1 เว็บไซต์
+        </div>
+        <!-- เนื้อหาหลัก -->
+        <div class="title_doc" style="text-align: center;">
+            เอกสารประกอบการจดทะเบียนพาณิชย์อิเล็กทรอนิกส์
+        </div>
+        <div style="margin-top: 1rem;">
+            ชื่อผู้ประกอบพาณิชย์กิจ
+            <span class="dotted-line" style="width: 30%; text-align: center; line-height: 1;">{{$form->business_operator_name}}</span>
+            ทะเบียนเลขที่
+            <span class="dotted-line" style="width: 20%; text-align: center; line-height: 1;">{{$form->registration_number}}</span>
+        </div>
+    </div>
+    <div class="box_text font-sarabun-bold" style="text-align: left; ">
+        <span>***เฉพาะข้อ 1-ข้อ 4 กรุณาระบุข้อความภาษาอังกฤษ***</span>
+    </div>
+    <table style="width: 100%; border-collapse: collapse; text-align: left;">
+        <!-- หัวข้อหลัก -->
+        <thead>
+            <tr>
+                <th style="border: 1px solid black; padding: 1px;" colspan="2">
+                    รายละเอียดเกี่ยวกับเว็บไซต์
+                </th>
+            </tr>
+        </thead>
+        <!-- เนื้อหาในตาราง -->
+        <tbody>
+            <tr>
+                <!-- ข้อมูลในหัวข้อด้านซ้าย -->
+                <td style="border: 1px solid black; padding: 1px; width: 40%;">1. ชื่อผู้ประกอบการ
+                    (Owner Name)</td>
+                <!-- ข้อมูลในหัวข้อด้านขวา -->
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">{{$form->owner_name}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; width: 40%;">2. ชื่อที่ใช้ในการประกอบพาณิชย์กิจ
+                    (Company Name) </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">{{$form->company_name}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; width: 40%;">3. ที่อยู่ตามใบทะเบียนพาณิชย์
+                    (Address)</td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">{{$form->address}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; width: 40%;">4. ชื่อเว็บไซต์ (Website)</td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">{{$form->website}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%; ">5.
+                    โปรดเลือกหมวดหมู่ของเว็บไซต์
+                    (Type Of Business)</td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    <ul class="checkbox-list">
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item1" {{ in_array('option1', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item1">คอมพิวเตอร์ อุปกรณ์ไอที
+                                และซอฟแวร์</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item2" {{ in_array('option2', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item2">จดโดเมน/ออกแบบเว็บไซต์</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item3" {{ in_array('option3', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item3">บันเทิง และนันทนาการ</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item4" {{ in_array('option4', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item4">เกมส์/ของเล่น/ของขวัญ/เบ็ดเตล็ด</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item5" {{ in_array('option5', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item5">เครื่องมือเครื่องใช้อุตสาหกรรม</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item6" {{ in_array('option6', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item6">การแพทย์และสุขภาพ</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item7" {{ in_array('option7', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item7">ท่องเที่ยว/จองตั๋ว/จองโรงแรม/เช่ารถ</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item8" {{ in_array('option8', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item8">ออกแบบตกแต่งอาคารและสถานที่</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item9" {{ in_array('option9', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item9">การศึกษา</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item10" {{ in_array('option10', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item10">การเงิน กฎหมาย บัญชี และให้คปรึกษาอื่นๆ </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item10" {{ in_array('option11', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item10">ยานยนต์และอะไหล่</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item11" {{ in_array('option12', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item11">เครื่องมือสื่อสาร/กล้อง
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item12" {{ in_array('option13', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item12">แฟชั่น/เครื่องแต่งกาย/เครื่องประดับ
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item13" {{ in_array('option14', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item13">อาหารและเครื่องดื่ม
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item14" {{ in_array('option15', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item14">ศิลปะและวัฒนธรรม
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item15" {{ in_array('option16', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item15">บริการให้เช่าอุปกรณ์ เครื่องมือ และเครื่องยนต์
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item16" {{ in_array('option17', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item16">เครื่องอุปโภค/บริโภคประจำวัน
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item17" {{ in_array('option18', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item17">ข่าว/สื่อ/โฆษณา
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item18" {{ in_array('option19', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item18">เฟอร์นิเจอร์และอุปกรณ์ตกแต่ง
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item19" {{ in_array('option20', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item19">อุปกรณ์กีฬา/สันทนาการ
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item20" {{ in_array('option21', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item20">วัสดุก่อสร้าง/เครื่องมือ/อุปกรณ์ก่อสร้าง
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item21" {{ in_array('option22', $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="item21">ธุรกิจอื่น
+                            </label>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">6.
+                    ชนิดแห่งพาณิชย์กิจ
+                    (ระบุข้อความเพิ่มเติมจากข้อ 5 ว่า
+                    เว็บไซต์ของท่านดำเนินธุรกิจซื้อขาย
+                    สินค้าหรือบริการใด)
+                </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    <ul class="checkbox-list">
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item1" {{ in_array('option1', $typesOfBusiness) ? 'checked' : '' }}>
+                            <label for="item1">ขายปลีกสินค้า</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item2" {{ in_array('option2', $typesOfBusiness) ? 'checked' : '' }}>
+                            <label for="item2">ขายส่งสินค้า</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item3" {{ in_array('option3', $typesOfBusiness) ? 'checked' : '' }}>
+                            <label for="item3">บริการ</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item4" {{ in_array('option4', $typesOfBusiness) ? 'checked' : '' }}>
+                            <label for="item4">บริการอินเทอร์เน็ต (Internet Service Provider : ISP)
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item5" {{ in_array('option5', $typesOfBusiness) ? 'checked' : '' }}>
+                            <label for="item5">ให้เช่าพื้นที่ของเครื่องคอมพิวเตอร์แม่ข่าย (Web Hosting)</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item6" {{ in_array('option6', $typesOfBusiness) ? 'checked' : '' }}>
+                            <label for="item6">บริการตลาดกลางในการซื้อขายสินค้าหรือบริการ
+                                (E-Marketplace)
+                            </label>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">7.
+                    ระบบสั่งจองสั่งซื้อสินค้าที่ใช้
+                </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    <ul class="checkbox-list">
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item1" {{ in_array('option1', old('order_products_used', $selectedProducts)) ? 'checked' : '' }}>
+                            <label for="item1">ระบบตะกร้า</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item2" {{ in_array('option2', old('order_products_used', $selectedProducts)) ? 'checked' : '' }}>
+                            <label for="item2">ระบบกรอกฟอร์ม</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item3" {{ in_array('option3', old('order_products_used', $selectedProducts)) ? 'checked' : '' }}>
+                            <label for="item3">e-Mail</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item4" {{ in_array('option4', old('order_products_used', $selectedProducts)) ? 'checked' : '' }}>
+                            <label for="item4">โทรศัพท์
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item5" {{ in_array('option5', old('order_products_used', $selectedProducts)) ? 'checked' : '' }}>
+                            <label for="item5">โทรสาร</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item6" {{ in_array('option6', old('order_products_used', $selectedProducts)) ? 'checked' : '' }}>
+                            <label for="item6">อื่น ๆ ({{ $form->order_products_used_detail ?: 'โปรดระบุ สินค้าทุกอย่างที่คุณต้องการ' }})
+                            </label>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">8. วิธีการชระเงิน
+                </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    <ul class="checkbox-list">
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item1" {{ in_array('option1', old('payment_method', $selectedPaymentMethods)) ? 'checked' : '' }}>
+                            <label for="item1">ชำระเงินแบบออฟไลน์(โอนเงินผ่านธนาคาร ชำระเงินทางไปรษณีย์
+                                ชำระเงินกับพนักงาน เป็นต้น)
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item2" {{ in_array('option2', old('payment_method', $selectedPaymentMethods)) ? 'checked' : '' }}>
+                            <label for="item2">ชำระเงินออนไลน์ ผ่านบัตรเครดิต
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item3" {{ in_array('option3', old('payment_method', $selectedPaymentMethods)) ? 'checked' : '' }}>
+                            <label for="item3">ชำระเงินออนไลน์ ผ่านระบบ e-Banking</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item4" {{ in_array('option4', old('payment_method', $selectedPaymentMethods)) ? 'checked' : '' }}>
+                            <label for="item4">ชำระเงินออนไลน์ ผ่านตัวกลางชำระเงิน เช่น PayPal, PaySbuy เป็นต้น
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item5" {{ in_array('option5', old('payment_method', $selectedPaymentMethods)) ? 'checked' : '' }}>
+                            <label for="item5">อื่นๆ ({{ $form->payment_method_detail ?: 'โปรดระบุ จ่ายเงินสดกับเจ้าของร้าน' }})</label>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">9. วิธีการส่งสินค้า
+                </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    <ul class="checkbox-list">
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item1" {{ in_array('option1', old('shipping_method', $selectedShippingMethods)) ? 'checked' : '' }}>
+                            <label for="item1">บริษัทขนส่ง
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item2" {{ in_array('option2', old('shipping_method', $selectedShippingMethods)) ? 'checked' : '' }}>
+                            <label for="item2">พนักงานส่งสินค้า
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item3" {{ in_array('option3', old('shipping_method', $selectedShippingMethods)) ? 'checked' : '' }}>
+                            <label for="item3">ไปรษณีย์</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item4" {{ in_array('option4', old('shipping_method', $selectedShippingMethods)) ? 'checked' : '' }}>
+                            <label for="item4">e-Mail
+                            </label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item5" {{ in_array('option5', old('shipping_method', $selectedShippingMethods)) ? 'checked' : '' }}>
+                            <label for="item5">Download</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item5" {{ in_array('option6', old('shipping_method', $selectedShippingMethods)) ? 'checked' : '' }}>
+                            <label for="item5">อื่นๆ ({{ $form->shipping_method_detail ?: 'โปรดระบุ ที่ร้านมีบริการส่งเอง' }})
+                            </label>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">10. จำนวนเงินทุน
+                    (ที่ใช่ในการทพาณิชย์อิเล็กทรอนิกส์)
+                </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    {{ $form->capital_amount}}
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">11. หมายเลขโทรศัพท์
+                    (Telephone)
+                </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    {{ $form->telephone_number}}
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">12. หมายเลขโทรสาร
+                    (Fax)
+                </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    {{ $form->fax_number}}
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">13. e-Mail
+                    (ที่ใช้ในการขอรับ Source Code)
 
-    <div class="regis_number">หน้า 1 จาก 3
+                </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    {{ $form->e_mail}}
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">14. ชื่อผู้จัดการ
+                </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    {{ $form->manager_name}}
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">15.
+                    สำนักงานที่จดทะเบียน
+                </td>
+                <td style="border: 1px solid black; padding: 1px; width: 60%;">
+                    {{ $form->registered_office}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="footer font-sarabun-bold">
+        <p>องค์การบริหารส่วนตำบลคลองบ้านโพธิ์ https://public.es.demo.gmskysmartcity.com/</p>
     </div>
-    <div class="regis_number">เทศบาลเมืองต้นแบบ ๔.๐
-    </div>
-    <div class="container">
-        <div class="box-2 font-sarabun-bold" style="font-size: 23px;">
-            คำขออนุญาตก่อสร้างอาคาร ดัดแปลงอาคาร หรือรื้อถอนอาคาร
-        </div>
-        <div class="box">
-            <span>แบบ ข.1</span>
-            <div class="box_text">
-                <div>
-                    <span>เลขรับที่</span>
-                    <span class="dotted-line" style="width: 70%; border-bottom: 2px dotted black;"></span>
-                </div>
-                <div>
-                    <span>วันที่</span>
-                    <span class="dotted-line" style="width: 80%; border-bottom: 2px dotted black;"></span>
-                </div>
-                <div>
-                    <span>ลงชื่อ</span>
-                    <span class="dotted-line" style="width: 50%; border-bottom: 2px dotted black;"></span>
-                    <span>ผู้รับคำขอ</span>
-                </div>
-            </div>
 
-        </div>
-    </div>
-    <div class="box_text" style="text-align: right; margin-top:11rem;">
-        <span>เขียนที่</span>
-        <span class="dotted-line" style="width: 25%; text-align: center; line-height: 1;">{{$form->written_at}}</span>
-    </div>
-    <div class="box_text" style="text-align: right; ">
-        <span>วันที่</span>
-        <span class="dotted-line" style="width: 5%; text-align: center;">{{$day }}</span>
-        <span>เดือน</span>
-        <span class="dotted-line" style="width: 15%; text-align: center;"> {{$month }}</span>
-        <span>พ.ศ.</span>
-        <span class="dotted-line" style="width: 10%; text-align: center;"> {{$year }}</span>
-    </div>
-    <div class="box_text" style="text-align: left; margin-left:5rem;">
-        <span>ข้าพเจ้า</span>
-        <span class="dotted-line" style="width: 57%; text-align: center;">{{$form->full_name}}</span>
-        <span>เจ้าของอาคารหรือตัวแทนเจ้าของอาคาร</span>
-    </div>
-    <div class="box_text" style="text-align: left; margin-left:5rem;">
-        <span><input type="checkbox" style="margin-right: 40px;" {{$form->is_an_individual = 'yes' ? 'checked' : '' }}>เป็นบุคคลธรรมดา อยู่ที่เลขที่</span>
-        <span class="dotted-line" style="width: 16%; text-align: center;">{{$form->house_number}}</span>
-        <span>หมู่ที่</span><span class="dotted-line" style="width: 16%; text-align: center;">{{$form->village}}</span>
-        <span>ตรอก/ซอย</span><span class="dotted-line" style="width: 16%; text-align: center;">{{$form->alley}}</span>
-    </div>
-    <div class="box_text" style="text-align: left;">
-        <span>ถนน</span>
-        <span class="dotted-line" style="width: 24%; text-align: center;">{{$form->road}}</span>
-        <span>แขวง/ตำบล</span>
-        <span class="dotted-line" style="width: 25%; text-align: center;">{{$form->subdistrict}}</span>
-        <span>เขต/อำเภอ</span>
-        <span class="dotted-line" style="width: 25%; text-align: center;">{{$form->district}}</span>
-    </div>
-    <div class="box_text" style="text-align: left;">
-        <span>จังหวัด</span>
-        <span class="dotted-line" style="width: 35%; text-align: center;">{{$form->province}}</span>
-    </div>
-    <div class="box_text" style="text-align: left; margin-left:5rem;">
-        <span><input type="checkbox" style="margin-right: 40px;" {{$form->option = 'yes' ? 'checked' : '' }}></span>
-        <span class="dotted-line" style="width: 87%; text-align: left;">{{$form->option_detail}}</span>
-    </div>
-    <div class="box_text" style="text-align: left;">
-        <span>จดทะเบียนเมื่อ วันที่</span>
-        <span class="dotted-line" style="width: 16%; text-align: center;">{{$registered_day}}</span><span>เดือน</span>
-        <span class="dotted-line" style="width: 16%; text-align: center;">{{$registered_month}}</span><span>พ.ศ.</span>
-        <span class="dotted-line" style="width: 16%; text-align: center;">{{$registered_year}}</span><span>เลขทะเบียน</span>
-        <span class="dotted-line" style="width: 15%; text-align: center;">{{$form->registration_number}}</span>
-    </div>
-    <div class="box_text" style="text-align: left;">
-        <span>สำนักงานตั้งอยู่เลขที่</span>
-        <span class="dotted-line" style="width: 16%; text-align: center;">{{$form->office_located}}</span><span>หมู่ที่</span>
-        <span class="dotted-line" style="width: 16%; text-align: center;">{{$form->office_village}}</span><span>ตรอก/ซอย</span>
-        <span class="dotted-line" style="width: 16%; text-align: center;">{{$form->office_alley}}</span><span>ถนน</span>
-        <span class="dotted-line" style="width: 16%; text-align: center;">{{$form->office_road}}</span>
-    </div>
-    <div class="box_text" style="text-align: left;">
-        <span>แขวง/ตำบล</span>
-        <span class="dotted-line" style="width: 25%; text-align: center;">{{$form->office_subdistrict}}</span><span>เขต/อำเภอ</span>
-        <span class="dotted-line" style="width: 24%; text-align: center;">{{$form->office_district}}</span><span>จังหวัด</span>
-        <span class="dotted-line" style="width: 24%; text-align: center;">{{$form->office_province}}</span>
-    </div>
-    <div class="box_text" style="text-align: left;  margin-left:5rem;">
-        <span>โดย</span>
-        <span class="dotted-line"
-            style="width: 58%; text-align: center;">{{$form->by_name}}</span><span>ผู้มีอำนาจลงชื่อแทนนิติบุคคลของผู้อนุญาต</span>
-    </div>
-    <div class="box_text" style="text-align: left;">
-        <span>อยู่บ้านเลขที่</span>
-        <span class="dotted-line" style="width: 12%; text-align: center;">{{$form->by_house_number}}</span><span>หมู่ที่</span>
-        <span class="dotted-line" style="width: 11%; text-align: center;">{{$form->by_village}}</span><span>ตรอก/ซอย</span>
-        <span class="dotted-line" style="width: 24%; text-align: center;">{{$form->by_alley}}</span><span>ถนน</span><span
-            class="dotted-line" style="width: 24%; text-align: center;">{{$form->by_road}}</span>
-    </div>
-    <div class="box_text" style="text-align: left;">
-        <span>แขวง/ตำบล</span>
-        <span class="dotted-line" style="width: 24%; text-align: center;">{{$form->by_subdistrict}}</span>
-        <span>เขต/อำเภอ</span>
-        <span class="dotted-line" style="width: 24%; text-align: center;">{{$form->by_district}}</span>
-        <span>จังหวัด</span>
-        <span class="dotted-line" style="width: 24%; text-align: center;">{{$form->by_province}}</span>
-    </div>
-    <div class="box_text" style="text-align: left;  margin-left:5rem;">
-        <span>ขอยื่นคำขอรับใบอนุญาต</span>
-        <span class="dotted-line" style="width: 40%; text-align: center;">{{$form->apply_for_license}}</span><span>พ่อเจ้าพนักงานท้องถิ่น
-            ดังต่อไปนี้
-        </span>
-    </div>
-    <div class="box_text" style="text-align: left;  margin-left:5rem;">
-        <span>ข้อที่ 1 ทำการก่อสร้างอาคาร/ดัดแปลงอาคาร/รื้อถอนอาคาร </span>
-        <span>ที่บ้านเลขที่
-        </span><span class="dotted-line" style="width: 19%; text-align: center;">{{$form->apply_house_number}}</span>
-    </div>
-    <div class="box_text" style="text-align: left;">
-        <span>หมู่ที</span>
-        <span class="dotted-line" style="width: 18%; text-align: center;">{{$form->apply_village}}</span><span>ตรอก/ซอย
-        </span><span class="dotted-line" style="width: 18%; text-align: center;">{{$form->apply_alley}}</span><span>ถนน</span>
-        <span class="dotted-line" style="width: 18%; text-align: center;">{{$form->apply_road}}</span><span>แขวง/ตำบล</span>
-        <span class="dotted-line" style="width: 18%; text-align: center;">{{$form->apply_subdistrict}}</span>
-    </div>
-    <div class="box_text" style="text-align: left;">
-        <span>เขต/อำเภอ</span>
-        <span class="dotted-line" style="width: 16%; text-align: center;">{{$form->apply_district}}</span>
-        <span>จังหวัด</span>
-        <span class="dotted-line" style="width: 20%; text-align: center;">{{$form->apply_province}}</span><span>โดย</span>
-        <span class="dotted-line" style="width: 30%; text-align: center;">{{$form->apply_by}}</span><span>เป็นเจ้าของอาคาร</span>
-    </div>
-    <div class="box_text" style="text-align: left;">
-        <span>ในที่ดินโฉนดที่ดิน เลขที่/น.ส.3 เลขที่ / ส.ค.1 เลขที่</span>
-        <span class="dotted-line" style="width: 20%; text-align: center;">{{$form->apply_number}}</span>
-        <span>เป็นที่ดินของ</span>
-        <span class="dotted-line" style="width: 30%; text-align: center;">{{$form->it_the_land_of}}</span>
-    </div>
-    <div class="footer font-sarabun-bold">
-        <p>เทศบาลเมืองต้นแบบ ๔.๐ www.eservice-default.go.th date&time</p>
-    </div>
-    {{-- new page --}}
-    <div style="page-break-before: always;"></div>
-    <div class="regis_number">หน้า 2 จาก 3
-    </div>
-    <div class="regis_number">เทศบาลเมืองต้นแบบ ๔.๐
-    </div>
-    <div class="box_text" style="text-align: left;  margin-left:5rem;">
-        <span>ข้อ 2 เป็นอาคาร </span>
-        <div style="margin-left:1rem;">
-            <span>(1) ชนิด</span><span class="dotted-line"
-                style="width: 40%; text-align: center;">{{$form->building_type_1}}</span><span>จำนวน</span><span class="dotted-line"
-                style="width: 10%; text-align: center;">{{$form->building_num_1}}</span><span>เพื่อใช้เป็น</span><span class="dotted-line"
-                style="width: 26%; text-align: center;">{{$form->building_to_1}}</span>
-        </div>
-    </div>
-    <div class="box_text" style="text-align: left;">
-        <span>โดยมีที่จอดรถ ที่กลับรถ และทางเข้าออกของรถ จำนวน </span><span class="dotted-line"
-            style="width: 20%; text-align: center;">{{$form->building_Number_vehicles_1}}</span><span>คัน </span>
-    </div>
-    <div class="box_text" style="text-align: left;  margin-left:5rem;">
-        <div style="margin-left:1rem;">
-            <span>(2) ชนิด</span><span class="dotted-line"
-                style="width: 40%; text-align: center;">{{$form->building_type_2}}</span><span>จำนวน</span><span class="dotted-line"
-                style="width: 10%; text-align: center;">{{$form->building_num_2}}</span><span>เพื่อใช้เป็น</span><span class="dotted-line"
-                style="width: 26%; text-align: center;">{{$form->building_to_2}}</span>
-        </div>
-    </div>
-    <div class="box_text" style="text-align: left;">
-        <span>โดยมีที่จอดรถ ที่กลับรถ และทางเข้าออกของรถ จำนวน </span><span class="dotted-line"
-            style="width: 20%; text-align: center;">{{$form->building_Number_vehicles_2}}</span><span>คัน </span>
-    </div>
-    <div class="box_text" style="text-align: left;  margin-left:5rem;">
-        <div style="margin-left:1rem;">
-            <span>(3) ชนิด</span><span class="dotted-line"
-                style="width: 40%; text-align: center;">{{$form->building_type_3}}</span><span>จำนวน</span><span class="dotted-line"
-                style="width: 10%; text-align: center;">{{$form->building_num_3}}</span><span>เพื่อใช้เป็น</span><span class="dotted-line"
-                style="width: 26%; text-align: center;">{{$form->building_to_3}}</span>
-        </div>
-    </div>
-    <div class="box_text" style="text-align: left;">
-        <span>โดยมีที่จอดรถ ที่กลับรถ และทางเข้าออกของรถ จำนวน </span><span class="dotted-line"
-            style="width: 20%; text-align: center;">{{$form->building_Number_vehicles_3}}</span><span>คัน </span>
-    </div>
-    <div class="box_text" style="text-align: left;">
-        <span>ตามแผนผังบริเวณ แบบแปลน รายการคำนวณประกอบแบบแปลน และรายการคำนวณที่แนบมาพร้อมนี้
-        </span>
-    </div>
-    <div class="box_text" style="text-align: left;  margin-left:5rem;">
-        <div>
-            <span>ข้อ 3 มี </span><span class="dotted-line" style="width: 40%; text-align: center;">{{$form->project_supervisor}}</span>
-            <span>เป็นผู้ควบคุมงาน</span>
-        </div>
-        <div style="margin-left: 2.5rem;">
-            <span class="dotted-line" style="width: 40%; text-align: center;">{{$form->designer_and_calculator}}</span>
-            <span>เป็นผู้ออกแบบและคำนวณ</span>
-        </div>
-    </div>
-    <div class="box_text" style="text-align: left;  margin-left:5rem;">
-        <span>ข้อ 4 มี กำหนดแล้วเสร็จ </span><span class="dotted-line"
-            style="width: 30%; text-align: center;">{{$form->scheduled_for_completion}}</span>
-        <span>วัน นับตั้งแต่วันที่ได้รับใบอนุญาต</span>
-    </div>
-    <div class="box_text" style="text-align: left;  margin-left:5rem;">
-        <span>ข้อ 5 พร้อมคำขอนี้ข้าพเจ้าได้แนบเอกสารหลักฐานต่างๆ มาด้วยแล้วคือ </span>
-        <div style="margin-left: 1rem;">
-            <span>(1) แผนผังบริเวณ แบบแปลน รายการประกอบแบบแปลน จำนวน </span>
-            <span class="dotted-line" style="width: 16%; text-align: center;">{{$form->number_of_blueprints}}</span><span>ชุด ชุดละ</span>
-            <span class="dotted-line" style="width: 16%; text-align: center;">{{$form->blueprint_set}}</span>
-        </div>
-        <div style="margin-left: 1rem;">
-            <span>(2) รายการคำนวณหนึ่งชุด จำนวน </span>
-            <span class="dotted-line" style="width: 16%; text-align: center;">{{$form->one_set_quantity}}</span><span>แผ่น</span><span>
-                (กรณีเป็นอาคารสาธารณะ อาคารพิเศษหรืออาคารที่
-                ก่อสร้างด้วยวัตถุถาวรและวัตถุทนไฟเป็นส่วนใหญ่)
-            </span>
-        </div>
-        <div style="margin-left: 1rem;">
-            <span>(3) หนังสือแสดงความเป็นตัวแทนของอาคาร (กรณีตัวแทนเจ้าของอาคารเป็นผู้ขออนุญาต)</span>
-        </div>
-        <div style="margin-left: 1rem;">
-            <span>(4) สำเนาหนังสือรับรองการจดทะเบียน
-                วัตถุประสงค์และผู้มีอำนาจลงชื่อแทนนิติบุคคลผู้ขออนุญาตออกให้ไม่เกิน
-            </span>
-            <span>กำหนดเดือน
-                (กรณีที่นิติบุคคลเป็นผู้ขออนุญาต)</span>
-        </div>
-        <div style="margin-left: 1rem;">
-            <span>(5) หนังสือแสดงว่าเป็นผู้จัดการหรือผู้แทนซึ่งเป็นผู้ดำเนินกิจการของนิติบุคคล
-                (กรณีที่นิติบุคคลเป็นผู้ขอ
-                อนุญาต)
-            </span>
-        </div>
-        <div style="margin-left: 1rem;">
-            <span>(6) หนังสือแสดงความยินยอมและรับรองของผู้ออกแบบและคำนวณ จำนวน
-            </span><span class="dotted-line" style="width: 30%; text-align: center;">{{$form->designer_calculates}}</span><span>ฉบับ</span>
-            <span>พร้อมทั้งสำเนาใบอนุญาตเป็นผู้ประกอบวิชาชีพวิศวกรรมควบคุมหรือสถาปัตยกรรมควบคุม จำนวน </span><span
-                class="dotted-line" style="width: 11%; text-align: center;">{{$form->control_architecture}}</span><span>ฉบับ</span>
-            <span>(กรณีที่เป็นอาคารมีลักษณะ ขนาด
-                อยู่ในประเภทเป็นวิชาชีพวิศวกรรมควบคุมหรือสถาปัตยกรรมควบคุมแล้วแต่กรณี)</span>
-        </div>
-        <div style="margin-left: 1rem;">
-            <span>(7) สำเนาหรือภาพถ่ายโฉนดที่ดิน เลขที่/ น.ส.3 เลขที่/ ส.ค. 1 เลขที่
-            </span><span class="dotted-line"
-                style="width: 15%; text-align: center;">{{$form->number}}</span><span>จำนวน</span><span class="dotted-line"
-                style="width: 15%; text-align: center;">{{$form->quantity}}</span><span>ฉบับ</span>
-            <span>หรือเป็นหนังสือยินยอมของเจ้าของที่ดิน จำนวน </span><span class="dotted-line"
-                style="width: 20%; text-align: center;">{{$form->number_of_land_owners}}</span><span>ฉบับ</span>
-        </div>
-        <div style="margin-left: 1rem;">
-            <span>(8) หนังสือแสดงความยินยอมของผู้ควบคุมงานตามข้อ 3 จำนวน
-            </span><span class="dotted-line" style="width: 15%; text-align: center;">{{$form->controller}}</span><span>ฉบับ</span>
-        </div>
-        <div style="margin-left: 1rem;">
-            <span>(9) สำเนาหรือภาพถ่ายใบอนุญาตเป็นผู้ประกอบวิชาชีพวิศวกรรมควบคุมหรือวิชาชีพสถาปัตยกรรมควบคุม
-            </span><span>ของผู้ควบคุม จำนวน</span><span class="dotted-line"
-                style="width: 15%; text-align: center;">{{$form->controller_2}}</span><span>ฉบับ</span><span>เฉพาะกรณีที่เป็นอาคารมีลักษณะขนาดอยู่ในประเภทเป็นวิชา
-            </span><span>ชีพวิศวกรรมควบคุม หรือ
-                วิชาชีพสถาปัตยกรรมควบคุม แล้วแต่กรณี)</span>
-        </div>
-        <div style="margin-left: 1rem;">
-            <span>(10) เอกสาร อื่นๆ (ถ้ามี)
-            </span><span class="dotted-line" style="width: 72%; text-align: center;">{{$form->other_documents}}</span><span>ฉบับ</span>
-        </div>
-    </div>
-    <div class="box_text" style="text-align: right; margin-top:1rem;">
-        <span>(ลงชื่อ)</span>
-        <span class="dotted-line" style="width: 35%; text-align: center;">{{$form->full_name}}</span>
-        <span>ผู้ขออนุญาต</span>
-        <div style="margin-right: 70px;">
-            <span>(</span>
-            <span class="dotted-line" style="width: 35%; text-align: center;"> {{$form->full_name}} </span>
-            <span>)</span>
-        </div>
-    </div>
-    <div class="footer font-sarabun-bold">
-        <p>เทศบาลเมืองต้นแบบ ๔.๐ www.eservice-default.go.th date&time</p>
-    </div>
-    {{-- new page --}}
-    <div style="page-break-before: always;"></div>
-    <div class="regis_number">หน้า 3 จาก 3
-    </div>
-    <div class="regis_number">เทศบาลเมืองต้นแบบ ๔.๐
-    </div>
-    <div class="box_text"
-        style="text-align: left; margin-top:1rem; border-bottom:2px solid black; padding-bottom:40px;">
-        <span class="font-sarabun-bold" style="text-decoration: underline;">หมายเหตุ </span>
-        <span style="margin-left:1.5rem;">(1) ข้อความใดที่ไม่ใช้ให้ขีดฆ่า</span>
-        <div style="margin-left:5rem;">(2) ใส่เครื่องหมาย ถูก ในช่อง ว่าง หน้าที่ต้องการ</div>
-    </div>
-    <div class="box_text" style="text-align: left; margin-top:1rem;">
-        <span class="font-sarabun-bold" style="text-decoration: underline;">หมายเหตุของเจ้าหน้าที่ </span>
-        <div style="margin-left:5rem;">จะต้องแจ้งให้ผู้ขออนุญาตทราบว่า จะอนุญาตหรือไม่อนุญาตหรือขยายเวลาภายใน
-        </div>
-    </div>
-    <div class="box_text" style="text-align: left; margin-top:1rem;">
-        <span>วันที่</span>
-        <span class="dotted-line" style="width: 5%; text-align: center; border-bottom: 2px dotted black;"></span>
-        <span>เดือน</span>
-        <span class="dotted-line" style="width: 15%; text-align: center; border-bottom: 2px dotted black;"> </span>
-        <span>พ.ศ.</span>
-        <span class="dotted-line" style="width: 10%; text-align: center; border-bottom: 2px dotted black;"> </span>
-    </div>
-    <div class="box_text" style="text-align: left; margin-top:2rem; margin-left:5rem;">
-        <span>ผู้ขอขออนุญาตได้ชำระค่าธรรมเนียมใบอนุญาต</span>
-        <span class="dotted-line" style="width: 21%; text-align: center; border-bottom: 2px dotted black;"></span>
-        <span>เป็นเงิน</span>
-        <span class="dotted-line" style="width: 21%; text-align: center; border-bottom: 2px dotted black;"> </span>
-        <span>บาทและ</span>
-    </div>
-    <div class="box_text" style="text-align: left;">
-        <span>ค่าธรรมเนียมการตรวจแบบแปลน</span>
-        <span class="dotted-line" style="width: 18%; text-align: center; border-bottom: 2px dotted black;"></span>
-        <span>เป็นเงิน</span>
-        <span class="dotted-line" style="width: 18%; text-align: center; border-bottom: 2px dotted black;"> </span>
-        <span>บาท</span><span class="dotted-line" style="width: 16%; text-align: center; border-bottom: 2px dotted black;">
-            </span><span>สตางค์ตามใบ</span>
-    </div>
-    <div class="box_text" style="text-align: left;">
-        <span>เสร็จรับเงินเล่มที่</span>
-        <span class="dotted-line" style="width: 15%; text-align: center; border-bottom: 2px dotted black;"></span>
-        <span>เลขที</span>
-        <span class="dotted-line" style="width: 10%; text-align: center; border-bottom: 2px dotted black;" > </span>
-        <span>ลงวันที</span><span class="dotted-line" style="width: 16%; text-align: center; border-bottom: 2px dotted black;">
-            </span><span>เดือน</span><span class="dotted-line" style="width: 10%; text-align: center; border-bottom: 2px dotted black;">
-            </span><span>พ.ศ.</span><span class="dotted-line" style="width: 15%; text-align: center; border-bottom: 2px dotted black;">
-            </span>
-    </div>
-    <div class="box_text" style="text-align: left; margin-left:5rem;">
-        <span>ออกใบอนุญาตแล้ว เล่มที่</span>
-        <span class="dotted-line" style="width: 10%; text-align: center; border-bottom: 2px dotted black;"></span>
-        <span>ฉบับ</span>
-        <span class="dotted-line" style="width: 10%; text-align: center; border-bottom: 2px dotted black;"> </span>
-        <span>ลงวันที่</span>
-        <span class="dotted-line" style="width: 10%; text-align: center; border-bottom: 2px dotted black;"> </span>
-        <span>เดือน</span>
-        <span class="dotted-line" style="width: 12%; text-align: center; border-bottom: 2px dotted black;"> </span>
-        <span>พ.ศ.</span>
-        <span class="dotted-line" style="width: 10%; text-align: center; border-bottom: 2px dotted black;"> </span>
-    </div>
-    <div class="footer font-sarabun-bold">
-        <p>เทศบาลเมืองต้นแบบ ๔.๐ www.eservice-default.go.th date&time</p>
-    </div>
 </body>
+
 
 </html>
