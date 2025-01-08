@@ -95,8 +95,8 @@
                             <img src="{{ asset('images/layout-index/cv.png') }}" alt="Icon" />
                         </span>
                         <span class="squre"></span>
-                        แบบฟอร์มใบสมัครเรียนศูนย์<br class="d-block d-sm-none d-lg-block">
-                        พัฒนาเด็กเล็ก
+                        แบบฟอร์มใบสมัครเรียน<br class="d-block d-sm-none d-lg-block">
+                        ศูนย์พัฒนาเด็กเล็ก
                     </a>
                 </div>
                 <div class="half-border-left-i">
