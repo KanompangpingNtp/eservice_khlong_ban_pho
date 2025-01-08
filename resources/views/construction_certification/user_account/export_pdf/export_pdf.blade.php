@@ -103,9 +103,11 @@
         <div>
             คำขอรับรองสิ่งปลูกสร้างอาคาร
         </div>
-        <span class="font-sarabun">(กรณีนอกเขตควบคุมอาคารตามพระราชบัญญัติควบคุมอาคาร พ.ศ. ๒๕๒๒)</span>
     </div>
-    <div class="box_text" style="text-align: right;">
+    <div class="box_text" style="text-align: center;">
+        <span >(กรณีนอกเขตควบคุมอาคารตามพระราชบัญญัติควบคุมอาคาร พ.ศ. ๒๕๒๒)</span>
+    </div>
+    <div class="box_text" style="text-align: right; margin-top: 10px;">
         <span>เขียนที่ ที่ทำการองค์การบริหารส่วนตำบลคลองบ้านโพธิ์</span>
     </div>
     <div class="box_text" style="text-align: right;">
@@ -244,7 +246,9 @@
         <div>
             ขั้นตอนการขอรับรองสิ่งปลูกสร้างอาคาร
         </div>
-        <span class="font-sarabun">(กรณีนอกเขตควบคุมอาคารตามพระราชบัญญัติควบคุมอาคาร พ.ศ. ๒๕๒๒)</span>
+    </div>
+    <div class="box_text" style="text-align: center;">
+        <span >(กรณีนอกเขตควบคุมอาคารตามพระราชบัญญัติควบคุมอาคาร พ.ศ. ๒๕๒๒)</span>
     </div>
     <div class="title_doc" style="text-align:start; margin-top:4rem; margin-left: 4rem; font-size:25px;">
         1.เอกสาร/หลักฐานประกอบการขอรับรองสิ่งปลูกสร้างอาคาร
