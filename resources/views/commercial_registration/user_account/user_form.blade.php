@@ -352,6 +352,19 @@
             <label for="accepting_commercial_fax">โทรสาร</label>
             <input type="text" name="accepting_commercial_fax" id="accepting_commercial_fax" class="form-control">
         </div>
+
+        <div class="mb-3 col-md-3">
+            <label for="accepting_commercial_name_used"> ชื่อที่ใช้ในการประกอบพาณิชยกิจ</label>
+            <input type="text" name="accepting_commercial_name_used" id="accepting_commercial_name_used" class="form-control">
+        </div>
+        <div class="mb-3 col-md-3">
+            <label for="accepting_commercial_transferred">โอนเมื่อวันที่</label>
+            <input type="date" name="accepting_commercial_transferred" id="accepting_commercial_transferred" class="form-control">
+        </div>
+        <div class="mb-3 col-md-3">
+            <label for="accepting_commercial_cause">สาเหตุที่โอน</label>
+            <input type="text" name="accepting_commercial_cause" id="accepting_commercial_cause" class="form-control">
+        </div>
     </div>
 
     <br>

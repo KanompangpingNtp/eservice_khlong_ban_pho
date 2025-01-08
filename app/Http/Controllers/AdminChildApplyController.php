@@ -20,7 +20,7 @@ class AdminChildApplyController extends Controller
 
     public function ChildApplyAdminExportPDF($id)
     {
-        $form = ChildInformation::with('caregiverInformation')->find($id);
+        $form = ChildInformation::with('caregiverInformation','surrenderTheChild','childRegistration')->find($id);
 
         $pdf = Pdf::loadView('admin.child_development_center.apply_form.export_pdf.export_pdf', compact('form'))
             ->setPaper('A4', 'portrait');

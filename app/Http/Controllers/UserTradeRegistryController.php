@@ -217,6 +217,10 @@ class UserTradeRegistryController extends Controller
             'other' => 'nullable|string',
 
             'attachments.*' => 'nullable|file|mimes:jpg,jpeg,png,pdf',
+
+            'accepting_commercial_name_used' => 'nullable|string|max:255', // ชื่อที่ใช้ในการประกอบพาณิชยกิจ
+            'accepting_commercial_transferred' => 'nullable|date', // วันที่โอนการประกอบพาณิชยกิจ
+            'accepting_commercial_cause' => 'nullable|string|max:255', // สาเหตุการประกอบพาณิชยกิจ
         ]);
 
         // dd($request);
@@ -293,6 +297,9 @@ class UserTradeRegistryController extends Controller
             'accepting_commercial_province' => $request->accepting_commercial_province,
             'accepting_commercial_phone' => $request->accepting_commercial_phone,
             'accepting_commercial_fax' => $request->accepting_commercial_fax,
+            'accepting_commercial_name_used' => $request->accepting_commercial_name_used,
+            'accepting_commercial_transferred' => $request->accepting_commercial_transferred,
+            'accepting_commercial_cause' => $request->accepting_commercial_cause,
         ]);
 
         $tradeCopyLocation = TradeCopyLocation::create([
@@ -540,7 +547,7 @@ class UserTradeRegistryController extends Controller
     public function TradeRegistryUserExportPDF($id)
     {
         // $form = TradeRegistry::find($id);
-        $form = TradeRegistry::with(['tradeEntrepreneur', 'tradeLocationMore', 'tradeShareCapital','tradeCopyLocation','tradeShareValue'])->first();
+        $form = TradeRegistry::with(['tradeEntrepreneur', 'tradeLocationMore', 'tradeShareCapital', 'tradeCopyLocation', 'tradeShareValue'])->first();
 
         // dd($form->tradeShareCapital);
 

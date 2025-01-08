@@ -20,7 +20,7 @@ class TradeLocationMore extends Model
         'accepting_commercial_village', 'accepting_commercial_alley',
         'accepting_commercial_road', 'accepting_commercial_subdistrict',
         'accepting_commercial_district', 'accepting_commercial_province',
-        'accepting_commercial_phone', 'accepting_commercial_fax'
+        'accepting_commercial_phone', 'accepting_commercial_fax','accepting_commercial_name_used','accepting_commercial_transferred','accepting_commercial_cause'
     ];
 
     public function tradeRegistry()

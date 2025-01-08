@@ -357,13 +357,14 @@
                     </div>
                     <div class="box_text" style=" text-align: left;  margin-left: 1.5rem;">
                         <span>ชื่อที่ใช้ในการประกอบพาณิชยกิจ</span><span class="dotted-line"
-                            style="width: 31%; text-align: center;">nodata</span>
+                            style="width: 31%; text-align: center;">{{$form->tradeLocationMore->first()->accepting_commercial_name_used}}</span>
                         <span>โอนเมื่อวันที่</span>
-                        <span class="dotted-line" style="width: 30%; text-align: center;">nodata</span>
+                        <span class="dotted-line" style="width: 30%; text-align: center;">{{ \Carbon\Carbon::parse($form->tradeLocationMore->first()->accepting_commercial_transferred)->addYears(543)->format('d/m/Y') }}
+                        </span>
                     </div>
                     <div class="box_text" style=" text-align: left;  margin-left: 1.5rem;">
                         <span>สาเหตุที่โอน</span><span class="dotted-line"
-                            style="width: 89%; text-align: center;">nodata</span>
+                            style="width: 89%; text-align: center;">{{$form->tradeLocationMore->first()->accepting_commercial_cause}}</span>
                     </div>
                     <div class="box_text" style=" text-align: left;">
                         <span>[10] ที่ตั้งสำนักงานสาขา เลขที่</span>
