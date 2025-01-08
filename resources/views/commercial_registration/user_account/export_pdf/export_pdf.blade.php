@@ -83,6 +83,7 @@
             padding: 5px 0;
             /* เพิ่มพื้นที่ด้านบนและล่างให้กับ footer */
         }
+
     </style>
 </head>
 
@@ -95,6 +96,8 @@
     $year = $date->year + 543;
     @endphp
 
+    <img src="{{ public_path('images\logo.png') }}" alt="Logo">
+
     <div class="regis_number">หน้า 1 จาก 1
     </div>
     <div class="regis_number">องค์การบริหารส่วนตำบลคลองบ้านโพธิ์
@@ -105,16 +108,12 @@
     <div class="box_text" style="text-align: left; border-bottom: 2px solid black;">
         <table style="width: 90%;">
             <tr>
-                <td style="text-align: left;">คำร้องที่<span class="dotted-line"
-                        style="width: 15%; text-align: center; line-height: 1; margin-left:10px; border-bottom: 2px dotted black;"></span></td>
+                <td style="text-align: left;">คำร้องที่<span class="dotted-line" style="width: 15%; text-align: center; line-height: 1; margin-left:10px; border-bottom: 2px dotted black;"></span></td>
                 <td style="text-align: right;">สํานักงานทะเบียนพาณิชย์</td>
 
             </tr>
             <tr>
-                <td style="text-align: left;">รับวันที่<span class="dotted-line"
-                        style="width: 15%; text-align: center; line-height: 1; margin-left:10px; border-bottom: 2px dotted black;"> </span>/<span
-                        class="dotted-line" style="width: 15%; text-align: center; line-height: 1; border-bottom: 2px dotted black;"> </span>/<span
-                        class="dotted-line" style="width: 15%; text-align: center; line-height: 1; border-bottom: 2px dotted black;"> </span></td>
+                <td style="text-align: left;">รับวันที่<span class="dotted-line" style="width: 15%; text-align: center; line-height: 1; margin-left:10px; border-bottom: 2px dotted black;"> </span>/<span class="dotted-line" style="width: 15%; text-align: center; line-height: 1; border-bottom: 2px dotted black;"> </span>/<span class="dotted-line" style="width: 15%; text-align: center; line-height: 1; border-bottom: 2px dotted black;"> </span></td>
                 <td style="text-align: right;">องค์การบริหารส่วนตำบลคลองบ้านโพธิ์</td>
             </tr>
             <tr>
@@ -133,7 +132,7 @@
         <span>เดือน</span>
         <span class="dotted-line" style="width: 15%; text-align: center;"> {{$month}}</span>
         <span>พ.ศ.</span>
-        <span class="dotted-line" style="width: 10%; text-align: center;">  {{$year}}</span>
+        <span class="dotted-line" style="width: 10%; text-align: center;"> {{$year}}</span>
     </div>
     <div class="box_text" style="text-align: left; margin-left:5rem;">
         <span>ข้าพเจ้า</span>
