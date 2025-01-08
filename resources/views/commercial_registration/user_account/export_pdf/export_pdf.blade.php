@@ -96,7 +96,8 @@
     $year = $date->year + 543;
     @endphp
 
-    <img src="{{ public_path('images\logo.png') }}" alt="Logo">
+    {{-- <img src="{{ public_path('images\logo.png') }}" alt="Logo"> --}}
+    <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('images/logo.png'))) }}" alt="Logo">
 
     <div class="regis_number">หน้า 1 จาก 1
     </div>
