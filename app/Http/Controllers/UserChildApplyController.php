@@ -88,7 +88,7 @@ class UserChildApplyController extends Controller
             'child_recipient_related' => 'required|string|max:255',
             'child_recipient_phone' => 'required|string|max:255',
 
-            //ChildRegistration
+            // //ChildRegistration
             'child_name' => 'required|string|max:255',
             'child_nickname' => 'required|string|max:255',
             'registration_citizen_id' => 'required|string',
@@ -105,7 +105,7 @@ class UserChildApplyController extends Controller
             'province' => 'required|string|max:255',
 
             'health_option' => 'required|in:option_1,option_2',
-            'health_option_detail' => 'required_if:health_option,option_2|string|max:255',
+            'health_option_detail' => 'nullable|string|max:255',
             'registration_blood_group' => 'required|in:option_1,option_2,option_3,option_4',
             'registration_congenital_disease' => 'required|string|max:255',
             'edited_by' => 'required|string|max:255',
@@ -114,7 +114,7 @@ class UserChildApplyController extends Controller
             'accident_history' => 'required|string|max:255',
             'accident_history_when_age' => 'required|integer|min:0',
             'ge_immunity' => 'required|in:option_1,option_2,option_3,option_4,option_5,option_6,option_7,option_8',
-            'ge_immunity_detail' => 'required_if:ge_immunity,option_8|string|max:255',
+            'ge_immunity_detail' => 'nullable|string|max:255',
             'specially_about' => 'required|string|max:255',
             'the_eldest_son' => 'required|string|max:255',
             'registration_number_of_siblings' => 'required|integer|min:0',
@@ -431,7 +431,9 @@ class UserChildApplyController extends Controller
 
     public function ChildApplyUserExportPDF($id)
     {
-        $form = ChildInformation::with('caregiverInformation')->find($id);
+        $form = ChildInformation::with('caregiverInformation','surrenderTheChild','childRegistration')->find($id);
+
+        // dd($form->childRegistration);
 
         $pdf = Pdf::loadView('child_development_center.apply_form.account.export_pdf.export_pdf', compact('form'))
             ->setPaper('A4', 'portrait');

@@ -120,15 +120,15 @@
     </div>
     <div class="box_text" style="text-align: right;">
         <span>เลขรับที่</span>
-        <span class="dotted-line" style="width: 18%; text-align: center; line-height: 1;">{{ $form->written_at }}</span>
+        <span class="dotted-line" style="width: 18%; text-align: center; line-height: 1; border-bottom: 2px dotted black;"></span>
     </div>
     <div class="box_text" style="text-align: right;">
         <span>วันที่</span>
-        <span class="dotted-line" style="width: 21%; text-align: center; line-height: 1;">{{ $form->written_at }}</span>
+        <span class="dotted-line" style="width: 21%; text-align: center; line-height: 1; border-bottom: 2px dotted black;"></span>
     </div>
     <div class="box_text" style="text-align: right;">
         <span>ลงชื่อ</span>
-        <span class="dotted-line" style="width: 20%; text-align: center; line-height: 1;">{{ $form->written_at }}</span>
+        <span class="dotted-line" style="width: 20%; text-align: center; line-height: 1; border-bottom: 2px dotted black;"></span>
     </div>
     <div class="box_text" style="text-align: right; margin-top:1rem;">
         <span>เขียนที่</span>
@@ -247,7 +247,7 @@
         <span class="dotted-line"
             style="width: 36%; text-align: center;">{{ $form->apply_by }}</span><span>เป็นเจ้าของอาคารในโฉนดเลขที่</span>
             <span class="dotted-line"
-            style="width: 35.5%; text-align: center;"> no-data </span>
+            style="width: 35.5%; text-align: center;"> - </span>
     </div>
     <div class="box_text" style="text-align: left;">
         <span>เป็นที่ดินของ</span>
@@ -257,7 +257,7 @@
     </div>
     <div class="box_text" style="text-align: left;">
         <span>ตามเอกสาร</span>
-        <span class="dotted-line" style="width: 90%; text-align: center;"> no-data </span>
+        <span class="dotted-line" style="width: 90%; text-align: center;"> - </span>
     </div>
     <div class="box_text" style="text-align: left;  margin-left:5rem;">
         <span>ข้อ ๒ เป็นอาคาร </span>
@@ -323,7 +323,7 @@
     <div style="page-break-before: always;"></div>
     {{-- <div class="regis_number">เทศบาลเมืองต้นแบบ ๔.๐
     </div> --}}
-    
+
     <div class="box_text" style="text-align: left;  margin-left:5rem;">
         <span>ข้อ ๔ กำหนดแล้วเสร็จภายใน </span><span class="dotted-line"
             style="width: 29%; text-align: center;">{{ $form->scheduled_for_completion }}</span>
@@ -488,7 +488,7 @@
         </div>
         <div style="margin-right: 70px;">
             <span>ตำแหน่ง</span>
-            <span class="dotted-line" style="width: 45%; text-align: center;">no data</span>
+            <span class="dotted-line" style="width: 45%; text-align: center; border-bottom: 2px dotted black;"></span>
         </div>
     </div>
     <div class="footer font-sarabun-bold">

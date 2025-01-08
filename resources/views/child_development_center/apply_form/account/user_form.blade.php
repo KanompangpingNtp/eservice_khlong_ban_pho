@@ -456,7 +456,7 @@
 
             <div class="mb-3">
                 <label for="health_option_detail">สุขภาพโดยรวมของเด็ก ไม่สมบูรณ์คือ</label>
-                <input type="text" name="health_option_detail" class="form-control" required>
+                <input type="text" name="health_option_detail" class="form-control" >
             </div>
         </div>
 
@@ -576,8 +576,8 @@
                     <label class="form-check-label" for="ge_immunity_8">
                         อื่นๆ
                     </label>
-                    <input type="text" name="ge_immunity_detail" class="form-control" placeholder="การได้รับภูมิคุ้มกันอื่นๆ คือ">
                 </div>
+                <input type="text" name="ge_immunity_detail" class="form-control" placeholder="การได้รับภูมิคุ้มกันอื่นๆ คือ">
             </div>
         </div>
 

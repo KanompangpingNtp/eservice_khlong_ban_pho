@@ -37,4 +37,14 @@ class ChildInformation extends Model
     {
         return $this->hasMany(ChildReply::class, 'child_information_id');
     }
+
+    public function surrenderTheChild()
+    {
+        return $this->hasMany(SurrenderTheChild::class,'child_information_id');
+    }
+
+    public function childRegistration()
+    {
+        return $this->hasMany(ChildRegistration::class,'child_information_id');
+    }
 }
