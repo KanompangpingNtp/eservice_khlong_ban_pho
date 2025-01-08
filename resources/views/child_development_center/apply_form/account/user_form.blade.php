@@ -2,7 +2,7 @@
 @section('title', 'พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์')
 @section('user_content')
 <!-- Child Information Form -->
-{{-- <form action="{{ route('ChildApplyFormCreate') }}" method="POST" enctype="multipart/form-data"> --}}
+<form action="{{ route('ChildApplyFormCreate') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="container">
         <h3 class="text-center">ใบสมัคร <br></h3>
@@ -47,7 +47,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6 mb-3">
+            <div class="col-md-4 mb-3">
                 <label for="citizen_id" class="form-label">เลขประจำตัวประชาชน</label>
                 <input type="text" class="form-control" name="citizen_id" id="citizen_id" required>
             </div>
@@ -85,7 +85,9 @@
                 <input type="text" class="form-control" name="regis_province" id="regis_province" required>
             </div>
         </div>
+
         <hr>
+
         <!-- Current Address Information -->
         <h3>ที่อยู่อาศัยจริงในปัจจุบัน</h3>
         <div class="row">
@@ -145,7 +147,7 @@
         <h3>ข้อมูลผู้ปกครอง</h3>
         <div class="row">
             <div class="col-md-6 mb-3">
-                <label for="father_name" class="form-label">บิดาชื่อ</label>
+                <label for="father_name" class="form-label">บิดาชื่อ - สกุล</label>
                 <input type="text" class="form-control" name="father_name" id="father_name" required>
             </div>
             <div class="col-md-6 mb-3">
@@ -157,7 +159,7 @@
                 <input type="text" class="form-control" name="edu_qual_father" id="edu_qual_father" required>
             </div>
             <div class="col-md-6 mb-3">
-                <label for="mother_name" class="form-label">มารดาชื่อ</label>
+                <label for="mother_name" class="form-label">มารดาชื่อ - สกุล</label>
                 <input type="text" class="form-control" name="mother_name" id="mother_name" required>
             </div>
             <div class="col-md-6 mb-3">
@@ -250,16 +252,21 @@
         <div class="row mb-3">
             <div class="col-md-2 mb-3">
                 <label for="surrender_salutation" class="form-label">คำนำหน้า</label>
-                <input type="text" name="surrender_salutation" id="surrender_salutation" class="form-control" required>
+                <select class="form-select" id="surrender_salutation" name="surrender_salutation">
+                    <option value="" selected disabled>เลือกคำนำหน้า</option>
+                    <option value="นาย">นาย</option>
+                    <option value="นาง">นาง</option>
+                    <option value="นางสาว">นางสาว</option>
+                </select>
             </div>
 
             <div class="col-md-4 mb-3">
-                <label for="surrender_full_name" class="form-label">ข้าพเจ้า</label>
+                <label for="surrender_full_name" class="form-label">ข้าพเจ้า ชื่อ - สกุล</label>
                 <input type="text" name="surrender_full_name" id="surrender_full_name" class="form-control" required>
             </div>
 
             <div class="col-md-2 mb-3">
-                <label for="surrender_age" class="form-label">อายุ</label>
+                <label for="surrender_age" class="form-label">อายุ (ปี)</label>
                 <input type="number" name="surrender_age" id="surrender_age" class="form-control" required>
             </div>
 
@@ -513,7 +520,7 @@
             </div>
 
             <div class="col-md-4 mb-3">
-                <label for="accident_history_when_age">เมื่ออายุ</label>
+                <label for="accident_history_when_age">เมื่ออายุ (ปี)</label>
                 <input type="number" name="accident_history_when_age" class="form-control" required>
             </div>
         </div>
@@ -617,7 +624,7 @@
             </div>
 
             <div class="col-md-2 mb-3">
-                <label for="fathers_age">อายุ</label>
+                <label for="fathers_age">อายุ (ปี)</label>
                 <input type="number" name="fathers_age" class="form-control" required>
             </div>
 
@@ -644,7 +651,7 @@
             </div>
 
             <div class="col-md-2 mb-3">
-                <label for="mother_age">อายุ</label>
+                <label for="mother_age">อายุ (ปี)</label>
                 <input type="number" name="mother_age" class="form-control" required>
             </div>
 
@@ -693,7 +700,7 @@
             </div>
 
             <div class="col-md-3 mb-3">
-                <label for="parent_age">อายุ</label>
+                <label for="parent_age">อายุ (ปี)</label>
                 <input type="number" name="parent_age" class="form-control" required>
             </div>
 

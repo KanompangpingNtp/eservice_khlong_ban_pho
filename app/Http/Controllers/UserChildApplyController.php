@@ -142,7 +142,7 @@ class UserChildApplyController extends Controller
             'parent_phone' => 'required|string|max:255',
         ]);
 
-        dd($request);
+        // dd($request);
 
         // Prepare data for insertion
         $ChildInformation = ChildInformation::create([
@@ -245,7 +245,7 @@ class UserChildApplyController extends Controller
             'ge_immunity_detail' => $request->ge_immunity_detail,
             'specially_about' => $request->specially_about,
             'the_eldest_son' => $request->the_eldest_son,
-            'number_of_siblings ' => $request->registration_number_of_siblings,
+            'number_of_siblings' => $request->registration_number_of_siblings,
             'elder_brother' => $request->elder_brother,
             'younger_brother' => $request->younger_brother,
             'elder_sister' => $request->elder_sister,

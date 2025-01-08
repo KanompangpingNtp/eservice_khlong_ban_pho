@@ -3,7 +3,7 @@
 @section('user_content')
     <h3 class="text-center"> แก้ไข คำร้องทะเบียนพาณิชย์ </h3>
 
-    <form action="{{ route('TradeRegistryUserFormUpdate', $form->id) }}" method="POST" enctype="multipart/form-data">
+    {{-- <form action="{{ route('TradeRegistryUserFormUpdate', $form->id) }}" method="POST" enctype="multipart/form-data"> --}}
         @csrf
         @method('PUT')
 

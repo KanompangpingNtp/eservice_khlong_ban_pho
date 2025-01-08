@@ -10,9 +10,15 @@ class TradeRegistry extends Model
     use HasFactory;
 
     protected $fillable = [
-        'users_id', 'status', 'admin_name_verifier', 'receive_day', 'written_at', 'write_the_date',
-        'full_name', 'ethnicity', 'nationality', 'house_number', 'village', 'alley', 'road',
-        'subdistrict', 'district', 'province', 'name_used_to_call', 'registered', 'registration', 'detail','salutation'
+        'users_id',
+        'status',
+        'admin_name_verifier',
+        'business_registration',
+        'register_change_items',
+        'register_change_number',
+        'register_change_date',
+        'business_termination',
+        'business_termination_detail',
     ];
 
     public function user()
@@ -28,5 +34,30 @@ class TradeRegistry extends Model
     public function replies()
     {
         return $this->hasMany(TradeRegistryReply::class, 'trade_registries_id');
+    }
+
+    public function tradeCopyLocation()
+    {
+        return $this->hasMany(TradeCopyLocation::class, 'trade_registries_id');
+    }
+
+    public function tradeEntrepreneur()
+    {
+        return $this->hasMany(TradeEntrepreneur::class, 'trade_registries_id');
+    }
+
+    public function tradeLocationMore()
+    {
+        return $this->hasMany(TradeLocationMore::class, 'trade_registries_id');
+    }
+
+    public function tradeShareCapital()
+    {
+        return $this->hasMany(TradeShareCapital::class, 'trade_registries_id');
+    }
+
+    public function tradeShareValue()
+    {
+        return $this->hasMany(TradeShareValue::class, 'trade_registries_id');
     }
 }
