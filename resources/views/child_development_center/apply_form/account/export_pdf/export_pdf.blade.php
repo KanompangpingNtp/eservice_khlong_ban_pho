@@ -141,6 +141,7 @@
 
 
     <div class="title_doc" style="text-align:center;">
+        <img src="{{ public_path('images\logo.png') }}" alt="Logo">
         <div>
             ใบสมัคร
         </div>
@@ -287,6 +288,8 @@
                 {{ $form->caregiverInformation->first()->care_option_other }} </span>
         </div>
     </div>
+        {{-- new page --}}
+        <div style="page-break-before: always;"></div>
     <div class="box_text" style="text-align: left; margin-top: 5px;">
         <span> ๓. ผู้ดูแลอุปการะเด็กตามข้อ ๑. มีรายได้ในครอบครัวต่อเดือน</span>
         <span class="dotted-line" style="width: 49%; text-align: center;">
@@ -314,13 +317,6 @@
             <span class="dotted-line" style="width:35%; text-align: center;">
                 {{ $form->caregiverInformation->first()->child_carrier_phone }} </span>
         </div>
-    </div>
-
-    {{-- new page --}}
-    <div style="page-break-before: always;"></div>
-
-    <div style="text-align: center">
-        - 2 -
     </div>
     <div
         style="text-align: left; display: inline-block; border-bottom: 2px solid black; margin-top:5rem; font-size:25px; font-weight: bold; font-family: 'sarabun-bold', sans-serif;">
@@ -358,7 +354,7 @@
             <span>)</span>
         </div>
     </div>
-    <div class="box_text" style="text-align: right; margin-top:5rem;">
+    <div class="box_text" style="text-align: right; margin-top:3rem;">
         <span>ลงชื่อ</span>
         <span class="dotted-line"
             style="width: 35%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"> </span>
