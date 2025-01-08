@@ -425,12 +425,13 @@
             ในการจัดการเรียนการสอนและขจัดปัญหาต่างๆ
         </div>
         <div>ที่อาจเกิดขึ้นแก่เด็กอย่างใกล้ชิด</div>
-        <div style="margin-left: 2rem;">สถานที่ที่สามารถติดต่อกับผู้ปกครองได้สะดวกรวดเร็วที่สุด<span
+        <div style="margin-left: 2rem; margin-top:20px;">สถานที่ที่สามารถติดต่อกับผู้ปกครองได้สะดวกรวดเร็วที่สุด<span
                 class="dotted-line"
-                style="width: 20%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->contact_location }}
-            </span> <span>โทรศัพท์</span><span class="dotted-line"
-                style="width: 26%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->contact_phone }}
-            </span></div>
+                style="width: 54%; text-align: center; ">{{ $form->surrenderTheChild->first()->contact_location }}
+            </span> </div>
+        <div style="margin-left: 2rem;"><span>โทรศัพท์</span><span class="dotted-line"
+            style="width: 70%; text-align: center; ">{{ $form->surrenderTheChild->first()->contact_phone }}
+        </span> </div>
         {{-- <div><span class="dotted-line" style="width: 60%; text-align: center; margin-top:20px;"> </span> โทรศัพท์
         </div> --}}
         <div style="margin-left: 2rem; margin-top: 0.5rem;">อนึ่ง ถ้าเด็กชาย/เด็กหญิง <span class="dotted-line"
@@ -442,7 +443,7 @@
         <div>เจ้าทราบโดยข้าพเจ้าขอรับผิดชอบค่าใช้จ่ายที่เกิดขึ้น</div>
     </div>
     <div
-        style="text-align: left; display: inline-block; border-bottom: 2px solid black; margin-top:1rem; font-size:25px; font-weight: bold; font-family: 'sarabun-bold', sans-serif;">
+        style="text-align: left; display: inline-block; border-bottom: 2px solid black; margin-top:0.5rem; font-size:25px; font-weight: bold; font-family: 'sarabun-bold', sans-serif;">
         ผู้รับส่งเด็ก
     </div>
     {{-- <div class="box_text" style="text-align: left; margin-top: 5px; ">
@@ -467,7 +468,7 @@
     </div>
 
 
-    <div class="box_text" style="text-align: right; margin-top:3rem;">
+    <div class="box_text" style="text-align: right; margin-top:2rem;">
         <span>ลงชื่อผู้ปกครอง</span>
         <span class="dotted-line" style="width: 35%; text-align: center;">
             {{ $form->surrenderTheChild->first()->full_name }} </span>
