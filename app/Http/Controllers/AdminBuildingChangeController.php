@@ -19,6 +19,16 @@ class AdminBuildingChangeController extends Controller
         return view('admin.building_modification.table_building_modification', compact('forms'));
     }
 
+    // public function BuildingChangeAdminExportPDF($id)
+    // {
+    //     $form = BuildingChange::find($id);
+
+    //     $pdf = Pdf::loadView('admin.building_modification.export_pdf.export_pdf', compact('form'))
+    //         ->setPaper('A4', 'portrait');
+
+    //     return $pdf->stream('คำร้องทะเบียนพาณิชย์' . $form->id . '.pdf');
+    // }
+
     public function BuildingChangeAdminExportPDF($id)
     {
         $form = BuildingChange::find($id);
