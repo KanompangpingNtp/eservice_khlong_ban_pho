@@ -88,10 +88,14 @@ class UserBuildingChangeController extends Controller
             'other_documents' => 'nullable|string',
             'scheduled_for_completion' => 'nullable|string',
 
+            'legal_name' => 'nullable|string',
+            'building_type_new' => 'nullable|string|in:1,2,3',
+            'title_deed_type' => 'nullable|string|in:1,2,3',
+
             'attachments.*' => 'nullable|file|mimes:jpg,jpeg,png,pdf',
         ]);
 
-        // dd($request);
+        dd($request);
 
         $buildingChange = BuildingChange::create([
             'users_id' => auth()->id(),
@@ -162,6 +166,9 @@ class UserBuildingChangeController extends Controller
             'controller_2' => $request->controller_2,
             'other_documents' => $request->other_documents,
             'scheduled_for_completion' => $request->scheduled_for_completion,
+            'legal_name' => $request->legal_name,
+            'building_type_new' => $request->building_type_new,
+            'title_deed_type' => $request->title_deed_type,
         ]);
 
         if ($request->hasFile('attachments')) {
