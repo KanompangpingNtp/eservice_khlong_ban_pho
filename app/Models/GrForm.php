@@ -9,7 +9,7 @@ class GrForm extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['users_id', 'date', 'subject', 'salutation', 'name', 'age', 'house_number', 'village', 'subdistrict', 'district', 'province', 'request_details', 'admin_name_verifier'];
+    protected $fillable = ['users_id', 'date', 'subject', 'salutation', 'name', 'age', 'house_number', 'village', 'subdistrict', 'district', 'province', 'request_details', 'admin_name_verifier','phone','nationality','ethnicity'];
 
     public function user()
     {

@@ -21,10 +21,6 @@
 
             <!-- Row 2: คำนำหน้า และ ชื่อ -->
             <div class="row g-3 mb-3">
-                {{-- <div class="col-md-3">
-                    <label for="salutation" class="form-label">คำนำหน้า</label>
-                    <input type="text" class="form-control" id="salutation" name="salutation" maxlength="50">
-                </div> --}}
                 <div class="col-md-3">
                     <label for="salutation" class="form-label">คำนำหน้า</label>
                     <select class="form-select" id="salutation" name="salutation">
@@ -34,17 +30,25 @@
                         <option value="นางสาว">นางสาว</option>
                     </select>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-5">
                     <label for="name" class="form-label">ชื่อ - นามสกุล</label>
                     <input type="text" class="form-control" id="name" name="name" maxlength="255">
+                </div>
+                <div class="col-md-3">
+                    <label for="age" class="form-label">อายุ (ปี)</label>
+                    <input type="number" class="form-control" id="age" name="age">
                 </div>
             </div>
 
             <!-- Row 3: อายุ และ บ้านเลขที่ -->
             <div class="row g-3 mb-3">
                 <div class="col-md-3">
-                    <label for="age" class="form-label">อายุ (ปี)</label>
-                    <input type="number" class="form-control" id="age" name="age">
+                    <label for="nationality" class="form-label">สัญชาติ</label>
+                    <input type="text" class="form-control" id="nationality" name="nationality">
+                </div>
+                <div class="col-md-3">
+                    <label for="ethnicity" class="form-label">เชื้อชาติ</label>
+                    <input type="text" class="form-control" id="ethnicity" name="ethnicity">
                 </div>
                 <div class="col-md-9">
                     <label for="house_number" class="form-label">บ้านเลขที่</label>
@@ -66,12 +70,14 @@
                     <label for="district" class="form-label">อำเภอ</label>
                     <input type="text" class="form-control" id="district" name="district" maxlength="100">
                 </div>
-            </div>
-
-            <!-- Row 5: จังหวัด -->
-            <div class="mb-3">
-                <label for="province" class="form-label">จังหวัด</label>
-                <input type="text" class="form-control" id="province" name="province" maxlength="100">
+                <div class="mb-3 col-md-4">
+                    <label for="province" class="form-label">จังหวัด</label>
+                    <input type="text" class="form-control" id="province" name="province" maxlength="100">
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label for="phone" class="form-label">เบอร์ติดต่อ</label>
+                    <input type="text" class="form-control" id="phone" name="phone" maxlength="100">
+                </div>
             </div>
 
             <!-- Row 6: รายละเอียดคำขอ -->
@@ -82,7 +88,7 @@
 
             <!-- Row 7: แนบไฟล์ -->
             <div class="mb-3">
-                <label for="attachments" class="form-label">แนบไฟล์</label>
+                <label for="attachments" class="form-label">แนบไฟล์ (รูปหรือเอกสารประกอบคำร้อง)</label>
                 <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
                 <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
                 <!-- แสดงรายการไฟล์ที่แนบ -->
@@ -100,7 +106,6 @@
             </div>
         </form>
     </div>
-
 
     <script>
         const fileInput = document.getElementById('attachments');

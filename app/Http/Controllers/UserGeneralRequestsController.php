@@ -33,7 +33,10 @@ class UserGeneralRequestsController extends Controller
             'district' => 'nullable|string|max:100',
             'province' => 'nullable|string|max:100',
             'request_details' => 'nullable|string',
+            'phone' => 'nullable|string',
             'attachments.*' => 'nullable|file|mimes:jpg,jpeg,png,pdf',
+            'nationality' => 'nullable|string|max:100',
+            'ethnicity' => 'nullable|string|max:100'
         ]);
 
         // dd($request);
@@ -51,7 +54,10 @@ class UserGeneralRequestsController extends Controller
             'subdistrict' => $request->subdistrict,
             'district' => $request->district,
             'province' => $request->province,
+            'phone' => $request->phone,
             'request_details' => $request->request_details,
+            'nationality' => $request->nationality,
+            'ethnicity' => $request->ethnicity,
         ]);
 
         if ($request->hasFile('attachments')) {
