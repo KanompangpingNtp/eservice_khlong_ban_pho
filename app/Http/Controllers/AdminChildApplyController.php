@@ -18,15 +18,33 @@ class AdminChildApplyController extends Controller
         return view('admin.child_development_center.apply_form.table_apply_form', compact('forms'));
     }
 
+    // public function ChildApplyAdminExportPDF($id)
+    // {
+    //     $form = ChildInformation::with('caregiverInformation','surrenderTheChild','childRegistration')->find($id);
+
+    //     $pdf = Pdf::loadView('admin.child_development_center.apply_form.export_pdf.export_pdf', compact('form'))
+    //         ->setPaper('A4', 'portrait');
+
+    //     return $pdf->stream('แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอาย' . $form->id . '.pdf');
+
+    // }
     public function ChildApplyAdminExportPDF($id)
     {
-        $form = ChildInformation::with('caregiverInformation','surrenderTheChild','childRegistration')->find($id);
+        $form = ChildInformation::with('caregiverInformation', 'surrenderTheChild', 'childRegistration')->find($id);
 
-        $pdf = Pdf::loadView('admin.child_development_center.apply_form.export_pdf.export_pdf', compact('form'))
+        if ($form->childRegistration->first() && $form->childRegistration->first()->ge_immunity) {
+            $geImmunity = $form->childRegistration->first()->ge_immunity;
+            if (is_string($geImmunity)) {
+                $form->childRegistration->first()->ge_immunity = json_decode($geImmunity, true);
+            }
+        }
+
+        $selectedOptions = $form->childRegistration->first()->ge_immunity ?? [];
+
+        $pdf = Pdf::loadView('admin.child_development_center.apply_form.export_pdf.export_pdf', compact('form', 'selectedOptions'))
             ->setPaper('A4', 'portrait');
 
-        return $pdf->stream('แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอาย' . $form->id . '.pdf');
-
+        return $pdf->stream('ศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์' . $form->id . '.pdf');
     }
 
     public function ChildApplyAdminReply(Request $request, $formId)

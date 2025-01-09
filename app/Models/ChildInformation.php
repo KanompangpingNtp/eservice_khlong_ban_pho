@@ -15,7 +15,7 @@ class ChildInformation extends Model
         'regis_village', 'regis_road', 'regis_subdistrict', 'regis_district', 'regis_province',
         'current_house_number', 'current_village', 'current_road', 'current_subdistrict',
         'current_district', 'current_province', 'current_phone_number', 'number_of_siblings',
-        'congenital_disease', 'blood_group'
+        'congenital_disease', 'blood_group',
     ];
 
     public function user()

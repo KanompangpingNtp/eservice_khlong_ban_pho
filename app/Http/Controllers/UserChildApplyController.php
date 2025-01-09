@@ -46,17 +46,19 @@ class UserChildApplyController extends Controller
             'current_district' => 'required|string|max:255',
             'current_province' => 'required|string|max:255',
             'current_phone_number' => 'required|string|max:20',
-            'number_of_siblings' => 'required|integer|min:0',
+            'number_of_siblings' => 'required|string|max:255',
             'congenital_disease' => 'required|string|max:255',
             'blood_group' => 'required|string|max:10',
 
-            // Validation Rules for Caregiver Information
+            // // Validation Rules for Caregiver Information
             'father_name' => 'required|string|max:255',
             'edu_qual_father' => 'required|string|max:255',
             'mother_name' => 'required|string|max:255',
             'edu_qual_mother' => 'required|string|max:255',
             'care_option' => 'required|string|max:255',
             'care_option_other' => 'nullable|string|max:255',
+            'care_option_relative_text' => 'nullable|string|max:255',
+
             'caretaker_income' => 'required|string|max:255',
             'applicants_name' => 'required|string|max:255',
             'applicants_relevant' => 'required|string|max:255',
@@ -66,9 +68,9 @@ class UserChildApplyController extends Controller
             'father_occupation' => 'required|string|max:255',
             'mother_occupation' => 'required|string|max:255',
 
-            // 'attachments.*' => 'nullable|file|mimes:jpg,jpeg,png,pdf',
+            // // 'attachments.*' => 'nullable|file|mimes:jpg,jpeg,png,pdf',
 
-            //Validation Rules for surrender_the_child
+            // //Validation Rules for surrender_the_child
             'surrender_salutation' => 'required|string|max:255',
             'surrender_full_name' => 'required|string|max:255',
             'surrender_age' => 'required|integer|min:1|max:120',
@@ -116,15 +118,17 @@ class UserChildApplyController extends Controller
             'drug_allergy_detail' => 'required|string|max:255',
             'accident_history' => 'required|string|max:255',
             'accident_history_when_age' => 'required|integer|min:0',
-            'ge_immunity' => 'required|in:option_1,option_2,option_3,option_4,option_5,option_6,option_7,option_8',
+            // 'ge_immunity' => 'required|in:option_1,option_2,option_3,option_4,option_5,option_6,option_7,option_8',
+            'ge_immunity' => 'required|array',
+            'ge_immunity.*' => 'in:option_1,option_2,option_3,option_4,option_5,option_6,option_7,option_8',
             'ge_immunity_detail' => 'nullable|string|max:255',
             'specially_about' => 'required|string|max:255',
             'the_eldest_son' => 'required|string|max:255',
-            'registration_number_of_siblings' => 'required|integer|min:0',
-            'elder_brother' => 'required|integer|min:0',
-            'younger_brother' => 'required|integer|min:0',
-            'elder_sister' => 'required|integer|min:0',
-            'younger_sister' => 'required|integer|min:0',
+            'registration_number_of_siblings' => 'required|string|max:255',
+            'elder_brother' => 'required|string|max:255',
+            'younger_brother' => 'required|string|max:255',
+            'elder_sister' => 'required|string|max:255',
+            'younger_sister' => 'required|string|max:255',
 
             'fathers_name' => 'required|string|max:255',
             'fathers_age' => 'required|integer|min:0',
@@ -136,16 +140,18 @@ class UserChildApplyController extends Controller
             'registration_mother_occupation' => 'required|string|max:255',
             'mother_workplace' => 'required|string|max:255',
             'mother_phone' => 'required|string|max:255',
-            'marital_status' => 'required|in:option_1,option_2,option_3,option_4',
+            'marital_status' => 'required|in:option_1,option_2,option_3,option_4,option_5',
+            'marital_status_details' => 'nullable|required_if:marital_status,option_5|string|max:255',
             'parent_name' => 'required|string|max:255',
             'parent_age' => 'required|integer|min:0',
             'parent_relevant_as' => 'required|string|max:255',
             'parent_occupation' => 'required|string|max:255',
             'parent_workplace' => 'required|string|max:255',
             'parent_phone' => 'required|string|max:255',
+            // 'marital_status_details' => 'nullable|string|max:255',
         ]);
 
-        dd($request);
+        // dd($request);
 
         // Prepare data for insertion
         $ChildInformation = ChildInformation::create([
@@ -186,6 +192,7 @@ class UserChildApplyController extends Controller
             'edu_qual_mother' => $request->edu_qual_mother,
             'care_option' => $request->care_option,
             'care_option_other' => $request->care_option == 'Other' ? $request->care_option_other : null,
+            'care_option_relative_text' => $request->care_option_relative_text,
             'caretaker_income' => $request->caretaker_income,
             'applicants_name' => $request->applicants_name,
             'applicants_relevant' => $request->applicants_relevant,
@@ -244,7 +251,7 @@ class UserChildApplyController extends Controller
             'drug_allergy_detail' => $request->drug_allergy_detail,
             'accident_history' => $request->accident_history,
             'accident_history_when_age' => $request->accident_history_when_age,
-            'ge_immunity' => $request->ge_immunity,
+            'ge_immunity' => json_encode($request->ge_immunity),
             'ge_immunity_detail' => $request->ge_immunity_detail,
             'specially_about' => $request->specially_about,
             'the_eldest_son' => $request->the_eldest_son,
@@ -272,6 +279,7 @@ class UserChildApplyController extends Controller
             'parent_workplace' => $request->parent_workplace,
             'parent_phone' => $request->parent_phone,
             'blood_group_detail' => $request->blood_group_detail,
+            'marital_status_details' => $request->marital_status_details,
         ]);
 
         // if ($request->hasFile('attachments')) {
@@ -287,7 +295,19 @@ class UserChildApplyController extends Controller
         //     }
         // }
 
-        return redirect()->back()->with('success', 'ฟอร์มถูกส่งเรียบร้อยแล้ว');
+        // return redirect()->back()->with('success', 'ฟอร์มถูกส่งเรียบร้อยแล้ว');
+        return redirect()->back()->with('success', '
+    <span style="font-size: 30px; font-weight: bold;">กรอกข้อมูลเรียบร้อยแล้ว</span>
+    กรุณานำเอกสารที่ใช้ประกอบการสมัครพร้อมตัวเด็กมาพบคุณครูที่ศูนย์พัฒนาเด็กเล็ก อบต.คลองบ้านโพธิ ภายใน 7 วันทำการ หลังจากยื่นสมัครทางออนไลน์เรียบร้อยแล้ว
+
+    หมายเหตุ เอกสาร/หลักฐานที่ใช้ในการสมัครเรียน
+    ๑. ตัวเด็ก
+    ๒. สำเนาสูติบัตร
+    ๓. สำเนาทะเบียนบ้าน
+    ๔. สำเนาบัตรประชาชนบิดา-มารดา
+    ๕. ใบสมัครของศูนย์พัฒนาเด็กเล็กที่กรอกข้อมูลสมบูรณ์แล้ว
+    ๖. สำเนาสมุดบันทึกสุขภาพ (สีชมพู)
+');
     }
 
     public function ChildApplyFormPage()
@@ -433,13 +453,31 @@ class UserChildApplyController extends Controller
         return redirect()->back()->with('success', 'Update!');
     }
 
+    // public function ChildApplyUserExportPDF($id)
+    // {
+    //     $form = ChildInformation::with('caregiverInformation', 'surrenderTheChild', 'childRegistration')->find($id);
+
+    //     // dd($form->childRegistration);
+
+    //     $pdf = Pdf::loadView('child_development_center.apply_form.account.export_pdf.export_pdf', compact('form'))
+    //         ->setPaper('A4', 'portrait');
+
+    //     return $pdf->stream('ศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์' . $form->id . '.pdf');
+    // }
     public function ChildApplyUserExportPDF($id)
     {
-        $form = ChildInformation::with('caregiverInformation','surrenderTheChild','childRegistration')->find($id);
+        $form = ChildInformation::with('caregiverInformation', 'surrenderTheChild', 'childRegistration')->find($id);
 
-        // dd($form->childRegistration);
+        if ($form->childRegistration->first() && $form->childRegistration->first()->ge_immunity) {
+            $geImmunity = $form->childRegistration->first()->ge_immunity;
+            if (is_string($geImmunity)) {
+                $form->childRegistration->first()->ge_immunity = json_decode($geImmunity, true);
+            }
+        }
 
-        $pdf = Pdf::loadView('child_development_center.apply_form.account.export_pdf.export_pdf', compact('form'))
+        $selectedOptions = $form->childRegistration->first()->ge_immunity ?? [];
+
+        $pdf = Pdf::loadView('child_development_center.apply_form.account.export_pdf.export_pdf', compact('form', 'selectedOptions'))
             ->setPaper('A4', 'portrait');
 
         return $pdf->stream('ศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์' . $form->id . '.pdf');

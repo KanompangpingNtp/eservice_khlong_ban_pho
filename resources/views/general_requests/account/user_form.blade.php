@@ -10,11 +10,11 @@
             <!-- Row 1: วันที่ และ เรื่อง -->
             <div class="row g-3 mb-3">
                 <div class="col-md-6">
-                    <label for="date" class="form-label">วันที่</label>
+                    <label for="date" class="form-label">วันที่ <span class="text-danger">*</span></label>
                     <input type="date" class="form-control" id="date" name="date" required>
                 </div>
                 <div class="col-md-6">
-                    <label for="subject" class="form-label">เรื่อง</label>
+                    <label for="subject" class="form-label">เรื่อง <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="subject" name="subject" maxlength="255">
                 </div>
             </div>
@@ -22,7 +22,7 @@
             <!-- Row 2: คำนำหน้า และ ชื่อ -->
             <div class="row g-3 mb-3">
                 <div class="col-md-3">
-                    <label for="salutation" class="form-label">คำนำหน้า</label>
+                    <label for="salutation" class="form-label">คำนำหน้า <span class="text-danger">*</span></label>
                     <select class="form-select" id="salutation" name="salutation">
                         <option value="" selected disabled>เลือกคำนำหน้า</option>
                         <option value="นาย">นาย</option>
@@ -30,59 +30,55 @@
                         <option value="นางสาว">นางสาว</option>
                     </select>
                 </div>
-                <div class="col-md-5">
-                    <label for="name" class="form-label">ชื่อ - นามสกุล</label>
+                <div class="col-md-6">
+                    <label for="name" class="form-label">ชื่อ - นามสกุล <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="name" name="name" maxlength="255">
                 </div>
                 <div class="col-md-3">
-                    <label for="age" class="form-label">อายุ (ปี)</label>
+                    <label for="age" class="form-label">อายุ (ปี) <span class="text-danger">*</span></label>
                     <input type="number" class="form-control" id="age" name="age">
                 </div>
-            </div>
-
-            <!-- Row 3: อายุ และ บ้านเลขที่ -->
-            <div class="row g-3 mb-3">
                 <div class="col-md-3">
-                    <label for="nationality" class="form-label">สัญชาติ</label>
+                    <label for="nationality" class="form-label">สัญชาติ <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="nationality" name="nationality">
                 </div>
                 <div class="col-md-3">
-                    <label for="ethnicity" class="form-label">เชื้อชาติ</label>
+                    <label for="ethnicity" class="form-label">เชื้อชาติ <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="ethnicity" name="ethnicity">
-                </div>
-                <div class="col-md-9">
-                    <label for="house_number" class="form-label">บ้านเลขที่</label>
-                    <input type="text" class="form-control" id="house_number" name="house_number" maxlength="50">
                 </div>
             </div>
 
             <!-- Row 4: หมู่บ้าน, ตำบล, อำเภอ -->
             <div class="row g-3 mb-3">
                 <div class="col-md-4">
-                    <label for="village" class="form-label">หมู่บ้าน</label>
+                    <label for="house_number" class="form-label">บ้านเลขที่<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="house_number" name="house_number" maxlength="50">
+                </div>
+                <div class="col-md-4">
+                    <label for="village" class="form-label">หมู่บ้าน <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="village" name="village" maxlength="100">
                 </div>
                 <div class="col-md-4">
-                    <label for="subdistrict" class="form-label">ตำบล</label>
+                    <label for="subdistrict" class="form-label">ตำบล <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="subdistrict" name="subdistrict" maxlength="100">
                 </div>
                 <div class="col-md-4">
-                    <label for="district" class="form-label">อำเภอ</label>
+                    <label for="district" class="form-label">อำเภอ <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="district" name="district" maxlength="100">
                 </div>
                 <div class="mb-3 col-md-4">
-                    <label for="province" class="form-label">จังหวัด</label>
+                    <label for="province" class="form-label">จังหวัด <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="province" name="province" maxlength="100">
                 </div>
                 <div class="mb-3 col-md-4">
-                    <label for="phone" class="form-label">เบอร์ติดต่อ</label>
+                    <label for="phone" class="form-label">เบอร์ติดต่อ <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="phone" name="phone" maxlength="100">
                 </div>
             </div>
 
             <!-- Row 6: รายละเอียดคำขอ -->
             <div class="mb-3">
-                <label for="request_details" class="form-label">รายละเอียดคำขอ</label>
+                <label for="request_details" class="form-label">รายละเอียดคำขอ <span class="text-danger">*</span></label>
                 <textarea class="form-control" id="request_details" name="request_details" rows="3"></textarea>
             </div>
 
