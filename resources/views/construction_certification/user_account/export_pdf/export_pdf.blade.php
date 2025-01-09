@@ -105,7 +105,7 @@
         </div>
     </div>
     <div class="box_text" style="text-align: center;">
-        <span >(กรณีนอกเขตควบคุมอาคารตามพระราชบัญญัติควบคุมอาคาร พ.ศ. ๒๕๒๒)</span>
+        <span >(กรณีนอกเขตควบคุมอาคารตามพระราชบัญญัติควบคุมอาคาร พ.ศ. 2522)</span>
     </div>
     <div class="box_text" style="text-align: right; margin-top: 10px;">
         <span>เขียนที่ ที่ทำการองค์การบริหารส่วนตำบลคลองบ้านโพธิ์</span>
