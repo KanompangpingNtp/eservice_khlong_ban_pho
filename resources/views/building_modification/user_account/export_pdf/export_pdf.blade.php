@@ -111,7 +111,7 @@
         $registered_year = $registered->year + 543;
     @endphp
 
-    <div class="regis_number">แบบ ข๑.
+    <div class="regis_number">แบบ ข1.
     </div>
     <div class="title_doc" style="text-align:center;">
         <div>
@@ -221,7 +221,7 @@
         </span>
     </div>
     <div class="box_text" style="text-align: left;  margin-left:5rem;">
-        <span>ข้อที่ ๑ ทำการก่อสร้างอาคาร/ดัดแปลงอาคาร/รื้อถอนอาคาร </span>
+        <span>ข้อที่ 1 ทำการก่อสร้างอาคาร/ดัดแปลงอาคาร/รื้อถอนอาคาร </span>
         <span>ที่บ้านเลขที่
         </span><span class="dotted-line"
             style="width: 21%; text-align: center;">{{ $form->apply_house_number }}</span>
@@ -260,9 +260,9 @@
         <span class="dotted-line" style="width: 91%; text-align: center;"> - </span>
     </div>
     <div class="box_text" style="text-align: left;  margin-left:5rem;">
-        <span>ข้อ ๒ เป็นอาคาร </span>
+        <span>ข้อ 2 เป็นอาคาร </span>
         <div style="margin-left:1rem;">
-            <span>(๑) ชนิด</span><span class="dotted-line"
+            <span>(1) ชนิด</span><span class="dotted-line"
                 style="width: 36%; text-align: center;">{{ $form->building_type_1 }}</span><span>จำนวน</span><span
                 class="dotted-line"
                 style="width: 12%; text-align: center;">{{ $form->building_num_1 }}</span><span>หลัง เพื่อใช้เป็น</span><span
@@ -275,7 +275,7 @@
     </div>
     <div class="box_text" style="text-align: left;  margin-left:5rem;">
         <div style="margin-left:1rem;">
-            <span>(๒) ชนิด</span><span class="dotted-line"
+            <span>(2) ชนิด</span><span class="dotted-line"
                 style="width: 36%; text-align: center;">{{ $form->building_type_2 }}</span><span>จำนวน</span><span
                 class="dotted-line"
                 style="width: 12%; text-align: center;">{{ $form->building_num_2 }}</span><span>หลัง เพื่อใช้เป็น</span><span
@@ -288,7 +288,7 @@
     </div>
     <div class="box_text" style="text-align: left;  margin-left:5rem;">
         <div style="margin-left:1rem;">
-            <span>(๓) ชนิด</span><span class="dotted-line"
+            <span>(3) ชนิด</span><span class="dotted-line"
                 style="width: 36%; text-align: center;">{{ $form->building_type_3 }}</span><span>จำนวน</span><span
                 class="dotted-line"
                 style="width: 12%; text-align: center;">{{ $form->building_num_3 }}</span><span>หลัง เพื่อใช้เป็น</span><span
@@ -305,7 +305,7 @@
     </div>
     <div class="box_text" style="text-align: left;  margin-left:5rem;">
         <div>
-            <span>ข้อ ๓ มี </span><span class="dotted-line"
+            <span>ข้อ 3 มี </span><span class="dotted-line"
                 style="width: 40%; text-align: center;">{{ $form->project_supervisor }}</span>
             <span>เป็นผู้ควบคุมงาน</span>
         </div>
@@ -325,20 +325,20 @@
     </div> --}}
 
     <div class="box_text" style="text-align: left;  margin-left:5rem;">
-        <span>ข้อ ๔ กำหนดแล้วเสร็จภายใน </span><span class="dotted-line"
+        <span>ข้อ 4 กำหนดแล้วเสร็จภายใน </span><span class="dotted-line"
             style="width: 29%; text-align: center;">{{ $form->scheduled_for_completion }}</span>
         <span>วัน นับแต่วันที่ได้รับใบอนุญาตเนื่องจากปลูกเสร็จแล้ว</span>
     </div>
     <div class="box_text" style="text-align: left;  margin-left:5rem;">
-        <span>ข้อ ๕ พร้อมคำขอนี้ ข้าพเจ้าได้แนบเอกสารหลักฐานต่างๆมาด้วยแล้วคือ </span>
+        <span>ข้อ 5 พร้อมคำขอนี้ ข้าพเจ้าได้แนบเอกสารหลักฐานต่างๆมาด้วยแล้วคือ </span>
         <div style="margin-left: 1rem;">
-            <span>(๑) แผนผังบริเวณ แบบแปลน รายการประกอบแบบแปลน จำนวน </span>
+            <span>(1) แผนผังบริเวณ แบบแปลน รายการประกอบแบบแปลน จำนวน </span>
             <span class="dotted-line"
                 style="width: 16%; text-align: center;">{{ $form->number_of_blueprints }}</span><span>ชุด</span>
             {{-- <span class="dotted-line" style="width: 16%; text-align: center;">{{ $form->blueprint_set }}</span> --}}
         </div>
         <div style="margin-left: 1rem;">
-            <span>(๒) รายการคำนวณ ๑ ชุด จำนวน </span>
+            <span>(2) รายการคำนวณ 1 ชุด จำนวน </span>
             <span class="dotted-line"
                 style="width: 16%; text-align: center;">{{ $form->one_set_quantity }}</span><span>แผ่น</span><span>
                 (กรณีเป็นอาคารสาธารณะ อาคารพิเศษหรืออาคารที่
@@ -346,20 +346,20 @@
             </span>
         </div>
         <div style="margin-left: 1rem;">
-            <span>(๓) หนังสือแสดงความเป็นเจ้าของอาคาร (กรณีตัวแทนเจ้าของอาคารเป็นผู้ขออนุญาต)</span>
+            <span>(3) หนังสือแสดงความเป็นเจ้าของอาคาร (กรณีตัวแทนเจ้าของอาคารเป็นผู้ขออนุญาต)</span>
         </div>
         <div style="margin-left: 1rem;">
-            <span>(๔) สำเนาหนังสือรับรองการจดทะเบียน
-                วัตถุประสงค์และ ผู้มีอำนาจลงชื่อแทนนิติบุคคลผู้ขออนุญาตที่ออกให้ไม่เกิน ๖ เดือน
+            <span>(4) สำเนาหนังสือรับรองการจดทะเบียน
+                วัตถุประสงค์และ ผู้มีอำนาจลงชื่อแทนนิติบุคคลผู้ขออนุญาตที่ออกให้ไม่เกิน 6 เดือน
             </span>
         </div>
         <div style="margin-left: 1rem;">
-            <span>(๕) หนังสือแสดงว่าเป็นผู้จัดการหรือตัวแทน ซึ่งเป็นผู้ดำเนินกิจการของนิติบุคคล
+            <span>(5) หนังสือแสดงว่าเป็นผู้จัดการหรือตัวแทน ซึ่งเป็นผู้ดำเนินกิจการของนิติบุคคล
                 (กรณีที่นิติบุคคลเป็นผู้ขออนุญาต)
             </span>
         </div>
         <div style="margin-left: 1rem;">
-            <span>(๖) หนังสือแสดงความยินยอมและรับรองของผู้ออกแบบและคำนวณจำนวน
+            <span>(6) หนังสือแสดงความยินยอมและรับรองของผู้ออกแบบและคำนวณจำนวน
             </span><span class="dotted-line"
                 style="width: 30%; text-align: center;">{{ $form->designer_calculates }}</span><span>ฉบับ</span>
             <span>พร้อมทั้งสำเนาใบอนุญาตเป็นผู้ประกอบวิชาชีพวิศวกรรมควบคุมหรือสถาปัตยกรรมควบคุม จำนวน </span><span
@@ -369,7 +369,7 @@
                 อยู่ในประเภทเป็นวิชาชีพวิศวกรรมควบคุมหรือสถาปัตยกรรมควบคุมแล้วแต่กรณี)</span>
         </div>
         <div style="margin-left: 1rem;">
-            <span>(๗) สำเนาหรือภาพถ่ายโฉนดที่ดิน เลขที่/ น.ส.๓ เลขที่/ ส.ค.๑ เลขที่
+            <span>(7) สำเนาหรือภาพถ่ายโฉนดที่ดิน เลขที่/ น.ส.3 เลขที่/ ส.ค.1 เลขที่
             </span><span class="dotted-line"
                 style="width: 15%; text-align: center;">{{ $form->number }}</span><span>จำนวน</span><span
                 class="dotted-line"
@@ -378,19 +378,19 @@
                 style="width: 20%; text-align: center;">{{ $form->number_of_land_owners }}</span><span>ฉบับ</span>
         </div>
         <div style="margin-left: 1rem;">
-            <span>(๘) หนังสือแสดงความยินยอมของผู้ควบคุมงานตามข้อ ๓ จำนวน
+            <span>(8) หนังสือแสดงความยินยอมของผู้ควบคุมงานตามข้อ 3 จำนวน
             </span><span class="dotted-line"
                 style="width: 15%; text-align: center;">{{ $form->controller }}</span><span>ฉบับ</span>
         </div>
         <div style="margin-left: 1rem;">
-            <span>(๙) สำเนาหรือภาพถ่ายใบอนุญาตเป็นผู้ประกอบวิชาชีพวิศวกรรมควบคุมหรือวิชาชีพสถาปัตยกรรมควบคุม
+            <span>(9) สำเนาหรือภาพถ่ายใบอนุญาตเป็นผู้ประกอบวิชาชีพวิศวกรรมควบคุมหรือวิชาชีพสถาปัตยกรรมควบคุม
             </span><span>ของผู้ควบคุม จำนวน</span><span class="dotted-line"
                 style="width: 15%; text-align: center;">{{ $form->controller_2 }}</span><span>ฉบับ </span><span> ( กรณีที่เป็นอาคารมีลักษณะขนาดอยู่ในประเภทเป็นวิชา
             </span><span>ชีพวิศวกรรมควบคุม หรือ
                 วิชาชีพสถาปัตยกรรมควบคุม แล้วแต่กรณี )</span>
         </div>
         <div style="margin-left: 1rem;">
-            <span>(๑๐) เอกสาร อื่นๆ (ถ้ามี)
+            <span>(10) เอกสาร อื่นๆ (ถ้ามี)
             </span><span class="dotted-line"
                 style="width: 77%; text-align: center;">{{ $form->other_documents }}</span>
         </div>
@@ -478,12 +478,11 @@
         <span class="dotted-line" style="width: 10%; text-align: center; border-bottom: 2px dotted black;"> </span>
     </div>
     <div class="box_text" style="text-align: center; margin-top:0.5rem;">
-        <span>(ลงชื่อ)</span>
-        <span class="dotted-line" style="width: 35%; text-align: center;">{{ $form->full_name }}</span>
-        <span>ผู้ขออนุญาต</span>
+        <span>(ลายชื่อ)</span>
+        <span class="dotted-line" style="width: 35%; text-align: center;"></span>
         <div style="margin-right: 25px;">
             <span>(</span>
-            <span class="dotted-line" style="width: 35%; text-align: center;"> {{ $form->full_name }} </span>
+            <span class="dotted-line" style="width: 35%; text-align: center;"> </span>
             <span>)</span>
         </div>
         <div style="margin-right: 70px;">
