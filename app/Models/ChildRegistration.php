@@ -59,7 +59,8 @@ class ChildRegistration extends Model
         'parent_relevant_as',
         'parent_occupation',
         'parent_workplace',
-        'parent_phone'
+        'parent_phone',
+        'blood_group_detail'
     ];
 
     public function user()

@@ -4,7 +4,7 @@
 <!-- Child Information Form -->
 <form action="{{ route('ChildApplyFormCreate') }}" method="POST" enctype="multipart/form-data">
     @csrf
-    
+
     <div class="container">
         <h3 class="text-center">ใบสมัคร <br></h3>
         <h3 class="text-center">ศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์</h3>
@@ -456,7 +456,7 @@
 
             <div class="mb-3">
                 <label for="health_option_detail">สุขภาพโดยรวมของเด็ก ไม่สมบูรณ์คือ</label>
-                <input type="text" name="health_option_detail" class="form-control" >
+                <input type="text" name="health_option_detail" class="form-control">
             </div>
         </div>
 
@@ -487,6 +487,25 @@
                         โอ
                     </label>
                 </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="registration_blood_group" id="registration_blood_group_5" value="option_5" required onclick="toggleOtherInput(this)">
+                    <label class="form-check-label" for="registration_blood_group_5">
+                        อื่นๆ
+                    </label>
+                </div>
+                <div class="col-md-3" id="blood_group_detail">
+                    <input type="text" name="blood_group_detail" class="form-control" placeholder="กลุ่มเลือด อื่นๆโปรดระบุ">
+                </div>
+
+                {{-- <div class="form-check">
+                    <input class="form-check-input" type="radio" name="registration_blood_group" id="registration_blood_group_5" value="option_5" required>
+                    <label class="form-check-label" for="registration_blood_group_5">
+                        อื่นๆ
+                    </label>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" name="ge_immunity_detail" class="form-control" placeholder="กลุ่มเลือด อื่นๆโปรดระบุ">
+                </div> --}}
             </div>
         </div>
 
@@ -672,7 +691,7 @@
             </div>
         </div>
 
-       <div class="mb-3">
+        <div class="mb-3">
             <label for="marital_status">สถานภาพสมรสของบิดา/มารดา</label>
             <div>
                 <div class="form-check">
@@ -694,7 +713,7 @@
             </div>
         </div>
 
-         <div class="row">
+        <div class="row">
             <div class="col-md-3 mb-3">
                 <label for="parent_name">ผู้ปกครองชื่อ - สกุล</label>
                 <input type="text" name="parent_name" class="form-control" required>

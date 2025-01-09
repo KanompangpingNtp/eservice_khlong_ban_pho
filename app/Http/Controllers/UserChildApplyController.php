@@ -106,7 +106,10 @@ class UserChildApplyController extends Controller
 
             'health_option' => 'required|in:option_1,option_2',
             'health_option_detail' => 'nullable|string|max:255',
-            'registration_blood_group' => 'required|in:option_1,option_2,option_3,option_4',
+            'registration_blood_group' => 'required|in:option_1,option_2,option_3,option_4,option_5',
+            'blood_group_detail' => 'nullable|string|max:255',
+
+
             'registration_congenital_disease' => 'required|string|max:255',
             'edited_by' => 'required|string|max:255',
             'drug_allergy' => 'required|string|max:255',
@@ -268,6 +271,7 @@ class UserChildApplyController extends Controller
             'parent_occupation' => $request->parent_occupation,
             'parent_workplace' => $request->parent_workplace,
             'parent_phone' => $request->parent_phone,
+            'blood_group_detail' => $request->blood_group_detail,
         ]);
 
         // if ($request->hasFile('attachments')) {
