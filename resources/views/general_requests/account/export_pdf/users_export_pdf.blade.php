@@ -149,29 +149,29 @@
         </div>
     </div>
     <div class="box_text" style="text-align: left;">
-        <span>เรียน</span><span class="dotted-line" style="width: 25%; text-align: center;"></span>
+        <span>เรื่อง</span><span class="dotted-line" style="width: 35%; text-align: center;">{{$form->subject}}</span>
     </div>
     <div class="box_text" style="text-align: left;">
         <span>เรียน นายกองค์การบริหารส่วนตำบลคลองบ้านโพธิ์</span>
     </div>
     <div class="box_text" style="text-align: left; ">
         <span style="margin-left:2rem;">ข้าพเจ้า</span><span class="dotted-line"
-            style="width: 20%; text-align: center;"></span><span>อายุ</span><span class="dotted-line"
-            style="width: 6%; text-align: center;"></span><span>ปี สัญชาติ</span><span class="dotted-line"
-            style="width: 8%; text-align: center;"></span><span>เชื้อชาติ</span><span class="dotted-line"
-            style="width: 8%; text-align: center;"></span><span>อยู่บ้านเลขที่</span><span class="dotted-line"
-            style="width: 8%; text-align: center;"></span><span>หมู่ที่</span><span class="dotted-line"
-            style="width: 8%; text-align: center;"></span>
+            style="width: 20%; text-align: center;">{{ $form->salutation }}{{ $form->name }}</span><span>อายุ</span><span class="dotted-line"
+            style="width: 6%; text-align: center;">{{ $form->age }}</span><span>ปี สัญชาติ</span><span class="dotted-line"
+            style="width: 8%; text-align: center;">{{ $form->nationality }}</span><span>เชื้อชาติ</span><span class="dotted-line"
+            style="width: 8%; text-align: center;">{{ $form->nationality }}</span><span>อยู่บ้านเลขที่</span><span class="dotted-line"
+            style="width: 8%; text-align: center;">{{ $form->house_number}}</span><span>หมู่ที่</span><span class="dotted-line"
+            style="width: 8%; text-align: center;">{{ $form->village }}</span>
     </div>
     <div class="box_text" style="text-align: left; ">
         <span>ตำบล</span><span class="dotted-line"
-            style="width: 18%; text-align: center;"></span><span>อำเภอ</span><span class="dotted-line"
-            style="width: 18%; text-align: center;"></span><span>จังหวัด</span><span class="dotted-line"
-            style="width: 18%; text-align: center;"></span><span>เบอร์โทรติดต่อ</span><span class="dotted-line"
-            style="width: 19%; text-align: center;"></span>
+            style="width: 18%; text-align: center;">{{ $form->village }}</span><span>อำเภอ</span><span class="dotted-line"
+            style="width: 18%; text-align: center;">{{ $form->subdistrict }}</span><span>จังหวัด</span><span class="dotted-line"
+            style="width: 18%; text-align: center;">{{ $form->district }}</span><span>เบอร์โทรติดต่อ</span><span class="dotted-line"
+            style="width: 19%; text-align: center;">{{ $form->province }}</span>
     </div>
     <div class="box_text" style="text-align: left; margin-left:2rem">
-        <span>ด้วยข้าพเจ้ามีความประสงค์</span><span class="dotted-line" style="width: 78%; text-align: center;"></span>
+        <span>ด้วยข้าพเจ้ามีความประสงค์</span><span class="dotted-line" style="width: 78%; text-align: center;">{{ $form->request_details }}</span>
     </div>
     <div class="box_text" style="text-align: left; margin-top:20px;">
         <span class="dotted-line" style="width: 99%; text-align: center;"></span>
@@ -181,12 +181,12 @@
     </div>
     <div class="box_text" style="text-align: right; margin-top:0.5rem; margin-bottom:1.5rem;">
         <span>ลงชื่อ</span>
-        <span class="dotted-line" style="width: 35%; text-align: center;">
+        <span class="dotted-line" style="width: 35%; text-align: center;">{{ $form->name }}
         </span>
         <span>ผู้รับสมัคร</span>
         <div style="margin-right: 55px;">
             <span>(</span>
-            <span class="dotted-line" style="width: 35%; text-align: center;"></span>
+            <span class="dotted-line" style="width: 35%; text-align: center;">{{ $form->salutation }}{{ $form->name }}</span>
             <span>)</span>
         </div>
     </div>
