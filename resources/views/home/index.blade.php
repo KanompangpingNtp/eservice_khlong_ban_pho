@@ -84,8 +84,8 @@
                             <img src="{{ asset('images/layout-index/brick-wall.png') }}" alt="Icon" />
                         </span>
                         <span class="squre"></span>
-                        ขออนุญาตก่อสร้างอาคารดัดแปลง<br class="d-block d-md-none d-lg-block">
-                        อาคารหรือรื้อถอนอาคาร
+                        แบบคำร้องขออนุญาต ก่อสร้าง  <br class="d-block d-md-none d-lg-block">
+                        ดัดแปลงอาคารหรือ รื้อถอนอาคาร
                     </a>
                 </div>
                 <div class="half-border-right">
