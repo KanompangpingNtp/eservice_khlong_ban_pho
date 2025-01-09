@@ -12,14 +12,14 @@
     <div class="mb-3">
         <label for="business_registration">
             <input type="checkbox" id="business_registration" name="business_registration" value="1" class="form-check-input">
-            จดทะเบียนพาณิชย์
+            จดทะเบียนพาณิชย์ (ให้กรอก (1) - (8) ส่วน (9) - (12) ให้เลือกกรอกตามแต่กรณี)
         </label>
     </div>
 
     <div class="mb-3">
         <label for="register_change_items" style="margin-right: 10px;">
             <input type="checkbox" id="register_change_items" name="register_change_items" value="1" class="form-check-input">
-            จดทะเบียนเปลี่ยนแปลงรายการ
+            จดทะเบียนเปลี่ยนแปลงรายการ ตั้งแต่วันที่...................เป็นดังนี้ ( ให้กรอกเฉพาะรายการซึ่งประสงค์จะขอเปลี่ยนแปลง )
         </label>
 
         <div id="register_change_details" class="row" style="display: none;">
@@ -37,7 +37,7 @@
     <div class="mb-3">
         <label for="business_termination" style="margin-right: 10px;">
             <input type="checkbox" id="business_termination" name="business_termination" value="1" class="form-check-input">
-            จดทะเบียนเลิกประกอบพาณิชยกิจ
+            จดทะเบียนเลิกประกอบพาณิชยกิจ ตั้งแต่วันที่...................เป็นดังนี้ ( ให้กรอกรายการเฉพาะใน (1) (2) และ (5) )
         </label>
 
         <div id="business_termination_details" class="row" style="display: none;">
@@ -71,92 +71,92 @@
     </script>
 
     <br>
-    <h3 class="form-label">ชื่อผู้ประกอบการ</h3>
+    <h3 class="form-label">(1) ชื่อผู้ประกอบการ</h3>
 
     <div class="row">
         <div class="mb-3 col-md-4">
-            <label for="trade_entrepreneur_name" class="form-label">ชื่อผู้ประกอบกิจการ</label>
+            <label for="trade_entrepreneur_name" class="form-label">ชื่อผู้ประกอบกิจการ <span style="color: red;">*</span></label>
             <input type="text" id="trade_entrepreneur_name" name="trade_entrepreneur_name" class="form-control">
         </div>
 
         <div class="mb-3 col-md-2">
-            <label for="trade_entrepreneur_age" class="form-label">อายุ (ปี)</label>
+            <label for="trade_entrepreneur_age" class="form-label">อายุ (ปี) <span style="color: red;">*</span></label>
             <input type="text" id="trade_entrepreneur_age" name="trade_entrepreneur_age" class="form-control">
         </div>
 
         <div class="mb-3 col-md-3">
-            <label for="trade_entrepreneur_ethnicity" class="form-label">เชื้อชาติ</label>
+            <label for="trade_entrepreneur_ethnicity" class="form-label">เชื้อชาติ <span style="color: red;">*</span></label>
             <input type="text" id="trade_entrepreneur_ethnicity" name="trade_entrepreneur_ethnicity" class="form-control" >
         </div>
 
         <div class="mb-3 col-md-3">
-            <label for="trade_entrepreneur_nationality" class="form-label">สัญชาติ</label>
+            <label for="trade_entrepreneur_nationality" class="form-label">สัญชาติ <span style="color: red;">*</span></label>
             <input type="text" id="trade_entrepreneur_nationality" name="trade_entrepreneur_nationality" class="form-control" >
         </div>
 
         <div class="mb-3 col-md-3">
-            <label for="trade_entrepreneur_address_number" class="form-label">ที่อยู่</label>
+            <label for="trade_entrepreneur_address_number" class="form-label">ที่อยู่ <span style="color: red;">*</span></label>
             <input type="text" id="trade_entrepreneur_address_number" name="trade_entrepreneur_address_number" class="form-control" >
         </div>
 
         <div class="mb-3 col-md-3">
-            <label for="trade_entrepreneur_village" class="form-label">หมู่ที่</label>
+            <label for="trade_entrepreneur_village" class="form-label">หมู่ที่ <span style="color: red;">*</span></label>
             <input type="text" id="trade_entrepreneur_village" name="trade_entrepreneur_village" class="form-control" >
         </div>
 
         <div class="mb-3 col-md-3">
-            <label for="trade_entrepreneur_alley" class="form-label">ตรอก/ซอย</label>
+            <label for="trade_entrepreneur_alley" class="form-label">ตรอก/ซอย <span style="color: red;">*</span></label>
             <input type="text" id="trade_entrepreneur_alley" name="trade_entrepreneur_alley" class="form-control" >
         </div>
 
         <div class="mb-3 col-md-3">
-            <label for="trade_entrepreneur_road" class="form-label">ถนน</label>
+            <label for="trade_entrepreneur_road" class="form-label">ถนน <span style="color: red;">*</span></label>
             <input type="text" id="trade_entrepreneur_road" name="trade_entrepreneur_road" class="form-control" >
         </div>
 
         <div class="mb-3 col-md-3">
-            <label for="trade_entrepreneur_subdistrict" class="form-label">ตำบล</label>
+            <label for="trade_entrepreneur_subdistrict" class="form-label">ตำบล <span style="color: red;">*</span></label>
             <input type="text" id="trade_entrepreneur_subdistrict" name="trade_entrepreneur_subdistrict" class="form-control" >
         </div>
 
         <div class="mb-3 col-md-3">
-            <label for="trade_entrepreneur_district" class="form-label">อำเภอ</label>
+            <label for="trade_entrepreneur_district" class="form-label">อำเภอ <span style="color: red;">*</span></label>
             <input type="text" id="trade_entrepreneur_district" name="trade_entrepreneur_district" class="form-control" >
         </div>
 
         <div class="mb-3 col-md-3">
-            <label for="trade_entrepreneur_province" class="form-label">จังหวัด</label>
+            <label for="trade_entrepreneur_province" class="form-label">จังหวัด <span style="color: red;">*</span></label>
             <input type="text" id="trade_entrepreneur_province" name="trade_entrepreneur_province" class="form-control" >
         </div>
 
         <div class="mb-3 col-md-3">
-            <label for="trade_entrepreneur_phone" class="form-label">โทรศัพท์</label>
+            <label for="trade_entrepreneur_phone" class="form-label">โทรศัพท์ <span style="color: red;">*</span></label>
             <input type="text" id="trade_entrepreneur_phone" name="trade_entrepreneur_phone" class="form-control">
         </div>
 
         <div class="mb-3 col-md-3">
-            <label for="trade_entrepreneur_fax" class="form-label">โทรสาร</label>
+            <label for="trade_entrepreneur_fax" class="form-label">โทรสาร <span style="color: red;">*</span></label>
             <input type="text" id="trade_entrepreneur_fax" name="trade_entrepreneur_fax" class="form-control">
         </div>
     </div>
 
     <br>
-    <h3 class="form-label">ชื่อที่ใช้ในการประกอบพาณิชยกิจ</h3>
+    <h3 class="form-label">(2) ชื่อที่ใช้ในการประกอบพาณิชยกิจ</h3>
 
     <div class="row">
         <div class="mb-3 col-md-6">
-            <label for="business_thai_language" class="form-label">ภาษาไทย</label>
+            <label for="business_thai_language" class="form-label">ภาษาไทย <span style="color: red;">*</span></label>
             <input type="text" id="business_thai_language" name="business_thai_language" class="form-control">
         </div>
 
         <div class="mb-3 col-md-6">
-            <label for="business_foreign_language" class="form-label">ภาษาต่างประเทศ</label>
+            <label for="business_foreign_language" class="form-label">ภาษาต่างประเทศ <span style="color: red;">*</span></label>
             <input type="text" id="business_foreign_language" name="business_foreign_language" class="form-control" >
         </div>
     </div>
 
     <br>
-    <h3 class="form-label">ชนิดแห่งพาณิชยกิจ</h3>
+    <h3 class="form-label">(3) ชนิดแห่งพาณิชยกิจ</h3>
 
     <div class="mb-3 col-md-5 d-flex align-items-center">
         <label for="commercial_type1" class="form-label" style="margin-right: 10px;">1</label>
@@ -180,125 +180,134 @@
 
 
     <br>
-    <h3 class="form-label">จำนวนเงินทุนที่นำมาใช้ในการประกอบพาณิชยกิจเป็นประจำ</h3>
+    <h3 class="form-label">(4) จำนวนเงินทุนที่นำมาใช้ในการประกอบพาณิชยกิจเป็นประจำ</h3>
 
     <div class="row">
-        <div class="mb-3 col-md-6">
-            <label for="capital_amount" class="form-label">จำนวนเงินทุน</label>
-            <input type="text" id="capital_amount" name="capital_amount" class="form-control">
+        {{-- <div class="mb-3 col-md-3">
+            <label for="capital_amount" class="form-label">จำนวนเงินทุน <span style="color: red;">*</span></label>
+            <input type="text" id="capital_amount" name="capital_amount" class="form-control"><span>บาท</span>
+        </div> --}}
+        <div class="mb-3 col-md-3">
+            <label for="capital_amount" class="form-label">จำนวนเงินทุน <span style="color: red;">*</span></label>
+            <div style="display: flex; align-items: center;">
+                <input type="text" id="capital_amount" name="capital_amount" class="form-control" style="flex: 1; margin-right: 5px;">
+                <span>บาท</span>
+            </div>
         </div>
 
-        <div class="mb-3 col-md-6">
-            <label for="capital_amount_detaill" class="form-label">จำนวนเงินทุนเพิ่มเติม</label>
-            <input type="text" id="capital_amount_detaill" name="capital_amount_detaill" class="form-control">
+        <div class="mb-3 col-md-3" style="margin-top: 40px;">
+            <label for="capital_amount_detaill" class="form-label"></label>
+            <span>(</span>
+            <input type="text" id="capital_amount_detaill" name="capital_amount_detaill" class="form-control" style="width: auto; display: inline;">
+            <span>)</span>
         </div>
     </div>
 
     <br>
-    <h3 class="form-label">ที่ตั้งสำนักงานใหญ่</h3>
+    <h3 class="form-label">(5) ที่ตั้งสำนักงานใหญ่</h3>
     <div class="row">
         <div class="mb-3 col-md-4">
-            <label for="location_address_number">ที่อยู่</label>
+            <label for="location_address_number">ที่อยู่ <span style="color: red;">*</span></label>
             <input type="text" name="location_address_number" id="location_address_number" class="form-control">
         </div>
         <div class="mb-3 col-md-4">
-            <label for="location_village">หมู่ที่</label>
+            <label for="location_village">หมู่ที่ <span style="color: red;">*</span></label>
             <input type="text" name="location_village" id="location_village" class="form-control">
         </div>
         <div class="mb-3 col-md-4">
-            <label for="location_alley">ตรอก/ซอย</label>
+            <label for="location_alley">ตรอก/ซอย <span style="color: red;">*</span></label>
             <input type="text" name="location_alley" id="location_alley" class="form-control">
         </div>
         <div class="mb-3 col-md-4">
-            <label for="location_road">ถนน</label>
+            <label for="location_road">ถนน <span style="color: red;">*</span></label>
             <input type="text" name="location_road" id="location_road" class="form-control">
         </div>
         <div class="mb-3 col-md-4">
-            <label for="location_subdistrict">ตำบล</label>
+            <label for="location_subdistrict">ตำบล <span style="color: red;">*</span></label>
             <input type="text" name="location_subdistrict" id="location_subdistrict" class="form-control">
         </div>
         <div class="mb-3 col-md-4">
-            <label for="location_district">อำเภอ</label>
+            <label for="location_district">อำเภอ <span style="color: red;">*</span></label>
             <input type="text" name="location_district" id="location_district" class="form-control">
         </div>
         <div class="mb-3 col-md-4">
-            <label for="location_province">จังหวัด</label>
+            <label for="location_province">จังหวัด <span style="color: red;">*</span></label>
             <input type="text" name="location_province" id="location_province" class="form-control">
         </div>
         <div class="mb-3 col-md-4">
-            <label for="location_phone">โทรศัพท์</label>
+            <label for="location_phone">โทรศัพท์ <span style="color: red;">*</span></label>
             <input type="text" name="location_phone" id="location_phone" class="form-control">
         </div>
         <div class="mb-3 col-md-4">
-            <label for="location_fax">โทรสาร</label>
+            <label for="location_fax">โทรสาร <span style="color: red;">*</span></label>
             <input type="text" name="location_fax" id="location_fax" class="form-control">
         </div>
     </div>
 
     <!-- ข้อมูลผู้จัดการ -->
     <br>
-    <h3 class="form-label">ข้อมูลผู้จัดการ</h3>
+    <h3 class="form-label">(6) ข้อมูลผู้จัดการ</h3>
     <div class="row">
         <div class="mb-3 col-md-4">
-            <label for="manager_name">ชื่อผู้จัดการ</label>
+            <label for="manager_name">ชื่อ-สกุล</label>
             <input type="text" name="manager_name" id="manager_name" class="form-control">
         </div>
         <div class="mb-3 col-md-4">
-            <label for="manager_age">อายุผู้จัดการ</label>
+            <label for="manager_age">อายุ (ปี)</label>
             <input type="text" name="manager_age" id="manager_age" class="form-control">
         </div>
         <div class="mb-3 col-md-4">
-            <label for="manager_nationality">สัญชาติผู้จัดการ</label>
+            <label for="manager_nationality">สัญชาติ</label>
             <input type="text" name="manager_nationality" id="manager_nationality" class="form-control">
         </div>
         <div class="mb-3 col-md-4">
-            <label for="manager_address_number">ที่อยู่ผู้จัดการ</label>
+            <label for="manager_address_number">ที่อยู่</label>
             <input type="text" name="manager_address_number" id="manager_address_number" class="form-control">
         </div>
         <div class="mb-3 col-md-4">
-            <label for="manager_village">หมู่ที่ผู้จัดการ</label>
+            <label for="manager_village">หมู่ที่</label>
             <input type="text" name="manager_village" id="manager_village" class="form-control">
         </div>
         <div class="mb-3 col-md-4">
-            <label for="manager_alley">ตรอก/ซอยผู้จัดการ</label>
+            <label for="manager_alley">ตรอก/ซอย</label>
             <input type="text" name="manager_alley" id="manager_alley" class="form-control">
         </div>
         <div class="mb-3 col-md-4">
-            <label for="manager_road">ถนนผู้จัดการ</label>
+            <label for="manager_road">ถนน</label>
             <input type="text" name="manager_road" id="manager_road" class="form-control">
         </div>
         <div class="mb-3 col-md-4">
-            <label for="manager_subdistrict">ตำบลผู้จัดการ</label>
+            <label for="manager_subdistrict">ตำบล</label>
             <input type="text" name="manager_subdistrict" id="manager_subdistrict" class="form-control">
         </div>
         <div class="mb-3 col-md-4">
-            <label for="manager_district">อำเภอผู้จัดการ</label>
+            <label for="manager_district">อำเภอ</label>
             <input type="text" name="manager_district" id="manager_district" class="form-control">
         </div>
         <div class="mb-3 col-md-4">
-            <label for="manager_province">จังหวัดผู้จัดการ</label>
+            <label for="manager_province">จังหวัด</label>
             <input type="text" name="manager_province" id="manager_province" class="form-control">
         </div>
         <div class="mb-3 col-md-4">
-            <label for="manager_phone">โทรศัพท์ผู้จัดการ</label>
+            <label for="manager_phone">โทรศัพท์</label>
             <input type="text" name="manager_phone" id="manager_phone" class="form-control">
         </div>
         <div class="mb-3 col-md-4">
-            <label for="manager_fax">โทรสารผู้จัดการ</label>
+            <label for="manager_fax">โทรสาร</label>
             <input type="text" name="manager_fax" id="manager_fax" class="form-control">
         </div>
     </div>
 
     <!-- วันที่เริ่มต้นประกอบการ -->
     <br>
-    <h3 class="form-label">วันที่เริ่มต้นประกอบพาณิชยกิจในประเทศไทย</h3>
+    <h3 class="form-label">(7) วันที่เริ่มต้นประกอบพาณิชยกิจในประเทศไทย</h3>
     <div class="mb-3 col-md-3">
         <label for="start_date">ตั้งแต่วันที่</label>
         <input type="date" name="start_date" id="start_date" class="form-control">
     </div>
 
     <br>
-    <h3 class="form-label">วันที่ขอจดทะเบียนพาณิชย์</h3>
+    <h3 class="form-label">(8) วันที่ขอจดทะเบียนพาณิชย์</h3>
     <div class="mb-3 col-md-3">
         <label for="date_registration">วันที่จดทะเบียน</label>
         <input type="date" name="date_registration" id="date_registration" class="form-control">
@@ -306,7 +315,7 @@
 
     <!-- รับโอนเงินพาณิชย์ -->
     <br>
-    <h3 class="form-label">รับโอนพาณิชยกิจนี้จาก</h3>
+    <h3 class="form-label">(9) รับโอนพาณิชยกิจนี้จาก</h3>
     <div class="row">
         <div class="mb-3 col-md-3">
             <label for="accepting_commercial_name">รับโอนเงินจาก</label>
@@ -352,10 +361,23 @@
             <label for="accepting_commercial_fax">โทรสาร</label>
             <input type="text" name="accepting_commercial_fax" id="accepting_commercial_fax" class="form-control">
         </div>
+
+        <div class="mb-3 col-md-3">
+            <label for="accepting_commercial_name_used"> ชื่อที่ใช้ในการประกอบพาณิชยกิจ</label>
+            <input type="text" name="accepting_commercial_name_used" id="accepting_commercial_name_used" class="form-control">
+        </div>
+        <div class="mb-3 col-md-3">
+            <label for="accepting_commercial_transferred">โอนเมื่อวันที่</label>
+            <input type="date" name="accepting_commercial_transferred" id="accepting_commercial_transferred" class="form-control">
+        </div>
+        <div class="mb-3 col-md-3">
+            <label for="accepting_commercial_cause">สาเหตุที่โอน</label>
+            <input type="text" name="accepting_commercial_cause" id="accepting_commercial_cause" class="form-control">
+        </div>
     </div>
 
     <br>
-    <h3 class="form-label">ที่ตั้งสำนักงานสาขา</h3>
+    <h3 class="form-label">(10) ที่ตั้งสำนักงานสาขา</h3>
     <div class="row">
         <div class="mb-3 col-md-3">
             <label for="copy_location_address_number">ที่อยู่สำนักงาน</label>
@@ -458,7 +480,7 @@
     <h3 class="form-label">ตัวแทนค้าต่าง</h3>
     <div class="row">
         <div class="mb-3 col-md-3">
-            <label for="agent_name">ชื่อผู้แทนค้าต่าง</label>
+            <label for="agent_name">ตัวแทนค้าต่าง คือ</label>
             <input type="text" name="agent_name" id="agent_name" class="form-control">
         </div>
 
@@ -514,13 +536,13 @@
     </div>
 
     <br>
-    <h3 class="form-label">ชื่อ อายุ เชื้อชาติ สัญชาติ ตำบลที่อยู่ และจำนวนทุนลงหุ้นของผู้เป็นหุ้นส่วนและจำนวนเงินทุนของห้างหุ้นส่วน</h3>
+    <h3 class="form-label">(11) ชื่อ อายุ เชื้อชาติ สัญชาติ ตำบลที่อยู่ และจำนวนทุนลงหุ้นของผู้เป็นหุ้นส่วนและจำนวนเงินทุนของห้างหุ้นส่วน</h3>
 
     <div class="mb-3 col-md-4">
         <label for="number_partners" class="form-label">ผู้เป็นหุ้นส่วนของห้างหุ้นส่วน/ผู้เป็นหุ้นส่วนเข้าใหม่ มีจำนวน (คน)</label>
         <div class="d-flex align-items-center">
             <input type="text" name="number_partners" id="number_partners" class="form-control me-2">
-            <h3 class="mb-0">ดังนี้</h3>
+            <span class="ms-2" style="white-space: nowrap; width: 100%;">คนดังนี้</span>
         </div>
     </div>
 
@@ -717,23 +739,44 @@
     </div>
 
     <br>
-    <h3 class="form-label">จำนวนเงินทุน จำนวนหุ้น และมุลค่าหุ้นของบริษัทจำกัด จำนวนและมูลค่าหุ้นที่บุคคลแต่ละสัญชาติถืออยู่</h3>
+    <h3 class="form-label">(12) จำนวนเงินทุน จำนวนหุ้น และมุลค่าหุ้นของบริษัทจำกัด จำนวนและมูลค่าหุ้นที่บุคคลแต่ละสัญชาติถืออยู่</h3>
     <div class="row">
-     <div class="mb-3 col-md-4">
+     {{-- <div class="mb-3 col-md-3">
         <label for="registration_point" class="form-label">จุดจดทะเบียน (บาท)</label>
         <input type="text" name="registration_point" id="registration_point" class="form-control">
+    </div> --}}
+    <div class="mb-3 col-md-3">
+        <label for="registration_point" class="form-label">ทุดจดทะเบียน <span style="color: red;">*</span></label>
+        <div style="display: flex; align-items: center;">
+            <input type="text" name="registration_point" id="registration_point" class="form-control">
+            <span class="ms-1">บาท</span>
+        </div>
     </div>
 
     <!-- Divided into -->
-    <div class="mb-3 col-md-4">
+    {{-- <div class="mb-3 col-md-3">
         <label for="divided_into" class="form-label">แบ่งออกเป็น (หุ้น)</label>
         <input type="text" name="divided_into" id="divided_into" class="form-control">
+    </div> --}}
+    <div class="mb-3 col-md-3">
+        <label for="divided_into" class="form-label">แบ่งออกเป็น <span style="color: red;">*</span></label>
+        <div style="display: flex; align-items: center;">
+            <input type="text" name="divided_into" id="divided_into" class="form-control">
+            <span class="ms-1">หุ้น</span>
+        </div>
     </div>
 
     <!-- Value per share -->
-    <div class="mb-3 col-md-4">
+    {{-- <div class="mb-3 col-md-3">
         <label for="value_per_share" class="form-label">มูลค่าหุ้นละ (บาท)</label>
         <input type="text" name="value_per_share" id="value_per_share" class="form-control">
+    </div> --}}
+    <div class="mb-3 col-md-3">
+        <label for="value_per_share" class="form-label">มูลค่าหุ้นละ <span style="color: red;">*</span></label>
+        <div style="display: flex; align-items: center;">
+            <input type="text" name="value_per_share" id="value_per_share" class="form-control">
+            <span class="ms-1">หุ้น</span>
+        </div>
     </div>
 
     <div class="mb-3 col-md-6">
@@ -774,12 +817,19 @@
     </div>
 
     <br>
-    <h3 class="form-label">ผู้เป็นหุ้นส่วนออกหรือตาย</h3>
+    <h3 class="form-label">(13) ผู้เป็นหุ้นส่วนออกหรือตาย</h3>
 
     <!-- Many partners -->
-    <div class="mb-3 col-md-3">
+    {{-- <div class="mb-3 col-md-3">
         <label for="many_partners" class="form-label">จำนวนคน (คน)</label>
         <input type="text" name="many_partners" id="many_partners" class="form-control">
+    </div> --}}
+    <div class="mb-3 col-md-5">
+        <label for="value_per_share" class="form-label">จำนวนคน <span style="color: red;">*</span></label>
+        <div style="display: flex; align-items: center;">
+            <input type="text" name="value_per_share" id="value_per_share" class="form-control">
+            <span class="ms-2" style="white-space: nowrap; width: 100%;">คน ดังนี้ (ใช้กรณีของจดทะเบียนเปลี่ยนแปลงรายการตามข้อ11)</span>
+        </div>
     </div>
 
     <h3>(1)</h3>

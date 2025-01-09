@@ -145,7 +145,7 @@ class UserChildApplyController extends Controller
             'parent_phone' => 'required|string|max:255',
         ]);
 
-        // dd($request);
+        dd($request);
 
         // Prepare data for insertion
         $ChildInformation = ChildInformation::create([
