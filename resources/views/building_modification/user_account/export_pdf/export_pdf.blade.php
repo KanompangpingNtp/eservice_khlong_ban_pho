@@ -22,7 +22,7 @@
 
         body {
             font-family: 'sarabun', sans-serif;
-            font-size: 20px;
+            font-size: 18px;
             margin: 0;
             padding: 0;
             line-height: 1;
@@ -31,12 +31,12 @@
 
         .font-sarabun {
             font-family: 'sarabun', sans-serif;
-            font-size: 20px;
+            font-size: 18px;
         }
 
         .font-sarabun-bold {
             font-family: 'sarabun-bold', sans-serif;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
         }
 
@@ -144,14 +144,14 @@
     </div>
     <div class="box_text" style="text-align: left; margin-left:5rem;">
         <span>ข้าพเจ้า</span>
-        <span class="dotted-line" style="width: 57%; text-align: center;">{{ $form->full_name }}</span>
+        <span class="dotted-line" style="width: 62%; text-align: center;">{{ $form->full_name }}</span>
         <span>เจ้าของอาคารหรือตัวแทนเจ้าของอาคาร</span>
     </div>
     <div class="box_text" style="text-align: left; margin-left:5rem;">
         <span>เป็นบุคคลธรรมดา อยู่ที่เลขที่</span>
-        <span class="dotted-line" style="width: 16%; text-align: center;">{{ $form->house_number }}</span>
+        <span class="dotted-line" style="width: 18%; text-align: center;">{{ $form->house_number }}</span>
         <span>ตรอก/ซอย</span><span class="dotted-line"
-            style="width: 16%; text-align: center;">{{ $form->alley }}</span>
+            style="width: 18%; text-align: center;">{{ $form->alley }}</span>
         <span>ถนน</span>
         <span class="dotted-line" style="width: 26%; text-align: center;">{{ $form->road }}</span>
     </div>
@@ -159,21 +159,21 @@
         <span>หมู่ที่</span><span class="dotted-line"
             style="width: 16%; text-align: center;">{{ $form->village }}</span>
         <span>ตำบล/แขวง</span>
-        <span class="dotted-line" style="width: 17%; text-align: center;">{{ $form->subdistrict }}</span>
+        <span class="dotted-line" style="width: 19%; text-align: center;">{{ $form->subdistrict }}</span>
         <span>อำเภอ/เขต</span>
-        <span class="dotted-line" style="width: 17%; text-align: center;">{{ $form->district }}</span>
+        <span class="dotted-line" style="width: 18%; text-align: center;">{{ $form->district }}</span>
         <span>จังหวัด</span>
         <span class="dotted-line" style="width: 18%; text-align: center;">{{ $form->province }}</span>
     </div>
     <div class="box_text" style="text-align: left; margin-left:5rem;">
         <span>เป็นนิติบุคคลประเภท</span>
-        <span class="dotted-line" style="width: 30%; text-align: center;">{{ $form->option_detail }}</span>
+        <span class="dotted-line" style="width: 33%; text-align: center;">{{ $form->option_detail }}</span>
         <span>จดทะเบียนเมื่อ</span>
         <span class="dotted-line" style="width: 36%; text-align: center;">{{ $registered_day }}</span>
     </div>
     <div class="box_text" style="text-align: left;">
         <span>เลขทะเบียน</span>
-        <span class="dotted-line" style="width: 20%; text-align: center;">{{ $form->registration_number }}</span>
+        <span class="dotted-line" style="width: 23%; text-align: center;">{{ $form->registration_number }}</span>
         <span>มีสำนักงานอยู่ที่</span>
         <span class="dotted-line"
             style="width: 25%; text-align: center;">{{ $form->office_village }}</span><span>ตรอก/ซอย</span>
@@ -183,7 +183,7 @@
         <span>ถนน</span>
         <span class="dotted-line"
             style="width: 20%; text-align: center;">{{ $form->office_road }}</span><span>หมู่ที่</span>
-        <span class="dotted-line" style="width: 14%; text-align: center;">{{ $form->office_located }}</span>
+        <span class="dotted-line" style="width: 17%; text-align: center;">{{ $form->office_located }}</span>
         <span>ตำบล/แขวง</span>
         <span class="dotted-line" style="width: 18%; text-align: center;">{{ $form->office_subdistrict }}</span>
         <span>อำเภอ/เขต</span>
@@ -191,7 +191,7 @@
     </div>
     <div class="box_text" style="text-align: left;">
         <span>จังหวัด</span>
-        <span class="dotted-line" style="width: 24%; text-align: center;">{{ $form->office_province }}</span>
+        <span class="dotted-line" style="width: 29%; text-align: center;">{{ $form->office_province }}</span>
         <span>โดย</span>
         <span class="dotted-line"
             style="width: 33%; text-align: center;">{{ $form->by_name }}</span><span>ผู้มีอำนาจลงชื่อแทนนิติบุคคลของผู้อนุญาต</span>
@@ -199,7 +199,7 @@
     <div class="box_text" style="text-align: left;">
         <span>อยู่บ้านเลขที่</span>
         <span class="dotted-line"
-            style="width: 8%; text-align: center;">{{ $form->by_house_number }}</span><span>ตรอก/ซอย</span>
+            style="width: 12%; text-align: center;">{{ $form->by_house_number }}</span><span>ตรอก/ซอย</span>
         <span class="dotted-line"
             style="width: 15%; text-align: center;">{{ $form->by_alley }}</span><span>ถนน</span><span
             class="dotted-line" style="width: 15%; text-align: center;">{{ $form->by_road }}</span><span>หมู่ที่</span>
@@ -224,7 +224,7 @@
         <span>ข้อที่ ๑ ทำการก่อสร้างอาคาร/ดัดแปลงอาคาร/รื้อถอนอาคาร </span>
         <span>ที่บ้านเลขที่
         </span><span class="dotted-line"
-            style="width: 14%; text-align: center;">{{ $form->apply_house_number }}</span>
+            style="width: 21%; text-align: center;">{{ $form->apply_house_number }}</span>
             <span>ตรอก/ซอย
             </span><span class="dotted-line"
                 style="width: 14%; text-align: center;">{{ $form->apply_alley }}</span>
@@ -234,10 +234,10 @@
         <span class="dotted-line"
             style="width: 14%; text-align: center;">{{ $form->apply_road }}</span> <span>หมู่ที่</span>
             <span class="dotted-line"
-                style="width: 12%; text-align: center;">{{ $form->apply_village }}</span><span>ตำบล/แขวง</span>
-        <span class="dotted-line" style="width: 12%; text-align: center;">{{ $form->apply_subdistrict }}</span>
+                style="width: 13%; text-align: center;">{{ $form->apply_village }}</span><span>ตำบล/แขวง</span>
+        <span class="dotted-line" style="width: 13%; text-align: center;">{{ $form->apply_subdistrict }}</span>
         <span>อำเภอ/เขต</span>
-        <span class="dotted-line" style="width: 12%; text-align: center;">{{ $form->apply_district }}</span>
+        <span class="dotted-line" style="width: 13%; text-align: center;">{{ $form->apply_district }}</span>
         <span>จังหวัด</span>
         <span class="dotted-line"
             style="width: 14%; text-align: center;">{{ $form->apply_province }}</span>
@@ -247,17 +247,17 @@
         <span class="dotted-line"
             style="width: 36%; text-align: center;">{{ $form->apply_by }}</span><span>เป็นเจ้าของอาคารในโฉนดเลขที่</span>
             <span class="dotted-line"
-            style="width: 35.5%; text-align: center;"> - </span>
+            style="width: 38%; text-align: center;"> - </span>
     </div>
     <div class="box_text" style="text-align: left;">
         <span>เป็นที่ดินของ</span>
-        <span class="dotted-line" style="width: 89%; text-align: center;">{{ $form->it_the_land_of }}</span>
+        <span class="dotted-line" style="width: 90%; text-align: center;">{{ $form->it_the_land_of }}</span>
         {{-- <span>ในที่ดินโฉนดที่ดิน เลขที่/น.ส.3 เลขที่ / ส.ค.1 เลขที่</span>
         <span class="dotted-line" style="width: 20%; text-align: center;">{{ $form->apply_number }}</span> --}}
     </div>
     <div class="box_text" style="text-align: left;">
         <span>ตามเอกสาร</span>
-        <span class="dotted-line" style="width: 90%; text-align: center;"> - </span>
+        <span class="dotted-line" style="width: 91%; text-align: center;"> - </span>
     </div>
     <div class="box_text" style="text-align: left;  margin-left:5rem;">
         <span>ข้อ ๒ เป็นอาคาร </span>
@@ -265,7 +265,7 @@
             <span>(๑) ชนิด</span><span class="dotted-line"
                 style="width: 36%; text-align: center;">{{ $form->building_type_1 }}</span><span>จำนวน</span><span
                 class="dotted-line"
-                style="width: 10%; text-align: center;">{{ $form->building_num_1 }}</span><span>หลัง เพื่อใช้เป็น</span><span
+                style="width: 12%; text-align: center;">{{ $form->building_num_1 }}</span><span>หลัง เพื่อใช้เป็น</span><span
                 class="dotted-line" style="width: 26%; text-align: center;">{{ $form->building_to_1 }}</span>
         </div>
     </div>
@@ -278,7 +278,7 @@
             <span>(๒) ชนิด</span><span class="dotted-line"
                 style="width: 36%; text-align: center;">{{ $form->building_type_2 }}</span><span>จำนวน</span><span
                 class="dotted-line"
-                style="width: 10%; text-align: center;">{{ $form->building_num_2 }}</span><span>หลัง เพื่อใช้เป็น</span><span
+                style="width: 12%; text-align: center;">{{ $form->building_num_2 }}</span><span>หลัง เพื่อใช้เป็น</span><span
                 class="dotted-line" style="width: 26%; text-align: center;">{{ $form->building_to_2 }}</span>
         </div>
     </div>
@@ -291,7 +291,7 @@
             <span>(๓) ชนิด</span><span class="dotted-line"
                 style="width: 36%; text-align: center;">{{ $form->building_type_3 }}</span><span>จำนวน</span><span
                 class="dotted-line"
-                style="width: 10%; text-align: center;">{{ $form->building_num_3 }}</span><span>หลัง เพื่อใช้เป็น</span><span
+                style="width: 12%; text-align: center;">{{ $form->building_num_3 }}</span><span>หลัง เพื่อใช้เป็น</span><span
                 class="dotted-line" style="width: 26%; text-align: center;">{{ $form->building_to_3 }}</span>
         </div>
     </div>
