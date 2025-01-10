@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\DisabilityReply;
+use Carbon\Carbon;
 
 class UserDisabilityController extends Controller
 {
@@ -24,10 +25,12 @@ class UserDisabilityController extends Controller
 
     public function DisabilityFormCreate(Request $request)
     {
+        $written_date = Carbon::now()->format('Y-m-d');
+        $birth_day = $request->birth_day ? Carbon::createFromFormat('d/m/Y', $request->birth_day)->format('Y-m-d') : null;
 
         $request->validate([
             'written_at' => 'required|string',
-            'written_date' => 'required|date',
+            // 'written_date' => 'required|date',
             'salutation' => 'required|string',
             'first_name' => 'required|string',
             'last_name' => 'required|string',
@@ -47,10 +50,6 @@ class UserDisabilityController extends Controller
             'marital_status' => 'required|in:single,married,widowed,divorced,separated,other',
             'monthly_income' => 'nullable|string',
             'occupation' => 'nullable|string',
-            // 'elderly_name' => 'required|string',
-            // 'trader_citizen_id' => 'required|string',
-            // 'trader_address' => 'required|string',
-            // 'trader_phone_number' => 'required|string',
             'welfare_type' => 'nullable|array',
             'welfare_type.*' => 'string|in:option1,option2,option3,option4',
             'welfare_other_types' => 'nullable|string|required_if:welfare_type.*,ย้ายภูมิลําเนาเข้ามาอยู่ใหม่',
@@ -74,11 +73,11 @@ class UserDisabilityController extends Controller
             'users_id' => auth()->id(),
             'status' => 1,
             'written_at' => $request->written_at,
-            'written_date' => $request->written_date,
+            'written_date' => $written_date,
             'salutation' => $request->salutation,
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
-            'birth_day' => $request->birth_day,
+            'birth_day' => $birth_day,
             'age' => $request->age,
             'nationality' => $request->nationality,
             'house_number' => $request->house_number,

@@ -13,6 +13,7 @@ use App\Models\EaReplies;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
 
 class UserElderlyAllowanceController extends Controller
 {
@@ -24,12 +25,13 @@ class UserElderlyAllowanceController extends Controller
 
     public function ElderlyAllowanceFormCreate(Request $request)
     {
-
+        $written_date = Carbon::now()->format('Y-m-d');
+        $birth_day = $request->birth_day ? Carbon::createFromFormat('d/m/Y', $request->birth_day)->format('Y-m-d') : null;
         // dd($request);
         // ตรวจสอบข้อมูลที่ได้รับจากฟอร์ม
         $request->validate([
             'written_at' => 'required|string',
-            'written_date' => 'required|date',
+            // 'written_date' => 'required|date',
             'salutation' => 'required|string',
             'first_name' => 'required|string',
             'last_name' => 'required|string',
@@ -49,11 +51,6 @@ class UserElderlyAllowanceController extends Controller
             'marital_status' => 'required|in:single,married,widowed,divorced,separated,other',
             'monthly_income' => 'nullable|string',
             'occupation' => 'nullable|string',
-            // 'trade_condition' => 'required|string',
-            // 'elderly_name' => 'required|string',
-            // 'trader_citizen_id' => 'required|string',
-            // 'trader_address' => 'required|string',
-            // 'trader_phone_number' => 'required|string',
 
             'welfare_type' => 'nullable|array',
             'welfare_type.*' => 'string|in:option1,option2,option3,option4',
@@ -77,11 +74,11 @@ class UserElderlyAllowanceController extends Controller
             'users_id' => auth()->id(),
             'status' => 1,
             'written_at' => $request->written_at,
-            'written_date' => $request->written_date,
+            'written_date' => $written_date,
             'salutation' => $request->salutation,
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
-            'birth_day' => $request->birth_day,
+            'birth_day' => $birth_day,
             'age' => $request->age,
             'nationality' => $request->nationality,
             'house_number' => $request->house_number,
