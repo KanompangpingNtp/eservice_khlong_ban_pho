@@ -5,49 +5,7 @@
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/th.js"></script>
 
-
     <div class="container">
-
-       <label for="thaiDatePicker">เลือกวันที่:</label>
-<input id="thaiDatePicker" class="form-control">
-
-<script>
-  flatpickr("#thaiDatePicker", {
-    dateFormat: "d/m/Y", // รูปแบบวันที่ เช่น 10/01/2568
-    defaultDate: new Date(),
-    locale: "th", // ใช้ภาษาไทย
-    onChange: (selectedDates, dateStr, instance) => {
-      const date = new Date(selectedDates[0]);
-      const thaiYear = date.getFullYear() + 543; // แปลงปีเป็น พ.ศ.
-      const formattedDate = `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${thaiYear}`;
-      instance.input.value = formattedDate; // แสดงวันที่เป็น พ.ศ. ในอินพุต
-    },
-    onReady: (selectedDates, dateStr, instance) => {
-      // ปรับปีใน UI เป็น พ.ศ.
-      const calendarContainer = instance.calendarContainer;
-      const yearElement = calendarContainer.querySelector(".flatpickr-current-year");
-      
-      if (yearElement) {
-        const currentYear = parseInt(yearElement.textContent, 10);
-        yearElement.textContent = currentYear + 543; // แสดงปี พ.ศ. ใน UI
-      }
-    },
-    parseDate: (datestr, format) => {
-      // แปลงวันที่ พ.ศ. กลับเป็น ค.ศ. สำหรับ internal ของ Flatpickr
-      const [day, month, year] = datestr.split("/").map(Number);
-      const convertedYear = year - 543;
-      return new Date(convertedYear, month - 1, day);
-    },
-    formatDate: (date, format) => {
-      // แสดงวันที่ในรูปแบบ พ.ศ.
-      const thaiYear = date.getFullYear() + 543;
-      const day = String(date.getDate()).padStart(2, "0");
-      const month = String(date.getMonth() + 1).padStart(2, "0");
-      return `${day}/${month}/${thaiYear}`;
-    },
-  });
-</script>
-
 
         <h3 class="text-center fs-1 mb-4">แบบยืนยันสิทธิผู้สูงอายุ</h3>
         <form action="{{ route('ElderlyAllowanceFormCreate') }}" method="POST" enctype="multipart/form-data">
