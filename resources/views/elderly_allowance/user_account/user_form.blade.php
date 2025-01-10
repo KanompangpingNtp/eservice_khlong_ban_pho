@@ -1,53 +1,10 @@
 @extends('dashboard.layout.users.layout_users')
 @section('title', 'แบบยืนยันสิทธิผู้สูงอายุ')
 @section('user_content')
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/th.js"></script>
+
 
 
     <div class="container">
-
-       <label for="thaiDatePicker">เลือกวันที่:</label>
-<input id="thaiDatePicker" class="form-control">
-
-<script>
-  flatpickr("#thaiDatePicker", {
-    dateFormat: "d/m/Y", // รูปแบบวันที่ เช่น 10/01/2568
-    defaultDate: new Date(),
-    locale: "th", // ใช้ภาษาไทย
-    onChange: (selectedDates, dateStr, instance) => {
-      const date = new Date(selectedDates[0]);
-      const thaiYear = date.getFullYear() + 543; // แปลงปีเป็น พ.ศ.
-      const formattedDate = `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${thaiYear}`;
-      instance.input.value = formattedDate; // แสดงวันที่เป็น พ.ศ. ในอินพุต
-    },
-    onReady: (selectedDates, dateStr, instance) => {
-      // ปรับปีใน UI เป็น พ.ศ.
-      const calendarContainer = instance.calendarContainer;
-      const yearElement = calendarContainer.querySelector(".flatpickr-current-year");
-      
-      if (yearElement) {
-        const currentYear = parseInt(yearElement.textContent, 10);
-        yearElement.textContent = currentYear + 543; // แสดงปี พ.ศ. ใน UI
-      }
-    },
-    parseDate: (datestr, format) => {
-      // แปลงวันที่ พ.ศ. กลับเป็น ค.ศ. สำหรับ internal ของ Flatpickr
-      const [day, month, year] = datestr.split("/").map(Number);
-      const convertedYear = year - 543;
-      return new Date(convertedYear, month - 1, day);
-    },
-    formatDate: (date, format) => {
-      // แสดงวันที่ในรูปแบบ พ.ศ.
-      const thaiYear = date.getFullYear() + 543;
-      const day = String(date.getDate()).padStart(2, "0");
-      const month = String(date.getMonth() + 1).padStart(2, "0");
-      return `${day}/${month}/${thaiYear}`;
-    },
-  });
-</script>
-
 
         <h3 class="text-center fs-1 mb-4">แบบยืนยันสิทธิผู้สูงอายุ</h3>
         <form action="{{ route('ElderlyAllowanceFormCreate') }}" method="POST" enctype="multipart/form-data">
@@ -121,15 +78,135 @@
             </div>
 
             <div class="row mb-3">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-12">
                     <label for="last_name">นามสกุล:</label>
                     <input type="text" id="last_name" name="last_name" class="form-control" required>
                 </div>
-                <div class="col-12 col-md-6">
-                    <label for="birth_day">วันเกิด:</label>
-                    <input type="date" id="birth_day" name="birth_day" class="form-control">
+
+            </div>
+            <div class="row mb-3">
+                <div class="col-12 col-md-4">
+                    <label for="day">วันเกิดที่ (กรอกวันที่เกิด)</label>
+                    <input type="number" id="day" name="day" class="form-control" min="1" max="31" required>
+                    <small id="dayError" class="form-text text-danger" style="display: none;">กรุณากรอกวันเป็นตัวเลขระหว่าง 1 - 31</small>
+                </div>
+                
+                <script>
+                  document.getElementById("day").addEventListener("input", function() {
+                    const dayInput = document.getElementById("day");
+                    const dayError = document.getElementById("dayError");
+                
+                    const dayValue = parseInt(dayInput.value, 10);
+                
+                    // ตรวจสอบว่าเป็นค่าที่อยู่ในช่วง 1 - 31 หรือไม่
+                    if (dayValue < 1 || dayValue > 31 || isNaN(dayValue)) {
+                      // รีเซ็ตค่าที่กรอกไป
+                      dayInput.value = ""; // ลบค่าที่กรอก
+                      // แสดงข้อความเตือน
+                      dayError.style.display = "block";
+                      dayInput.classList.add("is-invalid");  // เพิ่มคลาสที่ทำให้ input แสดงสถานะผิดพลาด
+                    } else {
+                      // ซ่อนข้อความเตือนและลบคลาสผิดพลาดถ้าค่าถูกต้อง
+                      dayError.style.display = "none";
+                      dayInput.classList.remove("is-invalid");
+                    }
+                  });
+                </script>
+                
+                <div class="col-12 col-md-4">
+                    <label for="month">เดือน (เลือกเดือนเกิด)</label>
+                    <select id="month" name="month" class="form-control" required>
+                        <option value="1">มกราคม</option>
+                        <option value="2">กุมภาพันธ์</option>
+                        <option value="3">มีนาคม</option>
+                        <option value="4">เมษายน</option>
+                        <option value="5">พฤษภาคม</option>
+                        <option value="6">มิถุนายน</option>
+                        <option value="7">กรกฎาคม</option>
+                        <option value="8">สิงหาคม</option>
+                        <option value="9">กันยายน</option>
+                        <option value="10">ตุลาคม</option>
+                        <option value="11">พฤศจิกายน</option>
+                        <option value="12">ธันวาคม</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-4">
+                    <label for="year">ปี (กรอกปีที่เกิดเป็น พ.ศ.)</label>
+                    <input type="number" id="year" name="year" class="form-control" min="1900" required>
+                    <small id="yearError" class="form-text text-danger" style="display: none;">กรุณากรอกปี 4 หลัก</small>
+                </div>
+                
+                <script>
+                    document.getElementById("year").addEventListener("input", function() {
+                        const yearInput = document.getElementById("year");
+                        const yearError = document.getElementById("yearError");
+                
+                        // ตรวจสอบว่าค่าที่กรอกมีความยาวมากกว่า 4 ตัวหรือไม่
+                        if (yearInput.value.length > 4) {
+                            // หากกรอกเกิน 4 ตัว ให้ลบค่าที่กรอก
+                            yearInput.value = yearInput.value.slice(0, 4);
+                        }
+                
+                        const yearValue = yearInput.value;
+                
+                        // ตรวจสอบว่าเป็นเลข 4 หลักหรือไม่
+                        if (yearValue.length !== 4 || isNaN(yearValue)) {
+                            // แสดงข้อความเตือนถ้าปีไม่ครบ 4 หลักหรือไม่ใช่ตัวเลข
+                            yearError.style.display = "block";
+                            yearInput.classList.add("is-invalid");  // เพิ่มคลาสที่ทำให้ input แสดงสถานะผิดพลาด
+                        } else {
+                            // ซ่อนข้อความเตือนและลบคลาสผิดพลาดถ้าค่าถูกต้อง
+                            yearError.style.display = "none";
+                            yearInput.classList.remove("is-invalid");
+                        }
+                    });
+                </script>
+                
+            </div>
+            
+            <div class="row mb-1" style="display: none;">
+                <div class="col-12 d-flex align-items-center">
+                    <label for="birth_day" class="mb-0 me-2 " style="width: 12rem;">วันเกิดตามปฎิทินสากลคือ</label>
+                    <input type="text" id="birth_day" name="birth_day" class="form-control" readonly>
                 </div>
             </div>
+            
+            
+            <style>
+                #birth_day {
+                    border: none;  /* ลบขอบ */
+                    background: transparent;  /* ลบพื้นหลัง */
+                    box-shadow: none;  /* ลบเงา */
+                }
+            </style>
+            
+            <script>
+                // ฟังก์ชันแปลงวันที่จาก พ.ศ. เป็น ค.ศ.
+                function convertToAD(year) {
+                    return year - 543;
+                }
+            
+                // เมื่อมีการกรอกข้อมูลในช่องวัน เดือน ปี
+                document.querySelectorAll("#day, #month, #year").forEach(input => {
+                    input.addEventListener("input", function () {
+                        // ดึงค่าจาก input
+                        const day = document.getElementById("day").value;
+                        const month = document.getElementById("month").value;
+                        const year = document.getElementById("year").value;
+            
+                        if (day && month && year) {
+                            // แปลงปี พ.ศ. เป็น ค.ศ.
+                            const yearAD = convertToAD(parseInt(year));
+                            
+                            // สร้างวันที่ในรูปแบบ dd/mm/yyyy
+                            const formattedDate = `${String(day).padStart(2, '0')}/${String(month).padStart(2, '0')}/${yearAD}`;
+                            
+                            // แสดงวันที่ที่แปลงแล้วใน input birth_day
+                            document.getElementById("birth_day").value = formattedDate;
+                        }
+                    });
+                });
+            </script>
 
             <div class="row mb-3">
                 <div class="col-12 col-md-6">
