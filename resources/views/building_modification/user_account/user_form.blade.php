@@ -59,8 +59,8 @@
     </div> --}}
     <div class="row">
         <div class="col-md-2 mt-3">
-            <label for="is_an_individual">เป็นบุคคลธรรมดา</label>
             <input type="checkbox" name="is_an_individual" id="is_an_individual" value="yes" onchange="toggleAddressInputs()">
+            <label for="is_an_individual">เป็นบุคคลธรรมดา</label>
         </div>
 
         <div class="col-md-3 mb-3">
@@ -170,8 +170,8 @@
     </div> --}}
     <div class="row">
         <div class="col-md-2 mb-3">
-            <label for="option_detail">เป็นนิติบุคคล</label>
             <input type="checkbox" name="option_detail" id="option_detail" value="yes" onchange="toggleLegalEntityInputs()">
+            <label for="option_detail">เป็นนิติบุคคล</label>
         </div>
 
         <div class="col-md-3 mb-3">
@@ -356,15 +356,43 @@
             </div>
         </div>
 
+        {{-- <div class="">
+            <div class="d-flex align-items-center">
+                <div class="form-check me-3">
+                    <input type="radio" class="form-check-input" id="title_deed_owner_name1" name="title_deed_owner_name" value="1">
+                    <label class="form-check-label" for="title_deed_owner_name1">โฉนดที่ดิน</label>
+                </div>
+
+                <div class="form-check me-3">
+                    <input type="radio" class="form-check-input" id="title_deed_owner_name2" name="title_deed_owner_name" value="2">
+                    <label class="form-check-label" for="title_deed_owner_name2">น.ส.3</label>
+                </div>
+
+                <div class="form-check me-3">
+                    <input type="radio" class="form-check-input" id="title_deed_owner_name3" name="title_deed_owner_name" value="3">
+                    <label class="form-check-label" for="title_deed_owner_name3">ส.ค.1</label>
+                </div>
+            </div>
+        </div> --}}
+
         <div class="col-md-3 mb-3">
-            <label for="apply_number">เลขที่/น.ส.3 เลขที่ / ส.ค.1 เลขที่:</label>
+            <label for="apply_number">เลขที่:</label>
             <input type="text" name="apply_number" id="apply_number" class="form-control">
         </div>
-
         <div class="col-md-3 mb-3">
             <label for="it_the_land_of">เป็นที่ดินของ:</label>
             <input type="text" name="it_the_land_of" id="it_the_land_of" class="form-control">
         </div>
+
+        <div class="col-md-3 mb-3">
+            <label for="according_document">ตามเอกสาร:</label>
+            <input type="text" name="according_document" id="according_document" class="form-control">
+        </div>
+
+        {{-- <div class="col-md-3 mb-3">
+            <label for="apply_number">เลขที่:</label>
+            <input type="text" name="apply_number" id="apply_number" class="form-control">
+        </div> --}}
     </div>
 
     <div class="row">

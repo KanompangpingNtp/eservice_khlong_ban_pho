@@ -68,7 +68,7 @@ class UserChildApplyController extends Controller
             'father_occupation' => 'required|string|max:255',
             'mother_occupation' => 'required|string|max:255',
 
-            // // 'attachments.*' => 'nullable|file|mimes:jpg,jpeg,png,pdf',
+            'attachments.*' => 'nullable|file|mimes:jpg,jpeg,png,pdf',
 
             // //Validation Rules for surrender_the_child
             'surrender_salutation' => 'required|string|max:255',
@@ -282,18 +282,18 @@ class UserChildApplyController extends Controller
             'marital_status_details' => $request->marital_status_details,
         ]);
 
-        // if ($request->hasFile('attachments')) {
-        //     foreach ($request->file('attachments') as $file) {
-        //         $filename = time() . '_' . $file->getClientOriginalName();
-        //         $path = $file->storeAs('attachments', $filename, 'public');
+        if ($request->hasFile('attachments')) {
+            foreach ($request->file('attachments') as $file) {
+                $filename = time() . '_' . $file->getClientOriginalName();
+                $path = $file->storeAs('attachments', $filename, 'public');
 
-        //         ChildAttachment::create([
-        //             'child_information_id' => $ChildInformation->id,
-        //             'file_path' => $path,
-        //             'file_type' => $file->getClientMimeType(),
-        //         ]);
-        //     }
-        // }
+                ChildAttachment::create([
+                    'child_information_id' => $ChildInformation->id,
+                    'file_path' => $path,
+                    'file_type' => $file->getClientMimeType(),
+                ]);
+            }
+        }
 
         // return redirect()->back()->with('success', 'ฟอร์มถูกส่งเรียบร้อยแล้ว');
         return redirect()->back()->with('success', '

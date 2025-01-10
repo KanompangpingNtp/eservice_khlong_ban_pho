@@ -93,9 +93,11 @@ class UserBuildingChangeController extends Controller
             'title_deed_type' => 'nullable|string|in:1,2,3',
 
             'attachments.*' => 'nullable|file|mimes:jpg,jpeg,png,pdf',
+
+            'according_document' => 'nullable|string',
         ]);
 
-        dd($request);
+        // dd($request);
 
         $buildingChange = BuildingChange::create([
             'users_id' => auth()->id(),
@@ -111,7 +113,7 @@ class UserBuildingChangeController extends Controller
             'subdistrict' => $request->subdistrict,
             'district' => $request->district,
             'province' => $request->province,
-            'option_detail' => $request->option,
+            'option_detail' => $request->option_detail,
             'registered' => $request->registered,
             'registration_number' => $request->registration_number,
             'office_located' => $request->office_located,
@@ -169,6 +171,7 @@ class UserBuildingChangeController extends Controller
             'legal_name' => $request->legal_name,
             'building_type_new' => $request->building_type_new,
             'title_deed_type' => $request->title_deed_type,
+            'according_document' => $request->according_document,
         ]);
 
         if ($request->hasFile('attachments')) {

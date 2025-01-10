@@ -860,6 +860,25 @@
                 <input type="text" name="parent_phone" class="form-control" required>
             </div>
         </div>
+        <br>
+
+        <span><strong>ข้าพเจ้าขอรับรองว่ารายการข้างต้นถูกต้องและเป็นความจริงทุกประการ</strong></span><br>
+        <span>เอกสารประกอบการจดทะเบียน</span><br>
+        <span class="ms-3">1. สำเนาทะเบียนบ้าน</span><br>
+        <span class="ms-3">2. สำเนาบัตรประชาชน</span><br>
+        <span class="ms-3">3. แผนผังสถานประกอบกิจการ</span><br>
+        <span class="ms-3">4. หนังสือมอบอำนาจ (ถ้ามี)</span><br>
+        <span class="ms-3">5. เอกสารอื่นๆ</span><br><br>
+
+        <div>
+            <h3 for="attachments" class="form-label">แนบไฟล์</h3>
+            <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
+            <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
+            <!-- แสดงรายการไฟล์ที่แนบ -->
+            <div id="file-list" class="mt-1">
+                <div class="d-flex flex-wrap gap-3"></div>
+            </div>
+        </div>
 
         <br>
         <hr><br>

@@ -1,25 +1,28 @@
 @extends('dashboard.layout.users.layout_users')
 @section('title', 'แบบคำขอรับใบอนุญาต')
 @section('user_content')
-    <h3 class="text-center"> แบบคำขอรับใบอนุญาต </h3>
+<h3 class="text-center"> แบบคำขอรับใบอนุญาต </h3>
 
-    <form action="{{ route('LicenseFormCreate') }}" method="POST" enctype="multipart/form-data">
-        @csrf
+<form action="{{ route('LicenseFormCreate') }}" method="POST" enctype="multipart/form-data">
+    @csrf
 
-        <!-- Written At -->
-        <div class="form-group">
+    <!-- Written At -->
+    <div class="row">
+        <div class="col-md-3 mb-3">
             <label for="written_at">เขียนที่</label>
             <input type="text" name="written_at" id="written_at" class="form-control">
         </div>
 
         <!-- Write The Date -->
-        <div class="form-group">
+        <div class="col-md-3 mb-3">
             <label for="write_the_date">เขียนวันที่</label>
             <input type="date" name="write_the_date" id="write_the_date" class="form-control">
         </div>
+    </div>
 
+    <div class="row">
         <!-- Salutation -->
-        <div class="form-group">
+        <div class="col-md-3 mb-3">
             <label for="salutation">ชื่อนำหน้า</label>
             <select class="form-select" id="salutation" name="salutation">
                 <option value="" selected disabled>เลือกคำนำหน้า</option>
@@ -30,221 +33,244 @@
         </div>
 
         <!-- Full Name -->
-        <div class="form-group">
+        <div class="col-md-3 mb-3">
             <label for="full_name">ชื่อ-นามสกุล </label>
             <input type="text" name="full_name" id="full_name" class="form-control" required>
         </div>
 
         <!-- Age -->
-        <div class="form-group">
+        <div class="col-md-3 mb-3">
             <label for="age">อายุ (ปี)</label>
             <input type="number" name="age" id="age" class="form-control">
         </div>
 
-        <div class="form-group">
+        <div class="col-md-3 mb-3">
             <label for="nationality">สัญชาติ</label>
             <input type="text" name="nationality" id="nationality" class="form-control">
         </div>
 
         <!-- House Number -->
-        <div class="form-group">
+        <div class="col-md-3 mb-3">
             <label for="house_number">อยู่บ้านเลขที่</label>
             <input type="text" name="house_number" id="house_number" class="form-control">
         </div>
 
         <!-- Village -->
-        <div class="form-group">
+        <div class="col-md-3 mb-3">
             <label for="village">หมู่ที่</label>
             <input type="text" name="village" id="village" class="form-control">
         </div>
 
         <!-- Alley -->
-        <div class="form-group">
+        <div class="col-md-3 mb-3">
             <label for="alley">ตรอก/ซอย</label>
             <input type="text" name="alley" id="alley" class="form-control">
         </div>
 
         <!-- Road -->
-        <div class="form-group">
+        <div class="col-md-3 mb-3">
             <label for="road">ถนน</label>
             <input type="text" name="road" id="road" class="form-control">
         </div>
 
         <!-- Subdistrict -->
-        <div class="form-group">
+        <div class="col-md-3 mb-3">
             <label for="subdistrict">แขวง/ตำบล</label>
             <input type="text" name="subdistrict" id="subdistrict" class="form-control">
         </div>
 
         <!-- District -->
-        <div class="form-group">
+        <div class="col-md-3 mb-3">
             <label for="district">เขต/อำเภอ</label>
             <input type="text" name="district" id="district" class="form-control">
         </div>
 
         <!-- Province -->
-        <div class="form-group">
+        <div class="col-md-3 mb-3">
             <label for="province">จังหวัด</label>
             <input type="text" name="province" id="province" class="form-control">
         </div>
 
-        <div class="form-group">
-            <label for="phone_number">เบอร์โทรศัพท์</label>
-            <input type="text" name="phone_number" id="phone_number" class="form-control">
+        <div class="col-md-3 mb-3">
+            <div class="form-group">
+                <label for="phone_number">เบอร์โทรศัพท์</label>
+                <input type="text" name="phone_number" id="phone_number" class="form-control">
+            </div>
         </div>
 
         <br>
 
-        <!-- Food Distribution -->
-        <div class="form-group">
-            <label for="food_distribution">ขอยื่นคำขอรับใบอนุญาตประกอบกิจการ</label>
-            <input type="checkbox" name="food_distribution" id="food_distribution" value="yes">
-            <input type="text" name="food_distribution_type" id="food_distribution_type" class="form-control">
-        </div>
+        <div class="row">
+            <div class="col-md-3 mb-3" style="margin-top: 35px;">
+                <input type="checkbox" name="food_distribution" id="food_distribution" value="yes">
+                <label for="food_distribution">สถานที่จัดจำาหน่ายอาหารหรือสะสมอาหาร</label>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="food_distribution_type">ประเภท</label>
+                <input type="text" name="food_distribution_type" id="food_distribution_type" class="form-control">
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="food_distribution_area">โดยมีพื้นที่ประกอบการ</label>
+                <div style="display: flex; align-items: center;">
+                    <input type="text" name="food_distribution_area" id="food_distribution_area" class="form-control" style="flex: 1; margin-right: 5px;">
+                    <span>ตารางเมตร</span>
+                </div>
+            </div>
 
-        <!-- Food Distribution Area -->
-        <div class="form-group">
-            <label for="food_distribution_area">โดยมีพื้นที่ประกอบการ</label>
-            <input type="text" name="food_distribution_area" id="food_distribution_area" class="form-control">
         </div>
 
         <br>
 
-        <!-- IT Dangerous -->
-        <div class="form-group">
-            <label for="it_dangerous">กิจการที่เป็นอันตรายต่อสุขภาพ ประเภท</label>
-            <input type="checkbox" name="it_dangerous" id="it_dangerous" value="yes">
-            <input type="text" name="it_dangerous_type" id="it_dangerous_type" class="form-control">
-        </div>
-
-        <!-- IT There Are Workers -->
-        <div class="form-group">
-            <label for="it_there_are_workers">มีคนงาน</label>
-            <input type="number" name="it_there_are_workers" id="it_there_are_workers" class="form-control">
-        </div>
-
-        <!-- IT Use Machinery Size -->
-        <div class="form-group">
-            <label for="it_use_machinery_size"> ใช้เครื่องจักรขนาด</label>
+        <div class="row">
+            <div class="col-md-3 mb-3" style="margin-top: 35px;">
+                <input type="checkbox" name="it_dangerous" id="it_dangerous" value="yes">
+                <label for="it_dangerous">กิจการที่เป็นอันตรายต่อสุขภาพ</label>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="it_dangerous_type">ประเภท</label>
+                <input type="text" name="it_dangerous_type" id="it_dangerous_type" class="form-control">
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="it_there_are_workers">มีคนงาน (คน)</label>
+                <input type="number" name="it_there_are_workers" id="it_there_are_workers" class="form-control">
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="it_use_machinery_size">ใช้เครื่องจักรขนาด (แรงม้า)</label>
             <input type="text" name="it_use_machinery_size" id="it_use_machinery_size" class="form-control">
+            </div>
         </div>
 
         <br>
 
-        <!-- On Sale -->
-        <div class="form-group">
-            <label for="on_sale">กิจการตลาด ที่มีการจำาหน่าย</label>
-            <input type="checkbox" name="on_sale" id="on_sale" value="yes">
-            <input type="text" name="on_sale_detail" id="on_sale_detail" class="form-control">
+        <div class="row">
+            <div class="col-md-3 mb-3" style="margin-top: 35px;">
+                <input type="checkbox" name="on_sale" id="on_sale" value="yes">
+                <label for="on_sale">กิจการตลาด ที่มีการจำาหน่าย</label>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="it_dangerous_type">ที่มีการจำหน่าย</label>
+                <input type="text" name="on_sale_detail" id="on_sale_detail" class="form-control">
+            </div>
         </div>
 
         <br>
 
-        <!-- Public Health Products -->
-        <div class="form-group">
-            <label for="public_health_products"> กิจการจำหน่ายสินค้าในที่/ทางสาธารณสุข จำาหน่ายสินค้าประเภท</label>
-            <input type="checkbox" name="public_health_products" id="public_health_products" value="yes">
+        <div class="row">
+            <div class="col-md-3 mb-3" style="margin-top: 35px;">
+                <input type="checkbox" name="public_health_products" id="public_health_products" value="yes">
+                <label for="public_health_products"> กิจการจำหน่ายสินค้าในที่/ทางสาธารณสุข</label>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="it_dangerous_type">จำหน่ายสินค้าประเภท</label>
+                <input type="text" name="public_health_products_detail" id="public_health_products_detail" class="form-control">
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="public_health_products_area">ณ บริเวณ</label>
+                <input type="text" name="public_health_products_area" id="public_health_products_area" class="form-control">
+            </div>
 
-            <input type="text" name="public_health_products_detail" id="public_health_products_detail"
-                class="form-control">
-        </div>
-
-        <!-- Public Health Products Area -->
-        <div class="form-group">
-            <label for="public_health_products_area">ณ บริเวณ</label>
-            <input type="text" name="public_health_products_area" id="public_health_products_area"
-                class="form-control">
-        </div>
-
-        <!-- Public Health Products Way -->
-        <div class="form-group">
-            <label for="public_health_products_way">โดยวิธีการ</label>
-            <input type="text" name="public_health_products_way" id="public_health_products_way"
-                class="form-control">
+            <div class="col-md-3 mb-3">
+                <label for="public_health_products_way">โดยวิธีการ</label>
+                <input type="text" name="public_health_products_way" id="public_health_products_way" class="form-control">
+            </div>
         </div>
 
         <br>
 
         <!-- Collection Service Business -->
         <div class="form-group">
+            <input type="checkbox" name="collection_service_business" id="collection_service_business" value="yes">
             <label for="collection_service_business">กิจการรับทำาการเก็บ ขนหรือกำาจัดสิ่งปฏิกูลมูลฝอยโดยทำาเป็นธุรกิจ
                 ประเภท</label>
-            <input type="checkbox" name="collection_service_business" id="collection_service_business" value="yes">
         </div>
 
-        <!-- Waste Collection -->
-        <div class="form-group">
-            <label for="waste_collection">เก็บขนสิ่งปฏิกูลโดยมีแหล่งกำาจัดที่</label>
-            <input type="checkbox" name="waste_collection" id="waste_collection" value="yes">
-            <input type="text" name="waste_collection_detail" id="waste_collection_detail" class="form-control">
+        <div class="row ms-3">
+            <div class="col-md-3 mb-3" style="margin-top: 10px;">
+                <input type="checkbox" name="waste_collection" id="waste_collection" value="yes">
+                <label for="waste_collection">เก็บขนสิ่งปฏิกูลโดยมีแหล่งกำจัดที่</label>
+            </div>
+            <div class="col-md-3 mb-3">
+                <input type="text" name="waste_collection_detail" id="waste_collection_detail" class="form-control">
+            </div>
         </div>
 
-        <!-- Collect and Dispose Waste -->
-        <div class="form-group">
-            <label for="collect_and_dispose_waste"> เก็บขนและกำจัดสิ่งปฏิกูล โดยมีระบบกำาจัดอยู่ที่</label>
-            <input type="checkbox" name="collect_and_dispose_waste" id="collect_and_dispose_waste" value="yes">
-            <input type="text" name="collect_and_dispose_detail" id="collect_and_dispose_detail"
-                class="form-control">
+        <div class="row ms-3">
+            <div class="col-md-3 mb-3" style="margin-top: 10px;">
+                <input type="checkbox" name="collect_and_dispose_waste" id="collect_and_dispose_waste" value="yes">
+                <label for="collect_and_dispose_waste"> เก็บขนและกำจัดสิ่งปฏิกูล โดยมีระบบกำาจัดอยู่ที่</label>
+            </div>
+            <div class="col-md-3 mb-3">
+                <input type="text" name="collect_and_dispose_detail" id="collect_and_dispose_detail" class="form-control">
+            </div>
         </div>
 
-        <!-- Garbage Collection -->
-        <div class="form-group">
-            <label for="garbage_collection">เก็บขนมูลฝอย โดยมีแหล่งกำาจัดที่</label>
-            <input type="checkbox" name="garbage_collection" id="garbage_collection" value="yes">
-            <input type="text" name="garbage_collection_detail" id="garbage_collection_detail" class="form-control">
+        <div class="row ms-3">
+            <div class="col-md-3 mb-3" style="margin-top: 10px;">
+                <input type="checkbox" name="garbage_collection" id="garbage_collection" value="yes">
+                <label for="garbage_collection">เก็บขนมูลฝอย โดยมีแหล่งกำาจัดที่</label>
+            </div>
+            <div class="col-md-3 mb-3">
+                <input type="text" name="garbage_collection_detail" id="garbage_collection_detail" class="form-control">
+            </div>
         </div>
 
-        <!-- Collect and Dispose of Waste -->
-        <div class="form-group">
-            <label for="collect_and_dispose_of_waste">เก็บขนและกำาจัดมูลฝอย โดยมีแหล่งกำาจัดที่</label>
-            <input type="checkbox" name="collect_and_dispose_of_waste" id="collect_and_dispose_of_waste" value="yes">
-            <input type="text" name="collect_and_dispose_of_waste_detail" id="collect_and_dispose_of_waste_detail"
-                class="form-control">
+        <div class="row ms-3">
+            <div class="col-md-3 mb-3" style="margin-top: 10px;">
+                <input type="checkbox" name="collect_and_dispose_of_waste" id="collect_and_dispose_of_waste" value="yes">
+                <label for="collect_and_dispose_of_waste">เก็บขนและกำาจัดมูลฝอย โดยมีแหล่งกำาจัดที่</label>
+            </div>
+            <div class="col-md-3 mb-3">
+                <input type="text" name="collect_and_dispose_of_waste_detail" id="collect_and_dispose_of_waste_detail" class="form-control">
+            </div>
         </div>
 
-        <!-- Local Officials -->
-        <div class="form-group">
+        <div class="col-md-10 mb-3">
             <label for="local_officials">ต่อ ( เจ้าพนักงานท้องถิ่น )</label>
-            <input type="text" name="local_officials" id="local_officials" class="form-control">
+            <div style="display: flex; align-items: center;">
+                <input type="text" name="local_officials" id="local_officials" class="form-control" style="flex: 1; margin-right: 5px;">
+                <span>พร้อมคำขอนี้ ข้าพเจ้าได้แนบหลักฐานและเอกสารมาด้วย ดังนี้คือ</span>
+            </div>
         </div>
 
         <!-- Copy of ID Card -->
-        <div class="form-group">
-            <label for="copy_of_ID_card">สำเนาบัตรประจำาตัว</label>
+        <div class="col-md-4 mb-3">
+            <label for="copy_of_ID_card">1. สำเนาบัตรประจำตัว (ประชาชน/ข้าราชการ/พนักงานรัฐวิสาหกิจ)</label>
             <input type="text" name="copy_of_ID_card" id="copy_of_ID_card" class="form-control">
         </div>
 
-        <!-- Evidence of Permission -->
-        <div class="form-group">
-            <label for="evidence_of_permission">หลักฐานการอนุญาตตามกฎหมายอื่นที่เกี่ยวข้อง คือ</label>
+        <span>2. สำเนาทะเบียนบ้าน</span>
+
+      <div>
+          <!-- Evidence of Permission -->
+          <div class="col-md-3 mb-3">
+            <label for="evidence_of_permission">3. หลักฐานการอนุญาตตามกฎหมายอื่นที่เกี่ยวข้อง คือ</label>
             <input type="text" name="evidence_of_permission" id="evidence_of_permission" class="form-control">
         </div>
 
         <!-- Evidence of Permission Detail 1 -->
-        <div class="form-group">
+        <div class="col-md-3 mb-3">
             <label for="evidence_of_permission_detail_1">3.1</label>
-            <input type="text" name="evidence_of_permission_detail_1" id="evidence_of_permission_detail_1"
-                class="form-control">
+            <input type="text" name="evidence_of_permission_detail_1" id="evidence_of_permission_detail_1" class="form-control">
         </div>
 
         <!-- Evidence of Permission Detail 2 -->
-        <div class="form-group">
+        <div class="col-md-3 mb-3">
             <label for="evidence_of_permission_detail_2">3.2</label>
-            <input type="text" name="evidence_of_permission_detail_2" id="evidence_of_permission_detail_2"
-                class="form-control">
+            <input type="text" name="evidence_of_permission_detail_2" id="evidence_of_permission_detail_2" class="form-control">
         </div>
 
         <!-- Detail 1 -->
-        <div class="form-group">
-            <label for="detail_1">4</label>
+        <div class="col-md-3 mb-3">
+            <label for="detail_1">4.</label>
             <input type="text" name="detail_1" id="detail_1" class="form-control">
         </div>
 
         <!-- Detail 2 -->
-        <div class="form-group">
-            <label for="detail_2">5</label>
+        <div class="col-md-3 mb-3">
+            <label for="detail_2">5.</label>
             <input type="text" name="detail_2" id="detail_2" class="form-control">
         </div>
+      </div>
 
         <br>
 
@@ -262,8 +288,8 @@
             <button type="submit" class="btn btn-primary w-100 py-1"><i class="fa-solid fa-file-arrow-up me-2"></i></i>
                 ส่งฟอร์มข้อมูล</button>
         </div>
-    </form>
+</form>
 
-    <script src="{{ asset('js/multipart_files.js') }}"></script>
+<script src="{{ asset('js/multipart_files.js') }}"></script>
 
 @endsection
