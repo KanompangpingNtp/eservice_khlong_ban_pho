@@ -440,10 +440,11 @@
                     <div>ความเห็นเจ้าหน้าที่ผู้รับยืนยันสิทธิ</div>
                     <div>เรียน คณะกรรมการตรวจสอบคุณสมบัติ
                     </div>
-                    <div style="text-align:center;">ได้ตรวจสอบคุณสมบัติของ {{ $form->salutation }}</div>
-                    <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 10px; border-bottom: 2px dotted black;"></span>
+                    <div style="text-align:center;">ได้ตรวจสอบคุณสมบัติของ</div>
+                    <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 10px; border-bottom: 2px dotted black;">{{ $form->salutation }}
+                        {{ $form->first_name }} {{ $form->last_name }}</span>
                     <div>หมายเลขบัตรประจำตัวประชาชน</div>
-                    <span class="dotted-line" style="width: 80%; text-align: center; margin-top: 10px; border-bottom: 2px dotted black;"></span>
+                    <span class="dotted-line" style="width: 80%; text-align: center; margin-top: 10px; border-bottom: 2px dotted black;">{{ $formatted_id }}</span>
                     <span style="margin-left:10px;">แล้ว</span>
                     <div class="box_text" style="text-align:left; margin-top: 10px;">
                         <div style="width: 100%;">
@@ -504,7 +505,7 @@
                             </tr>
                         </table>
                     </div>
-                    
+
                     <div style=" width: 100%; margin-top: 10px;">
                         <span>กรรมการ (ลงชื่อ)</span>
                         <span class="dotted-line"
