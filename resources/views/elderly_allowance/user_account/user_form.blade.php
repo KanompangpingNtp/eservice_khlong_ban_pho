@@ -1,7 +1,28 @@
 @extends('dashboard.layout.users.layout_users')
 @section('title', 'แบบยืนยันสิทธิผู้สูงอายุ')
 @section('user_content')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/th.js"></script>
+
     <div class="container">
+
+        <label for="thaiDatePicker">เลือกวันที่:</label>
+<input id="thaiDatePicker" class="form-control">
+
+<script>
+  flatpickr("#thaiDatePicker", {
+    dateFormat: "d F Y", // รูปแบบวันที่ เช่น "10 มกราคม 2568"
+    defaultDate: new Date(), // กำหนดวันที่เริ่มต้น
+    locale: "th", // ใช้ภาษาไทย
+    onChange: (selectedDates) => {
+      const date = new Date(selectedDates[0]);
+      const thaiYear = date.getFullYear() + 543;
+      console.log(`วันที่ที่เลือก: ${date.getDate()} ${date.toLocaleString('th-TH', { month: 'long' })} ${thaiYear}`);
+    },
+  });
+</script>
+
         <h3 class="text-center fs-1 mb-4">แบบยืนยันสิทธิผู้สูงอายุ</h3>
         <form action="{{ route('ElderlyAllowanceFormCreate') }}" method="POST" enctype="multipart/form-data">
             @csrf
