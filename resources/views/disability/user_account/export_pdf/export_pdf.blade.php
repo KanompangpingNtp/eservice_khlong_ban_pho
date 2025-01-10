@@ -572,12 +572,12 @@
         <span>โดยจะได้รับ</span>
     </div>
     <div class="box_text">
-        <span>เงินเบี้ยความพิการตั้งแต่เดือน</span><span class="dotted-line" style="width: 15%; text-align: center; border-bottom: 2px dotted black;">
+        <span>เงินเบี้ยความพิการตั้งแต่เดือน</span><span class="dotted-line" style="width: 16%; text-align: center; border-bottom: 2px dotted black;">
 
         </span>
-        <span>พ.ศ.</span><span class="dotted-line" style="width: 15%; text-align: center; border-bottom: 2px dotted black;">
-
-        </span><span>ในอัตราเดือนละ 800 บาท ภายในวันที่ 10 ของทุกเดือน</span>
+        <span>พ.ศ.</span><span class="dotted-line" style="width: 16%; text-align: center; border-bottom: 2px dotted black;">
+        </span><span>ในอัตราเดือนละ </span><span class="dotted-line" style="width: 16%; text-align: center; border-bottom: 2px dotted black;">
+        </span><span>บาท ภายในวันที่ 10 ของทุกเดือน</span>
     </div>
     <div class="box_text">
         <span>กรณีคนพิการย้ายภูมิลำเนาไปอยู่ที่อื่น จะต้องไปลงทะเบียนยื่นคำขอรับเงินเบี้ยความพิการ ณ
