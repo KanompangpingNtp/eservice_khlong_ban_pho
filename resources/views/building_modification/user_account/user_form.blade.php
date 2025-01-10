@@ -89,7 +89,7 @@
         </div>
 
         <div class="col-md-3 mb-3">
-            <label for="district">เขต/อำาเภอ:</label>
+            <label for="district">เขต/อำเภอ:</label>
             <input type="text" name="district" id="district" class="form-control" disabled>
         </div>
 
