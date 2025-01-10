@@ -358,7 +358,7 @@
 
                 <span style="float: left; width: 100%; line-height: 0.9;">
                     <input type="checkbox" style="margin: 0;" {{ in_array('option3', $documentType) ? 'checked' : '' }}>
-                    สมุดบัญชีเงินฝากธนาคาร 
+                    สมุดบัญชีเงินฝากธนาคาร
                 </span>
                 <div style="clear: both;"></div>
 
@@ -435,7 +435,7 @@
         <div style="clear: both;"></div>
     </div>
 
-    
+
 
     <div class="box_text_border" style=" text-align:left; padding-left:5px; border-right: 2px solid black;">
         <div style="border-bottom:2px solid black;">
@@ -443,9 +443,9 @@
                 <div>ความเห็นเจ้าหน้าที่ผู้รับลงทะเบียน</div>
                 <div>เรียน คณะกรรมการตรวจสอบคุณสมบัติ</div>
                 <div style="text-align:center;">ได้ตรวจสอบคุณสมบัติของ </div>
-                <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 10px; border-bottom: 2px dotted black;"> </span>
+                <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 10px; border-bottom: 2px dotted black;">{{ $form->salutation }}{{ $form->first_name }}{{ $form->last_name }}</span>
                 <div>หมายเลขบัตรประจำตัวประชาชน</div>
-                <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 10px; border-bottom: 2px dotted black;"> </span>
+                <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 10px; border-bottom: 2px dotted black;">{{ $formatted_id }}</span>
                 <div class="box_text" style="text-align:left; margin-top: 10px;">
                     <div style="width: 100%;">
                         <span style="width: 100%; "><input type="checkbox"> เป็นผู้มีคุณสมบัติครบถ้วน</span>
@@ -489,7 +489,7 @@
                         </tr>
                     </table>
                 </div>
-                
+
                 <div style=" width: 100%;">
                     <span>กรรมการ (ลงชื่อ)</span>
                     <span class="dotted-line" style="width: 60%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"> </span>
