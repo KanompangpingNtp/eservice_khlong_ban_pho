@@ -138,7 +138,7 @@
 
     <div class="regis_number">ทะเบียนเลขที่ {{ $form->id }}/ 2568</div>
     <div class="title_doc">แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอายุ</div>
-    <div class="box_text_border">
+    {{-- <div class="box_text_border">
         <span style="text-align:left;">เฉพาะกรณีผู้สูงอายุมอบอำนาจให้บุคคลอื่นมายื่นคำขอยืนยันสิทธิแทน</span>
         <span></span>
         <div>
@@ -164,7 +164,7 @@
         </div>
     </div>
     <div class="box_text" style="text-align: left;"><span>ข้อมูลผู้สูงอายุ</span>
-    </div>
+    </div> --}}
     <div class="box_text" style="text-align: right;"><span>เขียนที่</span>
         <span class="dotted-line" style="width: 25%; text-align: center;"> {{ $form->written_at }}
         </span>
@@ -312,12 +312,12 @@
             <span style="float: left; width: 100%; line-height: 0.9;">
                 <input type="checkbox" style="margin: 0;"
                     {{ in_array('option4', $form->personsOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
-                โอนเข้าบัญชีเงินฝากธนาคารในนามบุคคลที่ได้รับมอบอำนาจจากผู้มีสิทธิ/ผู้ดูแล พร้อมแนบเอกสาร ดังนี
+                โอนเข้าบัญชีเงินฝากธนาคารในนามบุคคลที่ได้รับมอบอำนาจจากผู้มีสิทธิ/ผู้ดูแล พร้อมแนบเอกสาร ดังนี้
             </span>
             <div style="clear: both;"></div>
         </div>
 
-        <span style="line-height: 1;">พร้อมแนบเอกสาร ดังนี</span>
+        <span style="line-height: 1;">พร้อมแนบเอกสาร ดังนี้</span>
         <div style="width: 100%;">
             <div style="width: 100%;">
                 <span style="float: left; width: 60%; line-height: 0.9;">
@@ -369,14 +369,7 @@
                 {{ $form->bankacoption->first()->account_name ?? '-' }}
             </span>
         </div>
-        {{-- new page --}}
-        <div style="page-break-before: always;"></div>
-
-        <div style="text-align: center">
-            - 2 -
-        </div>
-
-        <div class="box_text" style="text-align:left; margin-left:10px; line-height: 12px; margin-top: 2rem;">
+        <div class="box_text" style="text-align:left; margin-left:10px; line-height: 12px; ">
             <div style="width: 100%;">
                 <span style="width: 100%; "><input type="checkbox" style="margin-left: 5rem;">
                     “ข้าพเจ้าขอรับรองว่าข้าพเจ้าเป็นผู้มีคุณสมบัติครบถ้วน ณ
@@ -389,7 +382,7 @@
             </div>
         </div>
 
-        <div class="box_text" style="margin-top: 4rem;">
+        <div class="box_text" style="margin-top: 0.6rem;">
             <div>
                 <!-- ฝั่งซ้าย -->
                 <div style="float: left; width: 50%;">
@@ -437,22 +430,20 @@
         <div style="page-break-before: always;"></div>
 
         <div style="text-align: center">
-            - 3 -
+            - 2 -
         </div>
 
         <div class="box_text_border"
             style="margin-top: 2rem; text-align:left; padding-left:5px; border-right: 2px solid black;">
             <div style="border-bottom:2px solid black;">
-                <div id="left" style="float: left; width: 49%; ">
+                <div id="left" style="float: left; width: 49%; padding-top:5px;">
                     <div>ความเห็นเจ้าหน้าที่ผู้รับยืนยันสิทธิ</div>
                     <div>เรียน คณะกรรมการตรวจสอบคุณสมบัติ
                     </div>
                     <div style="text-align:center;">ได้ตรวจสอบคุณสมบัติของ {{ $form->salutation }}</div>
-                    <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 10px;">
-                        {{ $form->first_name }}&nbsp;{{ $form->last_name }} </span>
+                    <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 10px; border-bottom: 2px dotted black;"></span>
                     <div>หมายเลขบัตรประจำตัวประชาชน</div>
-                    <span class="dotted-line" style="width: 80%; text-align: center; margin-top: 10px;">
-                        {{ $formatted_id }} </span>
+                    <span class="dotted-line" style="width: 80%; text-align: center; margin-top: 10px; border-bottom: 2px dotted black;"></span>
                     <span style="margin-left:10px;">แล้ว</span>
                     <div class="box_text" style="text-align:left; margin-top: 10px;">
                         <div style="width: 100%;">
@@ -490,7 +481,7 @@
                 </div>
 
                 <div id="right"
-                    style="float: right; width: 49%;  height: 52%; padding-left: 9px; border-left: 2px solid black;">
+                    style="float: right; width: 49%;  height: 38%; padding-left: 9px; border-left: 2px solid black; padding-top:5px;">
                     <div>ความเห็นคณะกรรมการตรวจสอบคุณสมบัติ</div>
                     <div style="margin-top: 10px;">เรียน นายก เทศมนตรี/อบต.<span class="dotted-line"
                             style="width: 100%; text-align: center; margin-top: 20px; border-bottom: 2px dotted black;">
@@ -498,15 +489,22 @@
                     <div style="text-align: center; margin-top: 10px;">คณะกรรมการตรวจสอบคุณสมบัติได้ตรวจสอบแล้ว</div>
                     <div style="text-align: left; margin-top: 10px;">มีความเห็นดังนี้</div>
                     <div class="box_text" style="text-align:left; margin-top: 10px;">
-                        <div style="width: 100%;">
-                            <span style="width: 100%; "><input type="checkbox"> สมควรรับยืนยันสิทธิ</span>
-                            <span style="width: 100%; margin-top: 10px;"><input type="checkbox">
-                                ไม่สมควรรับยืนยันสิทธิ</span>
-                            <span class="dotted-line"
-                                style="width: 100%; text-align: center; margin-top: 20px; border-bottom: 2px dotted black;">
-                            </span>
-                        </div>
+                        <table style="width: 100%;">
+                            <tr>
+                                <td style="text-align: left; width: 50%;">
+                                    <label style="display: flex; align-items: center;">
+                                        <input type="checkbox" style="margin-right: 5px;"> สมควรรับยืนยันสิทธิ
+                                    </label>
+                                </td>
+                                <td style="text-align: right; width: 50%;">
+                                    <label style="display: flex; align-items: center;">
+                                        <input type="checkbox" style="margin-right: 5px;"> ไม่สมควรรับยืนยันสิทธิ
+                                    </label>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
+
                     <div style=" width: 100%; margin-top: 10px;">
                         <span>กรรมการ (ลงชื่อ)</span>
                         <span class="dotted-line"
@@ -545,12 +543,14 @@
 
                 <div style="clear: both;"></div> <!-- ใช้ clear เพื่อยกเลิกการ float -->
             </div>
-            <div>
+            <div style="margin-top: 5px;">
                 <div>
                     คำสั่ง
                 </div>
                 <div style="text-align: center;"><input type="checkbox">รับลงทะเบียน <input
-                        type="checkbox">ไม่รับลงทะเบียน <input type="checkbox">อื่น ๆ</div>
+                        type="checkbox">ไม่รับลงทะเบียน <input type="checkbox">อื่น ๆ<span class="dotted-line"
+                        style="width: 30%; text-align: center; margin-top:15px; border-bottom: 2px dotted black; margin-top:20px;">
+                    </span></div>
                 <span class="dotted-line"
                     style="width: 100%; text-align: center; margin-top:15px; border-bottom: 2px dotted black; margin-top:20px;">
                 </span>
@@ -591,14 +591,7 @@
                 </div>
             </div>
         </div>
-
-        {{-- new page --}}
-        <div style="page-break-before: always;"></div>
-
-        <div style="text-align: center">
-            - 4 -
-        </div>
-        <div style="margin-top: 2rem; text-align:center; padding-left:5px;">
+        <div style="margin-top: 3rem; text-align:center; padding-left:5px;">
             <div style="font-size: 18px;">
                 ตัดตามรอยเส้นประ ให้ผู้สูงอายุที่ยื่นคำขอยืนยันสิทธิเก็บเพื่อเป็นหลักฐานการยืนยันสิทธิ
             </div>
