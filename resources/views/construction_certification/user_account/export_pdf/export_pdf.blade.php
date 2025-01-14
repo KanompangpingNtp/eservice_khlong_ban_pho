@@ -189,8 +189,8 @@
     </div>
     <div class="box_text" style="text-align: right; margin-top:1rem;">
         <span>(ลงชื่อ)</span>
-        <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black;"> </span>
-        <span>ผู้ตรวจสอบ</span>
+        <span class="dotted-line" style="width: 25%; text-align: center; border-bottom: 2px dotted black;"> </span>
+        <span>เจ้าหน้าที่รับคำร้อง</span>
         <div style="margin-right: 55px;">
             <span></span>
             ( <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black;"></span> )
@@ -206,8 +206,8 @@
     </div>
     <div class=" box_text" style="text-align: right; margin-top:1rem;">
             <span>(ลงชื่อ)</span>
-            <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black;"> </span>
-        <span>ผู้ตรวจสอบ</span>
+            <span class="dotted-line" style="width: 30%; text-align: center; border-bottom: 2px dotted black;"> </span>
+        <span>เจ้าหน้าผูตรวจสอบ</span>
         <div style=" margin-right: 63px;">
             ( <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"></span> )
     </div>
@@ -222,7 +222,7 @@
     <div class="box_text" style="text-align: right; margin-top:1rem;">
         <span>(ลงชื่อ)</span>
         <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black;"> </span>
-        <span>ผู้ตรวจสอบ</span>
+        <span>ผู้อนุมัติ</span>
         <div style="margin-right: 63px;">
             ( <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"></span> )<br>
             <span class="dotted-line" style="width: 37%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"></span>

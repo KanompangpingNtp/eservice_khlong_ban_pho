@@ -22,7 +22,7 @@
 
         body {
             font-family: 'sarabun', 'sarabun-bold', sans-serif;
-            font-size: 16px;
+            font-size: 14.5px;
             margin: 0;
             padding: 0;
             line-height: 1;
@@ -394,12 +394,6 @@
             </span>
         </div>
     </div>
-    {{-- new page --}}
-    <div style="page-break-before: always;"></div>
-
-    <div style="text-align: center">
-        - 2 -
-    </div>
     <div class="box_text" style="margin-top: 2rem;">
         <div>
             <!-- ฝั่งซ้าย -->
@@ -434,8 +428,12 @@
         </div>
         <div style="clear: both;"></div>
     </div>
+    {{-- new page --}}
+    <div style="page-break-before: always;"></div>
 
-
+    <div style="text-align: center">
+        - 2 -
+    </div>
 
     <div class="box_text_border" style=" text-align:left; padding-left:5px; border-right: 2px solid black;">
         <div style="border-bottom:2px solid black;">

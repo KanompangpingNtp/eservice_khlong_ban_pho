@@ -22,7 +22,7 @@
 
         body {
             font-family: 'sarabun', 'sarabun-bold', sans-serif;
-            font-size: 20px;
+            font-size: 15px;
             margin: 0;
             padding: 0;
             line-height: 1;
@@ -138,7 +138,7 @@
 
     <div class="regis_number">ทะเบียนเลขที่ {{ $form->id }}/ 2568</div>
     <div class="title_doc">แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอายุ</div>
-    {{-- <div class="box_text_border">
+    <div class="box_text_border">
         <span style="text-align:left;">เฉพาะกรณีผู้สูงอายุมอบอำนาจให้บุคคลอื่นมายื่นคำขอยืนยันสิทธิแทน</span>
         <span></span>
         <div>
@@ -164,7 +164,7 @@
         </div>
     </div>
     <div class="box_text" style="text-align: left;"><span>ข้อมูลผู้สูงอายุ</span>
-    </div> --}}
+    </div>
     <div class="box_text" style="text-align: right;"><span>เขียนที่</span>
         <span class="dotted-line" style="width: 25%; text-align: center;"> {{ $form->written_at }}
         </span>

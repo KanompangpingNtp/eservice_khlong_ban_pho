@@ -103,9 +103,11 @@
         <div>
             คำขอรับรองสิ่งปลูกสร้างอาคาร
         </div>
-        <span class="font-sarabun">(กรณีนอกเขตควบคุมอาคารตามพระราชบัญญัติควบคุมอาคาร พ.ศ. ๒๕๒๒)</span>
     </div>
-    <div class="box_text" style="text-align: right;">
+    <div class="box_text" style="text-align: center;">
+        <span >(กรณีนอกเขตควบคุมอาคารตามพระราชบัญญัติควบคุมอาคาร พ.ศ. 2522)</span>
+    </div>
+    <div class="box_text" style="text-align: right; margin-top: 10px;">
         <span>เขียนที่ ที่ทำการองค์การบริหารส่วนตำบลคลองบ้านโพธิ์</span>
     </div>
     <div class="box_text" style="text-align: right;">
@@ -187,8 +189,8 @@
     </div>
     <div class="box_text" style="text-align: right; margin-top:1rem;">
         <span>(ลงชื่อ)</span>
-        <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black;"> </span>
-        <span>ผู้ตรวจสอบ</span>
+        <span class="dotted-line" style="width: 25%; text-align: center; border-bottom: 2px dotted black;"> </span>
+        <span>เจ้าหน้าที่รับคำร้อง</span>
         <div style="margin-right: 55px;">
             <span></span>
             ( <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black;"></span> )
@@ -204,8 +206,8 @@
     </div>
     <div class=" box_text" style="text-align: right; margin-top:1rem;">
             <span>(ลงชื่อ)</span>
-            <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black;"> </span>
-        <span>ผู้ตรวจสอบ</span>
+            <span class="dotted-line" style="width: 30%; text-align: center; border-bottom: 2px dotted black;"> </span>
+        <span>เจ้าหน้าผูตรวจสอบ</span>
         <div style=" margin-right: 63px;">
             ( <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"></span> )
     </div>
@@ -220,7 +222,7 @@
     <div class="box_text" style="text-align: right; margin-top:1rem;">
         <span>(ลงชื่อ)</span>
         <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black;"> </span>
-        <span>ผู้ตรวจสอบ</span>
+        <span>ผู้อนุมัติ</span>
         <div style="margin-right: 63px;">
             ( <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"></span> )<br>
             <span class="dotted-line" style="width: 37%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"></span>
@@ -244,7 +246,9 @@
         <div>
             ขั้นตอนการขอรับรองสิ่งปลูกสร้างอาคาร
         </div>
-        <span class="font-sarabun">(กรณีนอกเขตควบคุมอาคารตามพระราชบัญญัติควบคุมอาคาร พ.ศ. ๒๕๒๒)</span>
+    </div>
+    <div class="box_text" style="text-align: center;">
+        <span >(กรณีนอกเขตควบคุมอาคารตามพระราชบัญญัติควบคุมอาคาร พ.ศ. ๒๕๒๒)</span>
     </div>
     <div class="title_doc" style="text-align:start; margin-top:4rem; margin-left: 4rem; font-size:25px;">
         1.เอกสาร/หลักฐานประกอบการขอรับรองสิ่งปลูกสร้างอาคาร
@@ -284,4 +288,6 @@
     </div>
 
 </body>
+
+
 </html>

@@ -22,7 +22,7 @@
 
         body {
             font-family: 'sarabun', 'sarabun-bold', sans-serif;
-            font-size: 16px;
+            font-size: 14.5px;
             margin: 0;
             padding: 0;
             line-height: 1;
@@ -394,12 +394,6 @@
             </span>
         </div>
     </div>
-    {{-- new page --}}
-    <div style="page-break-before: always;"></div>
-
-    <div style="text-align: center">
-        - 2 -
-    </div>
     <div class="box_text" style="margin-top: 2rem;">
         <div>
             <!-- ฝั่งซ้าย -->
@@ -434,8 +428,12 @@
         </div>
         <div style="clear: both;"></div>
     </div>
+    {{-- new page --}}
+    <div style="page-break-before: always;"></div>
 
-
+    <div style="text-align: center">
+        - 2 -
+    </div>
 
     <div class="box_text_border" style=" text-align:left; padding-left:5px; border-right: 2px solid black;">
         <div style="border-bottom:2px solid black;">
@@ -443,9 +441,9 @@
                 <div>ความเห็นเจ้าหน้าที่ผู้รับลงทะเบียน</div>
                 <div>เรียน คณะกรรมการตรวจสอบคุณสมบัติ</div>
                 <div style="text-align:center;">ได้ตรวจสอบคุณสมบัติของ </div>
-                <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 10px; border-bottom: 2px dotted black;"> </span>
+                <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 10px; border-bottom: 2px dotted black;">{{ $form->salutation }}{{ $form->first_name }}{{ $form->last_name }}</span>
                 <div>หมายเลขบัตรประจำตัวประชาชน</div>
-                <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 10px; border-bottom: 2px dotted black;"> </span>
+                <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 10px; border-bottom: 2px dotted black;">{{ $formatted_id }}</span>
                 <div class="box_text" style="text-align:left; margin-top: 10px;">
                     <div style="width: 100%;">
                         <span style="width: 100%; "><input type="checkbox"> เป็นผู้มีคุณสมบัติครบถ้วน</span>
