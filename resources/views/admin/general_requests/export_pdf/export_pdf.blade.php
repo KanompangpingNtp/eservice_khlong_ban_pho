@@ -183,7 +183,7 @@
         <span>ลงชื่อ</span>
         <span class="dotted-line" style="width: 35%; text-align: center;">{{ $form->name }}
         </span>
-        <span>ผู้รับสมัคร</span>
+        <span>ผู้ยื่นคำร้อง</span>
         <div style="margin-right: 55px;">
             <span>(</span>
             <span class="dotted-line" style="width: 35%; text-align: center;">{{ $form->salutation }}{{ $form->name }}</span>

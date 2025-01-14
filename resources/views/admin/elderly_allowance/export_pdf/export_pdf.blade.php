@@ -138,29 +138,30 @@
 
     <div class="regis_number">ทะเบียนเลขที่ {{ $form->id }}/ 2568</div>
     <div class="title_doc">แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอายุ</div>
-    <div class="box_text_border">
+    <div class="box_text_border" style="font-size: 18px">
         <span style="text-align:left;">เฉพาะกรณีผู้สูงอายุมอบอำนาจให้บุคคลอื่นมายื่นคำขอยืนยันสิทธิแทน</span>
         <span></span>
         <div>
             <span>ผู้ยื่นคำขอฯ แทนตามหนังสือมอบอำนาจ เกี่ยวข้องเป็น</span>
             <span class="dotted-line"
-                style="width: 37%; text-align:center; border-bottom: 2px dotted black;"></span>
+                style="width: 42%; text-align:center; border-bottom: 2px dotted black;"></span>
             <span>กับผู้สูงอายุที่ขอยืนยันสิทธิ</span>
         </div>
         <div>
-            <span>ชื่อ – สกุล (ผู้รับมอบอำนาจ/ผู้ดูแลคนพิการ ) </span>
+            <span>ชื่อ – สกุล (ผู้รับมอบอำนาจ) </span>
             <span class="dotted-line"
-                style="width: 64%; text-align:center; border-bottom: 2px dotted black;"></span>
+                style="width: 51%; text-align:center; border-bottom: 2px dotted black;"></span>เลขประจำตัวประชาชนผู้รับมอบอำนาจ
         </div>
         <div>
-            <span>เลขประจำตัวประชาชน</span><span class="dotted-line" style="width: 33%; text-align:center; border-bottom: 2px dotted black;">
-
+            <span></span><span class="dotted-line" style="width: 30%; text-align:center; border-bottom: 2px dotted black;">
             </span>
-            <span>โทรศัพท์</span><span class="dotted-line" style="width: 41%; text-align:center; border-bottom: 2px dotted black;">
+            <span>ที่อยู่</span><span class="dotted-line" style="width: 64%; text-align:center; border-bottom: 2px dotted black;">
                  </span>
         </div>
         <div>
-            <span>ที่อยู่</span><span class="dotted-line" style="width: 96%; text-align:left; border-bottom: 2px dotted black;"></span>
+            <span class="dotted-line" style="width: 61%; text-align:center; border-bottom: 2px dotted black;">
+            </span>
+            <span>โทรศัพท์</span><span class="dotted-line" style="width: 30%; text-align:left; border-bottom: 2px dotted black;"></span>
         </div>
     </div>
     <div class="box_text" style="text-align: left;"><span>ข้อมูลผู้สูงอายุ</span>
@@ -298,7 +299,7 @@
             <span style="float: right; width: 60%; line-height: 0.9;">
                 <input type="checkbox" style="margin: 0;"
                     {{ in_array('option2', $form->personsOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
-                รับเงินสดโดยบุคคลที่ได้รับมอบอำนาจจากผู้มีสิทธิ/ผู้ดูแล
+                รับเงินสดโดยบุคคลที่ได้รับมอบอำนาจจากผู้มีสิทธิ
             </span>
             <div style="clear: both;"></div>
 
@@ -312,7 +313,7 @@
             <span style="float: left; width: 100%; line-height: 0.9;">
                 <input type="checkbox" style="margin: 0;"
                     {{ in_array('option4', $form->personsOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
-                โอนเข้าบัญชีเงินฝากธนาคารในนามบุคคลที่ได้รับมอบอำนาจจากผู้มีสิทธิ/ผู้ดูแล พร้อมแนบเอกสาร ดังนี้
+                โอนเข้าบัญชีเงินฝากธนาคารในนามบุคคลที่ได้รับมอบอำนาจจากผู้มีสิทธิ
             </span>
             <div style="clear: both;"></div>
         </div>

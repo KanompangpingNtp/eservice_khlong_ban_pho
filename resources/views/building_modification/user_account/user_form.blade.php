@@ -212,7 +212,7 @@
 
         function toggleLegalEntityInputs() {
             const checkbox = document.getElementById('option_detail');
-            const inputs = document.querySelectorAll('#legal_name, #registered, #registration_number, #office_located, #office_village, #office_alley, #office_road, #office_subdistrict, #office_district, #office_province');
+            const inputs = document.querySelectorAll('#legal_name, #registered, #registration_number, #office_located, #office_village, #office_alley, #office_road, #office_subdistrict, #office_district, #office_province, #by_name, #by_house_number, #by_village, #by_alley, #by_road, #by_subdistrict, #by_district, #by_province');
 
             // Enable or disable inputs based on the checkbox status
             inputs.forEach(input => {
@@ -227,44 +227,44 @@
         <div class="mb-3 col-md-5">
             <label for="by_name">โดย:</label>
             <div style="display: flex; align-items: center;">
-                <input type="text" name="by_name" id="by_name" class="form-control" style="flex: 1; margin-right: 5px;">
+                <input type="text" name="by_name" id="by_name" class="form-control" style="flex: 1; margin-right: 5px;" disabled>
                 <span>ผู้มีอำนาจลงชื่อแทนนิติบุคคลของผู้อนุญาต</span>
             </div>
         </div>
 
         <div class="col-md-4 mb-3">
             <label for="by_house_number"> อยู่บ้านเลขที่:</label>
-            <input type="text" name="by_house_number" id="by_house_number" class="form-control">
+            <input type="text" name="by_house_number" id="by_house_number" class="form-control" disabled>
         </div>
 
         <div class="col-md-3 mb-3">
             <label for="by_village">หมู่ที่:</label>
-            <input type="text" name="by_village" id="by_village" class="form-control">
+            <input type="text" name="by_village" id="by_village" class="form-control" disabled>
         </div>
 
         <div class="col-md-3 mb-3">
             <label for="by_alley">ตรอก/ซอย:</label>
-            <input type="text" name="by_alley" id="by_alley" class="form-control">
+            <input type="text" name="by_alley" id="by_alley" class="form-control" disabled>
         </div>
 
         <div class="col-md-3 mb-3">
             <label for="by_road">ถนน:</label>
-            <input type="text" name="by_road" id="by_road" class="form-control">
+            <input type="text" name="by_road" id="by_road" class="form-control" disabled>
         </div>
 
         <div class="col-md-3 mb-3">
             <label for="by_subdistrict">แขวง/ตำบล:</label>
-            <input type="text" name="by_subdistrict" id="by_subdistrict" class="form-control">
+            <input type="text" name="by_subdistrict" id="by_subdistrict" class="form-control" disabled>
         </div>
 
         <div class="col-md-3 mb-3">
             <label for="by_district">เขต/อำเภอ:</label>
-            <input type="text" name="by_district" id="by_district" class="form-control">
+            <input type="text" name="by_district" id="by_district" class="form-control" disabled>
         </div>
 
         <div class="col-md-3 mb-3">
             <label for="by_province">จังหวัด</label>
-            <input type="text" name="by_province" id="by_province" class="form-control">
+            <input type="text" name="by_province" id="by_province" class="form-control" disabled>
         </div>
     </div>
 

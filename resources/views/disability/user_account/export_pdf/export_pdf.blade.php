@@ -339,7 +339,7 @@
 
             <span style="float: left; width: 100%; line-height: 0.9;">
                 <input type="checkbox" style="margin: 0;" {{ in_array('option4', $form->disabilityOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
-                โอนเข้าบัญชีเงินฝากธนาคารในนามบุคคลที่ได้รับมอบอำนาจจากผู้มีสิทธิ/ผู้ดูแล พร้อมแนบเอกสาร ดังนี้
+                โอนเข้าบัญชีเงินฝากธนาคารในนามบุคคลที่ได้รับมอบอำนาจจากผู้มีสิทธิ
             </span>
             <div style="clear: both;"></div>
         </div>
