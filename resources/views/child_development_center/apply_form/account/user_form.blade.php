@@ -901,11 +901,12 @@
 
     <span><strong>ข้าพเจ้าขอรับรองว่ารายการข้างต้นถูกต้องและเป็นความจริงทุกประการ</strong></span><br>
     <span>เอกสาร/หลักฐานที่ใช้ในการสมัครเรียน</span><br>
-    <span class="ms-3">1. สำเนาทะเบียนบ้าน</span><br>
-    <span class="ms-3">2. สำเนาบัตรประชาชน</span><br>
-    <span class="ms-3">3. แผนผังสถานประกอบกิจการ</span><br>
-    <span class="ms-3">4. หนังสือมอบอำนาจ (ถ้ามี)</span><br>
-    <span class="ms-3">5. เอกสารอื่นๆ</span><br><br>
+    <span class="ms-3">1. ตัวเด็ก</span><br>
+    <span class="ms-3">2. สำเนาสูติบัตร</span><br>
+    <span class="ms-3">3. สำเนาทะเบียนบ้าน</span><br>
+    <span class="ms-3">4. สำเนาบัตรประชาชนบิดา-มารดา</span><br>
+    <span class="ms-3">5. ใบสมัครของศูนย์พัฒนาเด็กเล็กที่กรอกข้อมูลสมบูรณ์แล้ว</span><br>
+    <span class="ms-3">6. สำเนาสมุดบันทึกสุขภาพ (สีชมพู)</span><br><br>
 
     {{-- <div>
         <h3 for="attachments" class="form-label">แนบไฟล์</h3>
