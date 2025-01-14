@@ -335,7 +335,7 @@
         <span>ลงชื่อ</span>
         <span class="dotted-line" style="width: 35%; text-align: center;">
             {{ $form->caregiverInformation->first()->applicants_name }} </span>
-        <span>ผู้รับสมัคร</span>
+        <span>ผู้นำเด็กมาสมัคร</span>
         <div style="margin-right: 55px;">
             <span>(</span>
             <span class="dotted-line" style="width: 35%; text-align: center;">
@@ -395,7 +395,7 @@
             <span class="dotted-line" style="width: 20%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->phone_number }} </span>
             เป็นผู้ปกครองของ<span style="width: 30%; text-align: center; margin-top:20px;"></span>
         </div>
-        <div> เด็กชาย/เด็กหญิง <span class="dotted-line" style="width: 65%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->childs_name }}
+        <div> {{$form->surrenderTheChild->first()->child_surrender_salutation1}} <span class="dotted-line" style="width: 65%; text-align: left; margin-top:20px;">{{ $form->surrenderTheChild->first()->childs_name }}
             </span> เข้าเป็นนักเรียนของศูนย์
             <div>พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์ และพร้อมที่จะปฏิบัติตามระเบียบการของศูนย์</div>
             <div>พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์ ดังนี้</div>
@@ -412,7 +412,7 @@
         {{-- <div><span class="dotted-line" style="width: 60%; text-align: center; margin-top:20px;"> </span> โทรศัพท์
         </div> --}}
         <div>โทรศัพท์<span class="dotted-line" style="width: 40%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->contact_phone }} </span></div>
-        <div style="margin-left: 2rem; margin-top: 1rem;">อนึ่ง ถ้าเด็กชาย/เด็กหญิง <span class="dotted-line" style="width: 73%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->child_recipient }} </span>เจ็บป่วย </div>
+        <div style="margin-left: 2rem; margin-top: 1rem;">อนึ่ง ถ้า{{ $form->surrenderTheChild->first()->child_recipient_salutation }} <span class="dotted-line" style="width: 73%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->child_recipient }} </span>เจ็บป่วย </div>
         <div>จำเป็นต้องรีบส่งโรงพยาบาลหรือพบแพทย์ทันที ข้าพเจ้าอนุญาตให้ศูนย์พัฒนาเด็กเล็กจัดการไปตามความเห็นชอบก่อน
             และแจ้งให้ข้าพ
         </div>

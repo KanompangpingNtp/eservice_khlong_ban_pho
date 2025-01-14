@@ -2,9 +2,9 @@
 @section('title', 'พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์')
 @section('user_content')
 @if(session('success'))
-    <div class="alert alert-success">
-        {!! nl2br(session('success')) !!}
-    </div>
+<div class="alert alert-success">
+    {!! nl2br(session('success')) !!}
+</div>
 @endif
 
 
@@ -40,23 +40,23 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row ">
             <div class="col-md-4 mb-3">
                 <label for="age" class="form-label">อายุ (ปี)</label>
                 <input type="number" class="form-control" name="age" id="age" required>
             </div>
             <div class="col-md-4 mb-3">
-                <label for="age_months" class="form-label">อายุ (เดือน)</label>
+                <label for="age_months" class="form-label">อายุ (เดือน) นับถึงวันที่ 16 พฤษภาคม พ.ศ.2568</label>
                 <input type="number" class="form-control" name="age_months" id="age_months" required>
             </div>
             <div class="col-md-4 mb-3">
-                <label for="age_since_date" class="form-label">นับถึงวันที่ 16 พฤษภาคม พ.ศ.2568</label>
-                <input type="date" class="form-control" name="age_since_date" id="age_since_date" required>
+                <label for="age_since_date" class="form-label"></label>
+                <?php
+                $currentDate = date('Y-m-d');
+                ?>
+                <input type="hidden" class="form-control" name="age_since_date" id="age_since_date" value="<?= $currentDate; ?>" required>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4 mb-3">
+            <div class="col-md-3 mb-3">
                 <label for="citizen_id" class="form-label">เลขประจำตัวประชาชน</label>
                 <input type="text" class="form-control" name="citizen_id" id="citizen_id" required>
             </div>
@@ -272,7 +272,8 @@
 
         <div class="col-md-12">
             <span><strong>คำรับรอง</strong><br></span>
-            <span class="ms-4">1. ข้าพเจ้าขอรับรองว่า ได้อ่านประกาศรับสมัครศูนย์พัฒนาเด็กเล็กองคฺ์การบริหารส่วนตำบลคลองบ้านโพธิ์เข้าใจแล้ว เด็กที่นำมาสมัครมีคุณสมบัติถูกต้องตรงประกาศ และหลักฐานที่ใช้สมัครในวันนี้เป็นหลักฐานที่ถูกต้องจริง <br>
+            <span class="ms-4">1. ข้าพเจ้าขอรับรองว่า ได้อ่านประกาศรับสมัครศูนย์พัฒนาเด็กเล็กองคฺ์การบริหารส่วนตำบลคลองบ้านโพธิ์เข้าใจแล้ว เด็กที่นำมาสมัครมีคุณสมบัติถูกต้องตรงประกาศ และหลักฐานที่ใช้สมัครใน
+                <br> วันนี้เป็นหลักฐานที่ถูกต้องจริง <br>
             </span>
             <span class="ms-4">2. ข้าพเจ้ามีสิทธิถูกต้องในการที่จะให้เด็กสมัครเข้ารับการศึกษาเลี้ยงดูในศูนย์พัฒนาเด็กเล็กขององค์การบริหารส่วนตำบลคลองบ้านโพธิ์ <br></span>
             <span class="ms-4">3. ข้าพเจ้ายินดีปฏิบัติตามระเบียบ ข้อกำหนดองค์การบริหารส่วนตำบลคลองบ้านโพธิ์ และยินดีปฏิบัติตามคำแนะนำเกี่ยวกับการพัฒนาความพร้อมที่ศูนย์พัฒนาเด็กเล็ก กำหนด</span>
@@ -353,19 +354,27 @@
         <h3 class="form-label">ผู้ปกครองของ</h3>
 
         <div class="row">
-
-            <span>
-                <label for="surrender_childs_name" style="display: inline-block; margin-right: 10px;">เด็กชาย/เด็กหญิง</label>
-                <div class="col-md-4" style="display: inline-block;">
-                    <input type="text" name="surrender_childs_name" id="surrender_childs_name" class="form-control" required>
-                </div>
-                <span style="display: inline-block; margin-left: 10px;"></span>
-                <span>เข้าเป็นนักเรียนของศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์และพร้อมที่จะปฏิบัติตามระเบียบการของศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลหนองบ้านโพธิ์ ดังนี้</span><br>
-                <span class="ms-5"> 1. จะปฏิบัติตามระเบียบ ข้อบังคับของศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์ อย่างเคร่งครัด</span><br>
-                <span class="ms-5"> 2. จะร่วมมือกับศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์ ในการจัดการเรียนการสอนและขจัดปัญหาต่างๆ ที่อาจเกิดขึ้นแก่เด็กอย่างใกล้ชิด
-                </span>
+            {{-- <label for="surrender_childs_name" style="display: inline-block; margin-right: 10px;">เด็กชาย/เด็กหญิง</label> --}}
+            <div class="col-md-2">
+                <label for="child_surrender_salutation1" class="form-label mb-0">คำนำหน้า</label>
+                <select class="form-select" id="child_surrender_salutation1" name="child_surrender_salutation1">
+                    <option value="" selected disabled>เลือกคำนำหน้า</option>
+                    <option value="เด็กชาย">เด็กชาย</option>
+                    <option value="เด็กหญิง">เด็กหญิง</option>
+                </select>
+            </div>
+            <div class="col-md-4" style="display: inline-block;">
+                <label for="surrender_childs_name">ชื่อ-นามสกุล</label>
+                <input type="text" name="surrender_childs_name" id="surrender_childs_name" class="form-control" required>
+            </div>
+        </div>
+        <div style="margin-top: 20px;">
+            <span>เข้าเป็นนักเรียนของศูนย์ พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์และพร้อมที่จะปฏิบัติตามระเบียบการของศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลหนองบ้านโพธิ์ ดังนี้</span><br>
+            <span class="ms-5"> 1. จะปฏิบัติตามระเบียบ ข้อบังคับของศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์ อย่างเครงครัด</span><br>
+            <span class="ms-5"> 2. จะร่วมมือกับศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์ ในการจัดการเรียนการสอนและขจัดปัญหาต่างๆ ที่อาจเกิดขึ้นแก่เด็กอย่างใกล้ชิด
             </span>
-
+        </div>
+        <div class="row">
             <div class="col-md-4 mb-3" style="margin-top: 10px;">
                 <label for="surrender_contact_location" class="form-label">สถานที่ที่สามารถติดต่อกับผู้ปกครองได้สะดวกรวดเร็วที่สุด</label>
                 <input type="text" name="surrender_contact_location" id="surrender_contact_location" class="form-control" required>
@@ -375,219 +384,248 @@
                 <label for="surrender_contact_phone" class="form-label">โทรศัพท์</label>
                 <input type="text" name="surrender_contact_phone" id="surrender_contact_phone" class="form-control" required>
             </div>
+        </div>
 
-            <span style="margin-top: 10px;">
+        {{-- <span style="margin-top: 10px;">
                 <label for="surrender_child_recipient" style="display: inline-block; margin-right: 10px;">อนึ่ง ถ้าเด็กชาย/เด็กหญิง</label>
                 <div class="col-md-4" style="display: inline-block;">
                     <input type="text" name="surrender_child_recipient" id="surrender_child_recipient" class="form-control" required>
                 </div>
                 <span style="display: inline-block; margin-left: 10px;">เจ็บป่วย จำเป็นต้องรีบส่งโรงพยาบาลหรือพบแพทย์ทันที ข้าพเจ้าอนุญาติให้ศูนย์พัฒนาเด็กเล็กจัดการไปตามความ</span>
                 <span>เห็นชอบก่อน และแจ้งให้ข้าพเจ้าทราบ โดยข้าพเจ้าขอรับผิดชอบค่าใช้จ่ายที่เกิดขึ้น</span>
-            </span>
+            </span> --}}
+        <div class="d-flex align-items-center gap-2">
+            <span>อนึ่ง</span>
+            <div class="col-md-2">
+                <label for="child_recipient_salutation" class="form-label mb-0">คำนำหน้า</label>
+                <select class="form-select" id="child_recipient_salutation" name="child_recipient_salutation">
+                    <option value="" selected disabled>เลือกคำนำหน้า</option>
+                    <option value="เด็กชาย">เด็กชาย</option>
+                    <option value="เด็กหญิง">เด็กหญิง</option>
+                </select>
+            </div>
 
+            <div class="col-md-4">
+                <label for="surrender_child_recipient" class="form-label mb-0">ชื่อ-นามสกุล เด็ก</label>
+                <input type="text" name="surrender_child_recipient" id="surrender_child_recipient" class="form-control" required>
+            </div>
+
+            <span class="mt-4">เจ็บป่วย จำเป็นต้องรีบส่งโรงพยาบาลหรือพบแพทย์ทันที ข้าพเจ้าอนุญาติให้ศูนย์พัฒนาเด็กเล็ก</span>
         </div>
+        <span style="margin-top: 15px;">จัดการไปตามความเห็นชอบก่อน และแจ้งให้ข้าพเจ้าทราบ โดยข้าพเจ้าขอรับผิดชอบค่าใช้จ่ายที่เกิดขึ้น</span>
+    </div>
 
-        <br>
-        <h3 class="form-label">ผู้รับส่งเด็ก</h3>
+    <br>
+    <h3 class="form-label">ผู้รับส่งเด็ก</h3>
 
-        <div class="row">
-            <div class="col-md-4 mb-3">
-                <label for="child_recipient_relevant" class="form-label">ชื่อ-สกุล (ผู้รับส่งเด็ก)</label>
-                <input type="text" name="child_recipient_relevant" id="child_recipient_relevant" class="form-control" required>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="child_recipient_related" class="form-label">โดยเกี่ยวข้องเป็น</label>
-                <input type="text" name="child_recipient_related" id="child_recipient_related" class="form-control" required>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="child_recipient_phone" class="form-label">เบอร์โทรศัพท์ติดต่อ</label>
-                <input type="text" name="child_recipient_phone" id="child_recipient_phone" class="form-control" required>
-            </div>
-        </div>
-
-        <br>
-        <hr><br>
-
-        <h3 class="text-center">ทะเบียนประวัติเด็กปฐมวัย <br></h3>
-        <h3 class="text-center">ศูนย์พัฒนาเด็กเล็กองค์การบริหารสวนตำบลคลองบานโพธิ์ <br></h3>
-        <h3 class="text-center">องค์การบริหารส่วนตำบลคลองบ้านโพธิ์ อำเภอบานโพธิ์ จังหวัดฉะเชิงเทรา</h3> <br>
-
-        <div class="row">
-            <div class="col-md-4 mb-3">
-                <label for="child_name">ชื่อ-นามสกุล เด็ก (เด็กชาย/เด็กหญิง) <span class="text-danger">*</span></label>
-                <input type="text" name="child_name" class="form-control" required>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="child_nickname">ชื่อเล่น <span class="text-danger">*</span></label>
-                <input type="text" name="child_nickname" class="form-control" required>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="registration_citizen_id">เลขประจำตัวประชาชน <span class="text-danger">*</span></label>
-                <input type="text" name="registration_citizen_id" class="form-control" required>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="registration_birthday">วัน เดือน ปี เกิด <span class="text-danger">*</span></label>
-                <input type="date" name="registration_birthday" class="form-control" required>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="birth_province">จังหวัดที่เกิด <span class="text-danger">*</span></label>
-                <input type="text" name="birth_province" class="form-control" required>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="registration_ethnicity">เชื้อชาติ <span class="text-danger">*</span></label>
-                <input type="text" name="registration_ethnicity" class="form-control" required>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="registration_nationality">สัญชาติ <span class="text-danger">*</span></label>
-                <input type="text" name="registration_nationality" class="form-control" required>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="religion">ศาสนา <span class="text-danger">*</span></label>
-                <input type="text" name="religion" class="form-control" required>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="house_number">ที่อยู่ปัจจุบันเลขที่ <span class="text-danger">*</span></label>
-                <input type="text" name="house_number" class="form-control" required>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="village">หมู่ที่ <span class="text-danger">*</span></label>
-                <input type="text" name="village" class="form-control" required>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="alley_road">ซอย/ถนน <span class="text-danger">*</span></label>
-                <input type="text" name="alley_road" class="form-control" required>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="subdistrict">ตำบล <span class="text-danger">*</span></label>
-                <input type="text" name="subdistrict" class="form-control" required>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="district">อำเภอ <span class="text-danger">*</span></label>
-                <input type="text" name="district" class="form-control" required>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="province">จังหวัด <span class="text-danger">*</span></label>
-                <input type="text" name="province" class="form-control" required>
-            </div>
-        </div>
-
-       <div>
-            <div class="mb-3">
-                <label for="health_option">สุขภาพโดยรวมของเด็ก</label>
-                <div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="health_option" id="health_option_1" value="option_1" required>
-                        <label class="form-check-label" for="health_option_1">
-                            สมบูรณ์
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="health_option" id="health_option_2" value="option_2" required>
-                        <label class="form-check-label" for="health_option_2">
-                            ไม่สมบูรณ์
-                        </label>
-                    </div>
-                    <div class="col-md-4">
-                        <input type="text" name="health_option_detail" class="form-control" placeholder="สุขภาพโดยรวมของเด็ก ไม่สมบูรณ์อย่างไร โปรดระบุ">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="mb-3">
-            <label for="registration_blood_group">กลุ่มเลือด</label>
-            <div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="registration_blood_group" id="registration_blood_group_1" value="option_1" required>
-                    <label class="form-check-label" for="registration_blood_group_1">
-                        เอ
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="registration_blood_group" id="registration_blood_group_2" value="option_2" required>
-                    <label class="form-check-label" for="registration_blood_group_2">
-                        บี
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="registration_blood_group" id="registration_blood_group_3" value="option_3" required>
-                    <label class="form-check-label" for="registration_blood_group_3">
-                        เอบี
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="registration_blood_group" id="registration_blood_group_4" value="option_4" required>
-                    <label class="form-check-label" for="registration_blood_group_4">
-                        โอ
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="registration_blood_group" id="registration_blood_group_5" value="option_5" required onclick="toggleOtherInput(this)">
-                    <label class="form-check-label" for="registration_blood_group_5">
-                        อื่นๆ
-                    </label>
-                </div>
-                <div class="col-md-3" id="blood_group_detail">
-                    <input type="text" name="blood_group_detail" class="form-control" placeholder="กลุ่มเลือด อื่นๆโปรดระบุ">
-                </div>
-
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4 mb-3">
-                <label for="registration_congenital_disease">เด็กมีโรคประจำตัว</label>
-                <input type="text" name="registration_congenital_disease" class="form-control" required>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="edited_by">เมื่อมีอาการแก้ไขโดย (ระบุอาการ)</label>
-                <input type="text" name="edited_by" class="form-control" required>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4 mb-3">
-                <label for="drug_allergy">เด็กมีประวัติการแพ้ยา (โปรดระบุ)</label>
-                <input type="text" name="drug_allergy" class="form-control" required>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="drug_allergy_detail">แพ้อาหาร คือ (โปรดระบุ)</label>
-                <input type="text" name="drug_allergy_detail" class="form-control" required>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4 mb-3">
-                <label for="accident_history">ประวัติการได้รับอุบัติเหตุหรือเจ็บป่วย</label>
-                <input type="text" name="accident_history" class="form-control" required>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="accident_history_when_age">เมื่ออายุ (ปี)</label>
-                <input type="number" name="accident_history_when_age" class="form-control" required>
-            </div>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            {{-- ต้องเพิ่ม --}}
+            <label for="child_recipient_relevant" class="form-label">ชื่อ-สกุล (ผู้รับส่งเด็ก)</label>
+            <input type="text" name="child_recipient_relevant" id="child_recipient_relevant" class="form-control" required>
         </div>
 
         <div class="col-md-4 mb-3">
-            <label for="ge_immunity">การได้รับภูมิคุ้มกัน</label>
-            {{-- <div>
+            <label for="child_recipient_related" class="form-label">โดยเกี่ยวข้องเป็น</label>
+            <input type="text" name="child_recipient_related" id="child_recipient_related" class="form-control" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="child_recipient_phone" class="form-label">เบอร์โทรศัพท์ติดต่อ</label>
+            <input type="text" name="child_recipient_phone" id="child_recipient_phone" class="form-control" required>
+        </div>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <h3 class="text-center">ทะเบียนประวัติเด็กปฐมวัย <br></h3>
+    <h3 class="text-center">ศูนย์พัฒนาเด็กเล็กองค์การบริหารสวนตำบลคลองบานโพธิ์ <br></h3>
+    <h3 class="text-center">องค์การบริหารส่วนตำบลคลองบ้านโพธิ์ อำเภอบานโพธิ์ จังหวัดฉะเชิงเทรา</h3> <br>
+
+    <div class="row">
+        {{-- newinput --}}
+        <div class="col-md-2">
+            <label for="child_salutation">คำนำหน้า</label>
+            <select class="form-select" id="child_salutation" name="child_salutation">
+                <option value="" selected disabled>เลือกคำนำหน้า</option>
+                <option value="เด็กชาย">เด็กชาย</option>
+                <option value="เด็กหญิง">เด็กหญิง</option>
+            </select>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="child_name">ชื่อ-นามสกุล เด็ก<span class="text-danger">*</span></label>
+            <input type="text" name="child_name" class="form-control" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="child_nickname">ชื่อเล่น <span class="text-danger">*</span></label>
+            <input type="text" name="child_nickname" class="form-control" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="registration_citizen_id">เลขประจำตัวประชาชน <span class="text-danger">*</span></label>
+            <input type="text" name="registration_citizen_id" class="form-control" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="registration_birthday">วัน เดือน ปี เกิด <span class="text-danger">*</span></label>
+            <input type="date" name="registration_birthday" class="form-control" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="birth_province">จังหวัดที่เกิด <span class="text-danger">*</span></label>
+            <input type="text" name="birth_province" class="form-control" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="registration_ethnicity">เชื้อชาติ <span class="text-danger">*</span></label>
+            <input type="text" name="registration_ethnicity" class="form-control" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="registration_nationality">สัญชาติ <span class="text-danger">*</span></label>
+            <input type="text" name="registration_nationality" class="form-control" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="religion">ศาสนา <span class="text-danger">*</span></label>
+            <input type="text" name="religion" class="form-control" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="house_number">ที่อยู่ปัจจุบันเลขที่ <span class="text-danger">*</span></label>
+            <input type="text" name="house_number" class="form-control" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="village">หมู่ที่ <span class="text-danger">*</span></label>
+            <input type="text" name="village" class="form-control" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="alley_road">ซอย/ถนน <span class="text-danger">*</span></label>
+            <input type="text" name="alley_road" class="form-control" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="subdistrict">ตำบล <span class="text-danger">*</span></label>
+            <input type="text" name="subdistrict" class="form-control" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="district">อำเภอ <span class="text-danger">*</span></label>
+            <input type="text" name="district" class="form-control" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="province">จังหวัด <span class="text-danger">*</span></label>
+            <input type="text" name="province" class="form-control" required>
+        </div>
+    </div>
+
+    <div>
+        <div class="mb-3">
+            <label for="health_option">สุขภาพโดยรวมของเด็ก</label>
+            <div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="health_option" id="health_option_1" value="option_1" required>
+                    <label class="form-check-label" for="health_option_1">
+                        สมบูรณ์
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="health_option" id="health_option_2" value="option_2" required>
+                    <label class="form-check-label" for="health_option_2">
+                        ไม่สมบูรณ์
+                    </label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" name="health_option_detail" class="form-control" placeholder="สุขภาพโดยรวมของเด็ก ไม่สมบูรณ์อย่างไร โปรดระบุ">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="registration_blood_group">กลุ่มเลือด</label>
+        <div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="registration_blood_group" id="registration_blood_group_1" value="option_1" required>
+                <label class="form-check-label" for="registration_blood_group_1">
+                    เอ
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="registration_blood_group" id="registration_blood_group_2" value="option_2" required>
+                <label class="form-check-label" for="registration_blood_group_2">
+                    บี
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="registration_blood_group" id="registration_blood_group_3" value="option_3" required>
+                <label class="form-check-label" for="registration_blood_group_3">
+                    เอบี
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="registration_blood_group" id="registration_blood_group_4" value="option_4" required>
+                <label class="form-check-label" for="registration_blood_group_4">
+                    โอ
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="registration_blood_group" id="registration_blood_group_5" value="option_5" required onclick="toggleOtherInput(this)">
+                <label class="form-check-label" for="registration_blood_group_5">
+                    อื่นๆ
+                </label>
+            </div>
+            <div class="col-md-3" id="blood_group_detail">
+                <input type="text" name="blood_group_detail" class="form-control" placeholder="กลุ่มเลือด อื่นๆโปรดระบุ">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label for="registration_congenital_disease">เด็กมีโรคประจำตัว</label>
+            <input type="text" name="registration_congenital_disease" class="form-control" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="edited_by">เมื่อมีอาการแก้ไขโดย (ระบุอาการ)</label>
+            <input type="text" name="edited_by" class="form-control" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label for="drug_allergy">เด็กมีประวัติการแพ้ยา (โปรดระบุ)</label>
+            <input type="text" name="drug_allergy" class="form-control" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="drug_allergy_detail">แพ้อาหาร คือ (โปรดระบุ)</label>
+            <input type="text" name="drug_allergy_detail" class="form-control" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label for="accident_history">ประวัติการได้รับอุบัติเหตุหรือเจ็บป่วย</label>
+            <input type="text" name="accident_history" class="form-control" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="accident_history_when_age">เมื่ออายุ (ปี)</label>
+            <input type="number" name="accident_history_when_age" class="form-control" required>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <label for="ge_immunity">การได้รับภูมิคุ้มกัน</label>
+        {{-- <div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="ge_immunity" id="ge_immunity_1" value="option_1" required>
                     <label class="form-check-label" for="ge_immunity_1">
@@ -638,253 +676,252 @@
                 </div>
                 <input type="text" name="ge_immunity_detail" class="form-control" placeholder="การได้รับภูมิคุ้มกันอื่นๆ คือ">
             </div> --}}
-            <div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="ge_immunity[]" id="ge_immunity_1" value="option_1">
-                    <label class="form-check-label" for="ge_immunity_1">
-                        คอตีบ
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="ge_immunity[]" id="ge_immunity_2" value="option_2">
-                    <label class="form-check-label" for="ge_immunity_2">
-                        หัดเยอรมัน
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="ge_immunity[]" id="ge_immunity_3" value="option_3">
-                    <label class="form-check-label" for="ge_immunity_3">
-                        ไอกรน
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="ge_immunity[]" id="ge_immunity_4" value="option_4">
-                    <label class="form-check-label" for="ge_immunity_4">
-                        บาดทะยัก
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="ge_immunity[]" id="ge_immunity_5" value="option_5">
-                    <label class="form-check-label" for="ge_immunity_5">
-                        โปลิโอ
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="ge_immunity[]" id="ge_immunity_6" value="option_6">
-                    <label class="form-check-label" for="ge_immunity_6">
-                        ตับอักเสบ
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="ge_immunity[]" id="ge_immunity_7" value="option_7">
-                    <label class="form-check-label" for="ge_immunity_7">
-                        บีซีจี
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="ge_immunity[]" id="ge_immunity_8" value="option_8">
-                    <label class="form-check-label" for="ge_immunity_8">
-                        อื่นๆ
-                    </label>
-                </div>
-                <input type="text" name="ge_immunity_detail" class="form-control" placeholder="การได้รับภูมิคุ้มกันอื่นๆ คือ">
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-md-6 mb-3">
-                <label for="specially_about">เด็กควรได้รับการดูแลเป็นพิเศษเรื่อง</label>
-                <input type="text" name="specially_about" class="form-control" required>
-            </div>
-
-            <div class="col-md-6 mb-3">
-                <label for="the_eldest_son">เด็กเป็นบุตรคนที่</label>
-                <input type="text" name="the_eldest_son" class="form-control" required>
-            </div>
-
-            <div class="mb-3 col-md-3">
-                <label for="registration_number_of_siblings" class="form-label">จำนวนพี่น้องร่วมสายโลหิต</label>
-                <div style="display: flex; align-items: center;">
-                    <input type="text" name="registration_number_of_siblings" class="form-control" required>
-                    <span class="ms-2">คน</span>
-                </div>
-            </div>
-
-            <div class="mb-3 col-md-3">
-                <label for="elder_brother" class="form-label">พี่ชาย</label>
-                <div style="display: flex; align-items: center;">
-                    <input type="text" name="elder_brother" class="form-control" required>
-                    <span class="ms-2">คน</span>
-                </div>
-            </div>
-
-            <div class="mb-3 col-md-3">
-                <label for="younger_brother" class="form-label">น้องชาย</label>
-                <div style="display: flex; align-items: center;">
-                    <input type="text" name="younger_brother" class="form-control" required>
-                    <span class="ms-2">คน</span>
-                </div>
-            </div>
-
-            <div class="mb-3 col-md-3">
-                <label for="elder_sister" class="form-label">พี่สาว</label>
-                <div style="display: flex; align-items: center;">
-                    <input type="text" name="elder_sister" class="form-control" required>
-                    <span class="ms-2">คน</span>
-                </div>
-            </div>
-
-            <div class="mb-3 col-md-3">
-                <label for="younger_sister" class="form-label">น้องสาว</label>
-                <div style="display: flex; align-items: center;">
-                    <input type="text" name="younger_sister" class="form-control" required>
-                    <span class="ms-2">คน</span>
-                </div>
-            </div>
-
-        </div>
-
-         <div class="row">
-            <div class="col-md-4 mb-3">
-                <label for="fathers_name">บิดาชื่อ - สกุล</label>
-                <input type="text" name="fathers_name" class="form-control" required>
-            </div>
-
-            <div class="col-md-2 mb-3">
-                <label for="fathers_age">อายุ (ปี)</label>
-                <input type="number" name="fathers_age" class="form-control" required>
-            </div>
-
-            <div class="col-md-3 mb-3">
-                <label for="fathers_occupation">อาชีพ</label>
-                <input type="text" name="fathers_occupation" class="form-control" required>
-            </div>
-
-            <div class="col-md-3 mb-3">
-                <label for="fathers_workplace">สถานที่ทำงาน</label>
-                <input type="text" name="fathers_workplace" class="form-control" required>
-            </div>
-
-            <div class="col-md-3 mb-3">
-                <label for="fathers_phone">โทรศัพท์</label>
-                <input type="text" name="fathers_phone" class="form-control" required>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4 mb-3">
-                <label for="registration_mother_name">มารดาชื่อ - สกุล</label>
-                <input type="text" name="registration_mother_name" class="form-control" required>
-            </div>
-
-            <div class="col-md-2 mb-3">
-                <label for="mother_age">อายุ (ปี)</label>
-                <input type="number" name="mother_age" class="form-control" required>
-            </div>
-
-            <div class="col-md-3 mb-3">
-                <label for="registration_mother_occupation">อาชีพ</label>
-                <input type="text" name="registration_mother_occupation" class="form-control" required>
-            </div>
-
-            <div class="col-md-3 mb-3">
-                <label for="mother_workplace">สถานที่ทำงาน</label>
-                <input type="text" name="mother_workplace" class="form-control" required>
-            </div>
-
-            <div class="col-md-3 mb-3">
-                <label for="mother_phone">โทรศัพท์</label>
-                <input type="text" name="mother_phone" class="form-control" required>
-            </div>
-        </div>
-
-        <div class="mb-3">
-            <label for="marital_status">สถานภาพสมรสของบิดา/มารดา</label>
-            <div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="marital_status" id="marital_status_1" value="option_1" required>
-                    <label class="form-check-label" for="marital_status_1">อยู่ด้วยกัน</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="marital_status" id="marital_status_2" value="option_2" required>
-                    <label class="form-check-label" for="marital_status_2">แยกกันอยู่</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="marital_status" id="marital_status_3" value="option_3" required>
-                    <label class="form-check-label" for="marital_status_3">เลิกร้างกัน</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="marital_status" id="marital_status_4" value="option_4" required>
-                    <label class="form-check-label" for="marital_status_4">บิดาหรือมารดาแต่งงานใหม่</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="marital_status" id="marital_status_5" value="option_5" required>
-                    <label class="form-check-label" for="marital_status_5">อื่นๆ</label>
-                </div>
-                <div class="col-md-4">
-                    <input type="text" name="marital_status_details" class="form-control" placeholder="อื่นๆ โปรดระบุ">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-3 mb-3">
-                <label for="parent_name">ผู้ปกครองชื่อ - สกุล</label>
-                <input type="text" name="parent_name" class="form-control" required>
-            </div>
-
-            <div class="col-md-3 mb-3">
-                <label for="parent_age">อายุ (ปี)</label>
-                <input type="number" name="parent_age" class="form-control" required>
-            </div>
-
-            <div class="col-md-3 mb-3">
-                <label for="parent_relevant_as">เกี่ยวข้องเป็น</label>
-                <input type="text" name="parent_relevant_as" class="form-control" required>
-            </div>
-
-            <div class="col-md-3 mb-3">
-                <label for="parent_occupation">อาชีพ</label>
-                <input type="text" name="parent_occupation" class="form-control" required>
-            </div>
-
-            <div class="col-md-3 mb-3">
-                <label for="parent_workplace">สถานที่ทำงาน</label>
-                <input type="text" name="parent_workplace" class="form-control" required>
-            </div>
-
-            <div class="col-md-3 mb-3">
-                <label for="parent_phone">โทรศัพท์</label>
-                <input type="text" name="parent_phone" class="form-control" required>
-            </div>
-        </div><br>
-
-        <span><strong>ข้าพเจ้าขอรับรองว่ารายการข้างต้นถูกต้องและเป็นความจริงทุกประการ</strong></span><br>
-        <span>เอกสารประกอบการจดทะเบียน</span><br>
-        <span class="ms-3">1. สำเนาทะเบียนบ้าน</span><br>
-        <span class="ms-3">2. สำเนาบัตรประชาชน</span><br>
-        <span class="ms-3">3. แผนผังสถานประกอบกิจการ</span><br>
-        <span class="ms-3">4. หนังสือมอบอำนาจ (ถ้ามี)</span><br>
-        <span class="ms-3">5. เอกสารอื่นๆ</span><br><br>
-
         <div>
-            <h3 for="attachments" class="form-label">แนบไฟล์</h3>
-            <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
-            <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
-            <!-- แสดงรายการไฟล์ที่แนบ -->
-            <div id="file-list" class="mt-1">
-                <div class="d-flex flex-wrap gap-3"></div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="ge_immunity[]" id="ge_immunity_1" value="option_1">
+                <label class="form-check-label" for="ge_immunity_1">
+                    คอตีบ
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="ge_immunity[]" id="ge_immunity_2" value="option_2">
+                <label class="form-check-label" for="ge_immunity_2">
+                    หัดเยอรมัน
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="ge_immunity[]" id="ge_immunity_3" value="option_3">
+                <label class="form-check-label" for="ge_immunity_3">
+                    ไอกรน
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="ge_immunity[]" id="ge_immunity_4" value="option_4">
+                <label class="form-check-label" for="ge_immunity_4">
+                    บาดทะยัก
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="ge_immunity[]" id="ge_immunity_5" value="option_5">
+                <label class="form-check-label" for="ge_immunity_5">
+                    โปลิโอ
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="ge_immunity[]" id="ge_immunity_6" value="option_6">
+                <label class="form-check-label" for="ge_immunity_6">
+                    ตับอักเสบ
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="ge_immunity[]" id="ge_immunity_7" value="option_7">
+                <label class="form-check-label" for="ge_immunity_7">
+                    บีซีจี
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="ge_immunity[]" id="ge_immunity_8" value="option_8">
+                <label class="form-check-label" for="ge_immunity_8">
+                    อื่นๆ
+                </label>
+            </div>
+            <input type="text" name="ge_immunity_detail" class="form-control" placeholder="การได้รับภูมิคุ้มกันอื่นๆ คือ">
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="specially_about">เด็กควรได้รับการดูแลเป็นพิเศษเรื่อง</label>
+            <input type="text" name="specially_about" class="form-control" required>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="the_eldest_son">เด็กเป็นบุตรคนที่</label>
+            <input type="text" name="the_eldest_son" class="form-control" required>
+        </div>
+
+        <div class="mb-3 col-md-3">
+            <label for="registration_number_of_siblings" class="form-label">จำนวนพี่น้องร่วมสายโลหิต</label>
+            <div style="display: flex; align-items: center;">
+                <input type="text" name="registration_number_of_siblings" class="form-control" required>
+                <span class="ms-2">คน</span>
             </div>
         </div>
 
-        <br>
-        <hr><br>
-
-        <div class="text-center w-full border">
-            <button type="submit" class="btn btn-primary w-100 py-1"><i class="fa-solid fa-file-arrow-up me-2"></i></i>
-                ส่งฟอร์มข้อมูล</button>
+        <div class="mb-3 col-md-3">
+            <label for="elder_brother" class="form-label">พี่ชาย</label>
+            <div style="display: flex; align-items: center;">
+                <input type="text" name="elder_brother" class="form-control" required>
+                <span class="ms-2">คน</span>
+            </div>
         </div>
+
+        <div class="mb-3 col-md-3">
+            <label for="younger_brother" class="form-label">น้องชาย</label>
+            <div style="display: flex; align-items: center;">
+                <input type="text" name="younger_brother" class="form-control" required>
+                <span class="ms-2">คน</span>
+            </div>
+        </div>
+
+        <div class="mb-3 col-md-3">
+            <label for="elder_sister" class="form-label">พี่สาว</label>
+            <div style="display: flex; align-items: center;">
+                <input type="text" name="elder_sister" class="form-control" required>
+                <span class="ms-2">คน</span>
+            </div>
+        </div>
+
+        <div class="mb-3 col-md-3">
+            <label for="younger_sister" class="form-label">น้องสาว</label>
+            <div style="display: flex; align-items: center;">
+                <input type="text" name="younger_sister" class="form-control" required>
+                <span class="ms-2">คน</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label for="fathers_name">บิดาชื่อ - สกุล</label>
+            <input type="text" name="fathers_name" class="form-control" required>
+        </div>
+
+        <div class="col-md-2 mb-3">
+            <label for="fathers_age">อายุ (ปี)</label>
+            <input type="number" name="fathers_age" class="form-control" required>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <label for="fathers_occupation">อาชีพ</label>
+            <input type="text" name="fathers_occupation" class="form-control" required>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <label for="fathers_workplace">สถานที่ทำงาน</label>
+            <input type="text" name="fathers_workplace" class="form-control" required>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <label for="fathers_phone">โทรศัพท์</label>
+            <input type="text" name="fathers_phone" class="form-control" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label for="registration_mother_name">มารดาชื่อ - สกุล</label>
+            <input type="text" name="registration_mother_name" class="form-control" required>
+        </div>
+
+        <div class="col-md-2 mb-3">
+            <label for="mother_age">อายุ (ปี)</label>
+            <input type="number" name="mother_age" class="form-control" required>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <label for="registration_mother_occupation">อาชีพ</label>
+            <input type="text" name="registration_mother_occupation" class="form-control" required>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <label for="mother_workplace">สถานที่ทำงาน</label>
+            <input type="text" name="mother_workplace" class="form-control" required>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <label for="mother_phone">โทรศัพท์</label>
+            <input type="text" name="mother_phone" class="form-control" required>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="marital_status">สถานภาพสมรสของบิดา/มารดา</label>
+        <div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="marital_status" id="marital_status_1" value="option_1" required>
+                <label class="form-check-label" for="marital_status_1">อยู่ด้วยกัน</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="marital_status" id="marital_status_2" value="option_2" required>
+                <label class="form-check-label" for="marital_status_2">แยกกันอยู่</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="marital_status" id="marital_status_3" value="option_3" required>
+                <label class="form-check-label" for="marital_status_3">เลิกร้างกัน</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="marital_status" id="marital_status_4" value="option_4" required>
+                <label class="form-check-label" for="marital_status_4">บิดาหรือมารดาแต่งงานใหม่</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="marital_status" id="marital_status_5" value="option_5" required>
+                <label class="form-check-label" for="marital_status_5">อื่นๆ</label>
+            </div>
+            <div class="col-md-4">
+                <input type="text" name="marital_status_details" class="form-control" placeholder="อื่นๆ โปรดระบุ">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 mb-3">
+            <label for="parent_name">ผู้ปกครองชื่อ - สกุล</label>
+            <input type="text" name="parent_name" class="form-control" required>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <label for="parent_age">อายุ (ปี)</label>
+            <input type="number" name="parent_age" class="form-control" required>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <label for="parent_relevant_as">เกี่ยวข้องเป็น</label>
+            <input type="text" name="parent_relevant_as" class="form-control" required>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <label for="parent_occupation">อาชีพ</label>
+            <input type="text" name="parent_occupation" class="form-control" required>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <label for="parent_workplace">สถานที่ทำงาน</label>
+            <input type="text" name="parent_workplace" class="form-control" required>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <label for="parent_phone">โทรศัพท์</label>
+            <input type="text" name="parent_phone" class="form-control" required>
+        </div>
+    </div>
+    <br>
+
+    <span><strong>ข้าพเจ้าขอรับรองว่ารายการข้างต้นถูกต้องและเป็นความจริงทุกประการ</strong></span><br>
+    <span>เอกสาร/หลักฐานที่ใช้ในการสมัครเรียน</span><br>
+    <span class="ms-3">1. สำเนาทะเบียนบ้าน</span><br>
+    <span class="ms-3">2. สำเนาบัตรประชาชน</span><br>
+    <span class="ms-3">3. แผนผังสถานประกอบกิจการ</span><br>
+    <span class="ms-3">4. หนังสือมอบอำนาจ (ถ้ามี)</span><br>
+    <span class="ms-3">5. เอกสารอื่นๆ</span><br><br>
+
+    {{-- <div>
+        <h3 for="attachments" class="form-label">แนบไฟล์</h3>
+        <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
+        <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
+        <!-- แสดงรายการไฟล์ที่แนบ -->
+        <div id="file-list" class="mt-1">
+            <div class="d-flex flex-wrap gap-3"></div>
+        </div>
+    </div> --}}
+    <hr><br>
+
+    <div class="text-center w-full border">
+        <button type="submit" class="btn btn-primary w-100 py-1"><i class="fa-solid fa-file-arrow-up me-2"></i></i>
+            ส่งฟอร์มข้อมูล</button>
+    </div>
     </div>
 
 </form>
@@ -924,6 +961,7 @@
             }
         });
     });
+
 </script>
 
 <script>
@@ -943,5 +981,6 @@
             }
         });
     });
+
 </script>
 @endsection

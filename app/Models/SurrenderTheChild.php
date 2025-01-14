@@ -28,7 +28,11 @@ class SurrenderTheChild extends Model
         'child_recipient_relevant',
         'child_recipient_phone',
         'contact_phone',
-        'child_recipient_related'
+        'child_recipient_related',
+        'child_recipient_salutation',
+        'child_surrender_salutation',
+        'child_surrender_salutation1',
+        'child_salutation'
     ];
 
     public function user()

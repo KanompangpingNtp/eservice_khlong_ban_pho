@@ -89,6 +89,10 @@ class UserChildApplyController extends Controller
             'child_recipient_relevant' => 'required|string|max:255',
             'child_recipient_related' => 'required|string|max:255',
             'child_recipient_phone' => 'required|string|max:255',
+            'child_recipient_salutation' => 'nullable|string|max:255',
+            'child_surrender_salutation' => 'nullable|string|max:255',
+            'child_surrender_salutation1' => 'nullable|string|max:255',
+            'child_salutation' => 'nullable|string|max:255',
 
             // //ChildRegistration
             'child_name' => 'required|string|max:255',
@@ -223,6 +227,10 @@ class UserChildApplyController extends Controller
             'child_recipient_relevant' => $request->child_recipient_relevant,
             'child_recipient_phone' => $request->child_recipient_phone,
             'child_recipient_related' => $request->child_recipient_related,
+            'child_recipient_salutation' => $request->child_recipient_salutation,
+            'child_surrender_salutation' => $request->child_surrender_salutation,
+            'child_surrender_salutation1' => $request->child_surrender_salutation1,
+            'child_salutation' => $request->child_salutation,
         ]);
 
         $ChildRegistration = ChildRegistration::create([

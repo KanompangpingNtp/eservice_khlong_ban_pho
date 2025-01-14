@@ -130,7 +130,6 @@
 
 
     <div class="title_doc" style="text-align:center;">
-        {{-- <img src="{{ public_path('images\logo.png') }}" alt="Logo"> --}}
         <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('images/logo.png'))) }}" alt="Logo">
         <div>
             ใบสมัคร
@@ -151,7 +150,7 @@
         ข้อมูลเด็ก
     </div>
     <div class="box_text" style="text-align: left; margin-top: 5px;">
-        <span>1. เด็กชื่อ - สกุล</span>
+        <span>๑. เด็กชื่อ - สกุล</span>
         <span class="dotted-line" style="width: 38%; text-align: center;"> {{ $form->full_name }} </span>
         <span>เชื้อชาติ</span>
         <span class="dotted-line" style="width: 17%; text-align: center;"> {{ $form->ethnicity }} </span>
@@ -159,7 +158,7 @@
         <span class="dotted-line" style="width: 17%; text-align: center;"> {{ $form->nationality }} </span>
     </div>
     <div class="box_text" style="text-align: left; margin-top: 5px;">
-        <span>2. เกิดวันที่</span>
+        <span>๒. เกิดวันที่</span>
         <span class="dotted-line" style="width: 10%; text-align: center;"> {{ $birthday_day }} </span>
         <span>เดือน</span>
         <span class="dotted-line" style="width: 19%; text-align: center;"> {{ $birthday_month }} </span>
@@ -171,19 +170,14 @@
         <span class="dotted-line" style="width: 10%; text-align: center;"> {{ $form->age_months }} </span>
         <span>เดือน</span>
     </div>
-
-    @php
-    $currentYear = date('Y');
-    $thaiYear = $currentYear + 543;
-    @endphp
-
     <div class="box_text" style="text-align: left;">
-        <span>(นับถึงวันที่ 16 พ.ค {{ $thaiYear }} )
+        <span>(นับถึงวันที่
+            {{ $age_since_date_day }}&nbsp;{{ $age_since_date_month }}&nbsp;{{ $age_since_date_year }} )
             เลขประจำตัวประชาชน</span>
         <span class="dotted-line" style="width: 53%; text-align: center;"> {{ $formatted_id }} </span>
     </div>
     <div class="box_text" style="text-align: left; margin-top: 5px;">
-        <span>3. ที่อยู่ตามสำเนาทะเบียนบ้าน บ้านเลขที่</span>
+        <span>๓. ที่อยู่ตามสำเนาทะเบียนบ้าน บ้านเลขที่</span>
         <span class="dotted-line" style="width: 19%; text-align: center;"> {{ $form->regis_house_number }} </span>
         <span>หมู่ที่</span>
         <span class="dotted-line" style="width: 19%; text-align: center;"> {{ $form->regis_village }} </span>
@@ -199,7 +193,7 @@
         <span class="dotted-line" style="width: 27%; text-align: center;"> {{ $form->regis_province }} </span>
     </div>
     <div class="box_text" style="text-align: left; margin-top: 5px;">
-        <span>4. ที่อยู่อาศัยจริงในปัจจุบัน บ้านเลขที่</span>
+        <span>๔. ที่อยู่อาศัยจริงในปัจจุบัน บ้านเลขที่</span>
         <span class="dotted-line" style="width: 22%; text-align: center;"> {{ $form->current_house_number }} </span>
         <span>หมู่ที่</span>
         <span class="dotted-line" style="width: 19%; text-align: center;"> {{ $form->current_village }} </span>
@@ -225,7 +219,7 @@
         <span class="dotted-line" style="width: 26%; text-align: center;"> data </span>
     </div>
     <div class="box_text" style="text-align: left; margin-top: 5px;">
-        <span>5. โรคประจำตัว</span>
+        <span>๕. โรคประจำตัว</span>
         <span class="dotted-line" style="width: 50%; text-align: center;"> {{ $form->congenital_disease }} </span>
         <span>หมู่โลหิต</span>
         <span class="dotted-line" style="width: 28%; text-align: center;"> {{ $form->blood_group }} </span>
@@ -234,7 +228,7 @@
         ข้อมูลบิดา - มารดา หรือผู้อุปการะ
     </div>
     <div class="box_text" style="text-align: left; margin-top: 5px;">
-        <span>1. บิดาชื่อ - สกุล</span>
+        <span>๑. บิดาชื่อ - สกุล</span>
         <span class="dotted-line" style="width: 35%; text-align: center;">
             {{ $form->caregiverInformation->first()->father_name }} </span>
         <span>อาชีพ</span>
@@ -256,7 +250,7 @@
             {{ $form->caregiverInformation->first()->edu_qual_mother }} </span>
     </div>
     <div class="box_text" style="text-align: left; margin-top: 5px;">
-        <span> 2. ปัจจุบันเด็กอยู่ในความดูแลอุปการะ/รับผิดชอบของ</span>
+        <span> ๒. ปัจจุบันเด็กอยู่ในความดูแลอุปการะ/รับผิดชอบของ</span>
         <div style="text-align:left; margin-left:20px;">
             <span> ๒.๑</span>
             <span style="margin-left: 10px;"><input type="checkbox" {{ $form->caregiverInformation->first()->care_option == 'father' ? 'checked' : '' }}> บิดา</span>
@@ -266,8 +260,8 @@
         </div>
         <div style="text-align:left; margin-left:20px;">
             <span> ๒.๒</span>
-            <span style="margin-left: 10px;"><input type="checkbox" {{ $form->caregiverInformation->first()->care_option == 'relative' ? 'checked' : '' }}> ญาติ (โปรดระบุความเกี่ยวข้อง)</span>
-            <span class="dotted-line" style="width: 65%; text-align: center;">{{ $form->caregiverInformation->first()->care_option_relative_text}}</span>
+            <span style="margin-left: 10px;"><input type="checkbox"> ญาติ (โปรดระบุความเกี่ยวข้อง)</span>
+            <span class="dotted-line" style="width: 65%; text-align: center;"> - </span>
         </div>
         <div style="text-align:left; margin-left:20px;">
             <span> ๒.๓</span>
@@ -277,16 +271,16 @@
                 {{ $form->caregiverInformation->first()->care_option_other }} </span>
         </div>
     </div>
-    {{-- new page --}}
-    <div style="page-break-before: always;"></div>
+        {{-- new page --}}
+        <div style="page-break-before: always;"></div>
     <div class="box_text" style="text-align: left; margin-top: 5px;">
-        <span> 3. ผู้ดูแลอุปการะเด็กตามข้อ 1. มีรายได้ในครอบครัวต่อเดือน</span>
+        <span> ๓. ผู้ดูแลอุปการะเด็กตามข้อ ๑. มีรายได้ในครอบครัวต่อเดือน</span>
         <span class="dotted-line" style="width: 49%; text-align: center;">
             {{ $form->caregiverInformation->first()->caretaker_income }} </span>
         <span>บาท</span>
     </div>
     <div class="box_text" style="text-align: left; margin-top: 5px;">
-        <span> 4. ผู้นำเด็กมาสมัครชื่อ - สกุล</span>
+        <span> ๔. ผู้นำเด็กมาสมัครชื่อ - สกุล</span>
         <span class="dotted-line" style="width: 39%; text-align: center;">
             {{ $form->caregiverInformation->first()->applicants_name }} </span>
         <span>เกี่ยวข้องเป็น</span>
@@ -295,7 +289,7 @@
         <span>ของเด็ก</span>
     </div>
     <div class="box_text" style="text-align: left; margin-top: 5px;">
-        <span> 5. ผู้ที่จะรับส่งเด็กชื่อ - สกุล</span>
+        <span> ๕. ผู้ที่จะรับส่งเด็กชื่อ - สกุล</span>
         <span class="dotted-line" style="width:78%; text-align: center;">
             {{ $form->caregiverInformation->first()->child_carrier_name }} </span>
         <div>
@@ -307,24 +301,31 @@
                 {{ $form->caregiverInformation->first()->child_carrier_phone }} </span>
         </div>
     </div>
+
+    {{-- new page --}}
+    <div style="page-break-before: always;"></div>
+
+    <div style="text-align: center">
+        - 2 -
+    </div>
     <div style="text-align: left; display: inline-block; border-bottom: 2px solid black; margin-top:5rem; font-size:25px; font-weight: bold; font-family: 'sarabun-bold', sans-serif;">
         คำรับรอง
     </div>
     <div class="box_text" style="text-align: left; margin-top: 5px; ">
-        <div style="margin-left: 2rem;"> 1. ข้าพเจ้าขอรับรองว่า
+        <div style="margin-left: 2rem;"> ๑. ข้าพเจ้าขอรับรองว่า
             ได้อ่านประกาศรับสมัครของศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบล
             คลองบ้านโพธิ์เข้าใจแล้วเด็ก </div>
         <span> ที่นำมาสมัครมีคุณสมบัติถูกต้องตรงตามประกาศ และหลักฐานที่ใช้สมัครใน
             วันนี้เป็นหลักฐานที่ถูกต้องจริง</span>
     </div>
     <div class="box_text" style="text-align: left; margin-top: 5px; ">
-        <div style="margin-left: 2rem;"> 2.
+        <div style="margin-left: 2rem;"> ๒.
             ข้าพเจ้ามีสิทธิถูกต้องในการที่จะให้เด็กสมัครเข้ารับการศึกษาเลี้ยงดูในศูนย์พัฒนาเด็กเล็กขององค์การบริหารส่วนตำบล
         </div>
         <span>คลองบ้านโพธิ์</span>
     </div>
     <div class="box_text" style="text-align: left; margin-top: 5px; ">
-        <div style="margin-left: 2rem;"> 3. ข้าพเจ้ายินดีปฏิบัติตามระเบียบ
+        <div style="margin-left: 2rem;"> ๓. ข้าพเจ้ายินดีปฏิบัติตามระเบียบ
             ข้อกำหนดขององค์การบริหารส่วนตำบลคลองบ้านโพธิ์ และยินดี
             ปฏิบัติคำแนะนำเกี่ยวกับ
         </div>
@@ -334,7 +335,7 @@
         <span>ลงชื่อ</span>
         <span class="dotted-line" style="width: 35%; text-align: center;">
             {{ $form->caregiverInformation->first()->applicants_name }} </span>
-        <span>ผู้รับสมัคร</span>
+        <span>ผู้นำเด็กมาสมัคร</span>
         <div style="margin-right: 55px;">
             <span>(</span>
             <span class="dotted-line" style="width: 35%; text-align: center;">
@@ -355,13 +356,13 @@
         หมายเหตุ <span style="margin-left: 2rem;">เอกสาร/หลักฐานที่ใช้ในการสมัครเรียน </span>
     </div>
     <div class="box_text" style="text-align: left; ">
-        <div style="margin-left: 6rem;"> 1. ตัวเด็ก 2. สำเนาสูติบัตร 3. สำเนาทะเบียนบ้าน
+        <div style="margin-left: 6rem;"> ๑. ตัวเด็ก ๒. สำเนาสูติบัตร ๓. สำเนาทะเบียนบ้าน
         </div>
-        <div style="margin-left: 6rem;"> 4. สำเนาบัตรประชาชนบิดา - มารดา
+        <div style="margin-left: 6rem;"> ๔. สำเนาบัตรประชาชนบิดา - มารดา
         </div>
-        <div style="margin-left: 6rem;"> 5. ใบสมัครของศูนย์พัฒนาเด็กเล็กที่กรอกข้อมูลสมบูรณ์แล้ว
+        <div style="margin-left: 6rem;"> ๕. ใบสมัครของศูนย์พัฒนาเด็กเล็กที่กรอกข้อมูลสมบูรณ์แล้ว
         </div>
-        <div style="margin-left: 6rem;"> 6. สำเนาสมุดบันทึกสุขภาพ (สีชมพู)
+        <div style="margin-left: 6rem;"> ๖. สำเนาสมุดบันทึกสุขภาพ (สีชมพู)
         </div>
     </div>
     {{-- new page --}}
@@ -378,33 +379,23 @@
         </div>
     </div>
     <div class="box_text" style="text-align: left; margin-top: 1rem; ">
-        <div style="margin-left: 2rem;"> ข้าพเจ้า <span class="dotted-line" style="width: 61%; text-align: center; margin-top:20px;">
-                {{ $form->surrenderTheChild->first()->full_name }}</span> อายุ
-            <span class="dotted-line" style="width: 25%; text-align: center; margin-top:20px;">
-                {{ $form->surrenderTheChild->first()->age }}</span> ปี
+        <div style="margin-left: 2rem;"> ข้าพเจ้า <span class="dotted-line" style="width: 61%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->full_name }}</span> อายุ
+            <span class="dotted-line" style="width: 25%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->age }}</span> ปี
         </div>
-        <div> อาชีพ <span class="dotted-line" style="width: 20%; text-align: center; margin-top:20px;">
-                {{ $form->surrenderTheChild->first()->occupation }} </span> รายได้
-            <span class="dotted-line" style="width: 15%; text-align: center; margin-top:20px;">
-                {{ $form->surrenderTheChild->first()->income }} </span> บาท/เดือน
-            ที่อยู่ปัจจุบัน เลขที่ <span class="dotted-line" style="width: 11%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->surrender_income }}</span>
-            หมู่ที่ <span class="dotted-line" style="width: 11%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->village }}
+        <div> อาชีพ <span class="dotted-line" style="width: 20%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->occupation }} </span> รายได้
+            <span class="dotted-line" style="width: 15%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->income }} </span> บาท/เดือน
+            ที่อยู่ปัจจุบัน เลขที่ <span class="dotted-line" style="width: 11%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->surrender_income }}</span> หมู่ที่ <span class="dotted-line" style="width: 11%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->village }}
         </div>
-        <div> ถนน/ตรอก/ซอย <span class="dotted-line" style="width: 30%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->alley_road }}
-            </span>
+        <div> ถนน/ตรอก/ซอย <span class="dotted-line" style="width: 30%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->alley_road }} </span>
             ตำบล
-            <span class="dotted-line" style="width: 22%; text-align: center; margin-top:20px;">
-                {{ $form->surrenderTheChild->first()->subdistrict }} </span> อำเภอ <span class="dotted-line" style="width: 21%; text-align: center; margin-top:20px;">
-                {{ $form->surrenderTheChild->first()->district }}</span>
+            <span class="dotted-line" style="width: 22%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->subdistrict }} </span> อำเภอ <span class="dotted-line" style="width: 21%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->district }}</span>
         </div>
-        <div> จังหวัด <span class="dotted-line" style="width: 20%; text-align: center; margin-top:20px;">
-                {{ $form->surrenderTheChild->first()->province }} </span>
+        <div> จังหวัด <span class="dotted-line" style="width: 20%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->province }} </span>
             โทรศัพท์
-            <span class="dotted-line" style="width: 20%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->phone_number }}
-            </span>
+            <span class="dotted-line" style="width: 20%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->phone_number }} </span>
             เป็นผู้ปกครองของ<span style="width: 30%; text-align: center; margin-top:20px;"></span>
         </div>
-        <div> เด็กชาย/เด็กหญิง <span class="dotted-line" style="width: 65%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->childs_name }}
+        <div> {{$form->surrenderTheChild->first()->child_surrender_salutation1}} <span class="dotted-line" style="width: 65%; text-align: left; margin-top:20px;">{{ $form->surrenderTheChild->first()->childs_name }}
             </span> เข้าเป็นนักเรียนของศูนย์
             <div>พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์ และพร้อมที่จะปฏิบัติตามระเบียบการของศูนย์</div>
             <div>พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์ ดังนี้</div>
@@ -416,20 +407,18 @@
             ในการจัดการเรียนการสอนและขจัดปัญหาต่างๆ
         </div>
         <div>ที่อาจเกิดขึ้นแก่เด็กอย่างใกล้ชิด</div>
-        <div style="margin-left: 2rem; margin-top:20px;">สถานที่ที่สามารถติดต่อกับผู้ปกครองได้สะดวกรวดเร็วที่สุด<span class="dotted-line" style="width: 54%; text-align: center; ">{{ $form->surrenderTheChild->first()->contact_location }}
-            </span> </div>
-        <div style="margin-left: 2rem;"><span>โทรศัพท์</span><span class="dotted-line" style="width: 70%; text-align: center; ">{{ $form->surrenderTheChild->first()->contact_phone }}
-            </span> </div>
+        <div style="margin-left: 2rem;">สถานที่ที่สามารถติดต่อกับผู้ปกครองได้สะดวกรวดเร็วที่สุด</div>
+        <div><span class="dotted-line" style="width: 40%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->contact_location }} </span></div>
         {{-- <div><span class="dotted-line" style="width: 60%; text-align: center; margin-top:20px;"> </span> โทรศัพท์
         </div> --}}
-        <div style="margin-left: 2rem; margin-top: 0.5rem;">อนึ่ง ถ้าเด็กชาย/เด็กหญิง <span class="dotted-line" style="width: 73%; text-align: center; margin-top:10px;">
-                {{ $form->surrenderTheChild->first()->child_recipient }} </span>เจ็บป่วย </div>
+        <div>โทรศัพท์<span class="dotted-line" style="width: 40%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->contact_phone }} </span></div>
+        <div style="margin-left: 2rem; margin-top: 1rem;">อนึ่ง ถ้า{{ $form->surrenderTheChild->first()->child_recipient_salutation }} <span class="dotted-line" style="width: 73%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->child_recipient }} </span>เจ็บป่วย </div>
         <div>จำเป็นต้องรีบส่งโรงพยาบาลหรือพบแพทย์ทันที ข้าพเจ้าอนุญาตให้ศูนย์พัฒนาเด็กเล็กจัดการไปตามความเห็นชอบก่อน
             และแจ้งให้ข้าพ
         </div>
         <div>เจ้าทราบโดยข้าพเจ้าขอรับผิดชอบค่าใช้จ่ายที่เกิดขึ้น</div>
     </div>
-    <div style="text-align: left; display: inline-block; border-bottom: 2px solid black; margin-top:0.5rem; font-size:25px; font-weight: bold; font-family: 'sarabun-bold', sans-serif;">
+    <div style="text-align: left; display: inline-block; border-bottom: 2px solid black; margin-top:1rem; font-size:25px; font-weight: bold; font-family: 'sarabun-bold', sans-serif;">
         ผู้รับส่งเด็ก
     </div>
     {{-- <div class="box_text" style="text-align: left; margin-top: 5px; ">
@@ -438,8 +427,8 @@
         </div> --}}
         <div class="box_text" style="text-align: left; margin-top: 5px;">
             <div style="padding-bottom: -4px;">
-                (นาย/นาง/นางสาว)
-                <span class="dotted-line" style="width: 83%; text-align: center;">
+                ชื่อ-สกุล
+                <span class="dotted-line" style="width: 82%; text-align: center;">
                     {{ $form->surrenderTheChild->first()->child_recipient }}
                 </span>
                 โดยเกี่ยวข้องเป็น
@@ -454,7 +443,7 @@
         </div>
 
 
-        <div class="box_text" style="text-align: right; margin-top:2rem;">
+        <div class="box_text" style="text-align: right; margin-top:4rem;">
             <span>ลงชื่อผู้ปกครอง</span>
             <span class="dotted-line" style="width: 35%; text-align: center;">
                 {{ $form->surrenderTheChild->first()->full_name }} </span>
@@ -462,13 +451,13 @@
         <div class="box_text" style="text-align: right;">
             <span>ลงชื่อผู้รับมอบตัว</span>
             <span class="dotted-line" style="width: 35%; text-align: center;">
-            </span>
+                 </span>
         </div>
         <div class="box_text" style="text-align: right;">
             <span>วันที่</span>
-            <span class="dotted-line" style="width: 10%; text-align: center;"> </span>
+            <span class="dotted-line" style="width: 10%; text-align: center;">  </span>
             <span>เดือน</span>
-            <span class="dotted-line" style="width: 15%; text-align: center;"> </span>
+            <span class="dotted-line" style="width: 15%; text-align: center;">  </span>
             <span>พ.ศ.</span>
             <span class="dotted-line" style="width: 15%; text-align: center;"> </span>
         </div>
@@ -486,12 +475,10 @@
             </div>
         </div>
         <div class="box_text" style="text-align: left; margin-top: 5px;">
-            <span>เด็กชาย/เด็กหญิง</span>
-            <span class="dotted-line" style="width: 50%; text-align: center;">
-                {{ $form->childRegistration->first()->child_name }} </span>
+            <span>{{ $form->surrenderTheChild->first()->child_salutation }}</span>
+            <span class="dotted-line" style="width: 50%; text-align: center;"> {{ $form->childRegistration->first()->child_name }} </span>
             <span>ชื่อเล่น</span>
-            <span class="dotted-line" style="width: 29%; text-align: center;">
-                {{ $form->childRegistration->first()->child_nickname }} </span>
+            <span class="dotted-line" style="width: 29%; text-align: center;"> {{ $form->childRegistration->first()->child_nickname }} </span>
         </div>
         @php
         $formatted_citizen_id =
@@ -512,9 +499,9 @@
         </div>
         <div class="box_text" style="text-align: left;">
             <span>วัน เดือน ปี เกิด</span>
-            <span class="dotted-line" style="width: 30%; text-align: center;">
-                {{ \Carbon\Carbon::parse($form->childRegistration->first()->birthday)->locale('th')->translatedFormat('j F ') .
-                (\Carbon\Carbon::parse($form->childRegistration->first()->birthday)->year + 543) }}
+            <span class="dotted-line" style="width: 30%; text-align: center;"> {{ \Carbon\Carbon::parse($form->childRegistration->first()->birthday)
+                ->locale('th')
+                ->translatedFormat('j F ') . ( \Carbon\Carbon::parse($form->childRegistration->first()->birthday)->year + 543) }}
             </span>
             <span>จังหวัดที่เกิด</span>
             <span class="dotted-line" style="width: 46%; text-align: center;">{{ $form->childRegistration->first()->birth_province }}</span>
@@ -555,130 +542,107 @@
                 <input type="checkbox" {{ $form->childRegistration->first()->health_option == 'option_2' ? 'checked' : '' }}>
                 ไม่สมบูรณ์ คือ
             </span>
-            <span class="dotted-line" style="width: 49%; text-align: center;">{{ $form->childRegistration->first()->health_option_detail }}</span>
+            <span class="dotted-line" style="width: 49%; text-align: center;">{{$form->childRegistration->first()->health_option_detail}}</span>
         </div>
 
         <div class="box_text" style="text-align: left;">
             <span>กลุ่มเลือด</span>
-            <span style="margin-left: 30px;"><input type="checkbox" {{ $form->childRegistration->first()->blood_group == 'option_1' ? 'checked' : '' }}> เอ</span>
-            <span style="margin-left: 30px;"><input type="checkbox" {{ $form->childRegistration->first()->blood_group == 'option_2' ? 'checked' : '' }}> บี</span>
-            <span style="margin-left: 30px;"><input type="checkbox" {{ $form->childRegistration->first()->blood_group == 'option_3' ? 'checked' : '' }}> เอบี</span>
-            <span style="margin-left: 30px;"><input type="checkbox" {{ $form->childRegistration->first()->blood_group == 'option_4' ? 'checked' : '' }}> โอ</span>
-            <span style="margin-left: 30px;"><input type="checkbox" {{ $form->childRegistration->first()->blood_group == 'option_5' ? 'checked' : '' }}> อื่นๆ</span>
-            <span class="dotted-line" style="width: 27%; text-align: center;">{{$form->childRegistration->first()->blood_group_detail}}</span>
+            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->blood_group == 'option_1' ? 'checked' : '' }}> เอ</span>
+            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->blood_group == 'option_2' ? 'checked' : '' }}> บี</span>
+            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->blood_group == 'option_3' ? 'checked' : '' }}> เอบี</span>
+            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->blood_group == 'option_4' ? 'checked' : '' }}> โอ</span>
         </div>
         <div class="box_text" style="text-align: left;">
             <span>เด็กมีโรคประจำตัว คือ</span>
-            <span class="dotted-line" style="width: 32%; text-align: center;">{{ $form->childRegistration->first()->congenital_disease }}</span>
+            <span class="dotted-line" style="width: 32%; text-align: center;">{{$form->childRegistration->first()->congenital_disease}}</span>
             <span>เมื่อมีอาการแก้ไขโดย</span>
-            <span class="dotted-line" style="width: 33%; text-align: center;">{{ $form->childRegistration->first()->edited_by }}</span>
+            <span class="dotted-line" style="width: 33%; text-align: center;">{{$form->childRegistration->first()->edited_by}}</span>
         </div>
         <div class="box_text" style="text-align: left;">
             <span>เด็กมีประวัติการแพ้ยา คือ</span>
-            <span class="dotted-line" style="width: 35%; text-align: center;">{{ $form->childRegistration->first()->drug_allergy }}</span>
+            <span class="dotted-line" style="width: 35%; text-align: center;">{{$form->childRegistration->first()->drug_allergy}}</span>
             <span>แพ้อาหาร คือ</span>
-            <span class="dotted-line" style="width: 33%; text-align: center;">{{ $form->childRegistration->first()->drug_allergy_detail }}</span>
+            <span class="dotted-line" style="width: 33%; text-align: center;">{{$form->childRegistration->first()->drug_allergy_detail}}</span>
         </div>
         <div class="box_text" style="text-align: left;">
             <span>ประวัติการได้รับอุบัติเหตุหรือเจ็บป่วย</span>
-            <span class="dotted-line" style="width: 33%; text-align: center;">{{ $form->childRegistration->first()->accident_history }}</span>
+            <span class="dotted-line" style="width: 33%; text-align: center;">{{$form->childRegistration->first()->accident_history}}</span>
             <span>เมื่ออายุ</span>
-            <span class="dotted-line" style="width: 30%; text-align: center;">{{ $form->childRegistration->first()->accident_history_when_age }}</span>
+            <span class="dotted-line" style="width: 30%; text-align: center;">{{$form->childRegistration->first()->accident_history_when_age}}</span>
         </div>
         <div class="box_text" style="text-align: left;">
             <span>การได้รับภูมิคุ้มกัน</span>
-            <span style="margin-left: 50px;">
-                <input type="checkbox" name="ge_immunity[]" value="option_1" {{ in_array('option_1', $selectedOptions) ? 'checked' : '' }}> คอตีบ
-            </span>
-            <span style="margin-left: 50px;">
-                <input type="checkbox" name="ge_immunity[]" value="option_2" {{ in_array('option_2', $selectedOptions) ? 'checked' : '' }}> หัดเยอรมัน
-            </span>
-            <span style="margin-left: 50px;">
-                <input type="checkbox" name="ge_immunity[]" value="option_3" {{ in_array('option_3', $selectedOptions) ? 'checked' : '' }}> ไอกรน
-            </span>
-            <span style="margin-left: 50px;">
-                <input type="checkbox" name="ge_immunity[]" value="option_4" {{ in_array('option_4', $selectedOptions) ? 'checked' : '' }}> บาดทะยัก
-            </span>
+            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->ge_immunity == 'option_1' ? 'checked' : '' }}> คอตีบ</span>
+            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->ge_immunity == 'option_2' ? 'checked' : '' }}> หัดเยอรมัน</span>
+            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->ge_immunity == 'option_3' ? 'checked' : '' }}> ไอกรน</span>
+            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->ge_immunity == 'option_4' ? 'checked' : '' }}> บาดทะยัก</span>
         </div>
         <div class="box_text" style="text-align: left; margin-left: 2rem;">
-            <span style="margin-left: 50px;">
-                <input type="checkbox" name="ge_immunity[]" value="option_5" {{ in_array('option_5', $selectedOptions) ? 'checked' : '' }}> โปลิโอ
-            </span>
-            <span style="margin-left: 48px;">
-                <input type="checkbox" name="ge_immunity[]" value="option_6" {{ in_array('option_6', $selectedOptions) ? 'checked' : '' }}> ตับอักเสบ
-            </span>
-            <span style="margin-left: 46px;">
-                <input type="checkbox" name="ge_immunity[]" value="option_7" {{ in_array('option_7', $selectedOptions) ? 'checked' : '' }}> บีซีจี
-            </span>
-            <span style="margin-left: 46px;">
-                <input type="checkbox" name="ge_immunity[]" value="option_8" {{ in_array('option_8', $selectedOptions) ? 'checked' : '' }}> อื่นๆ
-            </span>
-            <span class="dotted-line" style="width: 29%; text-align: center;">{{ $form->childRegistration->first()->ge_immunity_detail }}</span>
+            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->ge_immunity == 'option_5' ? 'checked' : '' }}> โปลิโอ</span>
+            <span style="margin-left: 48px;"><input type="checkbox" {{ $form->childRegistration->first()->ge_immunity == 'option_6' ? 'checked' : '' }}> ตับอักเสบ</span>
+            <span style="margin-left: 46px;"><input type="checkbox" {{ $form->childRegistration->first()->ge_immunity == 'option_7' ? 'checked' : '' }}> บีซีจี</span>
+            <span style="margin-left: 46px;"><input type="checkbox" {{ $form->childRegistration->first()->ge_immunity == 'option_8' ? 'checked' : '' }}> อื่นๆ</span>
+            <span class="dotted-line" style="width: 29%; text-align: center;">{{$form->childRegistration->first()->ge_immunity_detail}}</span>
         </div>
         <div class="box_text" style="text-align: left;">
-            <div style="margin-bottom: 1rem; display: inline;">เด็กควรได้รับการดูแลเป็นพิเศษเรื่อง<span class="dotted-line" style="width: 72%; text-align: left;">{{ $form->childRegistration->first()->specially_about }}</span></div>
+            <div style="margin-bottom: 1rem; display: inline;">เด็กควรได้รับการดูแลเป็นพิเศษเรื่อง</div>
+            <span class="dotted-line" style="width: 100%; text-align: left;">{{$form->childRegistration->first()->specially_about}}</span>
         </div>
 
         <div class="box_text" style="text-align: left;">
             <span>เด็กเป็นบุตรคนที่</span>
-            <span class="dotted-line" style="width: 11%; text-align: center;">{{ $form->childRegistration->first()->the_eldest_son }}</span>
+            <span class="dotted-line" style="width: 11%; text-align: center;">{{$form->childRegistration->first()->the_eldest_son}}</span>
             <span>จำนวนพี่น้องร่วมสายโลหิต</span>
-            <span class="dotted-line" style="width: 10%; text-align: center;">{{ $form->childRegistration->first()->number_of_siblings }}</span>
-            <span>คน พี่ชาย</span><span class="dotted-line" style="width: 10%; text-align: center;">{{ $form->childRegistration->first()->elder_brother }}</span><span>คน
-                น้องชาย</span><span class="dotted-line" style="width: 12%; text-align: center;">{{ $form->childRegistration->first()->younger_brother }}</span><span>คน</span>
-            <span>พี่สาว</span><span class="dotted-line" style="width: 12%; text-align: center;">{{ $form->childRegistration->first()->elder_sister }}</span><span>คน
-                น้องสาว</span><span class="dotted-line" style="width: 12%; text-align: center;">{{ $form->childRegistration->first()->younger_brother }}</span><span>คน</span>
+            <span class="dotted-line" style="width: 10%; text-align: center;">{{$form->childRegistration->first()->number_of_siblings}}</span>
+            <span>คน พี่ชาย</span><span class="dotted-line" style="width: 10%; text-align: center;">{{$form->childRegistration->first()->elder_brother}}</span><span>คน
+                น้องชาย</span><span class="dotted-line" style="width: 12%; text-align: center;">{{$form->childRegistration->first()->younger_brother}}</span><span>คน</span>
+            <span>พี่สาว</span><span class="dotted-line" style="width: 12%; text-align: center;">{{$form->childRegistration->first()->elder_sister}}</span><span>คน น้องสาว</span><span class="dotted-line" style="width: 12%; text-align: center;">{{$form->childRegistration->first()->younger_brother}}</span><span>คน</span>
         </div>
         <div class="box_text" style="text-align: left; margin-top: 10px;">
             <span>บิดาชื่อ - สกุล</span>
-            <span class="dotted-line" style="width: 40%; text-align: center;">{{ $form->childRegistration->first()->fathers_name }}</span>
+            <span class="dotted-line" style="width: 40%; text-align: center;">{{$form->childRegistration->first()->fathers_name}}</span>
             <span>อายุ</span>
-            <span class="dotted-line" style="width: 15%; text-align: center;">{{ $form->childRegistration->first()->fathers_age }}</span>
+            <span class="dotted-line" style="width: 15%; text-align: center;">{{$form->childRegistration->first()->fathers_age}}</span>
             <span>ปี อาชีพ</span>
-            <span class="dotted-line" style="width: 21%; text-align: center;">{{ $form->childRegistration->first()->fathers_occupation }}</span>
+            <span class="dotted-line" style="width: 21%; text-align: center;">{{$form->childRegistration->first()->fathers_occupation}}</span>
             <span>สถานที่ทำงาน</span>
-            <span class="dotted-line" style="width: 59%; text-align: center;">{{ $form->childRegistration->first()->fathers_workplace }}</span>
+            <span class="dotted-line" style="width: 59%; text-align: center;">{{$form->childRegistration->first()->fathers_workplace}}</span>
             <span>โทรศัพท์</span>
-            <span class="dotted-line" style="width: 21%; text-align: center;">{{ $form->childRegistration->first()->fathers_phone }}</span>
+            <span class="dotted-line" style="width: 21%; text-align: center;">{{$form->childRegistration->first()->fathers_phone}}</span>
         </div>
         <div class="box_text" style="text-align: left;">
             <span>มารดาชื่อ - สกุล</span>
-            <span class="dotted-line" style="width: 38%; text-align: center;">{{ $form->childRegistration->first()->mother_name }}</span>
+            <span class="dotted-line" style="width: 38%; text-align: center;">{{$form->childRegistration->first()->mother_name}}</span>
             <span>อายุ</span>
-            <span class="dotted-line" style="width: 15%; text-align: center;">{{ $form->childRegistration->first()->mother_age }}</span>
+            <span class="dotted-line" style="width: 15%; text-align: center;">{{$form->childRegistration->first()->mother_age}}</span>
             <span>ปี อาชีพ</span>
-            <span class="dotted-line" style="width: 20%; text-align: center;">{{ $form->childRegistration->first()->mother_occupation }}</span>
+            <span class="dotted-line" style="width: 20%; text-align: center;">{{$form->childRegistration->first()->mother_occupation}}</span>
             <span>สถานที่ทำงาน</span>
-            <span class="dotted-line" style="width: 59%; text-align: center;">{{ $form->childRegistration->first()->mother_workplace }}</span>
+            <span class="dotted-line" style="width: 59%; text-align: center;">{{$form->childRegistration->first()->mother_workplace}}</span>
             <span>โทรศัพท์</span>
-            <span class="dotted-line" style="width: 21%; text-align: center;">{{ $form->childRegistration->first()->mother_phone }}</span>
+            <span class="dotted-line" style="width: 21%; text-align: center;">{{$form->childRegistration->first()->mother_phone}}</span>
         </div>
         <div class="box_text" style="text-align: left;">
             <div>สถานภาพสมรสของบิดา/มารดา</div>
-            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->marital_status == 'option_1' ? 'checked' : '' }}>
-                อยู่ด้วยกัน</span>
-            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->marital_status == 'option_2' ? 'checked' : '' }}>
-                แยกกันอยู่</span>
-            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->marital_status == 'option_3' ? 'checked' : '' }}>
-                เลิกร้างกัน</span>
-            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->marital_status == 'option_4' ? 'checked' : '' }}>
-                บิดาหรือมารดาแต่งงานใหม</span>
-            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->marital_status == 'option_5' ? 'checked' : '' }}>
-                อื่นๆ</span><span class="dotted-line" style="width: 70%; text-align: center;">{{$form->childRegistration->first()->blood_group_detail}}</span>
+            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->marital_status == 'option_1' ? 'checked' : '' }}> อยู่ด้วยกัน</span>
+            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->marital_status == 'option_2' ? 'checked' : '' }}> แยกกันอยู่</span>
+            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->marital_status == 'option_3' ? 'checked' : '' }}> เลิกร้างกัน</span>
+            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->marital_status == 'option_4' ? 'checked' : '' }}> บิดาหรือมารดาแต่งงานใหม</span>
+            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->marital_status == 'option_5' ? 'checked' : '' }}> อื่นๆ</span><span class="dotted-line" style="width: 70%; text-align: center;"></span>
         </div>
         <div class="box_text" style="text-align: left;">
             <span>ผู้ปกครองชื่อ - สกุล</span>
-            <span class="dotted-line" style="width: 52%; text-align: center;">{{ $form->childRegistration->first()->parent_name }}</span>
+            <span class="dotted-line" style="width: 52%; text-align: center;">{{$form->childRegistration->first()->parent_name}}</span>
             <span>อายุ</span>
-            <span class="dotted-line" style="width: 25%; text-align: center;">{{ $form->childRegistration->first()->parent_age }}</span>
+            <span class="dotted-line" style="width: 25%; text-align: center;">{{$form->childRegistration->first()->parent_age}}</span>
             <span>ปี </span><span>เกี่ยวข้องเป็น</span>
-            <span class="dotted-line" style="width: 27%; text-align: center;">{{ $form->childRegistration->first()->parent_relevant_as }}</span>
+            <span class="dotted-line" style="width: 27%; text-align: center;">{{$form->childRegistration->first()->parent_relevant_as}}</span>
             <span>ของเด็กอาชีพ</span>
-            <span class="dotted-line" style="width: 50%; text-align: center;">{{ $form->childRegistration->first()->parent_occupation }}</span>
+            <span class="dotted-line" style="width: 50%; text-align: center;">{{$form->childRegistration->first()->parent_occupation}}</span>
             <span>สถานที่ทำงาน</span>
-            <span class="dotted-line" style="width: 50%; text-align: center;">{{ $form->childRegistration->first()->parent_workplace }}</span>
+            <span class="dotted-line" style="width: 50%; text-align: center;">{{$form->childRegistration->first()->parent_workplace}}</span>
             <span>โทรศัพท์</span>
-            <span class="dotted-line" style="width: 21%; text-align: center;">{{ $form->childRegistration->first()->parent_phone }}</span>
+            <span class="dotted-line" style="width: 21%; text-align: center;">{{$form->childRegistration->first()->parent_phone}}</span>
         </div>
 
 </body>
