@@ -171,10 +171,9 @@
         <span>เดือน</span>
     </div>
     <div class="box_text" style="text-align: left;">
-        <span>(นับถึงวันที่
-            {{ $age_since_date_day }}&nbsp;{{ $age_since_date_month }}&nbsp;{{ $age_since_date_year }} )
+        <span>(นับถึงวันที่ 16 พฤษภาคม พ.ศ.2568 )
             เลขประจำตัวประชาชน</span>
-        <span class="dotted-line" style="width: 53%; text-align: center;"> {{ $formatted_id }} </span>
+        <span class="dotted-line" style="width: 50%; text-align: center;"> {{ $formatted_id }} </span>
     </div>
     <div class="box_text" style="text-align: left; margin-top: 5px;">
         <span>๓. ที่อยู่ตามสำเนาทะเบียนบ้าน บ้านเลขที่</span>
@@ -261,7 +260,7 @@
         <div style="text-align:left; margin-left:20px;">
             <span> ๒.๒</span>
             <span style="margin-left: 10px;"><input type="checkbox"> ญาติ (โปรดระบุความเกี่ยวข้อง)</span>
-            <span class="dotted-line" style="width: 65%; text-align: center;"> - </span>
+            <span class="dotted-line" style="width: 65%; text-align: center;">{{ $form->caregiverInformation->first()->care_option_relative }}</span>
         </div>
         <div style="text-align:left; margin-left:20px;">
             <span> ๒.๓</span>
