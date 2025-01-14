@@ -291,7 +291,7 @@
 
         <div class="row mb-3">
             <div class="col-md-2 mb-3">
-                <label for="child_surrender_salutation" class="form-label">คำนำหน้า</label>
+                <label for="surrender_salutation" class="form-label">คำนำหน้า</label>
                 <select class="form-select" id="surrender_salutation" name="surrender_salutation">
                     <option value="" selected disabled>เลือกคำนำหน้า</option>
                     <option value="นาย">นาย</option>
@@ -359,8 +359,8 @@
                 <label for="child_surrender_salutation1" class="form-label mb-0">คำนำหน้า</label>
                 <select class="form-select" id="child_surrender_salutation1" name="child_surrender_salutation1">
                     <option value="" selected disabled>เลือกคำนำหน้า</option>
-                    <option value="นาย">เด็กชาย</option>
-                    <option value="นาง">เด็กหญิง</option>
+                    <option value="เด็กชาย">เด็กชาย</option>
+                    <option value="เด็กหญิง">เด็กหญิง</option>
                 </select>
             </div>
             <div class="col-md-4" style="display: inline-block;">
@@ -395,13 +395,13 @@
                 <span>เห็นชอบก่อน และแจ้งให้ข้าพเจ้าทราบ โดยข้าพเจ้าขอรับผิดชอบค่าใช้จ่ายที่เกิดขึ้น</span>
             </span> --}}
         <div class="d-flex align-items-center gap-2">
-            <span>อนึง</span>
+            <span>อนึ่ง</span>
             <div class="col-md-2">
                 <label for="child_recipient_salutation" class="form-label mb-0">คำนำหน้า</label>
                 <select class="form-select" id="child_recipient_salutation" name="child_recipient_salutation">
                     <option value="" selected disabled>เลือกคำนำหน้า</option>
-                    <option value="นาย">เด็กชาย</option>
-                    <option value="นาง">เด็กหญิง</option>
+                    <option value="เด็กชาย">เด็กชาย</option>
+                    <option value="เด็กหญิง">เด็กหญิง</option>
                 </select>
             </div>
 
@@ -420,6 +420,7 @@
 
     <div class="row">
         <div class="col-md-4 mb-3">
+            {{-- ต้องเพิ่ม --}}
             <label for="child_recipient_relevant" class="form-label">ชื่อ-สกุล (ผู้รับส่งเด็ก)</label>
             <input type="text" name="child_recipient_relevant" id="child_recipient_relevant" class="form-control" required>
         </div>
@@ -448,8 +449,8 @@
             <label for="child_salutation">คำนำหน้า</label>
             <select class="form-select" id="child_salutation" name="child_salutation">
                 <option value="" selected disabled>เลือกคำนำหน้า</option>
-                <option value="นาย">เด็กชาย</option>
-                <option value="นาง">เด็กหญิง</option>
+                <option value="เด็กชาย">เด็กชาย</option>
+                <option value="เด็กหญิง">เด็กหญิง</option>
             </select>
         </div>
         <div class="col-md-4 mb-3">
@@ -899,14 +900,14 @@
     <br>
 
     <span><strong>ข้าพเจ้าขอรับรองว่ารายการข้างต้นถูกต้องและเป็นความจริงทุกประการ</strong></span><br>
-    <span>เอกสารประกอบการจดทะเบียน</span><br>
+    <span>เอกสาร/หลักฐานที่ใช้ในการสมัครเรียน</span><br>
     <span class="ms-3">1. สำเนาทะเบียนบ้าน</span><br>
     <span class="ms-3">2. สำเนาบัตรประชาชน</span><br>
     <span class="ms-3">3. แผนผังสถานประกอบกิจการ</span><br>
     <span class="ms-3">4. หนังสือมอบอำนาจ (ถ้ามี)</span><br>
     <span class="ms-3">5. เอกสารอื่นๆ</span><br><br>
 
-    <div>
+    {{-- <div>
         <h3 for="attachments" class="form-label">แนบไฟล์</h3>
         <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
         <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
@@ -914,9 +915,7 @@
         <div id="file-list" class="mt-1">
             <div class="d-flex flex-wrap gap-3"></div>
         </div>
-    </div>
-
-    <br>
+    </div> --}}
     <hr><br>
 
     <div class="text-center w-full border">
