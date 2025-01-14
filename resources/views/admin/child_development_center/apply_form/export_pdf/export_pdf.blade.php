@@ -427,8 +427,8 @@
         </div> --}}
         <div class="box_text" style="text-align: left; margin-top: 5px;">
             <div style="padding-bottom: -4px;">
-                (นาย/นาง/นางสาว)
-                <span class="dotted-line" style="width: 83%; text-align: center;">
+                ชื่อ-สกุล
+                <span class="dotted-line" style="width: 82%; text-align: center;">
                     {{ $form->surrenderTheChild->first()->child_recipient }}
                 </span>
                 โดยเกี่ยวข้องเป็น
@@ -475,7 +475,7 @@
             </div>
         </div>
         <div class="box_text" style="text-align: left; margin-top: 5px;">
-            <span>เด็กชาย/เด็กหญิง</span>
+            <span>{{ $form->surrenderTheChild->first()->child_salutation }}</span>
             <span class="dotted-line" style="width: 50%; text-align: center;"> {{ $form->childRegistration->first()->child_name }} </span>
             <span>ชื่อเล่น</span>
             <span class="dotted-line" style="width: 29%; text-align: center;"> {{ $form->childRegistration->first()->child_nickname }} </span>
