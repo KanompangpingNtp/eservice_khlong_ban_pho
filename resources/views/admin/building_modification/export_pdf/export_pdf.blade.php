@@ -229,7 +229,7 @@
     </div>
     <div class="box_text" style="text-align: left;  margin-left:5rem;">
         <span>ขอยื่นคำขอรับใบอนุญาต</span>
-        <span class="dotted-line" style="width: 40%; text-align: center;">{{ $form->apply_for_license }}</span><span>พ่อเจ้าพนักงานท้องถิ่น
+        <span class="dotted-line" style="width: 40%; text-align: center;">{{ $form->apply_for_license }}</span><span>ต่อเจ้าพนักงานท้องถิ่น
             ดังต่อไปนี้
         </span>
     </div>
