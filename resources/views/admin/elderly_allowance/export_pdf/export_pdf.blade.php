@@ -22,7 +22,7 @@
 
         body {
             font-family: 'sarabun', 'sarabun-bold', sans-serif;
-            font-size: 15px;
+            font-size: 16px;
             margin: 0;
             padding: 0;
             line-height: 1;
@@ -600,39 +600,41 @@
                 style="width: 100%; text-align: center; display: block; border-bottom: 2px dotted black; margin-top: 5px;"></span>
         </div>
 
-        <div class="box_text" style="margin-top: 3rem;">
-            <span>ยื่นแบบคำขอลงทะเบียนเมื่อวันที่</span><span class="dotted-line"
-                style="width: 20%; text-align: center; border-bottom: 2px dotted black;">
+        <div style="font-size: 19px;">
+            <div class="box_text" style="margin-top: 3rem;">
+                <span>ยื่นแบบคำขอลงทะเบียนเมื่อวันที่</span><span class="dotted-line"
+                    style="width: 20%; text-align: center; border-bottom: 2px dotted black;">
 
-            </span>
-            <span>เดือน</span><span class="dotted-line" style="width: 25%; text-align: center; border-bottom: 2px dotted black;">
-            </span><span>พ.ศ.</span><span class="dotted-line" style="width: 20%; text-align: center; border-bottom: 2px dotted black;">
+                </span>
+                <span>เดือน</span><span class="dotted-line" style="width: 25%; text-align: center; border-bottom: 2px dotted black;">
+                </span><span>พ.ศ.</span><span class="dotted-line" style="width: 20%; text-align: center; border-bottom: 2px dotted black;">
 
-        </div>
-        <div class="box_text" style="margin-left: 3rem;">
-            <span>การยืนยันสิทธิครั้งนี้
-                เพื่อขอรับเงินเบี้ยยังชีพผู้สูงอายุโดยจะได้รับเงินเบี้ยเบี้ยยังชีพผู้สูงอายุตามที่มีคุณสมบัติครบถ้วน</span>
-        </div>
-        <div class="box_text">
-            <span>และตามช่วงระยะเวลาในการยืนยันสิทธิ ภายในวันที่ 10 ของทุกเดือน โดยได้รับตั้งแต่เดือน</span><span
-                class="dotted-line" style="width: 32%; text-align: center; border-bottom: 2px dotted black;">
-            </span>
-        </div>
-        <div class="box_text" style="text-align: left;">
-            <span>พ.ศ.</span><span class="dotted-line"
-                style="width: 19%; text-align: center; border-bottom: 2px dotted black;">
-            </span> เป็นต้นไปกรณีผู้สูงอายุย้ายภูมิลำเนา
-            ไปอยู่ที่อื่นจะต้องไปยืนยันสิทธิยื่นคำขอรับเงินเบี้ยยังชีพผู้สูงอายุ
-        </div>
-        <div class="box_text" style="text-align: left; margin-left:2px;">
-            <span>ณ ที่องค์กรปกครองส่วนท้องถิ่นแห่งใหม่ภายในเดือนกันยายนของปีนั้น ทั้งนี้ผู้สูงอายุจะได้เบี้ย
-                ผู้สูงอายุ ณ องค์กรปกครองส่วนท้องถิ่น
-            </span>
-        </div>
-        <div class="box_text" style="text-align: left; margin-left:2px;">
-            <span>และรับที่ องค์กรปกครอง
-                ส่วนท้องถิ่นเดิมจนสิ้นปีงบประมาณ และรับที่องค์กรปกครองส่วนท้องถิ่นใหม่ในปีงบประมาณถัดไป
-            </span>
+            </div>
+            <div class="box_text" style="margin-left: 3rem;">
+                <span>การยืนยันสิทธิครั้งนี้
+                    เพื่อขอรับเงินเบี้ยยังชีพผู้สูงอายุโดยจะได้รับเงินเบี้ยเบี้ยยังชีพผู้สูงอายุตามที่มีคุณสมบัติครบถ้วน</span>
+            </div>
+            <div class="box_text">
+                <span>และตามช่วงระยะเวลาในการยืนยันสิทธิ ภายในวันที่ 10 ของทุกเดือน โดยได้รับตั้งแต่เดือน</span><span
+                    class="dotted-line" style="width: 32%; text-align: center; border-bottom: 2px dotted black;">
+                </span>
+            </div>
+            <div class="box_text" style="text-align: left;">
+                <span>พ.ศ.</span><span class="dotted-line"
+                    style="width: 15%; text-align: center; border-bottom: 2px dotted black;">
+                </span>เป็นต้นไป&nbsp;กรณีผู้สูงอายุย้ายภูมิลำเนา
+                ไปอยู่ที่อื่นจะต้องไปยืนยันสิทธิยื่นคำขอรับเงินเบี้ยยังชีพผู้สูงอายุ
+            </div>
+            <div class="box_text" style="text-align: left; margin-left:2px;">
+                <span>ณ ที่องค์กรปกครองส่วนท้องถิ่นแห่งใหม่ภายในเดือนกันยายนของปีนั้น ทั้งนี้ผู้สูงอายุจะได้เบี้ย
+                    ผู้สูงอายุ ณ องค์กรปกครองส่วนท้องถิ่น
+                </span>
+            </div>
+            <div class="box_text" style="text-align: left; margin-left:2px;">
+                <span>และรับที่ องค์กรปกครอง
+                    ส่วนท้องถิ่นเดิมจนสิ้นปีงบประมาณ และรับที่องค์กรปกครองส่วนท้องถิ่นใหม่ในปีงบประมาณถัดไป
+                </span>
+            </div>
         </div>
 </body>
 

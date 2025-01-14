@@ -207,7 +207,7 @@
     <div class=" box_text" style="text-align: right; margin-top:1rem;">
             <span>(ลงชื่อ)</span>
             <span class="dotted-line" style="width: 30%; text-align: center; border-bottom: 2px dotted black;"> </span>
-        <span>เจ้าหน้าผูตรวจสอบ</span>
+        <span>เจ้าหน้าที่ผู้ตรวจสอบ</span>
         <div style=" margin-right: 63px;">
             ( <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"></span> )
     </div>

@@ -58,8 +58,12 @@
         </div>
     </div> --}}
     <div class="row">
-        <div class="col-md-2 mt-3">
+        {{-- <div class="col-md-2 mt-3">
             <input type="checkbox" name="is_an_individual" id="is_an_individual" value="yes" onchange="toggleAddressInputs()">
+            <label for="is_an_individual">เป็นบุคคลธรรมดา</label>
+        </div> --}}
+        <div class="col-md-2 mt-3">
+            <input type="checkbox" name="is_an_individual" id="is_an_individual" value="yes" onchange="toggleCheckboxes('is_an_individual', 'option_detail'); toggleAddressInputs()">
             <label for="is_an_individual">เป็นบุคคลธรรมดา</label>
         </div>
 
@@ -109,68 +113,12 @@
                 input.disabled = !checkbox.checked;
             });
         }
+
     </script>
 
-
-    {{-- <div class="row">
-        <div class="col-md-2 mb-3">
-            <label for="option_detail">เป็นนิติบุคคล</label>
-            <input type="checkbox" name="option_detail" id="option_detail" value="yes">
-        </div>
-
-        <div class="col-md-3 mb-3">
-            <label for="registered">ชื่อนิติบุคคล:</label>
-            <input type="text" name="legal_name" id="legal_name" class="form-control">
-        </div>
-
-        <div class="col-md-3 mb-3">
-            <label for="registered">จดทะเบียนเมื่อ :</label>
-            <input type="date" name="registered" id="registered" class="form-control">
-        </div>
-
-        <div class="col-md-3 mb-3">
-            <label for="registration_number">เลขทะเบียนr:</label>
-            <input type="text" name="registration_number" id="registration_number" class="form-control">
-        </div>
-
-        <div class="col-md-3 mb-3">
-            <label for="office_located">สำานักงานตั้งอยู่เลขที่:</label>
-            <input type="text" name="office_located" id="office_located" class="form-control">
-        </div>
-
-        <div class="col-md-3 mb-3">
-            <label for="office_village">หมู่ที่:</label>
-            <input type="text" name="office_village" id="office_village" class="form-control">
-        </div>
-
-        <div class="col-md-3 mb-3">
-            <label for="office_alley">ตรอก/ซอย:</label>
-            <input type="text" name="office_alley" id="office_alley" class="form-control">
-        </div>
-
-        <div class="col-md-3 mb-3">
-            <label for="office_road">ถนน:</label>
-            <input type="text" name="office_road" id="office_road" class="form-control">
-        </div>
-
-        <div class="col-md-3 mb-3">
-            <label for="office_subdistrict">แขวง/ตำบล:</label>
-            <input type="text" name="office_subdistrict" id="office_subdistrict" class="form-control">
-        </div>
-
-        <div class="col-md-3 mb-3">
-            <label for="office_district">เขต/อำเภอ:</label>
-            <input type="text" name="office_district" id="office_district" class="form-control">
-        </div>
-
-        <div class="col-md-3 mb-3">
-            <label for="office_province">จังหวัด</label>
-            <input type="text" name="office_province" id="office_province" class="form-control">
-        </div>
-    </div> --}}
     <div class="row">
         <div class="col-md-2 mb-3">
-            <input type="checkbox" name="option_detail" id="option_detail" value="yes" onchange="toggleLegalEntityInputs()">
+            <input type="checkbox" name="option_detail" id="option_detail" value="yes" onchange="toggleCheckboxes('option_detail', 'is_an_individual'); toggleLegalEntityInputs()">
             <label for="option_detail">เป็นนิติบุคคล</label>
         </div>
 
@@ -235,6 +183,43 @@
                 input.disabled = !checkbox.checked;
             });
         }
+
+    </script>
+
+    <script>
+        function toggleCheckboxes(activeId, inactiveId) {
+            const activeCheckbox = document.getElementById(activeId);
+            const inactiveCheckbox = document.getElementById(inactiveId);
+
+            // Disable the other checkbox if the current one is checked
+            if (activeCheckbox.checked) {
+                inactiveCheckbox.disabled = true;
+                inactiveCheckbox.checked = false;
+            } else {
+                inactiveCheckbox.disabled = false;
+            }
+        }
+
+        function toggleAddressInputs() {
+            const checkbox = document.getElementById('is_an_individual');
+            const inputs = document.querySelectorAll('#house_number, #village, #alley, #road, #subdistrict, #district, #province');
+
+            // Enable or disable inputs based on the checkbox status
+            inputs.forEach(input => {
+                input.disabled = !checkbox.checked;
+            });
+        }
+
+        function toggleLegalEntityInputs() {
+            const checkbox = document.getElementById('option_detail');
+            const inputs = document.querySelectorAll('#legal_name, #registered, #registration_number, #office_located, #office_village, #office_alley, #office_road, #office_subdistrict, #office_district, #office_province');
+
+            // Enable or disable inputs based on the checkbox status
+            inputs.forEach(input => {
+                input.disabled = !checkbox.checked;
+            });
+        }
+
     </script>
 
 
@@ -352,7 +337,7 @@
             <label for="apply_by">โดย:</label>
             <div style="display: flex; align-items: center;">
                 <input type="text" name="apply_by" id="apply_by" class="form-control" style="flex: 1; margin-right: 5px;">
-                <span>ต่อเจ้าพนักงานท้องถิ่น ดังต่อไปนี้</span>
+                <span>เป็นเจ้าของอาคาร ในโฉนดเลขที่</span>
             </div>
         </div>
 
@@ -491,7 +476,7 @@
             </div>
         </div>
 
-        <div class="col-md-3 mb-3" >
+        <div class="col-md-3 mb-3">
             <label for="blueprint_set">ชุดละ</label>
             <input type="text" name="blueprint_set" id="blueprint_set" class="form-control">
         </div>
