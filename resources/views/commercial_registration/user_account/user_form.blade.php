@@ -76,67 +76,67 @@
     <div class="row">
         <div class="mb-3 col-md-4">
             <label for="trade_entrepreneur_name" class="form-label">ชื่อผู้ประกอบกิจการ <span style="color: red;">*</span></label>
-            <input type="text" id="trade_entrepreneur_name" name="trade_entrepreneur_name" class="form-control">
+            <input type="text" id="trade_entrepreneur_name" name="trade_entrepreneur_name" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-2">
             <label for="trade_entrepreneur_age" class="form-label">อายุ (ปี) <span style="color: red;">*</span></label>
-            <input type="text" id="trade_entrepreneur_age" name="trade_entrepreneur_age" class="form-control">
+            <input type="text" id="trade_entrepreneur_age" name="trade_entrepreneur_age" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="trade_entrepreneur_ethnicity" class="form-label">เชื้อชาติ <span style="color: red;">*</span></label>
-            <input type="text" id="trade_entrepreneur_ethnicity" name="trade_entrepreneur_ethnicity" class="form-control" >
+            <input type="text" id="trade_entrepreneur_ethnicity" name="trade_entrepreneur_ethnicity" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="trade_entrepreneur_nationality" class="form-label">สัญชาติ <span style="color: red;">*</span></label>
-            <input type="text" id="trade_entrepreneur_nationality" name="trade_entrepreneur_nationality" class="form-control" >
+            <input type="text" id="trade_entrepreneur_nationality" name="trade_entrepreneur_nationality" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="trade_entrepreneur_address_number" class="form-label">ที่อยู่ <span style="color: red;">*</span></label>
-            <input type="text" id="trade_entrepreneur_address_number" name="trade_entrepreneur_address_number" class="form-control" >
+            <input type="text" id="trade_entrepreneur_address_number" name="trade_entrepreneur_address_number" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="trade_entrepreneur_village" class="form-label">หมู่ที่ <span style="color: red;">*</span></label>
-            <input type="text" id="trade_entrepreneur_village" name="trade_entrepreneur_village" class="form-control" >
+            <input type="text" id="trade_entrepreneur_village" name="trade_entrepreneur_village" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="trade_entrepreneur_alley" class="form-label">ตรอก/ซอย <span style="color: red;">*</span></label>
-            <input type="text" id="trade_entrepreneur_alley" name="trade_entrepreneur_alley" class="form-control" >
+            <input type="text" id="trade_entrepreneur_alley" name="trade_entrepreneur_alley" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="trade_entrepreneur_road" class="form-label">ถนน <span style="color: red;">*</span></label>
-            <input type="text" id="trade_entrepreneur_road" name="trade_entrepreneur_road" class="form-control" >
+            <input type="text" id="trade_entrepreneur_road" name="trade_entrepreneur_road" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="trade_entrepreneur_subdistrict" class="form-label">ตำบล <span style="color: red;">*</span></label>
-            <input type="text" id="trade_entrepreneur_subdistrict" name="trade_entrepreneur_subdistrict" class="form-control" >
+            <input type="text" id="trade_entrepreneur_subdistrict" name="trade_entrepreneur_subdistrict" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="trade_entrepreneur_district" class="form-label">อำเภอ <span style="color: red;">*</span></label>
-            <input type="text" id="trade_entrepreneur_district" name="trade_entrepreneur_district" class="form-control" >
+            <input type="text" id="trade_entrepreneur_district" name="trade_entrepreneur_district" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="trade_entrepreneur_province" class="form-label">จังหวัด <span style="color: red;">*</span></label>
-            <input type="text" id="trade_entrepreneur_province" name="trade_entrepreneur_province" class="form-control" >
+            <input type="text" id="trade_entrepreneur_province" name="trade_entrepreneur_province" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="trade_entrepreneur_phone" class="form-label">โทรศัพท์ <span style="color: red;">*</span></label>
-            <input type="text" id="trade_entrepreneur_phone" name="trade_entrepreneur_phone" class="form-control">
+            <input type="text" id="trade_entrepreneur_phone" name="trade_entrepreneur_phone" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="trade_entrepreneur_fax" class="form-label">โทรสาร <span style="color: red;">*</span></label>
-            <input type="text" id="trade_entrepreneur_fax" name="trade_entrepreneur_fax" class="form-control">
+            <input type="text" id="trade_entrepreneur_fax" name="trade_entrepreneur_fax" class="form-control" required>
         </div>
     </div>
 
@@ -146,12 +146,12 @@
     <div class="row">
         <div class="mb-3 col-md-6">
             <label for="business_thai_language" class="form-label">ภาษาไทย <span style="color: red;">*</span></label>
-            <input type="text" id="business_thai_language" name="business_thai_language" class="form-control">
+            <input type="text" id="business_thai_language" name="business_thai_language" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-6">
             <label for="business_foreign_language" class="form-label">ภาษาต่างประเทศ <span style="color: red;">*</span></label>
-            <input type="text" id="business_foreign_language" name="business_foreign_language" class="form-control" >
+            <input type="text" id="business_foreign_language" name="business_foreign_language" class="form-control" required>
         </div>
     </div>
 
@@ -190,7 +190,7 @@
         <div class="mb-3 col-md-3">
             <label for="capital_amount" class="form-label">จำนวนเงินทุน <span style="color: red;">*</span></label>
             <div style="display: flex; align-items: center;">
-                <input type="text" id="capital_amount" name="capital_amount" class="form-control" style="flex: 1; margin-right: 5px;">
+                <input type="text" id="capital_amount" name="capital_amount" class="form-control" style="flex: 1; margin-right: 5px;" required>
                 <span>บาท</span>
             </div>
         </div>
@@ -198,7 +198,7 @@
         <div class="mb-3 col-md-3" style="margin-top: 40px;">
             <label for="capital_amount_detaill" class="form-label"></label>
             <span>(</span>
-            <input type="text" id="capital_amount_detaill" name="capital_amount_detaill" class="form-control" style="width: auto; display: inline;">
+            <input type="text" id="capital_amount_detaill" name="capital_amount_detaill" class="form-control" style="width: auto; display: inline;" required>
             <span>)</span>
         </div>
     </div>
@@ -208,39 +208,39 @@
     <div class="row">
         <div class="mb-3 col-md-4">
             <label for="location_address_number">ที่อยู่ <span style="color: red;">*</span></label>
-            <input type="text" name="location_address_number" id="location_address_number" class="form-control">
+            <input type="text" name="location_address_number" id="location_address_number" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="location_village">หมู่ที่ <span style="color: red;">*</span></label>
-            <input type="text" name="location_village" id="location_village" class="form-control">
+            <input type="text" name="location_village" id="location_village" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="location_alley">ตรอก/ซอย <span style="color: red;">*</span></label>
-            <input type="text" name="location_alley" id="location_alley" class="form-control">
+            <input type="text" name="location_alley" id="location_alley" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="location_road">ถนน <span style="color: red;">*</span></label>
-            <input type="text" name="location_road" id="location_road" class="form-control">
+            <input type="text" name="location_road" id="location_road" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="location_subdistrict">ตำบล <span style="color: red;">*</span></label>
-            <input type="text" name="location_subdistrict" id="location_subdistrict" class="form-control">
+            <input type="text" name="location_subdistrict" id="location_subdistrict" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="location_district">อำเภอ <span style="color: red;">*</span></label>
-            <input type="text" name="location_district" id="location_district" class="form-control">
+            <input type="text" name="location_district" id="location_district" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="location_province">จังหวัด <span style="color: red;">*</span></label>
-            <input type="text" name="location_province" id="location_province" class="form-control">
+            <input type="text" name="location_province" id="location_province" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="location_phone">โทรศัพท์ <span style="color: red;">*</span></label>
-            <input type="text" name="location_phone" id="location_phone" class="form-control">
+            <input type="text" name="location_phone" id="location_phone" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="location_fax">โทรสาร <span style="color: red;">*</span></label>
-            <input type="text" name="location_fax" id="location_fax" class="form-control">
+            <input type="text" name="location_fax" id="location_fax" class="form-control" required>
         </div>
     </div>
 
@@ -250,51 +250,51 @@
     <div class="row">
         <div class="mb-3 col-md-4">
             <label for="manager_name">ชื่อ-สกุล</label>
-            <input type="text" name="manager_name" id="manager_name" class="form-control">
+            <input type="text" name="manager_name" id="manager_name" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="manager_age">อายุ (ปี)</label>
-            <input type="text" name="manager_age" id="manager_age" class="form-control">
+            <input type="text" name="manager_age" id="manager_age" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="manager_nationality">สัญชาติ</label>
-            <input type="text" name="manager_nationality" id="manager_nationality" class="form-control">
+            <input type="text" name="manager_nationality" id="manager_nationality" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="manager_address_number">ที่อยู่</label>
-            <input type="text" name="manager_address_number" id="manager_address_number" class="form-control">
+            <input type="text" name="manager_address_number" id="manager_address_number" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="manager_village">หมู่ที่</label>
-            <input type="text" name="manager_village" id="manager_village" class="form-control">
+            <input type="text" name="manager_village" id="manager_village" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="manager_alley">ตรอก/ซอย</label>
-            <input type="text" name="manager_alley" id="manager_alley" class="form-control">
+            <input type="text" name="manager_alley" id="manager_alley" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="manager_road">ถนน</label>
-            <input type="text" name="manager_road" id="manager_road" class="form-control">
+            <input type="text" name="manager_road" id="manager_road" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="manager_subdistrict">ตำบล</label>
-            <input type="text" name="manager_subdistrict" id="manager_subdistrict" class="form-control">
+            <input type="text" name="manager_subdistrict" id="manager_subdistrict" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="manager_district">อำเภอ</label>
-            <input type="text" name="manager_district" id="manager_district" class="form-control">
+            <input type="text" name="manager_district" id="manager_district" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="manager_province">จังหวัด</label>
-            <input type="text" name="manager_province" id="manager_province" class="form-control">
+            <input type="text" name="manager_province" id="manager_province" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="manager_phone">โทรศัพท์</label>
-            <input type="text" name="manager_phone" id="manager_phone" class="form-control">
+            <input type="text" name="manager_phone" id="manager_phone" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="manager_fax">โทรสาร</label>
-            <input type="text" name="manager_fax" id="manager_fax" class="form-control">
+            <input type="text" name="manager_fax" id="manager_fax" class="form-control" required>
         </div>
     </div>
 
@@ -303,14 +303,14 @@
     <h3 class="form-label">(7) วันที่เริ่มต้นประกอบพาณิชยกิจในประเทศไทย</h3>
     <div class="mb-3 col-md-3">
         <label for="start_date">ตั้งแต่วันที่</label>
-        <input type="date" name="start_date" id="start_date" class="form-control">
+        <input type="date" name="start_date" id="start_date" class="form-control" required>
     </div>
 
     <br>
     <h3 class="form-label">(8) วันที่ขอจดทะเบียนพาณิชย์</h3>
     <div class="mb-3 col-md-3">
         <label for="date_registration">วันที่จดทะเบียน</label>
-        <input type="date" name="date_registration" id="date_registration" class="form-control">
+        <input type="date" name="date_registration" id="date_registration" class="form-control" required>
     </div>
 
     <!-- รับโอนเงินพาณิชย์ -->
@@ -319,60 +319,60 @@
     <div class="row">
         <div class="mb-3 col-md-3">
             <label for="accepting_commercial_name">รับโอนเงินจาก</label>
-            <input type="text" name="accepting_commercial_name" id="accepting_commercial_name" class="form-control">
+            <input type="text" name="accepting_commercial_name" id="accepting_commercial_name" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="accepting_commercial_nationality">สัญชาติ</label>
-            <input type="text" name="accepting_commercial_nationality" id="accepting_commercial_nationality" class="form-control">
+            <input type="text" name="accepting_commercial_nationality" id="accepting_commercial_nationality" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="accepting_commercial_address_number">ที่อยู่</label>
-            <input type="text" name="accepting_commercial_address_number" id="accepting_commercial_address_number" class="form-control">
+            <input type="text" name="accepting_commercial_address_number" id="accepting_commercial_address_number" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="accepting_commercial_village">หมู่ที่</label>
-            <input type="text" name="accepting_commercial_village" id="accepting_commercial_village" class="form-control">
+            <input type="text" name="accepting_commercial_village" id="accepting_commercial_village" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="accepting_commercial_alley">ตรอก/ซอย</label>
-            <input type="text" name="accepting_commercial_alley" id="accepting_commercial_alley" class="form-control">
+            <input type="text" name="accepting_commercial_alley" id="accepting_commercial_alley" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="accepting_commercial_road">ถนน</label>
-            <input type="text" name="accepting_commercial_road" id="accepting_commercial_road" class="form-control">
+            <input type="text" name="accepting_commercial_road" id="accepting_commercial_road" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="accepting_commercial_subdistrict">ตำบล</label>
-            <input type="text" name="accepting_commercial_subdistrict" id="accepting_commercial_subdistrict" class="form-control">
+            <input type="text" name="accepting_commercial_subdistrict" id="accepting_commercial_subdistrict" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="accepting_commercial_district">อำเภอ</label>
-            <input type="text" name="accepting_commercial_district" id="accepting_commercial_district" class="form-control">
+            <input type="text" name="accepting_commercial_district" id="accepting_commercial_district" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="accepting_commercial_province">จังหวัด</label>
-            <input type="text" name="accepting_commercial_province" id="accepting_commercial_province" class="form-control">
+            <input type="text" name="accepting_commercial_province" id="accepting_commercial_province" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="accepting_commercial_phone">โทรศัพท์</label>
-            <input type="text" name="accepting_commercial_phone" id="accepting_commercial_phone" class="form-control">
+            <input type="text" name="accepting_commercial_phone" id="accepting_commercial_phone" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="accepting_commercial_fax">โทรสาร</label>
-            <input type="text" name="accepting_commercial_fax" id="accepting_commercial_fax" class="form-control">
+            <input type="text" name="accepting_commercial_fax" id="accepting_commercial_fax" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="accepting_commercial_name_used"> ชื่อที่ใช้ในการประกอบพาณิชยกิจ</label>
-            <input type="text" name="accepting_commercial_name_used" id="accepting_commercial_name_used" class="form-control">
+            <input type="text" name="accepting_commercial_name_used" id="accepting_commercial_name_used" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="accepting_commercial_transferred">โอนเมื่อวันที่</label>
-            <input type="date" name="accepting_commercial_transferred" id="accepting_commercial_transferred" class="form-control">
+            <input type="date" name="accepting_commercial_transferred" id="accepting_commercial_transferred" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="accepting_commercial_cause">สาเหตุที่โอน</label>
-            <input type="text" name="accepting_commercial_cause" id="accepting_commercial_cause" class="form-control">
+            <input type="text" name="accepting_commercial_cause" id="accepting_commercial_cause" class="form-control" required>
         </div>
     </div>
 
@@ -381,47 +381,47 @@
     <div class="row">
         <div class="mb-3 col-md-3">
             <label for="copy_location_address_number">ที่อยู่สำนักงาน</label>
-            <input type="text" name="copy_location_address_number" id="copy_location_address_number" class="form-control">
+            <input type="text" name="copy_location_address_number" id="copy_location_address_number" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="copy_location_village">หมู่ที่</label>
-            <input type="text" name="copy_location_village" id="copy_location_village" class="form-control">
+            <input type="text" name="copy_location_village" id="copy_location_village" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="copy_location_alley">ตรอก/ซอย</label>
-            <input type="text" name="copy_location_alley" id="copy_location_alley" class="form-control">
+            <input type="text" name="copy_location_alley" id="copy_location_alley" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="copy_location_road">ถนน</label>
-            <input type="text" name="copy_location_road" id="copy_location_road" class="form-control">
+            <input type="text" name="copy_location_road" id="copy_location_road" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="copy_location_subdistrict">ตำบล</label>
-            <input type="text" name="copy_location_subdistrict" id="copy_location_subdistrict" class="form-control">
+            <input type="text" name="copy_location_subdistrict" id="copy_location_subdistrict" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="copy_location_district">อำเภอ</label>
-            <input type="text" name="copy_location_district" id="copy_location_district" class="form-control">
+            <input type="text" name="copy_location_district" id="copy_location_district" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="copy_location_province">จังหวัด</label>
-            <input type="text" name="copy_location_province" id="copy_location_province" class="form-control">
+            <input type="text" name="copy_location_province" id="copy_location_province" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="copy_location_phone">โทรศัพท์</label>
-            <input type="text" name="copy_location_phone" id="copy_location_phone" class="form-control">
+            <input type="text" name="copy_location_phone" id="copy_location_phone" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="copy_location_fax">โทรสาร</label>
-            <input type="text" name="copy_location_fax" id="copy_location_fax" class="form-control">
+            <input type="text" name="copy_location_fax" id="copy_location_fax" class="form-control" required>
         </div>
     </div>
 
@@ -431,47 +431,47 @@
     <div class="row">
         <div class="mb-3 col-md-3">
             <label for="warehouse_location_address_number">ที่อยู่คลังสินค้า</label>
-            <input type="text" name="warehouse_location_address_number" id="warehouse_location_address_number" class="form-control">
+            <input type="text" name="warehouse_location_address_number" id="warehouse_location_address_number" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="warehouse_location_village">หมู่ที่</label>
-            <input type="text" name="warehouse_location_village" id="warehouse_location_village" class="form-control">
+            <input type="text" name="warehouse_location_village" id="warehouse_location_village" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="warehouse_location_alley">ตรอก/ซอย</label>
-            <input type="text" name="warehouse_location_alley" id="warehouse_location_alley" class="form-control">
+            <input type="text" name="warehouse_location_alley" id="warehouse_location_alley" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="warehouse_location_road">ถนน</label>
-            <input type="text" name="warehouse_location_road" id="warehouse_location_road" class="form-control">
+            <input type="text" name="warehouse_location_road" id="warehouse_location_road" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="warehouse_location_subdistrict">ตำบล</label>
-            <input type="text" name="warehouse_location_subdistrict" id="warehouse_location_subdistrict" class="form-control">
+            <input type="text" name="warehouse_location_subdistrict" id="warehouse_location_subdistrict" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="warehouse_location_district">อำเภอ</label>
-            <input type="text" name="warehouse_location_district" id="warehouse_location_district" class="form-control">
+            <input type="text" name="warehouse_location_district" id="warehouse_location_district" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="warehouse_location_province">จังหวัด</label>
-            <input type="text" name="warehouse_location_province" id="warehouse_location_province" class="form-control">
+            <input type="text" name="warehouse_location_province" id="warehouse_location_province" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="warehouse_location_phone">โทรศัพท์</label>
-            <input type="text" name="warehouse_location_phone" id="warehouse_location_phone" class="form-control">
+            <input type="text" name="warehouse_location_phone" id="warehouse_location_phone" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="warehouse_location_fax">โทรสาร</label>
-            <input type="text" name="warehouse_location_fax" id="warehouse_location_fax" class="form-control">
+            <input type="text" name="warehouse_location_fax" id="warehouse_location_fax" class="form-control" required>
         </div>
     </div>
 
@@ -481,57 +481,57 @@
     <div class="row">
         <div class="mb-3 col-md-3">
             <label for="agent_name">ตัวแทนค้าต่าง คือ</label>
-            <input type="text" name="agent_name" id="agent_name" class="form-control">
+            <input type="text" name="agent_name" id="agent_name" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="agent_nationality">สัญชาติ</label>
-            <input type="text" name="agent_nationality" id="agent_nationality" class="form-control">
+            <input type="text" name="agent_nationality" id="agent_nationality" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="agent_address_number">ที่อยู่</label>
-            <input type="text" name="agent_address_number" id="agent_address_number" class="form-control">
+            <input type="text" name="agent_address_number" id="agent_address_number" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="agent_village">หมู่ที่</label>
-            <input type="text" name="agent_village" id="agent_village" class="form-control">
+            <input type="text" name="agent_village" id="agent_village" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="agent_alley">ตรอก/ซอย</label>
-            <input type="text" name="agent_alley" id="agent_alley" class="form-control">
+            <input type="text" name="agent_alley" id="agent_alley" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="agent_road">ถนน</label>
-            <input type="text" name="agent_road" id="agent_road" class="form-control">
+            <input type="text" name="agent_road" id="agent_road" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="agent_subdistrict">ตำบล</label>
-            <input type="text" name="agent_subdistrict" id="agent_subdistrict" class="form-control">
+            <input type="text" name="agent_subdistrict" id="agent_subdistrict" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="agent_district">อำเภอ</label>
-            <input type="text" name="agent_district" id="agent_district" class="form-control">
+            <input type="text" name="agent_district" id="agent_district" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="agent_province">จังหวัด</label>
-            <input type="text" name="agent_province" id="agent_province" class="form-control">
+            <input type="text" name="agent_province" id="agent_province" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="agent_phone">โทรศัพท์</label>
-            <input type="text" name="agent_phone" id="agent_phone" class="form-control">
+            <input type="text" name="agent_phone" id="agent_phone" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="agent_fax">โทรสาร</label>
-            <input type="text" name="agent_fax" id="agent_fax" class="form-control">
+            <input type="text" name="agent_fax" id="agent_fax" class="form-control" required>
         </div>
     </div>
 
@@ -541,7 +541,7 @@
     <div class="mb-3 col-md-4">
         <label for="number_partners" class="form-label">ผู้เป็นหุ้นส่วนของห้างหุ้นส่วน/ผู้เป็นหุ้นส่วนเข้าใหม่ มีจำนวน (คน)</label>
         <div class="d-flex align-items-center">
-            <input type="text" name="number_partners" id="number_partners" class="form-control me-2">
+            <input type="text" name="number_partners" id="number_partners" class="form-control me-2" required>
             <span class="ms-2" style="white-space: nowrap; width: 100%;">คนดังนี้</span>
         </div>
     </div>
@@ -550,63 +550,63 @@
     <div class="row">
         <div class="mb-3 col-md-3">
             <label for="share_capital1_name" class="form-label">ชื่อ</label>
-            <input type="text" name="share_capital1_name" id="share_capital1_name" class="form-control">
+            <input type="text" name="share_capital1_name" id="share_capital1_name" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="share_capital1_age" class="form-label">อายุ (ปี)</label>
-            <input type="text" name="share_capital1_age" id="share_capital1_age" class="form-control">
+            <input type="text" name="share_capital1_age" id="share_capital1_age" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="share_capital1_ethnicity" class="form-label">เชื้อชาติ</label>
-            <input type="text" name="share_capital1_ethnicity" id="share_capital1_ethnicity" class="form-control">
+            <input type="text" name="share_capital1_ethnicity" id="share_capital1_ethnicity" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="share_capital1_nationality" class="form-label">สัญชาติ</label>
-            <input type="text" name="share_capital1_nationality" id="share_capital1_nationality" class="form-control">
+            <input type="text" name="share_capital1_nationality" id="share_capital1_nationality" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="share_capital1_address_number" class="form-label">เลขที่บ้าน</label>
-            <input type="text" name="share_capital1_address_number" id="share_capital1_address_number" class="form-control">
+            <input type="text" name="share_capital1_address_number" id="share_capital1_address_number" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="share_capital1_village" class="form-label">หมู่ที่</label>
-            <input type="text" name="share_capital1_village" id="share_capital1_village" class="form-control">
+            <input type="text" name="share_capital1_village" id="share_capital1_village" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="share_capital1_alley" class="form-label">ตรอก/ซอย</label>
-            <input type="text" name="share_capital1_alley" id="share_capital1_alley" class="form-control">
+            <input type="text" name="share_capital1_alley" id="share_capital1_alley" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="share_capital1_road" class="form-label">ถนน</label>
-            <input type="text" name="share_capital1_road" id="share_capital1_road" class="form-control">
+            <input type="text" name="share_capital1_road" id="share_capital1_road" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="share_capital1_subdistrict" class="form-label">ตำบล</label>
-            <input type="text" name="share_capital1_subdistrict" id="share_capital1_subdistrict" class="form-control">
+            <input type="text" name="share_capital1_subdistrict" id="share_capital1_subdistrict" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="share_capital1_district" class="form-label">อำเภอ</label>
-            <input type="text" name="share_capital1_district" id="share_capital1_district" class="form-control">
+            <input type="text" name="share_capital1_district" id="share_capital1_district" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="share_capital1_province" class="form-label">จังหวัด</label>
-            <input type="text" name="share_capital1_province" id="share_capital1_province" class="form-control">
+            <input type="text" name="share_capital1_province" id="share_capital1_province" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="share_capital1_phone" class="form-label">โทรศัพท์</label>
-            <input type="text" name="share_capital1_phone" id="share_capital1_phone" class="form-control">
+            <input type="text" name="share_capital1_phone" id="share_capital1_phone" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="share_capital1_fax" class="form-label">โทรสาร</label>
-            <input type="text" name="share_capital1_fax" id="share_capital1_fax" class="form-control">
+            <input type="text" name="share_capital1_fax" id="share_capital1_fax" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="share_capital1_invest_with" class="form-label">ลงทุนด้วย</label>
-            <input type="text" name="share_capital1_invest_with" id="share_capital1_invest_with" class="form-control">
+            <input type="text" name="share_capital1_invest_with" id="share_capital1_invest_with" class="form-control" required>
         </div>
         <div class="mb-3 col-md-3">
             <label for="share_capital1_quantity" class="form-label">จำนวน(บาท)</label>
-            <input type="text" name="share_capital1_quantity" id="share_capital1_quantity" class="form-control">
+            <input type="text" name="share_capital1_quantity" id="share_capital1_quantity" class="form-control" required>
         </div>
     </div>
 
@@ -748,7 +748,7 @@
     <div class="mb-3 col-md-3">
         <label for="registration_point" class="form-label">ทุดจดทะเบียน <span style="color: red;">*</span></label>
         <div style="display: flex; align-items: center;">
-            <input type="text" name="registration_point" id="registration_point" class="form-control">
+            <input type="text" name="registration_point" id="registration_point" class="form-control" required>
             <span class="ms-1">บาท</span>
         </div>
     </div>
@@ -761,7 +761,7 @@
     <div class="mb-3 col-md-3">
         <label for="divided_into" class="form-label">แบ่งออกเป็น <span style="color: red;">*</span></label>
         <div style="display: flex; align-items: center;">
-            <input type="text" name="divided_into" id="divided_into" class="form-control">
+            <input type="text" name="divided_into" id="divided_into" class="form-control" required>
             <span class="ms-1">หุ้น</span>
         </div>
     </div>
@@ -774,45 +774,45 @@
     <div class="mb-3 col-md-3">
         <label for="value_per_share" class="form-label">มูลค่าหุ้นละ <span style="color: red;">*</span></label>
         <div style="display: flex; align-items: center;">
-            <input type="text" name="value_per_share" id="value_per_share" class="form-control">
+            <input type="text" name="value_per_share" id="value_per_share" class="form-control" required>
             <span class="ms-1">หุ้น</span>
         </div>
     </div>
 
     <div class="mb-3 col-md-6">
         <label for="nationality1" class="form-label">สัญชาติ</label>
-        <input type="text" name="nationality1" id="nationality1" class="form-control">
+        <input type="text" name="nationality1" id="nationality1" class="form-control" required>
     </div>
     <div class="mb-3 col-md-6">
         <label for="holding_shares1" class="form-label">ถือหุ้น (หุ้น)</label>
-        <input type="text" name="holding_shares1" id="holding_shares1" class="form-control">
+        <input type="text" name="holding_shares1" id="holding_shares1" class="form-control" required>
     </div>
 
     <div class="mb-3 col-md-6">
         <label for="nationality2" class="form-label">สัญชาติ</label>
-        <input type="text" name="nationality2" id="nationality2" class="form-control">
+        <input type="text" name="nationality2" id="nationality2" class="form-control" required>
     </div>
     <div class="mb-3 col-md-6">
         <label for="holding_shares2" class="form-label">ถือหุ้น (หุ้น)</label>
-        <input type="text" name="holding_shares2" id="holding_shares2" class="form-control">
+        <input type="text" name="holding_shares2" id="holding_shares2" class="form-control" required>
     </div>
 
     <div class="mb-3 col-md-6">
         <label for="nationality3" class="form-label">สัญชาติ</label>
-        <input type="text" name="nationality3" id="nationality3" class="form-control">
+        <input type="text" name="nationality3" id="nationality3" class="form-control" required>
     </div>
     <div class="mb-3 col-md-6">
         <label for="holding_shares3" class="form-label">ถือหุ้น (หุ้น)</label>
-        <input type="text" name="holding_shares3" id="holding_shares3" class="form-control">
+        <input type="text" name="holding_shares3" id="holding_shares3" class="form-control" required>
     </div>
 
     <div class="mb-3 col-md-6">
         <label for="nationality4" class="form-label">สัญชาติ</label>
-        <input type="text" name="nationality4" id="nationality4" class="form-control">
+        <input type="text" name="nationality4" id="nationality4" class="form-control" required>
     </div>
     <div class="mb-3 col-md-6">
         <label for="holding_shares4" class="form-label">ถือหุ้น (หุ้น)</label>
-        <input type="text" name="holding_shares4" id="holding_shares4" class="form-control">
+        <input type="text" name="holding_shares4" id="holding_shares4" class="form-control" required>
     </div>
     </div>
 
@@ -827,7 +827,7 @@
     <div class="mb-3 col-md-5">
         <label for="value_per_share" class="form-label">จำนวนคน <span style="color: red;">*</span></label>
         <div style="display: flex; align-items: center;">
-            <input type="text" name="value_per_share" id="value_per_share" class="form-control">
+            <input type="text" name="value_per_share" id="value_per_share" class="form-control" required>
             <span class="ms-2" style="white-space: nowrap; width: 100%;">คน ดังนี้ (ใช้กรณีของจดทะเบียนเปลี่ยนแปลงรายการตามข้อ11)</span>
         </div>
     </div>
@@ -836,67 +836,67 @@
     <div class="row">
         <div class="mb-3 col-md-3">
             <label for="partner1_name" class="form-label">ชื่อ</label>
-            <input type="text" name="partner1_name" id="partner1_name" class="form-control">
+            <input type="text" name="partner1_name" id="partner1_name" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="partner1_age" class="form-label">อายุ (ปี)</label>
-            <input type="text" name="partner1_age" id="partner1_age" class="form-control">
+            <input type="text" name="partner1_age" id="partner1_age" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="partner1_ethnicity" class="form-label">เชื้อชาติ</label>
-            <input type="text" name="partner1_ethnicity" id="partner1_ethnicity" class="form-control">
+            <input type="text" name="partner1_ethnicity" id="partner1_ethnicity" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="partner1_nationality" class="form-label">สัญชาติ</label>
-            <input type="text" name="partner1_nationality" id="partner1_nationality" class="form-control">
+            <input type="text" name="partner1_nationality" id="partner1_nationality" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="partner1_address_number" class="form-label">ที่อยู่</label>
-            <input type="text" name="partner1_address_number" id="partner1_address_number" class="form-control">
+            <input type="text" name="partner1_address_number" id="partner1_address_number" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="partner1_village" class="form-label">หมู่ที่</label>
-            <input type="text" name="partner1_village" id="partner1_village" class="form-control">
+            <input type="text" name="partner1_village" id="partner1_village" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="partner1_alley" class="form-label">ตรอก/ซอย</label>
-            <input type="text" name="partner1_alley" id="partner1_alley" class="form-control">
+            <input type="text" name="partner1_alley" id="partner1_alley" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="partner1_road" class="form-label">ถนน</label>
-            <input type="text" name="partner1_road" id="partner1_road" class="form-control">
+            <input type="text" name="partner1_road" id="partner1_road" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="partner1_subdistrict" class="form-label">ตำบล</label>
-            <input type="text" name="partner1_subdistrict" id="partner1_subdistrict" class="form-control">
+            <input type="text" name="partner1_subdistrict" id="partner1_subdistrict" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="partner1_district" class="form-label">อำเภอ</label>
-            <input type="text" name="partner1_district" id="partner1_district" class="form-control">
+            <input type="text" name="partner1_district" id="partner1_district" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="partner1_province" class="form-label">จังหวัด</label>
-            <input type="text" name="partner1_province" id="partner1_province" class="form-control">
+            <input type="text" name="partner1_province" id="partner1_province" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="partner1_phone" class="form-label">โทรศัพท์</label>
-            <input type="text" name="partner1_phone" id="partner1_phone" class="form-control">
+            <input type="text" name="partner1_phone" id="partner1_phone" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
             <label for="partner1_fax" class="form-label">โทรสาร</label>
-            <input type="text" name="partner1_fax" id="partner1_fax" class="form-control">
+            <input type="text" name="partner1_fax" id="partner1_fax" class="form-control" required>
         </div>
     </div>
 
