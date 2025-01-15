@@ -550,7 +550,7 @@ class UserTradeRegistryController extends Controller
     public function TradeRegistryUserExportPDF($id)
     {
         // $form = TradeRegistry::find($id);
-        $form = TradeRegistry::with(['tradeEntrepreneur', 'tradeLocationMore', 'tradeShareCapital', 'tradeCopyLocation', 'tradeShareValue'])->first();
+        $form = TradeRegistry::with(['tradeEntrepreneur', 'tradeLocationMore', 'tradeShareCapital', 'tradeCopyLocation', 'tradeShareValue'])->find($id);
 
         // dd($form->tradeShareCapital);
 
