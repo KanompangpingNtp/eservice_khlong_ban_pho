@@ -232,49 +232,54 @@
             </div>
         </div>
 
-        <!-- Copy of ID Card -->
-        <div class="col-md-4 mb-3">
-            <label for="copy_of_ID_card">1. สำเนาบัตรประจำตัว (ประชาชน/ข้าราชการ/พนักงานรัฐวิสาหกิจ)</label>
-            <input type="text" name="copy_of_ID_card" id="copy_of_ID_card" class="form-control">
+        
+        
+        <div>
+            <div class="col-md-6 mb-3">
+                <label for="copy_of_ID_card">1. สำเนาบัตรประจำตัว (ประชาชน/ข้าราชการ/พนักงานรัฐวิสาหกิจ)</label>
+                <input type="file" name="attachments[]" id="copy_of_ID_card" class="form-control" accept=".jpg,.jpeg,.png,.pdf">
+                <span class="text-danger error-message d-none">ไฟล์ต้องเป็น JPG, JPEG, PNG หรือ PDF เท่านั้น</span>
+            </div>
+        
+            <div class="col-md-6 mb-3">
+                <label for="copy_of_house_registration">2. สำเนาทะเบียนบ้าน</label>
+                <input type="file" name="attachments[]" id="copy_of_house_registration" class="form-control" accept=".jpg,.jpeg,.png,.pdf">
+                <span class="text-danger error-message d-none">ไฟล์ต้องเป็น JPG, JPEG, PNG หรือ PDF เท่านั้น</span>
+            </div>
+        
+            <div class="col-md-6 mb-3">
+                <label for="evidence_of_permission">3. หลักฐานการอนุญาตตามกฎหมายอื่นที่เกี่ยวข้อง คือ</label>
+            </div>
+        
+            <div class="ms-lg-3">
+                <div class="col-md-6 mb-3">
+                    <label for="evidence_of_permission_detail_1">3.1 เอกสารเพิ่มเติม</label>
+                    <input type="file" name="attachments[]" id="evidence_of_permission_detail_1" class="form-control" accept=".jpg,.jpeg,.png,.pdf">
+                    <span class="text-danger error-message d-none">ไฟล์ต้องเป็น JPG, JPEG, PNG หรือ PDF เท่านั้น</span>
+                </div>
+            
+                <div class="col-md-6 mb-3">
+                    <label for="evidence_of_permission_detail_2">3.2 เอกสารเพิ่มเติม</label>
+                    <input type="file" name="attachments[]" id="evidence_of_permission_detail_2" class="form-control" accept=".jpg,.jpeg,.png,.pdf">
+                    <span class="text-danger error-message d-none">ไฟล์ต้องเป็น JPG, JPEG, PNG หรือ PDF เท่านั้น</span>
+                </div>
+            </div>
+        
+            <div class="col-md-6 mb-3">
+                <label for="detail_1">4. แผนผังแสดงที่ตั้งสถานประกอบกิจการโดยสังเขป</label>
+                <input type="file" name="attachments[]" id="detail_1" class="form-control" accept=".jpg,.jpeg,.png,.pdf">
+                <span class="text-danger error-message d-none">ไฟล์ต้องเป็น JPG, JPEG, PNG หรือ PDF เท่านั้น</span>
+            </div>
+            <div class="text-center my-3">
+                ข้าพเจ้าขอรับรองว่า ข้อความในแบบคำขอใบอนุญาตนี้เป็นความจริงทุกประการ
+            </div>
         </div>
-
-        <span>2. สำเนาทะเบียนบ้าน</span>
-
-      <div>
-          <!-- Evidence of Permission -->
-          <div class="col-md-3 mb-3">
-            <label for="evidence_of_permission">3. หลักฐานการอนุญาตตามกฎหมายอื่นที่เกี่ยวข้อง คือ</label>
-            {{-- <input type="text" name="evidence_of_permission" id="evidence_of_permission" class="form-control"> --}}
-        </div>
-
-        <!-- Evidence of Permission Detail 1 -->
-        <div class="col-md-3 mb-3">
-            <label for="evidence_of_permission_detail_1">3.1 เอกสารเพิ่มเติม</label>
-            <input type="text" name="evidence_of_permission_detail_1" id="evidence_of_permission_detail_1" class="form-control" placeholder="โปรดระบุ">
-        </div>
-
-        <!-- Evidence of Permission Detail 2 -->
-        <div class="col-md-3 mb-3">
-            <label for="evidence_of_permission_detail_2">3.2 เอกสารเพิ่มเติม</label>
-            <input type="text" name="evidence_of_permission_detail_2" id="evidence_of_permission_detail_2" class="form-control" placeholder="โปรดระบุ">
-        </div>
-
-        <!-- Detail 1 -->
-        <div class="col-md-3 mb-3">
-            <label for="detail_1">4. เอกสารเพิ่มเติม</label>
-            <input type="text" name="detail_1" id="detail_1" class="form-control" placeholder="โปรดระบุ">
-        </div>
-
-        <!-- Detail 2 -->
-        <div class="col-md-3 mb-3">
-            <label for="detail_2">5. เอกสารเพิ่มเติม</label>
-            <input type="text" name="detail_2" id="detail_2" class="form-control" placeholder="โปรดระบุ">
-        </div>
-      </div>
+        
+        
 
         <br>
 
-        <div>
+        {{-- <div>
             <h3 for="attachments" class="form-label">แนบไฟล์เอกสาร (สามารถแนบไฟล์พร้อมกันได้มากกว่า 1ไฟล์)</h3>
             <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
             <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 10MB)</small>
@@ -282,14 +287,34 @@
             <div id="file-list" class="mt-1">
                 <div class="d-flex flex-wrap gap-3"></div>
             </div>
-        </div>
+        </div> --}}
 
-        <div class="text-center w-full border">
+        <div class="text-center w-full mt-2">
             <button type="submit" class="btn btn-primary w-100 py-1"><i class="fa-solid fa-file-arrow-up me-2"></i></i>
                 ส่งฟอร์มข้อมูล</button>
         </div>
 </form>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const allowedExtensions = ['jpg', 'jpeg', 'png', 'pdf'];
 
+        document.querySelectorAll('input[type="file"]').forEach(input => {
+            const errorMessage = input.nextElementSibling; // ข้อความ error ถัดจาก input
+            input.addEventListener('change', function () {
+                const file = this.files[0];
+                if (file) {
+                    const fileExtension = file.name.split('.').pop().toLowerCase();
+                    if (!allowedExtensions.includes(fileExtension)) {
+                        errorMessage.classList.remove('d-none'); // แสดงข้อความ error
+                        this.value = ''; // รีเซ็ตค่าของ input
+                    } else {
+                        errorMessage.classList.add('d-none'); // ซ่อนข้อความ error
+                    }
+                }
+            });
+        });
+    });
+</script>
 <script src="{{ asset('js/multipart_files.js') }}"></script>
 
 @endsection

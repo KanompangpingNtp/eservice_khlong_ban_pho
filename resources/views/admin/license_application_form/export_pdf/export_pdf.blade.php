@@ -248,9 +248,9 @@
 
     <div class="box_text" style="text-align: left; margin-left: 5rem; margin-top:1rem;">
         <span> 1) สำเนาบัตรประจำตัว</span>
-        <span class="dotted-line" style="width: 20%; text-align: center;">{{$form->copy_of_ID_card}}
-        </span><span>(ประชาชน/ข้าราชการ/พนักงานรัฐวิสาหกิจ)
-        </span>
+        <span class="dotted-line" style="width: 20%; text-align: center;"></span>
+        {{-- <span class="dotted-line" style="width: 20%; text-align: center;">{{$form->copy_of_ID_card}}</span> --}}
+        <span>(ประชาชน/ข้าราชการ/พนักงานรัฐวิสาหกิจ)</span>
         <div>
             <span> 2) สำเนาทะเบียนบ้าน
             </span>
@@ -260,28 +260,32 @@
             </span>
             <div style="margin-left: 20px; ">
                 <span>3.1</span>
-                <span class="dotted-line" style="width: 80%; text-align: center; line-height: 1;">{{$form->evidence_of_permission_detail_1}}</span>
+                <span class="dotted-line" style="width: 80%; text-align: center; line-height: 1;"></span>
+                {{-- <span class="dotted-line" style="width: 80%; text-align: center; line-height: 1;">{{$form->evidence_of_permission_detail_1}}</span> --}}
             </div>
             <div style="margin-left: 20px; ">
                 <span>3.2</span>
-                <span class="dotted-line" style="width: 80%; text-align: center; line-height: 1;">{{$form->evidence_of_permission_detail_2}}</span>
+                <span class="dotted-line" style="width: 80%; text-align: center; line-height: 1;"></span>
+                {{-- <span class="dotted-line" style="width: 80%; text-align: center; line-height: 1;">{{$form->evidence_of_permission_detail_2}}</span> --}}
             </div>
         </div>
         <div>
             <span> 4) </span>
-            <span class="dotted-line" style="width: 82%; text-align: center; line-height: 1;">{{$form->detail_1}}</span>
+            <span class="dotted-line" style="width: 82%; text-align: center; line-height: 1;"></span>
+            {{-- <span class="dotted-line" style="width: 82%; text-align: center; line-height: 1;">{{$form->detail_1}}</span> --}}
         </div>
         <div>
             <span> 5) </span>
-            <span class="dotted-line" style="width: 82%; text-align: center; line-height: 1;">{{$form->detail_2}}</span>
+            <span class="dotted-line" style="width: 82%; text-align: center; line-height: 1;"></span>
+            {{-- <span class="dotted-line" style="width: 82%; text-align: center; line-height: 1;">{{$form->detail_2}}</span> --}}
         </div>
     </div>
 
     <div class="box_text font-sarabun-bold"
         style="margin-top:3rem; border: 2px solid black; padding-left: 2rem; padding-right: 2rem;">
-        <span style="border-bottom:2px solid black;"> แผนฝังแสดงที่ตั้งสถานประกอบกิจการโดยสังเขป </span>
+        <span style="border-bottom:2px solid black;"> แผนผังแสดงที่ตั้งสถานประกอบกิจการโดยสังเขป </span>
         <div style="margin: 6rem;">
-            <span style="border-bottom:2px solid black;">ใช้แผนฝังแสดงที่ตามไฟล์แนบ</span>
+            <span style="border-bottom:2px solid black;">ใช้แผนผังแสดงที่ตามไฟล์แนบ</span>
         </div>
     </div>
 
