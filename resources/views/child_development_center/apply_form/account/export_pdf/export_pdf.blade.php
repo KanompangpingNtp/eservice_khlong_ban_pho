@@ -302,11 +302,11 @@
     </div>
 
     {{-- new page --}}
-    <div style="page-break-before: always;"></div>
+    {{-- <div style="page-break-before: always;"></div>
 
     <div style="text-align: center">
         - 2 -
-    </div>
+    </div> --}}
     <div style="text-align: left; display: inline-block; border-bottom: 2px solid black; margin-top:5rem; font-size:25px; font-weight: bold; font-family: 'sarabun-bold', sans-serif;">
         คำรับรอง
     </div>
@@ -378,21 +378,21 @@
         </div>
     </div>
     <div class="box_text" style="text-align: left; margin-top: 1rem; ">
-        <div style="margin-left: 2rem;"> ข้าพเจ้า <span class="dotted-line" style="width: 61%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->full_name }}</span> อายุ
-            <span class="dotted-line" style="width: 25%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->age }}</span> ปี
+        <div style="margin-left: 2rem;"> ข้าพเจ้า <span class="dotted-line" style="width: 61%; text-align: center; margin-top:5px;"> {{ $form->surrenderTheChild->first()->full_name }}</span> อายุ
+            <span class="dotted-line" style="width: 25%; text-align: center; margin-top:5px;"> {{ $form->surrenderTheChild->first()->age }}</span> ปี
         </div>
-        <div> อาชีพ <span class="dotted-line" style="width: 20%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->occupation }} </span> รายได้
+        <div> อาชีพ <span class="dotted-line" style="width: 20%; text-align: center; margin-top:5px;"> {{ $form->surrenderTheChild->first()->occupation }} </span> รายได้
             <span class="dotted-line" style="width: 15%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->income }} </span> บาท/เดือน
-            ที่อยู่ปัจจุบัน เลขที่ <span class="dotted-line" style="width: 11%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->surrender_income }}</span> หมู่ที่ <span class="dotted-line" style="width: 11%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->village }}
+            ที่อยู่ปัจจุบัน เลขที่ <span class="dotted-line" style="width: 11%; text-align: center; margin-top:5px;">{{ $form->surrenderTheChild->first()->surrender_income }}</span> หมู่ที่ <span class="dotted-line" style="width: 11%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->village }}
         </div>
-        <div> ถนน/ตรอก/ซอย <span class="dotted-line" style="width: 30%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->alley_road }} </span>
+        <div> ถนน/ตรอก/ซอย <span class="dotted-line" style="width: 30%; text-align: center; margin-top:5px;">{{ $form->surrenderTheChild->first()->alley_road }} </span>
             ตำบล
-            <span class="dotted-line" style="width: 22%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->subdistrict }} </span> อำเภอ <span class="dotted-line" style="width: 21%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->district }}</span>
+            <span class="dotted-line" style="width: 22%; text-align: center; margin-top:5px;"> {{ $form->surrenderTheChild->first()->subdistrict }} </span> อำเภอ <span class="dotted-line" style="width: 21%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->district }}</span>
         </div>
-        <div> จังหวัด <span class="dotted-line" style="width: 20%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->province }} </span>
+        <div> จังหวัด <span class="dotted-line" style="width: 20%; text-align: center; margin-top:5px;"> {{ $form->surrenderTheChild->first()->province }} </span>
             โทรศัพท์
-            <span class="dotted-line" style="width: 20%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->phone_number }} </span>
-            เป็นผู้ปกครองของ<span style="width: 30%; text-align: center; margin-top:20px;"></span>
+            <span class="dotted-line" style="width: 20%; text-align: center; margin-top:5px;">{{ $form->surrenderTheChild->first()->phone_number }} </span>
+            เป็นผู้ปกครองของ<span style="width: 30%; text-align: center; margin-top:5px;"></span>
         </div>
         <div> {{$form->surrenderTheChild->first()->child_surrender_salutation1}} <span class="dotted-line" style="width: 65%; text-align: left; margin-top:20px;">{{ $form->surrenderTheChild->first()->childs_name }}
             </span> เข้าเป็นนักเรียนของศูนย์
@@ -407,11 +407,11 @@
         </div>
         <div>ที่อาจเกิดขึ้นแก่เด็กอย่างใกล้ชิด</div>
         <div style="margin-left: 2rem;">สถานที่ที่สามารถติดต่อกับผู้ปกครองได้สะดวกรวดเร็วที่สุด</div>
-        <div><span class="dotted-line" style="width: 40%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->contact_location }} </span></div>
+        <div><span class="dotted-line" style="width: 40%; text-align: center; margin-top:5px;">{{ $form->surrenderTheChild->first()->contact_location }} </span></div>
         {{-- <div><span class="dotted-line" style="width: 60%; text-align: center; margin-top:20px;"> </span> โทรศัพท์
         </div> --}}
-        <div>โทรศัพท์<span class="dotted-line" style="width: 40%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->contact_phone }} </span></div>
-        <div style="margin-left: 2rem; margin-top: 1rem;">อนึ่ง ถ้า{{ $form->surrenderTheChild->first()->child_recipient_salutation }} <span class="dotted-line" style="width: 73%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->child_recipient }} </span>เจ็บป่วย </div>
+        <div>โทรศัพท์<span class="dotted-line" style="width: 40%; text-align: center; margin-top:10px;">{{ $form->surrenderTheChild->first()->contact_phone }} </span></div>
+        <div style="margin-left: 2rem;">อนึ่ง ถ้า{{ $form->surrenderTheChild->first()->child_recipient_salutation }} <span class="dotted-line" style="width: 73%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->child_recipient }} </span>เจ็บป่วย </div>
         <div>จำเป็นต้องรีบส่งโรงพยาบาลหรือพบแพทย์ทันที ข้าพเจ้าอนุญาตให้ศูนย์พัฒนาเด็กเล็กจัดการไปตามความเห็นชอบก่อน
             และแจ้งให้ข้าพ
         </div>
@@ -442,7 +442,7 @@
         </div>
 
 
-        <div class="box_text" style="text-align: right; margin-top:4rem;">
+        <div class="box_text" style="text-align: right; margin-top:2rem;">
             <span>ลงชื่อผู้ปกครอง</span>
             <span class="dotted-line" style="width: 35%; text-align: center;">
                 {{ $form->surrenderTheChild->first()->full_name }} </span>
