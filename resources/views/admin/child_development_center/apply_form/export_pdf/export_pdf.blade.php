@@ -571,17 +571,33 @@
         </div>
         <div class="box_text" style="text-align: left;">
             <span>การได้รับภูมิคุ้มกัน</span>
-            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->ge_immunity == 'option_1' ? 'checked' : '' }}> คอตีบ</span>
-            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->ge_immunity == 'option_2' ? 'checked' : '' }}> หัดเยอรมัน</span>
-            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->ge_immunity == 'option_3' ? 'checked' : '' }}> ไอกรน</span>
-            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->ge_immunity == 'option_4' ? 'checked' : '' }}> บาดทะยัก</span>
+            <span style="margin-left: 50px;">
+                <input type="checkbox" {{ in_array('option_1', $form->childRegistration->first()->ge_immunity ?? []) ? 'checked' : '' }}> คอตีบ
+            </span>
+            <span style="margin-left: 50px;">
+                <input type="checkbox" {{ in_array('option_2', $form->childRegistration->first()->ge_immunity ?? []) ? 'checked' : '' }}> หัดเยอรมัน
+            </span>
+            <span style="margin-left: 50px;">
+                <input type="checkbox" {{ in_array('option_3', $form->childRegistration->first()->ge_immunity ?? []) ? 'checked' : '' }}> ไอกรน
+            </span>
+            <span style="margin-left: 50px;">
+                <input type="checkbox" {{ in_array('option_4', $form->childRegistration->first()->ge_immunity ?? []) ? 'checked' : '' }}> บาดทะยัก
+            </span>
         </div>
         <div class="box_text" style="text-align: left; margin-left: 2rem;">
-            <span style="margin-left: 50px;"><input type="checkbox" {{ $form->childRegistration->first()->ge_immunity == 'option_5' ? 'checked' : '' }}> โปลิโอ</span>
-            <span style="margin-left: 48px;"><input type="checkbox" {{ $form->childRegistration->first()->ge_immunity == 'option_6' ? 'checked' : '' }}> ตับอักเสบ</span>
-            <span style="margin-left: 46px;"><input type="checkbox" {{ $form->childRegistration->first()->ge_immunity == 'option_7' ? 'checked' : '' }}> บีซีจี</span>
-            <span style="margin-left: 46px;"><input type="checkbox" {{ $form->childRegistration->first()->ge_immunity == 'option_8' ? 'checked' : '' }}> อื่นๆ</span>
-            <span class="dotted-line" style="width: 29%; text-align: center;">{{$form->childRegistration->first()->ge_immunity_detail}}</span>
+            <span style="margin-left: 50px;">
+                <input type="checkbox" {{ in_array('option_5', $form->childRegistration->first()->ge_immunity ?? []) ? 'checked' : '' }}> โปลิโอ
+            </span>
+            <span style="margin-left: 48px;">
+                <input type="checkbox" {{ in_array('option_6', $form->childRegistration->first()->ge_immunity ?? []) ? 'checked' : '' }}> ตับอักเสบ
+            </span>
+            <span style="margin-left: 46px;">
+                <input type="checkbox" {{ in_array('option_7', $form->childRegistration->first()->ge_immunity ?? []) ? 'checked' : '' }}> บีซีจี
+            </span>
+            <span style="margin-left: 46px;">
+                <input type="checkbox" {{ in_array('option_8', $form->childRegistration->first()->ge_immunity ?? []) ? 'checked' : '' }}> อื่นๆ
+            </span>
+            <span class="dotted-line" style="width: 29%; text-align: center;">{{ $form->childRegistration->first()->ge_immunity_detail }}</span>
         </div>
         <div class="box_text" style="text-align: left;">
             <div style="margin-bottom: 1rem; display: inline;">เด็กควรได้รับการดูแลเป็นพิเศษเรื่อง</div>

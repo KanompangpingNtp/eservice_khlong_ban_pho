@@ -472,15 +472,31 @@ class UserChildApplyController extends Controller
 
     //     return $pdf->stream('ศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์' . $form->id . '.pdf');
     // }
+    // public function ChildApplyUserExportPDF($id)
+    // {
+    //     $form = ChildInformation::with('caregiverInformation', 'surrenderTheChild', 'childRegistration')->find($id);
+
+    //     if ($form->childRegistration->first() && $form->childRegistration->first()->ge_immunity) {
+    //         $geImmunity = $form->childRegistration->first()->ge_immunity;
+    //         if (is_string($geImmunity)) {
+    //             $form->childRegistration->first()->ge_immunity = json_decode($geImmunity, true);
+    //         }
+    //     }
+
+    //     $selectedOptions = $form->childRegistration->first()->ge_immunity ?? [];
+
+    //     $pdf = Pdf::loadView('child_development_center.apply_form.account.export_pdf.export_pdf', compact('form', 'selectedOptions'))
+    //         ->setPaper('A4', 'portrait');
+
+    //     return $pdf->stream('ศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์' . $form->id . '.pdf');
+    // }
     public function ChildApplyUserExportPDF($id)
     {
         $form = ChildInformation::with('caregiverInformation', 'surrenderTheChild', 'childRegistration')->find($id);
 
         if ($form->childRegistration->first() && $form->childRegistration->first()->ge_immunity) {
             $geImmunity = $form->childRegistration->first()->ge_immunity;
-            if (is_string($geImmunity)) {
-                $form->childRegistration->first()->ge_immunity = json_decode($geImmunity, true);
-            }
+            $form->childRegistration->first()->ge_immunity = json_decode($geImmunity, true); // Decode JSON to array
         }
 
         $selectedOptions = $form->childRegistration->first()->ge_immunity ?? [];
