@@ -32,7 +32,8 @@ class SurrenderTheChild extends Model
         'child_recipient_salutation',
         'child_surrender_salutation',
         'child_surrender_salutation1',
-        'child_salutation'
+        'child_salutation',
+        'hour_number'
     ];
 
     public function user()

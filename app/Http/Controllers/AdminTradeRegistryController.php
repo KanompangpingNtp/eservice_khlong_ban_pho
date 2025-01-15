@@ -51,7 +51,7 @@ class AdminTradeRegistryController extends Controller
 
     public function TradeRegistryAdminExportPDF($id)
     {
-        $form = TradeRegistry::with(['tradeEntrepreneur', 'tradeLocationMore', 'tradeShareCapital','tradeCopyLocation','tradeShareValue'])->first();
+        $form = TradeRegistry::with(['tradeEntrepreneur', 'tradeLocationMore', 'tradeShareCapital','tradeCopyLocation','tradeShareValue'])->find($id);
 
         $pdf = Pdf::loadView('admin.commercial_registration.export_pdf.export_pdf', compact('form'))
             ->setPaper('A4', 'portrait');

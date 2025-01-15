@@ -265,7 +265,7 @@
             <span style="float: left; width: 30%; line-height: 0.9;">
                 <input type="checkbox" style="margin: 0;"
                     {{ in_array('option1', $form->personsOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
-                ไม่ได้รับเบี้ยยังชีพผู้สูงอาย
+                ไม่ได้รับเบี้ยยังชีพผู้สูงอายุ
             </span>
             <span style="float: right; width: 50%; line-height: 0.9;">
                 <input type="checkbox" style="margin: 0;"

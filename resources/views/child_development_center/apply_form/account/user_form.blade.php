@@ -316,8 +316,13 @@
             </div>
 
             <div class="col-md-4 mb-3">
-                <label for="surrender_income" class="form-label">ที่อยู่ปัจจุบัน เลขที่ <span class="text-danger">*</span></label>
+                <label for="surrender_income" class="form-label">รายได้ <span class="text-danger">*</span></label>
                 <input type="text" name="surrender_income" id="surrender_income" class="form-control" required>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label for="surrender_hour_number" class="form-label">ที่อยู่ปัจจุบัน เลขที่ <span class="text-danger">*</span></label>
+                <input type="text" name="surrender_hour_number" id="surrender_hour_number" class="form-control" required>
             </div>
 
             <div class="col-md-4 mb-3">

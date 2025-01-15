@@ -34,9 +34,7 @@ class AdminChildApplyController extends Controller
 
         if ($form->childRegistration->first() && $form->childRegistration->first()->ge_immunity) {
             $geImmunity = $form->childRegistration->first()->ge_immunity;
-            if (is_string($geImmunity)) {
-                $form->childRegistration->first()->ge_immunity = json_decode($geImmunity, true);
-            }
+            $form->childRegistration->first()->ge_immunity = json_decode($geImmunity, true);
         }
 
         $selectedOptions = $form->childRegistration->first()->ge_immunity ?? [];
