@@ -159,16 +159,16 @@
             style="width: 20%; text-align: center;">{{ $form->salutation }}{{ $form->name }}</span><span>อายุ</span><span class="dotted-line"
             style="width: 6%; text-align: center;">{{ $form->age }}</span><span>ปี สัญชาติ</span><span class="dotted-line"
             style="width: 8%; text-align: center;">{{ $form->nationality }}</span><span>เชื้อชาติ</span><span class="dotted-line"
-            style="width: 8%; text-align: center;">{{ $form->nationality }}</span><span>อยู่บ้านเลขที่</span><span class="dotted-line"
+            style="width: 8%; text-align: center;">{{ $form->ethnicity }}</span><span>อยู่บ้านเลขที่</span><span class="dotted-line"
             style="width: 8%; text-align: center;">{{ $form->house_number}}</span><span>หมู่ที่</span><span class="dotted-line"
             style="width: 8%; text-align: center;">{{ $form->village }}</span>
     </div>
     <div class="box_text" style="text-align: left; ">
         <span>ตำบล</span><span class="dotted-line"
-            style="width: 18%; text-align: center;">{{ $form->village }}</span><span>อำเภอ</span><span class="dotted-line"
-            style="width: 18%; text-align: center;">{{ $form->subdistrict }}</span><span>จังหวัด</span><span class="dotted-line"
-            style="width: 18%; text-align: center;">{{ $form->district }}</span><span>เบอร์โทรติดต่อ</span><span class="dotted-line"
-            style="width: 19%; text-align: center;">{{ $form->province }}</span>
+            style="width: 18%; text-align: center;">{{ $form->subdistrict }}</span><span>อำเภอ</span><span class="dotted-line"
+            style="width: 18%; text-align: center;">{{ $form->district }}</span><span>จังหวัด</span><span class="dotted-line"
+            style="width: 18%; text-align: center;">{{ $form->province }}</span><span>เบอร์โทรติดต่อ</span><span class="dotted-line"
+            style="width: 19%; text-align: center;">{{ $form->phone }}</span>
     </div>
     <div class="box_text" style="text-align: left; margin-left:2rem">
         <span>ด้วยข้าพเจ้ามีความประสงค์</span><span class="dotted-line" style="width: 78%; text-align: center;">{{ $form->request_details }}</span>

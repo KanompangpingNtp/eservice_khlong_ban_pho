@@ -221,6 +221,8 @@ class UserTradeRegistryController extends Controller
             'accepting_commercial_name_used' => 'nullable|string|max:255', // ชื่อที่ใช้ในการประกอบพาณิชยกิจ
             'accepting_commercial_transferred' => 'nullable|date', // วันที่โอนการประกอบพาณิชยกิจ
             'accepting_commercial_cause' => 'nullable|string|max:255', // สาเหตุการประกอบพาณิชยกิจ
+
+            'salutation' => 'nullable|string|max:255',
         ]);
 
         // dd($request);
@@ -238,6 +240,7 @@ class UserTradeRegistryController extends Controller
 
         $TradeEntrepreneur = TradeEntrepreneur::create([
             'trade_registries_id' => $TradeRegistry->id,
+            'salutation' => $request->salutation,
             'trade_entrepreneur_name' => $request->trade_entrepreneur_name,
             'trade_entrepreneur_age' => $request->trade_entrepreneur_age,
             'trade_entrepreneur_ethnicity' => $request->trade_entrepreneur_ethnicity,

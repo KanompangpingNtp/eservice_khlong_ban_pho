@@ -22,7 +22,7 @@
 
         body {
             font-family: 'sarabun', 'sarabun-bold', sans-serif;
-            font-size: 16px;
+            font-size: 17px;
             margin: 0;
             padding: 0;
             line-height: 1;
@@ -136,7 +136,7 @@
             substr($citizen_c_id, 12, 1);
     @endphp
 
-    <div class="regis_number">ทะเบียนเลขที่ {{ $form->id }}/ 2568</div>
+    <div class="regis_number">ทะเบียนเลขที่............/ 2568</div>
     <div class="title_doc">แบบคำขอยืนยันสิทธิรับเงินเบี้ยยังชีพผู้สูงอายุ</div>
     <div class="box_text_border" style="font-size: 18px">
         <span style="text-align:left;">เฉพาะกรณีผู้สูงอายุมอบอำนาจให้บุคคลอื่นมายื่นคำขอยืนยันสิทธิแทน</span>
@@ -180,13 +180,13 @@
     </div>
     <div class="box_text" style="text-align: right;">
         <span>ด้วยข้าพเจ้า ({{ $form->salutation }}) ชื่อ</span><span class="dotted-line"
-            style="width: 25%; text-align: center;"> {{ $form->first_name }}
+            style="width: 35%; text-align: center;"> {{ $form->first_name }}
         </span>
-        <span>นามสกุล</span><span class="dotted-line" style="width: 25%; text-align: center;"> {{ $form->last_name }}
+        <span>นามสกุล</span><span class="dotted-line" style="width: 35%; text-align: center;"> {{ $form->last_name }}
         </span>
     </div>
     <div class="box_text">
-        <span>เกิดวันที่</span><span class="dotted-line" style="width: 10%; text-align: center;"> {{ $birthday_day }}
+        <span>เกิดวันที่</span><span class="dotted-line" style="width: 17%; text-align: center;"> {{ $birthday_day }}
         </span>
         <span>เดือน</span><span class="dotted-line" style="width: 15%; text-align: center;"> {{ $birthday_month }}
         </span><span>พ.ศ.</span><span class="dotted-line" style="width: 10%; text-align: center;"> {{ $birthday_year }}
@@ -196,7 +196,7 @@
         </span><span>มีชื่ออยู่ในสำเนา</span>
     </div>
     <div class="box_text">
-        <span>ทะเบียนบ้านเลขที่</span><span class="dotted-line" style="width: 10%; text-align: center;">
+        <span>ทะเบียนบ้านเลขที่</span><span class="dotted-line" style="width: 16%; text-align: center;">
             {{ $form->house_number }}
         </span>
         <span>หมู่ที่</span><span class="dotted-line" style="width: 10%; text-align: center;"> {{ $form->village }}
@@ -207,7 +207,7 @@
         </span>
     </div>
     <div class="box_text">
-        <span>ถนน</span><span class="dotted-line" style="width: 17%; text-align: center;"> {{ $form->road }}
+        <span>ถนน</span><span class="dotted-line" style="width: 21%; text-align: center;"> {{ $form->road }}
         </span>
         <span>ตำบล</span><span class="dotted-line" style="width: 17%; text-align: center;"> {{ $form->subdistrict }}
         </span>
@@ -225,7 +225,7 @@
         </span>
     </div>
     <div class="box_text" style="text-align: left; margin-left:7px;">
-        <span>หมายเลขบัตรประจำตัวคนพิการ/ประชาชน ที่ยื่นคำขอ</span><span class="dotted-line"
+        <span>หมายเลขบัตรประจำตัวประชาชนของผู้สูงอายุที่ยื่นคำขอ</span><span class="dotted-line"
             style="width: 50%; text-align: center;"> {{ $formatted_id }}
         </span>
     </div>
@@ -288,7 +288,7 @@
         </div>
     </div>
     <div class="box_text" style="text-align:left; margin-left:8px; line-height: 12px; margin-top: 5px;">
-        <span style="line-height: 10px;">มีความประสงค์ขอรับเงินเบี้ยยังชีพความพิการ โดยวิธีดังต่อไปนี้ (เลือก 1
+        <span style="line-height: 10px;">มีความประสงค์ขอรับเงินเบี้ยยังชีพผู้สูงอายุ โดยวิธีดังต่อไปนี้ (เลือก 1
             วิธี)</span>
         <div style="width: 100%;">
             <span style="float: left; width: 40%; line-height: 0.9;">
@@ -308,9 +308,9 @@
                     {{ in_array('option3', $form->personsOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
                 โอนเข้าบัญชีเงินฝากธนาคารในนามผู้มีสิทธิ
             </span>
-            <div style="clear: both;"></div>
+            {{-- <div style="clear: both;"></div> --}}
 
-            <span style="float: left; width: 100%; line-height: 0.9;">
+            <span style="float: right; width: 60%; line-height: 0.9;">
                 <input type="checkbox" style="margin: 0;"
                     {{ in_array('option4', $form->personsOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
                 โอนเข้าบัญชีเงินฝากธนาคารในนามบุคคลที่ได้รับมอบอำนาจจากผู้มีสิทธิ
@@ -331,13 +331,13 @@
                         {{ in_array('option2', $documentType) ? 'checked' : '' }}>
                     ทะเบียนบ้าน
                 </span>
-                <div style="clear: both;"></div>
+                {{-- <div style="clear: both;"></div>
 
                 <span style="float: left; width: 100%; line-height: 0.9;">
                     <input type="checkbox" style="margin: 0;"
                         {{ in_array('option3', $documentType) ? 'checked' : '' }}>
                     โอนเข้าบัญชีเงินฝากธนาคารในนามผู้มีสิทธิ
-                </span>
+                </span> --}}
                 <div style="clear: both;"></div>
 
                 <span style="float: left; width: 100%; line-height: 0.9;">
@@ -583,13 +583,13 @@
                     <span class="dotted-line"
                         style="width: 40%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
                     </span>
-                    <div style="margin-left: 40px;">
+                    {{-- <div style="margin-left: 40px;">
                         <span>(</span>
                         <span class="dotted-line"
                             style="width: 40%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
                         </span>
                         <span>)</span>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

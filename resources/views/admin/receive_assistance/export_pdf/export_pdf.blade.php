@@ -22,7 +22,7 @@
 
         body {
             font-family: 'sarabun', 'sarabun-bold', sans-serif;
-            font-size: 20px;
+            font-size: 17px;
             margin: 0;
             padding: 0;
             line-height: 1;
@@ -134,8 +134,7 @@
             </span>
         </div>
         <div class="box_text" style="text-align: left;">
-            <span>เรียน</span><span class="dotted-line" style="width: 50%; text-align: center;"> {{$form->learn}}
-            </span>
+            <span>เรียน นายยกอค์การบริหารส่วนตำบลคลองบ้านโพธิ์
         </div>
         <div class="box_text" style="text-align: left; margin-left: 4rem;">
             <span>ด้วยข้าพเจ้า ({{$form->salutation}}) ชื่อ</span><span class="dotted-line" style="width: 34%; text-align: center;">
@@ -156,11 +155,11 @@
             </span><span>มีชื่ออยู่ในสำเนา</span>
         </div>
         <div class="box_text">
-            <span>ทะเบียนบ้านเลขที่</span><span class="dotted-line" style="width: 10%; text-align: center;">  data
+            <span>ทะเบียนบ้านเลขที่</span><span class="dotted-line" style="width: 10%; text-align: center;">  {{$form->learn}}
             </span>
             <span>หมู่ที่</span><span class="dotted-line" style="width: 10%; text-align: center;"> {{$form->village}}
             </span>
-            <span>ชุมชน</span><span class="dotted-line" style="width: 23%; text-align: center;"> data
+            <span>ชุมชน</span><span class="dotted-line" style="width: 23%; text-align: center;"> -
             </span>
             <span>ตรอก/ซอย</span><span class="dotted-line" style="width: 22%; text-align: center;"> {{$form->road}}
             </span>
@@ -294,12 +293,12 @@
         </div>
     </div>
     {{-- new page --}}
-    <div style="page-break-before: always;"></div>
+    {{-- <div style="page-break-before: always;"></div> --}}
 
-    <div style="text-align: center">
+    {{-- <div style="text-align: center">
         - 2 -
-    </div>
-    <div class="box_text" style="text-align: left; margin-left:7px; margin-top:2rem;">
+    </div> --}}
+    <div class="box_text" style="text-align: left; margin-left:7px; margin-top:1rem;">
         <span>บุคคลที่สามารถติดต่อได้</span><span class="dotted-line" style="width: 30%; text-align: center;"> {{$form->assistImpartings->first()->contact_person}}
         </span><span>สถานที่ติดต่อเลขที่</span><span class="dotted-line" style="width: 35%; text-align: center;"> {{$form->assistImpartings->first()->contact_address_number}}
         </span>
@@ -323,10 +322,10 @@
         </span><span>เกี่ยวข้องเป็น</span><span class="dotted-line" style="width: 28%; text-align: center;"> {{$form->assistImpartings->first()->contact_relevant_as}}
         </span>
     </div>
-    <div class="box_text" style="text-align: center; margin-top: 4rem; margin-bottom: 4rem;">
+    <div class="box_text" style="text-align: center; margin-top:1rem;">
         <span>ข้าพเจ้าขอรับรองว่าถ้อยคำที่ให้ข้างต้นเป็นความจริงทุกประการ</span>
     </div>
-    <div class="box_text" style="text-align: right; margin-top:6rem;">
+    <div class="box_text" style="text-align: right; margin-top:1rem;">
         <span class="dotted-line" style="width: 35%; text-align: center;"> {{$form->first_name}}&nbsp;{{$form->last_name}} </span>
         <span>ผู้ให้ถอยคำ</span>
         <div style="margin-right: 60px;">

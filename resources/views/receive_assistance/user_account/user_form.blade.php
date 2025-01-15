@@ -12,16 +12,12 @@
                 <input type="text" class="form-control" id="written_at" name="written_at">
             </div>
             <div class="col-md-6">
-                <label for="write_the_date" class="form-label">เขียนวันที่</label>
-                <input type="date" class="form-control" id="write_the_date" name="write_the_date">
+                {{-- <label for="write_the_date" class="form-label">เขียนวันที่</label> --}}
+                <input type="hidden" class="form-control" id="write_the_date" name="write_the_date" value="{{ date('Y-m-d') }}">
             </div>
         </div>
 
         <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="learn" class="form-label">เรียน</label>
-                <input type="text" class="form-control" id="learn" name="learn">
-            </div>
             <div class="col-md-6">
                 <label for="salutation" class="form-label">ชื่อนำหน้า</label>
                 <select class="form-select" id="salutation" name="salutation">
@@ -35,30 +31,34 @@
 
         <div class="row mb-3">
             <div class="col-md-6">
-                <label for="first_name" class="form-label">ชื่อ</label>
-                <input type="text" class="form-control" id="first_name" name="first_name">
+                <label for="first_name" class="form-label">ชื่อ <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="first_name" name="first_name" required>
             </div>
             <div class="col-md-6">
-                <label for="last_name" class="form-label">นามสกุล</label>
-                <input type="text" class="form-control" id="last_name" name="last_name">
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="birth_day" class="form-label">วันเกิด</label>
-                <input type="date" class="form-control" id="birth_day" name="birth_day">
-            </div>
-            <div class="col-md-6">
-                <label for="age" class="form-label">อายุ</label>
-                <input type="number" class="form-control" id="age" name="age">
+                <label for="last_name" class="form-label">นามสกุล <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="last_name" name="last_name" required>
             </div>
         </div>
 
         <div class="row mb-3">
             <div class="col-md-6">
-                <label for="nationality" class="form-label">สัญชาติ</label>
-                <input type="text" class="form-control" id="nationality" name="nationality">
+                <label for="birth_day" class="form-label">วันเกิด <span class="text-danger">*</span></label>
+                <input type="date" class="form-control" id="birth_day" name="birth_day" required>
+            </div>
+            <div class="col-md-6">
+                <label for="age" class="form-label">อายุ <span class="text-danger">*</span></label>
+                <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="nationality" class="form-label">สัญชาติ <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="nationality" name="nationality" required>
+            </div>
+            <div class="col-md-6">
+                <label for="learn" class="form-label">บ้านเลขที่ <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="learn" name="learn" required>
             </div>
             <div class="col-md-6">
                 <label for="village" class="form-label">หมู่</label>
@@ -79,34 +79,34 @@
 
         <div class="row mb-3">
             <div class="col-md-6">
-                <label for="subdistrict" class="form-label">ตำบล</label>
-                <input type="text" class="form-control" id="subdistrict" name="subdistrict">
+                <label for="subdistrict" class="form-label">ตำบล <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="subdistrict" name="subdistrict" required>
             </div>
             <div class="col-md-6">
-                <label for="district" class="form-label">อำเภอ</label>
-                <input type="text" class="form-control" id="district" name="district">
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="province" class="form-label">จังหวัด</label>
-                <input type="text" class="form-control" id="province" name="province">
-            </div>
-            <div class="col-md-6">
-                <label for="postal_code" class="form-label">รหัสไปรษณีย์</label>
-                <input type="text" class="form-control" id="postal_code" name="postal_code">
+                <label for="district" class="form-label">อำเภอ <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="district" name="district" required>
             </div>
         </div>
 
         <div class="row mb-3">
             <div class="col-md-6">
-                <label for="phone_number" class="form-label">หมายเลขโทรศัพท์</label>
-                <input type="text" class="form-control" id="phone_number" name="phone_number">
+                <label for="province" class="form-label">จังหวัด <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="province" name="province" required>
             </div>
             <div class="col-md-6">
-                <label for="citizen_id" class="form-label">เลขบัตรประชาชน</label>
-                <input type="text" class="form-control" id="citizen_id" name="citizen_id">
+                <label for="postal_code" class="form-label">รหัสไปรษณีย์ <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="postal_code" name="postal_code" required>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="phone_number" class="form-label">หมายเลขโทรศัพท์ <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="phone_number" name="phone_number" required>
+            </div>
+            <div class="col-md-6">
+                <label for="citizen_id" class="form-label">เลขบัตรประชาชน <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="citizen_id" name="citizen_id" required>
             </div>
         </div>
 
@@ -291,7 +291,7 @@
                 <div class="col-12">
                     <label for="residence_stay_alone_dueto_detail" class="form-label">มาประมาณ</label>
                     <input type="text" class="form-control" id="residence_stay_alone_dueto_detail"
-                        name="residence_stay_alone_dueto_detail" placeholder="กรุณาระบุ">
+                        name="residence_stay_alone_dueto_detail" placeholder="กรุณาระบุระยะเวลา">
                 </div>
             </div>
 
@@ -348,7 +348,7 @@
             <div class="my-2">
                 <h3> 4. รายได้ – รายจ่าย</h3>
                 <div class="form-group">
-                    <label for="total_income">รายได้รวม</label>
+                    <label for="total_income">รายได้รวม (บาท/เดือน)</label>
                     <input type="text" class="form-control" id="total_income" name="total_income"
                         placeholder="กรุณาระบุรายได้รวม">
                 </div>
@@ -368,19 +368,18 @@
 
             <hr>
 
-
+            <h3>5. ข้อมูลการติดต่อ</h3>
             <div class="row my-3">
                 <div class="col-12 col-sm-6 col-md-4 form-group">
-                    <h3>5. ข้อมูลการติดต่อ</h3>
-                    <label for="contact_person">ชื่อผู้ติดต่อ</label>
+                    <label for="contact_person">ชื่อผู้ติดต่อ <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="contact_person" name="contact_person"
-                        placeholder="กรุณาระบุชื่อผู้ติดต่อ">
+                        placeholder="กรุณาระบุชื่อผู้ติดต่อ" required>
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-4 form-group">
-                    <label for="contact_address_number">หมายเลขที่อยู่</label>
+                    <label for="contact_address_number">หมายเลขที่อยู่ <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="contact_address_number" name="contact_address_number"
-                        placeholder="กรุณาระบุหมายเลขที่อยู่">
+                        placeholder="กรุณาระบุหมายเลขที่อยู่" required>
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-4 form-group">
@@ -402,33 +401,33 @@
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-4 form-group">
-                    <label for="contact_subdistrict">ตำบล</label>
+                    <label for="contact_subdistrict">ตำบล <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="contact_subdistrict" name="contact_subdistrict"
-                        placeholder="กรุณาระบุตำบล">
+                        placeholder="กรุณาระบุตำบล" required>
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-4 form-group">
-                    <label for="contact_district">อำเภอ</label>
+                    <label for="contact_district">อำเภอ <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="contact_district" name="contact_district"
-                        placeholder="กรุณาระบุอำเภอ">
+                        placeholder="กรุณาระบุอำเภอ" required>
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-4 form-group">
-                    <label for="contact_province">จังหวัด</label>
+                    <label for="contact_province">จังหวัด <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="contact_province" name="contact_province"
-                        placeholder="กรุณาระบุจังหวัด">
+                        placeholder="กรุณาระบุจังหวัด" required>
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-4 form-group">
-                    <label for="contact_postal_code">รหัสไปรษณีย์</label>
+                    <label for="contact_postal_code">รหัสไปรษณีย์ <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="contact_postal_code" name="contact_postal_code"
-                        placeholder="กรุณาระบุรหัสไปรษณีย์">
+                        placeholder="กรุณาระบุรหัสไปรษณีย์" required>
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-4 form-group">
-                    <label for="contact_telephone">หมายเลขโทรศัพท์</label>
+                    <label for="contact_telephone">หมายเลขโทรศัพท์ <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="contact_telephone" name="contact_telephone"
-                        placeholder="กรุณาระบุหมายเลขโทรศัพท์">
+                        placeholder="กรุณาระบุหมายเลขโทรศัพท์" required>
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-4 form-group">
@@ -438,12 +437,15 @@
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-4 form-group">
-                    <label for="contact_relevant_as">ผู้เกี่ยวข้องในฐานะ</label>
+                    <label for="contact_relevant_as">ผู้เกี่ยวข้องในฐานะ <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="contact_relevant_as" name="contact_relevant_as"
-                        placeholder="กรุณาระบุผู้เกี่ยวข้องในฐานะ">
+                        placeholder="กรุณาระบุผู้เกี่ยวข้องในฐานะ" required>
                 </div>
             </div>
 
+            <br>
+            <br>
+            <h4><strong>ข้าพเจ้าขอรับรองว่าถ้อยคำที่ให้ข้างต้น เป็นความจริงทุกประการ</strong></h4><br>
             <hr>
 
             <div>

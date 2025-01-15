@@ -16,40 +16,29 @@
                 </div>
             </div>
 
-            {{-- <div class="row mb-3">
-                    <label for="written_date" class="col-sm-3 col-form-label">วันที่:</label>
-                    <div class="col-sm-9">
-                        <input type="date" id="written_date" name="written_date" class="form-control" required>
-                    </div>
-                </div> --}}
-
             <div class="row">
                 <div class="col-md-3 mb-3">
                     <label for="salutation" class="col-sm-3 col-form-label">คำนำหน้า:</label>
-                        <select class="form-select" id="salutation" name="salutation">
-                            <option value="" selected disabled>เลือกคำนำหน้า</option>
-                            <option value="นาย">นาย</option>
-                            <option value="นาง">นาง</option>
-                            <option value="นางสาว">นางสาว</option>
-                        </select>
+                    <select class="form-select" id="salutation" name="salutation">
+                        <option value="" selected disabled>เลือกคำนำหน้า</option>
+                        <option value="นาย">นาย</option>
+                        <option value="นาง">นาง</option>
+                        <option value="นางสาว">นางสาว</option>
+                    </select>
                 </div>
                 <div class="col-md-5 mb-3">
-                    <label for="first_name" class="col-sm-3 col-form-label">ชื่อ:</label>
+                    <label for="first_name" class="col-sm-3 col-form-label">ชื่อ: <span class="text-danger">*</span></label>
                     <input type="text" id="first_name" name="first_name" class="form-control" required>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <label for="last_name" class="col-sm-3 col-form-label">นามสกุล:</label>
+                    <label for="last_name" class="col-sm-3 col-form-label">นามสกุล: <span class="text-danger">*</span></label>
                     <input type="text" id="last_name" name="last_name" class="form-control" required>
                 </div>
             </div>
 
             <div class="row mb-3">
-                {{-- <label for="birth_day" class="col-sm-3 col-form-label">วันเกิด:</label>
-                    <div class="col-sm-9">
-                        <input type="date" id="birth_day" name="birth_day" class="form-control">
-                    </div> --}}
                 <div class="col-12 col-md-4">
-                    <label for="day">วันเกิดที่ (กรอกวันที่เกิด)</label>
+                    <label for="day">วันเกิดที่ (กรอกวันที่เกิด) <span class="text-danger">*</span></label>
                     <input type="number" id="day" name="day" class="form-control" min="1" max="31" required>
                     <small id="dayError" class="form-text text-danger" style="display: none;">กรุณากรอกวันเป็นตัวเลขระหว่าง 1 - 31</small>
                 </div>
@@ -78,7 +67,7 @@
                 </script>
 
                 <div class="col-12 col-md-4">
-                    <label for="month">เดือน (เลือกเดือนเกิด)</label>
+                    <label for="month">เดือน (เลือกเดือนเกิด) <span class="text-danger">*</span></label>
                     <select id="month" name="month" class="form-control" required>
                         <option value="1">มกราคม</option>
                         <option value="2">กุมภาพันธ์</option>
@@ -95,7 +84,7 @@
                     </select>
                 </div>
                 <div class="col-12 col-md-4">
-                    <label for="year">ปี (กรอกปีที่เกิดเป็น พ.ศ.)</label>
+                    <label for="year">ปี (กรอกปีที่เกิดเป็น พ.ศ.) <span class="text-danger">*</span></label>
                     <input type="number" id="year" name="year" class="form-control" min="1900" required>
                     <small id="yearError" class="form-text text-danger" style="display: none;">กรุณากรอกปี 4 หลัก</small>
                 </div>
@@ -181,88 +170,88 @@
 
         <div class="row">
             <div class="col-md-3 mb-3">
-                <label for="age" class="col-sm-3 col-form-label">อายุ:</label>
-                    <input type="number" id="age" name="age" class="form-control">
+                <label for="age" class="col-sm-3 col-form-label">อายุ: <span class="text-danger">*</span></label>
+                <input type="number" id="age" name="age" class="form-control" required>
             </div>
 
             <div class="col-md-3 mb-3">
-                <label for="nationality" class="col-sm-3 col-form-label">สัญชาติ:</label>
-                    <input type="text" id="nationality" name="nationality" class="form-control">
+                <label for="nationality" class="col-sm-3 col-form-label">สัญชาติ: <span class="text-danger">*</span></label>
+                <input type="text" id="nationality" name="nationality" class="form-control" required>
             </div>
 
             <!-- Address Section -->
             <div class="col-md-3 mb-3">
-                <label for="house_number" class="col-sm-3 col-form-label">บ้านเลขที่:</label>
-                    <input type="text" id="house_number" name="house_number" class="form-control">
+                <label for="house_number" class="col-sm-3 col-form-label">บ้านเลขที่: <span class="text-danger">*</span></label>
+                <input type="text" id="house_number" name="house_number" class="form-control" required>
             </div>
 
             <div class="col-md-3 mb-3">
-                <label for="village" class="col-sm-3 col-form-label">หมู่:</label>
-                    <input type="text" id="village" name="village" class="form-control">
+                <label for="village" class="col-sm-3 col-form-label">หมู่: <span class="text-danger">*</span></label>
+                <input type="text" id="village" name="village" class="form-control" required>
             </div>
 
             <div class="col-md-3 mb-3">
-                <label for="alley" class="col-sm-3 col-form-label">ซอย:</label>
-                    <input type="text" id="alley" name="alley" class="form-control">
+                <label for="alley" class="col-sm-3 col-form-label">ซอย: <span class="text-danger">*</span></label>
+                <input type="text" id="alley" name="alley" class="form-control" required>
             </div>
 
             <div class="col-md-3 mb-3">
-                <label for="road" class="col-sm-3 col-form-label">ถนน:</label>
-                    <input type="text" id="road" name="road" class="form-control">
+                <label for="road" class="col-sm-3 col-form-label">ถนน: <span class="text-danger">*</span></label>
+                <input type="text" id="road" name="road" class="form-control" required>
             </div>
 
             <div class="col-md-3 mb-3">
-                <label for="subdistrict" class="col-sm-3 col-form-label">ตำบล:</label>
-                    <input type="text" id="subdistrict" name="subdistrict" class="form-control">
+                <label for="subdistrict" class="col-sm-3 col-form-label">ตำบล: <span class="text-danger">*</span></label>
+                <input type="text" id="subdistrict" name="subdistrict" class="form-control" required>
             </div>
 
             <div class="col-md-3 mb-3">
-                <label for="district" class="col-sm-3 col-form-label">อำเภอ:</label>
-                    <input type="text" id="district" name="district" class="form-control">
+                <label for="district" class="col-sm-3 col-form-label">อำเภอ: <span class="text-danger">*</span></label>
+                <input type="text" id="district" name="district" class="form-control" required>
             </div>
 
             <div class="col-md-3 mb-3">
-                <label for="province" class="col-sm-3 col-form-label">จังหวัด:</label>
-                    <input type="text" id="province" name="province" class="form-control">
+                <label for="province" class="col-sm-3 col-form-label">จังหวัด: <span class="text-danger">*</span></label>
+                <input type="text" id="province" name="province" class="form-control" required>
             </div>
 
             <div class="col-md-3 mb-3">
-                <label for="postal_code" class="col-form-label">รหัสไปรษณีย์:</label>
-                    <input type="text" id="postal_code" name="postal_code" class="form-control">
+                <label for="postal_code" class="col-form-label">รหัสไปรษณีย์: <span class="text-danger">*</span></label>
+                <input type="text" id="postal_code" name="postal_code" class="form-control" required>
             </div>
 
             <div class="col-md-3 mb-3">
-                <label for="phone_number" class="col-sm-3 col-form-label">โทรศัพท์:</label>
-                    <input type="text" id="phone_number" name="phone_number" class="form-control">
+                <label for="phone_number" class="col-sm-3 col-form-label">โทรศัพท์: <span class="text-danger">*</span></label>
+                <input type="text" id="phone_number" name="phone_number" class="form-control" required>
             </div>
 
             <div class="col-md-3 mb-3">
-                <label for="citizen_id" class="col-form-label">เลขบัตรประชาชน:</label>
-                    <input type="text" id="citizen_id" name="citizen_id" class="form-control">
+                <label for="citizen_id" class="col-form-label">เลขบัตรประชาชน: <span class="text-danger">*</span></label>
+                <input type="text" id="citizen_id" name="citizen_id" class="form-control" required>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-3 mb-3">
-                <label for="marital_status" class="col-form-label">สถานภาพการสมรส:</label>
-                    <select id="marital_status" name="marital_status" class="form-select" required>
-                        <option value="single">โสด</option>
-                        <option value="married">แต่งงานแล้ว</option>
-                        <option value="widowed">เป็นม่าย</option>
-                        <option value="divorced">หย่าร้าง</option>
-                        <option value="separated">แยกจากกัน</option>
-                        <option value="other">อื่นๆ</option>
-                    </select>
+                <label for="marital_status" class="col-form-label">สถานภาพการสมรส: <span class="text-danger">*</span></label>
+                <select id="marital_status" name="marital_status" class="form-select" required>
+                    <option value="single">โสด</option>
+                    <option value="married">แต่งงานแล้ว</option>
+                    <option value="widowed">เป็นม่าย</option>
+                    <option value="divorced">หย่าร้าง</option>
+                    <option value="separated">แยกจากกัน</option>
+                    <option value="other">อื่นๆ</option>
+                </select>
             </div>
 
             <div class="col-md-3 mb-3">
-                <label for="monthly_income" class="col-form-label">รายได้ต่อเดือน:</label>
-                    <input type="text" id="monthly_income" name="monthly_income" class="form-control">
+                <label for="monthly_income" class="col-form-label">รายได้ต่อเดือน: <span class="text-danger">*</span></label>
+                <input type="text" id="monthly_income" name="monthly_income" class="form-control" required>
             </div>
 
             <div class="col-md-3 mb-3">
-                <label for="occupation" class="col-sm-3 col-form-label">อาชีพ:</label>
-                    <input type="text" id="occupation" name="occupation" class="form-control">
+                <label for="occupation" class="col-sm-3 col-form-label">อาชีพ: <span class="text-danger">*</span></label>
+                <input type="text" id="occupation" name="occupation" class="form-control" required>
             </div>
         </div>
 </div>
@@ -329,7 +318,7 @@
     <div class="col-12 col-md-6">
         <div class="form-check">
             <input class="form-check-input" type="checkbox" name="welfare_type[]" id="welfare_type_disability" value="option2">
-            <label class="form-check-label" for="welfare_type_disability">ได้รับเงินสงเคราะห์เพื่อการยังชีพผู้ป่วยเอดส</label>
+            <label class="form-check-label" for="welfare_type_disability">ได้รับเงินสงเคราะห์เพื่อการยังชีพผู้ป่วยเอดส์</label>
         </div>
     </div>
     <div class="col-12 col-md-6">
@@ -435,12 +424,21 @@
     <input type="text" id="account_name" name="account_name" class="form-control">
 </div>
 
+<br>
+<span style="width: 100%; ">
+    "ข้าพเจ้าขอรับรองว่าข้าพเจ้าเป็นผู้มีคุณสมบัติครบถ้วน และข้อความดังกล่าวข้างต้นเป็นความจริงทุกประการ
+    หากข้อความและเอกสารที่ยื่นเรื่องนี้เป็นเท็จ ข้าพเจ้ายินยอมให้ดำเนินการตามกฎหมาย"</span><br>
+<span style="width: 100%; ">
+    "ข้าพเจ้ายินยอมให้นำข้อมูลส่วนบุคคลเข้าสู่ระบบคอมพิวเตอร์ของกรมส่งเสริมการปกครองท้องถิ่น และยินยอมให้
+    ตรวจสอบข้อมูลกับฐานข้อมูลทะเบียนกลางภาครัฐ"
+</span>
+
 <hr>
 
 <div>
-    <h3 for="attachments" class="form-label">แนบไฟล์</h3>
+    <h3 for="attachments" class="form-label">แนบไฟล์เอกสาร (สามารถเลือกไฟล์พร้อมกันได้มากกว่า 1 ไฟล์)</h3>
     <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
-    <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
+    <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 10MB)</small>
     <!-- แสดงรายการไฟล์ที่แนบ -->
     <div id="file-list" class="mt-1">
         <div class="d-flex flex-wrap gap-3"></div>

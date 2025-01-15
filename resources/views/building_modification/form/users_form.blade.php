@@ -138,7 +138,7 @@
         </div>
 
         <div class="col-md-3 mb-3">
-            <label for="office_located">สำานักงานตั้งอยู่เลขที่:</label>
+            <label for="office_located">สำนักงานตั้งอยู่เลขที่:</label>
             <input type="text" name="office_located" id="office_located" class="form-control" disabled>
         </div>
 
@@ -516,7 +516,7 @@
             <input type="text" name="control_architecture" id="control_architecture" class="form-control">
         </div> --}}
         <div class="col-md-5 mb-3">
-            <label for="control_architecture">พร้อมทั้งสำาเนาใบอนุญาตเป็นผู้ประกอบวิชาชีพวิศวกรรมควบคุมหรือสถาปัตยกรรมควบคุม จำนวน</label>
+            <label for="control_architecture">พร้อมทั้งสำเนาใบอนุญาตเป็นผู้ประกอบวิชาชีพวิศวกรรมควบคุมหรือสถาปัตยกรรมควบคุม จำนวน</label>
             <div style="display: flex; align-items: center;">
                 <input type="text" name="control_architecture" id="control_architecture" class="form-control" style="flex: 1; margin-right: 5px;">
                 <span>ฉบับ</span>
@@ -580,7 +580,7 @@
         <input type="text" name="controller" id="controller" class="form-control">
     </div>
 
-    <span> (9) สำาเนาหรือภาพถ่ายใบอนุญาตเป็นผู้ประกอบวิชาชีพวิศวกรรมควบคุมหรือวิชาชีพสถาปัตยกรรมควบคุม
+    <span> (9) สำเนาหรือภาพถ่ายใบอนุญาตเป็นผู้ประกอบวิชาชีพวิศวกรรมควบคุมหรือวิชาชีพสถาปัตยกรรมควบคุม
         ของผู้ควบคุม <br>(เฉพาะกรณีที่เป็นอาคารมีลักษณะและขนาดอยู่ในประเภทเป็นวิชาชีพวิศวกรรมควบคุม หรือวิชาชีพสถาปัตยกรรมควบคุม) แล้วแต่กรณี</span>
     <div class="col-md-2 mb-3">
         <div style="display: flex; align-items: center;">
@@ -597,7 +597,7 @@
     <br>
 
     <div>
-        <h3 for="attachments" class="form-label">แนบไฟล์</h3>
+        <h3 for="attachments" class="form-label">แนบไฟล์ เอกสาร (สามารถกดเลือกไฟล์เอกสารพร้อมกันได้มากกว่า 1ไฟล์)</h3>
         <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
         <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
         <!-- แสดงรายการไฟล์ที่แนบ -->

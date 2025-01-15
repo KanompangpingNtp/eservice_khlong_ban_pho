@@ -34,67 +34,67 @@
 
         <!-- Full Name -->
         <div class="col-md-3 mb-3">
-            <label for="full_name">ชื่อ-นามสกุล </label>
+            <label for="full_name">ชื่อ-นามสกุล <span class="text-danger">*</span></label>
             <input type="text" name="full_name" id="full_name" class="form-control" required>
         </div>
 
         <!-- Age -->
         <div class="col-md-3 mb-3">
-            <label for="age">อายุ (ปี)</label>
-            <input type="number" name="age" id="age" class="form-control">
+            <label for="age">อายุ (ปี) <span class="text-danger">*</span></label>
+            <input type="number" name="age" id="age" class="form-control" required>
         </div>
 
         <div class="col-md-3 mb-3">
-            <label for="nationality">สัญชาติ</label>
-            <input type="text" name="nationality" id="nationality" class="form-control">
+            <label for="nationality">สัญชาติ <span class="text-danger">*</span></label>
+            <input type="text" name="nationality" id="nationality" class="form-control" required>
         </div>
 
         <!-- House Number -->
         <div class="col-md-3 mb-3">
-            <label for="house_number">อยู่บ้านเลขที่</label>
-            <input type="text" name="house_number" id="house_number" class="form-control">
+            <label for="house_number">อยู่บ้านเลขที่ <span class="text-danger">*</span></label>
+            <input type="text" name="house_number" id="house_number" class="form-control" required>
         </div>
 
         <!-- Village -->
         <div class="col-md-3 mb-3">
-            <label for="village">หมู่ที่</label>
-            <input type="text" name="village" id="village" class="form-control">
+            <label for="village">หมู่ที่ <span class="text-danger">*</span></label>
+            <input type="text" name="village" id="village" class="form-control" required>
         </div>
 
         <!-- Alley -->
         <div class="col-md-3 mb-3">
-            <label for="alley">ตรอก/ซอย</label>
-            <input type="text" name="alley" id="alley" class="form-control">
+            <label for="alley">ตรอก/ซอย <span class="text-danger">*</span></label>
+            <input type="text" name="alley" id="alley" class="form-control" required>
         </div>
 
         <!-- Road -->
         <div class="col-md-3 mb-3">
-            <label for="road">ถนน</label>
-            <input type="text" name="road" id="road" class="form-control">
+            <label for="road">ถนน <span class="text-danger">*</span></label>
+            <input type="text" name="road" id="road" class="form-control" required>
         </div>
 
         <!-- Subdistrict -->
         <div class="col-md-3 mb-3">
-            <label for="subdistrict">แขวง/ตำบล</label>
-            <input type="text" name="subdistrict" id="subdistrict" class="form-control">
+            <label for="subdistrict">แขวง/ตำบล <span class="text-danger">*</span></label>
+            <input type="text" name="subdistrict" id="subdistrict" class="form-control" required>
         </div>
 
         <!-- District -->
         <div class="col-md-3 mb-3">
-            <label for="district">เขต/อำเภอ</label>
-            <input type="text" name="district" id="district" class="form-control">
+            <label for="district">เขต/อำเภอ <span class="text-danger">*</span></label>
+            <input type="text" name="district" id="district" class="form-control" required>
         </div>
 
         <!-- Province -->
         <div class="col-md-3 mb-3">
-            <label for="province">จังหวัด</label>
-            <input type="text" name="province" id="province" class="form-control">
+            <label for="province">จังหวัด <span class="text-danger">*</span></label>
+            <input type="text" name="province" id="province" class="form-control" required>
         </div>
 
         <div class="col-md-3 mb-3">
             <div class="form-group">
-                <label for="phone_number">เบอร์โทรศัพท์</label>
-                <input type="text" name="phone_number" id="phone_number" class="form-control">
+                <label for="phone_number">เบอร์โทรศัพท์ <span class="text-danger">*</span></label>
+                <input type="text" name="phone_number" id="phone_number" class="form-control" required>
             </div>
         </div>
 
@@ -103,7 +103,7 @@
         <div class="row">
             <div class="col-md-3 mb-3" style="margin-top: 35px;">
                 <input type="checkbox" name="food_distribution" id="food_distribution" value="yes">
-                <label for="food_distribution">สถานที่จัดจำาหน่ายอาหารหรือสะสมอาหาร</label>
+                <label for="food_distribution">สถานที่จัดจำหน่ายอาหารหรือสะสมอาหาร</label>
             </div>
             <div class="col-md-3 mb-3">
                 <label for="food_distribution_type">ประเภท</label>
@@ -145,7 +145,7 @@
         <div class="row">
             <div class="col-md-3 mb-3" style="margin-top: 35px;">
                 <input type="checkbox" name="on_sale" id="on_sale" value="yes">
-                <label for="on_sale">กิจการตลาด ที่มีการจำาหน่าย</label>
+                <label for="on_sale">กิจการตลาด ที่มีการจำหน่าย</label>
             </div>
             <div class="col-md-3 mb-3">
                 <label for="it_dangerous_type">ที่มีการจำหน่าย</label>
@@ -180,7 +180,7 @@
         <!-- Collection Service Business -->
         <div class="form-group">
             <input type="checkbox" name="collection_service_business" id="collection_service_business" value="yes">
-            <label for="collection_service_business">กิจการรับทำาการเก็บ ขนหรือกำาจัดสิ่งปฏิกูลมูลฝอยโดยทำาเป็นธุรกิจ
+            <label for="collection_service_business">กิจการรับทำการเก็บ ขนหรือกำจัดสิ่งปฏิกูลมูลฝอยโดยทำเป็นธุรกิจ
                 ประเภท</label>
         </div>
 
@@ -197,7 +197,7 @@
         <div class="row ms-3">
             <div class="col-md-3 mb-3" style="margin-top: 10px;">
                 <input type="checkbox" name="collect_and_dispose_waste" id="collect_and_dispose_waste" value="yes">
-                <label for="collect_and_dispose_waste"> เก็บขนและกำจัดสิ่งปฏิกูล โดยมีระบบกำาจัดอยู่ที่</label>
+                <label for="collect_and_dispose_waste"> เก็บขนและกำจัดสิ่งปฏิกูล โดยมีระบบกำจัดอยู่ที่</label>
             </div>
             <div class="col-md-3 mb-3">
                 <input type="text" name="collect_and_dispose_detail" id="collect_and_dispose_detail" class="form-control">
@@ -207,7 +207,7 @@
         <div class="row ms-3">
             <div class="col-md-3 mb-3" style="margin-top: 10px;">
                 <input type="checkbox" name="garbage_collection" id="garbage_collection" value="yes">
-                <label for="garbage_collection">เก็บขนมูลฝอย โดยมีแหล่งกำาจัดที่</label>
+                <label for="garbage_collection">เก็บขนมูลฝอย โดยมีแหล่งกำจัดที่</label>
             </div>
             <div class="col-md-3 mb-3">
                 <input type="text" name="garbage_collection_detail" id="garbage_collection_detail" class="form-control">
@@ -217,7 +217,7 @@
         <div class="row ms-3">
             <div class="col-md-3 mb-3" style="margin-top: 10px;">
                 <input type="checkbox" name="collect_and_dispose_of_waste" id="collect_and_dispose_of_waste" value="yes">
-                <label for="collect_and_dispose_of_waste">เก็บขนและกำาจัดมูลฝอย โดยมีแหล่งกำาจัดที่</label>
+                <label for="collect_and_dispose_of_waste">เก็บขนและกำจัดมูลฝอย โดยมีแหล่งกำจัดที่</label>
             </div>
             <div class="col-md-3 mb-3">
                 <input type="text" name="collect_and_dispose_of_waste_detail" id="collect_and_dispose_of_waste_detail" class="form-control">
@@ -244,40 +244,40 @@
           <!-- Evidence of Permission -->
           <div class="col-md-3 mb-3">
             <label for="evidence_of_permission">3. หลักฐานการอนุญาตตามกฎหมายอื่นที่เกี่ยวข้อง คือ</label>
-            <input type="text" name="evidence_of_permission" id="evidence_of_permission" class="form-control">
+            {{-- <input type="text" name="evidence_of_permission" id="evidence_of_permission" class="form-control"> --}}
         </div>
 
         <!-- Evidence of Permission Detail 1 -->
         <div class="col-md-3 mb-3">
-            <label for="evidence_of_permission_detail_1">3.1</label>
-            <input type="text" name="evidence_of_permission_detail_1" id="evidence_of_permission_detail_1" class="form-control">
+            <label for="evidence_of_permission_detail_1">3.1 เอกสารเพิ่มเติม</label>
+            <input type="text" name="evidence_of_permission_detail_1" id="evidence_of_permission_detail_1" class="form-control" placeholder="โปรดระบุ">
         </div>
 
         <!-- Evidence of Permission Detail 2 -->
         <div class="col-md-3 mb-3">
-            <label for="evidence_of_permission_detail_2">3.2</label>
-            <input type="text" name="evidence_of_permission_detail_2" id="evidence_of_permission_detail_2" class="form-control">
+            <label for="evidence_of_permission_detail_2">3.2 เอกสารเพิ่มเติม</label>
+            <input type="text" name="evidence_of_permission_detail_2" id="evidence_of_permission_detail_2" class="form-control" placeholder="โปรดระบุ">
         </div>
 
         <!-- Detail 1 -->
         <div class="col-md-3 mb-3">
-            <label for="detail_1">4.</label>
-            <input type="text" name="detail_1" id="detail_1" class="form-control">
+            <label for="detail_1">4. เอกสารเพิ่มเติม</label>
+            <input type="text" name="detail_1" id="detail_1" class="form-control" placeholder="โปรดระบุ">
         </div>
 
         <!-- Detail 2 -->
         <div class="col-md-3 mb-3">
-            <label for="detail_2">5.</label>
-            <input type="text" name="detail_2" id="detail_2" class="form-control">
+            <label for="detail_2">5. เอกสารเพิ่มเติม</label>
+            <input type="text" name="detail_2" id="detail_2" class="form-control" placeholder="โปรดระบุ">
         </div>
       </div>
 
         <br>
 
         <div>
-            <h3 for="attachments" class="form-label">แนบไฟล์</h3>
+            <h3 for="attachments" class="form-label">แนบไฟล์เอกสาร (สามารถแนบไฟล์พร้อมกันได้มากกว่า 1ไฟล์)</h3>
             <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
-            <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
+            <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 10MB)</small>
             <!-- แสดงรายการไฟล์ที่แนบ -->
             <div id="file-list" class="mt-1">
                 <div class="d-flex flex-wrap gap-3"></div>

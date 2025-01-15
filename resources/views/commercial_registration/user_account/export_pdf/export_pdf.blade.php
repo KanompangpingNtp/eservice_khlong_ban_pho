@@ -194,7 +194,7 @@
                 <td colspan="3" style="border: 1px solid black; padding-left:1rem;">
                     <div class="box_text" style=" text-align: left; margin-top: 1rem;">
                         <span >[1] ชื่อผู้ประกอบพาณิชยกิจ</span>
-                        <span class="dotted-line" style="width: 20%; text-align: center;">{{$form->tradeEntrepreneur->first()->trade_entrepreneur_name}}</span>
+                        <span class="dotted-line" style="width: 20%; text-align: center;">{{$form->tradeEntrepreneur->first()->salutation}}&nbsp;{{$form->tradeEntrepreneur->first()->trade_entrepreneur_name}}</span>
                         <span>อายุ</span><span class="dotted-line" style="width: 10%; text-align: center;">{{$form->tradeEntrepreneur->first()->trade_entrepreneur_age}}</span>
                         <span>ปี เชื้อชาติ</span><span>อายุ</span><span class="dotted-line"
                             style="width: 10%; text-align: center;">{{$form->tradeEntrepreneur->first()->trade_entrepreneur_ethnicity}}</span>
@@ -655,10 +655,10 @@
                     </div>
                     <div class="box_text" style="text-align: center; margin-top:2rem; margin-bottom:2rem;">
                         <span>(ลงลายมือชื่อ)</span>
-                        <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black;"></span><span>ผู้ประกอบการพาณิชยกิจ</span>
+                        <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black;">{{$form->tradeEntrepreneur->first()->trade_entrepreneur_name}}</span><span>ผู้ประกอบการพาณิชยกิจ</span>
                         <div style="text-align: center; margin-right:3rem;">
                             <span>(</span>
-                            <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black;"></span>
+                            <span class="dotted-line" style="width: 35%; text-align: center; border-bottom: 2px dotted black;">{{$form->tradeEntrepreneur->first()->salutation}}&nbsp;{{$form->tradeEntrepreneur->first()->trade_entrepreneur_name}}</span>
                             <span>)</span>
                         </div>
                     </div>

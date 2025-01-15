@@ -9,38 +9,6 @@
         <form action="{{ route('ElderlyAllowanceFormCreate') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
-            {{-- <!-- Trade Information -->
-            <h3>ข้อมูลผู้รับมอบอำนาจ</h3>
-            <div class="row mb-3">
-                <div class="col-12 col-md-6">
-                    <label for="trade_condition">เกี่ยวข้องเป็น:</label>
-                    <input type="text" id="trade_condition" name="trade_condition" class="form-control" required>
-                </div>
-                <div class="col-12 col-md-6">
-                    <label for="elderly_name">ชื่อผู้มอบอำนาจ:</label>
-                    <input type="text" id="elderly_name" name="elderly_name" class="form-control" required>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-12 col-md-6">
-                    <label for="trader_citizen_id">เลขบัตรประชาชน:</label>
-                    <input type="text" id="trader_citizen_id" name="trader_citizen_id" class="form-control" required>
-                </div>
-                <div class="col-12 col-md-6">
-                    <label for="trader_phone_number">โทรศัพท์:</label>
-                    <input type="text" id="trader_phone_number" name="trader_phone_number" class="form-control" required>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-
-                <div class="col-12">
-                    <label for="trader_address">ที่อยู่:</label>
-                    <textarea id="trader_address" name="trader_address" class="form-control" required></textarea>
-                </div>
-            </div> --}}
-
             {{-- <hr> --}}
 
             <!-- Personal Information -->
@@ -71,21 +39,21 @@
                     </select>
                 </div>
                 <div class="col-12 col-md-6">
-                    <label for="first_name">ขื่่อ:</label>
+                    <label for="first_name">ขื่่อ: <span class="text-danger">*</span></label>
                     <input type="text" id="first_name" name="first_name" class="form-control" required>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-12 col-md-12">
-                    <label for="last_name">นามสกุล:</label>
+                    <label for="last_name">นามสกุล: <span class="text-danger">*</span></label>
                     <input type="text" id="last_name" name="last_name" class="form-control" required>
                 </div>
 
             </div>
             <div class="row mb-3">
                 <div class="col-12 col-md-4">
-                    <label for="day">วันเกิดที่ (กรอกวันที่เกิด)</label>
+                    <label for="day">วันเกิดที่ (กรอกวันที่เกิด) <span class="text-danger">*</span></label>
                     <input type="number" id="day" name="day" class="form-control" min="1" max="31" required>
                     <small id="dayError" class="form-text text-danger" style="display: none;">กรุณากรอกวันเป็นตัวเลขระหว่าง 1 - 31</small>
                 </div>
@@ -113,7 +81,7 @@
                 </script>
 
                 <div class="col-12 col-md-4">
-                    <label for="month">เดือน (เลือกเดือนเกิด)</label>
+                    <label for="month">เดือน (เลือกเดือนเกิด) <span class="text-danger">*</span></label>
                     <select id="month" name="month" class="form-control" required>
                         <option value="1">มกราคม</option>
                         <option value="2">กุมภาพันธ์</option>
@@ -130,7 +98,7 @@
                     </select>
                 </div>
                 <div class="col-12 col-md-4">
-                    <label for="year">ปี (กรอกปีที่เกิดเป็น พ.ศ.)</label>
+                    <label for="year">ปี (กรอกปีที่เกิดเป็น พ.ศ.) <span class="text-danger">*</span></label>
                     <input type="number" id="year" name="year" class="form-control" min="1900" required>
                     <small id="yearError" class="form-text text-danger" style="display: none;">กรุณากรอกปี 4 หลัก</small>
                 </div>
@@ -209,19 +177,19 @@
 
             <div class="row mb-3">
                 <div class="col-12 col-md-6">
-                    <label for="age">อายุ:</label>
-                    <input type="number" id="age" name="age" class="form-control">
+                    <label for="age">อายุ: <span class="text-danger">*</span></label>
+                    <input type="number" id="age" name="age" class="form-control" required>
                 </div>
                 <div class="col-12 col-md-6">
-                    <label for="nationality">สัญชาติ:</label>
-                    <input type="text" id="nationality" name="nationality" class="form-control">
+                    <label for="nationality">สัญชาติ: <span class="text-danger">*</span></label>
+                    <input type="text" id="nationality" name="nationality" class="form-control" required>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-12 col-md-6">
-                    <label for="house_number">บ้านเลขที่:</label>
-                    <input type="text" id="house_number" name="house_number" class="form-control">
+                    <label for="house_number">ที่อยู่ตามสำเนาทะเบียนบ้าน: <span class="text-danger">*</span></label>
+                    <input type="text" id="house_number" name="house_number" class="form-control" required>
                 </div>
                 <div class="col-12 col-md-6">
                     <label for="village">หมู่:</label>
@@ -242,34 +210,34 @@
 
             <div class="row mb-3">
                 <div class="col-12 col-md-6">
-                    <label for="subdistrict">ตำบล:</label>
-                    <input type="text" id="subdistrict" name="subdistrict" class="form-control">
+                    <label for="subdistrict">ตำบล: <span class="text-danger">*</span></label>
+                    <input type="text" id="subdistrict" name="subdistrict" class="form-control" required>
                 </div>
                 <div class="col-12 col-md-6">
-                    <label for="district">อำเภอ:</label>
-                    <input type="text" id="district" name="district" class="form-control">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-12 col-md-6">
-                    <label for="province">จังหวัด:</label>
-                    <input type="text" id="province" name="province" class="form-control">
-                </div>
-                <div class="col-12 col-md-6">
-                    <label for="postal_code">รหัสไปรษณีย:</label>
-                    <input type="text" id="postal_code" name="postal_code" class="form-control">
+                    <label for="district">อำเภอ: <span class="text-danger">*</span></label>
+                    <input type="text" id="district" name="district" class="form-control" required>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-12 col-md-6">
-                    <label for="phone_number">โทรศัพท์:</label>
-                    <input type="text" id="phone_number" name="phone_number" class="form-control">
+                    <label for="province">จังหวัด: <span class="text-danger">*</span></label>
+                    <input type="text" id="province" name="province" class="form-control" required>
                 </div>
                 <div class="col-12 col-md-6">
-                    <label for="citizen_id">เลขบัตรประชาชน:</label>
-                    <input type="text" id="citizen_id" name="citizen_id" class="form-control">
+                    <label for="postal_code">รหัสไปรษณีย: <span class="text-danger">*</span></label>
+                    <input type="text" id="postal_code" name="postal_code" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-12 col-md-6">
+                    <label for="phone_number">โทรศัพท์: <span class="text-danger">*</span></label>
+                    <input type="text" id="phone_number" name="phone_number" class="form-control" required>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="citizen_id">เลขบัตรประชาชน: <span class="text-danger">*</span></label>
+                    <input type="text" id="citizen_id" name="citizen_id" class="form-control" required>
                 </div>
             </div>
 
@@ -411,7 +379,7 @@
             <hr>
 
             <div>
-                <h3>แนบไฟล์</h3>
+                <h3>แนบไฟล์ เอกสาร (สามารถกดแนบไฟล์พร้อมกันได้มากกว่า 1ไฟล์)</h3>
                 <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
                 <small class="text-muted">ประเภทไฟล์ที่รองรับ: jpg, jpeg, png, pdf (ขนาดไม่เกิน 2MB)</small>
                 <!-- แสดงรายการไฟล์ที่แนบ -->

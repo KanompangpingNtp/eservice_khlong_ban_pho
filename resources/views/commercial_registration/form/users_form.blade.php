@@ -100,17 +100,17 @@
         </div>
 
         <div class="mb-3 col-md-3">
-            <label for="trade_entrepreneur_village" class="form-label">หมู่ที่ <span style="color: red;">*</span></label>
+            <label for="trade_entrepreneur_village" class="form-label">หมู่ที่ </label>
             <input type="text" id="trade_entrepreneur_village" name="trade_entrepreneur_village" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
-            <label for="trade_entrepreneur_alley" class="form-label">ตรอก/ซอย <span style="color: red;">*</span></label>
+            <label for="trade_entrepreneur_alley" class="form-label">ตรอก/ซอย </label>
             <input type="text" id="trade_entrepreneur_alley" name="trade_entrepreneur_alley" class="form-control" required>
         </div>
 
         <div class="mb-3 col-md-3">
-            <label for="trade_entrepreneur_road" class="form-label">ถนน <span style="color: red;">*</span></label>
+            <label for="trade_entrepreneur_road" class="form-label">ถนน </label>
             <input type="text" id="trade_entrepreneur_road" name="trade_entrepreneur_road" class="form-control" required>
         </div>
 
@@ -135,7 +135,7 @@
         </div>
 
         <div class="mb-3 col-md-3">
-            <label for="trade_entrepreneur_fax" class="form-label">โทรสาร <span style="color: red;">*</span></label>
+            <label for="trade_entrepreneur_fax" class="form-label">โทรสาร</label>
             <input type="text" id="trade_entrepreneur_fax" name="trade_entrepreneur_fax" class="form-control" required>
         </div>
     </div>
@@ -211,15 +211,15 @@
             <input type="text" name="location_address_number" id="location_address_number" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
-            <label for="location_village">หมู่ที่ <span style="color: red;">*</span></label>
+            <label for="location_village">หมู่ที่</label>
             <input type="text" name="location_village" id="location_village" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
-            <label for="location_alley">ตรอก/ซอย <span style="color: red;">*</span></label>
+            <label for="location_alley">ตรอก/ซอย</label>
             <input type="text" name="location_alley" id="location_alley" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
-            <label for="location_road">ถนน <span style="color: red;">*</span></label>
+            <label for="location_road">ถนน</label>
             <input type="text" name="location_road" id="location_road" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
@@ -239,7 +239,7 @@
             <input type="text" name="location_phone" id="location_phone" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
-            <label for="location_fax">โทรสาร <span style="color: red;">*</span></label>
+            <label for="location_fax">โทรสาร</label>
             <input type="text" name="location_fax" id="location_fax" class="form-control" required>
         </div>
     </div>
@@ -746,7 +746,7 @@
         <input type="text" name="registration_point" id="registration_point" class="form-control">
     </div> --}}
     <div class="mb-3 col-md-3">
-        <label for="registration_point" class="form-label">ทุดจดทะเบียน <span style="color: red;">*</span></label>
+        <label for="registration_point" class="form-label">ทุนจดทะเบียน <span style="color: red;">*</span></label>
         <div style="display: flex; align-items: center;">
             <input type="text" name="registration_point" id="registration_point" class="form-control" required>
             <span class="ms-1">บาท</span>
@@ -824,10 +824,10 @@
         <label for="many_partners" class="form-label">จำนวนคน (คน)</label>
         <input type="text" name="many_partners" id="many_partners" class="form-control">
     </div> --}}
-    <div class="mb-3 col-md-5">
-        <label for="value_per_share" class="form-label">จำนวนคน <span style="color: red;">*</span></label>
+    <div class="mb-3">
+        <label for="value_per_share" class="form-label">จำนวนคน</label>
         <div style="display: flex; align-items: center;">
-            <input type="text" name="value_per_share" id="value_per_share" class="form-control" required>
+            <input type="text" name="value_per_share" id="value_per_share" class="form-control">
             <span class="ms-2" style="white-space: nowrap; width: 100%;">คน ดังนี้ (ใช้กรณีของจดทะเบียนเปลี่ยนแปลงรายการตามข้อ11)</span>
         </div>
     </div>
@@ -975,6 +975,11 @@
         <label for="other" class="form-label">รายละเอียดเพิ่มเติม</label>
         <textarea name="other" id="other" class="form-control" rows="3"></textarea>
     </div>
+
+    <br>
+    <span><strong>ข้าพเจ้าขอรับรองว่ารายการข้างต้นถูกต้องและเป็นจริงทุกประการ</strong></span>
+    <br>
+    <br>
 
     <div>
         <h3 for="attachments" class="form-label">แนบไฟล์</h3>

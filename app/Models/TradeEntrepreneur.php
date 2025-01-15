@@ -32,7 +32,8 @@ class TradeEntrepreneur extends Model
         'commercial_type3',
         'commercial_type4',
         'capital_amount',
-        'capital_amount_detaill'
+        'capital_amount_detaill',
+        'salutation'
     ];
 
     // กำหนดความสัมพันธ์กับโมเดล TradeRegistry (หนึ่งต่อหนึ่ง)
