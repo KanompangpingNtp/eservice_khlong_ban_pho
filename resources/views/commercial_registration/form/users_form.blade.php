@@ -74,8 +74,17 @@
     <h3 class="form-label">(1) ชื่อผู้ประกอบการ</h3>
 
     <div class="row">
+        <div class="mb-3 col-md-3">
+            <label for="salutation" class="form-label">คำนำหน้า</label>
+            <select class="form-select" id="salutation" name="salutation">
+                <option value="" selected disabled>เลือกคำนำหน้า</option>
+                <option value="นาย">นาย</option>
+                <option value="นาง">นาง</option>
+                <option value="นางสาว">นางสาว</option>
+            </select>
+        </div>
         <div class="mb-3 col-md-4">
-            <label for="trade_entrepreneur_name" class="form-label">ชื่อผู้ประกอบกิจการ <span style="color: red;">*</span></label>
+            <label for="trade_entrepreneur_name" class="form-label">ชื่อ-นามสกุล ผู้ประกอบกิจการ <span style="color: red;">*</span></label>
             <input type="text" id="trade_entrepreneur_name" name="trade_entrepreneur_name" class="form-control" required>
         </div>
 
@@ -211,16 +220,16 @@
             <input type="text" name="location_address_number" id="location_address_number" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
-            <label for="location_village">หมู่ที่</label>
+            <label for="location_village">หมู่ที่ <span style="color: red;">*</span></label>
             <input type="text" name="location_village" id="location_village" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="location_alley">ตรอก/ซอย</label>
-            <input type="text" name="location_alley" id="location_alley" class="form-control" required>
+            <input type="text" name="location_alley" id="location_alley" class="form-control" >
         </div>
         <div class="mb-3 col-md-4">
             <label for="location_road">ถนน</label>
-            <input type="text" name="location_road" id="location_road" class="form-control" required>
+            <input type="text" name="location_road" id="location_road" class="form-control" >
         </div>
         <div class="mb-3 col-md-4">
             <label for="location_subdistrict">ตำบล <span style="color: red;">*</span></label>
@@ -249,24 +258,24 @@
     <h3 class="form-label">(6) ข้อมูลผู้จัดการ</h3>
     <div class="row">
         <div class="mb-3 col-md-4">
-            <label for="manager_name">ชื่อ-สกุล</label>
-            <input type="text" name="manager_name" id="manager_name" class="form-control">
+            <label for="manager_name">ชื่อ-สกุล <span class="text-danger">*</span></label>
+            <input type="text" name="manager_name" id="manager_name" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
-            <label for="manager_age">อายุ (ปี)</label>
-            <input type="text" name="manager_age" id="manager_age" class="form-control">
+            <label for="manager_age">อายุ (ปี) <span class="text-danger">*</span></label>
+            <input type="text" name="manager_age" id="manager_age" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
-            <label for="manager_nationality">สัญชาติ</label>
-            <input type="text" name="manager_nationality" id="manager_nationality" class="form-control">
+            <label for="manager_nationality">สัญชาติ <span class="text-danger">*</span></label>
+            <input type="text" name="manager_nationality" id="manager_nationality" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
-            <label for="manager_address_number">ที่อยู่</label>
-            <input type="text" name="manager_address_number" id="manager_address_number" class="form-control">
+            <label for="manager_address_number">ที่อยู่ <span class="text-danger">*</span></label>
+            <input type="text" name="manager_address_number" id="manager_address_number" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
-            <label for="manager_village">หมู่ที่</label>
-            <input type="text" name="manager_village" id="manager_village" class="form-control">
+            <label for="manager_village">หมู่ที่ <span class="text-danger">*</span></label>
+            <input type="text" name="manager_village" id="manager_village" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="manager_alley">ตรอก/ซอย</label>
@@ -277,20 +286,20 @@
             <input type="text" name="manager_road" id="manager_road" class="form-control">
         </div>
         <div class="mb-3 col-md-4">
-            <label for="manager_subdistrict">ตำบล</label>
-            <input type="text" name="manager_subdistrict" id="manager_subdistrict" class="form-control">
+            <label for="manager_subdistrict">ตำบล <span class="text-danger">*</span></label>
+            <input type="text" name="manager_subdistrict" id="manager_subdistrict" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
-            <label for="manager_district">อำเภอ</label>
-            <input type="text" name="manager_district" id="manager_district" class="form-control">
+            <label for="manager_district">อำเภอ <span class="text-danger">*</span></label>
+            <input type="text" name="manager_district" id="manager_district" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
-            <label for="manager_province">จังหวัด</label>
-            <input type="text" name="manager_province" id="manager_province" class="form-control">
+            <label for="manager_province">จังหวัด <span class="text-danger">*</span></label>
+            <input type="text" name="manager_province" id="manager_province" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
-            <label for="manager_phone">โทรศัพท์</label>
-            <input type="text" name="manager_phone" id="manager_phone" class="form-control">
+            <label for="manager_phone">โทรศัพท์ <span class="text-danger">*</span></label>
+            <input type="text" name="manager_phone" id="manager_phone" class="form-control" required>
         </div>
         <div class="mb-3 col-md-4">
             <label for="manager_fax">โทรสาร</label>
@@ -302,15 +311,15 @@
     <br>
     <h3 class="form-label">(7) วันที่เริ่มต้นประกอบพาณิชยกิจในประเทศไทย</h3>
     <div class="mb-3 col-md-3">
-        <label for="start_date">ตั้งแต่วันที่</label>
-        <input type="date" name="start_date" id="start_date" class="form-control">
+        <label for="start_date">ตั้งแต่วันที่ <span class="text-danger">*</span></label>
+        <input type="date" name="start_date" id="start_date" class="form-control" required>
     </div>
 
     <br>
     <h3 class="form-label">(8) วันที่ขอจดทะเบียนพาณิชย์</h3>
     <div class="mb-3 col-md-3">
-        <label for="date_registration">วันที่จดทะเบียน</label>
-        <input type="date" name="date_registration" id="date_registration" class="form-control">
+        <label for="date_registration">วันที่จดทะเบียน <span class="text-danger">*</span></label>
+        <input type="date" name="date_registration" id="date_registration" class="form-control" required>
     </div>
 
     <!-- รับโอนเงินพาณิชย์ -->
