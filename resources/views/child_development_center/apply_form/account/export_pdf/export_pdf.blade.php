@@ -428,11 +428,11 @@
             <div style="padding-bottom: -4px;">
                 ชื่อ-สกุล
                 <span class="dotted-line" style="width: 82%; text-align: center;">
-                    {{ $form->surrenderTheChild->first()->child_recipient }}
+                    {{ $form->surrenderTheChild->first()->child_recipient_relevant }}
                 </span>
                 โดยเกี่ยวข้องเป็น
                 <span class="dotted-line" style="width: 85%; text-align: center;">
-                    {{ $form->surrenderTheChild->first()->child_recipient_relevant }}
+                    {{ $form->surrenderTheChild->first()->child_recipient_related }}
                 </span>
                 เบอร์โทรศัพท์ติดต่อ
                 <span class="dotted-line" style="width: 83%; text-align: center;">
