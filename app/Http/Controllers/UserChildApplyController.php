@@ -153,6 +153,8 @@ class UserChildApplyController extends Controller
             'parent_workplace' => 'required|string|max:255',
             'parent_phone' => 'required|string|max:255',
             // 'marital_status_details' => 'nullable|string|max:255',
+
+            'surrender_hour_number' => 'required|string|max:255',
         ]);
 
         // dd($request);
@@ -214,6 +216,7 @@ class UserChildApplyController extends Controller
             'age' => $request->surrender_age,
             'occupation' => $request->surrender_occupation,
             'income' => $request->surrender_income,
+            'hour_number' => $request->surrender_hour_number,
             'village' => $request->surrender_village,
             'alley_road' => $request->surrender_alley_road,
             'subdistrict' => $request->surrender_subdistrict,

@@ -383,7 +383,7 @@
         </div>
         <div> อาชีพ <span class="dotted-line" style="width: 20%; text-align: center; margin-top:5px;"> {{ $form->surrenderTheChild->first()->occupation }} </span> รายได้
             <span class="dotted-line" style="width: 15%; text-align: center; margin-top:20px;"> {{ $form->surrenderTheChild->first()->income }} </span> บาท/เดือน
-            ที่อยู่ปัจจุบัน เลขที่ <span class="dotted-line" style="width: 11%; text-align: center; margin-top:5px;">{{ $form->surrenderTheChild->first()->surrender_income }}</span> หมู่ที่ <span class="dotted-line" style="width: 11%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->village }}
+            ที่อยู่ปัจจุบัน เลขที่ <span class="dotted-line" style="width: 11%; text-align: center; margin-top:5px;">{{ $form->surrenderTheChild->first()->hour_number }} </span> หมู่ที่ <span class="dotted-line" style="width: 11%; text-align: center; margin-top:20px;">{{ $form->surrenderTheChild->first()->village }}
         </div>
         <div> ถนน/ตรอก/ซอย <span class="dotted-line" style="width: 30%; text-align: center; margin-top:5px;">{{ $form->surrenderTheChild->first()->alley_road }} </span>
             ตำบล
