@@ -215,7 +215,7 @@
         <span>มีพี่น้องร่วมบิดา - มารดาเดียวกันจำนวน</span>
         <span class="dotted-line" style="width: 26%; text-align: center;"> {{ $form->number_of_siblings }} </span>
         <span>คน เป็นบุตรลำดับที่</span>
-        <span class="dotted-line" style="width: 26%; text-align: center;"> data </span>
+        <span class="dotted-line" style="width: 26%; text-align: center;">  </span>
     </div>
     <div class="box_text" style="text-align: left; margin-top: 5px;">
         <span>๕. โรคประจำตัว</span>
