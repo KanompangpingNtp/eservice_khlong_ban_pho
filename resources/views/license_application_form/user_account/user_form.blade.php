@@ -15,16 +15,16 @@
 
         <!-- Write The Date -->
         <div class="col-md-3 mb-3">
-            <label for="write_the_date">เขียนวันที่</label>
-            <input type="date" name="write_the_date" id="write_the_date" class="form-control">
+            <label for="write_the_date">เขียนวันที่ <span class="text-danger">*</span></label></label>
+            <input type="date" name="write_the_date" id="write_the_date" class="form-control" required>
         </div>
     </div>
 
     <div class="row">
         <!-- Salutation -->
         <div class="col-md-3 mb-3">
-            <label for="salutation">ชื่อนำหน้า</label>
-            <select class="form-select" id="salutation" name="salutation">
+            <label for="salutation">ชื่อนำหน้า <span class="text-danger">*</span></label></label>
+            <select class="form-select" id="salutation" name="salutation" required>
                 <option value="" selected disabled>เลือกคำนำหน้า</option>
                 <option value="นาย">นาย</option>
                 <option value="นาง">นาง</option>
