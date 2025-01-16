@@ -25,7 +25,9 @@ class UserChildApplyController extends Controller
 
     public function ChildApplyFormCreate(Request $request)
     {
+        // dd($request);
         $birthday = $request->birthday ? Carbon::createFromFormat('d/m/Y', $request->birthday)->format('Y-m-d') : null;
+        $registration_birthday = $request->registration_birthday ? Carbon::createFromFormat('d/m/Y', $request->registration_birthday)->format('Y-m-d') : null;
         $request->validate([
             'full_name' => 'required|string|max:255',
             'ethnicity' => 'required|string|max:255',
@@ -92,7 +94,9 @@ class UserChildApplyController extends Controller
             'child_recipient_related' => 'required|string|max:255',
             'child_recipient_phone' => 'required|string|max:255',
             'child_recipient_salutation' => 'nullable|string|max:255',
-            'child_surrender_salutation' => 'nullable|string|max:255',
+
+            'the_child_number' => 'nullable|string|max:255',
+
             'child_surrender_salutation1' => 'nullable|string|max:255',
             'child_salutation' => 'nullable|string|max:255',
 
@@ -100,7 +104,7 @@ class UserChildApplyController extends Controller
             'child_name' => 'required|string|max:255',
             'child_nickname' => 'required|string|max:255',
             'registration_citizen_id' => 'required|string',
-            'registration_birthday' => 'required|date|date_format:Y-m-d',
+            'registration_birthday' => 'required|date',
             'birth_province' => 'required|string|max:255',
             'registration_ethnicity' => 'required|string|max:255',
             'registration_nationality' => 'required|string|max:255',
@@ -190,6 +194,7 @@ class UserChildApplyController extends Controller
             'number_of_siblings' => $request->number_of_siblings,
             'congenital_disease' => $request->congenital_disease,
             'blood_group' => $request->blood_group,
+            'the_child_number' => $request->the_child_number,
         ]);
 
         $caregiverInformation = CaregiverInformation::create([
@@ -243,7 +248,7 @@ class UserChildApplyController extends Controller
             'child_name' => $request->child_name,
             'child_nickname' => $request->child_nickname,
             'citizen_id' => $request->registration_citizen_id,
-            'birthday' => $request->registration_birthday,
+            'birthday' => $registration_birthday,
             'birth_province' => $request->birth_province,
             'ethnicity' => $request->registration_ethnicity,
             'nationality' => $request->registration_nationality,

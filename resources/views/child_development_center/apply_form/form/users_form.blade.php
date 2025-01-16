@@ -37,6 +37,7 @@
                 <label for="birthday" class="form-label">เกิดวันที่ <span class="text-danger">*</span></label>
                 <input type="date" class="form-control" name="birthday" id="birthday" required>
             </div> --}}
+
             <div class="row mb-3">
                 <div class="col-12 col-md-4">
                     <label for="day">วันเกิดที่ (กรอกวันที่เกิด) <span class="text-danger">*</span></label>
@@ -160,7 +161,7 @@
                     });
                 });
             </script>
-        </div>
+
 
         <div class="row ">
             <div class="col-md-4 mb-3">
@@ -269,6 +270,10 @@
             <div class="col-md-6 mb-3">
                 <label for="number_of_siblings" class="form-label">มีพี่น้องร่วมบิดา - มารดาเดียวกันจำนวน (ถ้าไม่มีใส่ - )</label>
                 <input type="text" name="number_of_siblings" class="form-control" id="number_of_siblings" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="the_child_number" class="form-label">เป็นบุตรลำดับที่</label>
+                <input type="text" name="the_child_number" class="form-control" id="the_child_number" required>
             </div>
             <div class="col-md-6 mb-3">
                 <label for="congenital_disease" class="form-label">โรคประจำตัว</label>
@@ -596,10 +601,116 @@
             <input type="text" name="registration_citizen_id" class="form-control" required>
         </div>
 
-        <div class="col-md-4 mb-3">
+        {{-- <div class="col-md-4 mb-3">
             <label for="registration_birthday">วัน เดือน ปี เกิด <span class="text-danger">*</span></label>
             <input type="date" name="registration_birthday" class="form-control" required>
+        </div> --}}
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <label for="reg_day">วันเกิดที่ (กรอกวันที่เกิด) <span class="text-danger">*</span></label>
+                <input type="number" id="reg_day" name="reg_day" class="form-control" min="1" max="31" required>
+                <small id="reg_dayError" class="form-text text-danger" style="display: none;">กรุณากรอกวันเป็นตัวเลขระหว่าง 1 - 31</small>
+            </div>
+
+            <script>
+              document.getElementById("reg_day").addEventListener("input", function() {
+                const regDayInput = document.getElementById("reg_day");
+                const regDayError = document.getElementById("reg_dayError");
+
+                const regDayValue = parseInt(regDayInput.value, 10);
+
+                if (regDayValue < 1 || regDayValue > 31 || isNaN(regDayValue)) {
+                  regDayInput.value = "";
+                  regDayError.style.display = "block";
+                  regDayInput.classList.add("is-invalid");
+                } else {
+                  regDayError.style.display = "none";
+                  regDayInput.classList.remove("is-invalid");
+                }
+              });
+            </script>
+
+            <div class="col-12 col-md-4">
+                <label for="reg_month">เดือน (เลือกเดือนเกิด) <span class="text-danger">*</span></label>
+                <select id="reg_month" name="reg_month" class="form-control" required>
+                    <option value="1">มกราคม</option>
+                    <option value="2">กุมภาพันธ์</option>
+                    <option value="3">มีนาคม</option>
+                    <option value="4">เมษายน</option>
+                    <option value="5">พฤษภาคม</option>
+                    <option value="6">มิถุนายน</option>
+                    <option value="7">กรกฎาคม</option>
+                    <option value="8">สิงหาคม</option>
+                    <option value="9">กันยายน</option>
+                    <option value="10">ตุลาคม</option>
+                    <option value="11">พฤศจิกายน</option>
+                    <option value="12">ธันวาคม</option>
+                </select>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <label for="reg_year">ปี (กรอกปีที่เกิดเป็น พ.ศ.) <span class="text-danger">*</span></label>
+                <input type="number" id="reg_year" name="reg_year" class="form-control" min="1900" required>
+                <small id="reg_yearError" class="form-text text-danger" style="display: none;">กรุณากรอกปี 4 หลัก</small>
+            </div>
+
+            <script>
+                document.getElementById("reg_year").addEventListener("input", function() {
+                    const regYearInput = document.getElementById("reg_year");
+                    const regYearError = document.getElementById("reg_yearError");
+
+                    if (regYearInput.value.length > 4) {
+                        regYearInput.value = regYearInput.value.slice(0, 4);
+                    }
+
+                    const regYearValue = regYearInput.value;
+
+                    if (regYearValue.length !== 4 || isNaN(regYearValue)) {
+                        regYearError.style.display = "block";
+                        regYearInput.classList.add("is-invalid");
+                    } else {
+                        regYearError.style.display = "none";
+                        regYearInput.classList.remove("is-invalid");
+                    }
+                });
+            </script>
         </div>
+
+        <div class="row mb-1">
+            <div class="col-12 d-flex align-items-center">
+                <label for="reg_birth_day" class="mb-0 me-2" style="width: 12rem;">วันเกิดตามปฎิทินสากลคือ</label>
+                <input type="text" id="reg_birth_day" name="registration_birthday" class="form-control" readonly>
+            </div>
+        </div>
+
+        <style>
+            #reg_birth_day {
+                border: none;
+                background: transparent;
+                box-shadow: none;
+            }
+        </style>
+
+        <script>
+            function convertRegToAD(year) {
+                return year - 543;
+            }
+
+            document.querySelectorAll("#reg_day, #reg_month, #reg_year").forEach(input => {
+                input.addEventListener("input", function () {
+                    const regDay = document.getElementById("reg_day").value;
+                    const regMonth = document.getElementById("reg_month").value;
+                    const regYear = document.getElementById("reg_year").value;
+
+                    if (regDay && regMonth && regYear) {
+                        const regYearAD = convertRegToAD(parseInt(regYear));
+                        const formattedRegDate = `${String(regDay).padStart(2, '0')}/${String(regMonth).padStart(2, '0')}/${regYearAD}`;
+
+                        document.getElementById("reg_birth_day").value = formattedRegDate;
+                    }
+                });
+            });
+        </script>
 
         <div class="col-md-4 mb-3">
             <label for="birth_province">จังหวัดที่เกิด <span class="text-danger">*</span></label>

@@ -568,7 +568,7 @@
                         </span>
                         <span>)</span>
                     </div>
-                    <span>นายก เทศมนตรี/นายก อบต.</span>
+                    {{-- <span>นายก เทศมนตรี/นายก อบต.</span>
                     <span class="dotted-line"
                         style="width: 30%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
                     </span>
@@ -582,7 +582,7 @@
                     <span>วัน/เดือน/ปี</span>
                     <span class="dotted-line"
                         style="width: 40%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
-                    </span>
+                    </span> --}}
                     {{-- <div style="margin-left: 40px;">
                         <span>(</span>
                         <span class="dotted-line"

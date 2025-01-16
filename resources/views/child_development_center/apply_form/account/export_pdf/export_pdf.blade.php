@@ -215,7 +215,7 @@
         <span>มีพี่น้องร่วมบิดา - มารดาเดียวกันจำนวน</span>
         <span class="dotted-line" style="width: 26%; text-align: center;"> {{ $form->number_of_siblings }} </span>
         <span>คน เป็นบุตรลำดับที่</span>
-        <span class="dotted-line" style="width: 26%; text-align: center;">  </span>
+        <span class="dotted-line" style="width: 26%; text-align: center;"> {{ $form->the_child_number }} </span>
     </div>
     <div class="box_text" style="text-align: left; margin-top: 5px;">
         <span>๕. โรคประจำตัว</span>
@@ -378,7 +378,7 @@
         </div>
     </div>
     <div class="box_text" style="text-align: left; margin-top: 1rem; ">
-        <div style="margin-left: 2rem;"> ข้าพเจ้า <span class="dotted-line" style="width: 61%; text-align: center; margin-top:5px;"> {{ $form->surrenderTheChild->first()->full_name }}</span> อายุ
+        <div style="margin-left: 2rem;"> ข้าพเจ้า <span class="dotted-line" style="width: 61%; text-align: center; margin-top:5px;">{{ $form->surrenderTheChild->first()->salutation }}&nbsp;{{ $form->surrenderTheChild->first()->full_name }}</span> อายุ
             <span class="dotted-line" style="width: 25%; text-align: center; margin-top:5px;"> {{ $form->surrenderTheChild->first()->age }}</span> ปี
         </div>
         <div> อาชีพ <span class="dotted-line" style="width: 20%; text-align: center; margin-top:5px;"> {{ $form->surrenderTheChild->first()->occupation }} </span> รายได้
@@ -474,8 +474,8 @@
             </div>
         </div>
         <div class="box_text" style="text-align: left; margin-top: 5px;">
-            <span>{{ $form->surrenderTheChild->first()->child_salutation }}</span>
-            <span class="dotted-line" style="width: 50%; text-align: center;"> {{ $form->childRegistration->first()->child_name }} </span>
+            <span>ชื่อ-สกุล เด็ก</span>
+            <span class="dotted-line" style="width: 50%; text-align: center;">{{ $form->surrenderTheChild->first()->child_salutation }}&nbsp;{{ $form->childRegistration->first()->child_name }} </span>
             <span>ชื่อเล่น</span>
             <span class="dotted-line" style="width: 29%; text-align: center;"> {{ $form->childRegistration->first()->child_nickname }} </span>
         </div>

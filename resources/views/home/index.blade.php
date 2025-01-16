@@ -101,12 +101,12 @@
                 </div>
                 <div class="half-border-left-i">
                     <a href="{{ route('ElderlyAllowanceFormPage') }}"
-                        class="buttom-cool-left fs-3 font-sarabun text-center" style="line-height: 1.2;">
+                        class="buttom-cool-left fs-4 font-sarabun text-start" style="line-height: 1.2;">
                         <span class="circle">
                             <img src="{{ asset('images/layout-index/old-people.png') }}" alt="Icon" />
                         </span>
                         <span class="squre"></span>
-                        แบบยืนยันสิทธิผู้สูงอายุ
+                        แบบคำขอยืนยันสิทธิรับเงิน<br class="d-block d-md-none d-lg-block"> เบี้ยยังชีพผู้สูงอายุ
                     </a>
                 </div>
                 <div class="half-border-right-i">
@@ -116,8 +116,8 @@
                             <img src="{{ asset('images/layout-index/disabled.png') }}" alt="Icon" />
                         </span>
                         <span class="squre"></span>
-                        แบบคำขอลงทะเบียน<br class="d-block d-sm-none d-lg-block">
-                        รับเบี้ยความพิการ
+                        แบบคำขอลงทะเบียนรับเงิน<br class="d-block d-sm-none d-lg-block">
+                        เบี้ยความพิการ
                     </a>
                 </div>
                 <div class="half-border-left-ii">
