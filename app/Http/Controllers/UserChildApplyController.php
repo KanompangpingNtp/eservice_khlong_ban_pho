@@ -13,6 +13,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\ChildReply;
 use App\Models\SurrenderTheChild;
 use App\Models\ChildRegistration;
+use Carbon\Carbon;
 
 class UserChildApplyController extends Controller
 {
@@ -24,6 +25,7 @@ class UserChildApplyController extends Controller
 
     public function ChildApplyFormCreate(Request $request)
     {
+        $birthday = $request->birthday ? Carbon::createFromFormat('d/m/Y', $request->birthday)->format('Y-m-d') : null;
         $request->validate([
             'full_name' => 'required|string|max:255',
             'ethnicity' => 'required|string|max:255',
@@ -167,7 +169,7 @@ class UserChildApplyController extends Controller
             'full_name' => $request->full_name,
             'ethnicity' => $request->ethnicity,
             'nationality' => $request->nationality,
-            'birthday' => $request->birthday,
+            'birthday' => $birthday,
             'age' => $request->age,
             'age_months' => $request->age_months,
             'citizen_id' => $request->citizen_id,
