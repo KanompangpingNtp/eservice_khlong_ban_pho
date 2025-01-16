@@ -6,46 +6,46 @@
     <form action="{{ route('BusinessDocFormCreate') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-            <label for="business_operator_name"> ชื่อผู้ประกอบพาณิชย์กิจ</label>
+            <label for="business_operator_name">ชื่อผู้ประกอบพาณิชย์กิจ <span class="text-danger">*</span></label>
             <input type="text" class="form-control" id="business_operator_name" name="business_operator_name" required>
         </div>
 
         <div class="form-group">
-            <label for="registration_number">ทะเบียนเลขที่</label>
+            <label for="registration_number">ทะเบียนเลขที่ <span class="text-danger">*</span></label>
             <input type="text" class="form-control" id="registration_number" name="registration_number" required>
         </div>
 
         <div class="form-group">
-            <label for="owner_name">ชื่อผู้ประกอบการ</label>
+            <label for="owner_name">1. ชื่อผู้ประกอบการ <span class="text-danger">*</span></label>
             <input type="text" class="form-control" id="owner_name" name="owner_name" required>
         </div>
 
         <div class="form-group">
-            <label for="company_name">ชื่อที่ใช้ในการประกอบพาณิชย์กิจ</label>
+            <label for="company_name">2. ชื่อที่ใช้ในการประกอบพาณิชย์กิจ <span class="text-danger">*</span></label>
             <input type="text" class="form-control" id="company_name" name="company_name" required>
         </div>
 
         <div class="form-group">
-            <label for="address">ที่อยู่ตามใบทะเบียนพาณิชย์</label>
+            <label for="address">3. ที่อยู่ตามใบทะเบียนพาณิชย์ <span class="text-danger">*</span></label>
             <input type="text" class="form-control" id="address" name="address" required>
         </div>
 
         <div class="form-group">
-            <label for="website"> ชื่อเว็บไซต์</label>
-            <input type="text" class="form-control" id="website" name="website">
+            <label for="website">4. ชื่อเว็บไซต์ <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="website" name="website" required>
         </div>
 
         <br>
 
         <div class="form-group">
-            <label for="group_of_websites">โปรดเลือกหมวดหมู่ของเว็บไซต์</label><br>
+            <label for="group_of_websites">5. โปรดเลือกหมวดหมู่ของเว็บไซต์</label><br>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="option1" name="group_of_websites[]" value="option1">
                 <label class="form-check-label" for="option1">คอมพิวเตอร์ อุปกรณ์ไอที และซอฟแวร์</label>
             </div>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="option2" name="group_of_websites[]" value="option2">
-                <label class="form-check-label" for="option2">จดโดเมน/ออกแบบเว็บไซต</label>
+                <label class="form-check-label" for="option2">จดโดเมน/ออกแบบเว็บไซต์</label>
             </div>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="option3" name="group_of_websites[]" value="option3">
@@ -80,7 +80,7 @@
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="option10" name="group_of_websites[]"
                     value="option10">
-                <label class="form-check-label" for="option10">การเงิน กฎหมาย บัญชี และให้คำาปรึกษาอื่นๆ</label>
+                <label class="form-check-label" for="option10">การเงิน กฎหมาย บัญชี และให้คำปรึกษาอื่นๆ</label>
             </div>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="option11" name="group_of_websites[]"
@@ -110,12 +110,12 @@
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="option16" name="group_of_websites[]"
                     value="option16">
-                <label class="form-check-label" for="option16">บริการให้เช่าอุปกรณ์ เครื่องมือ และเครื่องยนต</label>
+                <label class="form-check-label" for="option16">บริการให้เช่าอุปกรณ์ เครื่องมือ และเครื่องยนต์</label>
             </div>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="option17" name="group_of_websites[]"
                     value="option17">
-                <label class="form-check-label" for="option17">เครื่องอุปโภค/บริโภคประจำาวัน</label>
+                <label class="form-check-label" for="option17">เครื่องอุปโภค/บริโภคประจำวัน</label>
             </div>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="option18" name="group_of_websites[]"
@@ -147,7 +147,7 @@
         <br>
 
         <div class="form-group">
-            <label for="types_of_business">ชนิดแห่งพาณิชย์กิจ
+            <label for="types_of_business">6. ชนิดแห่งพาณิชย์กิจ
                 (ระบุข้อความเพิ่มเติมจากข้อ 5 ว่า
                 เว็บไซต์ของท่านดำาเนินธุรกิจซื้อขาย
                 สินค้าหรือบริการใด)</label>
@@ -160,7 +160,7 @@
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="option2" name="types_of_business[]"
                     value="option2">
-                <label class="form-check-label" for="option2">บริการ สินค้าทุกอย่างที่คุณต้องการ</label>
+                <label class="form-check-label" for="option2">ขายส่งสินค้า สินค้าทุกอย่างที่คุณต้องการ</label>
             </div>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="option3" name="types_of_business[]"
@@ -190,7 +190,7 @@
         <br>
 
         <div class="form-group">
-            <label>ระบบสั่งจองสั่งซื้อสินค้าที่ใช้</label>
+            <label>7. ระบบสั่งจองสั่งซื้อสินค้าที่ใช้</label>
 
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="option1" name="order_products_used[]"
@@ -229,11 +229,11 @@
         <br>
 
         <div class="form-group">
-            <label>วิธีการชำระเงิน</label>
+            <label>8. วิธีการชำระเงิน</label>
 
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="option1" name="payment_method[]" value="option1">
-                <label class="form-check-label" for="option1">ชำระเงินแบบออฟไลน</label>
+                <label class="form-check-label" for="option1">ชำระเงินแบบออฟไลน์</label>
             </div>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="option2" name="payment_method[]" value="option2">
@@ -259,7 +259,7 @@
         <br>
 
         <div class="form-group">
-            <label>วิธีการส่งสินค้า</label>
+            <label>9. วิธีการส่งสินค้า</label>
 
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="option1" name="shipping_method[]"
@@ -298,33 +298,33 @@
         <br>
 
         <div class="form-group">
-            <label for="capital_amount"> จำานวนเงินทุน (ที่ใช่ในการทำาพาณิชย์อิเล็กทรอนิกส์)</label>
+            <label for="capital_amount">10. จำนวนเงินทุน (ที่ใช่ในการทำาพาณิชย์อิเล็กทรอนิกส์)</label>
             <input type="text" class="form-control" id="capital_amount" name="capital_amount">
         </div>
 
         <div class="form-group">
-            <label for="telephone_number"> หมายเลขโทรศัพท์</label>
-            <input type="text" class="form-control" id="telephone_number" name="telephone_number" required>
+            <label for="telephone_number">11. หมายเลขโทรศัพท์</label>
+            <input type="text" class="form-control" id="telephone_number" name="telephone_number" >
         </div>
 
         <div class="form-group">
-            <label for="fax_number"> หมายเลขโทรสาร</label>
+            <label for="fax_number">12. หมายเลขโทรสาร</label>
             <input type="text" class="form-control" id="fax_number" name="fax_number">
         </div>
 
         <div class="form-group">
-            <label for="e_mail"> e-Mail (ที่ใช้ในการขอรับ Source Code)</label>
-            <input type="text" class="form-control" id="e_mail" name="e_mail" required>
+            <label for="e_mail">13. e-Mail (ที่ใช้ในการขอรับ Source Code)</label>
+            <input type="text" class="form-control" id="e_mail" name="e_mail" >
         </div>
 
         <div class="form-group">
-            <label for="manager_name">ชื่อผู้จัดการ</label>
-            <input type="text" class="form-control" id="manager_name" name="manager_name" required>
+            <label for="manager_name">14. ชื่อผู้จัดการ</label>
+            <input type="text" class="form-control" id="manager_name" name="manager_name" >
         </div>
 
         <div class="form-group">
-            <label for="registered_office"> สำานักงานที่จดทะเบียน</label>
-            <input type="text" class="form-control" id="registered_office" name="registered_office" required>
+            <label for="registered_office">15. สำนักงานที่จดทะเบียน</label>
+            <input type="text" class="form-control" id="registered_office" name="registered_office" >
         </div>
 
         <br>

@@ -39,11 +39,11 @@ class UserBusinessDocController extends Controller
             'shipping_method' => 'nullable|array',
             'shipping_method.*' => 'in:option1,option2,option3,option4,option5,option6',
             'capital_amount' => 'nullable|string|max:255',
-            'telephone_number' => 'required|string|max:255',
+            'telephone_number' => 'nullable|string|max:255',
             'fax_number' => 'nullable|string|max:255',
-            'e_mail' => 'required|string|max:255',
-            'manager_name' => 'required|string|max:255',
-            'registered_office' => 'required|string|max:255',
+            'e_mail' => 'nullable|string|max:255',
+            'manager_name' => 'nullable|string|max:255',
+            'registered_office' => 'nullable|string|max:255',
 
             'order_products_used_detail' => 'nullable|string|max:255',
             'payment_method_detail' => 'nullable|string|max:255',
@@ -105,7 +105,8 @@ class UserBusinessDocController extends Controller
 
     public function TableBusinessDocUsersPages()
     {
-        $forms = BusinessDoc::with(['user', 'files', 'replies'])->get();
+        $forms = BusinessDoc::with(['user', 'files', 'replies'])->where('users_id', Auth::id())
+            ->get();
 
         return view('business_registration_documents.user_account.form_record.form_record', compact('forms'));
     }

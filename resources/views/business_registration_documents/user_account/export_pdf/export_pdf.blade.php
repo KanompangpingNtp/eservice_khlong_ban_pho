@@ -180,10 +180,10 @@
                     (Type Of Business)</td>
                 <td style="border: 1px solid black; padding: 1px; width: 60%;">
                     <ul class="checkbox-list">
-                        <li class="checkbox-item">
+                        {{-- <li class="checkbox-item">
                             <input type="checkbox" id="item1" {{ in_array('option1', $selectedWebsites) ? 'checked' : '' }}>
-                            <label for="item1">คอมพิวเตอร์ อุปกรณ์ไอที
-                                และซอฟแวร์</label>
+                        <label for="item1">คอมพิวเตอร์ อุปกรณ์ไอที
+                            และซอฟแวร์</label>
                         </li>
                         <li class="checkbox-item">
                             <input type="checkbox" id="item2" {{ in_array('option2', $selectedWebsites) ? 'checked' : '' }}>
@@ -279,22 +279,56 @@
                             <input type="checkbox" id="item21" {{ in_array('option22', $selectedWebsites) ? 'checked' : '' }}>
                             <label for="item21">ธุรกิจอื่น
                             </label>
+                        </li> --}}
+                        @php
+                        $selectedWebsites = $selectedWebsites ?? []; // ตั้งค่าเริ่มต้นเป็น array ว่างหาก $selectedWebsites เป็น null
+                        @endphp
+
+                        @foreach ([
+                        'option1' => 'คอมพิวเตอร์ อุปกรณ์ไอที และซอฟแวร์',
+                        'option2' => 'จดโดเมน/ออกแบบเว็บไซต์',
+                        'option3' => 'บันเทิง และนันทนาการ',
+                        'option4' => 'เกมส์/ของเล่น/ของขวัญ/เบ็ดเตล็ด',
+                        'option5' => 'เครื่องมือเครื่องใช้อุตสาหกรรม',
+                        'option6' => 'การแพทย์และสุขภาพ',
+                        'option7' => 'ท่องเที่ยว/จองตั๋ว/จองโรงแรม/เช่ารถ',
+                        'option8' => 'ออกแบบตกแต่งอาคารและสถานที่',
+                        'option9' => 'การศึกษา',
+                        'option10' => 'การเงิน กฎหมาย บัญชี และให้คำปรึกษาอื่นๆ',
+                        'option11' => 'ยานยนต์และอะไหล่',
+                        'option12' => 'เครื่องมือสื่อสาร/กล้อง',
+                        'option13' => 'แฟชั่น/เครื่องแต่งกาย/เครื่องประดับ',
+                        'option14' => 'อาหารและเครื่องดื่ม',
+                        'option15' => 'ศิลปะและวัฒนธรรม',
+                        'option16' => 'บริการให้เช่าอุปกรณ์ เครื่องมือ และเครื่องยนต์',
+                        'option17' => 'เครื่องอุปโภค/บริโภคประจำวัน',
+                        'option18' => 'ข่าว/สื่อ/โฆษณา',
+                        'option19' => 'เฟอร์นิเจอร์และอุปกรณ์ตกแต่ง',
+                        'option20' => 'อุปกรณ์กีฬา/สันทนาการ',
+                        'option21' => 'วัสดุก่อสร้าง/เครื่องมือ/อุปกรณ์ก่อสร้าง',
+                        'option22' => 'ธุรกิจอื่น',
+                        ] as $key => $label)
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="{{ $key }}" name="selectedWebsites[]" value="{{ $key }}" {{ in_array($key, $selectedWebsites) ? 'checked' : '' }}>
+                            <label for="{{ $key }}">{{ $label }}</label>
                         </li>
+                        @endforeach
+
                     </ul>
                 </td>
             </tr>
             <tr>
                 <td style="border: 1px solid black; padding: 1px; vertical-align: top; width: 40%;">6.
                     ชนิดแห่งพาณิชย์กิจ
-                    (ระบุข้อความเพิ่มเติมจากข้อ 5 ว่า
+                    {{-- (ระบุข้อความเพิ่มเติมจากข้อ 5 ว่า
                     เว็บไซต์ของท่านดำเนินธุรกิจซื้อขาย
-                    สินค้าหรือบริการใด)
+                    สินค้าหรือบริการใด) --}}
                 </td>
                 <td style="border: 1px solid black; padding: 1px; width: 60%;">
                     <ul class="checkbox-list">
-                        <li class="checkbox-item">
+                        {{-- <li class="checkbox-item">
                             <input type="checkbox" id="item1" {{ in_array('option1', $typesOfBusiness) ? 'checked' : '' }}>
-                            <label for="item1">ขายปลีกสินค้า</label>
+                        <label for="item1">ขายปลีกสินค้า</label>
                         </li>
                         <li class="checkbox-item">
                             <input type="checkbox" id="item2" {{ in_array('option2', $typesOfBusiness) ? 'checked' : '' }}>
@@ -318,7 +352,32 @@
                             <label for="item6">บริการตลาดกลางในการซื้อขายสินค้าหรือบริการ
                                 (E-Marketplace)
                             </label>
+                        </li> --}}
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item1" {{ isset($typesOfBusiness) && in_array('option1', $typesOfBusiness) ? 'checked' : '' }}>
+                            <label for="item1">ขายปลีกสินค้า</label>
                         </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item2" {{ isset($typesOfBusiness) && in_array('option2', $typesOfBusiness) ? 'checked' : '' }}>
+                            <label for="item2">ขายส่งสินค้า</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item3" {{ isset($typesOfBusiness) && in_array('option3', $typesOfBusiness) ? 'checked' : '' }}>
+                            <label for="item3">บริการ</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item4" {{ isset($typesOfBusiness) && in_array('option4', $typesOfBusiness) ? 'checked' : '' }}>
+                            <label for="item4">บริการอินเทอร์เน็ต (Internet Service Provider : ISP)</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item5" {{ isset($typesOfBusiness) && in_array('option5', $typesOfBusiness) ? 'checked' : '' }}>
+                            <label for="item5">ให้เช่าพื้นที่ของเครื่องคอมพิวเตอร์แม่ข่าย (Web Hosting)</label>
+                        </li>
+                        <li class="checkbox-item">
+                            <input type="checkbox" id="item6" {{ isset($typesOfBusiness) && in_array('option6', $typesOfBusiness) ? 'checked' : '' }}>
+                            <label for="item6">บริการตลาดกลางในการซื้อขายสินค้าหรือบริการ (E-Marketplace)</label>
+                        </li>
+
                     </ul>
                 </td>
             </tr>

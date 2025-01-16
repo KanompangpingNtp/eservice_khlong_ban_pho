@@ -70,6 +70,8 @@ class UserLicenseController extends Controller
             'attachments.*' => 'nullable|file|mimes:jpg,jpeg,png,pdf',
         ]);
 
+        // dd($request);
+
         $bizHazLicense = BizHazLicense::create([
             'users_id' => auth()->id(),
             'status' => 1,

@@ -13,7 +13,7 @@
     <div class="container">
         <h3 class="text-center">ใบสมัคร <br></h3>
         <h3 class="text-center">ศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลคลองบ้านโพธิ์</h3>
-        <h4 class="text-center"><span class="text-danger">** </span><strong>หากไม่มีการกรอกข้อมูลในช่องนั้นๆให้กรอก - แทน</strong></h4><br>
+        <h4 class="text-center"><span class="text-danger">** </span><strong>หากไม่มีการกรอกข้อมูล กรุณาใส่เครื่องหมาย - แทน</strong></h4><br>
 
         <h3>ข้อมูลเด็กเล็ก</h3>
         <!-- Child Information -->
@@ -44,9 +44,16 @@
                 <label for="age" class="form-label">อายุ (ปี) <span class="text-danger">*</span></label>
                 <input type="number" class="form-control" name="age" id="age" required>
             </div>
-            <div class="col-md-4 mb-3">
+            {{-- <div class="col-md-4 mb-3">
                 <label for="age_months" class="form-label">อายุ (เดือน) นับถึงวันที่ 16 พฤษภาคม</label>
                 <input type="number" class="form-control" name="age_months" id="age_months" required>
+            </div> --}}
+            <div class="col-md-4 mb-3">
+                <label for="age_months" class="form-label">อายุ (เดือน)</label>
+                <div class="d-flex align-items-center">
+                    <input type="number" class="form-control" name="age_months" id="age_months" required>
+                    <span class="col-md-5 ms-3">นับถึงวันที่ 16 พฤษภาคม</span>
+                </div>
             </div>
             <div class="col-md-4 mb-3">
                 <label for="age_since_date" class="form-label"></label>
@@ -272,7 +279,7 @@
         <div class="col-md-12">
             <span><strong>คำรับรอง</strong><br></span>
             <span class="ms-4">1. ข้าพเจ้าขอรับรองว่า ได้อ่านประกาศรับสมัครศูนย์พัฒนาเด็กเล็กองคฺ์การบริหารส่วนตำบลคลองบ้านโพธิ์เข้าใจแล้ว เด็กที่นำมาสมัครมีคุณสมบัติถูกต้องตรงประกาศ และหลักฐานที่ใช้สมัครใน
-                <br> วันนี้เป็นหลักฐานที่ถูกต้องจริง <br>
+                 วันนี้เป็นหลักฐานที่ถูกต้องจริง <br>
             </span>
             <span class="ms-4">2. ข้าพเจ้ามีสิทธิถูกต้องในการที่จะให้เด็กสมัครเข้ารับการศึกษาเลี้ยงดูในศูนย์พัฒนาเด็กเล็กขององค์การบริหารส่วนตำบลคลองบ้านโพธิ์ <br></span>
             <span class="ms-4">3. ข้าพเจ้ายินดีปฏิบัติตามระเบียบ ข้อกำหนดองค์การบริหารส่วนตำบลคลองบ้านโพธิ์ และยินดีปฏิบัติตามคำแนะนำเกี่ยวกับการพัฒนาความพร้อมที่ศูนย์พัฒนาเด็กเล็ก กำหนด</span>
@@ -287,7 +294,7 @@
         <h3 class="text-center">ใบมอบตัว <br></h3>
         <h3 class="text-center">ศูนย์พัฒนาเด็กเล็กองค์การบริหารสวนตำบลคลองบ้านโพธิ์ <br></h3>
         <h3 class="text-center">องค์การบริหารส่วนตำบลคลองบ้านโพธิ์ อำเภอบ้านโพธิ์ จังหวัดฉะเชิงเทรา</h3>
-        <h4 class="text-center"><span class="text-danger">** </span><strong>หากไม่มีการกรอกข้อมูลในช่องนั้นๆให้กรอก - แทน</strong></h4><br>
+        <h4 class="text-center"><span class="text-danger">** </span><strong>หากไม่มีการกรอกข้อมูล กรุณาใส่เครื่องหมาย - แทน</strong></h4><br>
 
         <div class="row mb-3">
             <div class="col-md-2 mb-3">
@@ -439,7 +446,7 @@
     <h3 class="text-center">ทะเบียนประวัติเด็กปฐมวัย <br></h3>
     <h3 class="text-center">ศูนย์พัฒนาเด็กเล็กองค์การบริหารสวนตำบลคลองบ้านโพธิ์ <br></h3>
     <h3 class="text-center">องค์การบริหารส่วนตำบลคลองบ้านโพธิ์ อำเภอบ้านโพธิ์ จังหวัดฉะเชิงเทรา</h3>
-    <h4 class="text-center"><span class="text-danger">** </span><strong>หากไม่มีการกรอกข้อมูลในช่องนั้นๆให้กรอก - แทน</strong></h4><br>
+    <h4 class="text-center"><span class="text-danger">** </span><strong>หากไม่มีการกรอกข้อมูล กรุณาใส่เครื่องหมาย - แทน</strong></h4><br>
 
     <div class="row">
         {{-- newinput --}}
@@ -617,7 +624,7 @@
 
         <div class="col-md-4 mb-3">
             <label for="accident_history_when_age">เมื่ออายุ (ปี)</label>
-            <input type="number" name="accident_history_when_age" class="form-control" required>
+            <input type="text" name="accident_history_when_age" class="form-control" required>
         </div>
     </div>
 
@@ -738,7 +745,7 @@
 
         <div class="col-md-2 mb-3">
             <label for="fathers_age">อายุ (ปี)</label>
-            <input type="number" name="fathers_age" class="form-control" required>
+            <input type="text" name="fathers_age" class="form-control" required>
         </div>
 
         <div class="col-md-3 mb-3">
@@ -765,7 +772,7 @@
 
         <div class="col-md-2 mb-3">
             <label for="mother_age">อายุ (ปี)</label>
-            <input type="number" name="mother_age" class="form-control" required>
+            <input type="text" name="mother_age" class="form-control" required>
         </div>
 
         <div class="col-md-3 mb-3">

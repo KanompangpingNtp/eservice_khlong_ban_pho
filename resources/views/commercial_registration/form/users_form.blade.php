@@ -558,7 +558,7 @@
     <h3>(1.)</h3>
     <div class="row">
         <div class="mb-3 col-md-3">
-            <label for="share_capital1_name" class="form-label">ชื่อ</label>
+            <label for="share_capital1_name" class="form-label">ชื่อ-สกุล</label>
             <input type="text" name="share_capital1_name" id="share_capital1_name" class="form-control">
         </div>
         <div class="mb-3 col-md-3">
@@ -622,7 +622,7 @@
     <h3>(2.)</h3>
     <div class="row">
         <div class="mb-3 col-md-3">
-            <label for="share_capital2_name" class="form-label">ชื่อ</label>
+            <label for="share_capital2_name" class="form-label">ชื่อ-สกุล</label>
             <input type="text" name="share_capital2_name" id="share_capital2_name" class="form-control">
         </div>
         <div class="mb-3 col-md-3">
@@ -686,7 +686,7 @@
     <h3>(3.)</h3>
     <div class="row">
         <div class="mb-3 col-md-3">
-            <label for="share_capital3_name" class="form-label">ชื่อ</label>
+            <label for="share_capital3_name" class="form-label">ชื่อ-สกุล</label>
             <input type="text" name="share_capital3_name" id="share_capital3_name" class="form-control">
         </div>
         <div class="mb-3 col-md-3">
@@ -844,7 +844,7 @@
     <h3>(1)</h3>
     <div class="row">
         <div class="mb-3 col-md-3">
-            <label for="partner1_name" class="form-label">ชื่อ</label>
+            <label for="partner1_name" class="form-label">ชื่อ-สกุล</label>
             <input type="text" name="partner1_name" id="partner1_name" class="form-control">
         </div>
 
@@ -914,7 +914,7 @@
     <h3>(2)</h3>
     <div class="row">
         <div class="mb-3 col-md-3">
-            <label for="partner2_name" class="form-label">ชื่อ</label>
+            <label for="partner2_name" class="form-label">ชื่อ-สกุล</label>
             <input type="text" name="partner2_name" id="partner2_name" class="form-control">
         </div>
 
