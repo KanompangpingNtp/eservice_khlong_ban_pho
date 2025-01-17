@@ -159,7 +159,7 @@
             </span>
             <span>หมู่ที่</span><span class="dotted-line" style="width: 10%; text-align: center;"> {{$form->village}}
             </span>
-            <span>ชุมชน</span><span class="dotted-line" style="width: 23%; text-align: center;"> -
+            <span>ชุมชน</span><span class="dotted-line" style="width: 23%; text-align: center;">{{$form->community}}
             </span>
             <span>ตรอก/ซอย</span><span class="dotted-line" style="width: 22%; text-align: center;"> {{$form->road}}
             </span>
@@ -193,13 +193,13 @@
             <span>1. ที่พักอาศัย</span>
         </div>
         <div class="box_text" style="text-align: left; margin-left: 5rem;">
-            <span><input type="checkbox" {{ $form->assistImpartings->first()->accommodation == 'option_1' ? 'checked' : '' }}> เป็นของตนเอง และมีลักษณะ</span>
-            <span><input type="checkbox" {{ $form->assistImpartings->first()->accommodation == 'option_2' ? 'checked' : '' }}> ชำรุดทรุดโทรม</span>
-            <span><input type="checkbox" {{ $form->assistImpartings->first()->accommodation == 'option_3' ? 'checked' : '' }}> ชำรุดทรุดโทรมบางส่วน</span>
-            <span><input type="checkbox" {{ $form->assistImpartings->first()->accommodation == 'option_4' ? 'checked' : '' }}> มั่นคงถาวร</span>
+            <span><input type="checkbox" {{ in_array('option_1', $form->assistImpartings->first()->accommodation ?? []) ? 'checked' : '' }}> เป็นของตนเอง และมีลักษณะ</span>
+            <span><input type="checkbox" {{ in_array('option_2', $form->assistImpartings->first()->accommodation ?? []) ? 'checked' : '' }}> ชำรุดทรุดโทรม</span>
+            <span><input type="checkbox" {{ in_array('option_3', $form->assistImpartings->first()->accommodation ?? []) ? 'checked' : '' }}> ชำรุดทรุดโทรมบางส่วน</span>
+            <span><input type="checkbox" {{ in_array('option_4', $form->assistImpartings->first()->accommodation ?? []) ? 'checked' : '' }}> มั่นคงถาวร</span>
         </div>
         <div class="box_text" style="text-align: left; margin-left: 5rem;">
-            <span><input type="checkbox" {{ $form->assistImpartings->first()->accommodation == 'option_5' ? 'checked' : '' }}> เป็นของ</span>
+            <span><input type="checkbox" {{ in_array('option_5', $form->assistImpartings->first()->accommodation ?? []) ? 'checked' : '' }}> เป็นของ</span>
             <span class="dotted-line" style="width: 37%; text-align: center;"> {{$form->assistImpartings->first()->accommodation_belongs_to}}
             </span><span>เกี่ยวข้องเป็น</span><span class="dotted-line" style="width: 37%; text-align: center;"> {{$form->assistImpartings->first()->accommodation_relevant_as}}
             </span>

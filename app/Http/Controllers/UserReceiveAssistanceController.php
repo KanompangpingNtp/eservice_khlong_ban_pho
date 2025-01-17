@@ -11,6 +11,7 @@ use App\Models\AssistReply;
 use App\Models\AssistAttachment;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 
 class UserReceiveAssistanceController extends Controller
 {
@@ -22,6 +23,7 @@ class UserReceiveAssistanceController extends Controller
 
     public function ReceiveAssistanceFormCreate(Request $request)
     {
+        $birth_day = $request->birth_day ? Carbon::createFromFormat('d/m/Y', $request->birth_day)->format('Y-m-d') : null;
         $request->validate([
             'written_at' => 'nullable|string|max:255',
             'write_the_date' => 'nullable|string|max:255',
@@ -41,9 +43,12 @@ class UserReceiveAssistanceController extends Controller
             'postal_code' => 'nullable|string|max:10',
             'phone_number' => 'nullable|string|max:20',
             'citizen_id' => 'nullable|string|max:13',
+            'community' => 'nullable|string|max:255',
 
             // Validation for AssistImpartings table
-            'accommodation' => 'nullable|string|max:255',
+            // 'accommodation' => 'nullable|string|max:255',
+            'accommodation' => 'nullable|array',
+            'accommodation.*' => 'in:option_1,option_2,option_3,option_4,option_5',
             'accommodation_belongs_to' => 'nullable|string|max:255',
             'accommodation_relevant_as' => 'nullable|string|max:255',
             'away_from_home' => 'nullable|string|max:255',
@@ -94,7 +99,7 @@ class UserReceiveAssistanceController extends Controller
             'salutation' => $request->salutation,
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
-            'birth_day' => $request->birth_day,
+            'birth_day' => $birth_day,
             'age' => $request->age,
             'nationality' => $request->nationality,
             'village' => $request->village,
@@ -106,11 +111,13 @@ class UserReceiveAssistanceController extends Controller
             'postal_code' => $request->postal_code,
             'phone_number' => $request->phone_number,
             'citizen_id' => $request->citizen_id,
+            'community' => $request->community,
         ]);
 
         AssistImparting::create([
             'assist_people_id' => $AssistPerson->id,
-            'accommodation' => $request->accommodation,
+            // 'accommodation' => $request->accommodation,
+            'accommodation' => json_encode($request->accommodation),
             'accommodation_belongs_to' => $request->accommodation_belongs_to,
             'accommodation_relevant_as' => $request->accommodation_relevant_as,
             'away_from_home' => $request->away_from_home,
@@ -200,6 +207,13 @@ class UserReceiveAssistanceController extends Controller
     {
         $form = AssistPerson::with('assistImpartings')->find($id);
 
+        if ($form && $form->assistImpartings->first() && $form->assistImpartings->first()->accommodation) {
+            $accommodation = $form->assistImpartings->first()->accommodation;
+            if (is_string($accommodation)) {
+                $form->assistImpartings->first()->accommodation = json_decode($accommodation, true);
+            }
+        }
+
         $pdf = Pdf::loadView('receive_assistance.user_account.export_pdf.export_pdf', compact('form'))
             ->setPaper('A4', 'portrait');
 
@@ -208,7 +222,7 @@ class UserReceiveAssistanceController extends Controller
 
     public function ReceiveAssistanceUsersShowFormEdit($id)
     {
-        $form = AssistPerson::with('assistImpartings','assistAttachments')->findOrFail($id);
+        $form = AssistPerson::with('assistImpartings', 'assistAttachments')->findOrFail($id);
 
         return view('receive_assistance.user_account.edit.edit_form', compact('form'));
     }
@@ -275,6 +289,8 @@ class UserReceiveAssistanceController extends Controller
 
             'attachments.*' => 'nullable|file|mimes:jpg,jpeg,png,pdf',
         ]);
+
+
 
         $AssistPerson = AssistPerson::findOrFail($childId);
         $AssistPerson->update([

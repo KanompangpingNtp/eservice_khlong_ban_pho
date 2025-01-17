@@ -30,7 +30,8 @@ class AssistPerson extends Model
         'phone_number',
         'citizen_id',
         'status',
-        'admin_name_verifier'
+        'admin_name_verifier',
+        'community'
     ];
 
     /**
