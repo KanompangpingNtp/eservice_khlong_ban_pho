@@ -322,23 +322,23 @@
             วิธี)</span>
         <div style="width: 100%;">
             <span style="float: left; width: 40%; line-height: 0.9;">
-                <input type="checkbox" style="margin: 0;" {{ in_array('option1', $form->disabilityOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
+                <input type="checkbox" style="margin: 0;" {{ $form->disabilityOptions->first()->request_for_money_type == 'option1' ? 'checked' : '' }}>
                 รับเงินสดด้วยตนเอง
             </span>
             <span style="float: right; width: 60%; line-height: 0.9;">
-                <input type="checkbox" style="margin: 0;" {{ in_array('option2', $form->disabilityOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
+                <input type="checkbox" style="margin: 0;" {{ $form->disabilityOptions->first()->request_for_money_type == 'option2' ? 'checked' : '' }}>
                 รับเงินสดโดยบุคคลที่ได้รับมอบอำนาจจากผู้มีสิทธิ/ผู้ดูแล
             </span>
             <div style="clear: both;"></div>
 
             <span style="float: left; width: 100%; line-height: 0.9;">
-                <input type="checkbox" style="margin: 0;" {{ in_array('option3', $form->disabilityOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
+                <input type="checkbox" style="margin: 0;" {{ $form->disabilityOptions->first()->request_for_money_type == 'option3' ? 'checked' : '' }}>
                 โอนเข้าบัญชีเงินฝากธนาคารในนามผู้มีสิทธิ
             </span>
             <div style="clear: both;"></div>
 
             <span style="float: left; width: 100%; line-height: 0.9;">
-                <input type="checkbox" style="margin: 0;" {{ in_array('option4', $form->disabilityOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
+                <input type="checkbox" style="margin: 0;" {{ $form->disabilityOptions->first()->request_for_money_type == 'option4' ? 'checked' : '' }}>
                 โอนเข้าบัญชีเงินฝากธนาคารในนามบุคคลที่ได้รับมอบอำนาจจากผู้มีสิทธิ/ผู้ดูแล
             </span>
             <div style="clear: both;"></div>
