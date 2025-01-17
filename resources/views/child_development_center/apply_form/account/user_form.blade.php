@@ -743,7 +743,12 @@
         </div>
 
         <div class="col-md-4 mb-3">
-            <label for="alley_road">ซอย/ถนน <span class="text-danger">*</span></label>
+            <label for="alley">ซอย <span class="text-danger">*</span></label>
+            <input type="text" name="alley" class="form-control" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="alley_road">ถนน <span class="text-danger">*</span></label>
             <input type="text" name="alley_road" class="form-control" required>
         </div>
 

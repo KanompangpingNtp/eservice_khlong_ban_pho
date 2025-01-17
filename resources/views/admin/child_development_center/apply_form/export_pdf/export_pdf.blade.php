@@ -519,9 +519,9 @@
             <span>หมู่ที่</span>
             <span class="dotted-line" style="width: 15%; text-align: center;">{{ $form->childRegistration->first()->village }}</span>
             <span>ซอย</span>
-            <span class="dotted-line" style="width: 15%; text-align: center;">{{ $form->childRegistration->first()->alley_road }}</span>
+            <span class="dotted-line" style="width: 15%; text-align: center;"> {{ $form->childRegistration->first()->alley }} </span>
             <span>ถนน</span>
-            <span class="dotted-line" style="width: 26%; text-align: center;">-</span>
+            <span class="dotted-line" style="width: 26%; text-align: center;">{{ $form->childRegistration->first()->alley_road }}</span>
         </div>
         <div class="box_text" style="text-align: left;">
             <span>ตำบล</span>

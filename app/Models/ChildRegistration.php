@@ -61,7 +61,8 @@ class ChildRegistration extends Model
         'parent_workplace',
         'parent_phone',
         'blood_group_detail',
-        'marital_status_details'
+        'marital_status_details',
+        'alley'
     ];
 
     public function user()
