@@ -22,7 +22,7 @@
 
         body {
             font-family: 'sarabun', 'sarabun-bold', sans-serif;
-            font-size: 17px;
+            font-size: 16.5px;
             margin: 0;
             padding: 0;
             line-height: 1;
@@ -137,10 +137,10 @@
             <span>เรียน นายยกอค์การบริหารส่วนตำบลคลองบ้านโพธิ์
         </div>
         <div class="box_text" style="text-align: left; margin-left: 4rem;">
-            <span>ด้วยข้าพเจ้า ({{$form->salutation}}) ชื่อ</span><span class="dotted-line" style="width: 34%; text-align: center;">
-                {{$form->first_name}}
+            <span>ด้วยข้าพเจ้า ชื่อ</span><span class="dotted-line" style="width: 34%; text-align: center;">
+                {{$form->salutation}}&nbsp;{{$form->first_name}}
             </span>
-            <span>นามสกุล</span><span class="dotted-line" style="width: 34%; text-align: center;">  {{$form->last_name}}
+            <span>นามสกุล</span><span class="dotted-line" style="width: 34%; text-align: center;">{{$form->last_name}}
             </span>
         </div>
         <div class="box_text">
@@ -322,10 +322,10 @@
         </span><span>เกี่ยวข้องเป็น</span><span class="dotted-line" style="width: 28%; text-align: center;"> {{$form->assistImpartings->first()->contact_relevant_as}}
         </span>
     </div>
-    <div class="box_text" style="text-align: center; margin-top:1rem;">
+    <div class="box_text" style="text-align: center; margin-top:5px;">
         <span>ข้าพเจ้าขอรับรองว่าถ้อยคำที่ให้ข้างต้นเป็นความจริงทุกประการ</span>
     </div>
-    <div class="box_text" style="text-align: right; margin-top:1rem;">
+    <div class="box_text" style="text-align: right; margin-top:5px;">
         <span class="dotted-line" style="width: 35%; text-align: center;"> {{$form->first_name}}&nbsp;{{$form->last_name}} </span>
         <span>ผู้ให้ถอยคำ</span>
         <div style="margin-right: 60px;">

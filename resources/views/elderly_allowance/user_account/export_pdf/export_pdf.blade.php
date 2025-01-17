@@ -179,8 +179,8 @@
         </div>
     </div>
     <div class="box_text" style="text-align: right;">
-        <span>ด้วยข้าพเจ้า ({{ $form->salutation }}) ชื่อ</span><span class="dotted-line"
-            style="width: 35%; text-align: center;"> {{ $form->first_name }}
+        <span>ด้วยข้าพเจ้า ชื่อ</span><span class="dotted-line"
+            style="width: 35%; text-align: center;">{{ $form->salutation }}&nbsp;{{ $form->first_name }}
         </span>
         <span>นามสกุล</span><span class="dotted-line" style="width: 35%; text-align: center;"> {{ $form->last_name }}
         </span>

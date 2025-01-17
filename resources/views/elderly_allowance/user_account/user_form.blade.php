@@ -268,7 +268,6 @@
 
             <hr>
 
-
             <h3> ข้อมูลทั่วไป : สถานภาพการรับสวัสดิการภาครัฐ</h3>
             <div class="form-check">
                 <input type="checkbox" name="welfare_type[]" id="welfare_type_aid" value="option1"
@@ -316,12 +315,12 @@
                     <label for="money_type_option2"
                         class="form-check-label">รับเงินสดโดยบุคคลที่ได้รับมอบอํานาจจากผู้มีสิทธิ</label>
                 </div>
-                {{-- <div class="form-check">
+                <div class="form-check">
                     <input type="radio" name="request_for_money_type" id="money_type_option3" value="option3"
                         class="form-check-input">
                     <label for="money_type_option3"
                         class="form-check-label">โอนเงินเข้าบัญชีเงินฝากธนาคารในนามผู้มีสิทธิ</label>
-                </div> --}}
+                </div>
                 <div class="form-check">
                     <input type="radio" name="request_for_money_type" id="money_type_option4" value="option4"
                         class="form-check-input">

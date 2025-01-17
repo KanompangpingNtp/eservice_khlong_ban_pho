@@ -346,7 +346,7 @@
 <hr>
 
 <div class="my-4">
-    <h3>มีความประสงค์ขอรับเงินเบี้ยยังชีพผู้สูงอายุ โดยวิธีดังต่อไปนี้ (เลือก 1 วิธี)</h3>
+    <h3>มีความประสงค์ขอรับเงินเบี้ยยังชีพความพิการ โดยวิธีดังต่อไปนี้ (เลือก 1 วิธี)</h3>
 
     <div class="form-check">
         <input class="form-check-input" type="radio" name="request_for_money_type" id="money_type_option1" value="option1" required>
