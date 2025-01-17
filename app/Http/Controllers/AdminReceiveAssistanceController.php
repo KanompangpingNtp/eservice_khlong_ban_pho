@@ -38,6 +38,13 @@ class AdminReceiveAssistanceController extends Controller
     {
         $form = AssistPerson::with('assistImpartings')->find($id);
 
+        if ($form && $form->assistImpartings->first() && $form->assistImpartings->first()->accommodation) {
+            $accommodation = $form->assistImpartings->first()->accommodation;
+            if (is_string($accommodation)) {
+                $form->assistImpartings->first()->accommodation = json_decode($accommodation, true);
+            }
+        }
+
         $pdf = Pdf::loadView('admin.receive_assistance.export_pdf.export_pdf', compact('form'))
             ->setPaper('A4', 'portrait');
 
