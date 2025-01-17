@@ -94,46 +94,47 @@
             overflow-wrap: break-word;
             /* รองรับ browser อื่น */
         }
+
     </style>
 </head>
 
 <body>
 
     @php
-        use Carbon\Carbon;
-        $date = Carbon::parse($form->written_date);
-        $day = $date->day;
-        $month = $date->locale('th')->translatedFormat('F');
-        $year = $date->year + 543;
+    use Carbon\Carbon;
+    $date = Carbon::parse($form->written_date);
+    $day = $date->day;
+    $month = $date->locale('th')->translatedFormat('F');
+    $year = $date->year + 543;
 
-        $birthday = Carbon::parse($form->birth_day);
-        $birthday_day = $birthday->day;
-        $birthday_month = $birthday->locale('th')->translatedFormat('F');
-        $birthday_year = $birthday->year + 543;
+    $birthday = Carbon::parse($form->birth_day);
+    $birthday_day = $birthday->day;
+    $birthday_month = $birthday->locale('th')->translatedFormat('F');
+    $birthday_year = $birthday->year + 543;
 
-        // $citizen_id = $form->traders->first()->citizen_id;
-        // $tradersformatted_id =
-        //     substr($citizen_id, 0, 1) .
-        //     '-' .
-        //     substr($citizen_id, 1, 4) .
-        //     '-' .
-        //     substr($citizen_id, 5, 5) .
-        //     '-' .
-        //     substr($citizen_id, 10, 2) .
-        //     '-' .
-        //     substr($citizen_id, 12, 1);
+    // $citizen_id = $form->traders->first()->citizen_id;
+    // $tradersformatted_id =
+    // substr($citizen_id, 0, 1) .
+    // '-' .
+    // substr($citizen_id, 1, 4) .
+    // '-' .
+    // substr($citizen_id, 5, 5) .
+    // '-' .
+    // substr($citizen_id, 10, 2) .
+    // '-' .
+    // substr($citizen_id, 12, 1);
 
-        $citizen_c_id = $form->citizen_id;
-        $formatted_id =
-            substr($citizen_c_id, 0, 1) .
-            '-' .
-            substr($citizen_c_id, 1, 4) .
-            '-' .
-            substr($citizen_c_id, 5, 5) .
-            '-' .
-            substr($citizen_c_id, 10, 2) .
-            '-' .
-            substr($citizen_c_id, 12, 1);
+    $citizen_c_id = $form->citizen_id;
+    $formatted_id =
+    substr($citizen_c_id, 0, 1) .
+    '-' .
+    substr($citizen_c_id, 1, 4) .
+    '-' .
+    substr($citizen_c_id, 5, 5) .
+    '-' .
+    substr($citizen_c_id, 10, 2) .
+    '-' .
+    substr($citizen_c_id, 12, 1);
     @endphp
 
     <div class="regis_number">ทะเบียนเลขที่............/ 2568</div>
@@ -143,20 +144,18 @@
         <span></span>
         <div>
             <span>ผู้ยื่นคำขอฯ แทนตามหนังสือมอบอำนาจ เกี่ยวข้องเป็น</span>
-            <span class="dotted-line"
-                style="width: 42%; text-align:center; border-bottom: 2px dotted black;"></span>
+            <span class="dotted-line" style="width: 42%; text-align:center; border-bottom: 2px dotted black;"></span>
             <span>กับผู้สูงอายุที่ขอยืนยันสิทธิ</span>
         </div>
         <div>
             <span>ชื่อ – สกุล (ผู้รับมอบอำนาจ) </span>
-            <span class="dotted-line"
-                style="width: 51%; text-align:center; border-bottom: 2px dotted black;"></span>เลขประจำตัวประชาชนผู้รับมอบอำนาจ
+            <span class="dotted-line" style="width: 51%; text-align:center; border-bottom: 2px dotted black;"></span>เลขประจำตัวประชาชนผู้รับมอบอำนาจ
         </div>
         <div>
             <span></span><span class="dotted-line" style="width: 30%; text-align:center; border-bottom: 2px dotted black;">
             </span>
             <span>ที่อยู่</span><span class="dotted-line" style="width: 64%; text-align:center; border-bottom: 2px dotted black;">
-                 </span>
+            </span>
         </div>
         <div>
             <span class="dotted-line" style="width: 61%; text-align:center; border-bottom: 2px dotted black;">
@@ -179,8 +178,7 @@
         </div>
     </div>
     <div class="box_text" style="text-align: right;">
-        <span>ด้วยข้าพเจ้า ชื่อ</span><span class="dotted-line"
-            style="width: 35%; text-align: center;">{{ $form->salutation }}&nbsp;{{ $form->first_name }}
+        <span>ด้วยข้าพเจ้า ชื่อ</span><span class="dotted-line" style="width: 35%; text-align: center;">{{ $form->salutation }}&nbsp;{{ $form->first_name }}
         </span>
         <span>นามสกุล</span><span class="dotted-line" style="width: 35%; text-align: center;"> {{ $form->last_name }}
         </span>
@@ -225,8 +223,7 @@
         </span>
     </div>
     <div class="box_text" style="text-align: left; margin-left:7px;">
-        <span>หมายเลขบัตรประจำตัวประชาชนของผู้สูงอายุที่ยื่นคำขอ</span><span class="dotted-line"
-            style="width: 50%; text-align: center;"> {{ $formatted_id }}
+        <span>หมายเลขบัตรประจำตัวประชาชนของผู้สูงอายุที่ยื่นคำขอ</span><span class="dotted-line" style="width: 50%; text-align: center;"> {{ $formatted_id }}
         </span>
     </div>
     <div class="box_text" style=" margin-left:7px; margin-top:2px;">
@@ -263,25 +260,21 @@
         <span style="line-height: 10px;">ข้อมูลทั่วไป : สถานภาพการรับสวัสดิการภาครัฐ</span>
         <div style="width: 80%;">
             <span style="float: left; width: 30%; line-height: 0.9;">
-                <input type="checkbox" style="margin: 0;"
-                    {{ in_array('option1', $form->personsOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
+                <input type="checkbox" style="margin: 0;" {{ in_array('option1', $form->personsOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
                 ไม่ได้รับเบี้ยยังชีพผู้สูงอายุ
             </span>
             <span style="float: right; width: 50%; line-height: 0.9;">
-                <input type="checkbox" style="margin: 0;"
-                    {{ in_array('option2', $form->personsOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
+                <input type="checkbox" style="margin: 0;" {{ in_array('option2', $form->personsOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
                 ได้รับเงินสงเคราะห์เพื่อการยังชีพผู้ป่วยเอดส์
             </span>
             <div style="clear: both;"></div>
 
             <span style="float: left; width: 30%; line-height: 0.9;">
-                <input type="checkbox" style="margin: 0;"
-                    {{ in_array('option3', $form->personsOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
+                <input type="checkbox" style="margin: 0;" {{ in_array('option3', $form->personsOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
                 ได้รับเงินเบี้ยความพิการ
             </span>
             <span style="float: right; width: 50%; line-height: 0.9;">
-                <input type="checkbox" style="margin: 0;"
-                    {{ in_array('option4', $form->personsOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
+                <input type="checkbox" style="margin: 0;" {{ in_array('option4', $form->personsOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
                 ย้ายภูมิลำเนาเข้ามาอยู่ใหม่ เมื่อ
             </span>
             <div style="clear: both;"></div>
@@ -292,70 +285,54 @@
             วิธี)</span>
         <div style="width: 100%;">
             <span style="float: left; width: 40%; line-height: 0.9;">
-                <input type="checkbox" style="margin: 0;"
-                    {{ in_array('option1', $form->personsOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
+                <input type="checkbox" style="margin: 0;" {{ $form->personsOptions->first()->request_for_money_type == 'option1' ? 'checked' : '' }}>
                 รับเงินสดด้วยตนเอง
             </span>
             <span style="float: right; width: 60%; line-height: 0.9;">
-                <input type="checkbox" style="margin: 0;"
-                    {{ in_array('option2', $form->personsOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
+                <input type="checkbox" style="margin: 0;" {{ $form->personsOptions->first()->request_for_money_type == 'option3' ? 'checked' : '' }}>
                 รับเงินสดโดยบุคคลที่ได้รับมอบอำนาจจากผู้มีสิทธิ
             </span>
             <div style="clear: both;"></div>
 
             <span style="float: left; width: 100%; line-height: 0.9;">
-                <input type="checkbox" style="margin: 0;"
-                    {{ in_array('option3', $form->personsOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
+                <input type="checkbox" style="margin: 0;" {{ $form->personsOptions->first()->request_for_money_type == 'option4' ? 'checked' : '' }}>
                 โอนเข้าบัญชีเงินฝากธนาคารในนามผู้มีสิทธิ
             </span>
-            {{-- <div style="clear: both;"></div> --}}
 
             <span style="float: right; width: 60%; line-height: 0.9;">
-                <input type="checkbox" style="margin: 0;"
-                    {{ in_array('option4', $form->personsOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
+                <input type="checkbox" style="margin: 0;" {{ $form->personsOptions->first()->request_for_money_type == 'option5' ? 'checked' : '' }}>
                 โอนเข้าบัญชีเงินฝากธนาคารในนามบุคคลที่ได้รับมอบอำนาจจากผู้มีสิทธิ
             </span>
             <div style="clear: both;"></div>
         </div>
 
+
         <span style="line-height: 1;">พร้อมแนบเอกสาร ดังนี้</span>
         <div style="width: 100%;">
             <div style="width: 100%;">
                 <span style="float: left; width: 60%; line-height: 0.9;">
-                    <input type="checkbox" style="margin: 0;"
-                        {{ in_array('option1', $documentType) ? 'checked' : '' }}>
+                    <input type="checkbox" style="margin: 0;" {{ in_array('option1', $documentType) ? 'checked' : '' }}>
                     บัตรประจำตัวประชาชน หรือบัตรอื่นที่ออกโดยหน่วยงานของรัฐที่มีรูปถ่าย
                 </span>
                 <span style="float: right; width: 40%; line-height: 0.9;">
-                    <input type="checkbox" style="margin: 0;"
-                        {{ in_array('option2', $documentType) ? 'checked' : '' }}>
+                    <input type="checkbox" style="margin: 0;" {{ in_array('option2', $documentType) ? 'checked' : '' }}>
                     ทะเบียนบ้าน
                 </span>
-                {{-- <div style="clear: both;"></div>
-
-                <span style="float: left; width: 100%; line-height: 0.9;">
-                    <input type="checkbox" style="margin: 0;"
-                        {{ in_array('option3', $documentType) ? 'checked' : '' }}>
-                    โอนเข้าบัญชีเงินฝากธนาคารในนามผู้มีสิทธิ
-                </span> --}}
                 <div style="clear: both;"></div>
 
                 <span style="float: left; width: 100%; line-height: 0.9;">
-                    <input type="checkbox" style="margin: 0;"
-                        {{ in_array('option4', $documentType) ? 'checked' : '' }}>
+                    <input type="checkbox" style="margin: 0;" {{ in_array('option3', $documentType) ? 'checked' : '' }}>
                     สมุดบัญชีเงินฝากธนาคาร
                     (ในกรณีผู้ขอรับเงินเบี้ยยังชีพผู้สูงอายุประสงค์ขอรับเงินเบี้ยยังชีพผู้สูงอายุผ่านธนาคาร)
                 </span>
                 <div style="clear: both;"></div>
 
                 <span style="float: left; width: 100%; line-height: 0.9;">
-                    <input type="checkbox" style="margin: 0;"
-                        {{ in_array('option5', $documentType) ? 'checked' : '' }}>
+                    <input type="checkbox" style="margin: 0;" {{ in_array('option4', $documentType) ? 'checked' : '' }}>
                     หนังสือมอบอำนาจพร้อมบัตรประจำตัวประชาชนของผู้มอบอำนาจและผู้รับมอบอำนาจ
                 </span>
                 <div style="clear: both;"></div>
-                <span style="float: left; width: 20%; line-height: 0.9;"><input type="checkbox" style="margin: 0;"
-                        {{ old('bank_option', $form->bankacoption->first()->bank_option ?? '') == '1' ? 'checked' : '' }}>
+                <span style="float: left; width: 20%; line-height: 0.9;"><input type="checkbox" style="margin: 0;" {{ old('bank_option', $form->bankacoption->first()->bank_option ?? '') == '1' ? 'checked' : '' }}>
                     บัญชีเงินฝากธนาคาร</span>
                 <span class="dotted-line" style="width: 80%; text-align: left;">
                     {{ $form->bankacoption->first()->bank_name ?? '-' }} </span>
@@ -389,11 +366,11 @@
                 <div style="float: left; width: 50%;">
                     <span>(ลงชื่อ)</span>
                     <span class="dotted-line" style="width: 50%; text-align: center; border-bottom: 2px dotted black;">
-                         </span>
+                    </span>
                     <div style="margin-left: 40px;">
                         <span>(</span>
                         <span class="dotted-line" style="width: 50%; text-align: center; border-bottom: 2px dotted black;">
-                             </span>
+                        </span>
                         <span>)</span>
                     </div>
                     <div style="margin-left: 40px;">
@@ -402,25 +379,22 @@
                 </div> <!-- ฝั่งขวา -->
                 <div style="float: right; width: 50%;">
                     <span>(ลงชื่อ)</span>
-                    <span class="dotted-line"
-                        style="width: 50%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
+                    <span class="dotted-line" style="width: 50%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
                     </span>
                     <div style="margin-left: 40px;">
                         <span>(</span>
-                        <span class="dotted-line"
-                            style="width: 50%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
+                        <span class="dotted-line" style="width: 50%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
                         </span>
                         <span>)</span>
                     </div>
                     <div>
                         <span>ตำแหน่ง</span>
-                        <span class="dotted-line"
-                            style="width:50%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"">
+                        <span class="dotted-line" style="width:50%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;"">
                         </span>
                     </div>
-                    <div style="margin-left: 40px;">
-                        <span>เจ้าหน้าที่ผู้รับยืนยันสิทธิ
-                        </span>
+                    <div style=" margin-left: 40px;">
+                            <span>เจ้าหน้าที่ผู้รับยืนยันสิทธิ
+                            </span>
                     </div>
                 </div>
             </div>
@@ -434,8 +408,7 @@
             - 2 -
         </div>
 
-        <div class="box_text_border"
-            style="margin-top: 2rem; text-align:left; padding-left:5px; border-right: 2px solid black;">
+        <div class="box_text_border" style="margin-top: 2rem; text-align:left; padding-left:5px; border-right: 2px solid black;">
             <div style="border-bottom:2px solid black;">
                 <div id="left" style="float: left; width: 49%; padding-top:5px;">
                     <div>ความเห็นเจ้าหน้าที่ผู้รับยืนยันสิทธิ</div>
@@ -449,30 +422,24 @@
                     <span style="margin-left:10px;">แล้ว</span>
                     <div class="box_text" style="text-align:left; margin-top: 10px;">
                         <div style="width: 100%;">
-                            <span style="width: 100%; "><input type="checkbox"> เป็นผู้มีคุณสมบัติ <span
-                                    style="border-bottom: 2px solid black;">ในการยืนยันสิทธิ</span>ครบถ้วน</span>
-                            <span style="width: 100%; margin-top:10px;"><input type="checkbox"> เป็นผู้ที่ <span
-                                    style="border-bottom: 2px solid black;">รอตรวจสอบคุณสมบัติ</span> ณ
+                            <span style="width: 100%; "><input type="checkbox"> เป็นผู้มีคุณสมบัติ <span style="border-bottom: 2px solid black;">ในการยืนยันสิทธิ</span>ครบถ้วน</span>
+                            <span style="width: 100%; margin-top:10px;"><input type="checkbox"> เป็นผู้ที่ <span style="border-bottom: 2px solid black;">รอตรวจสอบคุณสมบัติ</span> ณ
                                 วันที่มีสิทธิได้รับ</span>
                             <span style="width: 100%; margin-left: 7px; margin-top:7px;">เงินเบี้ยยังชีพ</span>
                             <span style="width: 100%; margin-top:10px;"><input type="checkbox"> เป็นผู้ที่ขาดคุณสมบัติ
                                 เนื่องจาก</span>
                         </div>
                     </div>
-                    <span class="dotted-line"
-                        style="width: 100%; text-align: center; margin-top: 20px; border-bottom: 2px dotted black;">
+                    <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 20px; border-bottom: 2px dotted black;">
                     </span>
-                    <span class="dotted-line"
-                        style="width: 100%; text-align: center; margin-top: 20px; border-bottom: 2px dotted black;">
+                    <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 20px; border-bottom: 2px dotted black;">
                     </span>
                     <div style=" width: 100%; text-align: center; margin-top:20px">
                         <span>(ลงชื่อ)</span>
-                        <span class="dotted-line"
-                            style="width: 70%; text-align: center; border-bottom: 2px dotted black;"> </span>
+                        <span class="dotted-line" style="width: 70%; text-align: center; border-bottom: 2px dotted black;"> </span>
                         <div style="margin-left: 40px;">
                             <span>(</span>
-                            <span class="dotted-line"
-                                style="width: 70%; text-align: center; border-bottom: 2px dotted black; margin-top: 20px;">
+                            <span class="dotted-line" style="width: 70%; text-align: center; border-bottom: 2px dotted black; margin-top: 20px;">
                             </span>
                             <span>)</span>
                         </div>
@@ -482,11 +449,9 @@
                     </div>
                 </div>
 
-                <div id="right"
-                    style="float: right; width: 49%;  height: 38%; padding-left: 9px; border-left: 2px solid black; padding-top:5px;">
+                <div id="right" style="float: right; width: 49%;  height: 38%; padding-left: 9px; border-left: 2px solid black; padding-top:5px;">
                     <div>ความเห็นคณะกรรมการตรวจสอบคุณสมบัติ</div>
-                    <div style="margin-top: 10px;">เรียน นายก เทศมนตรี/อบต.<span class="dotted-line"
-                            style="width: 100%; text-align: center; margin-top: 20px; border-bottom: 2px dotted black;">
+                    <div style="margin-top: 10px;">เรียน นายก เทศมนตรี/อบต.<span class="dotted-line" style="width: 100%; text-align: center; margin-top: 20px; border-bottom: 2px dotted black;">
                         </span></div>
                     <div style="text-align: center; margin-top: 10px;">คณะกรรมการตรวจสอบคุณสมบัติได้ตรวจสอบแล้ว</div>
                     <div style="text-align: left; margin-top: 10px;">มีความเห็นดังนี้</div>
@@ -509,34 +474,28 @@
 
                     <div style=" width: 100%; margin-top: 10px;">
                         <span>กรรมการ (ลงชื่อ)</span>
-                        <span class="dotted-line"
-                            style="width: 60%; text-align: center; border-bottom: 2px dotted black;"> </span>
+                        <span class="dotted-line" style="width: 60%; text-align: center; border-bottom: 2px dotted black;"> </span>
                         <div style="margin-left: 90px;">
                             <span>(</span>
-                            <span class="dotted-line"
-                                style="width: 80%; text-align: center; border-bottom: 2px dotted black; margin-top: 20px;">
+                            <span class="dotted-line" style="width: 80%; text-align: center; border-bottom: 2px dotted black; margin-top: 20px;">
                             </span>
                             <span>)</span>
                         </div>
                         <span>กรรมการ (ลงชื่อ)</span>
-                        <span class="dotted-line"
-                            style="width: 60%; text-align: center; border-bottom: 2px dotted black; margin-top: 20px;">
+                        <span class="dotted-line" style="width: 60%; text-align: center; border-bottom: 2px dotted black; margin-top: 20px;">
                         </span>
                         <div style="margin-left: 90px;">
                             <span>(</span>
-                            <span class="dotted-line"
-                                style="width: 80%; text-align: center; border-bottom: 2px dotted black; margin-top: 20px;">
+                            <span class="dotted-line" style="width: 80%; text-align: center; border-bottom: 2px dotted black; margin-top: 20px;">
                             </span>
                             <span>)</span>
                         </div>
                         <span>กรรมการ (ลงชื่อ)</span>
-                        <span class="dotted-line"
-                            style="width: 60%; text-align: center; border-bottom: 2px dotted black; margin-top: 20px;">
+                        <span class="dotted-line" style="width: 60%; text-align: center; border-bottom: 2px dotted black; margin-top: 20px;">
                         </span>
                         <div style="margin-left: 90px;">
                             <span>(</span>
-                            <span class="dotted-line"
-                                style="width: 80%; text-align: center; border-bottom: 2px dotted black; margin-top: 20px;">
+                            <span class="dotted-line" style="width: 80%; text-align: center; border-bottom: 2px dotted black; margin-top: 20px;">
                             </span>
                             <span>)</span>
                         </div>
@@ -549,22 +508,17 @@
                 <div>
                     คำสั่ง
                 </div>
-                <div style="text-align: center;"><input type="checkbox">รับลงทะเบียน <input
-                        type="checkbox">ไม่รับลงทะเบียน <input type="checkbox">อื่น ๆ<span class="dotted-line"
-                        style="width: 30%; text-align: center; margin-top:15px; border-bottom: 2px dotted black; margin-top:20px;">
+                <div style="text-align: center;"><input type="checkbox">รับลงทะเบียน <input type="checkbox">ไม่รับลงทะเบียน <input type="checkbox">อื่น ๆ<span class="dotted-line" style="width: 30%; text-align: center; margin-top:15px; border-bottom: 2px dotted black; margin-top:20px;">
                     </span></div>
-                <span class="dotted-line"
-                    style="width: 100%; text-align: center; margin-top:15px; border-bottom: 2px dotted black; margin-top:20px;">
+                <span class="dotted-line" style="width: 100%; text-align: center; margin-top:15px; border-bottom: 2px dotted black; margin-top:20px;">
                 </span>
                 <div style=" width: 100%; text-align:center; margin-bottom:20px; margin-top:20px">
                     <span>(ลงชื่อ)</span>
-                    <span class="dotted-line"
-                        style="width: 40%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
+                    <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
                     </span>
                     <div style="margin-left: 40px;">
                         <span>(</span>
-                        <span class="dotted-line"
-                            style="width: 40%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
+                        <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
                         </span>
                         <span>)</span>
                     </div>
@@ -597,14 +551,12 @@
             <div style="font-size: 18px;">
                 ตัดตามรอยเส้นประ ให้ผู้สูงอายุที่ยื่นคำขอยืนยันสิทธิเก็บเพื่อเป็นหลักฐานการยืนยันสิทธิ
             </div>
-            <span class="dotted-line"
-                style="width: 100%; text-align: center; display: block; border-bottom: 2px dotted black; margin-top: 5px;"></span>
+            <span class="dotted-line" style="width: 100%; text-align: center; display: block; border-bottom: 2px dotted black; margin-top: 5px;"></span>
         </div>
 
         <div style="font-size: 19px;">
             <div class="box_text" style="margin-top: 3rem;">
-                <span>ยื่นแบบคำขอลงทะเบียนเมื่อวันที่</span><span class="dotted-line"
-                    style="width: 20%; text-align: center; border-bottom: 2px dotted black;">
+                <span>ยื่นแบบคำขอลงทะเบียนเมื่อวันที่</span><span class="dotted-line" style="width: 20%; text-align: center; border-bottom: 2px dotted black;">
 
                 </span>
                 <span>เดือน</span><span class="dotted-line" style="width: 25%; text-align: center; border-bottom: 2px dotted black;">
@@ -616,13 +568,11 @@
                     เพื่อขอรับเงินเบี้ยยังชีพผู้สูงอายุโดยจะได้รับเงินเบี้ยเบี้ยยังชีพผู้สูงอายุตามที่มีคุณสมบัติครบถ้วน</span>
             </div>
             <div class="box_text">
-                <span>และตามช่วงระยะเวลาในการยืนยันสิทธิ ภายในวันที่ 10 ของทุกเดือน โดยได้รับตั้งแต่เดือน</span><span
-                    class="dotted-line" style="width: 32%; text-align: center; border-bottom: 2px dotted black;">
+                <span>และตามช่วงระยะเวลาในการยืนยันสิทธิ ภายในวันที่ 10 ของทุกเดือน โดยได้รับตั้งแต่เดือน</span><span class="dotted-line" style="width: 32%; text-align: center; border-bottom: 2px dotted black;">
                 </span>
             </div>
             <div class="box_text" style="text-align: left;">
-                <span>พ.ศ.</span><span class="dotted-line"
-                    style="width: 15%; text-align: center; border-bottom: 2px dotted black;">
+                <span>พ.ศ.</span><span class="dotted-line" style="width: 15%; text-align: center; border-bottom: 2px dotted black;">
                 </span>เป็นต้นไป&nbsp;กรณีผู้สูงอายุย้ายภูมิลำเนา
                 ไปอยู่ที่อื่นจะต้องไปยืนยันสิทธิยื่นคำขอรับเงินเบี้ยยังชีพผู้สูงอายุ
             </div>

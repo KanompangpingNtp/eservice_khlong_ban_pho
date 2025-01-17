@@ -312,7 +312,7 @@
             </span>
             <span style="float: right; width: 50%; line-height: 0.9;">
                 <input type="checkbox" style="margin: 0;" {{ in_array('option4', $form->disabilityOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
-                ย้ายภูมิลำเนาเข้ามาอยู่ใหม่ เมื่อ
+                ย้ายภูมิลำเนาเข้ามาอยู่ใหม่
             </span>
             <div style="clear: both;"></div>
         </div>

@@ -331,18 +331,18 @@
         <div class="form-check">
             <input class="form-check-input" type="checkbox" name="welfare_type[]" id="welfare_type_relocation" value="option4">
             <label class="form-check-label" for="welfare_type_relocation">ย้ายภูมิลำเนาเข้ามาอยู่ใหม่
-                เมื่อ</label>
+                </label>
         </div>
     </div>
 </div>
 
 <!-- welfare_other_types input (visible when 'ย้ายภูมิลําเนาเข้ามาอยู่ใหม่' is checked) -->
-<div id="welfare_other_types_div" class="row mb-3" style="display: none;">
+{{-- <div id="welfare_other_types_div" class="row mb-3" style="display: none;">
     <label class="col-sm-3 col-form-label" for="welfare_other_types">รายละเอียดอื่นๆ</label>
     <div class="col-sm-9">
         <input type="text" id="welfare_other_types" name="welfare_other_types" class="form-control" placeholder="กรอกข้อมูลเพิ่มเติม">
     </div>
-</div>
+</div> --}}
 <hr>
 
 <div class="my-4">

@@ -288,7 +288,7 @@
             <div class="form-check">
                 <input type="checkbox" name="welfare_type[]" id="welfare_type_relocation" value="option4"
                     class="form-check-input">
-                <label for="welfare_type_relocation"> ย้ายภูมิลำเนาเข้ามาอยู่ใหม่ เมื่อ</label>
+                <label for="welfare_type_relocation"> ย้ายภูมิลำเนาเข้ามาอยู่ใหม่</label>
             </div>
 
             <!-- welfare_other_types input (visible when 'ย้ายภูมิลําเนาเข้ามาอยู่ใหม่' is checked) -->
