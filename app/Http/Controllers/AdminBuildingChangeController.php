@@ -14,7 +14,9 @@ class AdminBuildingChangeController extends Controller
     //
     public function TableBuildingChangeAdminPages()
     {
-        $forms = BuildingChange::with(['user', 'buildingChangeFiles', 'buildingChangeReplies'])->get();
+        $forms = BuildingChange::with(['user', 'buildingChangeFiles', 'buildingChangeReplies'])
+        ->orderBy('created_at', 'desc')
+        ->get();
 
         return view('admin.building_modification.table_building_modification', compact('forms'));
     }

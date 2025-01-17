@@ -13,7 +13,9 @@ class AdminReceiveAssistanceController extends Controller
     //
     public function TableReceiveAssistanceAdminPages()
     {
-        $forms = AssistPerson::with(['user', 'assistAttachments', 'assistReplies'])->get();
+        $forms = AssistPerson::with(['user', 'assistAttachments', 'assistReplies'])
+        ->orderBy('created_at', 'desc')
+        ->get();
 
         return view('admin.receive_assistance.table_receive_assistance', compact('forms'));
     }

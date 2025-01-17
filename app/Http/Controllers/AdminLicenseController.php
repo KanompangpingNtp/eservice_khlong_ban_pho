@@ -16,7 +16,9 @@ class AdminLicenseController extends Controller
     //
     public function TableLicenseAdminPages()
     {
-        $forms = BizHazLicense::with(['user', 'files', 'replies'])->get();
+        $forms = BizHazLicense::with(['user', 'files', 'replies'])
+        ->orderBy('created_at', 'desc')
+        ->get();
 
         return view('admin.license_application_form.table_license_application_form', compact('forms'));
     }

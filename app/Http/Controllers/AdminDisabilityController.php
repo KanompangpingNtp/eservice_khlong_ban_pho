@@ -18,7 +18,9 @@ class AdminDisabilityController extends Controller
     //
     public function TableDisabilityPages()
     {
-        $forms = DisabilityPerson::with(['user', 'disabilityAttachments', 'disabilityReplies'])->get();
+        $forms = DisabilityPerson::with(['user', 'disabilityAttachments', 'disabilityReplies'])
+        ->orderBy('created_at', 'desc')
+        ->get();
 
         return view('admin.disability.table_disability', compact('forms'));
     }

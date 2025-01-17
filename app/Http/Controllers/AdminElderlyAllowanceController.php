@@ -17,7 +17,9 @@ class AdminElderlyAllowanceController extends Controller
     //
     public function TableElderlyAllowancePages()
     {
-        $forms = EaPeople::with(['user', 'attachments', 'replies'])->get();
+        $forms = EaPeople::with(['user', 'attachments', 'replies'])
+        ->orderBy('created_at', 'desc')
+        ->get();
 
         return view('admin.elderly_allowance.table_elderly_allowance', compact('forms'));
     }

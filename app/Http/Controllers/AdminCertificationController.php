@@ -13,7 +13,9 @@ class AdminCertificationController extends Controller
     //
     public function TableCertificationAdminPages()
     {
-        $forms = BuildBuilding::with(['user', 'files', 'replies'])->get();
+        $forms = BuildBuilding::with(['user', 'files', 'replies'])
+        ->orderBy('created_at', 'desc')
+        ->get();
 
         return view('admin.construction_certification.table_construction_certification', compact('forms'));
     }

@@ -13,7 +13,9 @@ class AdminChildApplyController extends Controller
     //
     public function TableChildApplyAdminPages()
     {
-        $forms = ChildInformation::with(['user', 'attachments', 'replies'])->get();
+        $forms = ChildInformation::with(['user', 'attachments', 'replies'])
+        ->orderBy('created_at', 'desc')
+        ->get();
 
         return view('admin.child_development_center.apply_form.table_apply_form', compact('forms'));
     }

@@ -13,7 +13,9 @@ class AdminBusinessDocController extends Controller
     //
     public function TableBusinessDocAdminPages()
     {
-        $forms = BusinessDoc::with(['user', 'files', 'replies'])->get();
+        $forms = BusinessDoc::with(['user', 'files', 'replies'])
+        ->orderBy('created_at', 'desc')
+        ->get();
 
         return view('admin.business_registration_documents.table_business_registration_documents', compact('forms'));
     }

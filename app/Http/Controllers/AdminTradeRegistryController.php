@@ -17,6 +17,7 @@ class AdminTradeRegistryController extends Controller
     public function TableTradeRegistryAdminPages()
     {
         $forms = TradeRegistry::with(['user', 'files', 'replies'])
+        ->orderBy('created_at', 'desc')
             ->get();
 
         return view('admin.commercial_registration.table_commercial_registration', compact('forms'));

@@ -15,7 +15,9 @@ class AdminGeneralRequestsController extends Controller
     //
     public function TablePages()
     {
-        $forms = GrForm::with(['user', 'grAttachments', 'grReplies'])->get();
+        $forms = GrForm::with(['user', 'grAttachments', 'grReplies'])
+        ->orderBy('created_at', 'desc')
+        ->get();
 
         return view('admin.general_requests.table_general_requests', compact('forms'));
     }
