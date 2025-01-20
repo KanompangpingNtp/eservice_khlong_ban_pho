@@ -127,7 +127,7 @@
                             <img src="{{ asset('images/layout-index/money.png') }}" alt="Icon" />
                         </span>
                         <span class="squre"></span>
-                        แบบคำขอรับเงินสงเคราะห์<br class="d-block d-md-none d-lg-block"> (ผู้ป่วยเอดส์)
+                        แบบคำขอรับการสงเคราะห์<br class="d-block d-md-none d-lg-block"> (ผู้ป่วยเอดส์)
                     </a>
                 </div>
             </div>
