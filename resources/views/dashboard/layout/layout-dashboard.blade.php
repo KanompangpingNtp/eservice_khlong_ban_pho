@@ -285,7 +285,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link"
-                        href="{{ route('TableReceiveAssistanceAdminPages') }}">แบบคำขอรับเงินสงเคราะห์</a>
+                        href="{{ route('TableReceiveAssistanceAdminPages') }}">แบบขอรับเงินสงเคราห์ (ผู้ป่วยเอดส์)</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('TableTradeRegistryAdminPages') }}">คำร้องทะเบียนพาณิชย์</a>

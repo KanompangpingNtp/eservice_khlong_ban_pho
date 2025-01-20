@@ -123,7 +123,7 @@
 
 <body>
     <div class="regis_number">ทะเบียนเลขที่ .........................../ 2568</div>
-    <div style="text-align: center; font-size: 25px;">แบบคำขอรับการสงเคราะห์ (ผู้ป่วยเอดส์)</div>
+    <div style="text-align: center; font-size: 25px;">แบบขอรับเงินสงเคราห์ (ผู้ป่วยเอดส์)</div>
     <div class="box_text" style="text-align: right;"><span>เขียนที่</span>
         <span class="dotted-line" style="width: 25%; text-align: center;"> {{$form->written_at}}
         </span>
