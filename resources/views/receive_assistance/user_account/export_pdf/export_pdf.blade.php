@@ -205,7 +205,7 @@
             </span>
         </div>
         <div class="box_text" style="text-align: left; margin-left: 7rem;">
-            <span>2. ที่พักอาศัยอยู่ห่างจากบ้านหลังที่ใกล้ที่สุดเป็นระทาง</span> </span><span>เกี่ยวข้องเป็น</span><span
+            <span>2. ที่พักอาศัยอยู่ห่างจากบ้านหลังที่ใกล้ที่สุดเป็นระทาง</span> </span><span
                 class="dotted-line" style="width: 23%; text-align: center;"> {{$form->assistImpartings->first()->away_from_home}}
             </span><span>สามารถเดินทางได้</span>
         </div>
