@@ -116,7 +116,7 @@
                                     {{ $ReceiveAssistance ? $ReceiveAssistance . ' ฟอร์ม' : ' 0 ฟอร์ม' }}
                                 </p>
                             </div>
-                            <h5 class="card-title">แบบคำขอรับเงินสงเคราะห์ (ผู้ป่วยเอดส์)</h5>
+                            <h5 class="card-title">แบบคำขอรับการสงเคราะห์ (ผู้ป่วยเอดส์)</h5>
                             <a href="{{ route('TableReceiveAssistanceAdminPages') }}"
                                 class="btn btn-danger fs-4 w-100">เช็คคำร้อง</a>
                         </div>

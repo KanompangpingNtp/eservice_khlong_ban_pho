@@ -1,7 +1,7 @@
 @extends('dashboard.layout.users.layout_users')
 @section('title', 'ข้อมูลผู้ขอรับการสงเคราะห์')
 @section('user_content')
-<h3 class="text-center"> แบบคำขอรับเงินสงเคราะห์ (ผู้ป่วยเอดส์) </h3>
+<h3 class="text-center"> แบบคำขอรับการสงเคราะห์ (ผู้ป่วยเอดส์) </h3>
 
 <form action="{{ route('ReceiveAssistanceFormCreate') }}" method="POST" enctype="multipart/form-data">
     @csrf
