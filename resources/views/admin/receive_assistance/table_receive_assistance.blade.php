@@ -14,7 +14,7 @@
 @endif
 
 <div class="container">
-    <h2 class="text-center">แบบขอรับเงินสงเคราห์ (ผู้ป่วยเอดส์)<br>
+    <h2 class="text-center">แบบคำขอรับเงินสงเคราะห์ (ผู้ป่วยเอดส์)<br>
         <h3 class="text-center">ตารางแสดงข้อมูลฟอร์มที่ส่งเข้ามา</h3>
     </h2>
     <br>

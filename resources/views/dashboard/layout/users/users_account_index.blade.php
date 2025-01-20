@@ -115,7 +115,7 @@
                                 <img src="{{ asset('images/layout-index/money.png') }}" alt="image" class="img-fluid"
                                     style="max-width: 80px;">
                             </div>
-                            <h5 class="card-title">แบบคำขอรับเงินสงเคราะห์</h5>
+                            <h5 class="card-title">แบบคำขอรับเงินสงเคราะห์ (ผู้ป่วยเอดส์)</h5>
                             <p class="card-text text-muted">ดำเนินการคำขอรับเงิน</p>
                             <a href="{{ route('ReceiveAssistanceUserFormPage') }}"
                                 class="btn btn-danger fs-4 w-100">กรอกข้อมูลเอกสาร</a>
