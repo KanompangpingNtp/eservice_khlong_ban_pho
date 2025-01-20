@@ -181,7 +181,7 @@
             </span>
         </div>
         <div class="box_text" style="text-align: left; margin-left:7px;">
-            <span>หมายเลขบัตรประจำตัวคนพิการ/ประชาชน ที่ยื่นคำขอ</span><span class="dotted-line"
+            <span>หมายเลขบัตรประจำตัวประชาชนของผู้เป็นเอดส์ที่ยื่นคำขอ</span><span class="dotted-line"
                 style="width: 50%; text-align: center;"> {{$formatted_id}}
             </span>
         </div>
