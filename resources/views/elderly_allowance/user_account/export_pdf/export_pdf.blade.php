@@ -289,18 +289,18 @@
                 รับเงินสดด้วยตนเอง
             </span>
             <span style="float: right; width: 60%; line-height: 0.9;">
-                <input type="checkbox" style="margin: 0;" {{ $form->personsOptions->first()->request_for_money_type == 'option3' ? 'checked' : '' }}>
+                <input type="checkbox" style="margin: 0;" {{ $form->personsOptions->first()->request_for_money_type == 'option2' ? 'checked' : '' }}>
                 รับเงินสดโดยบุคคลที่ได้รับมอบอำนาจจากผู้มีสิทธิ
             </span>
             <div style="clear: both;"></div>
 
             <span style="float: left; width: 100%; line-height: 0.9;">
-                <input type="checkbox" style="margin: 0;" {{ $form->personsOptions->first()->request_for_money_type == 'option4' ? 'checked' : '' }}>
+                <input type="checkbox" style="margin: 0;" {{ $form->personsOptions->first()->request_for_money_type == 'option3' ? 'checked' : '' }}>
                 โอนเข้าบัญชีเงินฝากธนาคารในนามผู้มีสิทธิ
             </span>
 
             <span style="float: right; width: 60%; line-height: 0.9;">
-                <input type="checkbox" style="margin: 0;" {{ $form->personsOptions->first()->request_for_money_type == 'option5' ? 'checked' : '' }}>
+                <input type="checkbox" style="margin: 0;" {{ $form->personsOptions->first()->request_for_money_type == 'option4' ? 'checked' : '' }}>
                 โอนเข้าบัญชีเงินฝากธนาคารในนามบุคคลที่ได้รับมอบอำนาจจากผู้มีสิทธิ
             </span>
             <div style="clear: both;"></div>

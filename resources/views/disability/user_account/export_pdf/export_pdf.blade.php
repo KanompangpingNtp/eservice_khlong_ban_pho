@@ -441,7 +441,7 @@
                 <div>ความเห็นเจ้าหน้าที่ผู้รับลงทะเบียน</div>
                 <div>เรียน คณะกรรมการตรวจสอบคุณสมบัติ</div>
                 <div style="text-align:center;">ได้ตรวจสอบคุณสมบัติของ </div>
-                <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 10px; border-bottom: 2px dotted black;">{{ $form->salutation }}{{ $form->first_name }}{{ $form->last_name }}</span>
+                <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 10px; border-bottom: 2px dotted black;">{{ $form->salutation }}{{ $form->first_name }}&nbsp;{{ $form->last_name }}</span>
                 <div>หมายเลขบัตรประจำตัวประชาชน</div>
                 <span class="dotted-line" style="width: 100%; text-align: center; margin-top: 10px; border-bottom: 2px dotted black;">{{ $formatted_id }}</span>
                 <div class="box_text" style="text-align:left; margin-top: 10px;">
