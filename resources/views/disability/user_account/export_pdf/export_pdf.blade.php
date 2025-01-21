@@ -382,7 +382,7 @@
         </span>
     </div>
 
-    <div class="box_text" style="text-align:left; margin-left:10px; line-height: 12px;">
+    {{-- <div class="box_text" style="text-align:left; margin-left:10px; line-height: 12px;">
         <div style="width: 100%;">
             <span style="width: 100%; "><input type="checkbox" style="margin-left: 5rem;">
                 "ข้าพเจ้าขอรับรองว่าข้าพเจ้าเป็นผู้มีคุณสมบัติครบถ้วน และข้อความดังกล่าวข้างต้นเป็นความจริงทุกประการ
@@ -390,6 +390,17 @@
             <span style="width: 100%; "><input type="checkbox" style="margin-left: 5rem;">
                 "ข้าพเจ้ายินยอมให้นำข้อมูลส่วนบุคคลเข้าสู่ระบบคอมพิวเตอร์ของกรมส่งเสริมการปกครองท้องถิ่น และยินยอมให้
                 ตรวจสอบข้อมูลกับฐานข้อมูลทะเบียนกลางภาครัฐ"
+            </span>
+        </div>
+    </div> --}}
+    <div class="box_text" style="text-align:left; margin-left:10px; line-height: 12px;">
+        <div style="width: 100%;">
+            <span style="width: 100%; "><input type="checkbox" style="margin-left: 5rem;">
+                "ข้าพเจ้าขอรับรองว่าข้าพเจ้าเป็นผู้มีคุณสมบัติครบถ้วน และข้อความดังกล่าวข้างต้นเป็นความจริงทุกประการหากข้อความและเอกสารที่ยื่น
+                เรื่องนี้เป็นเท็จ ข้าพเจ้ายินยอมให้ดำเนินการตามกฎหมาย"</span>
+            <span style="width: 100%; "><input type="checkbox" style="margin-left: 5rem;">
+                "ข้าพเจ้ายินยอมให้นำข้อมูลส่วนบุคคลเข้าสู่ระบบคอมพิวเตอร์ของกรมส่งเสริมการปกครองท้องถิ่น และยินยอมให้ตรวจสอบข้อมูลกับฐานข้อมูล
+               ทะเบียนกลางภาครัฐ"
             </span>
         </div>
     </div>
