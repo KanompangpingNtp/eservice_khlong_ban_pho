@@ -65,6 +65,8 @@ class UserElderlyAllowanceController extends Controller
             'account_name' => 'nullable|string',
 
             'attachments.*' => 'nullable|file|mimes:jpg,jpeg,png,pdf',
+
+            'community' => 'nullable|string',
         ]);
 
         // dd($request);
@@ -94,6 +96,7 @@ class UserElderlyAllowanceController extends Controller
             'marital_status' => $request->marital_status,
             'monthly_income' => $request->monthly_income,
             'occupation' => $request->occupation,
+            'community' => $request->community,
         ]);
 
         // $eaTraders = EaTraders::create([

@@ -39,6 +39,7 @@ class UserDisabilityController extends Controller
             'nationality' => 'nullable|string',
             'house_number' => 'nullable|string',
             'village' => 'nullable|string',
+            'community' => 'nullable|string',
             'alley' => 'nullable|string',
             'road' => 'nullable|string',
             'subdistrict' => 'nullable|string',
@@ -50,6 +51,8 @@ class UserDisabilityController extends Controller
             'marital_status' => 'required|in:single,married,widowed,divorced,separated,other',
             'monthly_income' => 'nullable|string',
             'occupation' => 'nullable|string',
+            'references_contacted' => 'nullable|string',
+            'references_phone' => 'nullable|string',
             'welfare_type' => 'nullable|array',
             'welfare_type.*' => 'string|in:option1,option2,option3,option4',
             'welfare_other_types' => 'nullable|string|required_if:welfare_type.*,ย้ายภูมิลําเนาเข้ามาอยู่ใหม่',
@@ -94,17 +97,10 @@ class UserDisabilityController extends Controller
             'marital_status' => $request->marital_status,
             'monthly_income' => $request->monthly_income,
             'occupation' => $request->occupation,
+            'references_contacted' => $request->references_contacted,
+            'references_phone' => $request->references_phone,
+            'community' => $request->community,
         ]);
-
-        // Save data to DisabilityTrader table
-        // $eaTraders = DisabilityTrader::create([
-        //     'disability_people_id' => $eaPeople->id,
-        //     'trade_condition' => $request->trade_condition,
-        //     'elderly_name' => $request->elderly_name,
-        //     'citizen_id' => $request->trader_citizen_id,
-        //     'address' => $request->trader_address,
-        //     'phone_number' => $request->trader_phone_number,
-        // ]);
 
         // Save data to DisabilityOptions table
         $eaPersonsOptions = DisabilityOption::create([

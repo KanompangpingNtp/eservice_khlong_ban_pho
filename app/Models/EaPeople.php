@@ -34,7 +34,8 @@ class EaPeople extends Model
         'citizen_id',
         'marital_status',
         'monthly_income',
-        'occupation'
+        'occupation',
+        'community'
     ];
 
     public function user()

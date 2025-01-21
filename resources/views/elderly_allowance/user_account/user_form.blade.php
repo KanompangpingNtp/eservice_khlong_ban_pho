@@ -202,6 +202,10 @@
                 <label for="village">หมู่:</label>
                 <input type="text" id="village" name="village" class="form-control">
             </div>
+            <div class="col-12 col-md-6">
+                <label for="community">ชุมชน:</label>
+                <input type="text" id="community" name="community" class="form-control">
+            </div>
         </div>
 
         <div class="row mb-3">

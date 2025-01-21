@@ -14,7 +14,7 @@ class DisabilityPerson extends Model
         'salutation', 'first_name', 'last_name', 'birth_day', 'age', 'nationality',
         'house_number', 'village', 'alley', 'road', 'subdistrict', 'district',
         'province', 'postal_code', 'phone_number', 'citizen_id', 'type_of_disability',
-        'marital_status', 'monthly_income', 'occupation'
+        'marital_status', 'monthly_income', 'occupation','references_contacted','references_phone','community'
     ];
 
     public function user()

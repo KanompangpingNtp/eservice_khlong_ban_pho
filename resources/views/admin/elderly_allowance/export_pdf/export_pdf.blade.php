@@ -199,7 +199,7 @@
         </span>
         <span>หมู่ที่</span><span class="dotted-line" style="width: 10%; text-align: center;"> {{ $form->village }}
         </span>
-        <span>ชุมชน</span><span class="dotted-line" style="width: 23%; text-align: center;"> -
+        <span>ชุมชน</span><span class="dotted-line" style="width: 23%; text-align: center;"> {{ $form->community }}
         </span>
         <span>ตรอก/ซอย</span><span class="dotted-line" style="width: 22%; text-align: center;"> {{ $form->alley }}
         </span>
@@ -513,37 +513,21 @@
                 <span class="dotted-line" style="width: 100%; text-align: center; margin-top:15px; border-bottom: 2px dotted black; margin-top:20px;">
                 </span>
                 <div style=" width: 100%; text-align:center; margin-bottom:20px; margin-top:20px">
-                    <span>(ลงชื่อ)</span>
-                    <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
+                    <span style="margin-left: 100px;">(ลงชื่อ)</span>
+                    <span class="dotted-line" style="width: 30%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
                     </span>
                     <div style="margin-left: 40px;">
-                        <span>(</span>
-                        <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
-                        </span>
-                        <span>)</span>
                     </div>
-                    {{-- <span>นายก เทศมนตรี/นายก อบต.</span>
+                    <span>นายก เทศมนตรี/นายก อบต.</span>
                     <span class="dotted-line"
                         style="width: 30%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
                     </span>
                     <div style="margin-left: 40px;">
-                        <span>(</span>
-                        <span class="dotted-line"
-                            style="width: 40%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
-                        </span>
-                        <span>)</span>
                     </div>
-                    <span>วัน/เดือน/ปี</span>
+                    <span style="margin-left: 74px;">วัน/เดือน/ปี</span>
                     <span class="dotted-line"
-                        style="width: 40%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
-                    </span> --}}
-                    {{-- <div style="margin-left: 40px;">
-                        <span>(</span>
-                        <span class="dotted-line"
-                            style="width: 40%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
-                        </span>
-                        <span>)</span>
-                    </div> --}}
+                        style="width: 30%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
+                    </span>
                 </div>
             </div>
         </div>
@@ -556,7 +540,7 @@
 
         <div style="font-size: 19px;">
             <div class="box_text" style="margin-top: 3rem;">
-                <span>ยื่นแบบคำขอลงทะเบียนเมื่อวันที่</span><span class="dotted-line" style="width: 20%; text-align: center; border-bottom: 2px dotted black;">
+                <span>ยื่นแบบคำขอยืนยันสิทธิเมื่อวันที่</span><span class="dotted-line" style="width: 20%; text-align: center; border-bottom: 2px dotted black;">
 
                 </span>
                 <span>เดือน</span><span class="dotted-line" style="width: 25%; text-align: center; border-bottom: 2px dotted black;">
@@ -577,8 +561,7 @@
                 ไปอยู่ที่อื่นจะต้องไปยืนยันสิทธิยื่นคำขอรับเงินเบี้ยยังชีพผู้สูงอายุ
             </div>
             <div class="box_text" style="text-align: left; margin-left:2px;">
-                <span>ณ ที่องค์กรปกครองส่วนท้องถิ่นแห่งใหม่ภายในเดือนกันยายนของปีนั้น ทั้งนี้ผู้สูงอายุจะได้เบี้ย
-                    ผู้สูงอายุ ณ องค์กรปกครองส่วนท้องถิ่นเดิม
+                <span>ณ ที่องค์กรปกครองส่วนท้องถิ่นแห่งใหม่ภายในเดือนกันยายนของปีนั้น ทั้งนี้ผู้สูงอายุจะได้เบี้ยผู้สูงอายุ ณ องค์กรปกครองส่วนท้องถิ่นเดิม
                 </span>
             </div>
             <div class="box_text" style="text-align: left; margin-left:2px;">

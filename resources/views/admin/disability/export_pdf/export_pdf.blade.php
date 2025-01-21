@@ -22,7 +22,7 @@
 
         body {
             font-family: 'sarabun', 'sarabun-bold', sans-serif;
-            font-size: 14.5px;
+            font-size: 15px;
             margin: 0;
             padding: 0;
             line-height: 1;
@@ -153,10 +153,12 @@
         </div>
         <div>
             <span>เลขประจำตัวประชาชน</span><span class="dotted-line" style="width: 37%; border-bottom: 2px dotted black;">  </span>
-            <span>โทรศัพท์</span><span class="dotted-line" style="width: 40%; border-bottom: 2px dotted black;"> </span>
+            <span>ที่อยู่</span><span class="dotted-line" style="width: 40%; border-bottom: 2px dotted black;"> </span>
         </div>
         <div>
-            <span>ที่อยู่</span><span class="dotted-line" style="width: 94%; border-bottom: 2px dotted black;"> </span>
+            <span class="dotted-line" style="width: 58%; text-align:center; border-bottom: 2px dotted black;">
+            </span>
+            <span>โทรศัพท์</span><span class="dotted-line" style="width: 30%; border-bottom: 2px dotted black;"> </span>
         </div>
     </div>
     <div class="box_text" style="text-align: right;"><span>เขียนที่</span>
@@ -190,7 +192,7 @@
         </span>
         <span>หมู่ที่</span><span class="dotted-line" style="width: 10%; text-align: center;"> {{ $form->village }}
         </span>
-        <span>ชุมชน</span><span class="dotted-line" style="width: 25%; text-align: center;"> -
+        <span>ชุมชน</span><span class="dotted-line" style="width: 25%; text-align: center;"> {{ $form->community }}
         </span>
         <span>ตรอก/ซอย</span><span class="dotted-line" style="width: 28%; text-align: center;"> {{ $form->alley }}
         </span>
@@ -258,7 +260,7 @@
     </div>
     <div class="box_text" style=" margin-left:7px; margin-top:2px;">
         <div style="text-align:left">
-            <span>ที่ขอขึ้นทะเบียน โดยเป็น</span>
+            <span>สถานภาพสมรส</span>
             <span>
                 <input type="checkbox" {{ $form->marital_status == 'single' ? 'checked' : '' }}> โสด
             </span>
@@ -285,13 +287,10 @@
         <span>อาชีพ</span><span class="dotted-line" style="width: 42%; text-align: center;"> {{ $form->occupation }}
         </span>
     </div>
-    {{-- <div class="box_text" style=" margin-left:7px;">
-        <span>บุคคลอ้างอิงที่สามารถติดต่อได</span><span class="dotted-line" style="width: 41%; text-align: center;">
-
-        </span>
-        <span>โทรศัพท์</span><span class="dotted-line" style="width: 28%; text-align: center;">
-        </span>
-    </div> --}}
+    <div class="box_text" >
+        <span>บุคคลอ้างอิงที่สามารถติดต่อได้</span><span class="dotted-line" style="width: 44%; text-align: center;">{{ $form->references_contacted }}</span>
+        <span>โทรศัพท์</span><span class="dotted-line" style="width: 30%; text-align: center;">{{ $form->references_phone }}</span>
+    </div>
 
     <div class="box_text" style="text-align:left; margin-left:8px; line-height: 12px; margin-top: 5px;">
         <span style="line-height: 10px;">ข้อมูลทั่วไป : สถานภาพการรับสวัสดิการภาครัฐ</span>
@@ -312,7 +311,7 @@
             </span>
             <span style="float: right; width: 50%; line-height: 0.9;">
                 <input type="checkbox" style="margin: 0;" {{ in_array('option4', $form->disabilityOptions->first()->welfare_type ?? []) ? 'checked' : '' }}>
-                ย้ายภูมิลำเนาเข้ามาอยู่ใหม่
+                ย้ายภูมิลำเนาเข้ามาอยู่ใหม่ เมื่อ
             </span>
             <div style="clear: both;"></div>
         </div>
@@ -335,9 +334,9 @@
                 <input type="checkbox" style="margin: 0;" {{ $form->disabilityOptions->first()->request_for_money_type == 'option3' ? 'checked' : '' }}>
                 โอนเข้าบัญชีเงินฝากธนาคารในนามผู้มีสิทธิ
             </span>
-            <div style="clear: both;"></div>
+            {{-- <div style="clear: both;"></div> --}}
 
-            <span style="float: left; width: 100%; line-height: 0.9;">
+            <span style="float: right; width: 60%; line-height: 0.9;">
                 <input type="checkbox" style="margin: 0;" {{ $form->disabilityOptions->first()->request_for_money_type == 'option4' ? 'checked' : '' }}>
                 โอนเข้าบัญชีเงินฝากธนาคารในนามบุคคลที่ได้รับมอบอำนาจจากผู้มีสิทธิ/ผู้ดูแล
             </span>
@@ -394,7 +393,7 @@
             </span>
         </div>
     </div>
-    <div class="box_text" style="margin-top: 2rem;">
+    <div class="box_text" style="margin-top: 5px;">
         <div>
             <!-- ฝั่งซ้าย -->
             <div style="float: left; width: 48%;">
@@ -523,28 +522,22 @@
                 style="width: 30%; text-align: center; margin-top:15px; border-bottom: 2px dotted black; margin-top:20px;">
             </span></div>
             <span class="dotted-line" style="width: 95%; text-align: center; margin-top:10px; border-bottom: 2px dotted black; margin-top:20px;"> </span>
-            <div style=" width: 100%; text-align:center; margin-bottom:10px; margin-top:10px">
-                <span>(ลงชื่อ)</span>
-                <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black;"> </span>
+            <div style=" width: 100%; text-align:center; margin-bottom:20px; margin-top:20px">
+                <span style="margin-left: 100px;">(ลงชื่อ)</span>
+                <span class="dotted-line" style="width: 30%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
+                </span>
                 <div style="margin-left: 40px;">
-                    <span>(</span>
-                    <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black;"> </span>
-                    <span>)</span>
                 </div>
-                {{-- <span>นายก เทศมนตรี/นายก อบต.</span>
-                <span class="dotted-line" style="width: 30%; text-align: center; border-bottom: 2px dotted black;"> </span>
+                <span>นายก เทศมนตรี/นายก อบต.</span>
+                <span class="dotted-line"
+                    style="width: 30%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
+                </span>
                 <div style="margin-left: 40px;">
-                    <span>(</span>
-                    <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black;"> </span>
-                    <span>)</span>
                 </div>
-                <span>วัน/เดือน/ปี</span>
-                <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black;"> </span>
-                <div style="margin-left: 40px;">
-                    <span>(</span>
-                    <span class="dotted-line" style="width: 40%; text-align: center; border-bottom: 2px dotted black;"> </span>
-                    <span>)</span>
-                </div> --}}
+                <span style="margin-left: 74px;">วัน/เดือน/ปี</span>
+                <span class="dotted-line"
+                    style="width: 30%; text-align: center; border-bottom: 2px dotted black; margin-top:20px;">
+                </span>
             </div>
         </div>
     </div>
