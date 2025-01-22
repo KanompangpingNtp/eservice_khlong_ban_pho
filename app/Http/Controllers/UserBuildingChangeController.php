@@ -95,6 +95,10 @@ class UserBuildingChangeController extends Controller
             'attachments.*' => 'nullable|file|mimes:jpg,jpeg,png,pdf',
 
             'according_document' => 'nullable|string',
+            'individual_call' => 'nullable|string',
+            'entity_calling' => 'nullable|string',
+
+
         ]);
 
         // dd($request);
@@ -172,6 +176,8 @@ class UserBuildingChangeController extends Controller
             'building_type_new' => $request->building_type_new,
             'title_deed_type' => $request->title_deed_type,
             'according_document' => $request->according_document,
+            'individual_call' => $request->individual_call,
+            'entity_calling' => $request->entity_calling,
         ]);
 
         if ($request->hasFile('attachments')) {

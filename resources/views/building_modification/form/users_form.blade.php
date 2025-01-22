@@ -16,52 +16,7 @@
         <input type="text" name="full_name" id="full_name" class="form-control">
     </div>
 
-    {{-- <div class="row">
-        <div class="col-md-2 mt-3">
-            <label for="is_an_individual">เป็นบุคคลธรรมดา</label>
-            <input type="checkbox" name="is_an_individual" id="is_an_individual" value="yes">
-        </div>
-
-        <div class="col-md-3 mb-3">
-            <label for="house_number">อยู่ที่เลขที่</label>
-            <input type="text" name="house_number" id="house_number" class="form-control">
-        </div>
-
-        <div class="col-md-3 mb-3">
-            <label for="village">หมู่ที่</label>
-            <input type="text" name="village" id="village" class="form-control">
-        </div>
-
-        <div class="col-md-3 mb-3">
-            <label for="alley">ตรอก/ซอย:</label>
-            <input type="text" name="alley" id="alley" class="form-control">
-        </div>
-
-        <div class="col-md-3 mb-3">
-            <label for="road">ถนน:</label>
-            <input type="text" name="road" id="road" class="form-control">
-        </div>
-
-        <div class="col-md-3 mb-3">
-            <label for="subdistrict">แขวง/ตำาบล:</label>
-            <input type="text" name="subdistrict" id="subdistrict" class="form-control">
-        </div>
-
-        <div class="col-md-3 mb-3">
-            <label for="district">เขต/อำาเภอ:</label>
-            <input type="text" name="district" id="district" class="form-control">
-        </div>
-
-        <div class="col-md-3 mb-3">
-            <label for="province">จังหวัด:</label>
-            <input type="text" name="province" id="province" class="form-control">
-        </div>
-    </div> --}}
     <div class="row">
-        {{-- <div class="col-md-2 mt-3">
-            <input type="checkbox" name="is_an_individual" id="is_an_individual" value="yes" onchange="toggleAddressInputs()">
-            <label for="is_an_individual">เป็นบุคคลธรรมดา</label>
-        </div> --}}
         <div class="col-md-2 mt-3">
             <input type="checkbox" name="is_an_individual" id="is_an_individual" value="yes" onchange="toggleCheckboxes('is_an_individual', 'option_detail'); toggleAddressInputs()">
             <label for="is_an_individual">เป็นบุคคลธรรมดา</label>
@@ -101,12 +56,17 @@
             <label for="province">จังหวัด:</label>
             <input type="text" name="province" id="province" class="form-control" disabled>
         </div>
+
+        <div class="col-md-3 mb-3">
+            <label for="individual_call">เบอร์โทร:</label>
+            <input type="text" name="individual_call" id="individual_call" class="form-control" disabled>
+        </div>
     </div>
 
     <script>
         function toggleAddressInputs() {
             const checkbox = document.getElementById('is_an_individual');
-            const inputs = document.querySelectorAll('#house_number, #village, #alley, #road, #subdistrict, #district, #province');
+            const inputs = document.querySelectorAll('#house_number, #village, #alley, #road, #subdistrict, #district, #province , #individual_call');
 
             // Enable or disable inputs based on the checkbox status
             inputs.forEach(input => {
@@ -171,12 +131,13 @@
             <label for="office_province">จังหวัด:</label>
             <input type="text" name="office_province" id="office_province" class="form-control" disabled>
         </div>
+
     </div>
 
     <script>
         function toggleLegalEntityInputs() {
             const checkbox = document.getElementById('option_detail');
-            const inputs = document.querySelectorAll('#legal_name, #registered, #registration_number, #office_located, #office_village, #office_alley, #office_road, #office_subdistrict, #office_district, #office_province');
+            const inputs = document.querySelectorAll('#legal_name, #registered, #registration_number, #office_located, #office_village, #office_alley, #office_road, #office_subdistrict, #office_district, #office_province , #entity_calling');
 
             // Enable or disable inputs based on the checkbox status
             inputs.forEach(input => {
@@ -202,7 +163,7 @@
 
         function toggleAddressInputs() {
             const checkbox = document.getElementById('is_an_individual');
-            const inputs = document.querySelectorAll('#house_number, #village, #alley, #road, #subdistrict, #district, #province');
+            const inputs = document.querySelectorAll('#house_number, #village, #alley, #road, #subdistrict, #district, #province, #individual_call');
 
             // Enable or disable inputs based on the checkbox status
             inputs.forEach(input => {
@@ -212,7 +173,7 @@
 
         function toggleLegalEntityInputs() {
             const checkbox = document.getElementById('option_detail');
-            const inputs = document.querySelectorAll('#legal_name, #registered, #registration_number, #office_located, #office_village, #office_alley, #office_road, #office_subdistrict, #office_district, #office_province, #by_name, #by_house_number, #by_village, #by_alley, #by_road, #by_subdistrict, #by_district, #by_province');
+            const inputs = document.querySelectorAll('#legal_name, #registered, #registration_number, #office_located, #office_village, #office_alley, #office_road, #office_subdistrict, #office_district, #office_province, #by_name, #by_house_number, #by_village, #by_alley, #by_road, #by_subdistrict, #by_district, #by_province  , #entity_calling');
 
             // Enable or disable inputs based on the checkbox status
             inputs.forEach(input => {
@@ -265,6 +226,11 @@
         <div class="col-md-3 mb-3">
             <label for="by_province">จังหวัด</label>
             <input type="text" name="by_province" id="by_province" class="form-control" disabled>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <label for="entity_calling">เบอร์โทร:</label>
+            <input type="text" name="entity_calling" id="entity_calling" class="form-control" disabled>
         </div>
     </div>
 

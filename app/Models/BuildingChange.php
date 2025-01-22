@@ -21,7 +21,7 @@ class BuildingChange extends Model
         'building_num_3', 'building_to_3', 'building_Number_vehicles_3', 'project_supervisor', 'designer_and_calculator',
         'number_of_blueprints', 'blueprint_set', 'one_set_quantity', 'designer_calculates', 'control_architecture',
         'number', 'quantity', 'number_of_land_owners', 'controller', 'controller_2', 'other_documents','full_name','option_detail','scheduled_for_completion',
-        'legal_name','building_type_new','title_deed_type','according_document'
+        'legal_name','building_type_new','title_deed_type','according_document','individual_call','entity_calling'
 
     ];
 

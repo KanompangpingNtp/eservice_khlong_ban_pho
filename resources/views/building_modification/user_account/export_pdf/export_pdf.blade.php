@@ -161,32 +161,35 @@
         <span class="dotted-line" style="width: 62%; text-align: center;">{{ $form->full_name }}</span>
         <span>เจ้าของอาคารหรือตัวแทนเจ้าของอาคาร</span>
     </div>
-    <div class="box_text" style="text-align: left; margin-left:5rem;">
+    <div class="box_text" style="text-align: left; margin-left:3rem;">
         <span><span><input type="checkbox" {{ $form->is_an_individual == 'yes' ? 'checked' : '' }}></span>เป็นบุคคลธรรมดา อยู่ที่เลขที่</span>
-        <span class="dotted-line" style="width: 22%; text-align: center;">{{ $form->house_number }}</span>
-        <span>ตรอก/ซอย</span><span class="dotted-line" style="width: 10%; text-align: center;">{{ $form->alley }}</span>
+        <span class="dotted-line" style="width: 10%; text-align: center;">{{ $form->house_number }}</span>
+        <span>ตรอก/ซอย</span><span class="dotted-line" style="width: 18%; text-align: center;">{{ $form->alley }}</span>
         <span>ถนน</span>
-        <span class="dotted-line" style="width: 26%; text-align: center;">{{ $form->road }}</span>
+        <span class="dotted-line" style="width: 20%; text-align: center;">{{ $form->road }}</span>
+        <span>หมู่ที่</span><span class="dotted-line" style="width: 7%; text-align: center;">{{ $form->village }}</span>
     </div>
     <div class="box_text" style="text-align: left;">
-        <span>หมู่ที่</span><span class="dotted-line" style="width: 16%; text-align: center;">{{ $form->village }}</span>
+        {{-- <span>หมู่ที่</span><span class="dotted-line" style="width: 5%; text-align: center;">{{ $form->village }}</span> --}}
         <span>ตำบล/แขวง</span>
-        <span class="dotted-line" style="width: 19%; text-align: center;">{{ $form->subdistrict }}</span>
+        <span class="dotted-line" style="width: 17%; text-align: center;">{{ $form->subdistrict }}</span>
         <span>อำเภอ/เขต</span>
         <span class="dotted-line" style="width: 18%; text-align: center;">{{ $form->district }}</span>
         <span>จังหวัด</span>
         <span class="dotted-line" style="width: 18%; text-align: center;">{{ $form->province }}</span>
+        <span>โทร</span>
+        <span class="dotted-line" style="width: 15%; text-align: center;">{{ $form->individual_call }}</span>
     </div>
-    <div class="box_text" style="text-align: left; margin-left:5rem;">
+    <div class="box_text" style="text-align: left; margin-left:3rem;">
         <span><span><input type="checkbox" {{ $form->option_detail == 'yes' ? 'checked' : '' }}></span>เป็นนิติบุคคลประเภท</span>
-        <span class="dotted-line" style="width: 40%; text-align: center;">{{ $form->legal_name }}</span>
+        <span class="dotted-line" style="width: 41%; text-align: center;">{{ $form->legal_name }}</span>
         <span>จดทะเบียนเมื่อ</span>
         {{-- <span class="dotted-line" style="width: 25%; text-align: center;">{{ $registered_day }}</span> --}}
         <span class="dotted-line" style="width: 25%; text-align: center;">
             @if ($registered_day && $registered_month && $registered_year)
                 {{ $registered_day }} {{ $registered_month }} {{ $registered_year }}
             @else
-                ไม่มีข้อมูล
+
             @endif
         </span>
 
@@ -226,6 +229,8 @@
         <span class="dotted-line" style="width: 24%; text-align: center;">{{ $form->by_district }}</span>
         <span>จังหวัด</span>
         <span class="dotted-line" style="width: 24%; text-align: center;">{{ $form->by_province }}</span>
+        <span>โทร</span>
+        <span class="dotted-line" style="width: 15%; text-align: center;">{{ $form->entity_calling }}</span>
     </div>
     <div class="box_text" style="text-align: left;  margin-left:5rem;">
         <span>ขอยื่นคำขอรับใบอนุญาต</span>
@@ -386,6 +391,10 @@
             <span class="dotted-line" style="width: 35%; text-align: center;"> {{ $form->full_name }} </span>
             <span>)</span>
         </div>
+        <span>โทร</span>
+        <span class="dotted-line" style="width: 35%;">
+            {{ $form->entity_calling ?? $form->individual_call }}
+        </span>
     </div>
     {{-- <div class="footer font-sarabun-bold">
         <p>องค์การบริหารส่วนตำบลคลองบ้านโพธิ์ https://public.es.demo.gmskysmartcity.com/</p>
