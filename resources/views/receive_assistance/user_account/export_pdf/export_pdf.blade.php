@@ -98,7 +98,7 @@
 
 @php
     use Carbon\Carbon;
-    $date = Carbon::parse($form->written_date);
+    $date = Carbon::parse($form->write_the_date);
     $day = $date->day;
     $month = $date->locale('th')->translatedFormat('F');
     $year = $date->year + 543;
