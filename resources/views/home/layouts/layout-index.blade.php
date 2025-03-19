@@ -31,7 +31,7 @@
                         style="width: auto; height: 13vh; padding: 10px" class="d-none d-lg-block">
                     <!-- ข้อความตรงกลาง -->
                     <div
-                        class="d-flex flex-column align-items-start justify-content-center fs-1 text-white px-2 pt-4 font-sarabun">
+                        class="d-flex flex-column align-items-start justify-content-center fs-1 text-white px-2 pt-4 font-sarabun lh-1">
                         องค์การบริหารส่วนตำบล คลองบ้านโพธิ์
                         <div class="fs-3 pt-1 font-sarabun">
                             (ตำบลคลองบ้านโพธิ์ อำเภอบ้านโพธิ์ จังหวัดฉะเชิงเทรา)
